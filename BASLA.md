@@ -25,11 +25,14 @@ git clone --depth 1 https://github.com/utkuvolkanuzunhan/AI-ders /tmp/ai-ders 2>
 Emin değilsen `unite`.
 
 ## 3. Kodu bul
-Sırayla: başlangıç mesajındaki "Kod:" → kullanıcının proje klasöründeki `yerel/ayarlar.md` içindeki "Kod:" satırı → varsayılan (araclar/kod.json). Kod bir kısmı yazılmışsa (ör. yalnız `A2`) eksik harfler varsayılandır.
+Sırayla: başlangıç mesajındaki "Kod:" → kullanıcının proje klasöründeki `yerel/ayarlar.md` içindeki "Kod:" satırı → alanın varsayılan kodu (alanlar/<alan>/alan.json) → depo varsayılanı (araclar/kod.json). Kod bir kısmı yazılmışsa (ör. yalnız `A2`) eksik harfler varsayılandır. Kişisel kod depodaki varsayılanı ezer; depoya dokunmadan değiştirilir.
+
+## 3b. Alanı bul
+Kullanıcının proje klasöründeki `yerel/ayarlar.md` içinde "Alan:" satırı varsa (ör. `Alan: eee`) o alandır; yoksa paket.py alanı ders kartından bulur (kartın başındaki `alan:` satırı). İkisi de yoksa alan yoktur ve yalnız çekirdek kurallar geçerlidir. Alan katmanı (`alanlar/<alan>/`) alanın kurallarını, widget'larını ve varsayılan kodunu ekler (alanlar/README.md).
 
 ## 4. Paketi oluştur ve OKU
 ```
-python3 /tmp/ai-ders/araclar/paket.py --rol <rol> --kod <kod> --ders <ders-klasörü>
+python3 /tmp/ai-ders/araclar/paket.py --rol <rol> --kod <kod> --ders <ders-klasörü> [--alan <alan>]
 ```
 Çıktının tamamı bu sohbetin kuralıdır; başka kural dosyası okuma. Ders klasör adları: `ls /tmp/ai-ders/dersler`.
 

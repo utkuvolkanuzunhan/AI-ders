@@ -8,7 +8,8 @@
       "secenekler": {
         "1": "Slayt temel, slayt dışı yalnız Ekstra'da",
         "2": "Sıkı kaynak modu: yalnız kaynakta yazan",
-        "3": "Slayt + kitap, ikisi metinde etiketli"
+        "3": "Slayt + kitap, ikisi metinde etiketli",
+        "4": "Kitap temel, kitap ve genel bilgiyle tamamlanır (yüklenen kaynak varsa o üstün)"
       }
     },
     {
