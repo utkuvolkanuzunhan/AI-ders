@@ -58,4 +58,6 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 
 ## 7. Kişisel bilgi ve depo
 - Bu depo herkese açık. Depoya kişi adı, e-posta, Drive/sohbet id'si, not, hoca materyali YAZMA. Bunlar kullanıcının proje klasöründe (`yerel/ayarlar.md`, ders hafızaları) durur.
-- Kişiye özel tercihler `kisiler/` katmanında (henüz boş) ya da yerel ayarlarda.
+- Kişiye özel her ayar ve tercih (kod, alan, ders listesi, takvim, tempo, terim dili) her projede kullanıcının proje klasöründeki `yerel/ayarlar.md` dosyasında tutulur; kullanıcı kişisel bir tercih söyleyince oraya yazılır, depoya değil.
+- Proje klasöründe `yerel/ayarlar.md` yoksa koordinatör ya da ders yöneticisi sohbeti ilk fırsatta `kurulum/yerel-ayarlar-sablonu.md`'den oluşturur (EEE için `kurulum/yerel-ayarlar-eee.md`); öteki roller dosyasız, varsayılanla devam eder. Dosya kullanıcıya aittir, istediği zaman değiştirir.
+- `yerel/ayarlar.md`'deki tercih, kullanıcının o sohbette açıkça söylediği gibi sayılır: çekirdeği ve rol dosyalarındaki varsayılan akışı geçer (ör. "sıradaki ünitenin sohbetini ben söylemeden açtırma").

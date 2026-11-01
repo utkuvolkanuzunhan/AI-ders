@@ -1,6 +1,6 @@
 # Yerel ayarlar (proje klasöründe: yerel/ayarlar.md)
 
-Bu dosya **kişiye özeldir ve depoya GİRMEZ** (depo herkese açık). Herkes kendi Claude projesinin dosyalarında `yerel/ayarlar.md` oluşturur, bu şablonu kopyalayıp kendi bilgisini yazar ve istediği zaman değiştirir. Depodaki hiçbir dosyaya dokunmak gerekmez: buradaki satırlar depo (ve alan) varsayılanını ezer.
+Bu dosya **kişiye özeldir ve depoya GİRMEZ** (depo herkese açık). Her projede bulunur: kendi Claude projesinin dosyalarında `yerel/ayarlar.md` olarak durur (yoksa koordinatör ya da ders yöneticisi sohbeti bu şablondan oluşturur, çekirdek §7). Kullanıcı şablonu kopyalayıp kendi bilgisini yazar ve istediği zaman değiştirir; kişisel her tercih yalnız buraya yazılır. Depodaki hiçbir dosyaya dokunmak gerekmez: buradaki satırlar depo (ve alan) varsayılanını ezer.
 
 Hazır EEE örneği: `kurulum/yerel-ayarlar-eee.md`.
 
@@ -18,6 +18,7 @@ Alan: (yoksa sil; ör. eee)
 
 ## Kişiye özel tercihler
 - (ör. odak süresi 25 dk, ezber konularında hafıza tekniği ağırlıklı)
+- (ör. ben söylemeden yeni ünite başlatma: ünite bitince sıradakinin sohbetini açtırma, haberimi bekle)
 
 ## Drive (isteğe bağlı)
 - Kök klasör: https://drive.google.com/drive/folders/…
