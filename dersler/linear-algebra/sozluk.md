@@ -7,10 +7,10 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | altuzay | subspace | |
 | aralık (değer uzayı) | range | doğrusal dönüşümün görüntü kümesi |
 | baz | basis | |
-| boyut | dimension | |
 | birim matris | identity matrix | |
-| çekirdek (sıfır uzayı) | kernel (null space) | |
+| boyut | dimension | |
 | Cramer kuralı | Cramer's rule | |
+| çekirdek (sıfır uzayı) | kernel (null space) | |
 | determinant | determinant | |
 | devrik (transpoz) | transpose | |
 | doğrusal bağımlı | linearly dependent | |
@@ -19,11 +19,11 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | doğrusal denklem sistemi | system of linear equations | |
 | doğrusal dönüşüm | linear transformation | |
 | ek (adjoint) matris | adjugate (adjoint) matrix | |
-| genişletilmiş matris | augmented matrix | |
 | Gauss yok etme | Gaussian elimination | |
 | Gauss–Jordan yok etme | Gauss–Jordan elimination | |
-| Gram–Schmidt yöntemi | Gram–Schmidt process | |
+| genişletilmiş matris | augmented matrix | |
 | germe (gerilen uzay) | span | |
+| Gram–Schmidt yöntemi | Gram–Schmidt process | |
 | iç çarpım | inner product | nokta çarpım: dot product |
 | iç çarpım uzayı | inner product space | |
 | iz | trace | |
@@ -34,8 +34,8 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | köşegenleştirme | diagonalization | |
 | LU ayrışımı | LU decomposition | |
 | norm (uzunluk) | norm (length) | |
-| ortogonal (dik) | orthogonal | |
 | ortogonal matris | orthogonal matrix | |
+| ortogonal (dik) | orthogonal | |
 | ortonormal | orthonormal | |
 | Öklid uzayı | Euclidean space | |
 | öz uzay | eigenspace | |

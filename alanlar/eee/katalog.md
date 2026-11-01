@@ -2,15 +2,18 @@
 
 Çekirdek katalogdaki W01–W12 şablonları EEE'de de kullanılır. W13 (kimyasal yapı) ve W14 (etken kartları) gıdaya özgüdür, EEE sohbetleri kullanmaz. Aşağıdakiler EEE içindir; kural aynıdır: şablonu kopyala, yalnız veriyi değiştir.
 
-Şablon henüz yok; ilk EEE şablonları W15 (eleman sembol kartı) ve W16 (devre şeması) olarak eklenecek. Eklenene kadar aşağıdaki iki tür de stil rehberine göre sıfırdan yazılır.
+| Kimlik | Tür | Ne zaman | Dosya |
+|---|---|---|---|
+| W15 | Eleman sembol kartı | Eleman, bileşen ya da kapı adı geçince: ad (TR + EN), harf sembolü, birim ve çizim birlikte (alan kuralları §1) | sablonlar/W15-eleman-sembol-karti.html |
+| W16 | Devre şeması | Çözümlenecek devre: eleman etiketleri, gerilim kutupları, akım okları; elemana dokununca açıklama ve ilgili yasa | sablonlar/W16-devre-semasi.html |
+
+Semboller W15'teki `SYM` sözlüğünde durur (zikzak direnç, kondansatör, bobin, diyot, gerilim kaynağı, op-amp, VE ve DEĞİL kapıları). W16 aynı çizim biçimini kullanır; yeni bir sembol gerekirse önce W15'e eklenir, sonra W16'ya kopyalanır. Semboller kitap standardındadır (alan kuralları §1). W15'te yoksa (akım kaynağı, VEYA, BJT, MOSFET, flip-flop) aynı koordinat düzeninde yeni giriş yazılır ve iyi çıkarsa şablona eklenir.
 
 ## Şablonu olmayan EEE türleri
 Stil rehberine göre sıfırdan yazılır, iyi çıkarsa şablona eklenir (gorevler/kural-guncelle.md, galeri için `python3 araclar/uret.py`).
 
 | Tür | Ne zaman | Ders |
 |---|---|---|
-| Eleman sembol kartı (W15 olacak): ad TR + EN, harf, birim, sembol | Eleman, bileşen ya da kapı adı geçince (alan kuralları §1) | hepsi |
-| Devre şeması (W16 olacak): etiket, değer, gerilim kutbu, akım oku | Çözümlenecek devre | circuit-analysis-1, digital-systems |
 | Dalga formu / tepki eğrisi (sabit eksen, kaydırıcı) | RC-RL basamak cevabı, sönüm durumları, $v(t)$ | circuit-analysis-1 |
 | Doğruluk tablosu + kapı (girişe dokununca çıkış) | Kapılar, ifade sadeleştirme | digital-systems |
 | Karnaugh haritası (gruplama) | Sadeleştirme | digital-systems |

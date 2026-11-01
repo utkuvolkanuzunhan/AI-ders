@@ -3,10 +3,10 @@
 Çekirdek kuralların üstüne eklenir. Çekirdekle çelişirse bu bölüm kazanır; ayar kodu seçeneği ve kullanıcının sohbette söyledikleri bunu da geçer. Ders kartı (dersler/<ders>/ders.md) bu bölümden daha özeldir.
 
 ## 1. Eleman adı geçince sembolü de çizilir
-- Devre elemanı, bileşen ya da kapı adı geçtiği adımda ad ve sembol birlikte verilir (eleman sembol kartı; W15 şablonu katalogda varsa o, yoksa stil rehberine göre SVG): Türkçe (İngilizce) ad, harf sembolü, birimi ve çizimi. Biri diğerinin yerine geçmez. Kapsam: direnç, kondansatör, bobin, kaynaklar, anahtar, diyot, BJT, MOSFET, op-amp, lojik kapılar, flip-flop.
+- Devre elemanı, bileşen ya da kapı adı geçtiği adımda ad ve sembol birlikte verilir (W15 eleman sembol kartı): Türkçe (İngilizce) ad, harf sembolü, birimi ve çizimi. Biri diğerinin yerine geçmez. Kapsam: direnç, kondansatör, bobin, kaynaklar, anahtar, diyot, BJT, MOSFET, op-amp, lojik kapılar, flip-flop.
 - Semboller dersin kitabının standardında çizilir (devre: zikzak direnç; kapılar: IEEE/ANSI şekilli kapılar). Aynı konuda iki standardı karıştırma; ders kartı başka bir standart söylüyorsa o.
 - Sembolü olmayan şeyler (osiloskop, breadboard, FPGA kartı, bellek yongası) için basit blok ya da çizim; sembol uydurma.
-- Devre çizimlerinde (devre şeması; W16 şablonu varsa o) her elemanın etiketi ve değeri, her gerilimin + / − kutbu, her akımın oku, referans (toprak) düğümü ve düğüm adları bulunur. İşaret kuralı (pasif işaret: akım + ucundan girerse $p=vi$ soğurulan güçtür) çizimden okunabilmelidir.
+- Devre çizimlerinde (W16 devre şeması) her elemanın etiketi ve değeri, her gerilimin + / − kutbu, her akımın oku, referans (toprak) düğümü ve düğüm adları bulunur. İşaret kuralı (pasif işaret: akım + ucundan girerse $p=vi$ soğurulan güçtür) çizimden okunabilmelidir.
 
 ## 2. Notasyon ve birim
 - SI birimi her sayının yanında yazılır; mühendislik gösterimi ve önekler: $4{,}7\,\mathrm{k\Omega}$, $2{,}2\,\mu\mathrm{F}$, $10\,\mathrm{mA}$. Önek dönüşümü hesapta açık yazılır (mA → A).

@@ -2,6 +2,8 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-01 · gorsel/sablonlar/W15, W16, alanlar/eee/katalog.md, galeri · EEE şablonları: W15 eleman sembol kartı (direnç, kondansatör, bobin, diyot, gerilim kaynağı, op-amp, VE, DEĞİL; IEEE/ANSI), W16 devre şeması (Vs, R1, R2, i, toprak; pasif işaret kuralı) · EEE'de eleman adı geçince sembol de çizilir kuralının şablonu (kullanıcı).
+- 2026-11-01 · dersler/electronic-materials-device-physics, object-oriented-programming, physics-1 · EEE ders kartları ve TR–EN sözlükler; mevcut EEE sözlükleri Türkçe alfabeye göre sıralandı · EEE 3. dönem dersleri (kullanıcı).
 - 2026-11-01 · alanlar/, araclar/paket.py, araclar/uret.py, BASLA, CLAUDE, README · Alan katmanı: `alanlar/<alan>/` (alan.json, kurallar.md, katalog.md); paket.py alanı `--alan` ya da ders kartındaki `alan:` satırından bulur ve alanın varsayılan kodunu ekler; alanı olmayan (gıda) paketler bayt bayt aynı · EEE'yi gıdaya dokunmadan eklemek ve alana özgü değişiklikleri hep o katmana yazmak için (kullanıcı).
 - 2026-11-01 · secenekler/A/A4.md, araclar/kod.json · A4 "kitap temel, kitap ve genel bilgiyle tamamlanır, yüklenen kaynak üstün"; depo varsayılanı A1 aynı, EEE alan varsayılanı A4 · EEE dersleri kitap temelli, kullanıcı kaynak yüklemeyebilir (kullanıcı).
 - 2026-11-01 · dersler/linear-algebra, circuit-analysis-1, digital-systems · EEE ders kartları ve TR–EN sözlükler (kitap bölüm haritası, konu tipleri, notasyon, tuzaklar) · EEE 3. dönem dersleri (kullanıcı).
