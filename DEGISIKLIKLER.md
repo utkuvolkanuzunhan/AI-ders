@@ -2,6 +2,7 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-01 · gorsel/sablonlar/W21–W23, alanlar/eee/katalog.md, dersler/linear-algebra/sozluk.md ve ders.md, galeri · Ters matris ünitesinden üç EEE şablonu (elemanter matris sekmeli, [A ve I] Gauss–Jordan adım adım, denklik zinciri), katalogda tablo, sözlüğe üç terim (denk ifadeler, elemanter matris, tersinir matris), ders kartına ters matris tuzakları · Ü3 anlatımında çıkan kalıcı parçalar (kullanıcı).
 - 2026-11-01 · alanlar/eee/kurallar.md · §2'ye formül genişlik kuralı: telefonda (≈ 340 px) taşmaz, `$$` bloğunda tek matris, uzun denklem bölünür, `\Large` yalnız kısa formülde, kalın metinde formül yok, iz için `\mathrm{tr}`, `$X$'nın` yazılmaz · Lineer Cebir matris ünitesinde uzun blok formüller telefon ekranında taşıp bozuk görünüyordu (kullanıcı).
 - 2026-11-01 · dersler/linear-algebra/sozluk.md · Matris ünitesi terimleri eklendi (ana köşegen, birleşme, dağılma, değişme, eleman, kare matris, katsayı matrisi, matris, matris çarpımı, matris kuvveti, satır/sütun/sıfır/skaler matris, ters simetrik matris) · Ü2 anlatımında kullanılan terimler tek yerde dursun.
 - 2026-11-01 · alanlar/eee/katalog.md · Lineer Cebir matris şablonları (W18, W19) ve `<i data-mx>` matris çizim kısayolu belgelendi · Yeni şablonların ve W06/W08/W09/W10 türevlerinde kullanılan matris çiziminin tekrar kullanılabilmesi için.

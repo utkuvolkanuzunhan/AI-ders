@@ -16,6 +16,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | Cramer kuralı | Cramer's rule | |
 | dağılma | distributivity | |
 | değişme | commutativity | AB ≠ BA: matris çarpımında değişme yok |
+| denk ifadeler | equivalent statements | tersinirlik denklikleri: equivalent statements |
 | determinant | determinant | |
 | devrik (transpoz) | transpose | |
 | doğrusal bağımlı | linearly dependent | |
@@ -26,6 +27,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | doğrusal dönüşüm | linear transformation | |
 | ek (adjoint) matris | adjugate (adjoint) matrix | |
 | eleman | entry | |
+| elemanter matris | elementary matrix | birim matrise tek temel satır işlemiyle gidilen matris |
 | genişletilmiş matris | augmented matrix | |
 | Gauss yok etme | Gaussian elimination | |
 | Gauss–Jordan yok etme | Gauss–Jordan elimination | |
@@ -71,6 +73,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | temel satır işlemleri | elementary row operations | yer değiştirme, ölçekleme, satır toplama: interchange, scaling, replacement |
 | ters matris | inverse matrix | |
 | ters simetrik matris | skew-symmetric matrix | |
+| tersinir matris | invertible matrix | tersi olan kare matris; tekil olmayan: nonsingular |
 | tutarlı sistem | consistent system | |
 | tutarsız sistem | inconsistent system | |
 | üçgensel matris | triangular matrix | alt / üst: lower / upper |

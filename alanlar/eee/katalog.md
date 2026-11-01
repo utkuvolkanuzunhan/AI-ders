@@ -38,3 +38,12 @@ Kural aynıdır: şablonu kopyala, yalnız veriyi değiştir. Veri `<script>` ba
 | W19 $A\mathbf{x}=\mathbf{b}$ iki bakış | Matris denklemi, sistemin matris yazılışı, sütunların doğrusal birleşimi | `A` (3×3), `V` değişken adları, `S` çözüm, `Bv` sağ taraf; `Bv` = `A·S` olmalı |
 
 Matris çizimi (W06, W08, W09, W10 türevi widget'lar): metne `<i data-mx="1 2;3 4"></i>` yaz (satırlar `;`, sütunlar boşlukla ayrılır). Widget'ın betiği `conv(root)` ile bunu köşeli parantezli `.mx` ızgarasına çevirir. Köşeli parantez iki yan kenarlıktır, `bmatrix` yazımı yoktur; yazı boyutu 15 px, hücre aralığı `2px .6em`, 390 px'te dört sütuna kadar sığar.
+
+## Lineer Cebir ters matris şablonları (W21–W23)
+Kural aynıdır: şablonu kopyala, yalnız veriyi değiştir. Veri `<script>` içindeki dizilerdir; üçü de 390 px dikeyde ve 844 px yatayda denendi.
+
+| Şablon | Ne zaman | Veri |
+|---|---|---|
+| W21 elemanter matris, sekmeli | Elemanter matris, satır işleminin soldan çarpma olması, $E^{-1}$ | `D` (işlem adı, `E`, `A`, `EA`, `Ei`, değişen satırlar `hi`, not). 3×3; kesir hücresi `f1_2` yazılır |
+| W22 Gauss–Jordan ile ters, adım adım | $[A\mid I]\to[I\mid A^{-1}]$ | `ST` (6 sütunlu matris, işlem, açıklama, değişen satır `b`, öncü `p`). Tekil örnek için sol yarıda sıfır satırla biten bir `ST` yaz |
+| W23 denklik / ispat zinciri | Birbirini gerektiren ifadeler (tersinirlik denklikleri) | `D` (numara, ifade, kısa not, neden) |
