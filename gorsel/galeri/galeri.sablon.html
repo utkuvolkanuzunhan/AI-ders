@@ -1,0 +1,172 @@
+<title>AI-ders Galerisi</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Düzen: üstte kod çubuğu (yapışkan), altında ayar satırları, en altta şablon ızgarası; tek sütundan iki sütuna */
+:root{
+  --bg:#f4f6f8; --panel:#ffffff; --panel-2:#eef1f5; --fg:#18212b; --muted:#5a6774; --line:#d6dde5;
+  --accent:#2f6fa8; --accent-soft:#dce8f4; --ok:#2e8f78; --no:#c4692c;
+  --c1:#5B9BD5; --c2:#45B39D; --c3:#E0924A; --c4:#A38BD6; --c5:#E07A92;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121a22; --panel:#18222c; --panel-2:#202d3a; --fg:#e6ecf2; --muted:#9aa8b6; --line:#2c3a48;
+  --accent:#7fb3e3; --accent-soft:#1f3346; --ok:#5cc3a8; --no:#e9a06a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121a22; --panel:#18222c; --panel-2:#202d3a; --fg:#e6ecf2; --muted:#9aa8b6; --line:#2c3a48;
+  --accent:#7fb3e3; --accent-soft:#1f3346; --ok:#5cc3a8; --no:#e9a06a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0;text-wrap:balance}
+h2{font-family:var(--f-display);font-weight:600;font-size:22px;margin:0;text-wrap:balance}
+.lead{color:var(--muted);max-width:62ch;margin:8px 0 0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;margin:18px 0 24px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;box-shadow:0 6px 18px -12px rgba(0,0,0,.35)}
+.bar .lab{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.code{font-family:var(--f-mono);font-weight:600;font-size:clamp(17px,3.6vw,22px);letter-spacing:.02em;min-width:0;overflow-wrap:anywhere;flex:1 1 260px}
+.code .def{color:var(--muted)}
+.btn{font:600 15px var(--f-body);color:var(--fg);background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;min-height:44px}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn:focus-visible,.opt:focus-visible,.pick:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.msg{font-size:14px;color:var(--ok);min-width:7ch}
+.how{margin:-12px 0 0;padding:0 4px;font-size:13.5px;color:var(--muted);font-family:var(--f-mono);overflow-wrap:anywhere}
+section{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-h p{margin:0;color:var(--muted);font-size:14px}
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:200px 1fr;gap:12px;align-items:start;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.row .k{display:flex;gap:10px;align-items:baseline}
+.row .k b{font-family:var(--f-mono);font-size:18px;color:var(--accent)}
+.row .k span{font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.opt{font:500 15px var(--f-body);color:var(--fg);background:var(--panel-2);border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;min-height:40px;text-align:left}
+.opt .n{font-family:var(--f-mono);font-weight:600;margin-right:6px;color:var(--muted)}
+.opt[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+.opt[aria-pressed="true"] .n{color:var(--accent)}
+.opt .dv{font-size:12px;color:var(--muted);margin-left:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card header{padding:12px 14px;display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line)}
+.card header .id{font-family:var(--f-mono);font-weight:600;font-size:14px;background:var(--panel-2);border-radius:6px;padding:2px 7px;color:var(--accent)}
+.card header h3{margin:0;font-size:16px;font-weight:600;line-height:1.3}
+.card header p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.card header .t{flex:1;min-width:0}
+.prev{background:var(--panel-2);padding:8px}
+.prev iframe{display:block;width:100%;border:0;height:420px;background:transparent}
+.picks{display:flex;gap:8px;padding:10px 14px;border-top:1px solid var(--line)}
+.pick{flex:1;font:600 14px var(--f-body);color:var(--fg);background:transparent;border:1.5px solid var(--line);border-radius:10px;padding:8px;cursor:pointer;min-height:40px}
+.pick[data-v="be"][aria-pressed="true"]{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,transparent)}
+.pick[data-v="hi"][aria-pressed="true"]{border-color:var(--no);background:color-mix(in srgb,var(--no) 16%,transparent)}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+@media (max-width:640px){.row{grid-template-columns:1fr}.bar{top:env(safe-area-inset-top,0px)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <h1>AI-ders Galerisi</h1>
+  <p class="lead">Anlatım ayarlarını seç, widget şablonlarını canlı dene. Alttaki kodu kopyalayıp sohbetin başına ya da <span style="font-family:var(--f-mono)">yerel/ayarlar.md</span> dosyasına yapıştır.</p>
+
+  <div class="bar" role="region" aria-label="Ayar kodu">
+    <span class="lab">Kod</span>
+    <span class="code" id="code" aria-live="polite"></span>
+    <button class="btn pri" id="copy" type="button">Kopyala</button>
+    <button class="btn" id="reset" type="button">Varsayılana dön</button>
+    <span class="msg" id="msg"></span>
+  </div>
+  <div class="how" id="how"></div>
+
+  <section aria-labelledby="h-ayar">
+    <div class="sec-h"><h2 id="h-ayar">Ayarlar</h2><p>Soluk "varsayılan" etiketi deponun varsayılanıdır.</p></div>
+    <div class="rows" id="rows"></div>
+  </section>
+
+  <section aria-labelledby="h-sab">
+    <div class="sec-h"><h2 id="h-sab">Widget şablonları</h2><p>Her önizleme çalışır: dokun, kaydır, dene. "Beğen" ve "Kullanma" seçimleri koda F2 olarak eklenir.</p></div>
+    <div class="grid" id="grid"></div>
+    <p class="note">Önizlemeler sohbetteki görünümü taklit eder; renkler seçili palete (H) göre değişir.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  var V=/*VERI*/null, K=V.kod, S=V.sablon;
+  var def={}; K.varsayilan.replace(/([A-Z])(\d+)/g,function(_,h,r){def[h]=r});
+  var sec=Object.assign({},def), like={}, P={
+    "1":["#5B9BD5","#45B39D","#E0924A","#A38BD6","#E07A92"],
+    "2":["#3B6EA8","#2F8574","#B8693A","#6E5A9E","#A8546A"]};
+  function $(i){return document.getElementById(i)}
+  function codeStr(){
+    var s="",d="";
+    K.harfler.forEach(function(h){var p=h.harf+sec[h.harf];s+=p});
+    var b=[],x=[];Object.keys(like).sort().forEach(function(k){if(like[k]==="be")b.push(k);if(like[k]==="hi")x.push(k)});
+    if(sec.F==="2"&&(b.length||x.length))s+="/"+b.join(".")+x.map(function(k){return "-"+k}).join("");
+    return s;
+  }
+  function render(){
+    var c=codeStr(),h="";
+    K.harfler.forEach(function(x){var p=x.harf+sec[x.harf];h+=sec[x.harf]===def[x.harf]?'<span class="def">'+p+'</span>':p});
+    var tail=c.indexOf("/")>-1?c.slice(c.indexOf("/")):"";
+    $("code").innerHTML=h+tail;
+    $("how").textContent="Sohbet başı: AI-ders oku. Rol: unite. Ders: <ders>. Kod: "+c;
+    document.querySelectorAll(".opt").forEach(function(o){o.setAttribute("aria-pressed",sec[o.dataset.h]===o.dataset.r?"true":"false")});
+    document.querySelectorAll(".pick").forEach(function(p){p.setAttribute("aria-pressed",like[p.dataset.id]===p.dataset.v?"true":"false")});
+    paintFrames();
+  }
+  // ayar satırları
+  var rows="";
+  K.harfler.forEach(function(h){
+    rows+='<div class="row"><div class="k"><b>'+h.harf+'</b><span>'+h.ad+'</span></div><div class="opts">';
+    Object.keys(h.secenekler).forEach(function(r){
+      rows+='<button type="button" class="opt" id="o-'+h.harf+r+'" data-h="'+h.harf+'" data-r="'+r+'"><span class="n">'+h.harf+r+'</span>'+h.secenekler[r]+(def[h.harf]===r?'<span class="dv">varsayılan</span>':'')+'</button>';
+    });
+    rows+='</div></div>';
+  });
+  $("rows").innerHTML=rows;
+  document.querySelectorAll(".opt").forEach(function(o){o.onclick=function(){sec[o.dataset.h]=o.dataset.r;render()}});
+
+  // şablon kartları
+  var g="";
+  S.forEach(function(s){
+    g+='<article class="card"><header><span class="id">'+s.id+'</span><div class="t"><h3>'+s.ad+'</h3><p>'+s.ne+'</p></div></header>'+
+       '<div class="prev"><iframe title="'+s.id+' önizleme" id="f-'+s.id+'" loading="lazy"></iframe></div>'+
+       '<div class="picks"><button type="button" class="pick" id="b-'+s.id+'" data-id="'+s.id+'" data-v="be">Beğen</button><button type="button" class="pick" id="h-'+s.id+'" data-id="'+s.id+'" data-v="hi">Kullanma</button></div></article>';
+  });
+  $("grid").innerHTML=g;
+  document.querySelectorAll(".pick").forEach(function(p){p.onclick=function(){
+    var id=p.dataset.id; like[id]=like[id]===p.dataset.v?null:p.dataset.v; if(!like[id])delete like[id];
+    if(Object.keys(like).length)sec.F="2"; render();}});
+
+  function vars(){
+    var cs=getComputedStyle(document.documentElement),pal=P[sec.H]||P["1"];
+    return "--text-primary:"+cs.getPropertyValue("--fg")+";--text-secondary:"+cs.getPropertyValue("--muted")+
+      ";--surface-1:"+cs.getPropertyValue("--panel")+";--border:"+cs.getPropertyValue("--line")+";background:"+cs.getPropertyValue("--panel-2")+";color-scheme:"+(cs.getPropertyValue("color-scheme")||"light")+";";
+  }
+  function palCss(){var pal=P[sec.H]||P["1"];return ":root{--c1:"+pal[0]+"!important;--c2:"+pal[1]+"!important;--c3:"+pal[2]+"!important;--c4:"+pal[3]+"!important;--c5:"+pal[4]+"!important}"}
+  function fit(fr){try{var d=fr.contentDocument;if(!d||!d.body)return;var h=Math.max(d.body.scrollHeight,d.documentElement.scrollHeight);if(h>40)fr.style.height=Math.min(h+4,1400)+"px"}catch(e){}}
+  var built={};
+  function build(s){
+    var fr=$("f-"+s.id);
+    var doc='<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;padding:6px;font-family:'+getComputedStyle(document.body).fontFamily.replace(/"/g,"'")+';font-size:16px;'+vars()+'color:var(--text-primary)}</style><style id="pal">'+palCss()+'</style></head><body>'+s.html+'</body></html>';
+    fr.srcdoc=doc;
+    fr.onload=function(){try{setTimeout(function(){fr.contentWindow.dispatchEvent(new Event("resize"));fit(fr)},120)}catch(e){}fit(fr);try{var d=fr.contentDocument;d.addEventListener("click",function(){setTimeout(function(){fit(fr)},60);setTimeout(function(){fit(fr)},400)});d.addEventListener("input",function(){fit(fr)})}catch(e){}};
+    built[s.id]=sec.H+"|"+vars();
+  }
+  function paintFrames(){S.forEach(function(s){var key=sec.H+"|"+vars();if(built[s.id]!==key)build(s)})}
+  try{new MutationObserver(function(){built={};paintFrames()}).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]})}catch(e){}
+  try{matchMedia("(prefers-color-scheme: dark)").addEventListener("change",function(){built={};paintFrames()})}catch(e){}
+  window.addEventListener("resize",function(){S.forEach(function(s){fit($("f-"+s.id))})});
+
+  $("copy").onclick=function(){
+    var c=codeStr(),m=$("msg");
+    function sel(){var r=document.createRange();r.selectNodeContents($("code"));var w=getSelection();w.removeAllRanges();w.addRange(r);m.textContent="Seçildi, kopyala"}
+    try{navigator.clipboard.writeText(c).then(function(){m.textContent="Kopyalandı"},sel)}catch(e){sel()}
+    setTimeout(function(){m.textContent=""},2500);
+  };
+  $("reset").onclick=function(){sec=Object.assign({},def);like={};render()};
+  render();
+})();
+</script>

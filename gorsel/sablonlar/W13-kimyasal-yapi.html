@@ -1,0 +1,35 @@
+<!-- W13 | Kimyasal yapı kartı | Fonksiyonel grup ya da molekül adı geçince: ad + formül yazısı + yapı çizimi birlikte -->
+<style>:root{--c1:#5B9BD5;--c2:#45B39D;--c3:#E0924A;--c4:#A38BD6;--c5:#E07A92}html,body{overflow:hidden}.w,.w *{-webkit-text-size-adjust:100%;text-size-adjust:100%;box-sizing:border-box}.w{color:var(--text-primary);padding:6px;font-family:inherit}.w .h{font-size:15px;color:var(--text-secondary);margin-top:14px;line-height:1.4}.w [role=button]{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.c1{--c:var(--c1)}.c2{--c:var(--c2)}.c3{--c:var(--c3)}.c4{--c:var(--c4)}.c5{--c:var(--c5)}
+.w .ch{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.w .ch>div{text-align:center;padding:10px 2px 8px;min-height:62px;border-radius:14px;border:3px solid var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);transition:background .2s,transform .2s,box-shadow .2s}
+.w .ch .f{font-size:19px;font-weight:800;line-height:1.1}.w .ch .n{font-size:13px;color:var(--text-secondary);margin-top:4px}
+.w .ch .on{background:color-mix(in srgb,var(--c) 38%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 30%,transparent);transform:translateY(-2px)}
+.w .p{margin-top:16px;border-radius:16px;overflow:hidden;background:var(--surface-1);border:3px solid var(--c)}
+.w .p .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--c) 30%,transparent)}
+.w .p .hd b{font-size:20px;line-height:1.2}.w .p .hd em{display:block;font-style:normal;font-size:15px;color:var(--text-secondary);font-weight:500}.w .p .hd span{font-size:26px;font-weight:800;white-space:nowrap}
+.w .p svg{display:block;width:100%;height:auto;padding:6px 8px 0}
+.w .p .it{display:flex;gap:12px;padding:11px 16px;border-top:1px solid var(--border);font-size:16px;line-height:1.35}.w .p .it i{font-style:normal;flex:none;width:84px;font-weight:700;color:var(--text-secondary);font-size:14px;padding-top:2px}
+@media (prefers-reduced-motion:reduce){.w .ch>div{transition:none}}
+</style>
+<div class='w'><div class='ch' id='c'></div><div class='p c1' id='p'></div><div class='h'>Ne yapacaksın: dört gruba sırayla dokun. Ne göreceksin: grubun adı, formülü ve çizimi; renkli halkanın içi grubun kendisi, gri R molekülün geri kalanı.</div></div>
+<script>(function(){
+/* Her grup: [renk, kısa formül, kısa ad, TR ad, EN ad, formül, atomlar [x,y,etiket,grupta mı], bağlar [i,j,derece], nerede, nasıl tanırsın] */
+var G=[
+['c1','–NH₂','Amino','Amino Grubu','Amino group','–NH₂',[[110,110,'R',0],[260,110,'N',1],[360,52,'H',1],[360,168,'H',1]],[[0,1,1],[1,2,1],[1,3,1]],'Amino asitlerde ve proteinlerde.','Bir N, ona bağlı iki H.'],
+['c3','C=O','Karbonil','Karbonil Grubu','Carbonyl group','C=O',[[110,150,'R',0],[260,150,'C',1],[260,40,'O',1],[410,150,'H',0]],[[0,1,1],[1,2,2],[1,3,1]],'Aldehit ve ketonlarda; indirgen şekerlerin açık zincir halinde.','Bir C, ona çift bağla bağlı bir O.'],
+['c4','–COOH','Karboksil','Karboksil Grubu','Carboxyl group','–COOH',[[90,150,'R',0],[230,150,'C',1],[230,40,'O',1],[360,150,'O',1],[470,150,'H',1]],[[0,1,1],[1,2,2],[1,3,1],[3,4,1]],'Yağ asitlerinde ve amino asitlerde.','Aynı C üzerinde bir =O ve bir –OH.'],
+['c2','–OH','Hidroksil','Hidroksil Grubu','Hydroxyl group','–OH',[[130,110,'R',0],[290,110,'O',1],[420,110,'H',1]],[[0,1,1],[1,2,1]],'Alkollerde ve şekerlerde.','Bir O, ona bağlı bir H.']];
+var EL={N:'var(--c1)',O:'var(--c5)',C:'var(--text-primary)',H:'var(--text-secondary)',R:'var(--text-secondary)'};
+var c=document.getElementById('c'),p=document.getElementById('p'),h='';
+G.forEach(function(g){h+='<div role="button" tabindex="0" class="'+g[0]+'"><div class="f">'+g[1]+'</div><div class="n">'+g[2]+'</div></div>'});c.innerHTML=h;
+function svg(g){var A=g[6],B=g[7],s='<svg viewBox="0 0 560 210">',x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+A.forEach(function(a){if(a[3]){x0=Math.min(x0,a[0]);y0=Math.min(y0,a[1]);x1=Math.max(x1,a[0]);y1=Math.max(y1,a[1])}});
+s+='<rect x="'+(x0-38)+'" y="'+(y0-38)+'" width="'+(x1-x0+76)+'" height="'+(y1-y0+76)+'" rx="26" style="fill:color-mix(in srgb,var(--c) 14%,transparent);stroke:var(--c);stroke-width:3;stroke-dasharray:8 6"/>';
+B.forEach(function(b){var a=A[b[0]],e=A[b[1]],dx=e[0]-a[0],dy=e[1]-a[1],L=Math.sqrt(dx*dx+dy*dy),ux=dx/L,uy=dy/L,k=24,ox=-uy*6,oy=ux*6,xa=a[0]+ux*k,ya=a[1]+uy*k,xb=e[0]-ux*k,yb=e[1]-uy*k;
+var ln=function(o){return '<line x1="'+(xa+o*ox)+'" y1="'+(ya+o*oy)+'" x2="'+(xb+o*ox)+'" y2="'+(yb+o*oy)+'" style="stroke:var(--text-primary);stroke-width:4;stroke-linecap:round"/>'};
+s+=b[2]==2?ln(1)+ln(-1):ln(0)});
+A.forEach(function(a){s+='<text x="'+a[0]+'" y="'+(a[1]+12)+'" text-anchor="middle" style="font-size:36px;font-weight:800;fill:'+EL[a[2]]+'">'+a[2]+'</text>'});
+return s+'</svg>'}
+var cs=c.children;function sel(i){var g=G[i];for(var k=0;k<cs.length;k++)cs[k].classList.toggle('on',k==i);
+p.className='p '+g[0];p.innerHTML='<div class="hd"><div><b>'+g[3]+'</b><em>'+g[4]+'</em></div><span>'+g[5]+'</span></div>'+svg(g)+'<div class="it"><i>Nerede</i><span>'+g[8]+'</span></div><div class="it"><i>Nasıl tanırsın</i><span>'+g[9]+'</span></div>'}
+for(var k=0;k<cs.length;k++)(function(k){cs[k].onclick=function(){sel(k)};cs[k].onkeydown=function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();sel(k)}}})(k);sel(0)})()</script>
