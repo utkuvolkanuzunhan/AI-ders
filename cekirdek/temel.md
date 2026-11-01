@@ -21,7 +21,7 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 3. Önce metin, sonra widget: adımın metnini gönder, widget'ı ardından gönder. Bir sonraki adımın widget'ını kullanıcı okurken hazırla.
 4. Şablondan türet, sıfırdan yazma. Yalnız veri değişiyorsa test yok (ayar G2). Test gerekiyorsa en çok 1 düzeltme turu, sonra gönder; kusur kaldıysa sonra düzelt.
 5. Okuma bütçesi: paket + yerel durum + kaynakta yalnız ilgili sayfa aralığı. Klasör taraması, tüm PDF, eski sohbet okuma yok.
-6. Her adım mesajı (metin + widget) 10–120 sn içinde gitsin. Daha uzun sürecek bir iş varsa önce tek satır haber ver.
+6. Kesin sınır yalnız ilk metin içindir (≤ 30 sn). Sonraki adımlar ve widget'lar daha uzun sürebilir; hız için kaynağa bağlılıktan ve görsel kaliteden ödün verme. Bir iş 2 dakikayı geçecekse önce tek satır haber ver.
 
 ## 3. Mesaj biçimi (metin duvarı yok)
 - Paragraflar 1–2 cümle. Madde işaretli liste (`-`) eş bilgiler için, numaralı liste (`1.`) sıra ve hesap adımları için. Hesap adımları ayrı satırlarda, satır içine sıkıştırılmış hesap yok.
@@ -50,6 +50,8 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 - Kitaptaki/slayttaki şekil, tablo ve grafikleri numarasıyla yeniden çiz.
 - Her grafiğin altında eksenler ve okunuşu 1–2 cümle.
 - Karşılaştırma her zaman tablo.
+- Kimyasal grup ya da molekül adı geçince (ör. amino grubu, karbonil grubu, glikoz) hem adını yaz hem yapısını çiz (W13). Adı Türkçe (İngilizce) + formül yazısı, yanında yapı çizimi; ikisi birlikte, biri diğerinin yerine geçmez.
+- Bir olayı etkileyen etkenler sayılıyorsa etken kartlarıyla göster (W14): her etkenin yönü (artırır / azaltır / ortada en çok) ve kaynaktaki nedeni.
 
 ## 7. Kişisel bilgi ve depo
 - Bu depo herkese açık. Depoya kişi adı, e-posta, Drive/sohbet id'si, not, hoca materyali YAZMA. Bunlar kullanıcının proje klasöründe (`yerel/ayarlar.md`, ders hafızaları) durur.

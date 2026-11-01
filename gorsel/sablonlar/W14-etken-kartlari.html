@@ -1,0 +1,30 @@
+<!-- W14 | Etken kartları | Bir olayı etkileyen faktörler: her etkenin yönü (artırır / azaltır / ortada en çok) ve kaynaktaki açıklaması -->
+<style>:root{--c1:#5B9BD5;--c2:#45B39D;--c3:#E0924A;--c4:#A38BD6;--c5:#E07A92}html,body{overflow:hidden}.w,.w *{-webkit-text-size-adjust:100%;text-size-adjust:100%;box-sizing:border-box}.w{color:var(--text-primary);padding:6px;font-family:inherit}.w .h{font-size:15px;color:var(--text-secondary);margin-top:14px;line-height:1.4}.w [role=button]{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.c1{--c:var(--c1)}.c2{--c:var(--c2)}.c3{--c:var(--c3)}.c4{--c:var(--c4)}.c5{--c:var(--c5)}
+.w .top{text-align:center;padding:12px 10px;border-radius:16px;background:var(--surface-1);border:3px solid var(--border);font-size:20px;font-weight:800}
+.w .top small{display:block;font-size:14px;font-weight:500;color:var(--text-secondary);margin-top:3px}
+.w .l{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.w .e{border-radius:14px;border:2px solid var(--border);border-left:8px solid var(--c);background:var(--surface-1);overflow:hidden;transition:box-shadow .2s}
+.w .e .r{display:flex;align-items:center;gap:12px;padding:10px 12px;min-height:52px}
+.w .e .ic{font-size:26px;width:32px;text-align:center;flex:none}.w .e .nm{flex:1;min-width:0;font-size:17px;font-weight:700;line-height:1.25}
+.w .e .bd{flex:none;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:14px;font-weight:700;background:color-mix(in srgb,var(--c) 22%,transparent)}
+.w .e .bd svg{width:22px;height:22px}
+.w .e .x{display:none;padding:2px 14px 12px 56px;font-size:16px;line-height:1.4}
+.w .e.on{box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 30%,transparent)}.w .e.on .x{display:block}
+.w .lg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:13px;color:var(--text-secondary)}
+@media (prefers-reduced-motion:reduce){.w .e{transition:none}}
+</style>
+<div class='w'><div class='top'>🟤 Maillard Tepkimesinin Hızı<small>Etkileyen etkenler (Factors)</small></div><div class='l' id='l'></div><div class='lg' id='g'></div><div class='h'>Ne yapacaksın: bir etkene dokun. Ne göreceksin: o etkenin hızı hangi yöne değiştirdiği ve nedeni.</div></div>
+<script>(function(){
+/* Yön: 'u' artırır, 'd' azaltır, 'm' ara değerde en çok. Metinler kaynaktan doldurulur; maddeler kaynaktaki sayı ve sırayla. */
+var D=[['🌡️','Sıcaklık','u','Sıcaklık yükseldikçe tepkime hızlanır, renk koyulaşır.'],
+['💧','Su aktivitesi (aw)','m','Orta su aktivitesinde en hızlıdır; çok kuru ve çok sulu ortamda yavaşlar.'],
+['⚗️','pH','u','pH yükseldikçe (alkali yönde) hızlanır.'],
+['🍬','Şeker türü','u','İndirgen şeker gerekir; pentozlar heksozlardan daha reaktiftir.'],
+['🧬','Amino asit türü','u','Serbest amino grubu çok olanlar (ör. lizin) daha reaktiftir.'],
+['⏱️','Süre','u','Süre uzadıkça daha çok ürün ve daha koyu renk oluşur.']];
+var Y={u:['c2','artırır','M5 16 L11 7 L17 16'],d:['c3','azaltır','M5 7 L11 16 L17 7'],m:['c4','ortada en çok','M3 18 Q11 -2 19 18']};
+var l=document.getElementById('l'),h='';
+D.forEach(function(d){var y=Y[d[2]];h+='<div class="e '+y[0]+'"><div class="r" role="button" tabindex="0"><span class="ic">'+d[0]+'</span><span class="nm">'+d[1]+'</span><span class="bd"><svg viewBox="0 0 22 22"><path d="'+y[2]+'" style="fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round;stroke-linejoin:round"/></svg>'+y[1]+'</span></div><div class="x">'+d[3]+'</div></div>'});
+l.innerHTML=h;var g='';['u','d','m'].forEach(function(k){g+='<span class="'+Y[k][0]+'"><svg viewBox="0 0 22 22" width="16" height="16" style="vertical-align:-3px"><path d="'+Y[k][2]+'" style="fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round"/></svg> '+Y[k][1]+'</span>'});document.getElementById('g').innerHTML=g;
+var es=l.children;function sel(i){for(var k=0;k<es.length;k++)es[k].classList.toggle('on',k==i&&!es[k].classList.contains('on'))}
+for(var k=0;k<es.length;k++)(function(k){var r=es[k].firstChild;r.onclick=function(){sel(k)};r.onkeydown=function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();sel(k)}}})(k);es[0].classList.add('on')})()</script>

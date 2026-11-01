@@ -44,6 +44,12 @@ Anlatım yapan roller okur. Hazır şablonlar: `gorsel/sablonlar/` (kimlikler ve
 - Noktalar yarıçap 7–8, noktalı kılavuz çizgisi, etiket noktanın üstünde.
 - Grafiğin altında 1–2 cümle: yatay ne, dikey ne, sağa/yukarı gidince ne olur, nasıl okunur.
 
+## 7b. Kimyasal yapı (W13)
+- Ad (Türkçe + İngilizce) ve formül yazısı her zaman çizimin yanında; organik kimyayı okumakta zorlanan kişi adı doğrudan görür, şekli görerek öğrenir.
+- Atom renkleri sabit: N `--c1`, O `--c5`, C `--text-primary`, H ve R `--text-secondary`. Çift bağ iki paralel çizgi, bağlar atom harfine değmez.
+- Grubun kendisi kesikli renkli halkanın içinde, molekülün geri kalanı R ile gösterilir. Tam molekül gerekiyorsa (ör. glikozun açık zinciri) aynı kuralla çiz, ilgili grubu halkala.
+- Kaynakta yapı çizimi varsa onu yeniden çiz; yoksa yalnız kaynakta adı geçen grupları çiz.
+
 ## 8. Teknik
 - Script: IIFE, `document.getElementById`, sade `var`/`function`. Dış kütüphane yok (KaTeX yüklenmez, kesirler CSS ile).
 - Yeniden boyutlandırma yalnız `window.resize`'da ve genişlik ≥ 24 px değişince. `ResizeObserver` ve `setInterval` YOK (git-gel hatası).

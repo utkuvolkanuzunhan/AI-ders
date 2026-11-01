@@ -16,6 +16,8 @@ Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı
 | W10 | Mini test | Blok/konu sonu 3 soru | sablonlar/W10-mini-test.html |
 | W11 | Özet kartları + sözlük | Konu sonu özet, TR–EN sözlük | sablonlar/W11-ozet-kartlari.html |
 | W12 | Akış şeması | Yöntem/süreç sırası | sablonlar/W12-akis-semasi.html |
+| W13 | Kimyasal yapı kartı | Fonksiyonel grup/molekül adı geçince: ad + formül + yapı çizimi | sablonlar/W13-kimyasal-yapi.html |
+| W14 | Etken kartları | Bir olayı etkileyen etkenler ve yönleri | sablonlar/W14-etken-kartlari.html |
 
 ## Yerleşik kartlar (HTML yazılmaz)
 | Kimlik | Ne | Nasıl |

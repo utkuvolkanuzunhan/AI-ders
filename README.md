@@ -34,7 +34,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `roller/` | ünite, ders yöneticisi, koordinatör, PDF çevirici, soru çözümü |
 | `gorevler/` | kaynak okuma, konu anlatma, soru sorma, özet/test, devir, PDF çevirme, kural güncelleme |
 | `secenekler/<harf>/` | Ayar kodunun her seçeneği ayrı dosya |
-| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W12), şablonlar, ekran testi, galeri |
+| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W14), şablonlar, ekran testi, galeri |
 | `dersler/<ders>/` | Derse özel kaynak önceliği, tuzaklar ve TR–EN sözlük |
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `kisiler/` | Kişiye özel katman (ileride) |
