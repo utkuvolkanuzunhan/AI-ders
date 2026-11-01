@@ -6,13 +6,14 @@
 - Devre elemanı, bileşen ya da kapı adı geçtiği adımda ad ve sembol birlikte verilir (W15 eleman sembol kartı): Türkçe (İngilizce) ad, harf sembolü, birimi ve çizimi. Biri diğerinin yerine geçmez. Kapsam: direnç, kondansatör, bobin, kaynaklar, anahtar, diyot, BJT, MOSFET, op-amp, lojik kapılar, flip-flop.
 - Semboller dersin kitabının standardında çizilir (devre: zikzak direnç; kapılar: IEEE/ANSI şekilli kapılar). Aynı konuda iki standardı karıştırma; ders kartı başka bir standart söylüyorsa o.
 - Sembolü olmayan şeyler (osiloskop, breadboard, FPGA kartı, bellek yongası) için basit blok ya da çizim; sembol uydurma.
-- Devre çizimlerinde (W16 devre şeması) her elemanın etiketi ve değeri, her gerilimin + / − kutbu, her akımın oku, referans (toprak) düğümü ve düğüm adları bulunur. İşaret kuralı (pasif işaret: akım + ucundan girerse $p=vi$ soğurulan güçtür) çizimden okunabilmelidir.
+- Devre çizimlerinde (W20 devre şeması) her elemanın etiketi ve değeri, her gerilimin + / − kutbu, her akımın oku, referans (toprak) düğümü ve düğüm adları bulunur. İşaret kuralı (pasif işaret: akım + ucundan girerse $p=vi$ soğurulan güçtür) çizimden okunabilmelidir.
 
 ## 2. Notasyon ve birim
 - SI birimi her sayının yanında yazılır; mühendislik gösterimi ve önekler: $4{,}7\,\mathrm{k\Omega}$, $2{,}2\,\mu\mathrm{F}$, $10\,\mathrm{mA}$. Önek dönüşümü hesapta açık yazılır (mA → A).
 - Ondalık ayırıcı metinde virgüldür. Formül içinde `4{,}7` yaz (aksi halde virgülden sonra boşluk girer). Kod bloklarında (C++, VHDL) nokta.
 - Gösterim: sabit (DC) büyüklük büyük harf $V, I$; zamanla değişen küçük harf $v(t), i(t)$. Sanal birim $j$, akım $i$ ile karışmasın. Vektör $\vec{F}$ ya da kalın $\mathbf{u}$, matris büyük harf $A$ (ders kartı hangisini kullandığını yazar).
 - Sonuç 3 anlamlı basamak; ara adımlarda yuvarlama yok.
+- Formül telefonda taşmaz (içerik genişliği ≈ 340 px): her `$$` bloğunda tek matris, uzun denklem satırlara bölünür ya da toplam sembolüyle yazılır; `\Large` yalnız kısa formülde. Kalın metnin içine formül konmaz. İz için `\mathrm{tr}`. `$X$'nın` gibi formül–kesme işareti bitişimi yazılmaz (`A matrisinin` yaz). Şüphede KaTeX ile genişliği ölç.
 
 ## 3. Hesap disiplini
 - Hesaplı çözüm sırası: verilenler ve istenen → yöntem ve neden bu yöntem → denklemler → çözüm → birimli sonuç → doğrulama (güç dengesi, KAY/KGY kontrolü, uç durum, boyut analizi, denklemde yerine koyma).

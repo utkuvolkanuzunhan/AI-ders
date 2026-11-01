@@ -1,0 +1,51 @@
+<!-- W19 | Ax = b iki bakış | Satır bakışı (denklem) ve sütun bakışı (sütunların doğrusal birleşimi); A, x, b veridir -->
+<style>:root{--c1:#5B9BD5;--c2:#45B39D;--c3:#E0924A;--c4:#A38BD6;--c5:#E07A92}html,body{overflow:hidden}.w,.w *{-webkit-text-size-adjust:100%;text-size-adjust:100%;box-sizing:border-box}.w{color:var(--text-primary);padding:6px;font-family:inherit}.w .h{font-size:15px;color:var(--text-secondary);margin-top:14px;line-height:1.4}.w [role=button]{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.w .tabs{display:flex;gap:8px;margin-bottom:12px}.w .tabs [role=button]{flex:1;text-align:center;padding:12px 6px;min-height:44px;font-size:16px;font-weight:700;border-radius:12px;border:2px solid var(--border);background:var(--surface-1)}.w .tabs .on{border-color:var(--c1);background:color-mix(in srgb,var(--c1) 22%,transparent)}
+.w .row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:12px 8px}.w .grp{display:flex;align-items:center;gap:6px}
+.w .col{display:flex;flex-direction:column;align-items:center}.w .sz{font-size:13px;color:var(--text-secondary);margin-top:6px}
+.w .op{font-size:24px;font-weight:700;color:var(--text-secondary);padding-bottom:20px}
+.w .mt{display:inline-grid;gap:5px;padding:6px 7px;border-left:3px solid var(--text-primary);border-right:3px solid var(--text-primary);border-radius:10px}
+.w .mt>*{min-width:34px;height:42px;padding:0 3px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:18px;font-weight:700;border:2px solid transparent;transition:background .2s,box-shadow .2s;font-variant-numeric:tabular-nums}
+.w .mt .rt,.w .mt .ct{cursor:pointer}
+.w .mt .h1{background:color-mix(in srgb,var(--c1) 30%,transparent);border-color:var(--c1)}.w .mt .h2{background:color-mix(in srgb,var(--c2) 30%,transparent);border-color:var(--c2)}.w .mt .h3{background:color-mix(in srgb,var(--c3) 30%,transparent);border-color:var(--c3)}.w .mt .h4{background:color-mix(in srgb,var(--c4) 30%,transparent);border-color:var(--c4)}
+.w .cl{margin-top:14px;background:var(--surface-1);border-radius:14px;padding:14px 16px;border-left:8px solid var(--c1);font-size:17px;line-height:1.55;min-height:130px}
+.w .cl .l1{font-weight:700;color:var(--text-secondary);font-size:15px}.w .cl .l2{margin-top:6px;font-size:18px;font-weight:700}
+.w .k1{color:var(--c1)}.w .k2{color:var(--c2)}.w .k3{color:var(--c3)}.w .k4{color:var(--c4)}
+.w .vc{display:inline-grid;vertical-align:middle;gap:1px;padding:0 5px;margin:0 2px;border-left:2px solid currentColor;border-right:2px solid currentColor;border-radius:6px;font-size:15px;text-align:center;line-height:1.3}
+@media (prefers-reduced-motion:reduce){.w .mt>*{transition:none}}
+</style>
+<div class='w'>
+<div class='tabs'><div role='button' tabindex='0' id='tr' class='on'>Satır bakışı</div><div role='button' tabindex='0' id='tc'>Sütun bakışı</div></div>
+<div class='row'><div class='grp'><div class='col'><div class='mt' id='A'></div><div class='sz'>A · 3 × 3</div></div><div class='op'>·</div><div class='col'><div class='mt' id='X'></div><div class='sz'>x · 3 × 1</div></div><div class='op'>=</div><div class='col'><div class='mt' id='B'></div><div class='sz'>b · 3 × 1</div></div></div></div>
+<div class='cl' id='cl'></div>
+<div class='h' id='hh'></div>
+</div>
+<script>(function(){
+var A=[[1,2,1],[2,-1,1],[1,1,2]],V=['x','y','z'],S=[2,1,-1],Bv=[3,2,1],mode='r',sel=0,i,j;
+function f(x){return String(x).replace('-','−')}function g(x){return x<0?'('+f(x)+')':String(x)}
+var eA=document.getElementById('A'),eX=document.getElementById('X'),eB=document.getElementById('B'),cl=document.getElementById('cl'),hh=document.getElementById('hh');
+eA.style.gridTemplateColumns='repeat(3,auto)';
+var h='';for(i=0;i<3;i++)for(j=0;j<3;j++)h+='<span data-r="'+i+'" data-c="'+j+'">'+f(A[i][j])+'</span>';eA.innerHTML=h;
+h='';for(i=0;i<3;i++)h+='<span data-r="'+i+'">'+V[i]+'</span>';eX.innerHTML=h;
+h='';for(i=0;i<3;i++)h+='<span data-r="'+i+'">'+Bv[i]+'</span>';eB.innerHTML=h;
+function vec(c,k){return '<span class="vc '+k+'"><span>'+f(c[0])+'</span><span>'+f(c[1])+'</span><span>'+f(c[2])+'</span></span>'}
+function draw(){var a=eA.children,x=eX.children,b=eB.children,n;
+for(n=0;n<9;n++){a[n].className=''}for(n=0;n<3;n++){x[n].className='';b[n].className=''}
+var col=function(k){return[,'h1','h2','h4'][k]};
+if(mode=='r'){for(n=0;n<9;n++){var r=+a[n].getAttribute('data-r');a[n].className='rt'+(r==sel?' h1':'')}
+for(n=0;n<3;n++){x[n].className='h2';b[n].className=n==sel?'h3':''}
+var p=sel,t='',t2='',s=0;for(j=0;j<3;j++){t+=(j?(A[p][j]<0?' − ':' + '):'')+'<span class="k1">'+(j?Math.abs(A[p][j]):f(A[p][j]))+'</span> · <span class="k2">'+V[j]+'</span>';t2+=(j?' + ':'')+'<span class="k1">'+g(A[p][j])+'</span> · <span class="k2">'+g(S[j])+'</span>';s+=A[p][j]*S[j]}
+cl.style.borderLeftColor='var(--c1)';
+cl.innerHTML='<div class="l1">'+(p+1)+'. satır × x = '+(p+1)+'. denklem</div><div class="l2">'+t+' = <span class="k3">'+Bv[p]+'</span></div><div class="l2" style="margin-top:4px">'+t2+' = <span class="k3">'+f(s)+'</span> ✓</div>';
+hh.textContent='Ne yapacaksın: A matrisinin bir satırına dokun. Ne göreceksin: o satır x ile çarpılır ve o denklemin sol tarafı çıkar.'}
+else{for(n=0;n<9;n++){var c=+a[n].getAttribute('data-c');a[n].className='ct '+col(c+1)}
+for(n=0;n<3;n++){x[n].className=n==sel?col(n+1):'';b[n].className=''}
+var cols=[0,1,2].map(function(k){return [A[0][k],A[1][k],A[2][k]]}),cn=['k1','k2','k4'],q=sel;
+var L='',N='',R=[0,0,0];for(j=0;j<3;j++){L+=(j?' + ':'')+'<span class="'+cn[j]+'">'+V[j]+'·a'+'<span style="font-size:.7em">'+(j+1)+'</span></span>';N+=(j?' + ':'')+'<span class="'+cn[j]+'">'+g(S[j])+'</span>'+vec(cols[j],cn[j]);for(i=0;i<3;i++)R[i]+=S[j]*cols[j][i]}
+cl.style.borderLeftColor='var(--'+['c1','c2','c4'][q]+')';
+cl.innerHTML='<div class="l1">'+(q+1)+'. sütun, '+V[q]+' = '+f(S[q])+' ile çarpılır; sütunların doğrusal birleşimi:</div><div class="l2">'+L+' = b</div><div class="l2" style="margin-top:6px">'+N+' = '+vec(R,'k3')+'</div>';
+hh.textContent='Ne yapacaksın: A matrisinin bir sütununa dokun. Ne göreceksin: o sütun x\'in karşılık gelen elemanıyla çarpılıp diğerleriyle toplanır ve b çıkar.'}}
+eA.onclick=function(e){var t=e.target;if(!t.getAttribute('data-r'))return;sel=mode=='r'?+t.getAttribute('data-r'):+t.getAttribute('data-c');draw()};
+document.getElementById('tr').onclick=function(){mode='r';sel=0;this.className='on';document.getElementById('tc').className='';draw()};
+document.getElementById('tc').onclick=function(){mode='c';sel=0;this.className='on';document.getElementById('tr').className='';draw()};
+draw()})()</script>
