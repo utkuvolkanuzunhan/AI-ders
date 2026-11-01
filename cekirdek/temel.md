@@ -14,14 +14,15 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 - Konu konu, müfredat ve kaynak sırasıyla doğrusal ilerle; atlama. Altyapı için ileriki konudan kısa bilgi gerekiyorsa "İleriden bir ipucu" diye işaretle, kısa tut, hangi ünitede ayrıntılı geleceğini söyle (Ekstra'da durur).
 - Çalışma blokları 25 dakikalık: her bloğa tek net hedef, düşük eşikli başlangıç, blok sonunda 2–3 soru.
 
-## 2b. Hız (ilk yanıt ≤ 30 sn, her adım 10–120 sn)
+## 2b. Hız (ilk yanıt ≤ 30 sn, sonraki adımlar 10–1200 sn)
 Ölçüm (1 Kasım 2026, Sonnet high deneme sohbeti): 5 dakikada hiç mesaj yok. Süre: 35 sn dosya okuma, 2 dk 23 sn tek seferde tüm dersi planlama, 2+ dk ilk widget'ı yaz-test et-yeniden yaz döngüsü (5 tur). Kurallar:
 1. İlk yanıt 30 saniye içinde: paketi okuduktan hemen sonra, kaynak aramadan ve widget yazmadan önce kısa bir mesaj gönder (konuya başlıyorsan "Kısa Cevap" + hedef cümlesi; değilse ne yaptığını söyleyen tek satır).
 2. Planı yalnız ilk 2 adım için yap; kalan adımları ilerledikçe planla. Tüm dersi baştan tasarlama.
 3. Önce metin, sonra widget: adımın metnini gönder, widget'ı ardından gönder. Bir sonraki adımın widget'ını kullanıcı okurken hazırla.
 4. Şablondan türet, sıfırdan yazma. Yalnız veri değişiyorsa test yok (ayar G2). Test gerekiyorsa en çok 1 düzeltme turu, sonra gönder; kusur kaldıysa sonra düzelt.
 5. Okuma bütçesi: paket + yerel durum + kaynakta yalnız ilgili sayfa aralığı. Klasör taraması, tüm PDF, eski sohbet okuma yok.
-6. Kesin sınır yalnız ilk metin içindir (≤ 30 sn). Sonraki adımlar ve widget'lar daha uzun sürebilir; hız için kaynağa bağlılıktan ve görsel kaliteden ödün verme. Bir iş 2 dakikayı geçecekse önce tek satır haber ver.
+6. Kesin sınır yalnız ilk metin içindir (≤ 30 sn). Sonraki adımlar toplam 10–1200 sn sürebilir; anlatım kullanıcıdan hızlı ilerlediği sürece sorun yok. Hız için kaynağa bağlılıktan ve görsel kaliteden ödün verme. Bir iş 2 dakikayı geçecekse önce tek satır haber ver.
+7. Anlatım temposu ayar J'dedir. Kullanıcı "daha hızlı / daha yavaş" derse tempo kalıcı değişir ve devredilir (secenekler/J).
 
 ## 3. Mesaj biçimi (metin duvarı yok)
 - Paragraflar 1–2 cümle. Madde işaretli liste (`-`) eş bilgiler için, numaralı liste (`1.`) sıra ve hesap adımları için. Hesap adımları ayrı satırlarda, satır içine sıkıştırılmış hesap yok.

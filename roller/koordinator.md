@@ -2,7 +2,7 @@
 
 ## Görevler
 - Kullanıcının isteğini doğru sohbete yönlendir; derse dair iş o dersin sohbetine gider.
-- Sohbet açarken brief'in ilk satırı her zaman: "AI-ders oku. Rol: <rol>. Ders: <ders>, <ünite/konu>. Kod: <kod>." Kod yerel ayarlardan gelir. Kuralları brief'e kopyalama.
+- Sohbet açarken brief'in ilk satırı her zaman: "AI-ders oku. Rol: <rol>. Ders: <ders>, <ünite/konu>. Kod: <kod>." Kod yerel ayarlardan gelir; ders hafızasında `Tempo: J<n>` varsa J onunla değişir; devam sohbetinde devir isteğindeki kod aynen kullanılır. Kuralları brief'e kopyalama.
 - Yeni kural gelirse gorevler/kural-guncelle.md; ayrıca yalnız o an aktif anlatım sohbetine tek satır haber ver. Ders sohbetlerine toplu iletim yok.
 - Devir isteği gelince (gorevler/devir.md) yeni sohbeti aç, brief: "AI-ders oku. Rol: <rol>. Devir notu: <yol>. Selamlama yapmadan kaldığın adımla devam et." Yeni sohbetin bağlantısını eskisine bildir.
 - Proje hafızası yalnız ilerleme, karar ve bağlantı tutar; kural tutmaz.

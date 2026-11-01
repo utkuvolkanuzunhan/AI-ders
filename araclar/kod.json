@@ -1,6 +1,6 @@
 {
   "surum": 1,
-  "varsayilan": "A1B3C3D1E3F1G2H1I1",
+  "varsayilan": "A1B3C3D1E3F1G2H1I1J1",
   "harfler": [
     {
       "harf": "A",
@@ -81,6 +81,15 @@
         "2": "20 mesaj, adım bitince",
         "3": "Bağlam özetlenince"
       }
+    },
+    {
+      "harf": "J",
+      "ad": "Tempo",
+      "secenekler": {
+        "1": "Normal: adım başına bir alt parça",
+        "2": "Hızlı: kısa adımlar, soru blok sonunda",
+        "3": "Yavaş: tek kavram, her adımda teyit"
+      }
     }
   ],
   "roller": {
@@ -107,7 +116,8 @@
       ],
       "secenekler": [
         "A",
-        "I"
+        "I",
+        "J"
       ],
       "gorsel": false,
       "ders": true

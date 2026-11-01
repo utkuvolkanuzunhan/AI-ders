@@ -2,7 +2,7 @@
 
 Bu dosya kişiye özeldir ve depoya GİRMEZ.
 
-Kod: A1B3C3D1E3F1G2H1I1
+Kod: A1B3C3D1E3F1G2H1I1J1
 
 ## Dersler
 | Ders klasörü (depodaki) | Ders sohbeti | Drive klasörü | Vize kapsamı |
