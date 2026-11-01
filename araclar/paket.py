@@ -2,7 +2,7 @@
 """AI-ders okuma paketi: rol + ayar kodu -> tek metin.
 
 Kullanım:
-  python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J1 --ders reaction-kinetics
+  python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J2 --ders reaction-kinetics
   python3 araclar/paket.py --rol ders-yoneticisi --ders statistics
   python3 araclar/paket.py --kod-coz A2          # yalnız kodu çöz
   python3 araclar/paket.py --roller              # rolleri listele

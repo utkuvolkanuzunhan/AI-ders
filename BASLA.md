@@ -2,7 +2,7 @@
 
 Bu depo, AI ile ders çalışırken anlatımın nasıl yapılacağını tek yerden yönetir. Bir sohbet şöyle başlatılır:
 
-> AI-ders oku. Rol: unite. Ders: reaction-kinetics, Ü2 Reaksiyon mertebeleri. Kod: A1B3C3D1E3F1G2H1I1J1
+> AI-ders oku. Rol: unite. Ders: reaction-kinetics, Ü2 Reaksiyon mertebeleri. Kod: A1B3C3D1E3F1G2H1I1J2
 
 Rol, ders ya da kod eksik olabilir; aşağıdaki adımlar eksiği tamamlar.
 

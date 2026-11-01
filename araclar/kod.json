@@ -1,6 +1,6 @@
 {
   "surum": 1,
-  "varsayilan": "A1B3C3D1E3F1G2H1I1J1",
+  "varsayilan": "A1B3C3D1E3F1G2H1I1J2",
   "harfler": [
     {
       "harf": "A",
@@ -86,9 +86,9 @@
       "harf": "J",
       "ad": "Tempo",
       "secenekler": {
-        "1": "Normal: adım başına bir alt parça",
-        "2": "Hızlı: kısa adımlar, soru blok sonunda",
-        "3": "Yavaş: tek kavram, her adımda teyit"
+        "1": "Yavaş: tek kavram, her adımda teyit",
+        "2": "Normal: adım başına bir alt parça",
+        "3": "Hızlı: kısa adımlar, soru blok sonunda"
       }
     }
   ],

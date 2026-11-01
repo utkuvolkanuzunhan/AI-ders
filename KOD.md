@@ -1,7 +1,7 @@
 # Ayar kodu
 
 Her ayar bir harf, her seçenek bir rakam. Kod harf sırasıyla yazılır; eksik harf varsayılandır.
-Depo varsayılanı: **`A1B3C3D1E3F1G2H1I1J1`**
+Depo varsayılanı: **`A1B3C3D1E3F1G2H1I1J2`**
 
 Örnekler: `A2` (sıkı kaynak modu, gerisi varsayılan) · `B2C2` (ciddi ton, İngilizce terim önce) · `F2/W01.W06-W03` (W01 ve W06 öncelikli, W03 hiç).
 
@@ -18,6 +18,6 @@ Kodu tıklayarak üretmek için galeri sayfası: `gorsel/galeri/galeri.html` (Ar
 | G | Ekran testi | **G1** Her widget test edilir<br>**G2** Yalnız yapı değişince<br>**G3** Test yok | G2 |
 | H | Renk paleti | **H1** Açık tonlar (varsayılan)<br>**H2** Koyu sakin | H1 |
 | I | Sohbet devri | **I1** 10 mesaj, adım bitince<br>**I2** 20 mesaj, adım bitince<br>**I3** Bağlam özetlenince | I1 |
-| J | Tempo | **J1** Normal: adım başına bir alt parça<br>**J2** Hızlı: kısa adımlar, soru blok sonunda<br>**J3** Yavaş: tek kavram, her adımda teyit | J1 |
+| J | Tempo | **J1** Yavaş: tek kavram, her adımda teyit<br>**J2** Normal: adım başına bir alt parça<br>**J3** Hızlı: kısa adımlar, soru blok sonunda | J2 |
 
 Her seçeneğin tam metni: `secenekler/<harf>/<harf><rakam>.md`. Yeni seçenek eklemek: gorevler/kural-guncelle.md.

@@ -10,7 +10,7 @@ Claude sohbetlerinde ders anlatımını tutarlı, kaynağa sadık ve düşük to
 
 ## Ayar kodu
 
-Her ayar bir harf, her seçenek bir rakamdır. Depo varsayılanı: **`A1B3C3D1E3F1G2H1I1J1`**.
+Her ayar bir harf, her seçenek bir rakamdır. Depo varsayılanı: **`A1B3C3D1E3F1G2H1I1J2`**.
 
 | Harf | Ayar | Varsayılan |
 |---|---|---|
@@ -23,7 +23,7 @@ Her ayar bir harf, her seçenek bir rakamdır. Depo varsayılanı: **`A1B3C3D1E3
 | G | Ekran testi | G2 yalnız yapı değişince |
 | H | Palet | H1 yumuşak palet |
 | I | Devir | I1 10 mesaj, adım bitince |
-| J | Tempo | J1 normal (sohbette "daha hızlı / daha yavaş" denince değişir ve devredilir) |
+| J | Tempo | J2 normal; J1 yavaş, J3 hızlı (sohbette "daha hızlı / daha yavaş" denince değişir ve devredilir) |
 
 Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [gorsel/galeri/galeri.html](gorsel/galeri/galeri.html).
 
@@ -44,7 +44,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 ## Araçlar
 
 ```bash
-python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J1 --ders statistics   # okuma paketi
+python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J2 --ders statistics   # okuma paketi
 python3 araclar/paket.py --kod-coz A2F2                                            # kodu açıkla
 python3 araclar/uret.py                                                            # KOD.md ve galeriyi yeniden üret
 ```
