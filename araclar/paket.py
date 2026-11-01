@@ -4,9 +4,12 @@
 Kullanım:
   python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J2 --ders reaction-kinetics
   python3 araclar/paket.py --rol ders-yoneticisi --ders statistics
+  python3 araclar/paket.py --rol unite --ders circuit-analysis-1 --alan eee   # alan katmanıyla
   python3 araclar/paket.py --kod-coz A2          # yalnız kodu çöz
   python3 araclar/paket.py --roller              # rolleri listele
 Kod yazılmazsa varsayılan; eksik harfler varsayılandan tamamlanır.
+Alan katmanı (alanlar/<alan>/): --alan ile ya da ders kartının başındaki `alan: <ad>` satırından bulunur.
+Alanın varsayılan kodu (alan.json) depo varsayılanının üstüne biner; verilen kod ikisini de geçer.
 F2 için beğeni listesi: ...F2/W01.W06-W03 (W03 hiç kullanılmaz).
 """
 import argparse, json, os, re, sys
@@ -22,10 +25,36 @@ def oku(yol):
     return open(p, encoding="utf-8").read().strip()
 
 
-def kod_coz(kod):
-    """Kodu {harf: rakam} sözlüğüne çevirir; hata varsa açıklamayla çıkar."""
+def kart_oku(ders):
+    """Ders kartını okur. Başında `---` arasında `alan: <ad>` varsa onu ayırır. -> (alan, metin)"""
+    t = oku(f"dersler/{ders}/ders.md")
+    if t is None:
+        return "", None
+    alan = ""
+    m = re.match(r"---\s*\n(.*?)\n---\s*\n?", t, re.S)
+    if m:
+        a = re.search(r"^alan:\s*(\S+)", m.group(1), re.M)
+        if a:
+            alan = a.group(1).lower()
+        t = t[m.end():].strip()
+    return alan, t
+
+
+def alan_oku(alan):
+    """alanlar/<alan>/alan.json -> sözlük; alan yoksa None."""
+    p = os.path.join(KOK, "alanlar", alan, "alan.json") if alan else ""
+    if not p or not os.path.exists(p):
+        return None
+    return json.load(open(p, encoding="utf-8"))
+
+
+def kod_coz(kod, taban=""):
+    """Kodu {harf: rakam} sözlüğüne çevirir; hata varsa açıklamayla çıkar.
+    taban: alanın varsayılan kodu (ör. "A4"); depo varsayılanının üstüne biner, verilen kod onu da geçer."""
     harfler = {h["harf"]: h for h in KOD["harfler"]}
     sonuc = dict(re.findall(r"([A-Z])(\d+)", KOD["varsayilan"]))
+    if taban:
+        kod = taban + (kod or "")
     ek = ""
     if kod:
         kod = kod.strip().upper().replace(" ", "")
@@ -67,6 +96,7 @@ def main():
     ap.add_argument("--rol")
     ap.add_argument("--kod", default="")
     ap.add_argument("--ders", default="")
+    ap.add_argument("--alan", default="", help="alan katmanı (alanlar/<alan>/); yoksa ders kartından bulunur")
     ap.add_argument("--kod-coz", dest="kodcoz")
     ap.add_argument("--roller", action="store_true")
     a = ap.parse_args()
@@ -76,22 +106,32 @@ def main():
             print(f"{k}: {v['aciklama']}")
         return
     if a.kodcoz is not None:
-        sec, b, i = kod_coz(a.kodcoz)
+        cfg = alan_oku(a.alan.lower())
+        sec, b, i = kod_coz(a.kodcoz, cfg.get("varsayilan_kod", "") if cfg else "")
         print(f"Kod: {kod_yaz(sec, b, i)}\n\n{tablo(sec)}")
         return
     if not a.rol or a.rol not in KOD["roller"]:
         sys.exit(f"--rol gerekli. Roller: {', '.join(KOD['roller'])}")
 
     rol = KOD["roller"][a.rol]
-    sec, begen, istemez = kod_coz(a.kod)
+    # Alan: --alan > ders kartındaki `alan:` satırı > yok (çekirdek kurallar yalnız)
+    alan_kart, kart = kart_oku(a.ders) if a.ders else ("", None)
+    alan = (a.alan or alan_kart).strip().lower()
+    cfg = alan_oku(alan)
+    sec, begen, istemez = kod_coz(a.kod, cfg.get("varsayilan_kod", "") if cfg else "")
     parca = []
     parca.append(f"# AI-ders okuma paketi\n\nRol: **{a.rol}** · Kod: **{kod_yaz(sec, begen, istemez)}**"
                  + (f" · Ders: **{a.ders}**" if a.ders else "")
+                 + (f" · Alan: **{alan}**" if cfg else "")
                  + "\n\nBu paket bu sohbetin tüm kurallarıdır. Kullanıcının bu sohbette açıkça söyledikleri her şeyi geçer.\n\n"
                  + tablo(sec))
     if begen or istemez:
         parca.append(f"Beğenilen şablonlar: {', '.join(begen) or '-'} · Kullanılmayacak: {', '.join(istemez) or '-'}")
     parca.append(oku("cekirdek/temel.md"))
+    if alan and not cfg:
+        parca.append(f"> Alan katmanı yok: alanlar/{alan}/alan.json. Yalnız çekirdek kurallarla devam et.")
+    if cfg and cfg.get("kurallar"):
+        parca.append(oku(f"alanlar/{alan}/{cfg['kurallar']}"))
     parca.append(oku(f"roller/{a.rol}.md"))
     for g in rol["gorevler"]:
         parca.append(oku(f"gorevler/{g}.md"))
@@ -103,8 +143,10 @@ def main():
     if rol["gorsel"]:
         parca.append(oku("gorsel/stil.md"))
         parca.append(oku("gorsel/katalog.md"))
+        if cfg and cfg.get("katalog"):
+            parca.append(oku(f"alanlar/{alan}/{cfg['katalog']}"))
     if rol["ders"] and a.ders:
-        d = oku(f"dersler/{a.ders}/ders.md")
+        d = kart
         if d is None:
             mevcut = sorted(x for x in os.listdir(os.path.join(KOK, "dersler")) if not x.startswith("_"))
             parca.append(f"> Ders kartı yok: dersler/{a.ders}/ders.md. Mevcut dersler: {', '.join(mevcut)}. "

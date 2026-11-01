@@ -2,6 +2,10 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-01 · alanlar/, araclar/paket.py, araclar/uret.py, BASLA, CLAUDE, README · Alan katmanı: `alanlar/<alan>/` (alan.json, kurallar.md, katalog.md); paket.py alanı `--alan` ya da ders kartındaki `alan:` satırından bulur ve alanın varsayılan kodunu ekler; alanı olmayan (gıda) paketler bayt bayt aynı · EEE'yi gıdaya dokunmadan eklemek ve alana özgü değişiklikleri hep o katmana yazmak için (kullanıcı).
+- 2026-11-01 · secenekler/A/A4.md, araclar/kod.json · A4 "kitap temel, kitap ve genel bilgiyle tamamlanır, yüklenen kaynak üstün"; depo varsayılanı A1 aynı, EEE alan varsayılanı A4 · EEE dersleri kitap temelli, kullanıcı kaynak yüklemeyebilir (kullanıcı).
+- 2026-11-01 · dersler/linear-algebra, circuit-analysis-1, digital-systems · EEE ders kartları ve TR–EN sözlükler (kitap bölüm haritası, konu tipleri, notasyon, tuzaklar) · EEE 3. dönem dersleri (kullanıcı).
+- 2026-11-01 · kurulum/yerel-ayarlar-sablonu.md, kurulum/yerel-ayarlar-eee.md, kurulum/README, README, kisiler/README · `yerel/ayarlar.md` herkesin kendi projesinde tuttuğu ve depo varsayılanını ezen kişisel dosya olarak belgelendi; `Alan:` satırı ve EEE örneği eklendi · kullanıcı isteği.
 - 2026-11-01 · tümü · İlk kurulum: çekirdek, roller, görevler, ayar kodu (A–I), 12 widget şablonu, galeri, paket.py · Proje talimatı ve stil rehberindeki kurallar tek, modüler, kişisel bilgisiz bir depoya taşındı.
 - 2026-11-01 · cekirdek §2b §6, A1, konu-anlat, gorsel · Kimyasal grup/molekül adı geçince ad + yapı çizimi birlikte (W13), etkenler için etken kartları (W14), A1'de bilgi %99,9 kaynaktan ve listeler eksiksiz, hızda kesin sınır yalnız ilk metin · Maillard denemelerinden geri bildirim.
 - 2026-11-01 · kod.json, secenekler/J, cekirdek §2b, devir · Ayar koduna J (Tempo) eklendi, varsayılan A1B3C3D1E3F1G2H1I1J2 (J1 yavaş, J2 normal, J3 hızlı); "daha hızlı/yavaş" kalıcı ve devredilir; sonraki adımlar 10–1200 sn · Volkan isteği.

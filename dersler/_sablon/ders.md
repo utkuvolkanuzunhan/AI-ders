@@ -1,3 +1,4 @@
+<!-- Bir alan katmanına bağlı ders ise dosyanın EN BAŞINA şu üç satırı ekle (ör. EEE): ---, alan: eee, --- (alanlar/README.md). Gıda gibi alan katmanı olmayan derste ekleme. -->
 # Ders kartı: <Ders adı (İngilizce)> · <Türkçe adı>
 
 Bu dosya dersin genel özelliklerini tutar (herkes için aynı). Kişiye özel ilerleme, hoca adı, Drive id'si burada DEĞİL, kullanıcının proje klasöründeki `dersler/<ders>/hafiza.md`'de.

@@ -4,6 +4,17 @@ import json, os, re, html
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 K = json.load(open(os.path.join(KOK, "araclar/kod.json"), encoding="utf-8"))
 
+# alan varsayılanları (alanlar/<alan>/alan.json)
+alanlar = []
+ad = os.path.join(KOK, "alanlar")
+if os.path.isdir(ad):
+    for a in sorted(os.listdir(ad)):
+        pj = os.path.join(ad, a, "alan.json")
+        if os.path.exists(pj):
+            c = json.load(open(pj, encoding="utf-8"))
+            if c.get("varsayilan_kod"):
+                alanlar.append(f"`{a}` ({c.get('ad', a)}): `{c['varsayilan_kod']}` depo varsayılanının üstüne biner")
+
 # KOD.md
 s = ["# Ayar kodu", "", "Her ayar bir harf, her seçenek bir rakam. Kod harf sırasıyla yazılır; eksik harf varsayılandır.",
      f"Depo varsayılanı: **`{K['varsayilan']}`**", "",
@@ -14,6 +25,8 @@ var = dict(re.findall(r"([A-Z])(\d+)", K["varsayilan"]))
 for h in K["harfler"]:
     sec = "<br>".join(f"**{h['harf']}{k}** {v}" for k, v in h["secenekler"].items())
     s.append(f"| {h['harf']} | {h['ad']} | {sec} | {h['harf']}{var[h['harf']]} |")
+if alanlar:
+    s += ["", "Alan varsayılanları (alanlar/<alan>/alan.json; verilen kod bunu da geçer): " + "; ".join(alanlar) + "."]
 s += ["", "Her seçeneğin tam metni: `secenekler/<harf>/<harf><rakam>.md`. Yeni seçenek eklemek: gorevler/kural-guncelle.md."]
 open(os.path.join(KOK, "KOD.md"), "w", encoding="utf-8").write("\n".join(s) + "\n")
 
