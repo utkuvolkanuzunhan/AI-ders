@@ -28,3 +28,13 @@ Stil rehberine göre sıfırdan yazılır, iyi çıkarsa şablona eklenir (gorev
 - Etiket her zaman elemanın yanında (üstünde ya da yanında), değer birimiyle ($4{,}7\,\mathrm{k\Omega}$ gibi SVG içinde düz metin: `4,7 kΩ`).
 - Referans (toprak) düğümü sembolü ve düğüm adları (a, b, c ya da v1, v2) çizilir; kesişen teller yalnız nokta varsa bağlıdır.
 - SVG genişliği 560 viewBox, yazı 22 px (ekranda ≈ 14 px); telefonda 390 px'te taşma yok.
+
+## Lineer Cebir matris şablonları (W18, W19) ve matris çizim kısayolu
+Kural aynıdır: şablonu kopyala, yalnız veriyi değiştir. Veri `<script>` başındaki dizilerdir.
+
+| Şablon | Ne zaman | Veri |
+|---|---|---|
+| W18 matris çarpımı etkileşimli | Matris çarpımı, $c_{ij}$ hesabı, boyut kuralı | `A`, `B` (örnek 2×3 · 3×2). Boyut değişirse 390 px'te taşmayı ekran testiyle bak |
+| W19 $A\mathbf{x}=\mathbf{b}$ iki bakış | Matris denklemi, sistemin matris yazılışı, sütunların doğrusal birleşimi | `A` (3×3), `V` değişken adları, `S` çözüm, `Bv` sağ taraf; `Bv` = `A·S` olmalı |
+
+Matris çizimi (W06, W08, W09, W10 türevi widget'lar): metne `<i data-mx="1 2;3 4"></i>` yaz (satırlar `;`, sütunlar boşlukla ayrılır). Widget'ın betiği `conv(root)` ile bunu köşeli parantezli `.mx` ızgarasına çevirir. Köşeli parantez iki yan kenarlıktır, `bmatrix` yazımı yoktur; yazı boyutu 15 px, hücre aralığı `2px .6em`, 390 px'te dört sütuna kadar sığar.

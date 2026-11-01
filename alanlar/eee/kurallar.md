@@ -13,6 +13,7 @@
 - Ondalık ayırıcı metinde virgüldür. Formül içinde `4{,}7` yaz (aksi halde virgülden sonra boşluk girer). Kod bloklarında (C++, VHDL) nokta.
 - Gösterim: sabit (DC) büyüklük büyük harf $V, I$; zamanla değişen küçük harf $v(t), i(t)$. Sanal birim $j$, akım $i$ ile karışmasın. Vektör $\vec{F}$ ya da kalın $\mathbf{u}$, matris büyük harf $A$ (ders kartı hangisini kullandığını yazar).
 - Sonuç 3 anlamlı basamak; ara adımlarda yuvarlama yok.
+- Formül telefonda taşmaz (içerik genişliği ≈ 340 px): her `$$` bloğunda tek matris, uzun denklem satırlara bölünür ya da toplam sembolüyle yazılır; `\Large` yalnız kısa formülde. Kalın metnin içine formül konmaz. İz için `\mathrm{tr}`. `$X$'nın` gibi formül–kesme işareti bitişimi yazılmaz (`A matrisinin` yaz). Şüphede KaTeX ile genişliği ölç.
 
 ## 3. Hesap disiplini
 - Hesaplı çözüm sırası: verilenler ve istenen → yöntem ve neden bu yöntem → denklemler → çözüm → birimli sonuç → doğrulama (güç dengesi, KAY/KGY kontrolü, uç durum, boyut analizi, denklemde yerine koyma).
