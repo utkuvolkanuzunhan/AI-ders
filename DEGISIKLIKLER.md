@@ -2,6 +2,7 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-01 · cekirdek/temel.md §7, BASLA, gorevler/kural-guncelle, kurulum/README · Her projede `yerel/ayarlar.md` bulunur; yoksa koordinatör ya da ders yöneticisi şablondan oluşturur ve kişiye özel her ayar yalnız oraya yazılır (öteki roller dosyasız varsayılanla devam eder) · kullanıcı isteği.
 - 2026-11-01 · alanlar/, araclar/paket.py, araclar/uret.py, BASLA, CLAUDE, README · Alan katmanı: `alanlar/<alan>/` (alan.json, kurallar.md, katalog.md); paket.py alanı `--alan` ya da ders kartındaki `alan:` satırından bulur ve alanın varsayılan kodunu ekler; alanı olmayan (gıda) paketler bayt bayt aynı · EEE'yi gıdaya dokunmadan eklemek ve alana özgü değişiklikleri hep o katmana yazmak için (kullanıcı).
 - 2026-11-01 · secenekler/A/A4.md, araclar/kod.json · A4 "kitap temel, kitap ve genel bilgiyle tamamlanır, yüklenen kaynak üstün"; depo varsayılanı A1 aynı, EEE alan varsayılanı A4 · EEE dersleri kitap temelli, kullanıcı kaynak yüklemeyebilir (kullanıcı).
 - 2026-11-01 · dersler/linear-algebra, circuit-analysis-1, digital-systems · EEE ders kartları ve TR–EN sözlükler (kitap bölüm haritası, konu tipleri, notasyon, tuzaklar) · EEE 3. dönem dersleri (kullanıcı).
