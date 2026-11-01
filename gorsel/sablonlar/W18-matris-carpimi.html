@@ -1,0 +1,43 @@
+<!-- W18 | Matris çarpımı etkileşimli | Sonuç hücresine dokununca A'nın satırı ve B'nin sütunu yanar, hesap açılır; A ve B veridir -->
+<style>:root{--c1:#5B9BD5;--c2:#45B39D;--c3:#E0924A;--c4:#A38BD6;--c5:#E07A92}html,body{overflow:hidden}.w,.w *{-webkit-text-size-adjust:100%;text-size-adjust:100%;box-sizing:border-box}.w{color:var(--text-primary);padding:6px;font-family:inherit}.w .h{font-size:15px;color:var(--text-secondary);margin-top:14px;line-height:1.4}.w [role=button]{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}
+.w .row{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:14px 10px}.w .grp{display:flex;align-items:center;gap:8px}
+.w .col{display:flex;flex-direction:column;align-items:center}.w .sz{font-size:13px;color:var(--text-secondary);margin-top:6px;text-align:center}
+.w .op{font-size:26px;font-weight:700;color:var(--text-secondary);padding-bottom:20px}
+.w .mt{display:inline-grid;gap:6px;padding:6px 8px;border-left:3px solid var(--text-primary);border-right:3px solid var(--text-primary);border-radius:10px}
+.w .mt>*{min-width:36px;height:44px;padding:0 4px;display:flex;align-items:center;justify-content:center;border-radius:10px;font-size:19px;font-weight:700;border:2px solid transparent;transition:background .2s,box-shadow .2s;font-variant-numeric:tabular-nums}
+.w .mt .hr{background:color-mix(in srgb,var(--c1) 30%,transparent);border-color:var(--c1)}.w .mt .hc{background:color-mix(in srgb,var(--c2) 30%,transparent);border-color:var(--c2)}
+.w .mt .cb{border:2px dashed var(--c3);color:var(--text-secondary);background:color-mix(in srgb,var(--c3) 10%,transparent)}.w .mt .cb.v{border-style:solid;color:var(--text-primary)}
+.w .mt .cb.on{background:color-mix(in srgb,var(--c3) 38%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--c3) 30%,transparent);border-style:solid;color:var(--text-primary)}
+.w .cl{margin-top:14px;background:var(--surface-1);border-radius:14px;padding:14px 16px;border-left:8px solid var(--c3);font-size:17px;line-height:1.5;min-height:116px}
+.w .cl .l1{font-weight:700;color:var(--text-secondary);font-size:15px}.w .cl .l2{margin-top:6px;font-size:18px;font-weight:700}.w .cl .l3{margin-top:4px;font-size:18px;font-weight:700}
+.w .ca{color:var(--c1)}.w .cb2{color:var(--c2)}.w .cr{color:var(--c3)}
+.w .bt{display:flex;gap:10px;margin-top:12px}.w .bt [role=button]{flex:1;text-align:center;border:2px solid var(--border);background:var(--surface-1);border-radius:12px;padding:12px;font-size:16px;font-weight:700;min-height:44px}
+@media (prefers-reduced-motion:reduce){.w .mt>*{transition:none}}
+</style>
+<div class='w'>
+<div class='row'><div class='grp'><div class='col'><div class='mt' id='A'></div><div class='sz'>A · 2 × 3</div></div><div class='op'>×</div><div class='col'><div class='mt' id='B'></div><div class='sz'>B · 3 × 2</div></div></div><div class='grp'><div class='op'>=</div><div class='col'><div class='mt' id='C'></div><div class='sz'>AB · 2 × 2</div></div></div></div>
+<div class='cl' id='cl'><div class='l1'>Bir sonuç hücresine dokun 👆</div></div>
+<div class='bt'><div role='button' tabindex='0' id='all'>Hepsini göster</div><div role='button' tabindex='0' id='rs'>Sıfırla</div></div>
+<div class='h'>Ne yapacaksın: AB matrisindeki hücrelere sırayla dokun. Ne göreceksin: A'nın seçilen satırı mavi, B'nin seçilen sütunu yeşil yanar; hesap altta açılır.</div>
+</div>
+<script>(function(){
+var A=[[2,-1,3],[0,4,1]],B=[[1,0],[2,3],[-1,4]],C=[],S='₀₁₂₃',vis={},cur=null,i,j,k;
+for(i=0;i<2;i++){C[i]=[];for(j=0;j<2;j++){var t=0;for(k=0;k<3;k++)t+=A[i][k]*B[k][j];C[i][j]=t}}
+function f(x){return String(x).replace('-','−')}function g(x){return x<0?'('+f(x)+')':String(x)}
+var eA=document.getElementById('A'),eB=document.getElementById('B'),eC=document.getElementById('C'),cl=document.getElementById('cl'),h;
+eA.style.gridTemplateColumns='repeat(3,auto)';eB.style.gridTemplateColumns='repeat(2,auto)';eC.style.gridTemplateColumns='repeat(2,auto)';
+h='';for(i=0;i<2;i++)for(k=0;k<3;k++)h+='<span data-r="'+i+'">'+f(A[i][k])+'</span>';eA.innerHTML=h;
+h='';for(k=0;k<3;k++)for(j=0;j<2;j++)h+='<span data-c="'+j+'">'+f(B[k][j])+'</span>';eB.innerHTML=h;
+h='';for(i=0;i<2;i++)for(j=0;j<2;j++)h+='<div role="button" tabindex="0" class="cb" data-i="'+i+'" data-j="'+j+'">?</div>';eC.innerHTML=h;
+function draw(){var a=eA.children,b=eB.children,c=eC.children,n;
+for(n=0;n<a.length;n++)a[n].className=(cur&&+a[n].getAttribute('data-r')==cur[0])?'hr':'';
+for(n=0;n<b.length;n++)b[n].className=(cur&&+b[n].getAttribute('data-c')==cur[1])?'hc':'';
+for(n=0;n<c.length;n++){var ci=+c[n].getAttribute('data-i'),cj=+c[n].getAttribute('data-j'),v=vis[ci+'-'+cj];c[n].textContent=v?f(C[ci][cj]):'?';c[n].className='cb'+(v?' v':'')+((cur&&cur[0]==ci&&cur[1]==cj)?' on':'')}
+if(!cur){cl.innerHTML='<div class="l1">Bir sonuç hücresine dokun 👆</div>';return}
+var p=cur[0],q=cur[1],s1='',s2='',s3='';
+for(k=0;k<3;k++){s1+=(k?' + ':'')+'a'+S[p+1]+S[k+1]+'b'+S[k+1]+S[q+1];s2+=(k?' + ':'')+'<span class="ca">'+g(A[p][k])+'</span> · <span class="cb2">'+g(B[k][q])+'</span>';s3+=(k?' ':'')+(k?(A[p][k]*B[k][q]<0?'− ':'+ '):'')+(k?Math.abs(A[p][k]*B[k][q]):f(A[p][k]*B[k][q]))}
+cl.innerHTML='<div class="l1">c'+S[p+1]+S[q+1]+' = '+s1+'</div><div class="l2">'+s2+'</div><div class="l3">= '+s3+' = <span class="cr">'+f(C[p][q])+'</span></div>'}
+eC.onclick=function(e){var t=e.target;while(t&&t!==eC&&!t.getAttribute('data-i'))t=t.parentNode;if(!t||t===eC)return;cur=[+t.getAttribute('data-i'),+t.getAttribute('data-j')];vis[cur[0]+'-'+cur[1]]=1;draw()};
+document.getElementById('all').onclick=function(){for(i=0;i<2;i++)for(j=0;j<2;j++)vis[i+'-'+j]=1;draw()};
+document.getElementById('rs').onclick=function(){vis={};cur=null;draw()};
+draw()})()</script>

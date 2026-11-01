@@ -2,6 +2,11 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-01 · alanlar/eee/kurallar.md · §2'ye formül genişlik kuralı: telefonda (≈ 340 px) taşmaz, `$$` bloğunda tek matris, uzun denklem bölünür, `\Large` yalnız kısa formülde, kalın metinde formül yok, iz için `\mathrm{tr}`, `$X$'nın` yazılmaz · Lineer Cebir matris ünitesinde uzun blok formüller telefon ekranında taşıp bozuk görünüyordu (kullanıcı).
+- 2026-11-01 · dersler/linear-algebra/sozluk.md · Matris ünitesi terimleri eklendi (ana köşegen, birleşme, dağılma, değişme, eleman, kare matris, katsayı matrisi, matris, matris çarpımı, matris kuvveti, satır/sütun/sıfır/skaler matris, ters simetrik matris) · Ü2 anlatımında kullanılan terimler tek yerde dursun.
+- 2026-11-01 · alanlar/eee/katalog.md · Lineer Cebir matris şablonları (W18, W19) ve `<i data-mx>` matris çizim kısayolu belgelendi · Yeni şablonların ve W06/W08/W09/W10 türevlerinde kullanılan matris çiziminin tekrar kullanılabilmesi için.
+- 2026-11-01 · gorsel/sablonlar/W19-matris-denklemi.html, gorsel/galeri · W19: Ax = b iki bakış (satır bakışı: denklem; sütun bakışı: sütunların doğrusal birleşimi), A, x, b veridir · Matris denklemi ünitesi için (kullanıcı).
+- 2026-11-01 · gorsel/sablonlar/W18-matris-carpimi.html, gorsel/galeri · W18: etkileşimli matris çarpımı (sonuç hücresine dokununca A'nın satırı ve B'nin sütunu yanar, hesap açılır), A ve B veridir · Matris çarpımı için şablon yoktu (kullanıcı).
 - 2026-11-01 · alanlar/, araclar/paket.py, araclar/uret.py, BASLA, CLAUDE, README · Alan katmanı: `alanlar/<alan>/` (alan.json, kurallar.md, katalog.md); paket.py alanı `--alan` ya da ders kartındaki `alan:` satırından bulur ve alanın varsayılan kodunu ekler; alanı olmayan (gıda) paketler bayt bayt aynı · EEE'yi gıdaya dokunmadan eklemek ve alana özgü değişiklikleri hep o katmana yazmak için (kullanıcı).
 - 2026-11-01 · secenekler/A/A4.md, araclar/kod.json · A4 "kitap temel, kitap ve genel bilgiyle tamamlanır, yüklenen kaynak üstün"; depo varsayılanı A1 aynı, EEE alan varsayılanı A4 · EEE dersleri kitap temelli, kullanıcı kaynak yüklemeyebilir (kullanıcı).
 - 2026-11-01 · dersler/linear-algebra, circuit-analysis-1, digital-systems · EEE ders kartları ve TR–EN sözlükler (kitap bölüm haritası, konu tipleri, notasyon, tuzaklar) · EEE 3. dönem dersleri (kullanıcı).
