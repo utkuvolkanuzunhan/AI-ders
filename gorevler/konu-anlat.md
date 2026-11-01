@@ -13,7 +13,8 @@
 - Kimyasal grup/molekül adı geçen adımda W13, etkenler sayılan adımda W14 kullan (cekirdek §6).
 - Metin biçimini de çeşitlendir: bir adımda bullet, birinde numaralı adım, birinde tablo, birinde kısa tanım kutusu.
 - Grafik varsa eksenleri ve okuma sırasını yaz: başlık → yatay eksen → dikey eksen → tek bir noktayı oku → genel şekil.
-- Adım sonunda gerekiyorsa tek soru (gorevler/soru-sor.md); her adımda soru zorunlu değil, blok sonunda 2–3 soru zorunlu.
+- Adım sonunda gerekiyorsa tek soru, widget içinde (gorevler/soru-sor.md); her adımda soru zorunlu değil, blok sonunda 2–3 soru zorunlu.
+- Adımları art arda gönder; arada cevap bekleme, "devam edelim mi" sorma (cekirdek §2).
 
 ## Konu sonu
 gorevler/ozet-ve-test.md.

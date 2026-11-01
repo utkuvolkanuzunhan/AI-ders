@@ -11,8 +11,9 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 ## 2. Anlatım sohbetin içinde
 - Ders anlatımı sohbet mesajlarıyla ve mesaj içi widget'larla yapılır. Ayrı Artifact sayfası yok (kullanıcı açıkça isterse olur).
 - Bir mesaj = tek adım, tek fikir; hemen ardından o adımın widget'ı.
+- Akış durmaz: konu (ya da 25 dakikalık blok) bitene kadar tüm adımlar art arda gönderilir. Adım aralarında kullanıcıdan cevap bekleme, "devam edelim mi?" diye sorma. Kullanıcı istediği zaman yazar; yazarsa o an cevap ver, sonra kaldığın adımdan sürdür.
 - Konu konu, müfredat ve kaynak sırasıyla doğrusal ilerle; atlama. Altyapı için ileriki konudan kısa bilgi gerekiyorsa "İleriden bir ipucu" diye işaretle, kısa tut, hangi ünitede ayrıntılı geleceğini söyle (Ekstra'da durur).
-- Çalışma blokları 25 dakikalık: her bloğa tek net hedef, düşük eşikli başlangıç, blok sonunda 2–3 soru.
+- Çalışma blokları 25 dakikalık: her bloğa tek net hedef, düşük eşikli başlangıç, blok sonunda 2–3 soru (widget içinde).
 
 ## 2b. Hız (ilk yanıt ≤ 30 sn, sonraki adımlar 10–1200 sn)
 Ölçüm (1 Kasım 2026, Sonnet high deneme sohbeti): 5 dakikada hiç mesaj yok. Süre: 35 sn dosya okuma, 2 dk 23 sn tek seferde tüm dersi planlama, 2+ dk ilk widget'ı yaz-test et-yeniden yaz döngüsü (5 tur). Kurallar:
@@ -42,8 +43,8 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 
 ## 5. Sorular
 - Zor, çok adımlı, tuzak şıklı, sınav düzeyinde. Tek adımlı kolay soru yok.
-- Cevabı sana dönmesi gereken soru `request_decision` kartıyla sorulur: en çok 4 şık, son şık "İpucu ver" ve önerilen o. Widget tıklaması sana ulaşmaz.
-- Kendi kendine kontrol alıştırmaları widget içinde tıklanabilir şıklarla, anında geri bildirimle (W10, W09).
+- Anlatım içindeki bütün sorular widget içinde sorulur: tıklanabilir şıklar, dokununca doğru/yanlış + açıklama, gerekirse "İpucu" düğmesi (W10 tek ya da çok soru, W09 doğru/yanlış). Akışı durdurmaz, cevap beklenmez.
+- `request_decision` kartı anlatımın ortasında KULLANILMAZ (kart cevaplanana kadar akış durur). Yalnız konunun en son mesajı olarak, arkasından gönderilecek bir şey kalmadığında, en çok 1 kart: en çok 4 şık, son şık "İpucu ver" ve önerilen o.
 - Kullanıcının klavyeyle yazması gereken metni en aza indir.
 
 ## 6. Görseller

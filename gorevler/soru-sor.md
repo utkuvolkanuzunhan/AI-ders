@@ -1,6 +1,10 @@
 # Görev: soru sormak
 
-## Cevabı sana dönmesi gereken soru
+## Anlatım içindeki sorular (varsayılan)
+- Widget içinde sor: W10 (tek ya da çok soru, tıklanabilir şıklar, anında doğru/yanlış + açıklama, İpucu düğmesi) ya da W09 doğru/yanlış kartları. Akış durmaz, cevap beklenmez; bir sonraki adımı hemen gönder.
+
+## Cevabı sana dönmesi gereken soru (yalnız konu sonu)
+- Yalnız konunun en son mesajı olarak, arkasında gönderilecek adım kalmadığında. Anlatım ortasında kart yok.
 - `request_decision` kartı: soru en çok ~12 kelime, 2–4 şık, son şık "İpucu ver" ve önerilen o.
 - Şıklar tuzaklı: birim hatası, Kelvin/°C, işaret, ters oran, sık yapılan kavram karışıklığı.
 - Hesap sorusunda sayıları soru metninde ver, şıklar sonuç olsun.

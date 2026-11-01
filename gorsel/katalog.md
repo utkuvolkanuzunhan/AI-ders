@@ -13,7 +13,7 @@ Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı
 | W07 | Sınıflama ağacı (ikonlu) | Sınıflar ve alt türler | sablonlar/W07-siniflama-agaci.html |
 | W08 | Karşılaştırma tablosu | İki-üç yöntem/durum yan yana | sablonlar/W08-karsilastirma-tablosu.html |
 | W09 | Doğru/yanlış kartları | Tuzak kontrolü | sablonlar/W09-dogru-yanlis-kartlari.html |
-| W10 | Mini test | Blok/konu sonu 3 soru | sablonlar/W10-mini-test.html |
+| W10 | Mini test / tek soru | Anlatım içi soru (1 soru, İpucu düğmeli) ya da blok/konu sonu 3 soru | sablonlar/W10-mini-test.html |
 | W11 | Özet kartları + sözlük | Konu sonu özet, TR–EN sözlük | sablonlar/W11-ozet-kartlari.html |
 | W12 | Akış şeması | Yöntem/süreç sırası | sablonlar/W12-akis-semasi.html |
 | W13 | Kimyasal yapı kartı | Fonksiyonel grup/molekül adı geçince: ad + formül + yapı çizimi | sablonlar/W13-kimyasal-yapi.html |
@@ -23,7 +23,7 @@ Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı
 | Kimlik | Ne | Nasıl |
 |---|---|---|
 | K1 | Yol haritası | `post_widget` · `step_card_display_v0` |
-| K2 | Cevabı dönen soru | `request_decision` (≤4 şık, son şık "İpucu ver", önerilen o) |
+| K2 | Cevabı dönen soru (yalnız konunun son mesajı) | `request_decision` (≤4 şık, son şık "İpucu ver", önerilen o); anlatım ortasında kullanılmaz, akışı durdurur |
 | K3 | Basit çizgi/çubuk grafik | `post_widget` · `chart_display_v0` (eksen başlıkları zorunlu) |
 
 ## Şablonu olmayan türler (stil.md'ye göre sıfırdan, sonra şablona eklenir)
