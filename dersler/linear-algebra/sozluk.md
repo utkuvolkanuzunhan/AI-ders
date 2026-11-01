@@ -11,6 +11,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | birim matris | identity matrix | |
 | çekirdek (sıfır uzayı) | kernel (null space) | |
 | Cramer kuralı | Cramer's rule | |
+| denk ifadeler | equivalent statements | tersinirlik denklikleri: equivalent statements |
 | determinant | determinant | |
 | devrik (transpoz) | transpose | |
 | doğrusal bağımlı | linearly dependent | |
@@ -19,6 +20,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | doğrusal denklem sistemi | system of linear equations | |
 | doğrusal dönüşüm | linear transformation | |
 | ek (adjoint) matris | adjugate (adjoint) matrix | |
+| elemanter matris | elementary matrix | birim matrise tek temel satır işlemiyle gidilen matris |
 | genişletilmiş matris | augmented matrix | |
 | Gauss yok etme | Gaussian elimination | |
 | Gauss–Jordan yok etme | Gauss–Jordan elimination | |
@@ -47,6 +49,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | skaler | scalar | |
 | tekil matris | singular matrix | tekil olmayan: nonsingular |
 | ters matris | inverse matrix | |
+| tersinir matris | invertible matrix | tersi olan kare matris; tekil olmayan: nonsingular |
 | üçgensel matris | triangular matrix | alt / üst: lower / upper |
 | vektör çarpımı | cross product | yalnız $\mathbb{R}^3$ |
 | vektör uzayı | vector space | |

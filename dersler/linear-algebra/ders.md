@@ -51,6 +51,7 @@ LU ayrışımı yüklenen ders notunda varsa anlatılır (Anton: sayısal yönte
 
 ## Sık tuzaklar
 - Matris çarpımı değişmeli değildir; $(AB)^{-1}=B^{-1}A^{-1}$ ve $(AB)^T=B^TA^T$ (sıra tersine döner).
+- Ters matris: $(A+B)^{-1}\neq A^{-1}+B^{-1}$; $A^{-1}$ soldan çarpılır ($\mathbf{x}=A^{-1}\mathbf{b}$); $(kA)^{-1}=\dfrac1kA^{-1}$ ($k$ ters çevrilir, çarpılmaz); $[A\mid I]$ indirgenirken sol yarıda sıfır satır çıkarsa $A$ tekildir, sağ yarıya bakılmaz; $2\times2$ tersinde yalnız $b,c$ işaret değiştirir, $ad-bc$ ile bölmek unutulur.
 - $\det(A+B)\neq\det A+\det B$; $\det(kA)=k^{n}\det A$; satır değiştirme determinantın işaretini değiştirir, bir satırı $k$ ile çarpmak determinantı $k$ ile çarpar.
 - Gauss–Jordan'da satır işleminde işaret hatası ve sıfır olmayan pivot seçimi; indirgenmiş eşelon formda pivot sütunları dışında kalan serbest değişkenler.
 - Kofaktör açılımında $(-1)^{i+j}$ işaret deseni.
