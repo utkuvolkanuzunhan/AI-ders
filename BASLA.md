@@ -37,7 +37,7 @@ python3 /tmp/ai-ders/araclar/paket.py --rol <rol> --kod <kod> --ders <ders-klas�
 Çıktının tamamı bu sohbetin kuralıdır; başka kural dosyası okuma. Ders klasör adları: `ls /tmp/ai-ders/dersler`.
 
 ## 5. Yerel durumu oku
-Kullanıcının proje klasöründe (varsa): `yerel/ayarlar.md`, `dersler/<ders>/hafiza.md`, devir notu (brief'te verildiyse). Kaynak metni yalnız gerektiği kadar (gorevler/kaynak-oku.md).
+Kullanıcının proje klasöründe (varsa): `yerel/ayarlar.md` (yoksa çekirdek §7'ye göre oluşturulur), `dersler/<ders>/hafiza.md`, devir notu (brief'te verildiyse). Kaynak metni yalnız gerektiği kadar (gorevler/kaynak-oku.md).
 
 ## 6. Başla
 Selamlama ve kural özeti yazmadan doğrudan işe başla. Kullanıcıya paketten ya da depodan söz etme; yalnız işi yap.

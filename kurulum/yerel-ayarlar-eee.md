@@ -24,3 +24,4 @@ Alan: eee
 ## Kişiye özel tercihler
 - (ör. sınav dili İngilizce olduğu için terimleri İngilizce önce göster: Kod'a C2 ekle)
 - (ör. çıkmış sorular yüklendiğinde soru tarzına uy)
+- (ör. ben söylemeden yeni ünite başlatma: ünite bitince sıradakinin sohbetini açtırma, haberimi bekle)
