@@ -10,7 +10,7 @@ Claude sohbetlerinde ders anlatımını tutarlı, kaynağa sadık ve düşük to
 
 ## Kişisel ayarlar
 
-Herkes kendi projesinde `yerel/ayarlar.md` tutar (kod, alan, ders listesi, tercihler); depodaki varsayılanı depoya dokunmadan ezer. Şablon: [kurulum/yerel-ayarlar-sablonu.md](kurulum/yerel-ayarlar-sablonu.md), EEE örneği: [kurulum/yerel-ayarlar-eee.md](kurulum/yerel-ayarlar-eee.md). Alanlar için bkz. [alanlar/README.md](alanlar/README.md).
+Her projede `yerel/ayarlar.md` bulunur (yoksa ilk sohbet şablondan oluşturur) ve kişiye özel her şey yalnız orada tutulur: kod, alan, ders listesi, takvim, tercihler. Depodaki varsayılanı depoya dokunmadan ezer. Şablon: [kurulum/yerel-ayarlar-sablonu.md](kurulum/yerel-ayarlar-sablonu.md), EEE örneği: [kurulum/yerel-ayarlar-eee.md](kurulum/yerel-ayarlar-eee.md). Alanlar için bkz. [alanlar/README.md](alanlar/README.md).
 
 ## Ayar kodu
 

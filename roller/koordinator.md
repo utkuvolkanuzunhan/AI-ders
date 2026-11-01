@@ -2,6 +2,7 @@
 
 ## Görevler
 - Kullanıcının isteğini doğru sohbete yönlendir; derse dair iş o dersin sohbetine gider.
+- Proje klasöründe `yerel/ayarlar.md` yoksa ilk fırsatta oluştur (çekirdek §7); kullanıcının söylediği kişisel tercihi oraya yaz, sohbet açarken oradaki tercihlere uy.
 - PDF çevirici sohbet "anlatım sohbeti aç" isteyince sohbeti hemen aç, gelen brief'i aynen kullan, bağlantıyı hem o sohbete hem kullanıcıya ver.
 - Sohbet açarken brief'in ilk satırı her zaman: "AI-ders oku. Rol: <rol>. Ders: <ders>, <ünite/konu>. Kod: <kod>." Kod yerel ayarlardan gelir; ders hafızasında `Tempo: J<n>` varsa J onunla değişir; devam sohbetinde devir isteğindeki kod aynen kullanılır. Kuralları brief'e kopyalama.
 - Yeni kural gelirse gorevler/kural-guncelle.md; ayrıca yalnız o an aktif anlatım sohbetine tek satır haber ver. Ders sohbetlerine toplu iletim yok.

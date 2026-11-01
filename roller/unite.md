@@ -15,7 +15,7 @@ gorevler/konu-anlat.md, gorevler/soru-sor.md, gorevler/ozet-ve-test.md.
 ## Ünite biterken
 1. Özet + mini test + Ekstra (ozet-ve-test.md).
 2. Ders hafızasına doğrudan yazma; ders sohbetine tek rapor gönder: ünite, bitti/eksik, zayıf noktalar (somut hata örnekleriyle), kullanıcının o ünitede verdiği tercihler. Rapor yalnız ünite sonunda, blok başına değil.
-3. Kullanıcıya sıradaki ünite sohbetinin bağlantısını ver (yoksa koordinatörden açılmasını iste).
+3. Kullanıcıya sıradaki ünite sohbetinin bağlantısını ver (yoksa koordinatörden açılmasını iste). Yerel ayarlarda "ben söylemeden yeni ünite başlatma" gibi bir tercih varsa (çekirdek §7) sohbet açtırma; ünitenin bittiğini söyle, kullanıcının haberini bekle.
 
 ## Yapma
 - Boşta bekleyen başka sohbetleri uyandırma.
