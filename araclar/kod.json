@@ -1,0 +1,146 @@
+{
+  "surum": 1,
+  "varsayilan": "A1B3C3D1E3F1G2H1I1",
+  "harfler": [
+    {
+      "harf": "A",
+      "ad": "Kaynağa bağlılık",
+      "secenekler": {
+        "1": "Slayt temel, slayt dışı yalnız Ekstra'da",
+        "2": "Sıkı kaynak modu: yalnız kaynakta yazan",
+        "3": "Slayt + kitap, ikisi metinde etiketli"
+      }
+    },
+    {
+      "harf": "B",
+      "ad": "Ton",
+      "secenekler": {
+        "1": "Samimi ve esprili her yerde",
+        "2": "Sade ve ciddi her yerde",
+        "3": "Anlatım ciddi, sohbet samimi"
+      }
+    },
+    {
+      "harf": "C",
+      "ad": "Terim dili",
+      "secenekler": {
+        "1": "Türkçe (İngilizce)",
+        "2": "İngilizce (Türkçe)",
+        "3": "Türkçe (İngilizce) + ders sözlüğü"
+      }
+    },
+    {
+      "harf": "D",
+      "ad": "Kaynak gösterimi",
+      "secenekler": {
+        "1": "Yalnız sondaki Ekstra düğmesi",
+        "2": "Her mesajın altında tek satır",
+        "3": "Kısa satır + Ekstra"
+      }
+    },
+    {
+      "harf": "E",
+      "ad": "Adım doluluğu",
+      "secenekler": {
+        "1": "Hep 6 parça",
+        "2": "Hep kısa (tanım, formül, örnek)",
+        "3": "Konu tipine göre"
+      }
+    },
+    {
+      "harf": "F",
+      "ad": "Widget seçimi",
+      "secenekler": {
+        "1": "Sohbet katalogdan kendisi seçer",
+        "2": "Beğenilen şablonlar öncelikli",
+        "3": "Her konuda önizleme sunar"
+      }
+    },
+    {
+      "harf": "G",
+      "ad": "Ekran testi",
+      "secenekler": {
+        "1": "Her widget test edilir",
+        "2": "Yalnız yapı değişince",
+        "3": "Test yok"
+      }
+    },
+    {
+      "harf": "H",
+      "ad": "Renk paleti",
+      "secenekler": {
+        "1": "Açık tonlar (varsayılan)",
+        "2": "Koyu sakin"
+      }
+    },
+    {
+      "harf": "I",
+      "ad": "Sohbet devri",
+      "secenekler": {
+        "1": "10 mesaj, adım bitince",
+        "2": "20 mesaj, adım bitince",
+        "3": "Bağlam özetlenince"
+      }
+    }
+  ],
+  "roller": {
+    "unite": {
+      "aciklama": "Konu anlatan ünite sohbeti",
+      "gorevler": [
+        "kaynak-oku",
+        "konu-anlat",
+        "soru-sor",
+        "ozet-ve-test",
+        "devir",
+        "kural-guncelle"
+      ],
+      "secenekler": "hepsi",
+      "gorsel": true,
+      "ders": true
+    },
+    "ders-yoneticisi": {
+      "aciklama": "Dersi yöneten, anlatım yapmayan sohbet",
+      "gorevler": [
+        "kaynak-oku",
+        "devir",
+        "kural-guncelle"
+      ],
+      "secenekler": [
+        "A",
+        "I"
+      ],
+      "gorsel": false,
+      "ders": true
+    },
+    "koordinator": {
+      "aciklama": "Projenin ana sohbeti",
+      "gorevler": [
+        "kural-guncelle"
+      ],
+      "secenekler": [],
+      "gorsel": false,
+      "ders": false
+    },
+    "pdf-cevirici": {
+      "aciklama": "PDF'i sayfa numaralı metne çeviren işçi",
+      "gorevler": [
+        "pdf-cevir"
+      ],
+      "secenekler": [],
+      "gorsel": false,
+      "ders": true
+    },
+    "soru-cozumu": {
+      "aciklama": "Tek soru ya da çıkmış soru çözen sohbet",
+      "gorevler": [
+        "kaynak-oku",
+        "soru-sor",
+        "kural-guncelle"
+      ],
+      "secenekler": "hepsi",
+      "gorsel": true,
+      "ders": true
+    }
+  },
+  "secenek_dosyasi": "secenekler/{harf}/{harf}{rakam}.md"
+}
