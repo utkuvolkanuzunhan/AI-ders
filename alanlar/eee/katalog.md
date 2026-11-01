@@ -29,11 +29,11 @@ Stil rehberine göre sıfırdan yazılır, iyi çıkarsa şablona eklenir (gorev
 - Referans (toprak) düğümü sembolü ve düğüm adları (a, b, c ya da v1, v2) çizilir; kesişen teller yalnız nokta varsa bağlıdır.
 - SVG genişliği 560 viewBox, yazı 22 px (ekranda ≈ 14 px); telefonda 390 px'te taşma yok.
 
-## Lineer Cebir ters matris şablonları (W20–W22)
+## Lineer Cebir ters matris şablonları (W21–W23)
 Kural aynıdır: şablonu kopyala, yalnız veriyi değiştir. Veri `<script>` içindeki dizilerdir; üçü de 390 px dikeyde ve 844 px yatayda denendi.
 
 | Şablon | Ne zaman | Veri |
 |---|---|---|
-| W20 elemanter matris, sekmeli | Elemanter matris, satır işleminin soldan çarpma olması, $E^{-1}$ | `D` (işlem adı, `E`, `A`, `EA`, `Ei`, değişen satırlar `hi`, not). 3×3; kesir hücresi `f1_2` yazılır |
-| W21 Gauss–Jordan ile ters, adım adım | $[A\mid I]\to[I\mid A^{-1}]$ | `ST` (6 sütunlu matris, işlem, açıklama, değişen satır `b`, öncü `p`). Tekil örnek için sol yarıda sıfır satırla biten bir `ST` yaz |
-| W22 denklik / ispat zinciri | Birbirini gerektiren ifadeler (tersinirlik denklikleri) | `D` (numara, ifade, kısa not, neden) |
+| W21 elemanter matris, sekmeli | Elemanter matris, satır işleminin soldan çarpma olması, $E^{-1}$ | `D` (işlem adı, `E`, `A`, `EA`, `Ei`, değişen satırlar `hi`, not). 3×3; kesir hücresi `f1_2` yazılır |
+| W22 Gauss–Jordan ile ters, adım adım | $[A\mid I]\to[I\mid A^{-1}]$ | `ST` (6 sütunlu matris, işlem, açıklama, değişen satır `b`, öncü `p`). Tekil örnek için sol yarıda sıfır satırla biten bir `ST` yaz |
+| W23 denklik / ispat zinciri | Birbirini gerektiren ifadeler (tersinirlik denklikleri) | `D` (numara, ifade, kısa not, neden) |
