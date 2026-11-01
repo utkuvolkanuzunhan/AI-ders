@@ -12,7 +12,7 @@ Amaç: kaynağa bağlı kalmak VE az okumak. İkisi aynı yolla sağlanır: her 
 2. Yalnız o aralığı oku: `awk '/^\[\[SAYFA 9 \|/,/^\[\[SAYFA 16 \|/' dosya.md` (bir sonraki sayfanın işaretine kadar). Tüm dosyayı okuma.
 3. Aralık yetmezse bir sayfa önce/sonra ekle; yine tüm dosyayı okuma.
 4. Konunun metni yoksa: kullanıcıya PDF'i yüklemesini bir kez hatırlat ve PDF çevirisini işçiye ver (gorevler/pdf-cevir.md). Çeviri gelene kadar müfredata göre anlattığını söyle (ayar A1) ya da bekle (ayar A2).
-5. Kullanıcı sohbete PDF yüklerse onu anlatım sohbetinde okuma; işçiye çevirt, sonra yalnız aralığı oku.
+5. Kullanıcı bu sohbete PDF yüklerse bu sohbet artık anlatım yapmaz: rol `pdf-cevirici`ye geçer (roller/pdf-cevirici.md), PDF çevrilir, anlatım koordinatörün açtığı yeni sohbette devam eder ve kullanıcıya bağlantısı verilir. Yarım kalan anlatım varsa önce kısa devir notu yaz (gorevler/devir.md).
 
 ## Sadakat
 - Anlatılan her tanım, sıra, notasyon ve örnek okunan sayfalardan gelir. Sayfa numarasını hemen not al: kaynak gösterirken HER ZAMAN basılı numara (kitabın üzerinde yazan) kullanılır, pdf sıra numarası değil. `~` ya da `?` işaretli sayfayı kesin numara gibi yazma ("s.~23" yaz); Ekstra'daki kaynak tablosu (ayar D) bu notlardan yazılır.

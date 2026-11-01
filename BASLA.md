@@ -15,6 +15,7 @@ git clone --depth 1 https://github.com/utkuvolkanuzunhan/AI-ders /tmp/ai-ders 2>
 ## 2. Rolü bul
 | Başlangıç mesajında | Rol |
 |---|---|
+| Kullanıcı bu sohbete PDF/slayt yüklediyse (başka rol yazsa bile) | `pdf-cevirici`: bu sohbet anlatım yapmaz |
 | "Rol: …" yazıyorsa | o |
 | Bir konu/ünite anlatılacaksa | `unite` |
 | Ders yönetimi, ünite listesi, hafıza | `ders-yoneticisi` |
