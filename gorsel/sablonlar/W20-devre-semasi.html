@@ -1,0 +1,49 @@
+<!-- W20 | Devre şeması | Çözümlenecek devre: etiket, değer, gerilim kutbu, akım oku; elemana dokununca açıklama ve ilgili yasa -->
+<style>:root{--c1:#5B9BD5;--c2:#45B39D;--c3:#E0924A;--c4:#A38BD6;--c5:#E07A92}html,body{overflow:hidden}.w,.w *{-webkit-text-size-adjust:100%;text-size-adjust:100%;box-sizing:border-box}.w{color:var(--text-primary);padding:6px;font-family:inherit}.w .h{font-size:15px;color:var(--text-secondary);margin-top:14px;line-height:1.4}.w [role=button]{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;outline:none}.c1{--c:var(--c1)}.c2{--c:var(--c2)}.c3{--c:var(--c3)}.c4{--c:var(--c4)}.c5{--c:var(--c5)}
+.w .sv{border-radius:16px;background:var(--surface-1);border:1px solid var(--border);padding:6px}.w .sv svg{display:block;width:100%;height:auto}
+.w .hit .bx{fill:transparent;stroke:transparent;stroke-width:3;stroke-dasharray:7 6;transition:fill .2s,stroke .2s}.w .hit.on .bx{fill:color-mix(in srgb,var(--c) 22%,transparent);stroke:var(--c)}
+.w .p{margin-top:14px;border-radius:16px;overflow:hidden;background:var(--surface-1);border:3px solid var(--c)}
+.w .p .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--c) 30%,transparent)}
+.w .p .hd b{font-size:20px;line-height:1.2}.w .p .hd em{display:block;font-style:normal;font-size:15px;color:var(--text-secondary);font-weight:500}.w .p .hd span{font-size:22px;font-weight:800;white-space:nowrap}
+.w .p .it{display:flex;gap:12px;padding:11px 16px;border-top:1px solid var(--border);font-size:16px;line-height:1.4;align-items:center}.w .p .it i{font-style:normal;flex:none;width:84px;font-weight:700;color:var(--text-secondary);font-size:14px}
+.w .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 3px;line-height:1.15}.w .fr>span:first-child{border-bottom:2px solid currentColor;padding:0 4px}.w .fr>span:last-child{padding:0 4px}
+@media (prefers-reduced-motion:reduce){.w .hit .bx{transition:none}}
+</style>
+<div class='w'><div class='sv'><svg id='s' viewBox='0 0 560 300'></svg></div><div class='p c1' id='p'></div><div class='h'>Ne yapacaksın: kaynağa, dirençlere, akım okuna ve toprak simgesine dokun. Ne göreceksin: elemanın adı, değeri, kutbu ve ilgili yasa (Ohm, Kirchhoff, güç dengesi); renkli kutu seçili elemanı gösterir.</div></div>
+<script>(function(){
+/* Tek çevrimli örnek: Vs = 10 V, R1 = 4 kΩ, R2 = 6 kΩ → i = 1 mA, v1 = 4 V, v2 = 6 V (pasif işaret kuralı).
+   Yeni devre: eleman koordinatlarını ve E dizisini (metin, değer) değiştir; sembol çizimleri W15'teki gibidir (zikzak direnç, daire içinde +/− kaynak). */
+var L='fill:none;stroke:var(--text-primary);stroke-width:5;stroke-linecap:round;stroke-linejoin:round';
+function ln(d,x){return '<path d="'+d+'" style="'+L+(x||'')+'"/>'}
+function tx(x,y,t,a,c){return '<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" style="font-size:22px;font-weight:700;fill:'+(c||'var(--text-primary)')+'">'+t+'</text>'}
+function zig(){return ln('M-50,0H-34L-26,-22L-10,22L6,-22L22,22L30,0H50')}
+var s='';
+/* teller */
+s+=ln('M100,70H230M330,70H470V110M470,210V250H100V190M100,130V70');
+/* düğüm noktaları */
+s+='<circle cx="100" cy="250" r="6" style="fill:var(--text-primary)"/>';
+/* toprak */
+s+=ln('M100,250V268M78,268H122M87,279H113M95,290H105');
+/* Vs: kaynak (daire, +/−) */
+s+='<g class="hit c1" id="h0" role="button" tabindex="0"><rect class="bx" x="56" y="116" width="128" height="88" rx="14"/><circle cx="100" cy="160" r="32" style="fill:color-mix(in srgb,var(--c1) 22%,transparent);stroke:var(--text-primary);stroke-width:5"/>'+tx(100,150,'+')+tx(100,180,'−')+tx(46,148,'Vs','end')+tx(46,176,'10 V','end')+'</g>';
+/* R1 */
+s+='<g class="hit c2" id="h1" role="button" tabindex="0"><rect class="bx" x="214" y="34" width="132" height="90" rx="14"/><g transform="translate(280,70)">'+zig()+'</g>'+tx(280,25,'R1 = 4 kΩ')+tx(236,112,'+')+tx(280,112,'v1')+tx(324,112,'−')+'</g>';
+/* R2 */
+s+='<g class="hit c3" id="h2" role="button" tabindex="0"><rect class="bx" x="400" y="104" width="150" height="112" rx="14"/><g transform="translate(470,160) rotate(90)">'+zig()+'</g>'+tx(434,150,'R2','end')+tx(434,176,'6 kΩ','end')+tx(508,130,'+','start')+tx(508,166,'v2','start')+tx(508,204,'−','start')+'</g>';
+/* akım oku */
+s+='<g class="hit c4" id="h3" role="button" tabindex="0"><rect class="bx" x="112" y="26" width="102" height="66" rx="14"/>'+ln('M134,70H190','')+'<path d="M200,70L184,60V80Z" style="fill:var(--c4);stroke:var(--c4);stroke-width:3;stroke-linejoin:round"/>'+tx(165,48,'i = 1 mA')+'</g>';
+/* toprak: referans düğümü */
+s+='<g class="hit c5" id="h4" role="button" tabindex="0"><rect class="bx" x="52" y="238" width="96" height="58" rx="14"/></g>';
+document.getElementById('s').innerHTML=s;
+/* eleman bilgileri: [kutu id, renk, ad, EN, sağ başlık, satırlar [[başlık,metin],...]] */
+var E=[
+['h0','c1','Gerilim kaynağı','Independent voltage source','Vs = 10 V',[['Ne yapar','Uçları arasında 10 V sabit tutar; üst uç (+) alt uçtan 10 V yüksektir.'],['Güç','Akım kaynağın + ucundan çıkar: p = −10 mW (pasif işaret kuralı), yani kaynak güç verir.']]],
+['h1','c2','Direnç R1','Resistor','R1 = 4 kΩ',[['Ohm yasası','v1 = i · R1 = 1 mA · 4 kΩ = 4 V'],['Güç','Akım + ucundan girer: p = v1 · i = 4 mW (soğurur).']]],
+['h2','c3','Direnç R2','Resistor','R2 = 6 kΩ',[['Ohm yasası','v2 = i · R2 = 1 mA · 6 kΩ = 6 V'],['Güç','p = v2 · i = 6 mW (soğurur). Toplam soğurulan 4 + 6 = 10 mW = kaynağın verdiği.']]],
+['h4','c5','Referans (toprak) düğümü','Reference (ground) node','0 V',[['Ne yapar','Gerilimler bu düğüme göre ölçülür; burada Vs\'nin − ucu 0 V alınır.'],['Sonuç','Üst düğümün gerilimi +10 V, R1\'den sonraki düğüm 10 − 4 = +6 V.']]],
+['h3','c4','Çevre akımı i','Loop current','i = 1 mA',[['Neden aynı','Tek çevrede elemanlar seridir; akım her yerde aynıdır.'],['Değer','i = <span class="fr"><span>Vs</span><span>R1 + R2</span></span> = <span class="fr"><span>10 V</span><span>4 kΩ + 6 kΩ</span></span> = 1 mA'],['KGY','Vs − v1 − v2 = 10 − 4 − 6 = 0']]]];
+var p=document.getElementById('p');
+function sel(i){var e=E[i],h='';for(var k=0;k<E.length;k++)document.getElementById(E[k][0]).classList.toggle('on',k==i);
+e[5].forEach(function(r){h+='<div class="it"><i>'+r[0]+'</i><span>'+r[1]+'</span></div>'});
+p.className='p '+e[1];p.innerHTML='<div class="hd"><div><b>'+e[2]+'</b><em>'+e[3]+'</em></div><span>'+e[4]+'</span></div>'+h}
+E.forEach(function(e,i){var g=document.getElementById(e[0]);g.onclick=function(){sel(i)};g.onkeydown=function(ev){if(ev.key=='Enter'||ev.key==' '){ev.preventDefault();sel(i)}}});sel(1)})()</script>

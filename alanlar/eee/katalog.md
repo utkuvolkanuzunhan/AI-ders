@@ -2,15 +2,20 @@
 
 Çekirdek katalogdaki W01–W12 şablonları EEE'de de kullanılır. W13 (kimyasal yapı) ve W14 (etken kartları) gıdaya özgüdür, EEE sohbetleri kullanmaz. Aşağıdakiler EEE içindir; kural aynıdır: şablonu kopyala, yalnız veriyi değiştir.
 
-Hazır EEE şablonları: **W16** devre şeması + göz akımı sekmeleri (`sablonlar/W16-devre-sema-goz-akimi.html`; iki gözlü direnç-kaynak örneği, değerler ve etiketler veridir, topoloji değişirse çizim yapı değişikliğidir ve ekran testi ister) ve **W17** matris satır işlemi, adım adım indirgeme (`sablonlar/W17-matris-satir-islemi.html`; `M0` ve `ST` veridir). W15 (eleman sembol kartı) henüz yok; o ve aşağıdaki diğer türler stil rehberine göre sıfırdan yazılır.
+| Kimlik | Tür | Ne zaman | Dosya |
+|---|---|---|---|
+| W15 | Eleman sembol kartı | Eleman, bileşen ya da kapı adı geçince: ad (TR + EN), harf sembolü, birim ve çizim birlikte (alan kuralları §1) | sablonlar/W15-eleman-sembol-karti.html |
+| W16 | Devre şeması + göz akımı sekmeleri | Göz akımı çözümü: eleman etiketi ve değeri, kaynak kutbu, toprak, göz akımı oku; sekmelerle KGY denklemi ve Gauss çözümü. İki gözlü direnç-kaynak örneği; değerler ve etiketler veridir, topoloji değişirse çizim yapı değişikliğidir ve ekran testi ister | sablonlar/W16-devre-sema-goz-akimi.html |
+| W17 | Matris satır işlemi, adım adım indirgeme | Gauss ve Gauss–Jordan; `M0` ve `ST` veridir | sablonlar/W17-matris-satir-islemi.html |
+| W20 | Devre şeması | Çözümlenecek devre: eleman etiketleri, gerilim kutupları, akım okları; elemana dokununca açıklama ve ilgili yasa | sablonlar/W20-devre-semasi.html |
+
+Semboller W15'teki `SYM` sözlüğünde durur (zikzak direnç, kondansatör, bobin, diyot, gerilim kaynağı, op-amp, VE ve DEĞİL kapıları). W20 aynı çizim biçimini kullanır; yeni bir sembol gerekirse önce W15'e eklenir, sonra W20'ye kopyalanır. Semboller kitap standardındadır (alan kuralları §1). W15'te yoksa (akım kaynağı, VEYA, BJT, MOSFET, flip-flop) aynı koordinat düzeninde yeni giriş yazılır ve iyi çıkarsa şablona eklenir. W18, W19 ve W21–W23 Lineer Cebir şablonlarıdır, aşağıda.
 
 ## Şablonu olmayan EEE türleri
 Stil rehberine göre sıfırdan yazılır, iyi çıkarsa şablona eklenir (gorevler/kural-guncelle.md, galeri için `python3 araclar/uret.py`).
 
 | Tür | Ne zaman | Ders |
 |---|---|---|
-| Eleman sembol kartı (W15 olacak): ad TR + EN, harf, birim, sembol | Eleman, bileşen ya da kapı adı geçince (alan kuralları §1) | hepsi |
-| Devre şeması (W16): etiket, değer, gerilim kutbu, akım oku | Çözümlenecek devre | circuit-analysis-1, digital-systems |
 | Dalga formu / tepki eğrisi (sabit eksen, kaydırıcı) | RC-RL basamak cevabı, sönüm durumları, $v(t)$ | circuit-analysis-1 |
 | Doğruluk tablosu + kapı (girişe dokununca çıkış) | Kapılar, ifade sadeleştirme | digital-systems |
 | Karnaugh haritası (gruplama) | Sadeleştirme | digital-systems |
@@ -23,7 +28,7 @@ Stil rehberine göre sıfırdan yazılır, iyi çıkarsa şablona eklenir (gorev
 | Serbest cisim diyagramı, kinematik grafik | Newton yasaları, hareket | physics-1 |
 | Fazör diyagramı, Bode diyagramı | Sonraki dönem dersleri (devre analizi 2, sinyaller) | |
 
-## Çizim kuralları (W15, W16 ve yeni EEE şemaları)
+## Çizim kuralları (W15, W20 ve yeni EEE şemaları)
 - Eleman sembolü kitap standardında, tel çizgisi `var(--text-primary)`, vurgu `--c1…--c5`. Akım oku dolu uçlu, gerilim kutbu "+" ve "−" işaretiyle.
 - Etiket her zaman elemanın yanında (üstünde ya da yanında), değer birimiyle ($4{,}7\,\mathrm{k\Omega}$ gibi SVG içinde düz metin: `4,7 kΩ`).
 - Referans (toprak) düğümü sembolü ve düğüm adları (a, b, c ya da v1, v2) çizilir; kesişen teller yalnız nokta varsa bağlıdır.

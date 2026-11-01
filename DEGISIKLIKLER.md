@@ -2,6 +2,8 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-01 · gorsel/sablonlar/W15, W20, alanlar/eee/katalog.md, galeri · EEE şablonları: W15 eleman sembol kartı (direnç, kondansatör, bobin, diyot, gerilim kaynağı, op-amp, VE, DEĞİL; IEEE/ANSI), W20 devre şeması (Vs, R1, R2, i, toprak; pasif işaret kuralı; numara, W16 başka şablonda kullanıldığı için W20) · EEE'de eleman adı geçince sembol de çizilir kuralının şablonu (kullanıcı).
+- 2026-11-01 · dersler/electronic-materials-device-physics, object-oriented-programming, physics-1 · EEE ders kartları ve TR–EN sözlükler; mevcut EEE sözlükleri Türkçe alfabeye göre sıralandı · EEE 3. dönem dersleri (kullanıcı).
 - 2026-11-01 · gorsel/sablonlar/W21–W23, alanlar/eee/katalog.md, dersler/linear-algebra/sozluk.md ve ders.md, galeri · Ters matris ünitesinden üç EEE şablonu (elemanter matris sekmeli, [A ve I] Gauss–Jordan adım adım, denklik zinciri), katalogda tablo, sözlüğe üç terim (denk ifadeler, elemanter matris, tersinir matris), ders kartına ters matris tuzakları · Ü3 anlatımında çıkan kalıcı parçalar (kullanıcı).
 - 2026-11-01 · alanlar/eee/kurallar.md · §2'ye formül genişlik kuralı: telefonda (≈ 340 px) taşmaz, `$$` bloğunda tek matris, uzun denklem bölünür, `\Large` yalnız kısa formülde, kalın metinde formül yok, iz için `\mathrm{tr}`, `$X$'nın` yazılmaz · Lineer Cebir matris ünitesinde uzun blok formüller telefon ekranında taşıp bozuk görünüyordu (kullanıcı).
 - 2026-11-01 · dersler/linear-algebra/sozluk.md · Matris ünitesi terimleri eklendi (ana köşegen, birleşme, dağılma, değişme, eleman, kare matris, katsayı matrisi, matris, matris çarpımı, matris kuvveti, satır/sütun/sıfır/skaler matris, ters simetrik matris) · Ü2 anlatımında kullanılan terimler tek yerde dursun.

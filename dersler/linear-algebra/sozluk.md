@@ -9,11 +9,11 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | aralık (değer uzayı) | range | doğrusal dönüşümün görüntü kümesi |
 | aşikâr çözüm | trivial solution | aşikâr olmayan: nontrivial |
 | baz | basis | |
+| birim matris | identity matrix | |
 | birleşme | associativity | |
 | boyut | dimension | |
-| birim matris | identity matrix | |
-| çekirdek (sıfır uzayı) | kernel (null space) | |
 | Cramer kuralı | Cramer's rule | |
+| çekirdek (sıfır uzayı) | kernel (null space) | |
 | dağılma | distributivity | |
 | değişme | commutativity | AB ≠ BA: matris çarpımında değişme yok |
 | denk ifadeler | equivalent statements | tersinirlik denklikleri: equivalent statements |
@@ -28,12 +28,12 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | ek (adjoint) matris | adjugate (adjoint) matrix | |
 | eleman | entry | |
 | elemanter matris | elementary matrix | birim matrise tek temel satır işlemiyle gidilen matris |
-| genişletilmiş matris | augmented matrix | |
 | Gauss yok etme | Gaussian elimination | |
 | Gauss–Jordan yok etme | Gauss–Jordan elimination | |
-| Gram–Schmidt yöntemi | Gram–Schmidt process | |
+| genişletilmiş matris | augmented matrix | |
 | geri yerine koyma | back substitution | |
 | germe (gerilen uzay) | span | |
+| Gram–Schmidt yöntemi | Gram–Schmidt process | |
 | homojen sistem | homogeneous system | |
 | iç çarpım | inner product | nokta çarpım: dot product |
 | iç çarpım uzayı | inner product space | |
@@ -50,8 +50,8 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | matris çarpımı | matrix product | |
 | matris kuvveti | matrix power | |
 | norm (uzunluk) | norm (length) | |
-| ortogonal (dik) | orthogonal | |
 | ortogonal matris | orthogonal matrix | |
+| ortogonal (dik) | orthogonal | |
 | ortonormal | orthonormal | |
 | Öklid uzayı | Euclidean space | |
 | öncü 1 | leading 1 | |

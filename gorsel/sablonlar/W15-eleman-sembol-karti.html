@@ -1,0 +1,49 @@
+<!-- W15 | Eleman sembol kartı | Devre elemanı, bileşen ya da kapı adı geçince: ad (TR + EN), harf, birim ve sembol birlikte -->
+<style>:root{--c1:#5B9BD5;--c2:#45B39D;--c3:#E0924A;--c4:#A38BD6;--c5:#E07A92}html,body{overflow:hidden}.w,.w *{-webkit-text-size-adjust:100%;text-size-adjust:100%;box-sizing:border-box}.w{color:var(--text-primary);padding:6px;font-family:inherit}.w .h{font-size:15px;color:var(--text-secondary);margin-top:14px;line-height:1.4}.w [role=button]{cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.c1{--c:var(--c1)}.c2{--c:var(--c2)}.c3{--c:var(--c3)}.c4{--c:var(--c4)}.c5{--c:var(--c5)}
+.w .ch{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.w .ch>div{text-align:center;padding:6px 2px 8px;min-height:84px;border-radius:14px;border:3px solid var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);transition:background .2s,transform .2s,box-shadow .2s}
+.w .ch svg{display:block;width:100%;height:46px}.w .ch .n{font-size:13px;color:var(--text-secondary);margin-top:2px;line-height:1.15}
+.w .ch .on{background:color-mix(in srgb,var(--c) 38%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 30%,transparent);transform:translateY(-2px)}
+.w .p{margin-top:16px;border-radius:16px;overflow:hidden;background:var(--surface-1);border:3px solid var(--c)}
+.w .p .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:12px 16px;background:color-mix(in srgb,var(--c) 30%,transparent)}
+.w .p .hd b{font-size:20px;line-height:1.2}.w .p .hd em{display:block;font-style:normal;font-size:15px;color:var(--text-secondary);font-weight:500}.w .p .hd span{font-size:26px;font-weight:800;white-space:nowrap}
+.w .p svg{display:block;width:100%;height:auto;padding:6px 8px 0}
+.w .p .it{display:flex;gap:12px;padding:11px 16px;border-top:1px solid var(--border);font-size:16px;line-height:1.35}.w .p .it i{font-style:normal;flex:none;width:84px;font-weight:700;color:var(--text-secondary);font-size:14px;padding-top:2px}
+.w .ch svg path,.w .ch svg circle{stroke-width:10px!important}
+.w .fr{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;margin:0 3px;line-height:1.15}.w .fr>span:first-child{border-bottom:2px solid currentColor;padding:0 4px}.w .fr>span:last-child{padding:0 4px}
+@media (prefers-reduced-motion:reduce){.w .ch>div{transition:none}}
+</style>
+<div class='w'><div class='ch' id='c'></div><div class='p c1' id='p'></div><div class='h'>Ne yapacaksın: elemanlara sırayla dokun. Ne göreceksin: elemanın adı, harf sembolü, birimi ve çizimi; renkli kısım elemanın kendisi, noktalar bağlantı uçları.</div></div>
+<script>(function(){
+/* SYM: yatay çizimler, merkez (280,105), uçlar x=110 ve x=450 (kapılarda girişler solda, çıkış sağda).
+   Her sembol [gövde SVG'si (içi kapalı şekiller renkli dolgulu), uçlar [[x,y,etiket,hizalama],...]].
+   Yeni sembol ekle: aynı koordinat düzeninde bir giriş daha yaz (kitabın sembol standardı: zikzak direnç, IEEE/ANSI şekilli kapılar). */
+var L='fill:none;stroke:var(--text-primary);stroke-width:5;stroke-linecap:round;stroke-linejoin:round',F='fill:color-mix(in srgb,var(--c) 22%,transparent);stroke:var(--text-primary);stroke-width:5;stroke-linecap:round;stroke-linejoin:round';
+function ln(d){return '<path d="'+d+'" style="'+L+'"/>'}function sh(d){return '<path d="'+d+'" style="'+F+'"/>'}
+function tx(x,y,t,a,s){return '<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" style="font-size:'+(s||22)+'px;font-weight:700;fill:var(--text-primary)">'+t+'</text>'}
+var SYM={
+R:[ln('M110,105H192L208,69L236,141L264,69L292,141L320,69L348,141L368,105H450'),[[110,105,'a','middle'],[450,105,'b','middle']]],
+C:[ln('M110,105H268M292,105H450')+'<path d="M268,62V148M292,62V148" style="'+L+';stroke-width:7"/>',[[110,105,'a','middle'],[450,105,'b','middle']]],
+Lb:[ln('M110,105H200')+sh('M200,105a20,20 0 0 1 40,0a20,20 0 0 1 40,0a20,20 0 0 1 40,0a20,20 0 0 1 40,0')+ln('M360,105H450'),[[110,105,'a','middle'],[450,105,'b','middle']]],
+D:[ln('M110,105H250M310,105H450')+sh('M250,68V142L310,105Z')+ln('M310,68V142'),[[110,105,'A (anot)','middle'],[450,105,'K (katot)','middle']]],
+V:[ln('M110,105H240M320,105H450')+'<circle cx="280" cy="105" r="40" style="'+F+'"/>'+tx(258,114,'+')+tx(302,114,'−'),[[110,105,'a','middle'],[450,105,'b','middle']]],
+OA:[ln('M150,80H230M150,130H230M350,105H450')+sh('M230,40V170L350,105Z')+tx(246,87,'−',"start")+tx(246,137,'+',"start"),[[150,80,'− giriş','end'],[150,130,'+ giriş','end'],[450,105,'çıkış','middle']]],
+AND:[ln('M180,83H240M180,127H240M320,105H450')+sh('M240,63H280a42,42 0 0 1 0,84H240Z'),[[180,83,'A','end'],[180,127,'B','end'],[450,105,'Y','middle']]],
+NOT:[ln('M150,105H240M324,105H450')+sh('M240,62V148L310,105Z')+'<circle cx="317" cy="105" r="7" style="'+F+'"/>',[[150,105,'A','end'],[450,105,'Y','middle']]]
+};
+/* Her eleman: [anahtar, renk, kısa harf, kısa ad, TR ad, EN ad, sağ başlık, ne yapar, birim, nasıl tanırsın] */
+var E=[
+['R','c1','R','Direnç','Direnç','Resistor','R','Akıma karşı koyar; gerilim akımla orantılıdır: v = i · R (Ohm yasası).','ohm (Ω)','Zikzak çizgi; yanında R1 gibi etiket ve 4,7 kΩ gibi değer.'],
+['C','c2','C','Kondansatör','Kondansatör','Capacitor','C','Elektrik yükünü ve enerjiyi elektrik alanında depolar: i = C · <span class="fr"><span>dv</span><span>dt</span></span>.','farad (F)','İki paralel çizgi (levha); uçlar levhalara bağlanır.'],
+['Lb','c3','L','Bobin','Bobin (endüktör)','Inductor','L','Enerjiyi manyetik alanda depolar; akım değişimine karşı koyar: v = L · <span class="fr"><span>di</span><span>dt</span></span>.','henry (H)','Ardışık yarım daireler (sarım).'],
+['D','c4','D','Diyot','Diyot','Diode','D','Akımı yalnız anottan katota geçirir (ideal modelde).','birimi yok (I–V karakteristiği)','Ok başı akımın geçtiği yönü gösterir; ok ucundaki dik çizgi katottur.'],
+['V','c5','V','Gerilim kaynağı','Bağımsız gerilim kaynağı','Independent voltage source','V','Uçları arasındaki gerilimi, akımdan bağımsız sabit tutar.','volt (V)','İçinde + ve − işareti olan daire; + uç yüksek potansiyel.'],
+['OA','c1','▷','Op-amp','İşlemsel yükselteç','Operational amplifier (op-amp)','A','İki giriş arasındaki gerilim farkını çok büyük kazançla yükseltir.','birimsiz (kazanç)','Üçgen; iki giriş solda (− ve +), çıkış sağda uçta.'],
+['AND','c2','&','VE kapısı','VE kapısı','AND gate','&','Çıkış yalnız tüm girişler 1 iken 1 olur: Y = A · B.','birimsiz (0 / 1)','Düz girişli, yuvarlak çıkışlı D biçimi (IEEE/ANSI).'],
+['NOT','c3','1','DEĞİL kapısı','DEĞİL kapısı (evirici)','NOT gate (inverter)','1','Girişin tersini verir: Y = <span style="text-decoration:overline">A</span> (A değil).','birimsiz (0 / 1)','Üçgen ve çıkışta küçük daire (evirme noktası).']];
+var c=document.getElementById('c'),p=document.getElementById('p'),h='';
+E.forEach(function(e){var s=SYM[e[0]];h+='<div role="button" tabindex="0" class="'+e[1]+'"><svg viewBox="'+(e[0]=='OA'||e[0]=='AND'||e[0]=='NOT'?'140 30 320 150':'100 40 360 130')+'">'+s[0]+'</svg><div class="n">'+e[3]+'</div></div>'});c.innerHTML=h;
+var cs=c.children;function sel(i){var e=E[i],s=SYM[e[0]],t='';for(var k=0;k<cs.length;k++)cs[k].classList.toggle('on',k==i);
+s[1].forEach(function(u){t+='<circle cx="'+u[0]+'" cy="'+u[1]+'" r="7" style="fill:var(--c);stroke:var(--text-primary);stroke-width:3"/>';if(u[2].length>1||'ABY'.indexOf(u[2])>=0)t+=tx(u[0]+(u[3]=='end'?-14:0),u[1]+(u[3]=='end'?7:-18),u[2],u[3],18).replace('font-weight:700','font-weight:600')});
+p.className='p '+e[1];p.innerHTML='<div class="hd"><div><b>'+e[4]+'</b><em>'+e[5]+'</em></div><span>'+e[6]+'</span></div><svg viewBox="0 0 560 210">'+s[0]+t+'</svg><div class="it"><i>Ne yapar</i><span>'+e[7]+'</span></div><div class="it"><i>Birim</i><span>'+e[8]+'</span></div><div class="it"><i>Nasıl tanırsın</i><span>'+e[9]+'</span></div>'}
+for(var k=0;k<cs.length;k++)(function(k){cs[k].onclick=function(){sel(k)};cs[k].onkeydown=function(e){if(e.key=='Enter'||e.key==' '){e.preventDefault();sel(k)}}})(k);sel(0)})()</script>

@@ -22,6 +22,7 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | doğal cevap | natural response | |
 | düğüm | node | |
 | düğüm gerilimi | node voltage | |
+| Δ–Y dönüşümü | delta–wye (Δ–Y) transformation | |
 | eşdeğer devre | equivalent circuit | |
 | geçici hal | transient | |
 | gerilim | voltage | |
@@ -32,13 +33,13 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | ideal işlemsel yükselteç | ideal operational amplifier (op-amp) | |
 | işaret kuralı (pasif) | passive sign convention | |
 | kararlı hal | steady state | |
-| kaynak dönüşümü | source transformation | |
-| kondansatör | capacitor | büyüklük: kapasitans (capacitance) |
 | karşılıklı endüktans | mutual inductance | |
-| Kirchhoff akım yasası | Kirchhoff's current law (KCL) | KAY |
-| Kirchhoff gerilim yasası | Kirchhoff's voltage law (KVL) | KGY |
+| kaynak dönüşümü | source transformation | |
 | kısa devre | short circuit | |
 | kısa devre akımı | short-circuit current | $i_{sc}$ |
+| Kirchhoff akım yasası | Kirchhoff's current law (KCL) | KAY |
+| Kirchhoff gerilim yasası | Kirchhoff's voltage law (KVL) | KGY |
+| kondansatör | capacitor | büyüklük: kapasitans (capacitance) |
 | kritik sönümlü | critically damped | $\alpha=\omega_0$ |
 | maksimum güç transferi | maximum power transfer | |
 | Norton eşdeğeri | Norton equivalent | |
@@ -51,7 +52,6 @@ Ayar C3'te okunur. Bir terim hep aynı çevrilir. Yeni terimi alfabetik yere ekl
 | süper göz | supermesh | |
 | süperpozisyon | superposition | |
 | Thévenin eşdeğeri | Thévenin equivalent | |
-| Wheatstone köprüsü | Wheatstone bridge | |
 | yük | load | |
 | zaman sabiti | time constant | $\tau$ |
-| Δ–Y dönüşümü | delta–wye (Δ–Y) transformation | |
+| Wheatstone köprüsü | Wheatstone bridge | |
