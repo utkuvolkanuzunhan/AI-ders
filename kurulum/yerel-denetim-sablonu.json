@@ -1,0 +1,13 @@
+{
+  "_aciklama": "Kişiye özel ölçülebilir tercihler. Bu dosya projedeki yerel/denetim.json olarak durur, depoya GİRMEZ. Kullanmadığın satırı sil. araclar/anlatim_testi.py bunu kendisi bulur (gorevler/anlatim-kontrol.md).",
+  "terim_dili": "C2",
+  "terim_her_gecis": true,
+  "sozluk": [],
+  "emoji": "🙉",
+  "emoji_seri": "3-4",
+  "widget_emoji_yasak": ["🙉"],
+  "mini_test_soru": 2,
+  "test_dil": "en-tr",
+  "karisik_test": true,
+  "cift_aralik": "20-70"
+}

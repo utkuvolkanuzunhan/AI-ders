@@ -8,15 +8,25 @@
   ... --emoji 🙉 --emoji-adet 3-4   toplam emoji adedi (kişisel ayar; yerel/ayarlar.md'den gelir)
   ... --izin a/b,c/d       düz kesir sayılmayacak ek yazımlar
   ... --cift-aralik 20-70  tüm mesajlarda çift boşluk payı için hata sınırı (yüzde; en az 10 geçiş varsa)
+  ... --profil yerel/denetim.json   kişisel ayarlar (emoji, terim dili, mini test sayısı...); verilmezse AI_DERS_PROFIL, ./yerel/denetim.json,
+                           /mnt/project-files/yerel/denetim.json sırasıyla aranır; komut satırı profili geçer
+  ... --terim C2 --ders <ders> [--sozluk dosya]   terim dili denetimi (C2: İngilizce (Türkçe); C1/C3: Türkçe (İngilizce)); sözlük dersten ya da dosyadan
+  ... --emoji-seri 3-4     emoji yalnız bu uzunlukta seri yazılır (tek/çift 🙉 yok); widget içinde yasak (profil: widget_emoji_yasak)
+  ... --test-turu mini|tam --konu "<adım adı>"   .html (W10/W24) ve .json soru dosyası: dil, konu ipucu, cevap dağılımı, mini test sayısı
   python3 araclar/anlatim_testi.py --kendini-dene                     kuralların kendi denemesi
 
-Her dosya, sohbete gönderilecek mesajın metnidir (widget hariç). Çıkış kodu: 0 hata yok, 1 hata var, 2 kullanım hatası.
+Her .md/.txt dosyası sohbete gönderilecek mesajın metnidir; widget (.html) ve soru verisi (.json) de verilebilir (ek kurallar:
+anlatim_testi_ek.py). Çıkış kodu: 0 hata yok, 1 hata var, 2 kullanım hatası.
 Kurallar tek yerde durur, burada kopyalanmaz: cekirdek/temel.md §3–§4 ve claude-sorunlari/formuller.md. Bulgu kodları:
-  F = formül (F01–F14), B = boşluk (B01–B13), S = metin biçimi (S01–S10); kod, kuralın hangi maddesine bağlı olduğunu söyler.
+  F = formül (F01–F14), B = boşluk (B01–B13), S = metin biçimi (S01–S12); kod, kuralın hangi maddesine bağlı olduğunu söyler.
+  T = terim dili, E = emoji serisi, W = widget, Q = test soruları (ek kurallar: anlatim_testi_ek.py).
 Boşluk: tek boşluk = boş satır; çift boşluk = boş satır, yalnız ⠀ (U+2800) satırı, boş satır.
 Metne `[widget]` satırı koyarsan o yer widget sınırı sayılır (önü ve sonu çift boşluk); mesajı gönderirken o satırı sil.
 """
 import argparse, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import anlatim_testi_ek as EK  # noqa: E402  (terim dili, emoji serisi, test soruları, widget)
 
 BR = "\u2800"
 H, U = "HATA", "UYARI"
@@ -47,6 +57,7 @@ class Sonuc:
         s.kritik = s.kritik_ok = 0
         s.kavram = s.kavram_cift = 0
         s.emoji = 0
+        s.terim = None        # terim dili ölçümü {toplam, uyumlu}
 
     def ekle(s, duzey, kod, satir, mesaj):
         s.bulgu.append((duzey, kod, satir, mesaj))
@@ -435,8 +446,22 @@ def incele(ad, metin, ayar=None):
             S.ekle(H, "S07", 1, "ilk mesaj \"## Kısa Cevap\" ile başlamalı (gorevler/konu-anlat.md)")
         if not re.search(r"(?i)sonunda.{0,160}(abileceksin|ebileceksin)", govde, re.S):
             S.ekle(U, "S07", 1, "hedef cümlesi yok: \"Bu blok sonunda ... hesaplayabileceksin\" (gorevler/konu-anlat.md)")
+    if not idari:
+        adimlar = [b for b in bl if b[0] == "baslik" and re.search(r"\bAdım\s+\d+", b[2][0])]
+        if len(adimlar) >= 2:
+            S.ekle(U, "S11", adimlar[1][1], "bir mesaj = tek adım: ikinci adım başlığı yeni mesajda olmalı (cekirdek §2)")
+        for b in adimlar:
+            if re.match(r"#{1,6}\s+Adım\b", b[2][0]) and not re.match(r"#{1,6}\s+Adım\s+\d+:\s+\S", b[2][0]):
+                S.ekle(H, "S12", b[1], "adım başlığı \"## Adım n: Başlık\" biçiminde olmalı (cekirdek §3)")
     if ayar.get("emoji"):
         S.emoji = kalan.count(ayar["emoji"])
+        for d, k, no, m in EK.emoji_bulgulari(kalan, ayar):
+            S.ekle(d, k, gercek(no - 1) if no else 0, m)
+    if ayar.get("sozluk"):
+        tb, S.terim = EK.terim_bulgulari(EK.duz_metin(kalan), ayar["sozluk"], EK.terim_mod(ayar, ayar.get("kod_c", "3")),
+                                         bool(ayar.get("terim_her_gecis")), ayar.get("terim_muaf", []))
+        for d, k, no, m in tb:
+            S.ekle(d, k, gercek(no - 1) if no else 0, m)
     return S
 
 
@@ -470,7 +495,8 @@ def toplu(sonuclar, ayar):
 # ---- rapor -----------------------------------------------------------------------------------
 def yaz_ayrintili(sonuclar, tcik, tek, cift, pay):
     for s in sonuclar:
-        print(f"{s.ad}: {s.hata()} hata, {s.uyari()} uyarı · geçiş tek {s.tek}, çift {s.cift} · kritik yer {s.kritik}, uygun {s.kritik_ok}")
+        terim = f" · terim uyumu {s.terim['uyumlu']}/{s.terim['toplam']} (%{100 * s.terim['uyumlu'] // s.terim['toplam']})" if s.terim and s.terim.get("toplam") else ""
+        print(f"{s.ad}: {s.hata()} hata, {s.uyari()} uyarı · geçiş tek {s.tek}, çift {s.cift} · kritik yer {s.kritik}, uygun {s.kritik_ok}{terim}")
         for d, k, no, m in sorted(s.bulgu, key=lambda x: (x[2], x[1])):
             print(f"  {d} {k} satır {no}: {m}")
     for d, k, m in tcik:
@@ -486,7 +512,10 @@ def rapor_satirlari(sonuclar, tcik, tek, cift, pay):
     h = sum(s.hata() for s in sonuclar) + sum(1 for x in tcik if x[0] == H)
     u = sum(s.uyari() for s in sonuclar) + sum(1 for x in tcik if x[0] == U)
     bosluk = f" · boşluk tek %{100 - pay:.0f} / çift %{pay:.0f}" if pay is not None else ""
-    l1 = f"Anlatım kontrolü: {len(sonuclar)} mesaj, {h} hata, {u} uyarı{bosluk}."
+    tt = sum(s.terim["toplam"] for s in sonuclar if s.terim)
+    tu = sum(s.terim["uyumlu"] for s in sonuclar if s.terim)
+    terim = f" · terim %{100 * tu // tt}" if tt else ""
+    l1 = f"Anlatım kontrolü: {len(sonuclar)} mesaj, {h} hata, {u} uyarı{bosluk}{terim}."
     ilk = []
     for s in sonuclar:
         for d, k, no, m in s.bulgu:
@@ -605,6 +634,7 @@ def kendini_dene():
         print("BAŞARISIZ · emoji adedi")
     else:
         print("geçti · emoji adedi sınırı")
+    basarisiz += EK.kendini_dene()
     print(("KENDİNİ DENEME BAŞARISIZ: " + str(basarisiz)) if basarisiz else "KENDİNİ DENEME GEÇTİ")
     return 1 if basarisiz else 0
 
@@ -627,7 +657,15 @@ def main():
     ap.add_argument("--emoji")
     ap.add_argument("--emoji-adet", default="")
     ap.add_argument("--izin", default="")
-    ap.add_argument("--cift-aralik", default="20-70")
+    ap.add_argument("--cift-aralik", default=None)
+    ap.add_argument("--profil")
+    ap.add_argument("--terim", choices=["C1", "C2", "C3"])
+    ap.add_argument("--ders", default="")
+    ap.add_argument("--sozluk", action="append", default=[])
+    ap.add_argument("--kod", default="")
+    ap.add_argument("--emoji-seri", default="")
+    ap.add_argument("--test-turu", default="oto", choices=["oto", "mini", "tam"])
+    ap.add_argument("--konu", action="append", default=[])
     ap.add_argument("--siki", action="store_true", help="uyarılar da hata sayılır")
     ap.add_argument("--kendini-dene", action="store_true")
     a = ap.parse_args()
@@ -636,16 +674,35 @@ def main():
     if not a.dosyalar:
         ap.print_usage(sys.stderr)
         sys.exit(2)
-    ayar = {"ilk": a.ilk, "idari": a.idari, "emoji": a.emoji, "izin": {x.strip() for x in a.izin.split(",") if x.strip()},
-            "cift_aralik": aralik_oku(a.cift_aralik, "--cift-aralik")}
+    if a.profil and not os.path.isfile(a.profil):
+        print(f"profil bulunamadı: {a.profil}", file=sys.stderr)
+        sys.exit(2)
+    ayar = EK.profil_oku(EK.profil_bul(a.profil))      # kişisel profil (yerel/denetim.json); komut satırı onu geçer
+    ayar.update({"ilk": a.ilk, "idari": a.idari, "test_turu": a.test_turu})
+    ayar.setdefault("izin", set())
+    ayar["izin"] = set(ayar["izin"]) | {x.strip() for x in a.izin.split(",") if x.strip()}
+    if a.emoji:
+        ayar["emoji"] = a.emoji
+    if a.cift_aralik:
+        ayar["cift_aralik"] = aralik_oku(a.cift_aralik, "--cift-aralik")
+    ayar.setdefault("cift_aralik", (20, 70))
     if a.emoji and a.emoji_adet:
         ayar["emoji_adet"] = aralik_oku(a.emoji_adet, "--emoji-adet")
+    if a.emoji_seri:
+        ayar["emoji_seri"] = list(aralik_oku(a.emoji_seri, "--emoji-seri"))
+    if a.terim:
+        ayar["terim_dili"] = a.terim
+    ayar["kod_c"] = EK.kod_c(a.kod, ayar)
+    if a.ders or a.sozluk or ayar.get("sozluk_yollari"):
+        ayar["sozluk"] = EK.sozluk_topla(a.sozluk + EK.sozluk_yollari(a.ders, ayar))
+        if not ayar["sozluk"]:
+            print("UYARI: terim sözlüğü bulunamadı (--ders / --sozluk / profil); terim denetimi atlandı", file=sys.stderr)
     yollar = []
     for d in a.dosyalar:
         if d == "-":
             yollar.append("-")
         elif os.path.isdir(d):
-            yollar += [os.path.join(d, f) for f in sorted(os.listdir(d)) if f.endswith((".md", ".txt"))]
+            yollar += [os.path.join(d, f) for f in sorted(os.listdir(d)) if f.endswith((".md", ".txt", ".html"))]
         else:
             yollar.append(d)
     if not yollar:
@@ -658,13 +715,22 @@ def main():
         except OSError as e:
             print(f"okunamadı: {y} ({e})", file=sys.stderr)
             sys.exit(2)
-        sonuclar.append(incele("stdin" if y == "-" else os.path.basename(y), metin, ayar))
+        ad = "stdin" if y == "-" else os.path.basename(y)
+        uz = os.path.splitext(y)[1].lower()
+        if uz in (".html", ".htm", ".json"):
+            S = Sonuc(ad)
+            for b in EK.dosya_bulgulari(uz, metin, ayar, ayar.get("sozluk"), a.konu, a.test_turu):
+                S.ekle(*b)
+            sonuclar.append(S)
+        else:
+            sonuclar.append(incele(ad, metin, ayar))
     tcik, tek, cift, pay, kav, kcf = toplu(sonuclar, ayar)
     if a.rapor:
         l1, l2, h = rapor_satirlari(sonuclar, tcik, tek, cift, pay)
         print(l1)
         print(l2)
     else:
+        print("Profil: " + (ayar["profil_yolu"] if ayar.get("profil_yolu") else "yok (yalnız depo kuralları; kişisel kurallar için yerel/denetim.json)"))
         yaz_ayrintili(sonuclar, tcik, tek, cift, pay)
         h = sum(s.hata() for s in sonuclar) + sum(1 for x in tcik if x[0] == H)
         print("SONUÇ: " + ("GEÇTİ" if h == 0 else f"{h} HATA"))
