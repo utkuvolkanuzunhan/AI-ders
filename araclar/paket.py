@@ -128,6 +128,12 @@ def main():
     if begen or istemez:
         parca.append(f"Beğenilen şablonlar: {', '.join(begen) or '-'} · Kullanılmayacak: {', '.join(istemez) or '-'}")
     parca.append(oku("cekirdek/temel.md"))
+    # Claude arayüzü sorunları (alandan bağımsız, her rolün paketine girer; claude-sorunlari/README.md hariç)
+    sd = os.path.join(KOK, "claude-sorunlari")
+    if os.path.isdir(sd):
+        for f in sorted(os.listdir(sd)):
+            if f.endswith(".md") and f != "README.md":
+                parca.append(oku(f"claude-sorunlari/{f}"))
     if alan and not cfg:
         parca.append(f"> Alan katmanı yok: alanlar/{alan}/alan.json. Yalnız çekirdek kurallarla devam et.")
     if cfg and cfg.get("kurallar"):

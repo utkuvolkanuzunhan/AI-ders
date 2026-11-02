@@ -11,16 +11,12 @@
 ## 2. Notasyon ve birim
 - SI birimi her sayının yanında yazılır; mühendislik gösterimi ve önekler: $4{,}7\,\mathrm{k\Omega}$, $2{,}2\,\mu\mathrm{F}$, $10\,\mathrm{mA}$. Önek dönüşümü hesapta açık yazılır (mA → A).
 - Ondalık ayırıcı metinde virgüldür. Formül içinde `4{,}7` yaz (aksi halde virgülden sonra boşluk girer). Kod bloklarında (C++, VHDL) nokta.
-- Gösterim: sabit (DC) büyüklük büyük harf $V, I$; zamanla değişen küçük harf $v(t), i(t)$. Sanal birim $j$, akım $i$ ile karışmasın. Vektör $\vec{F}$ ya da kalın $\mathbf{u}$, matris büyük harf $A$ (ders kartı hangisini kullandığını yazar).
+- Gösterim: sabit (DC) büyüklük büyük harf $V, I$; zamanla değişen küçük harf $v(t), i(t)$. Sanal birim $j$, akım $i$ ile karışmasın. Vektör $\vec{F}$, matris büyük harf $A$ (ders kartı hangisini kullandığını yazar).
 - Sonuç 3 anlamlı basamak; ara adımlarda yuvarlama yok.
-- Formül yazımı (kullanıcının ekran görüntüsüne göre, 2 Kasım 2026; sohbet arayüzünde `\Large \boldsymbol{...\sum...}` bloğu ham metin, `\boldsymbol{(m\times n)(n\times p)=...}` bloğu ve satır içi `$...$` düzgün göründü):
-  - **Boyut komutu yazma:** `\Large`, `\large`, `\LARGE`, `\huge` bu arayüzde büyük ihtimalle işlenmez; formül yerine ham metin (`\Large \boldsymbol{...}`) görünür. Çekirdekteki `$$\Large \boldsymbol{...}$$` kalıbı EEE'de kullanılmaz.
-  - Blok formül: basit formülde `$$\boldsymbol{A\pm B=[a_{ij}\pm b_{ij}]}$$` (kalın, çalışıyor); matris (`bmatrix`), `aligned`, `\sum`, `\mathrm`, `\mathbf` içeren formülde çıplak `$$...$$` (içine `\boldsymbol` sarma).
+- Formül yazımı: genel kurallar `claude-sorunlari/formuller.md` (alandan bağımsız; paketle gelir ve burayı geçer). EEE'ye özgü eklemeler:
   - Telefonda taşmaz (içerik genişliği ≈ 340 px): her `$$` bloğunda tek matris, uzun denklem satırlara bölünür ya da toplam sembolüyle yazılır. Kalın metnin içine formül konmaz.
-  - Boşluk komutu yazma: `\,`, `\;`, `\!` yerine bitişik yaz (`a_{ik}b_{kj}`) ya da `\cdot` kullan (`k\cdot\mathrm{tr}(A)`). İz için `\mathrm{tr}`.
-  - Satır içi formül rakamla başlamaz: `${2}\times 3$`, `${3}A-2B$`, `${0}A$` (aksi halde `$` para işareti sanılabilir). Tek başına `$0$`/`$1$` yazma: sıfır matrisi `$\mathbf{0}$`, "1 ile n arasında" gibi sayıyı düz metin yaz.
-  - Formülden hemen sonra kesme işareti ya da ek getirme (`$X$'nın` yerine `$X$ matrisinin`).
-  - Satır içi `$...$` çalışıyor. Yeni bir kalıbı (ör. `\sum` içeren çıplak blok) ilk kez kullanırken kullanıcıdan görünüşünü teyit al; ham metin görünürse bu listeye ekle.
+  - Vektör ve matris gösterimi için `\mathbf` yerine `\vec{u}` ve büyük harf kullan; sıfır matrisini "sıfır matrisi" diye yaz ya da `O` harfiyle göster. İz için `\mathrm{tr}`.
+  - Yeni bir kalıbı (ör. `\sum` içeren çıplak blok) ilk kez kullanırken kullanıcıdan görünüşünü teyit al; ham metin görünürse `claude-sorunlari/formuller.md`'ye ekle.
 
 ## 3. Hesap disiplini
 - Hesaplı çözüm sırası: verilenler ve istenen → yöntem ve neden bu yöntem → denklemler → çözüm → birimli sonuç → doğrulama (güç dengesi, KAY/KGY kontrolü, uç durum, boyut analizi, denklemde yerine koyma).
