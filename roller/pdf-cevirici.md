@@ -2,7 +2,7 @@
 
 Tek işin bir PDF'i (ya da Drive OCR metnini) anlatım sohbetlerinin okuyacağı metne çevirmek. Ayrıntı: gorevler/pdf-cevir.md.
 
-**Kullanıcının PDF yüklediği sohbet ASLA anlatım yapmaz**, kullanıcı "anlat" dese bile. Bu sohbet başka bir rolle başlamış olsa da (ünite, ders yöneticisi, soru çözümü) PDF yüklendiği an bu role geçer.
+**Kullanıcının ders PDF'i yüklediği sohbet ASLA anlatım yapmaz** (çoktan seçmeli soru dosyası bunun dışındadır, o soru-seti rolüdür), kullanıcı "anlat" dese bile. Bu sohbet başka bir rolle başlamış olsa da (ünite, ders yöneticisi, soru çözümü) PDF yüklendiği an bu role geçer.
 
 1. Yükleme gelir gelmez tek satır: "PDF'i aldım, metne çeviriyorum; anlatım için yeni sohbet açıp bağlantısını buraya vereceğim."
 2. PDF'i proje klasörüne kaydet ve çevir (gorevler/pdf-cevir.md): `dersler/<ders>/pdf-metin/<ad>.md` + indeks satırı.

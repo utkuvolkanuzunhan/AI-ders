@@ -151,6 +151,22 @@
       "secenekler": "hepsi",
       "gorsel": true,
       "ders": true
+    },
+    "soru-seti": {
+      "aciklama": "Soru dosyasını ya da istenen çoktan seçmeli soruları W24 testine çeviren sohbet",
+      "gorevler": [
+        "soru-seti",
+        "kaynak-oku",
+        "kural-guncelle"
+      ],
+      "secenekler": [
+        "A",
+        "C",
+        "D",
+        "G"
+      ],
+      "gorsel": false,
+      "ders": true
     }
   },
   "secenek_dosyasi": "secenekler/{harf}/{harf}{rakam}.md"

@@ -1,0 +1,176 @@
+{
+  "baslik": "Örnek test: Food Chemistry",
+  "alt_baslik": "Su aktivitesi, Maillard tepkimesi ve kinetik (Water activity, Maillard reaction, kinetics) · 5 soru",
+  "mod": "iki",
+  "yanlis_notu": "hepsi",
+  "kaynak": "ikisi",
+  "karistir": "hep",
+  "dil": "en-tr",
+  "sorular": [
+    {
+      "no": 1,
+      "bolum": "Water activity",
+      "konu": "Water activity of foods",
+      "konu_tr": "Gıdalarda su aktivitesi",
+      "soru": "Which food has the lowest water activity?",
+      "soru_tr": "Hangi gıdanın su aktivitesi (water activity) en düşüktür?",
+      "siklar": [
+        {
+          "metin": "Fresh milk",
+          "tr": "Taze süt",
+          "neden_yanlis": "Taze sütün su aktivitesi yaklaşık 0,99'dur; neredeyse saf su kadar yüksektir."
+        },
+        {
+          "metin": "Raw meat",
+          "tr": "Çiğ et",
+          "neden_yanlis": "Çiğ etin de serbest suyu çoktur; su aktivitesi yaklaşık 0,99'dur."
+        },
+        {
+          "metin": "Honey",
+          "tr": "Bal"
+        },
+        {
+          "metin": "Cooked rice",
+          "tr": "Pişmiş pirinç",
+          "neden_yanlis": "Pişmiş pirinç suyla doludur; su aktivitesi 0,98 civarında, yani yüksektir."
+        }
+      ],
+      "dogru": "C",
+      "aciklama": [
+        "Bal şekerce zengindir; suyun büyük kısmı şekerlere bağlıdır. Bu yüzden su aktivitesi yaklaşık 0,6'dır.",
+        "Honey is rich in sugar, so most of its water is bound (Bağlı su çoktur, serbest su azdır)."
+      ],
+      "kaynak": "Örnek slayt 3"
+    },
+    {
+      "no": 2,
+      "bolum": "Water activity",
+      "konu": "Calculating water activity",
+      "konu_tr": "Su aktivitesi hesabı",
+      "soru": "Water activity is the ratio of the vapor pressure of water in a food (p) to the vapor pressure of pure water (p_{0}) at the same temperature. A food has p = 2.4 kPa and p_{0} = 3.0 kPa. What is its water activity?",
+      "soru_tr": "Su aktivitesi (water activity), gıdadaki suyun buhar basıncının (p) aynı sıcaklıkta saf suyun buhar basıncına (p_{0}) oranıdır. Bir gıdada p = 2,4 kPa ve p_{0} = 3,0 kPa ise su aktivitesi kaçtır?",
+      "siklar": [
+        {
+          "metin": "0.80"
+        },
+        {
+          "metin": "1.25",
+          "neden_yanlis": "Oranı ters yazmışsın (p_{0} bölü p). Su aktivitesi p bölü p_{0}'dır ve 1'i geçmez."
+        },
+        {
+          "metin": "0.60",
+          "neden_yanlis": "Farkı almışsın (3,0 − 2,4). Su aktivitesi fark değil, orandır."
+        },
+        {
+          "metin": "7.20",
+          "neden_yanlis": "Çarpmışsın. Su aktivitesi iki basıncın çarpımı değil, oranıdır."
+        }
+      ],
+      "dogru": "A",
+      "aciklama": [
+        "a_{w} = {p|p_{0}} = {2.4 kPa|3.0 kPa} = 0.80",
+        "Su aktivitesi birimsizdir ve saf su için 1'dir; gıdalarda 0 ile 1 arasında kalır."
+      ],
+      "kaynak": "Örnek slayt 4",
+      "ipucu": "Oran (ratio) demek bölme demek: üstte gıdanın basıncı, altta saf suyun basıncı."
+    },
+    {
+      "no": 3,
+      "bolum": "Maillard reaction",
+      "konu": "Reactants of the Maillard reaction",
+      "konu_tr": "Maillard tepkimesinin girdileri",
+      "soru": "Which pair of reactants starts the Maillard reaction?",
+      "soru_tr": "Maillard tepkimesini hangi çift başlatır?",
+      "siklar": [
+        {
+          "metin": "A reducing sugar and an amino group",
+          "tr": "Redüktör (indirgen) bir şeker ve bir amino grubu"
+        },
+        {
+          "metin": "Two fatty acids",
+          "tr": "İki yağ asidi",
+          "neden_yanlis": "Yağ asitleri arasındaki tepkime esmerleşme değil, lipit oksidasyonudur (acılaşma)."
+        },
+        {
+          "metin": "A protein and a lipid",
+          "tr": "Bir protein ve bir lipit",
+          "neden_yanlis": "Protein ile lipit etkileşimi Maillard değildir; Maillard için şekerin karbonil grubu gerekir."
+        },
+        {
+          "metin": "Ascorbic acid and oxygen",
+          "tr": "Askorbik asit ve oksijen",
+          "neden_yanlis": "Bu çift askorbik asidin oksidasyonudur; şeker ve amino grubu içermez."
+        }
+      ],
+      "dogru": "A",
+      "aciklama": [
+        "Maillard tepkimesi enzimsiz esmerleşmedir (non-enzymatic browning).",
+        "Redüktör şekerin karbonil grubu ile serbest amino grubu (amino asit ya da protein) tepkimeye girer."
+      ],
+      "kaynak": "Örnek slayt 5",
+      "ipucu": "Karbonil (carbonyl) grubu + amino (amino) grubu."
+    },
+    {
+      "no": 4,
+      "bolum": "Maillard reaction",
+      "konu": "Maillard reaction and water activity",
+      "konu_tr": "Maillard tepkimesi ve su aktivitesi",
+      "soru": "At roughly which water activity is the Maillard reaction fastest?",
+      "soru_tr": "Maillard tepkimesi yaklaşık hangi su aktivitesinde (water activity) en hızlıdır?",
+      "siklar": [
+        {
+          "metin": "a_{w} ≈ 0.10",
+          "neden_yanlis": "Çok düşük su aktivitesinde tepkimeye girenler hareket edemez; hız düşüktür."
+        },
+        {
+          "metin": "a_{w} ≈ 0.65"
+        },
+        {
+          "metin": "a_{w} ≈ 0.99",
+          "neden_yanlis": "Çok yüksek su aktivitesinde tepkimeye girenler seyrelir; hız yeniden düşer."
+        },
+        {
+          "metin": "a_{w} ≈ 0.30",
+          "neden_yanlis": "Bu aralıkta hâlâ düşük; hız en yüksek değerine orta aralıkta (yaklaşık 0,6–0,7) ulaşır."
+        }
+      ],
+      "dogru": "B",
+      "aciklama": [
+        "Hız, orta su aktivitesinde (yaklaşık 0,6–0,7) en yüksektir (intermediate water activity).",
+        "Yeterli su tepkimeye girenlerin hareketini sağlar; fazla su ise onları seyreltir."
+      ],
+      "kaynak": "Örnek slayt 6"
+    },
+    {
+      "no": 5,
+      "bolum": "Reaction kinetics",
+      "konu": "Rate constant units",
+      "konu_tr": "Hız sabiti birimi",
+      "soru": "Which unit does the rate constant (k) of a first-order reaction have?",
+      "soru_tr": "Birinci mertebe (first-order) bir tepkimenin hız sabiti (k) hangi birime sahiptir?",
+      "siklar": [
+        {
+          "metin": "s^{−1}"
+        },
+        {
+          "metin": "mol L^{−1} s^{−1}",
+          "neden_yanlis": "Bu, tepkime hızının (rate) birimidir; sıfırıncı mertebede hız sabiti ile aynıdır."
+        },
+        {
+          "metin": "L mol^{−1} s^{−1}",
+          "neden_yanlis": "Bu ikinci mertebe hız sabitinin birimidir."
+        },
+        {
+          "metin": "mol L^{−1}",
+          "neden_yanlis": "Bu derişimin (concentration) birimidir, hız sabitinin değil."
+        }
+      ],
+      "dogru": "A",
+      "aciklama": [
+        "v = k[A] olduğundan k = {v|[A]} = {mol L^{−1} s^{−1}|mol L^{−1}} = s^{−1}",
+        "Birinci mertebede hız sabitinde derişim birimi sadeleşir, geriye yalnızca zamanın tersi (s^{−1}) kalır."
+      ],
+      "kaynak": "Örnek slayt 9"
+    }
+  ]
+}
