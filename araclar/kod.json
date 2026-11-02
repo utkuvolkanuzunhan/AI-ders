@@ -98,6 +98,7 @@
       "aciklama": "Konu anlatan ünite sohbeti",
       "gorevler": [
         "kaynak-oku",
+        "pdf-yonlendir",
         "konu-anlat",
         "soru-sor",
         "ozet-ve-test",
@@ -112,6 +113,7 @@
       "aciklama": "Dersi yöneten, anlatım yapmayan sohbet",
       "gorevler": [
         "kaynak-oku",
+        "pdf-yonlendir",
         "devir",
         "kural-guncelle"
       ],
@@ -145,11 +147,28 @@
       "aciklama": "Tek soru ya da çıkmış soru çözen sohbet",
       "gorevler": [
         "kaynak-oku",
+        "pdf-yonlendir",
         "soru-sor",
         "kural-guncelle"
       ],
       "secenekler": "hepsi",
       "gorsel": true,
+      "ders": true
+    },
+    "soru-seti": {
+      "aciklama": "Soru dosyasını ya da istenen çoktan seçmeli soruları W24 testine çeviren sohbet",
+      "gorevler": [
+        "soru-seti",
+        "kaynak-oku",
+        "kural-guncelle"
+      ],
+      "secenekler": [
+        "A",
+        "C",
+        "D",
+        "G"
+      ],
+      "gorsel": false,
       "ders": true
     }
   },
