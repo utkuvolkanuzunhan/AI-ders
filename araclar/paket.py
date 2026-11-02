@@ -122,7 +122,7 @@ def main():
 
     rol = KOD["roller"][a.rol]
     ham = [e for e in a.ek if ham_mi(e)]
-    if ham and a.rol != "pdf-cevirici":
+    if ham and a.rol not in ("pdf-cevirici", "soru-seti"):
         print(f"# AI-ders: PDF KAPISI\n\nRol: **{a.rol}** · Ek: {', '.join(ham)}\n\n"
               "Bu sohbete çevrilmemiş kaynak eklendi. Bu sohbet ONU AÇMAZ, ÇEVİRMEZ ve ANLATIM YAPMAZ. "
               "Kural paketi verilmedi; yalnız aşağıdaki görevi uygula.\n\n---\n\n" + oku("gorevler/pdf-yonlendir.md"))

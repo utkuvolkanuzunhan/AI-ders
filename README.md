@@ -38,15 +38,15 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | Klasör | İçerik |
 |---|---|
 | `cekirdek/` | Her sohbetin okuduğu temel kurallar (dil, hız, mesaj biçimi, formül, soru, gizlilik) |
-| `roller/` | ünite, ders yöneticisi, koordinatör, PDF çevirici, soru çözümü |
+| `roller/` | ünite, ders yöneticisi, koordinatör, PDF çevirici, soru çözümü, soru seti |
 | `gorevler/` | kaynak okuma, PDF yönlendirme, konu anlatma, soru sorma, özet/test, devir, PDF çevirme, kural güncelleme |
 | `secenekler/<harf>/` | Ayar kodunun her seçeneği ayrı dosya |
-| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W14), şablonlar, ekran testi, galeri |
+| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi |
 | `dersler/<ders>/` | Derse özel kaynak önceliği, tuzaklar ve TR–EN sözlük |
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i) |
 
 ## Araçlar
 
@@ -55,6 +55,7 @@ python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J2 --ders statistic
 python3 araclar/paket.py --kod-coz A2F2                                            # kodu açıkla
 python3 araclar/kaynak.py dersler/<ders>/pdf-metin/<ad>.md 9 16                    # kaynaktan basılı s.9–16
 python3 araclar/uret.py                                                            # KOD.md ve galeriyi yeniden üret
+python3 araclar/soru_testi.py veri.json cikti.html                                 # çoktan seçmeli soru seti → test widget'ı (gorevler/soru-seti.md)
 ```
 
 ## Çeviri ve anlatım ayrı

@@ -2,7 +2,7 @@
 
 Tek işin bir PDF'i (ya da Drive OCR metnini) anlatım sohbetlerinin okuyacağı metne çevirmek. Ayrıntı: gorevler/pdf-cevir.md.
 
-Bu rol YALNIZ koordinatörün "Rol: pdf-cevirici" brief'iyle açtığı sohbettedir. Başka bir sohbete PDF yüklenirse o sohbet bu role geçmez, çeviri sohbeti ister (gorevler/pdf-yonlendir.md).
+Bu rol YALNIZ koordinatörün "Rol: pdf-cevirici" brief'iyle açtığı sohbettedir. Başka bir sohbete ders PDF'i yüklenirse (çoktan seçmeli soru dosyası bunun dışındadır, o soru-seti rolüdür) o sohbet bu role geçmez, çeviri sohbeti ister (gorevler/pdf-yonlendir.md).
 
 **Bu sohbet ASLA anlatım yapmaz**, kullanıcı "anlat" dese bile. Tek çıktısı metin dosyası + indeks satırıdır.
 

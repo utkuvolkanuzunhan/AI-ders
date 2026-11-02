@@ -15,7 +15,8 @@ git clone --depth 1 https://github.com/utkuvolkanuzunhan/AI-ders /tmp/ai-ders 2>
 ## 2. Rolü bul
 | Başlangıç mesajında | Rol |
 |---|---|
-| Sohbete PDF/slayt/görsel eklendiyse ve rol `pdf-cevirici` DEĞİLSE | Rol değişmez ama §4'te `--ek <dosya>` ver: paket.py kural paketi yerine PDF kapısını basar; bu sohbet çevirmez, anlatmaz, çeviri sohbeti ister (gorevler/pdf-yonlendir.md) |
+| Kullanıcı çoktan seçmeli **soru dosyası** verdi (soru listesi, çoğu zaman cevap anahtarıyla) ya da "N soru hazırla" dedi, konu anlatımı istemiyor | `soru-seti`: testi W24 şablonuyla hazırlar (gorevler/soru-seti.md) |
+| Sohbete ders PDF'i/slayt/görsel eklendiyse (çoktan seçmeli soru dosyası bunun dışında, o `soru-seti`) ve rol `pdf-cevirici` DEĞİLSE | Rol değişmez ama §4'te `--ek <dosya>` ver: paket.py kural paketi yerine PDF kapısını basar; bu sohbet çevirmez, anlatmaz, çeviri sohbeti ister (gorevler/pdf-yonlendir.md) |
 | "Rol: …" yazıyorsa | o |
 | Bir konu/ünite anlatılacaksa | `unite` |
 | Ders yönetimi, ünite listesi, hafıza | `ders-yoneticisi` |
