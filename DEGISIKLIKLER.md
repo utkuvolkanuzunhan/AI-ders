@@ -2,6 +2,7 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-02 · dersler/economics/sozluk.md · Esneklik ve bütçe doğrusu anlatımından 29 yeni terim (esnek talep, orta nokta yöntemi, bütçe doğrusu, seçim kümesi, kayma, dönme vb.), alfabetik yerlerine · Ayar C3: anlatımda kullanılan yeni terimler sözlüğe eklenir (kullanıcı).
 - 2026-11-01 · gorsel/sablonlar/W15, W20, alanlar/eee/katalog.md, galeri · EEE şablonları: W15 eleman sembol kartı (direnç, kondansatör, bobin, diyot, gerilim kaynağı, op-amp, VE, DEĞİL; IEEE/ANSI), W20 devre şeması (Vs, R1, R2, i, toprak; pasif işaret kuralı; numara, W16 başka şablonda kullanıldığı için W20) · EEE'de eleman adı geçince sembol de çizilir kuralının şablonu (kullanıcı).
 - 2026-11-01 · dersler/electronic-materials-device-physics, object-oriented-programming, physics-1 · EEE ders kartları ve TR–EN sözlükler; mevcut EEE sözlükleri Türkçe alfabeye göre sıralandı · EEE 3. dönem dersleri (kullanıcı).
 - 2026-11-01 · gorsel/sablonlar/W21–W23, alanlar/eee/katalog.md, dersler/linear-algebra/sozluk.md ve ders.md, galeri · Ters matris ünitesinden üç EEE şablonu (elemanter matris sekmeli, [A ve I] Gauss–Jordan adım adım, denklik zinciri), katalogda tablo, sözlüğe üç terim (denk ifadeler, elemanter matris, tersinir matris), ders kartına ters matris tuzakları · Ü3 anlatımında çıkan kalıcı parçalar (kullanıcı).
