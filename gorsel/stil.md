@@ -45,6 +45,7 @@ Tema değişkenleri (yazı, panel, çizgi) hep `var(--text-primary)`, `var(--tex
 | `k6` | camgöbeği | `#2A9CC7` | `#1C7FA6` | `#B9E6F7` | altıncı kavram |
 
 - Pastel `--p` = orta tonun %18 saydamı; seyrek (§2).
+- **Beğenilen palet (kullanıcı onaylı, öncelikli)**: bu altı renk ve rolleri bir anlatım widget'ında görülüp kullanıcı tarafından beğenildi. Yeni widget'ta önce bunlar kullanılır, yeni renk eklenmez; dışına çıkmak gerekçeli olur. Kavram–renk eşleme örneği: üç parçalı toplam (sabit `k6` + değişken `k5` = toplam `k1`), seçici çipler `k4`, doğru `k2`, yanlış `k3`; aynı kavram her widget'ta aynı rengi alır. Kullanıcı bir rengi beğenmediğini söylerse tablo ve bu madde güncellenir.
 - Aynı kavram widget'lar arasında aynı rengi korur (ör. fiyat hep k3, miktar hep k2). Kavram başına renk, rastgele süs rengi yok; ilk ekranda en çok 4 farklı renk.
 - Orta ton (`--c`) yalnız çizgi, nokta, halka, ikon ve alt çizgi içindir. Renkli yazı yalnız derin zeminde beyazdır; zemini tema olan yerde yazı tema renginde kalır.
 - Doğru = `#45B39D` (işaret) / `#0F7B70` (dolu), yanlış = `#E0924A` / `#B85A14`; renk tek başına anlam taşımaz (ikon + yazı).
