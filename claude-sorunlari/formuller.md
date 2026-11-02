@@ -38,4 +38,4 @@ Aşağıdakiler tek bir gözlemden geldi; kesin kural sayılmaz. Güvenli yol: k
 - Telefon genişliği (içerik ≈ 340 px): uzun denklem tek satıra sığmazsa satırlara böl, her `$$` bloğunda tek matris.
 
 ## Bu kurala bağlı yerler
-Çekirdek `cekirdek/temel.md` §4 ve alan katmanları (`alanlar/<alan>/kurallar.md`) formül biçimini bu dosyadan alır; çelişki olursa bu dosya kazanır. Yeni bir komut ham görünürse buraya ekle, başka yere yazma.
+Çekirdek `cekirdek/temel.md` §4 ve alan katmanları (`alanlar/<alan>/kurallar.md`) formül biçimini bu dosyadan alır; çelişki olursa bu dosya kazanır. Yeni bir komut ham görünürse buraya ekle, başka yere yazma. Kod denetimi `araclar/anlatim_testi.py` (F01–F14, gorevler/anlatim-kontrol.md); yeni yasak komut için testteki `YASAK_KOMUT` listesine ve `--kendini-dene` örneklerine de ekle.

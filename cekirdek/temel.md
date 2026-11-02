@@ -29,7 +29,7 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 ## 3. Mesaj biçimi (metin duvarı yok)
 - Paragraflar 1–2 cümle. Madde işaretli liste (`-`) eş bilgiler için, numaralı liste (`1.`) sıra ve hesap adımları için. Hesap adımları ayrı satırlarda, satır içine sıkıştırılmış hesap yok.
 - Adım başlıkları markdown başlığı: `## Adım 2: Arrhenius Denklemi`; alt başlık `###`. Başlık ve etiketlerde her kelimenin baş harfi büyük, Türkçe harfler doğru (i→İ, ı→I). Cümle içinde normal yazım.
-- Boşluk: geçişlerin ~%60'ı tek boş satır; ~%40'ı "önemli" geçiş (yeni kavram, `##` başlık, formül bloğu, widget öncesi/sonrası, mini test başı) = boş satır + yalnız `⠀` (U+2800) içeren satır + boş satır. U+00A0 kullanma. Arka arkaya iki `⠀` satırı koyma. Başlık önünde her zaman çift, altında tek boşluk.
+- Boşluk: genel geçişler tek boş satır (~%60); kritik yerlerin önü ve sonu çift boşluk (~%40) = boş satır + yalnız `⠀` (U+2800) içeren satır + boş satır. Kritik yerler: `##` başlık (önü çift, altı tek), blok formül (önü ve altı çift), widget (önü ve sonu çift), mini test başı (önü çift), yeni kavram açılışı (önü çift; kod yalnız uyarır). U+00A0 kullanma. Arka arkaya iki `⠀` satırı ya da arka arkaya boş satırlar geçerli boşluk değildir. Çift boşluk payı (en az 10 geçişte, konu sonunda tüm mesajlarda) %20'nin altına ve %70'in üstüne çıkamaz. Kod denetler: gorevler/anlatim-kontrol.md.
 - Liste başlığı ("**Sıra (yüksekten düşüğe):**", "**Tuzak:**") ile ilk maddesi arasında boşluk YOK; başlığın önünde boşluk olabilir.
 - Önemli kavram **kalın**. Genel kural cümlesi kalın, tek cümle.
 - Mesaj başı: "Kısa Cevap" (1–2 cümle) + hedef cümlesi. Yol haritası metne yazılmaz, adım kartı widget'ıdır.
@@ -38,8 +38,8 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 
 ## 4. Formüller
 - Düz metin kesir YASAK: "a/b", "k2/k1", "Eₐ/RT", "1/T" yazılmaz; metinde, maddede, tabloda, widget'ta her yerde gerçek pay/payda. Tek istisna birimler (J/mol, m/s).
-- Mesajda blok formül: `$$a_{w} = \dfrac{p}{p_{0}}$$`; satır içi `$\dfrac{E_{a}}{R}$`. Üs ve alt indis hep süslü parantezli. Sohbet arayüzü bazı komutları (`\Large`, `\boldsymbol`, `\mathbf`, `\left`, `\displaystyle` vb.) çizmez, ham kod gösterir: yazım kuralının tamamı `claude-sorunlari/formuller.md` (paketle gelir, bu §4'ün önüne geçer).
-- Formülün üstünde ve altında boşluk; açıklamadan kopmaz: amaç cümlesi → formül → her sembolün anlamı (madde madde).
+- Mesajda blok formül: `$$a_{w} = \dfrac{p}{p_{0}}$$`; satır içi `$\dfrac{E_{a}}{R}$`. Üs ve alt indis hep süslü parantezli. Sohbet arayüzü bazı komutları (`\Large`, `\boldsymbol`, `\mathbf`, `\left`, `\displaystyle` vb.) çizmez, ham kod gösterir: yazım kuralının tamamı `claude-sorunlari/formuller.md` (paketle gelir, bu §4'ün önüne geçer). Bu §3–§4 kurallarını `araclar/anlatim_testi.py` kodla denetler; her mesaj göndermeden önce geçer, konu sonunda rapor sohbete yazılır (gorevler/anlatim-kontrol.md).
+- Formülün üstünde ve altında çift boşluk (§3); açıklamadan kopmaz: amaç cümlesi → formül → her sembolün anlamı (madde madde).
 - Konuya göre üç biçim karışık: satır satır açılan türetme (W02), her terimi renkli ve dokununca anlamı açılan formül (W01), değer kaydırıp sonucu canlı gösteren formül/grafik (W03, W04).
 
 ## 5. Sorular

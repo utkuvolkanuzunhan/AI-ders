@@ -17,6 +17,7 @@ Bir sohbet arayüzü her LaTeX komutunu ya da biçimi göstermez; gösteremediğ
 1. `claude-sorunlari/<konu>.md` oluştur. Sırayla: **Belirti** (ne görünüyor), **Kural** (ne yazılır, ne yazılmaz; doğru ve yanlış örnek), **Test** (tarih, nerede denendi).
 2. Yukarıdaki tabloya satır ekle.
 3. Kuralı başka dosyada tekrar yazma; çekirdek ya da alan kuralı gerekiyorsa bu dosyaya bağla.
-4. `DEGISIKLIKLER.md`'ye bir satır ekle.
+4. Kod ile denetlenebiliyorsa `araclar/anlatim_testi.py`'ye kontrol ve `--kendini-dene` örneği ekle (gorevler/anlatim-kontrol.md).
+5. `DEGISIKLIKLER.md`'ye bir satır ekle.
 
 Teyit edilmemiş bir varsayım kural gibi yazılmaz; ilgili dosyanın "Teyit bekleyen" bölümüne gider ve test edilince taşınır. Arayüz değişince kurallar yeniden denenir (dosyadaki test tarihine bak).

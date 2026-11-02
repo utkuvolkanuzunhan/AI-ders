@@ -100,6 +100,7 @@
         "kaynak-oku",
         "pdf-yonlendir",
         "konu-anlat",
+        "anlatim-kontrol",
         "soru-sor",
         "ozet-ve-test",
         "devir",
@@ -149,6 +150,7 @@
         "kaynak-oku",
         "pdf-yonlendir",
         "soru-sor",
+        "anlatim-kontrol",
         "kural-guncelle"
       ],
       "secenekler": "hepsi",

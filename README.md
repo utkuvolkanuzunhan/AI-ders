@@ -39,7 +39,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 |---|---|
 | `cekirdek/` | Her sohbetin okuduğu temel kurallar (dil, hız, mesaj biçimi, formül, soru, gizlilik) |
 | `roller/` | ünite, ders yöneticisi, koordinatör, PDF çevirici, soru çözümü, soru seti |
-| `gorevler/` | kaynak okuma, PDF yönlendirme, konu anlatma, soru sorma, özet/test, devir, PDF çevirme, kural güncelleme |
+| `gorevler/` | kaynak okuma, PDF yönlendirme, konu anlatma, anlatım denetimi, soru sorma, özet/test, devir, PDF çevirme, kural güncelleme |
 | `secenekler/<harf>/` | Ayar kodunun her seçeneği ayrı dosya |
 | `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi |
 | `dersler/<ders>/` | Derse özel kaynak önceliği, tuzaklar ve TR–EN sözlük |
@@ -47,7 +47,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir) |
 
 ## Araçlar
 
@@ -57,6 +57,7 @@ python3 araclar/paket.py --kod-coz A2F2                                         
 python3 araclar/kaynak.py dersler/<ders>/pdf-metin/<ad>.md 9 16                    # kaynaktan basılı s.9–16
 python3 araclar/uret.py                                                            # KOD.md ve galeriyi yeniden üret
 python3 araclar/soru_testi.py veri.json cikti.html                                 # çoktan seçmeli soru seti → test widget'ı (gorevler/soru-seti.md)
+python3 araclar/anlatim_testi.py mesaj.md [--rapor]                                 # anlatım mesajı denetimi (gorevler/anlatim-kontrol.md); --kendini-dene kuralların denemesi
 ```
 
 ## Çeviri ve anlatım ayrı
