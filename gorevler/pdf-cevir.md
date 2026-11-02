@@ -32,7 +32,7 @@ Kaynak gösterirken kullanılan numara, sayfanın ÜZERİNDE BASILI olan numarad
 4. Dosyanın başına özet satırı: `sayfa eşlemesi: basılı = pdf − 3 (s.1–120), doğrulandı`.
 - Yazılar aynen; özetleme, yorum ekleme yok.
 - Çizim, şema, grafik, tablo: mantık diliyle (ne gösteriyor, eksenler, oklar, değerler, ilişkiler). Numarası korunur.
-- Formüller LaTeX olarak (`$\dfrac{k_2}{k_1}$`).
+- Formüller LaTeX olarak (`$\dfrac{k_{2}}{k_{1}}$`); sohbet yazım kuralları `claude-sorunlari/formuller.md`.
 - PDF numarası ve her sayfanın basılı numarası + PDF sıra numarası korunur (aşağıya bak).
 
 ## İndeks

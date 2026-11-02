@@ -43,6 +43,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `secenekler/<harf>/` | Ayar kodunun her seçeneği ayrı dosya |
 | `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi |
 | `dersler/<ders>/` | Derse özel kaynak önceliği, tuzaklar ve TR–EN sözlük |
+| `claude-sorunlari/` | Claude arayüzünün bilinen sorunları ve denenmiş yazım kuralları (formül/KaTeX vb.), alandan bağımsız, her paketle gelir |
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |

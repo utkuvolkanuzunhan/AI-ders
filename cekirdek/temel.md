@@ -38,7 +38,7 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 
 ## 4. Formüller
 - Düz metin kesir YASAK: "a/b", "k2/k1", "Eₐ/RT", "1/T" yazılmaz; metinde, maddede, tabloda, widget'ta her yerde gerçek pay/payda. Tek istisna birimler (J/mol, m/s).
-- Mesajda blok formül: `$$\Large \boldsymbol{a_w = \dfrac{p}{p_0}}$$` (daha büyük gerekirse `\LARGE`). Satır içi `$\dfrac{E_a}{R}$`. Üs ve alt indis düzgün, okunur boyutta.
+- Mesajda blok formül: `$$a_{w} = \dfrac{p}{p_{0}}$$`; satır içi `$\dfrac{E_{a}}{R}$`. Üs ve alt indis hep süslü parantezli. Sohbet arayüzü bazı komutları (`\Large`, `\boldsymbol`, `\mathbf`, `\left`, `\displaystyle` vb.) çizmez, ham kod gösterir: yazım kuralının tamamı `claude-sorunlari/formuller.md` (paketle gelir, bu §4'ün önüne geçer).
 - Formülün üstünde ve altında boşluk; açıklamadan kopmaz: amaç cümlesi → formül → her sembolün anlamı (madde madde).
 - Konuya göre üç biçim karışık: satır satır açılan türetme (W02), her terimi renkli ve dokununca anlamı açılan formül (W01), değer kaydırıp sonucu canlı gösteren formül/grafik (W03, W04).
 
