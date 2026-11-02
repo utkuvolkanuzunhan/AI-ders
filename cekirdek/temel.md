@@ -13,7 +13,7 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 - Bir mesaj = tek adım, tek fikir; hemen ardından o adımın widget'ı.
 - Akış durmaz: konu (ya da 25 dakikalık blok) bitene kadar tüm adımlar art arda gönderilir. Adım aralarında kullanıcıdan cevap bekleme, "devam edelim mi?" diye sorma. Kullanıcı istediği zaman yazar; yazarsa o an cevap ver, sonra kaldığın adımdan sürdür.
 - Konu konu, müfredat ve kaynak sırasıyla doğrusal ilerle; atlama. Altyapı için ileriki konudan kısa bilgi gerekiyorsa "İleriden bir ipucu" diye işaretle, kısa tut, hangi ünitede ayrıntılı geleceğini söyle (Ekstra'da durur).
-- Kullanıcı bu sohbete PDF/slayt yüklerse bu sohbet anlatım YAPMAZ: `python3 /tmp/ai-ders/araclar/paket.py --rol pdf-cevirici` paketini oku ve onu uygula (çevir, koordinatörden yeni anlatım sohbeti iste, kullanıcıya bağlantıyı ver).
+- **Sert kural: çeviri ve anlatım ayrı sohbetlerde.** Ders PDF'i/slaytı (çoktan seçmeli soru dosyası değil, o gorevler/soru-seti.md) yüklenen sohbet onu açmaz, çevirmez, anlatmaz; koordinatörden çeviri sohbeti ister (gorevler/pdf-yonlendir.md). Çeviri sohbeti (`Rol: pdf-cevirici`) yalnız metni yazar ve yeni anlatım sohbeti ister. Anlatım sohbeti kaynağı yalnız `python3 /tmp/ai-ders/araclar/kaynak.py <pdf-metin.md> <baş> <son>` ile okur; PDF'i hiçbir yolla (Read, pdftotext, görsel) açmaz. Kod zorlar: `paket.py --ek` ve `kaynak.py` çevrilmemiş dosyada durur.
 - Çalışma blokları 25 dakikalık: her bloğa tek net hedef, düşük eşikli başlangıç, blok sonunda 2–3 soru (widget içinde).
 
 ## 2b. Hız (ilk yanıt ≤ 30 sn, sonraki adımlar 10–1200 sn)
@@ -47,6 +47,7 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 - Anlatım içindeki bütün sorular widget içinde sorulur: tıklanabilir şıklar, dokununca doğru/yanlış + açıklama, gerekirse "İpucu" düğmesi (W10 tek ya da çok soru, W09 doğru/yanlış). Akışı durdurmaz, cevap beklenmez.
 - `request_decision` kartı anlatımın ortasında KULLANILMAZ (kart cevaplanana kadar akış durur). Yalnız konunun en son mesajı olarak, arkasından gönderilecek bir şey kalmadığında, en çok 1 kart: en çok 4 şık, son şık "İpucu ver" ve önerilen o.
 - Kullanıcının klavyeyle yazması gereken metni en aza indir.
+- Konu anlatımı DIŞINDA hazırlanan çoktan seçmeli soru setleri (yüklenen soru dosyası, deneme sınavı, "N soru hazırla") her zaman W24 şablonuyla yapılır: veri JSON'u + `python3 araclar/soru_testi.py`; ayrıntı gorevler/soru-seti.md. Elle test HTML'i yazma.
 
 ## 6. Görseller
 - Görsel anlatım ana yöntemdir, süs değil. Her adımın hemen altında o adıma özel widget. Ayrıntı: gorsel/stil.md (anlatım rolleri okur).
