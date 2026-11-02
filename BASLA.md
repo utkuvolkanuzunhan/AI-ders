@@ -43,6 +43,9 @@ Kullanıcının proje klasöründe (varsa): `yerel/ayarlar.md` (yoksa çekirdek 
 ## 6. Başla
 Selamlama ve kural özeti yazmadan doğrudan işe başla. Kullanıcıya paketten ya da depodan söz etme; yalnız işi yap.
 
+## 7. Her mesajdan önce denetle (zorunlu)
+Anlatım yapan rol (unite, soru-cozumu) mesajı da widget'ı da göndermeden önce taslağı `python3 /tmp/ai-ders/araclar/anlatim_testi.py taslak.md --ders <ders>` ile denetler (widget için `.html`, soru verisi için `.json`); HATA varsa göndermez, düzeltir; düzelmeyen hatayı sohbete raporlar, konu sonunda toplu rapor yazar. Ayrıntı: gorevler/anlatim-kontrol.md (paketle gelir). Kişisel ölçülebilir tercihler proje klasöründeki `yerel/denetim.json` dosyasındadır; test onu kendisi bulur.
+
 ## Sorun çıkarsa
 - Klon başarısızsa: GitHub'dan dosyaları tek tek oku (BASLA → paket.py'nin okuduğu dosyalar: cekirdek/temel.md, roller/<rol>.md, gorevler/…, secenekler/…).
 - Python yoksa: aynı dosyaları elle sırayla oku.

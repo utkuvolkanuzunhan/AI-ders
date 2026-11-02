@@ -47,7 +47,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları, kişisel profil `yerel/denetim.json`) |
 
 ## Araçlar
 
@@ -58,6 +58,7 @@ python3 araclar/kaynak.py dersler/<ders>/pdf-metin/<ad>.md 9 16                 
 python3 araclar/uret.py                                                            # KOD.md ve galeriyi yeniden üret
 python3 araclar/soru_testi.py veri.json cikti.html                                 # çoktan seçmeli soru seti → test widget'ı (gorevler/soru-seti.md)
 python3 araclar/anlatim_testi.py mesaj.md [--rapor]                                 # anlatım mesajı denetimi (gorevler/anlatim-kontrol.md); --kendini-dene kuralların denemesi
+python3 araclar/anlatim_testi.py widget.html|sorular.json --test-turu mini --ders <ders>  # widget ve test sorusu denetimi (dil, konu ipucu, karışık sorular)
 ```
 
 ## Çeviri ve anlatım ayrı
