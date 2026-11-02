@@ -38,7 +38,10 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 
 ## 4. Formüller
 - Düz metin kesir YASAK: "a/b", "k2/k1", "Eₐ/RT", "1/T" yazılmaz; metinde, maddede, tabloda, widget'ta her yerde gerçek pay/payda. Tek istisna birimler (J/mol, m/s).
-- Mesajda blok formül: `$$\Large \boldsymbol{a_w = \dfrac{p}{p_0}}$$` (daha büyük gerekirse `\LARGE`). Satır içi `$\dfrac{E_a}{R}$`. Üs ve alt indis düzgün, okunur boyutta.
+- Sohbet mesajında formül SADE LaTeX ile yazılır. Sohbet arayüzü biçim komutlarını işlemez, formül yerine ham kod gösterir (`\Large \boldsymbol{...}` olarak göründü; kullanıcı, 2 Kasım 2026). Bu yüzden mesaj metninde şunlar HİÇ kullanılmaz: `\Large`, `\LARGE`, `\large`, `\huge`, `\boldsymbol`, `\mathbf`, `\bf`, `\boxed`, `\color`, `\textcolor`, `\displaystyle`, `\qquad`, `\quad`. Renk ve kalınlık gerekiyorsa formülde değil, widget'ta (W01) ver.
+- Mesajda blok formül: `$$a_w = \dfrac{p}{p_0}$$`, kendi satırında. Satır içi `$\dfrac{E_a}{R}$`. Büyütmek için komut ekleme; `$$` bloğu zaten satır içi formülden büyük çıkar. Üs ve alt indis düzgün (`a_w`, `E^d`).
+- Mesajda kullanılabilen komutlar: `\dfrac`, `^`, `_`, `\times`, `\cdot`, `\approx`, `\le`, `\ge`, `\neq`, `\Delta`, Yunan harfleri (`\pi`, `\alpha`...), `\sqrt`, `\ln`, `\left( \right)`, `\%`, `\text{...}`. Başka komut gerekirse sade biçime çevir ya da formülü widget'a taşı. Bir `$$` bloğunda tek denklem; iki denklem iki ayrı blokta.
+- Para birimi `$` işareti metinde yazılmaz: "200 dolar" ya da "200 USD". Formülün içinde gerekirse `\$`. Aksi halde iki `$` arasındaki yazı formül sanılır ve bozulur.
 - Formülün üstünde ve altında boşluk; açıklamadan kopmaz: amaç cümlesi → formül → her sembolün anlamı (madde madde).
 - Konuya göre üç biçim karışık: satır satır açılan türetme (W02), her terimi renkli ve dokununca anlamı açılan formül (W01), değer kaydırıp sonucu canlı gösteren formül/grafik (W03, W04).
 
