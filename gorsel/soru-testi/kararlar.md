@@ -26,7 +26,18 @@
 |---|---|---|---|
 | 7 | Şık renkleri | **Her şık ayrı renk** | A mavi, B pembe, C turkuaz, D limon sarısı, E mor (öneri: kullanıcı, 2 Kasım). Sıra, komşu şıkların normal ve renk körü görüşte ayırt edilmesi için doğrulandı. Cevaptan sonra yalnız doğru (yeşil) ve seçilen yanlış (turuncu) renkli kalır, öteki şıklar nötr; renkler yeşil/turuncu anlam renkleriyle karışmasın diye ikisine yakın ton kullanılmaz. Harf şeridi renk dışında harfle de ayırt edilir. |
 
+## Tasarım değişikliği (2 Kasım 2026, kullanıcı: tüm widget'lar karmaşık bulundu)
+Şablon, araç ve gorsel/stil.md birlikte güncellendi; yukarıdaki eski satırlar (Görünüm 1, Görünüm 2'nin boyama biçimi, Sonradan eklenenler 7) bu satırlarla **geçersiz** oldu, kayıt için silinmedi.
+
+| # | Konu | Seçilen | Not |
+|---|---|---|---|
+| 8 | Test görünümü | **Çizgili** | Kutu yok: şıklar 1 px çizgiyle ayrılır; harf soluk. Cevaptan sonra yalnız doğru (yeşil sol çizgi 5 px + açık yeşil zemin) ve seçilen yanlış (turuncu) boyanır, ötekiler %50 soluk. Mini test, tam test ve soru seti aynı |
+| 9 | Şık renkleri | **Şık başına renk yok** | #7 iptal: gri harf, renk yalnız doğru/yanlış anlamı taşır |
+| 10 | Geniş ekran | **Şıklar 2×2** | Tablet/telefon yatay (≥600 px): iki sütun, şık satırı 92 px, düğmeler sınırlı genişlik; dar ekranda 1×4 |
+| 11 | Anlatım widget'ı | **Karma (W25)** | Çizgi + gri + derin renkli (+ seyrek pastel) yüzeyler; "işaret ve hesap" gri, büyük yazı. Kural: gorsel/stil.md §2 |
+| 12 | Türkçe satırı | **Ayrı satır, soluk, parantezli** | Motor sondaki dengeli parantezi ayırır; veri `"English (Türkçe)"` kalır |
+
 ## Tasarım ilkeleri (değişmeden kalan)
 - iPad: emoji, `color-mix`, geçiş animasyonu yok; renk tonu `.tn` katmanıyla.
-- Doğru = `--c2`, yanlış = `--c3`; renk tek başına anlam taşımaz (ikon + yazı). Şık hueleri `--p0..--p4` ayrı ve bu ikisinden uzak.
+- Doğru = `--c2`, yanlış = `--c3`; renk tek başına anlam taşımaz (ikon + yazı).
 - Dokunma hedefi ≥ 44 px, yazı ≥ 13 px, `<button>` yok (`role="button"`).

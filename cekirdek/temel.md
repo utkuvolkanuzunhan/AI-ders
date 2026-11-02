@@ -51,6 +51,7 @@ Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekl
 
 ## 6. Görseller
 - Görsel anlatım ana yöntemdir, süs değil. Her adımın hemen altında o adıma özel widget. Ayrıntı: gorsel/stil.md (anlatım rolleri okur).
+- Görünüm (çizgili/gri/renkli yüzey karışımı, renk paleti, yazı ve boşluk, tablet yatay 2×2 şık) yalnız gorsel/stil.md'de durur; sekmeli anlatım widget'ı W25'ten türetilir (veri `araclar/anlatim_uret.py` ile yazılır), bütün test soruları çizgilidir (W10, W24).
 - Kitaptaki/slayttaki şekil, tablo ve grafikleri numarasıyla yeniden çiz.
 - Her grafiğin altında eksenler ve okunuşu 1–2 cümle.
 - Karşılaştırma her zaman tablo.
