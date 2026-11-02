@@ -5,7 +5,7 @@
 
 ## Kurallar
 1. **Biçim:** Formül ya `$$...$$` bloğudur (kendi satırında, üstünde ve altında boş satır) ya da kısa satır içi `$...$`. Bir blokta tek denklem; çok denklem varsa her biri ayrı blok.
-2. **Yazma, ham kod görünür:** `\Large`, `\LARGE`, `\boldsymbol`, `\mathbf`, `\boxed`, `\color`, `\displaystyle`, `\qquad`, `\quad`. Vurgu gerekiyorsa formülün dışında (kalın metin, ayrı satır) yap.
+2. **Yazma, ham kod görünür:** `\Large`, `\LARGE`, `\boldsymbol`, `\mathbf`, `\boxed`, `\color`, `\displaystyle`, `\qquad`, `\quad`. Büyütmek için komut ekleme: `$$` bloğu zaten büyük çıkar. Renk, kalınlık ve vurgu gerekiyorsa formülde değil, widgetta (W01) ya da formülün dışında (kalın metin, ayrı satır) ver.
 3. **İndis ve üs hep süslü parantezle:** `P_{X}`, `Q_{1}`, `E^{d}`. Süslü parantezsiz `P_X` ham görünür.
 4. **Kesir:**
    - Kesrin içine kesir koyma; ara değeri ayrı blokta tanımla.
