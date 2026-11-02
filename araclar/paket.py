@@ -5,14 +5,20 @@ Kullanım:
   python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J2 --ders reaction-kinetics
   python3 araclar/paket.py --rol ders-yoneticisi --ders statistics
   python3 araclar/paket.py --rol unite --ders circuit-analysis-1 --alan eee   # alan katmanıyla
+  python3 araclar/paket.py --rol unite --ders food-chemistry-1 --ek slayt.pdf   # ek dosya varsa: PDF kapısı
   python3 araclar/paket.py --kod-coz A2          # yalnız kodu çöz
   python3 araclar/paket.py --roller              # rolleri listele
 Kod yazılmazsa varsayılan; eksik harfler varsayılandan tamamlanır.
 Alan katmanı (alanlar/<alan>/): --alan ile ya da ders kartının başındaki `alan: <ad>` satırından bulunur.
 Alanın varsayılan kodu (alan.json) depo varsayılanının üstüne biner; verilen kod ikisini de geçer.
 F2 için beğeni listesi: ...F2/W01.W06-W03 (W03 hiç kullanılmaz).
+PDF kapısı: --ek ile çevrilmemiş dosya (PDF/slayt/görsel) verilirse ve rol pdf-cevirici değilse kural paketi
+verilmez; yalnız yönlendirme görevi basılır ve çıkış kodu 3 olur (çeviri ve anlatım ayrı sohbetlerdedir).
 """
 import argparse, json, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from kaynak import ham_mi  # noqa: E402
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KOD = json.load(open(os.path.join(KOK, "araclar", "kod.json"), encoding="utf-8"))
@@ -99,6 +105,7 @@ def main():
     ap.add_argument("--alan", default="", help="alan katmanı (alanlar/<alan>/); yoksa ders kartından bulunur")
     ap.add_argument("--kod-coz", dest="kodcoz")
     ap.add_argument("--roller", action="store_true")
+    ap.add_argument("--ek", action="append", default=[], help="sohbete eklenen/briefte verilen dosya (tekrarlanabilir)")
     a = ap.parse_args()
 
     if a.roller:
@@ -114,6 +121,12 @@ def main():
         sys.exit(f"--rol gerekli. Roller: {', '.join(KOD['roller'])}")
 
     rol = KOD["roller"][a.rol]
+    ham = [e for e in a.ek if ham_mi(e)]
+    if ham and a.rol != "pdf-cevirici":
+        print(f"# AI-ders: PDF KAPISI\n\nRol: **{a.rol}** · Ek: {', '.join(ham)}\n\n"
+              "Bu sohbete çevrilmemiş kaynak eklendi. Bu sohbet ONU AÇMAZ, ÇEVİRMEZ ve ANLATIM YAPMAZ. "
+              "Kural paketi verilmedi; yalnız aşağıdaki görevi uygula.\n\n---\n\n" + oku("gorevler/pdf-yonlendir.md"))
+        sys.exit(3)
     # Alan: --alan > ders kartındaki `alan:` satırı > yok (çekirdek kurallar yalnız)
     alan_kart, kart = kart_oku(a.ders) if a.ders else ("", None)
     alan = (a.alan or alan_kart).strip().lower()
@@ -123,6 +136,7 @@ def main():
     parca.append(f"# AI-ders okuma paketi\n\nRol: **{a.rol}** · Kod: **{kod_yaz(sec, begen, istemez)}**"
                  + (f" · Ders: **{a.ders}**" if a.ders else "")
                  + (f" · Alan: **{alan}**" if cfg else "")
+                 + ("\n\n**Bu sohbet ANLATIM YAPMAZ.** Tek çıktı pdf-metin dosyası + indeks; bitince koordinatörden anlatım sohbeti iste." if a.rol == "pdf-cevirici" else "")
                  + "\n\nBu paket bu sohbetin tüm kurallarıdır. Kullanıcının bu sohbette açıkça söyledikleri her şeyi geçer.\n\n"
                  + tablo(sec))
     if begen or istemez:
