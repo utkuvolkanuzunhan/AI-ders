@@ -13,7 +13,7 @@
    - `\left( \right)` kullanma; düz `( )`.
    - Kesirden sonra `\times 100` getirme (tablette `× 100` paydaya kayar); çarpanı payın içine al.
 5. **Para birimi için `$` ya da `\$` yazma**, "50 dolar" yaz. Tek bir `$` işareti aynı satırdaki bütün formülleri bozar.
-6. **Rahat çalışanlar:** `\dfrac`, `^{}`, `_{}`, `\times`, `\cdot`, `\approx`, `\le`, `\ge`, `\neq`, `\Delta`, Yunan harfleri, `\sqrt`, `\ln`, `\%`, `\text{}`.
+6. **Rahat çalışanlar:** `\dfrac`, `^{}`, `_{}`, `\times`, `\cdot`, `\approx`, `\le`, `\ge`, `\neq`, `\Delta`, Yunan harfleri, `\sqrt`, `\ln`, `\%`, `\text{}`, matris `\begin{bmatrix} ... \end{bmatrix}` ve toplam `\sum_{k=1}^{n}` (ikisi `$$` bloğunda düzgün göründü; test: 2 Kasım 2026, bu yüzden bir blokta tek matris).
 7. **Liste ve tabloda satır içi `$...$` yok:** madde (`-`, `1.`) ve tablo (`|`) satırında `$dt$` ham görünür. Düz metin yaz (dt, Δt, x², v₀) ya da listeyi böl: madde cümlesi, boş satır, ayrı `$$` bloğu, sonraki madde numarasıyla devam (`2.`). Listenin ya da tablonun içine `$$` bloğu da konmaz.
 8. **Kesin kural, kodla zorlanır:** her mesaj gönderilmeden önce taslak bir dosyaya yazılır ve `python3 /tmp/ai-ders/araclar/formul_denetle.py taslak.md` çalıştırılır. `HATA` varsa mesaj gönderilmez; düzeltilir ve yeniden denetlenir. `UYARI` kural değil ihtiyattır (aşağıdaki "Teyit bekleyen"). Denetleyici yukarıdaki kuralların hepsini kontrol eder: yasaklı komutlar, süslü parantezsiz indis/üs, iç içe kesir, kesirden sonra `\times`, bir blokta çok denklem, `$$` bloğunun kendi satırında ve boş satırlar arasında olması, liste/tablo satırında `$`, para için `$`. Yeni bir kural eklenince denetleyiciye de (testiyle: `--test`) eklenir.
 9. **Gönderdikten sonra da bak;** bozuk formül görünürse mesajı düzelt (edit) ve nedenini bu dosyaya yaz.
@@ -37,7 +37,7 @@ $$\text{Değişim} = \dfrac{(Q_{2} - Q_{1}) \times 100}{Q_{avg}} \%$$
 Aşağıdakiler tek bir gözlemden geldi; kesin kural sayılmaz. Güvenli yol: kullanma. Denenince yukarıya taşı ya da sil.
 - `\,` `\;` `\!` boşluk komutları: bitişik yaz ya da `\cdot` / `\text{ }` kullan.
 - Satır içi formülü rakamla başlatma (`${2}\times 3$`) ve formülden hemen sonra kesme işareti getirme (`$X$'nın` yerine `$X$ matrisinin`): `$` işaretinin para sanılması riskine karşı.
-- Matris (`bmatrix`), `aligned`, `\sum` içeren çıplak `$$` blokları: bir ekran görüntüsünde sorunsuz görüldü, ama tek örnek; ilk kez kullanılırken görünüşü sor.
+- `aligned` ve öteki çok satırlı ortamlar: denenmedi; zaten bir blokta tek denklem kuralı var, kullanma.
 - Telefon genişliği (içerik ≈ 340 px): uzun denklem tek satıra sığmazsa satırlara böl, her `$$` bloğunda tek matris.
 
 ## Bu kurala bağlı yerler
