@@ -15,12 +15,13 @@ git clone --depth 1 https://github.com/utkuvolkanuzunhan/AI-ders /tmp/ai-ders 2>
 ## 2. Rolü bul
 | Başlangıç mesajında | Rol |
 |---|---|
-| Kullanıcı bu sohbete PDF/slayt yüklediyse (başka rol yazsa bile) | `pdf-cevirici`: bu sohbet anlatım yapmaz |
+| Kullanıcı çoktan seçmeli **soru dosyası** verdi (soru listesi, çoğu zaman cevap anahtarıyla) ya da "N soru hazırla" dedi, konu anlatımı istemiyor | `soru-seti`: testi W24 şablonuyla hazırlar (gorevler/soru-seti.md) |
+| Sohbete ders PDF'i/slayt/görsel eklendiyse (çoktan seçmeli soru dosyası bunun dışında, o `soru-seti`) ve rol `pdf-cevirici` DEĞİLSE | Rol değişmez ama §4'te `--ek <dosya>` ver: paket.py kural paketi yerine PDF kapısını basar; bu sohbet çevirmez, anlatmaz, çeviri sohbeti ister (gorevler/pdf-yonlendir.md) |
 | "Rol: …" yazıyorsa | o |
 | Bir konu/ünite anlatılacaksa | `unite` |
 | Ders yönetimi, ünite listesi, hafıza | `ders-yoneticisi` |
 | Projenin ana sohbeti | `koordinator` |
-| PDF/slayt metne çevrilecekse | `pdf-cevirici` |
+| Yalnız koordinatör "Rol: pdf-cevirici" ile açtıysa | `pdf-cevirici` (yalnız çevirir, anlatmaz) |
 | Tek soru / çıkmış soru çözümü | `soru-cozumu` |
 Emin değilsen `unite`.
 
@@ -32,9 +33,9 @@ Kullanıcının proje klasöründeki `yerel/ayarlar.md` içinde "Alan:" satırı
 
 ## 4. Paketi oluştur ve OKU
 ```
-python3 /tmp/ai-ders/araclar/paket.py --rol <rol> --kod <kod> --ders <ders-klasörü> [--alan <alan>]
+python3 /tmp/ai-ders/araclar/paket.py --rol <rol> --kod <kod> --ders <ders-klasörü> [--alan <alan>] [--ek <eklenen-dosya> ...]
 ```
-Çıktının tamamı bu sohbetin kuralıdır; başka kural dosyası okuma. Ders klasör adları: `ls /tmp/ai-ders/dersler`.
+Çıktının tamamı bu sohbetin kuralıdır; başka kural dosyası okuma. Sohbete ya da brief'e eklenen her dosyayı `--ek` ile ver; çıkış kodu 3 ise (PDF kapısı) yalnız basılan yönlendirme görevini uygula. Ders klasör adları: `ls /tmp/ai-ders/dersler`.
 
 ## 5. Yerel durumu oku
 Kullanıcının proje klasöründe (varsa): `yerel/ayarlar.md` (yoksa çekirdek §7'ye göre oluşturulur), `dersler/<ders>/hafiza.md`, devir notu (brief'te verildiyse). Kaynak metni yalnız gerektiği kadar (gorevler/kaynak-oku.md).

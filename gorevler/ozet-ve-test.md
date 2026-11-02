@@ -7,3 +7,5 @@ Sırayla:
 4. Mini test: W10, 3 soru, zor ve çok adımlı.
 5. Ekstra düğmesi (W05): kaynak tablosu, slayt dışı bilgi, ileriden ipucu.
 6. En son mesaj olarak, isteğe bağlı 1 kapanış sorusu (request_decision). Bundan sonra gönderilecek bir şey kalmamalı.
+
+Bu görev anlatım içi testtir (W10). Konu anlatımı dışında hazırlanan soru seti için gorevler/soru-seti.md (W24).
