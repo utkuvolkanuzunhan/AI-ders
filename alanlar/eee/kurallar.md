@@ -13,7 +13,14 @@
 - Ondalık ayırıcı metinde virgüldür. Formül içinde `4{,}7` yaz (aksi halde virgülden sonra boşluk girer). Kod bloklarında (C++, VHDL) nokta.
 - Gösterim: sabit (DC) büyüklük büyük harf $V, I$; zamanla değişen küçük harf $v(t), i(t)$. Sanal birim $j$, akım $i$ ile karışmasın. Vektör $\vec{F}$ ya da kalın $\mathbf{u}$, matris büyük harf $A$ (ders kartı hangisini kullandığını yazar).
 - Sonuç 3 anlamlı basamak; ara adımlarda yuvarlama yok.
-- Formül telefonda taşmaz (içerik genişliği ≈ 340 px): her `$$` bloğunda tek matris, uzun denklem satırlara bölünür ya da toplam sembolüyle yazılır; `\Large` yalnız kısa formülde. Kalın metnin içine formül konmaz. İz için `\mathrm{tr}`. `$X$'nın` gibi formül–kesme işareti bitişimi yazılmaz (`A matrisinin` yaz). Şüphede KaTeX ile genişliği ölç.
+- Formül yazımı (kullanıcının ekran görüntüsüne göre, 2 Kasım 2026; sohbet arayüzünde `\Large \boldsymbol{...\sum...}` bloğu ham metin, `\boldsymbol{(m\times n)(n\times p)=...}` bloğu ve satır içi `$...$` düzgün göründü):
+  - **Boyut komutu yazma:** `\Large`, `\large`, `\LARGE`, `\huge` bu arayüzde büyük ihtimalle işlenmez; formül yerine ham metin (`\Large \boldsymbol{...}`) görünür. Çekirdekteki `$$\Large \boldsymbol{...}$$` kalıbı EEE'de kullanılmaz.
+  - Blok formül: basit formülde `$$\boldsymbol{A\pm B=[a_{ij}\pm b_{ij}]}$$` (kalın, çalışıyor); matris (`bmatrix`), `aligned`, `\sum`, `\mathrm`, `\mathbf` içeren formülde çıplak `$$...$$` (içine `\boldsymbol` sarma).
+  - Telefonda taşmaz (içerik genişliği ≈ 340 px): her `$$` bloğunda tek matris, uzun denklem satırlara bölünür ya da toplam sembolüyle yazılır. Kalın metnin içine formül konmaz.
+  - Boşluk komutu yazma: `\,`, `\;`, `\!` yerine bitişik yaz (`a_{ik}b_{kj}`) ya da `\cdot` kullan (`k\cdot\mathrm{tr}(A)`). İz için `\mathrm{tr}`.
+  - Satır içi formül rakamla başlamaz: `${2}\times 3$`, `${3}A-2B$`, `${0}A$` (aksi halde `$` para işareti sanılabilir). Tek başına `$0$`/`$1$` yazma: sıfır matrisi `$\mathbf{0}$`, "1 ile n arasında" gibi sayıyı düz metin yaz.
+  - Formülden hemen sonra kesme işareti ya da ek getirme (`$X$'nın` yerine `$X$ matrisinin`).
+  - Satır içi `$...$` çalışıyor. Yeni bir kalıbı (ör. `\sum` içeren çıplak blok) ilk kez kullanırken kullanıcıdan görünüşünü teyit al; ham metin görünürse bu listeye ekle.
 
 ## 3. Hesap disiplini
 - Hesaplı çözüm sırası: verilenler ve istenen → yöntem ve neden bu yöntem → denklemler → çözüm → birimli sonuç → doğrulama (güç dengesi, KAY/KGY kontrolü, uç durum, boyut analizi, denklemde yerine koyma).
@@ -38,3 +45,6 @@
 ## 7. Kural güncelleme hedefi
 - Bu alanın bir sohbetinde (paket başlığında "Alan: eee") çıkan kalıcı kural, kullanıcı açıkça "her yerde / bütün derslerde" demedikçe `alanlar/eee/` katmanına yazılır: alan kuralı `kurallar.md`, widget `katalog.md` + `gorsel/sablonlar/`, derse özel bilgi `dersler/<ders>/`. Çekirdek (cekirdek/, secenekler/ varsayılanları) ve gıda dersleri bu yüzden değişmez.
 - Yeni EEE dersi eklemek: dersler/_sablon/'dan kopyala, ders kartının en başına `---`, `alan: eee`, `---` satırlarını yaz.
+
+## 8. Anlatım başlığı
+- Her anlatım mesajının başlığı konumunu yazar: `## Ünite 2 · Adım 3: Matris Çarpımı`. Kaynak slayt ya da kitap bölümü varsa eklenir: `## Ünite 2 · Slayt 3 · Adım 1: ...`. Ünite ve slayt numarası ders kartı ya da hafızadaki plana göre yazılır; "Kısa Cevap" ve "Genel Kural" başlıkları da `Ünite N ·` ile başlar.
