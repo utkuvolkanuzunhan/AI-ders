@@ -18,7 +18,7 @@ Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı
 | W12 | Akış şeması | Yöntem/süreç sırası | sablonlar/W12-akis-semasi.html |
 | W13 | Kimyasal yapı kartı | Fonksiyonel grup/molekül adı geçince: ad + formül + yapı çizimi | sablonlar/W13-kimyasal-yapi.html |
 | W14 | Etken kartları | Bir olayı etkileyen etkenler ve yönleri | sablonlar/W14-etken-kartlari.html |
-| W24 | Çoktan seçmeli test (soru seti) | Konu anlatımı DIŞINDA soru seti (soru dosyası, deneme sınavı). Anlatım içinde W10 kullanılır, W24 değil. Şablonu elle doldurma: `araclar/soru_testi.py` (gorevler/soru-seti.md) | sablonlar/W24-coktan-secmeli-test.html |
+| W24 | Çoktan seçmeli test (soru seti) | Konu anlatımı DIŞINDA soru seti (soru dosyası, deneme sınavı). Anlatım içinde W10 kullanılır, W24 değil. Her şık ayrı renk. Şablonu elle doldurma: `araclar/soru_testi.py` (gorevler/soru-seti.md) | sablonlar/W24-coktan-secmeli-test.html |
 
 ## Yerleşik kartlar (HTML yazılmaz)
 | Kimlik | Ne | Nasıl |

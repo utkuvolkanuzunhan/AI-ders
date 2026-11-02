@@ -21,7 +21,12 @@
 | 5 | Kaynak | **İkisi birden** | Açıklamanın altında soluk "Kaynak" satırı ve sonuçta Ekstra tablosu |
 | 6 | Paylaşım | **Başkalarına yollanabilir** | `--tek-sayfa` çıktısı tek dosyadır: internet gerekmez, açık/koyu temayı cihazdan alır; dosya ya da bağlantı olarak paylaşılır |
 
+## Sonradan eklenenler
+| # | Konu | Seçilen | Not |
+|---|---|---|---|
+| 7 | Şık renkleri | **Her şık ayrı renk** | A mavi, B pembe, C turkuaz, D limon sarısı, E mor (öneri: kullanıcı, 2 Kasım). Sıra, komşu şıkların normal ve renk körü görüşte ayırt edilmesi için doğrulandı. Cevaptan sonra yalnız doğru (yeşil) ve seçilen yanlış (turuncu) renkli kalır, öteki şıklar nötr; renkler yeşil/turuncu anlam renkleriyle karışmasın diye ikisine yakın ton kullanılmaz. Harf şeridi renk dışında harfle de ayırt edilir. |
+
 ## Tasarım ilkeleri (değişmeden kalan)
 - iPad: emoji, `color-mix`, geçiş animasyonu yok; renk tonu `.tn` katmanıyla.
-- Doğru = `--c2`, yanlış = `--c3`; renk tek başına anlam taşımaz (ikon + yazı).
+- Doğru = `--c2`, yanlış = `--c3`; renk tek başına anlam taşımaz (ikon + yazı). Şık hueleri `--p0..--p4` ayrı ve bu ikisinden uzak.
 - Dokunma hedefi ≥ 44 px, yazı ≥ 13 px, `<button>` yok (`role="button"`).

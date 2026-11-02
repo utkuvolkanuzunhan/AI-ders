@@ -20,6 +20,6 @@
 gorevler/ozet-ve-test.md.
 
 ## Kalite kontrolü (göndermeden önce, her mesaj)
-- Düz metin kesir var mı? HTML etiketi var mı? Başlıklar büyük harfli mi?
+- Mesajı `araclar/anlatim_testi.py` ile dene (düz kesir, HTML etiketi, formül biçimi, boşluk düzeni, başlık, paragraf uzunluğu): gorevler/anlatim-kontrol.md. HATA varsa gönderme, düzelt.
 - Kaynak/sayfa metne karışmış mı (ayar D)?
 - Widget'ı gorsel/stil.md'deki kontrol listesiyle geçtin mi?
