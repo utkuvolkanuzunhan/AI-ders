@@ -1,10 +1,10 @@
 # Widget kataloğu
 
-Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı) değiştir; yapı değişirse ekran testi (ayar G). Renkler `--c1 … --c5` (ayar H).
+Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı) değiştir; yapı değişirse ekran testi (ayar G). Renk paleti ve yüzey seviyeleri gorsel/stil.md §2 ve §4 (ayar H). **Anlatım widget'ının varsayılanı W25** (karma tasarım); mini test ve tam test çizgili (W10, W24).
 
 | Kimlik | Tür | Ne zaman | Dosya |
 |---|---|---|---|
-| W01 | Dokunulabilir kutulu formül | Formülün terimleri; kesir ve üs | sablonlar/W01-formul-kutulu.html |
+| W01 | Dokunulabilir formül (terimi çizgili) | Formülün terimleri; kesir ve üs. Terim alt çizgili, dokununca altında açıklama | sablonlar/W01-formul-kutulu.html |
 | W02 | Satır satır türetme | Formül nereden geliyor | sablonlar/W02-turetme-satir-satir.html |
 | W03 | Sabit eksenli doğru + kaydırıcı | Doğrusallaştırma, eğimden değer | sablonlar/W03-grafik-dogru.html |
 | W04 | Sabit eksenli eğri + iki nokta | Bir değişkenin etkisi, iki durum | sablonlar/W04-grafik-egri.html |
@@ -13,12 +13,15 @@ Konuya göre seç (ayar F). Şablonu kopyala, yalnız veriyi (dizi, metin, sayı
 | W07 | Sınıflama ağacı (ikonlu) | Sınıflar ve alt türler | sablonlar/W07-siniflama-agaci.html |
 | W08 | Karşılaştırma tablosu | İki-üç yöntem/durum yan yana | sablonlar/W08-karsilastirma-tablosu.html |
 | W09 | Doğru/yanlış kartları | Tuzak kontrolü | sablonlar/W09-dogru-yanlis-kartlari.html |
-| W10 | Mini test / tek soru | Anlatım içi soru (1 soru, İpucu düğmeli) ya da blok/konu sonu 3 soru | sablonlar/W10-mini-test.html |
+| W10 | Mini test / tek soru / tam test (çizgili) | Anlatım içi soru (1 soru, İpucu düğmeli), blok sonu 3 soru (alt alta) ya da 4+ soruluk tam test (tek tek, ilerleme şeritli). Şıklar geniş ekranda 2×2 | sablonlar/W10-mini-test.html |
 | W11 | Özet kartları + sözlük | Konu sonu özet, TR–EN sözlük | sablonlar/W11-ozet-kartlari.html |
 | W12 | Akış şeması | Yöntem/süreç sırası | sablonlar/W12-akis-semasi.html |
 | W13 | Kimyasal yapı kartı | Fonksiyonel grup/molekül adı geçince: ad + formül + yapı çizimi | sablonlar/W13-kimyasal-yapi.html |
 | W14 | Etken kartları | Bir olayı etkileyen etkenler ve yönleri | sablonlar/W14-etken-kartlari.html |
-| W24 | Çoktan seçmeli test (soru seti) | Konu anlatımı DIŞINDA soru seti (soru dosyası, deneme sınavı). Anlatım içinde W10 kullanılır, W24 değil. Her şık ayrı renk. Şablonu elle doldurma: `araclar/soru_testi.py` (gorevler/soru-seti.md) | sablonlar/W24-coktan-secmeli-test.html |
+| W24 | Çoktan seçmeli test (soru seti) | Konu anlatımı DIŞINDA soru seti (soru dosyası, deneme sınavı). Anlatım içinde W10 kullanılır, W24 değil. Çizgili (şık başına renk yok). Şablonu elle doldurma: `araclar/soru_testi.py` (gorevler/soru-seti.md) | sablonlar/W24-coktan-secmeli-test.html |
+| W25 | Anlatım motoru (karma tasarım) | **Sekmeli anlatım widget'ı** (varsayılan): formül terimi/kart dokununca açıklama, işaret ve hesap bölümü (gri, büyük), çip, not, sekme başına çizgili mini test. Çizgi, gri, derin renkli ve pastel yüzeyleri karışır. Veriyi elle yazma: `araclar/anlatim_uret.py` | sablonlar/W25-anlatim-karma.html |
+
+> **W02–W23 (eski yapı)**: şekil/grafik/matris gibi özel parçalar için hazır; kullanırken `gorsel/stil.md` §2 yüzeyleri ve §4 paletine uyarla (kalın çerçeveli renkli kutu yok), CSS için W25'e bak.
 
 ## Yerleşik kartlar (HTML yazılmaz)
 | Kimlik | Ne | Nasıl |
