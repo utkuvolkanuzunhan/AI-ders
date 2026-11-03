@@ -66,7 +66,11 @@ Kullanıcıya tek satır: "PDF'i çeviri sohbetine gönderdim; metin hazır olun
     if ilk is None or sonu is None or sonu < ilk:
         dur(f"Sayfa bulunamadı ({'pdf' if pdf else 'basılı'} {bas}–{son}). Mevcut işaretler için: --liste", 2)
     bitis = isaretler[sonu + 1][0] if sonu + 1 < len(isaretler) else len(t)
-    print(t[isaretler[ilk][0]:bitis].rstrip())
+    parca = t[isaretler[ilk][0]:bitis].rstrip()
+    if "[[MODEL-OKU" in parca:
+        dur(f"""DUR: bu aralıkta çevirisi tamamlanmamış sayfa var (tablo/şekil/grafik model okumasını bekliyor, `[[MODEL-OKU`). Bu sohbet tamamlamaz.
+Eksik şekil/tablo olan metne dayanma. Koordinatörden tek mesajla çeviri sohbetinin bitirmesini iste: "PDF çevirisi yarım: {yol}. Rol: pdf-cevirici." Ayrıntı: gorevler/pdf-cevir.md""")
+    print(parca)
 
 
 if __name__ == "__main__":

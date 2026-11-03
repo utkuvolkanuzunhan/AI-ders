@@ -47,7 +47,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları, kişisel profil `yerel/denetim.json`) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i ve yarım çeviriyi reddeder), `pdf_cevir.py` (karma çeviri: MarkItDown ile PDF/pptx/docx → sayfa numaralı metin, model yalnız tablo/şekil/görsel/metinsiz sayfalara bakar; `cevir`, `dogrula`, `indeks`), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları, kişisel profil `yerel/denetim.json`) |
 
 ## Araçlar
 
@@ -55,6 +55,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 python3 araclar/paket.py --rol unite --kod A1B3C3D1E3F1G2H1I1J2 --ders statistics   # okuma paketi
 python3 araclar/paket.py --kod-coz A2F2                                            # kodu açıkla
 python3 araclar/kaynak.py dersler/<ders>/pdf-metin/<ad>.md 9 16                    # kaynaktan basılı s.9–16
+python3 araclar/pdf_cevir.py cevir <dosya> --cikti dersler/<ders>/pdf-metin/<ad>.md  # PDF/pptx/docx → metin; model yalnız işaretli sayfalara bakar (gorevler/pdf-cevir.md); dogrula, indeks, --kendini-dene
 python3 araclar/uret.py                                                            # KOD.md ve galeriyi yeniden üret
 python3 araclar/soru_testi.py veri.json cikti.html                                 # çoktan seçmeli soru seti → test widget'ı (gorevler/soru-seti.md)
 python3 araclar/anlatim_testi.py mesaj.md [--rapor]                                 # anlatım mesajı denetimi (gorevler/anlatim-kontrol.md); --kendini-dene kuralların denemesi
