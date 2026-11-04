@@ -10,6 +10,7 @@ ekler meşrudur); amaç gözden kaçan sapmayı göstermek. Kodlar:
   S1 düşen sözcük: kaynakta kalın yazılmış terim, tireli sözcük, kısa madde, alt başlık ya da şekil/tablo etiketi var, mesajda ve widget'ta hiç geçmiyor
   S2 kaynakta olmayan terim ya da sayı: mesajdaki İngilizce terim (parantezli) ya da 2 haneli/ondalıklı sayı kaynakta yok ve paragraf "slayt dışı" ya da
      "ileriden bir ipucu" diye işaretli değil
+  S1b kaynağın düz maddesi (≥5 içerik sözcüklü) mesajda/widget'ta neredeyse hiç yok (içerik sözcüklerinin %30'undan azı geçiyor)
   S3 liste sayısı: kaynaktaki bir listeyle büyük ölçüde örtüşen listenin madde sayısı farklı ("slaytta 19 örnek, sende 17")
 """
 import argparse, html as _html, json, os, re, sys
@@ -111,6 +112,25 @@ def kaynak_terimleri(metin):
             if len(madde.split()) <= 4 and not madde.endswith("."):
                 ekle(re.sub(r"\*\*", "", madde))
     return out
+
+
+def madde_icerik_sozcukleri(madde):
+    return sorted({w for w in norm(madde).split() if len(w) >= 4 and w not in SOZ_DURAK})
+
+
+def kaynak_maddeleri(metin):
+    """Düz madde satırları (kısa terim maddeleri S1'de; burada ≥5 içerik sözcüklü olanlar)."""
+    out = []
+    for satir in metin.splitlines():
+        mm = re.match(r"\s*[-•*]\s+(.+)", satir)
+        if mm and len(madde_icerik_sozcukleri(mm.group(1))) >= 5:
+            out.append(re.sub(r"\*\*", "", mm.group(1)).strip())
+    return out
+
+
+def madde_orani(madde, havuz):
+    sw = madde_icerik_sozcukleri(madde)
+    return sum(1 for w in sw if " " + w + " " in havuz) / len(sw)
 
 
 def kaynak_listeleri(metin):
@@ -230,6 +250,11 @@ def incele(mesaj, widget_htmller, kaynak):
     dusen = [t for t in kaynak_terimleri(kaynak) if not var_mi(t, tum_havuz)]
     if dusen:
         b.append("S1 düşen sözcük: kaynakta var, mesajda ve widget'ta yok: " + "; ".join(f"\"{t}\"" for t in dusen[:12]) + (f" … (+{len(dusen) - 12})" if len(dusen) > 12 else ""))
+    # S1b: kaynağın düz maddesi (cümle ya da virgüllü sayım) içerik sözcüklerinin neredeyse hiçbiriyle mesajda/widget'ta yok
+    yok_m = [x for x in kaynak_maddeleri(kaynak) if madde_orani(x, tum_havuz) < 0.3]
+    if yok_m:
+        b.append("S1b kaynak maddesi mesajda yok gibi (içerik sözcüklerinin %30'undan azı geçiyor; çevirisi varsa yok say): "
+                 + "; ".join(f"\"{x[:70]}\"" for x in yok_m[:6]) + (f" … (+{len(yok_m) - 6})" if len(yok_m) > 6 else ""))
     # S2: kaynakta olmayan İngilizce terim ve sayı (işaretli paragraflar hariç)
     isaretli = paragraf_haritasi(mesaj)
     yok_t = []
@@ -297,6 +322,7 @@ Alt başlık: Fat Oxidation
 - Water activity
 - Storage time at 25 degrees
 - Antioxidants slow it down by 40 percent.
+- Oxidative agents, pH changes and storage conditions influence the shelf life.
 [ŞEKİL: üç aşamalı ok şeması: "Initiation", "Propagation", "Termination"]
 """
 
@@ -319,11 +345,13 @@ def kendini_dene():
         dene("kaynak terimleri: kalın, tireli, alt başlık, şekil etiketi", all(any(norm(x) == norm(t) for t in terimler) for x in ("chain reaction", "acid-base", "non-volatile", "Fat Oxidation", "Propagation")))
         iyi = ("## Adım 2: Fat Oxidation (yağ oksidasyonu)\n\nFat oxidation (yağ oksidasyonu) bir chain reaction (zincir tepkimesi) olup üç aşamalıdır: initiation (başlama), propagation (ilerleme), termination (sonlanma).\n\n"
                "Primary products (birincil ürünler) non-volatile (uçucu olmayan) ve acid-base (asit-baz) açısından nötrdür.\n\nHızlandıranlar:\n\n- Light (ışık)\n- Heat (ısı)\n- Oxygen (oksijen)\n- Metal ions (metal iyonları)\n- Enzymes (enzimler)\n- Water activity (su aktivitesi)\n\n"
-               "Antioxidants (antioksidanlar) hızı yüzde 40 yavaşlatır; saklama 25 derecede.\n")
+               "Antioxidants (antioksidanlar) hızı yüzde 40 yavaşlatır; saklama 25 derecede. Oxidative agents (yükseltgen etkenler), pH changes (pH değişimleri) ve storage conditions (saklama koşulları) raf ömrünü etkiler.\n")
         dene("sadakat: sadık metin uyarı vermez", incele(iyi, [], kay) == [])
         dene("S1: tireli sözcük düşünce yakalanır (non-volatile, acid-base)", any("S1" in x and "acid-base" in x for x in incele(iyi.replace("non-volatile (uçucu olmayan) ve acid-base (asit-baz) açısından", "uçucu olmayan ve asit-baz açısından"), [], kay)))
         dene("S1: kalın terim düşünce yakalanır (chain reaction)", any("S1" in x and "chain reaction" in x for x in incele(iyi.replace("bir chain reaction (zincir tepkimesi) olup", "bir tepkime olup"), [], kay)))
         dene("S1: şekil etiketi düşünce yakalanır (termination)", any("S1" in x and "Termination" in x for x in incele(iyi.replace(", termination (sonlanma)", ""), [], kay)))
+        dene("S1b: düz maddenin içeriği mesajda hiç yoksa yakalanır", any("S1b" in x and "Oxidative agents" in x for x in incele(iyi.replace("Oxidative agents (yükseltgen etkenler), pH changes (pH değişimleri) ve storage conditions (saklama koşulları) raf ömrünü etkiler.", "Raf ömrü çeşitli etkenlerden etkilenir."), [], kay)))
+        dene("S1b: madde terimleriyle anlatılmışsa uyarı yok", not any("S1b" in x for x in incele(iyi, [], kay)))
         dene("S2: kaynakta olmayan terim yakalanır (dissociation)", any("S2" in x and "dissociation" in x for x in incele(iyi + "\nBu dissociation (ayrışma) ile olur.\n", [], kay)))
         dene("S2: slayt dışı işaretli paragraf serbest", not any("dissociation" in x for x in incele(iyi + "\nSlayt dışı: bu dissociation (ayrışma) ile olur.\n", [], kay)))
         dene("S2: kaynakta olmayan sayı yakalanır (19)", any("S2" in x and "19" in x for x in incele(iyi + "\nToplam 19 madde vardır.\n", [], kay)))

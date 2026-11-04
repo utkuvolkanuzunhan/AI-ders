@@ -260,7 +260,7 @@ def _dels(s):
 
 
 def tipik_yazim_hatasi(w, p):
-    """w, havuzdaki p'nin tipik bir yazım hatası mı: diacritic karışması (c/ç, g/ğ, i/ı, o/ö, s/ş, u/ü), komşu harf yer değişimi,
+    """w, havuzdaki p'nin tipik bir yazım hatası mı: diacritic karışması (c/ç, g/ğ, i/ı, o/ö, s/ş, u/ü),
     tek ünlü ya da çift harf düşmesi/fazlalığı. Ünsüz değişimi (yayın/yakın) ve ünlü değişimi (diğer/değer) YAZIM HATASI sayılmaz:
     küçük havuzda geçerli sözcükler birbirine benzer, bunlara uyarı vermek gürültüdür."""
     if w == p:
@@ -269,7 +269,7 @@ def tipik_yazim_hatasi(w, p):
         fark = [i for i in range(len(w)) if w[i] != p[i]]
         if len(fark) == 1:
             return (w[fark[0]], p[fark[0]]) in _DIAKRITIK
-        return len(w) >= 6 and len(fark) == 2 and fark[1] == fark[0] + 1 and w[fark[0]] == p[fark[1]] and w[fark[1]] == p[fark[0]]
+        return False        # komşu harf yer değişimi (sütten/üstten) gerçek sözcükleri de yakaladığı için kapalı
     kisa, uzun = (w, p) if len(w) < len(p) else (p, w)
     if len(uzun) - len(kisa) != 1 or len(uzun) < 6:
         return False
@@ -307,12 +307,14 @@ def yazim_bulgulari(t, havuz, yoksay=()):
         if w in EN_SOZ or w in yoksay:
             continue
         r = yazim_kok(w)
-        if r in sayac or r in gorulen or w in sayac or len(r) < 4:
+        if r in sayac or r in gorulen or w in sayac or len(r) < 5:      # kısa kök (başı←başına, popü←popüler) çok yanlış eşleşir: uyarı verme
             continue
         adaylar = set(index.get(r, ()))
         for d in _dels(r):
             adaylar |= index.get(d, set())
         adaylar = {p for p in adaylar if tipik_yazim_hatasi(r, p) and any(c in TR_HARF for c in r + p)}
+        if adaylar and any(r.startswith(p) and len(p) >= 5 and len(r) - len(p) <= 6 for p in sayac):
+            continue            # havuzdaki bir sözcüğün + kısa ek biçimi (değiştir+mez, kullan+ıcı+lar): çekim, yazım hatası değil
         if adaylar:
             en = max(adaylar, key=lambda p: (sayac[p], p))
             en = havuz["yuzey"][en].most_common(1)[0][0]
@@ -344,7 +346,8 @@ def yazim_kaynaklari(yollar, ders, ayar):
     liste = list(yollar)
     if ders:
         kok = ayar.get("proje_kok") or "/mnt/project-files"
-        liste.append(os.path.join(kok, "dersler", ders, "pdf-metin"))
+        for alt in ("pdf-metin", "devir", "sozluk"):          # kaynak metin + önceki devir notları ve sözlük (gönderilmiş doğru sözcükler)
+            liste.append(os.path.join(kok, "dersler", ders, alt))
     metinler = []
     for y in liste:
         dosyalar = sorted(glob.glob(os.path.join(y, "*"))) if os.path.isdir(y) else [y]
@@ -696,10 +699,12 @@ def _denemeler():
         ("Y01 yazım: ı/i karışması (sındirilebilirlik)", lambda: yaz("Sındirilebilirlik artar.", "Sindirilebilirlik protein için ölçülür."), ["Y01"], []),
         ("Y01 yazım: havuzdaki sözcük ve çekimi uyarı vermez", lambda: yaz("Yengeçler ve florürün etkisi.", "Yengeç kabuklu. Florür eklenir."), [], ["Y01"]),
         ("Y01 yazım: ünsüz yumuşaması uyarı vermez (kemiğin / kemik)", lambda: yaz("Kemiğin yapısı.", "Kemik dokusu sertleşir."), [], ["Y01"]),
+        ("Y01 yazım: kısa kök uyarı vermez (başına / basılı, Popüler / popular)", lambda: yaz("Kişi başına gelir. Popüler seçim.", "Basılı kaynak. Popular choice."), [], ["Y01"]),
+        ("Y01 yazım: havuz sözcüğü + kısa ek uyarı vermez (değiştirmez)", lambda: yaz("Bu durum değiştirmez.", "Fiyatı değiştir. Değiştiremez."), [], ["Y01"]),
         ("Y01 yazım: İngilizce tekil/çoğul uyarı vermez (mineral / minerals)", lambda: yaz("Mineral contains calcium.", "Minerals contribute to health."), [], ["Y01"]),
         ("Y01 yazım: widget verisi de taranır (kart ve soru dizeleri)", lambda: yaz_html('<div></div><script>RV["a"]=[["k1","Etiket","Flüorür eklenir","x"]];</script>', "Florür diş sağlığı için önemlidir."), ["Y01"], []),
-        ("W07 tema bloğundaki sabit hex serbest", lambda: widget("<style>.nb{--k1:#6F82E6;--ln:#000000;}.nb.dk{--bg:#272733;}.a{background:var(--k1);color:var(--ln)}</style>"), [], ["W07"]),
-        ("W07 başka yerde sabit hex uyarı", lambda: widget("<style>.nb{--k1:#6F82E6;}.a{background:#ff0000}</style>"), ["W07"], []),
+        ("W07 tema bloğundaki sabit hex serbest", lambda: widget("<style>.nb{--k1:#3366CC;--ln:#000000;}.nb.dk{--bg:#272733;}.a{background:var(--k1);color:var(--ln)}</style>"), [], ["W07"]),
+        ("W07 başka yerde sabit hex uyarı", lambda: widget("<style>.nb{--k1:#3366CC;}.a{background:#ff0000}</style>"), ["W07"], []),
         ("E01 tek 🙉", lambda: emoji_bulgulari("Önemli 🙉 kural.", C2), ["E01"], []),
         ("E01 çift 🙉", lambda: emoji_bulgulari("Önemli 🙉🙉 kural.", C2), ["E01"], []),
         ("E01 beşli 🙉", lambda: emoji_bulgulari("Önemli 🙉🙉🙉🙉🙉 kural.", C2), ["E01"], []),
@@ -725,6 +730,7 @@ def _denemeler():
         ("Q15 etiket yok", lambda: sor(Q_IYI, {"karisik_test": True}, test_turu="mini"), ["Q15"], []),
         ("Q15 mini hepsi aynı konu", lambda: sor([_et(Q_IYI[0], "Lipids"), _et(Q_IYI[1], "Lipids")], {"karisik_test": True}, test_turu="mini"), ["Q15"], []),
         ("Q15 mini hepsi güncel konu", lambda: sor([_et(Q_IYI[0], "Maillard reaction"), _et(Q_IYI[1], "Maillard reaction")], {"karisik_test": True}, test_turu="mini", konu_adlari=["Maillard reaction"]), ["Q15"], []),
+        ("Q15 ilk başlıkta alt başlık etiketleri (T1a, T1b) geçer", lambda: sor([_et(Q_IYI[0], "T1a"), _et(Q_IYI[1], "T1b")], {"karisik_test": True}, test_turu="mini", konu_adlari=["Water activity"]), [], ["Q15"]),
         ("Q15 mini karışık geçer", lambda: sor([_et(Q_IYI[0], "Water activity"), _et(Q_IYI[1], "Maillard reaction")], {"karisik_test": True}, test_turu="mini", konu_adlari=["Maillard reaction"]), [], ["Q15", "Q08"]),
         ("Q12 W10 tam testte art arda aynı konu", lambda: sor([_s(i, i % 4) + ["", k] for i, k in ((1, "A konu"), (2, "A konu"), (3, "B konu"))], {"test_dil": None}, test_turu="tam"), ["Q12"], []),
         ("Q12 art arda aynı konu", lambda: dosya_bulgulari(".json", json.dumps({"baslik": "T", "karistir": "yok", "dil": "tek", "sorular": [
