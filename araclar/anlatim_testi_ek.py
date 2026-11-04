@@ -346,8 +346,18 @@ def yazim_kaynaklari(yollar, ders, ayar):
     liste = list(yollar)
     if ders:
         kok = ayar.get("proje_kok") or "/mnt/project-files"
-        for alt in ("pdf-metin", "devir", "sozluk"):          # kaynak metin + önceki devir notları ve sözlük (gönderilmiş doğru sözcükler)
+        for alt in ("pdf-metin", "sozluk"):          # devir notları ve kusur notları havuza GİRMEZ: açık kusur olarak yanlış yazımı içerebilir
             liste.append(os.path.join(kok, "dersler", ders, alt))
+        # ders.py ile gönderildi işaretli adımların mesajı ve widget'ı (kullanıcının gördüğü, onaylanmış çıktılar)
+        for dj in sorted(glob.glob(os.path.join(kok, "dersler", ders, "durum", "*.json"))):
+            try:
+                dur = json.load(open(dj, encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            for ad in dur.get("adimlar", []):
+                if ad.get("durum") == "gonderildi":
+                    for son in (".mesaj.md", ".widget.html"):
+                        liste.append(os.path.join(dj[:-5], f"{int(ad['no']):02d}{son}"))
     metinler = []
     for y in liste:
         dosyalar = sorted(glob.glob(os.path.join(y, "*"))) if os.path.isdir(y) else [y]
@@ -666,6 +676,19 @@ def _denemeler():
     def yaz(metin, havuz_metni):
         return yazim_bulgulari(duz_metin(metin), yazim_havuzu([havuz_metni]))
 
+    def yazim_kusur_notu():
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            for alt in ("pdf-metin", "devir", "durum/oturum"):
+                os.makedirs(os.path.join(d, "dersler", "x", alt))
+            open(os.path.join(d, "dersler", "x", "pdf-metin", "k.md"), "w", encoding="utf-8").write("Yengeç kabuklu deniz canlısıdır.")
+            open(os.path.join(d, "dersler", "x", "devir", "not.md"), "w", encoding="utf-8").write("Açık kusur: Adım 14 \"Yengç kabuklusu\" yazım hatası.")
+            open(os.path.join(d, "dersler", "x", "durum", "oturum.json"), "w", encoding="utf-8").write(json.dumps({"adimlar": [{"no": 1, "durum": "gonderildi"}, {"no": 2, "durum": "hazir"}]}))
+            open(os.path.join(d, "dersler", "x", "durum", "oturum", "01.mesaj.md"), "w", encoding="utf-8").write("Florür diş sağlığı için önemlidir.")
+            open(os.path.join(d, "dersler", "x", "durum", "oturum", "02.mesaj.md"), "w", encoding="utf-8").write("Taslak: Flüorürr yazımı.")
+            havuz = yazim_havuzu(yazim_kaynaklari([], "x", {"proje_kok": d}))
+            return yazim_bulgulari(duz_metin("Yengç kabuklusu. Flurür yok. Flüorür eklenir."), havuz)
+
     def yaz_html(html, havuz_metni):
         return yazim_bulgulari(duz_metin(widget_tum_metin(html)), yazim_havuzu([havuz_metni]))
 
@@ -700,6 +723,7 @@ def _denemeler():
         ("Y01 yazım: havuzdaki sözcük ve çekimi uyarı vermez", lambda: yaz("Yengeçler ve florürün etkisi.", "Yengeç kabuklu. Florür eklenir."), [], ["Y01"]),
         ("Y01 yazım: ünsüz yumuşaması uyarı vermez (kemiğin / kemik)", lambda: yaz("Kemiğin yapısı.", "Kemik dokusu sertleşir."), [], ["Y01"]),
         ("Y01 yazım: kısa kök uyarı vermez (başına / basılı, Popüler / popular)", lambda: yaz("Kişi başına gelir. Popüler seçim.", "Basılı kaynak. Popular choice."), [], ["Y01"]),
+        ("Y01 yazım: devir/kusur notundaki yanlış yazım havuza girmez (yengç hâlâ yakalanır)", lambda: yazim_kusur_notu(), ["Y01"], []),
         ("Y01 yazım: havuz sözcüğü + kısa ek uyarı vermez (değiştirmez)", lambda: yaz("Bu durum değiştirmez.", "Fiyatı değiştir. Değiştiremez."), [], ["Y01"]),
         ("Y01 yazım: İngilizce tekil/çoğul uyarı vermez (mineral / minerals)", lambda: yaz("Mineral contains calcium.", "Minerals contribute to health."), [], ["Y01"]),
         ("Y01 yazım: widget verisi de taranır (kart ve soru dizeleri)", lambda: yaz_html('<div></div><script>RV["a"]=[["k1","Etiket","Flüorür eklenir","x"]];</script>', "Florür diş sağlığı için önemlidir."), ["Y01"], []),

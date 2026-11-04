@@ -194,6 +194,7 @@ def karisik_denetim(durum, adim, etiketler, ayar):
     n_soru = int(ayar.get("mini_test_soru", 2))
     bilinen = durum["konular"]
     guncel = next((e for e, k in bilinen.items() if k.get("adim") == adim["no"]), None)
+    kume = {e for e, k in bilinen.items() if k.get("adim") == adim["no"]}      # bu adımın tüm etiketleri (alt başlıklar ayrı tanımlıysa hepsi)
     for e, _ in etiketler:
         if not e:
             b.append((H, "D01", "soruda konu etiketi yok (6. eleman); ders.py konu-ekle ile tanımlı bir etiket yaz"))
@@ -201,14 +202,14 @@ def karisik_denetim(durum, adim, etiketler, ayar):
             b.append((H, "D02", f"etiket '{e}' durumda tanımlı değil (ders.py konu-ekle {e} \"…\")"))
     ana = [ana_etiket(durum, e) for e, _ in etiketler]
     oner, say = eski_konu_onerisi(durum, adim["no"], max(n_soru - 1, 1), guncel)
-    if ana and n_soru > 1 and guncel and all(e == guncel for e in ana):
+    if ana and n_soru > 1 and guncel and all(e in kume for e in ana):
         if oner:
             b.append((H, "D03", f"tüm sorular güncel konudan ({guncel}); mini test karışık olmalı, en az biri eski konudan"))
         elif len({e for e, _ in etiketler}) < 2:
             b.append((H, "D03", f"eski konu yok ve tüm sorular aynı etiketli ({guncel}); güncel konunun ayrı alt başlıklarından sor ve {guncel}a, {guncel}b gibi etiketle"))
-    if ana and n_soru > 1 and guncel and all(e != guncel for e in ana):
+    if ana and n_soru > 1 and guncel and all(e not in kume for e in ana):
         b.append((U, "D03", f"hiçbir soru güncel konudan ({guncel}) değil"))
-    eski = [e for e in ana if e and e != guncel and e in bilinen]
+    eski = [e for e in ana if e and e not in kume and e in bilinen]
     onceki = next((s for s in reversed(gonderilen_adimlar(durum)) if s["no"] < adim["no"]), None)
     tekrar = [e for e in eski if onceki and e in onceki.get("sorulan", [])]
     if tekrar and any(o not in tekrar for o in oner):
@@ -561,6 +562,9 @@ def kendini_dene():
         ayar2 = {"mini_test_soru": 2}
         dene("ilk adım, eski konu yok: T1a + T1b geçer (D01–D03 yok)", not karisik_denetim(ilk, {"no": 1}, [("T1a", 0), ("T1b", 1)], ayar2))
         dene("ilk adım, eski konu yok: iki soru da T1 aynı etiket HATA, alt başlık harfi önerilir", any(x[1] == "D03" and x[0] == H and "T1a" in x[2] for x in karisik_denetim(ilk, {"no": 1}, [("T1", 0), ("T1", 1)], ayar2)))
+        ilk2 = {"konular": {"T1a": {"ad": "a", "adim": 1}, "T1b": {"ad": "b", "adim": 1}}, "adimlar": []}
+        dene("ilk adım: alt başlıklar ayrı tanımlıysa da (T1a, T1b) D03 yok", not [x for x in karisik_denetim(ilk2, {"no": 1}, [("T1a", 0), ("T1b", 1)], ayar2) if x[1] == "D03"])
+        dene("ilk adım: T1a+T1b için 'hiçbir soru güncel değil' UYARISI yok", not [x for x in karisik_denetim(ilk, {"no": 1}, [("T1a", 0), ("T1b", 1)], ayar2) if x[1] == "D03"])
         dene("ilk adım: tanımsız ana etiketin harfi (T9a) D02", any(x[1] == "D02" for x in karisik_denetim(ilk, {"no": 1}, [("T1a", 0), ("T9a", 1)], ayar2)))
         dene("eski konu varken T3a + T3b yetmez (D03 HATA)", any(x[1] == "D03" and x[0] == H for x in karisik_denetim(json.load(open(durum_yolu(d, "deneme", "d1"))), adim3, [("T3a", 0), ("T3b", 1)], {"mini_test_soru": 2})))
         dene("karışık: bir önceki adımdaki eski konu tekrarı UYARI", any(x[1] == "D04" for x in karisik_denetim(json.load(open(durum_yolu(d, "deneme", "d1"))), adim3, [("T3", 0), ("T1", 1)], {"mini_test_soru": 2})))
