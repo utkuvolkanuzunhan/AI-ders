@@ -202,7 +202,7 @@ def karisik_denetim(durum, adim, etiketler, ayar):
     return b
 
 
-def sadakat_denetim(durum, adim, mesaj, widget_html, a_kaynak):
+def sadakat_denetim(durum, adim, mesaj, widget_html, proje):
     """araclar/sadakat.py varsa onu çağırır (UYARI üretir, HATA üretmez)."""
     try:
         import sadakat
@@ -211,7 +211,7 @@ def sadakat_denetim(durum, adim, mesaj, widget_html, a_kaynak):
     kaynak = adim.get("kaynak") or durum.get("kaynak")
     if not kaynak or not kaynak.endswith(".md"):
         return []
-    return sadakat.denetle(durum, adim, mesaj, widget_html, a_kaynak)
+    return sadakat.denetle(durum, adim, mesaj, widget_html, proje)
 
 
 def cmd_adim(a, proje, durum, ayar):
@@ -267,7 +267,7 @@ def cmd_adim(a, proje, durum, ayar):
         adim["dogru_siklar"] = [d for _, d in et]
         import widget as W
         W.yuk_yaz(html, f"{durum['ad']}-adim-{no:02d}", os.path.join(cd, f"{no:02d}.yuk.json"))
-    sb = sadakat_denetim(durum, adim, mesaj, html, a)
+    sb = sadakat_denetim(durum, adim, mesaj, html, proje)
     if sb:
         ekle(f"sadakat {no:02d}", 0, len(sb), [f"  {U} {x}" for x in sb])
     open(os.path.join(cd, f"{no:02d}.mesaj.md"), "w", encoding="utf-8").write(mesaj)

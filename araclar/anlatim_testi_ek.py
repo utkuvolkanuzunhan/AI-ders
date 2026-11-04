@@ -31,6 +31,23 @@ def satir_no(t, pos):
     return t.count("\n", 0, pos) + 1
 
 
+# Türkçe terimden sonra gelebilen ekler (yüzey biçimleri). Eşleştirme "terim + herhangi 0-7 harf" değil, "terim + en çok 3 geçerli ek":
+# "doku" ile "dokun", "yapı" ile "yapılan", "katı" ile "katılır" artık karışmaz; "dokuların", "yapıdan", "suyun" yine terim sayılır.
+_EKLER = ("lar ler ları leri ın in un ün ı i u ü sı si su sü ım im um üm ımız imiz umuz ümüz ınız iniz unuz ünüz nın nin nun nün na ne nı ni nu nü "
+          "nda nde ndan nden ya ye yı yi yu yü yun yün yın yin a e da de ta te dan den tan ten la le yla yle ca ce ça çe dır dir dur dür tır tir tur tür "
+          "lı li lu lü sız siz suz süz lık lik luk lük ki dakı deki taki teki cı ci cu cü çı çi çu çü ız iz uz üz mız miz muz müz").split()
+TR_EK = r"(?:" + "|".join(sorted(set(_EKLER), key=len, reverse=True)) + r"){0,3}"
+_YUMUSAMA = {"k": "ğ", "ç": "c", "t": "d", "p": "b"}
+
+
+def tr_kok_deseni(x):
+    """Terim kökü (+ ünsüz yumuşaması: kemik→kemiğ) ve ek zinciri için düzenli ifade parçası."""
+    kok = re.escape(x)
+    if x and x[-1] in _YUMUSAMA:
+        kok = "(?:" + kok + "|" + re.escape(x[:-1] + _YUMUSAMA[x[-1]]) + ")"
+    return kok + TR_EK
+
+
 # ───────────────────────────── kişisel profil ─────────────────────────────
 # Anahtar listesi, arama sırası ve katmanlar tek yerde: araclar/profil.py (yerel/profil.json; eski ad denetim.json de okunur).
 import profil as PROFIL  # noqa: E402
@@ -130,9 +147,9 @@ def terim_bulgulari(t, sozluk, mod, her_gecis, muaf=()):
                 olaylar.append((m.start(), m.end(), "en", gi))
         for tr in g["tr"]:
             x = tr_kucuk(tr)
-            if x in muaf or x not in low_tr:
+            if x in muaf or (x[:-1] if x[-1] in _YUMUSAMA else x) not in low_tr:    # yumuşayan son ünsüz (kemik → kemiğ) için kök öneki aranır
                 continue
-            for m in re.finditer(rf"(?<![{HARF}]){re.escape(x)}[a-zçğıöşü]{{0,7}}(?![{HARF}])", low_tr):
+            for m in re.finditer(rf"(?<![{HARF}]){tr_kok_deseni(x)}(?![{HARF}])", low_tr):
                 olaylar.append((m.start(), m.end(), "tr", gi))
     olaylar.sort(key=lambda o: (-(o[1] - o[0]), o[0]))     # çakışmada uzun terim kazanır
     kabul = []
@@ -152,7 +169,7 @@ def terim_bulgulari(t, sozluk, mod, her_gecis, muaf=()):
         if dil == "en":
             if ic and any(tr_kucuk(x) in ic[0] for x in g["tr"]):
                 durum = "en_tr"                     # İngilizce (Türkçe)
-            elif onceki_tr and any(re.search(re.escape(tr_kucuk(x)) + r"[a-zçğıöşü]{0,7}$", onceki_tr) for x in g["tr"]):
+            elif onceki_tr and any(re.search(tr_kok_deseni(tr_kucuk(x)) + r"$", onceki_tr) for x in g["tr"]):
                 continue                            # "Türkçe (İngilizce)" çiftinin parantez içi yarısı: çifti baştaki terim temsil eder
             else:
                 durum = "en_cirpak"
@@ -215,6 +232,131 @@ def emoji_bulgulari(t, ayar):
     return b
 
 
+# ───────────────────────────── yazım uyarısı (Y01) ─────────────────────────────
+# Türkçe sözlük yok: "bilinen sözcük havuzu" (ders sözlüğü + kaynak metin + önceden gönderilmiş çıktılar) kurulur; havuzda olmayan ama havuzdaki
+# bir sözcüğe 1 harf uzaklıktaki sözcük şüpheli sayılır ("Flüorür" → "Florür?", "yengç" → "yengeç?"). Yalnız UYARI.
+TR_HARF = set("çğıöşüÇĞİÖŞÜ")
+_DIAKRITIK = {("c", "ç"), ("g", "ğ"), ("i", "ı"), ("o", "ö"), ("s", "ş"), ("u", "ü")}
+_DIAKRITIK |= {(y, x) for x, y in _DIAKRITIK}      # ASCII'ye düşme ve tersi: egrileri/eğrileri, yapilan/yapılan
+_USTLU = set("aeıioöuü")
+_EK_TAM = re.compile("(?:" + "|".join(sorted(set(_EKLER), key=len, reverse=True)) + "){1,3}")
+
+
+def yazim_kucuk(w):
+    """Türkçe harf içermeyen (ASCII) sözcükte I → i (İngilizce); aksi hâlde Türkçe küçültme."""
+    return tr_kucuk(w) if any(c in TR_HARF for c in w) else en_kucuk(w)
+
+
+def yazim_kok(w):
+    """Sözcükten en uzun geçerli ek zincirini atar (kök en az 4 harf kalmalı): soruları → soru."""
+    for s in range(4, len(w)):
+        if _EK_TAM.fullmatch(w, s):
+            return w[:s]
+    return w
+
+
+def _dels(s):
+    return {s[:i] + s[i + 1:] for i in range(len(s))}
+
+
+def tipik_yazim_hatasi(w, p):
+    """w, havuzdaki p'nin tipik bir yazım hatası mı: diacritic karışması (c/ç, g/ğ, i/ı, o/ö, s/ş, u/ü), komşu harf yer değişimi,
+    tek ünlü ya da çift harf düşmesi/fazlalığı. Ünsüz değişimi (yayın/yakın) ve ünlü değişimi (diğer/değer) YAZIM HATASI sayılmaz:
+    küçük havuzda geçerli sözcükler birbirine benzer, bunlara uyarı vermek gürültüdür."""
+    if w == p:
+        return False
+    if len(w) == len(p):
+        fark = [i for i in range(len(w)) if w[i] != p[i]]
+        if len(fark) == 1:
+            return (w[fark[0]], p[fark[0]]) in _DIAKRITIK
+        return len(w) >= 6 and len(fark) == 2 and fark[1] == fark[0] + 1 and w[fark[0]] == p[fark[1]] and w[fark[1]] == p[fark[0]]
+    kisa, uzun = (w, p) if len(w) < len(p) else (p, w)
+    if len(uzun) - len(kisa) != 1 or len(uzun) < 6:
+        return False
+    for k in range(len(uzun)):
+        if uzun[:k] + uzun[k + 1:] == kisa:
+            c = uzun[k]
+            if c in _USTLU or (k > 0 and uzun[k - 1] == c) or (k + 1 < len(uzun) and uzun[k + 1] == c):
+                return True
+    return False
+
+
+def yazim_havuzu(metinler):
+    """Metinler -> {kök: adet, "_index": {silinmiş biçim: {kök}}}."""
+    sayac, yuzey = collections.Counter(), collections.defaultdict(collections.Counter)
+    for t in metinler:
+        for m in re.finditer(rf"[{HARF}]{{4,}}", t):
+            w = yazim_kucuk(m.group(0))
+            sayac[yazim_kok(w)] += 1
+            yuzey[yazim_kok(w)][w] += 1
+    index = collections.defaultdict(set)
+    for w in sayac:
+        index[w].add(w)
+        for d in _dels(w):
+            index[d].add(w)
+    return {"sayac": sayac, "index": index, "yuzey": yuzey}
+
+
+def yazim_bulgulari(t, havuz, yoksay=()):
+    """Metindeki şüpheli yazımlar -> bulgular (UYARI Y01)."""
+    sayac, index = havuz["sayac"], havuz["index"]
+    yoksay = {yazim_kucuk(x) for x in yoksay}
+    b, gorulen = [], set()
+    for m in re.finditer(rf"(?<![{HARF}])[{HARF}]{{5,}}(?![{HARF}])", t):
+        w = yazim_kucuk(m.group(0))
+        if w in EN_SOZ or w in yoksay:
+            continue
+        r = yazim_kok(w)
+        if r in sayac or r in gorulen or w in sayac or len(r) < 4:
+            continue
+        adaylar = set(index.get(r, ()))
+        for d in _dels(r):
+            adaylar |= index.get(d, set())
+        adaylar = {p for p in adaylar if tipik_yazim_hatasi(r, p) and any(c in TR_HARF for c in r + p)}
+        if adaylar:
+            en = max(adaylar, key=lambda p: (sayac[p], p))
+            en = havuz["yuzey"][en].most_common(1)[0][0]
+            gorulen.add(r)
+            b.append((U, "Y01", satir_no(t, m.start()), f"\"{m.group(0)}\" kaynakta ve önceki metinlerde yok; \"{en}\" mi demek istedin? (yazım hatası olabilir)"))
+    return b
+
+
+def widget_tum_metin(html):
+    """Widget'ın görünen metni + betikteki veri dizeleri (kart, soru, açıklama): yazım denetimi için."""
+    import html as _h
+    parcalar = [widget_metni(html)]
+    for s in SCRIPT.findall(html):
+        for q in re.finditer(r'"((?:[^"\\]|\\.)*)"', s):
+            v = q.group(1)
+            if re.search(r"[A-Za-zÇĞİÖŞÜçğıöşü]{4,}", v) and " " in v or len(v) > 4 and v.isalpha():
+                try:
+                    v = json.loads('"' + v + '"')
+                except ValueError:
+                    pass
+                parcalar.append(re.sub(r"<[^>]+>", " ", _h.unescape(v)))
+    return "\n".join(parcalar)
+
+
+
+def yazim_kaynaklari(yollar, ders, ayar):
+    """--yazim-kaynak yolları (+ --ders verilmişse projedeki pdf-metin dosyaları) -> metin listesi."""
+    import glob
+    liste = list(yollar)
+    if ders:
+        kok = ayar.get("proje_kok") or "/mnt/project-files"
+        liste.append(os.path.join(kok, "dersler", ders, "pdf-metin"))
+    metinler = []
+    for y in liste:
+        dosyalar = sorted(glob.glob(os.path.join(y, "*"))) if os.path.isdir(y) else [y]
+        for f in dosyalar:
+            if f.endswith((".md", ".txt", ".html", ".json")) and os.path.isfile(f):
+                try:
+                    h = open(f, encoding="utf-8").read()
+                except OSError:
+                    continue
+                metinler.append(widget_tum_metin(h) if f.endswith(".html") else h)
+    return metinler
+
 # ───────────────────────────── widget ─────────────────────────────
 SCRIPT = re.compile(r"<script\b[^>]*>(.*?)</script>", re.S | re.I)
 STIL = re.compile(r"<style\b[^>]*>(.*?)</style>", re.S | re.I)
@@ -246,8 +388,11 @@ def widget_bulgulari(html, ayar):
     for m in re.finditer(r"font-size\s*:\s*(\d+(?:\.\d+)?)px", html):
         if float(m.group(1)) < 13:
             b.append((U, "W06", satir_no(html, m.start()), f"yazı {m.group(1)} px: en küçük 13 px (gorsel/stil.md §5)"))
-    for m in re.finditer(r"(?<![-\w])(color|background(?:-color)?)\s*:\s*#(?!(?:fff|ffffff|000|000000)\b)[0-9a-fA-F]{3,8}\b", html):
-        b.append((U, "W07", satir_no(html, m.start()), f"\"{m.group(0)}\": yazı ve zemin için sabit hex yok, tema değişkeni kullan (gorsel/stil.md §4)"))
+    # Tema bloğu (gorsel/motor, widget.py: `.nb{--k1:#…;…}` ve `.nb.dk{…}`) renk değerlerinin tek yeridir; orada sabit hex serbest.
+    # Uzunluk korunur (satır numaraları kaymaz); başka her yerde yazı ve zemin için sabit hex hâlâ uyarıdır.
+    govde = re.sub(r"\.nb(?:\.dk)?\{(?:--[a-z0-9]+:#[0-9a-fA-F]{3,8};?)+\}", lambda mm: " " * len(mm.group(0)), html)
+    for m in re.finditer(r"(?<![-\w])(color|background(?:-color)?)\s*:\s*#(?!(?:fff|ffffff|000|000000)\b)[0-9a-fA-F]{3,8}\b", govde):
+        b.append((U, "W07", satir_no(html, m.start()), f"\"{m.group(0)}\": yazı ve zemin için sabit hex yok, tema değişkeni kullan; renk değeri yalnız tema bloğunda (gorsel/motor/README.md)"))
     for e in ayar.get("widget_emoji_yasak", []):
         if e in html:
             b.append((H, "E03", satir_no(html, html.index(e)), f"{e} widget'ın içine konmaz (yalnız mesaj metnine)"))
@@ -453,6 +598,8 @@ def dosya_bulgulari(uzanti, metin, ayar, sozluk=None, konu_adlari=(), test_turu=
         if sozluk:
             tb, _ = terim_bulgulari(duz_metin(widget_metni(metin)), sozluk, terim_mod(ayar), bool(ayar.get("terim_her_gecis")), ayar.get("terim_muaf", []))
             b += tb
+        if ayar.get("yazim_havuzu"):
+            b += yazim_bulgulari(duz_metin(widget_tum_metin(metin)), ayar["yazim_havuzu"], ayar.get("terim_muaf", []))
         sorular, karistir = w10_sorular(metin), "yok"      # W10 şıkları ve soruları karıştırmaz; W24 çalışırken karıştırır
         if sorular is None:
             sorular, karistir = w24_html_sorular(metin)
@@ -504,6 +651,21 @@ def _denemeler():
     def terim(metin, mod="C2", her=True):
         return terim_bulgulari(duz_metin(metin), SOZ, mod, her)[0]
 
+    SOZ2 = [{"tr": ["doku"], "en": ["tissue"]}, {"tr": ["yapı"], "en": ["structure"]}, {"tr": ["katı"], "en": ["solid"]}, {"tr": ["kemik"], "en": ["bone"]},
+            {"tr": ["kimya"], "en": ["chemistry"]}]
+
+    def terim2(metin):
+        return terim_bulgulari(duz_metin(metin), SOZ2, "C2", True)[0]
+
+    def terim_gibi(metin, muaf=()):
+        return terim_bulgulari(duz_metin(metin), SOZ2, "C2", True, muaf)[0]
+
+    def yaz(metin, havuz_metni):
+        return yazim_bulgulari(duz_metin(metin), yazim_havuzu([havuz_metni]))
+
+    def yaz_html(html, havuz_metni):
+        return yazim_bulgulari(duz_metin(widget_tum_metin(html)), yazim_havuzu([havuz_metni]))
+
     def widget(html, ayar=None, **kw):
         return dosya_bulgulari(".html", html, dict(C2, **(ayar or {})), None, **kw)
 
@@ -523,6 +685,21 @@ def _denemeler():
         ("T C3 doğru", lambda: terim("Su aktivitesi (water activity) önemlidir.", "C3"), [], ["T01", "T02"]),
         ("T04 C3 İngilizce çıplak uyarı", lambda: terim("Water activity düştü.", "C3"), ["T04"], ["T01"]),
         ("T uç: hepsi ters", lambda: terim("\n".join("Su aktivitesi (water activity) bir." for _ in range(8))), ["T01"], []),
+        ("T02 ek zinciri: 'doku' terimi 'dokun' fiiliyle karışmaz", lambda: terim2("Ona dokun ve bak."), [], ["T02", "T03"]),
+        ("T02 ek zinciri: 'yapı' terimi 'yapılan' ile karışmaz", lambda: terim2("Yapılan deney ve yapılacak iş."), [], ["T02", "T03"]),
+        ("T02 ek zinciri: 'katı' terimi 'katılır' ile karışmaz", lambda: terim2("Tuz suya katılır."), [], ["T02", "T03"]),
+        ("T02 ek zinciri: çekimli terim yine yakalanır (dokuların, yapıdan, katıların)", lambda: terim2("Dokuların görevi var. Yapıdan geçer. Katıların hâli."), ["T02"], []),
+        ("T02 ek zinciri: ünsüz yumuşaması (kemiğin)", lambda: terim2("Kemiğin boyu."), ["T02"], []),
+        ("T muaf: kök muafsa çekimli hâli de serbest (Gıda Kimyası)", lambda: terim_gibi("Gıda Kimyası dersi.", muaf=["kimya"]), [], ["T02", "T03"]),
+        ("Y01 yazım: harf düşmesi (yengç → yengeç?)", lambda: yaz("Yengç kabuklusu.", "Yengeç kabuklu deniz canlısıdır."), ["Y01"], []),
+        ("Y01 yazım: ü/u karışması (Flüorür → Florür?)", lambda: yaz("Flüorür eklenir.", "Florür diş sağlığı için önemlidir."), ["Y01"], []),
+        ("Y01 yazım: ı/i karışması (sındirilebilirlik)", lambda: yaz("Sındirilebilirlik artar.", "Sindirilebilirlik protein için ölçülür."), ["Y01"], []),
+        ("Y01 yazım: havuzdaki sözcük ve çekimi uyarı vermez", lambda: yaz("Yengeçler ve florürün etkisi.", "Yengeç kabuklu. Florür eklenir."), [], ["Y01"]),
+        ("Y01 yazım: ünsüz yumuşaması uyarı vermez (kemiğin / kemik)", lambda: yaz("Kemiğin yapısı.", "Kemik dokusu sertleşir."), [], ["Y01"]),
+        ("Y01 yazım: İngilizce tekil/çoğul uyarı vermez (mineral / minerals)", lambda: yaz("Mineral contains calcium.", "Minerals contribute to health."), [], ["Y01"]),
+        ("Y01 yazım: widget verisi de taranır (kart ve soru dizeleri)", lambda: yaz_html('<div></div><script>RV["a"]=[["k1","Etiket","Flüorür eklenir","x"]];</script>', "Florür diş sağlığı için önemlidir."), ["Y01"], []),
+        ("W07 tema bloğundaki sabit hex serbest", lambda: widget("<style>.nb{--k1:#6F82E6;--ln:#000000;}.nb.dk{--bg:#272733;}.a{background:var(--k1);color:var(--ln)}</style>"), [], ["W07"]),
+        ("W07 başka yerde sabit hex uyarı", lambda: widget("<style>.nb{--k1:#6F82E6;}.a{background:#ff0000}</style>"), ["W07"], []),
         ("E01 tek 🙉", lambda: emoji_bulgulari("Önemli 🙉 kural.", C2), ["E01"], []),
         ("E01 çift 🙉", lambda: emoji_bulgulari("Önemli 🙉🙉 kural.", C2), ["E01"], []),
         ("E01 beşli 🙉", lambda: emoji_bulgulari("Önemli 🙉🙉🙉🙉🙉 kural.", C2), ["E01"], []),

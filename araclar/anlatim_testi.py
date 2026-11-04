@@ -12,6 +12,7 @@
                            /mnt/project-files/yerel/profil.json, .../denetim.json sırasıyla aranır (araclar/profil.py); komut satırı profili geçer
   ... --terim C2 --ders <ders> [--sozluk dosya]   terim dili denetimi (C2: İngilizce (Türkçe); C1/C3: Türkçe (İngilizce)); sözlük dersten ya da dosyadan
   ... --emoji-seri 3-4     emoji yalnız bu uzunlukta seri yazılır (tek/çift 🙉 yok); widget içinde yasak (profil: widget_emoji_yasak)
+  ... --yazim-kaynak dosya|dizin   yazım uyarısı (Y01): havuzda olmayan ama havuzdaki bir sözcüğe 1 harf uzak sözcük (Flüorür → Florür?); --ders ile pdf-metin dosyaları kendiliğinden eklenir
   ... --test-turu mini|tam --konu "<adım adı>"   .html (W10/W24) ve .json soru dosyası: dil, konu ipucu, cevap dağılımı, mini test sayısı
   python3 araclar/anlatim_testi.py --kendini-dene                     kuralların kendi denemesi
 
@@ -462,6 +463,9 @@ def incele(ad, metin, ayar=None):
                                          bool(ayar.get("terim_her_gecis")), ayar.get("terim_muaf", []))
         for d, k, no, m in tb:
             S.ekle(d, k, gercek(no - 1) if no else 0, m)
+    if ayar.get("yazim_havuzu"):
+        for d, k, no, m in EK.yazim_bulgulari(EK.duz_metin(kalan), ayar["yazim_havuzu"], ayar.get("terim_muaf", [])):
+            S.ekle(d, k, gercek(no - 1) if no else 0, m)
     return S
 
 
@@ -666,6 +670,7 @@ def main():
     ap.add_argument("--emoji-seri", default="")
     ap.add_argument("--test-turu", default="oto", choices=["oto", "mini", "tam"])
     ap.add_argument("--konu", action="append", default=[])
+    ap.add_argument("--yazim-kaynak", action="append", default=[], help="yazım uyarısı (Y01) için bilinen sözcük kaynağı: dosya ya da dizin (.md/.html/.json/.txt); tekrarlanabilir")
     ap.add_argument("--siki", action="store_true", help="uyarılar da hata sayılır")
     ap.add_argument("--kendini-dene", action="store_true")
     a = ap.parse_args()
@@ -697,6 +702,9 @@ def main():
         ayar["sozluk"] = EK.sozluk_topla(a.sozluk + EK.sozluk_yollari(a.ders, ayar))
         if not ayar["sozluk"]:
             print("UYARI: terim sözlüğü bulunamadı (--ders / --sozluk / profil); terim denetimi atlandı", file=sys.stderr)
+    kaynaklar = EK.yazim_kaynaklari(a.yazim_kaynak, a.ders, ayar)
+    if kaynaklar:
+        ayar["yazim_havuzu"] = EK.yazim_havuzu(kaynaklar + [" ".join(w for g in ayar.get("sozluk") or [] for k in ("tr", "en") for w in g[k])])
     yollar = []
     for d in a.dosyalar:
         if d == "-":
