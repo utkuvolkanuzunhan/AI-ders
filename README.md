@@ -41,13 +41,13 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `roller/` | ünite, ders yöneticisi, koordinatör, PDF çevirici, soru çözümü, soru seti |
 | `gorevler/` | kaynak okuma, PDF yönlendirme, konu anlatma, anlatım denetimi, soru sorma, özet/test, devir, PDF çevirme, kural güncelleme |
 | `secenekler/<harf>/` | Ayar kodunun her seçeneği ayrı dosya |
-| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi |
+| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi; `motor/` Neobrutalism widget motoru (CSS, motor, kişisiz tema) |
 | `dersler/<ders>/` | Derse özel kaynak önceliği, tuzaklar ve TR–EN sözlük |
 | `claude-sorunlari/` | Claude arayüzünün bilinen sorunları ve denenmiş yazım kuralları (formül/KaTeX vb.), alandan bağımsız, her paketle gelir |
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları), `profil.py` (kişisel ölçülebilir tercihler `yerel/profil.json`: okur, doğrular, katmanları birleştirir; `--goster`) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları), `widget.py` (Neobrutalism widget motoru: JSON spec → HTML, `--test` ekran testi, `--karsilastir`; bkz. `gorsel/motor/README.md`), `profil.py` (kişisel ölçülebilir tercihler `yerel/profil.json`: okur, doğrular, katmanları birleştirir; `--goster`) |
 
 ## Araçlar
 
