@@ -47,7 +47,7 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları, kişisel profil `yerel/denetim.json`) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları), `profil.py` (kişisel ölçülebilir tercihler `yerel/profil.json`: okur, doğrular, katmanları birleştirir; `--goster`) |
 
 ## Araçlar
 

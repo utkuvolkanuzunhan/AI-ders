@@ -5,9 +5,11 @@ Doğrudan çalıştırılmaz; `anlatim_testi.py` içe aktarır. Kendi denemeleri
 Bulgu: (düzey, kod, satır, mesaj), anlatim_testi.Sonuc.bulgu ile aynı biçim. Kodlar:
   T = terim dili (cekirdek/temel.md + secenekler/C + kişisel profil "terim_dili"), E = emoji, W = widget (gorsel/stil.md),
   Q = test soruları (kişisel tercihler: İngilizce + parantezde Türkçe, konu ipucu yok, mini test sayısı; gorevler/soru-sor.md).
-Kişisel tercihler depoya yazılmaz: kullanıcının proje klasöründeki yerel/denetim.json profilinden gelir (şablon: kurulum/yerel-denetim-sablonu.json).
+Kişisel tercihler depoya yazılmaz: kullanıcının proje klasöründeki yerel/profil.json profilinden gelir (eski ad denetim.json de okunur; şablon: kurulum/yerel-profil-sablonu.json; okuyucu: profil.py).
 """
-import collections, json, os, re
+import collections, json, os, re, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 H, U = "HATA", "UYARI"
 BURASI = os.path.dirname(os.path.abspath(__file__))
@@ -30,45 +32,12 @@ def satir_no(t, pos):
 
 
 # ───────────────────────────── kişisel profil ─────────────────────────────
-def profil_bul(yol=None):
-    """--profil > AI_DERS_PROFIL > ./yerel/denetim.json > /mnt/project-files/yerel/denetim.json."""
-    for a in (yol, os.environ.get("AI_DERS_PROFIL"), os.path.join(os.getcwd(), "yerel", "denetim.json"), "/mnt/project-files/yerel/denetim.json"):
-        if a and os.path.isfile(a):
-            return a
-    return None
+# Anahtar listesi, arama sırası ve katmanlar tek yerde: araclar/profil.py (yerel/profil.json; eski ad denetim.json de okunur).
+import profil as PROFIL  # noqa: E402
 
-
-def aralik(v):
-    """'3-4' ya da [3, 4] ya da 3 -> (3, 4)."""
-    if isinstance(v, (list, tuple)) and len(v) == 2:
-        return int(v[0]), int(v[1])
-    a, _, b = str(v).partition("-")
-    return int(a), int(b or a)
-
-
-def profil_oku(yol):
-    """Profil dosyası -> ayar sözlüğü (anlatim_testi ayar anahtarlarıyla) ve proje kökü."""
-    if not yol:
-        return {}
-    try:
-        p = json.load(open(yol, encoding="utf-8"))
-    except (OSError, ValueError) as e:
-        raise SystemExit(f"profil okunamadı ({yol}): {e}")
-    kok = os.path.dirname(os.path.dirname(os.path.abspath(yol)))   # yerel/'in üstü = proje klasörü
-    ayar = {"profil_yolu": yol, "proje_kok": kok}
-    for k in ("emoji", "terim_dili", "terim_her_gecis", "mini_test_soru", "test_dil", "karisik_test", "widget_emoji_yasak", "terim_muaf"):
-        if k in p:
-            ayar[k] = p[k]
-    if "emoji_seri" in p:
-        ayar["emoji_seri"] = [int(x) for x in (p["emoji_seri"] if isinstance(p["emoji_seri"], list) else str(p["emoji_seri"]).replace("-", ",").split(","))]
-    if "emoji_adet" in p:
-        ayar["emoji_adet"] = aralik(p["emoji_adet"])
-    if "cift_aralik" in p:
-        ayar["cift_aralik"] = aralik(p["cift_aralik"])
-    if "izin" in p:
-        ayar["izin"] = set(p["izin"])
-    ayar["sozluk_yollari"] = [y if os.path.isabs(y) else os.path.join(kok, y) for y in p.get("sozluk", [])]
-    return ayar
+profil_bul = PROFIL.bul
+aralik = PROFIL.aralik
+profil_oku = PROFIL.oku
 
 
 def sozluk_yollari(ders, ayar):
@@ -127,7 +96,8 @@ def sozluk_topla(yollar):
 
 
 def kod_c(kod, ayar):
-    """Ayar kodundaki C rakamı: --kod > profil proje klasöründeki yerel/ayarlar.md 'Kod:' > depo varsayılanı (3)."""
+    """Ayar kodundaki C rakamı: --kod > profildeki "kod" > proje klasöründeki yerel/ayarlar.md 'Kod:' > depo varsayılanı (3)."""
+    kod = kod or ayar.get("kod", "")
     if not kod and ayar.get("proje_kok"):
         yol = os.path.join(ayar["proje_kok"], "yerel", "ayarlar.md")
         if os.path.isfile(yol):

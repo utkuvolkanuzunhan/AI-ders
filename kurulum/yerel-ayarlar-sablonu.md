@@ -34,4 +34,4 @@ Alan: (yoksa sil; ör. eee)
 | `Alan:` | Sohbetlerin alan katmanını (kurallar, widget'lar, varsayılan kod) seçer |
 | `Dersler` tablosu | Koordinatörün sohbet açarken kullandığı ders listesi |
 | `Kişiye özel tercihler` | Sohbetin kural paketine ek olarak okuduğu kişisel notlar |
-| `yerel/denetim.json` | Ölçülebilir tercihlerin makine okunur hali (terim dili, emoji serisi, mini test sayısı...); anlatım denetimi (`araclar/anlatim_testi.py`) bunu kendisi bulur. Şablon: `kurulum/yerel-denetim-sablonu.json` |
+| `yerel/profil.json` (eski ad `yerel/denetim.json`) | Ölçülebilir tercihlerin makine okunur hali (terim dili, emoji serisi, mini test sayısı...); anlatım denetimi (`araclar/anlatim_testi.py`) bunu kendisi bulur. Şablon: `kurulum/yerel-profil-sablonu.json` |

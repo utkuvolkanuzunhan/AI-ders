@@ -8,8 +8,8 @@
   ... --emoji 🙉 --emoji-adet 3-4   toplam emoji adedi (kişisel ayar; yerel/ayarlar.md'den gelir)
   ... --izin a/b,c/d       düz kesir sayılmayacak ek yazımlar
   ... --cift-aralik 20-70  tüm mesajlarda çift boşluk payı için hata sınırı (yüzde; en az 10 geçiş varsa)
-  ... --profil yerel/denetim.json   kişisel ayarlar (emoji, terim dili, mini test sayısı...); verilmezse AI_DERS_PROFIL, ./yerel/denetim.json,
-                           /mnt/project-files/yerel/denetim.json sırasıyla aranır; komut satırı profili geçer
+  ... --profil yerel/profil.json   kişisel ayarlar (emoji, terim dili, mini test sayısı...); verilmezse AI_DERS_PROFIL, ./yerel/profil.json, ./yerel/denetim.json,
+                           /mnt/project-files/yerel/profil.json, .../denetim.json sırasıyla aranır (araclar/profil.py); komut satırı profili geçer
   ... --terim C2 --ders <ders> [--sozluk dosya]   terim dili denetimi (C2: İngilizce (Türkçe); C1/C3: Türkçe (İngilizce)); sözlük dersten ya da dosyadan
   ... --emoji-seri 3-4     emoji yalnız bu uzunlukta seri yazılır (tek/çift 🙉 yok); widget içinde yasak (profil: widget_emoji_yasak)
   ... --test-turu mini|tam --konu "<adım adı>"   .html (W10/W24) ve .json soru dosyası: dil, konu ipucu, cevap dağılımı, mini test sayısı
@@ -677,7 +677,7 @@ def main():
     if a.profil and not os.path.isfile(a.profil):
         print(f"profil bulunamadı: {a.profil}", file=sys.stderr)
         sys.exit(2)
-    ayar = EK.profil_oku(EK.profil_bul(a.profil))      # kişisel profil (yerel/denetim.json); komut satırı onu geçer
+    ayar = EK.profil_oku(EK.profil_bul(a.profil))      # kişisel profil (yerel/profil.json); komut satırı onu geçer
     ayar.update({"ilk": a.ilk, "idari": a.idari, "test_turu": a.test_turu})
     ayar.setdefault("izin", set())
     ayar["izin"] = set(ayar["izin"]) | {x.strip() for x in a.izin.split(",") if x.strip()}
@@ -730,7 +730,7 @@ def main():
         print(l1)
         print(l2)
     else:
-        print("Profil: " + (ayar["profil_yolu"] if ayar.get("profil_yolu") else "yok (yalnız depo kuralları; kişisel kurallar için yerel/denetim.json)"))
+        print("Profil: " + (ayar["profil_yolu"] if ayar.get("profil_yolu") else "yok (yalnız depo kuralları; kişisel kurallar için yerel/profil.json)"))
         yaz_ayrintili(sonuclar, tcik, tek, cift, pay)
         h = sum(s.hata() for s in sonuclar) + sum(1 for x in tcik if x[0] == H)
         print("SONUÇ: " + ("GEÇTİ" if h == 0 else f"{h} HATA"))

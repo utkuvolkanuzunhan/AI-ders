@@ -15,8 +15,8 @@ Anlatım mesajı (formül, boşluk, biçim) göndermeden önce `araclar/anlatim_
 3. Gönderilen metin test edilen metinle aynı olmalı; testten sonra elle değiştirme.
 4. Düzelmeyen hata kaldıysa mesajı yine gönder ama sohbete hemen 2 satırlık rapor yaz (aşağıda). Hatayı gizleme.
 
-## Kişisel ayarlar: yerel/denetim.json
-Kişiye özel ölçülebilir tercihler (terim dili, emoji, mini test sayısı...) kullanıcının proje klasöründe `yerel/denetim.json` dosyasındadır (şablon: `kurulum/yerel-denetim-sablonu.json`; depoya yazılmaz). Test bu dosyayı kendisi bulur (`--profil` ya da `AI_DERS_PROFIL` ile de verilebilir); komut satırı bayrakları profili geçer. Dosya yoksa yalnız depo kuralları denetlenir. `yerel/ayarlar.md`'de yeni ölçülebilir bir tercih yazılırsa aynı turda profile de yazılır.
+## Kişisel ayarlar: yerel/profil.json
+Kişiye özel ölçülebilir tercihler (terim dili, emoji, mini test sayısı...) kullanıcının proje klasöründe `yerel/profil.json` dosyasındadır (şablon: `kurulum/yerel-profil-sablonu.json`; depoya yazılmaz; eski ad `denetim.json` de okunur; anahtarlar ve katman sırası `araclar/profil.py`, `python3 araclar/profil.py --goster`). Test bu dosyayı kendisi bulur (`--profil` ya da `AI_DERS_PROFIL` ile de verilebilir); komut satırı bayrakları profili geçer. Dosya yoksa yalnız depo kuralları denetlenir. `yerel/ayarlar.md`'de yeni ölçülebilir bir tercih yazılırsa aynı turda profile de yazılır.
 
 ## Terim dili (T01–T04)
 `--ders <ders>` (ya da `--sozluk dosya`) verilince mesajdaki sözlük terimleri ayar C'ye göre denetlenir; profildeki `terim_dili` ayar kodunu geçer.
