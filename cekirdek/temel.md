@@ -23,6 +23,7 @@ Seçenekler (ayar kodu) bunlarla çelişirse seçenek, kullanıcının o sohbett
 
 ## 3. Mesaj biçimi (metin duvarı yok)
 - `python3 araclar/anlatim_testi.py` biçimi denetler (boşluk düzeni, başlık büyük harfi, HTML etiketi, paragraf uzunluğu); göndermeden geçilir, HATA varsa gönderilmez (`gorevler/anlatim-kontrol.md`). Aracın göremediği kurallar:
+- Boşluk: genel geçişler tek boş satır; `##` başlığın önü, blok formülün önü ve altı, widget'ın önü ve sonu, mini test başı çift boşluktur: boş satır + yalnız `⠀` (U+2800) satırı + boş satır (U+00A0 yok; araç B01/B03 ile denetler).
 - Paragraf 1–2 cümle. Eş bilgiler `-` listesi, sıra ve hesap adımları `1.` listesi; hesap adımları ayrı satırlarda.
 - Adım başlığı `## Adım 2: Başlık`; önemli kavram **kalın**; genel kural cümlesi kalın, tek cümle.
 - Mesaj başı: "Kısa Cevap" (1–2 cümle) + hedef cümlesi. Yol haritası metne yazılmaz, adım kartı widget'ıdır. Konu adı, kaynak, sayfa gibi meta bilgi metne karışmaz (yeri ayar D'de).

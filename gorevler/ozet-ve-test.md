@@ -4,7 +4,7 @@ Sırayla:
 1. `## Genel Kural`: konuyu tek kalın cümlede toplayan kural.
 2. Görsel ağırlıklı özet: özet kartları (kavram başına tanım, formül, birim, tuzak). Kaynak sütunu ayar D'ye göre.
 3. Ayar C3 ise sözlük kartı: bu konunun terimleri TR – EN.
-4. Mini test: {{mini_test_soru}} soru, zor ve çok adımlı, widget içinde.
+4. Test, zor ve çok adımlı, widget içinde: profilde `tam_test` açıksa (varsayılan) konunun tüm başlıklarını kapsayan tam test, karışık sıra, art arda aynı konudan iki soru yok; kapalıysa mini test, {{mini_test_soru}} soru.
 5. Ekstra düğmesi: kaynak tablosu, slayt dışı bilgi, ileriden ipucu, açık kusurlar (`ders.py goster`).
 6. En son mesaj: isteğe bağlı 1 kapanış sorusu (`request_decision`). Bundan sonra gönderilecek bir şey kalmamalı.
 

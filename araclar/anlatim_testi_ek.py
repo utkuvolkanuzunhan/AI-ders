@@ -129,6 +129,18 @@ def terim_mod(ayar, kod_c="3"):
     return m if m in ("C1", "C2", "C3") else "C3"
 
 
+def tr_karsilik_var(tr, parantez):
+    """Parantez içi (küçük harf) sözlükteki Türkçe karşılığı taşıyor mu: tam ifade ya da ifadedeki
+    anlamlı (≥5 harfli) bir sözcüğün kökü (mineral madde ↔ "makro mineraller")."""
+    x = tr_kucuk(tr)
+    if x in parantez:
+        return True
+    for w in re.findall(rf"[{HARF}]+", x):
+        if len(w) >= 5 and w[:len(w) - 1 if len(w) < 7 else len(w) - 2] in parantez:
+            return True
+    return False
+
+
 def terim_bulgulari(t, sozluk, mod, her_gecis, muaf=()):
     """Terimlerin yazılış sırasını denetler (t: biçim işaretleri temizlenmiş düz metin).
     C2: İngilizce (Türkçe), her_gecis ise her geçişte; C1/C3: Türkçe (İngilizce). -> (bulgular, ölçüm)"""
@@ -167,7 +179,7 @@ def terim_bulgulari(t, sozluk, mod, her_gecis, muaf=()):
         onceki_tr = tr_kucuk(t[:idx].rstrip()) if idx != -1 and ")" not in t[idx:s] else ""
         onceki_en = en_kucuk(t[:idx].rstrip()) if onceki_tr else ""
         if dil == "en":
-            if ic and any(tr_kucuk(x) in ic[0] for x in g["tr"]):
+            if ic and any(tr_karsilik_var(x, ic[0]) for x in g["tr"]):
                 durum = "en_tr"                     # İngilizce (Türkçe)
             elif onceki_tr and any(re.search(tr_kok_deseni(tr_kucuk(x)) + r"$", onceki_tr) for x in g["tr"]):
                 continue                            # "Türkçe (İngilizce)" çiftinin parantez içi yarısı: çifti baştaki terim temsil eder
@@ -670,6 +682,11 @@ def _denemeler():
     def terim2(metin):
         return terim_bulgulari(duz_metin(metin), SOZ2, "C2", True)[0]
 
+    SOZ3 = [{"tr": ["mineral madde"], "en": ["mineral", "minerals"]}]
+
+    def terim3(metin):
+        return terim_bulgulari(duz_metin(metin), SOZ3, "C2", True)[0]
+
     def terim_gibi(metin, muaf=()):
         return terim_bulgulari(duz_metin(metin), SOZ2, "C2", True, muaf)[0]
 
@@ -711,6 +728,8 @@ def _denemeler():
         ("T C3 doğru", lambda: terim("Su aktivitesi (water activity) önemlidir.", "C3"), [], ["T01", "T02"]),
         ("T04 C3 İngilizce çıplak uyarı", lambda: terim("Water activity düştü.", "C3"), ["T04"], ["T01"]),
         ("T uç: hepsi ters", lambda: terim("\n".join("Su aktivitesi (water activity) bir." for _ in range(8))), ["T01"], []),
+        ("T03 Türkçe parantezde sözlük ifadesinin kökü yeter (makro mineraller)", lambda: terim3("Major minerals (makro mineraller) önemlidir. Minerals (mineraller) kemikte bulunur."), [], ["T03"]),
+        ("T03 parantezde ilgisiz Türkçe hâlâ uyarır", lambda: terim3("Minerals (vitaminler) önemlidir."), ["T03"], []),
         ("T02 ek zinciri: 'doku' terimi 'dokun' fiiliyle karışmaz", lambda: terim2("Ona dokun ve bak."), [], ["T02", "T03"]),
         ("T02 ek zinciri: 'yapı' terimi 'yapılan' ile karışmaz", lambda: terim2("Yapılan deney ve yapılacak iş."), [], ["T02", "T03"]),
         ("T02 ek zinciri: 'katı' terimi 'katılır' ile karışmaz", lambda: terim2("Tuz suya katılır."), [], ["T02", "T03"]),
