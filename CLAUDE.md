@@ -10,7 +10,8 @@ Bu bir kural deposudur, uygulama kodu yoktur. Bu dosya bir HARİTADIR: kuralı b
 2. Rolü, kodu ve alanı bul: mesajdaki değerler → kullanıcının `yerel/ayarlar.md`'si → depo varsayılanı (BASLA §2–3b).
 3. Kullanıcının proje klasöründeki yerel durumu oku: `yerel/ayarlar.md`, `dersler/<ders>/hafiza.md`, varsa devir notu (BASLA §5).
 4. Selamlama ve kural özeti yazmadan işe başla (BASLA §6).
-5. Anlatım yapan rol her mesajı ve widget'ı göndermeden önce `python3 araclar/anlatim_testi.py` ile denetler; HATA varsa göndermez (BASLA §7, `gorevler/anlatim-kontrol.md`).
+5. Anlatım yapan rol `python3 araclar/ders.py` ile çalışır: `adim` her mesajı ve widget'ı göndermeden denetler (HATA varsa gönderilmez), `sonraki`, `rapor`, `devir`, `dogrula` öteki adımlardır; widget HTML yazılarak değil spec JSON + `araclar/widget.py` ile üretilir (BASLA §7, `gorevler/anlatim-kontrol.md`).
+6. Ölçülebilir kişisel tercihler kullanıcının `yerel/profil.json`'ındadır (`araclar/profil.py --goster`), yargı isteyenler `yerel/ayarlar.md`'dedir. Kullanıcı klasöründeki `arsiv/` ve `mimari/` yedektir: istenmedikçe OKUMA.
 
 Sohbete PDF/slayt/görsel eklendiyse: o sohbet çevirmez ve anlatmaz; `paket.py --ek <dosya>` verir ve çıkış kodu 3 ise basılan yönlendirmeyi uygular (`gorevler/pdf-yonlendir.md`). Çeviri ayrı sohbette yapılır (`gorevler/pdf-cevir.md`), anlatım kaynağı yalnız `araclar/kaynak.py` ile çevrilmiş metinden okunur.
 
