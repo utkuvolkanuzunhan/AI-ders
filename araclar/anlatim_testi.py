@@ -606,6 +606,13 @@ def _denemeler():
 
 def kendini_dene():
     basarisiz = 0
+    # her bulgu kodu --kodlar tablosunda açıklanmış olmalı
+    kaynak_kodlari = set()
+    for dosya in ("anlatim_testi.py", "anlatim_testi_ek.py"):
+        kaynak_kodlari |= set(re.findall(r'"([A-Z]\d{2})"', open(os.path.join(os.path.dirname(os.path.abspath(__file__)), dosya), encoding="utf-8").read()))
+    eksik = sorted(kaynak_kodlari - set(KODLAR))
+    print(("geçti" if not eksik else "BAŞARISIZ") + " · --kodlar tablosu tüm bulgu kodlarını açıklıyor" + (f" (eksik: {', '.join(eksik)})" if eksik else ""))
+    basarisiz += 1 if eksik else 0
     for ad, metin, ayar, olmali, olmamali in _denemeler():
         S = incele(ad, metin, ayar)
         kodlar = {b[1] for b in S.bulgu}
@@ -652,6 +659,42 @@ def aralik_oku(s, ad):
         sys.exit(2)
 
 
+KODLAR = {
+    "F01": "formülde ham görünen komut (\\Large, \\boldsymbol, \\mathbf, \\boxed, \\color, \\displaystyle, \\quad, \\left, \\right…)",
+    "F02": "indis/üs süslü parantezsiz (P_X değil P_{X})", "F03": "kesrin içinde kesir (ara değeri ayrı blokta tanımla)",
+    "F04": "kesirden sonra \\times 100 (çarpanı payın içine al)", "F05": "tek kalan $ ya da \\$ (para için $ yazma)",
+    "F06": "bir blokta birden çok denklem", "F07": "süslü parantez dengesiz", "F08": "formülde düz kesir a/b (birim hariç)",
+    "F09": "formül dışında ham LaTeX", "F10": "düz metin kesir (a/b); gerçek pay/payda yaz", "F11": "$$ bloğu kendi satırlarında değil",
+    "F12": "\\, \\; \\! boşluk komutu (teyit bekliyor)", "F13": "formülde çıplak %: \\% yaz", "F14": "formülden sonra sembol anlamları madde madde yok",
+    "B01": "başlığın önünde çift boşluk (boş, ⠀, boş) olmalı", "B02": "başlığın altında tek boşluk", "B03": "formül bloğunun üstünde çift boşluk",
+    "B04": "formül bloğunun altında çift boşluk", "B05": "mini test başında çift boşluk", "B06": "yeni kavram açılışlarının çoğu çift boşluksuz",
+    "B07": "geçersiz boşluk düzeni (ardışık ⠀ ya da ardışık boş satır)", "B08": "U+00A0 kullanılmış; çift boşluk yalnız ⠀ (U+2800) satırı",
+    "B09": "çift boşluk payı sınır dışı (hedef ~%40, sınır %20–%70)", "B10": "mesaj boşlukla başlıyor", "B11": "widget öncesi/sonrası çift boşluk",
+    "B12": "liste başlığı ile ilk maddesi arasında boşluk", "B13": "liste başlıksız bitişik (başlık iki nokta ile bitmeli)",
+    "S00": "mesaj boş", "S01": "sohbette HTML etiketi (<sub> <sup> <small> <br>)", "S02": "başlıkta küçük harfle başlayan sözcük",
+    "S03": "paragraf 1–2 cümleyi aşıyor / mesaj çok uzun", "S04": "kaynak/sayfa bilgisi metne karışmış", "S05": "puan/rozet/oyunlaştırma",
+    "S06": "çok kalın ifade", "S07": "ilk mesaj \"## Kısa Cevap\" ve hedef cümlesiyle başlamalı", "S08": "idari mesaj en çok 2 satır",
+    "S09": "emoji toplam adedi istenen aralık dışı", "S10": "Türkçe karakterler düşmüş (ASCII)", "S11": "bir mesajda ikinci adım başlığı",
+    "S12": "adım başlığı \"## Adım n: Başlık\" biçiminde değil",
+    "T01": "terim sırası ters (C2: İngilizce önce)", "T02": "Türkçe terim tek başına (C2)", "T03": "İngilizce terimin Türkçesi parantezde yok (C2, her geçiş)",
+    "T04": "terim İngilizce yazılmış (C1/C3: Türkçe önce)",
+    "E01": "kişisel emoji yanlış uzunlukta seri (profil emoji_seri)", "E02": "emoji çok yerde", "E03": "emoji widget içinde",
+    "W01": "<button> (div role=\"button\" tabindex=\"0\" kullan)", "W02": "ResizeObserver/setInterval", "W03": "dış kütüphane ya da stil dosyası",
+    "W04": "<sup>/<sub> (üs/alt indis ayrı yerleşimle)", "W05": "html,body{overflow:hidden} ya da text-size-adjust yok", "W06": "yazı 13 px'ten küçük",
+    "W07": "yazı/zemin için sabit hex (tema değişkeni kullan; renk değeri yalnız tema bloğunda)",
+    "Q01": "mini test soru sayısı profildeki mini_test_soru değil", "Q02": "şık sayısı az", "Q03": "doğru cevap şık aralığında değil",
+    "Q04": "aynı metinli şıklar", "Q05": "aynı soru iki kez", "Q06": "açıklama boş", "Q07": "soru çok kısa (tek adımlı)",
+    "Q08": "soruda/şıkta konu adı, adım ya da sayfa numarası (konuyu ele verir)", "Q09": "İngilizce soru/şıkta Türkçe parantez yok (test_dil en-tr)",
+    "Q10": "doğru cevaplar hep aynı şıkta", "Q11": "doğru şık hep en uzun", "Q12": "tam testte art arda iki soru aynı konudan", "Q13": "soru bulunamadı",
+    "Q14": "W24 test verisi bulgusu", "Q15": "karışık test: konu etiketi yok / hepsi aynı konu / hepsi güncel konu",
+    "Y01": "şüpheli yazım (kaynakta ve önceki metinlerde yok, 1 harf farkla benzeri var)",
+}
+
+
+def kodlar():
+    return KODLAR
+
+
 def main():
     ap = argparse.ArgumentParser(description="Anlatım mesajı testi (cekirdek §3–§4 + claude-sorunlari/formuller.md)")
     ap.add_argument("dosyalar", nargs="*", help="mesaj dosyaları, dizinler ya da - (stdin)")
@@ -672,8 +715,13 @@ def main():
     ap.add_argument("--konu", action="append", default=[])
     ap.add_argument("--yazim-kaynak", action="append", default=[], help="yazım uyarısı (Y01) için bilinen sözcük kaynağı: dosya ya da dizin (.md/.html/.json/.txt); tekrarlanabilir")
     ap.add_argument("--siki", action="store_true", help="uyarılar da hata sayılır")
+    ap.add_argument("--kodlar", action="store_true", help="bulgu kodlarını ve anlamlarını listeler (F formül, B boşluk, S biçim, T terim, E emoji, W widget, Q soru, Y yazım)")
     ap.add_argument("--kendini-dene", action="store_true")
     a = ap.parse_args()
+    if a.kodlar:
+        for k, v in sorted(kodlar().items()):
+            print(f"{k}  {v}")
+        sys.exit(0)
     if a.kendini_dene:
         sys.exit(kendini_dene())
     if not a.dosyalar:

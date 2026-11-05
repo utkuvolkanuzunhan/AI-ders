@@ -431,6 +431,14 @@ def cmd_konu_ekle(a, proje, durum, ayar):
     print(f"{a.etiket}: {k['ad']} (adım {k['adim']}" + (f", sayfa {k['sayfa']}" if k.get("sayfa") else "") + ")")
 
 
+def gorev_metni(ad, ayar):
+    """Paketten çıkarılıp gerektiğinde basılan görev metni (gorevler/<ad>.md; {{mini_test_soru}} profilden)."""
+    y = os.path.join(os.path.dirname(BURASI), "gorevler", ad + ".md")
+    if not os.path.isfile(y):
+        return ""
+    return open(y, encoding="utf-8").read().strip().replace("{{mini_test_soru}}", str(ayar.get("mini_test_soru", 3)))
+
+
 def cmd_devir(a, proje, durum, ayar):
     dd = os.path.join(proje, "dersler", durum["ders"], "devir")
     os.makedirs(dd, exist_ok=True)
@@ -460,6 +468,7 @@ def cmd_devir(a, proje, durum, ayar):
     open(yol, "w", encoding="utf-8").write("\n".join(L) + "\n")
     print(f"devir notu: {yol}")
     print(f"Koordinatöre (tek satır): devam sohbeti aç: {durum.get('baslik', durum['ad'])} (devam {n}), Kod: {durum.get('kod') or '(ayarlar.md)'}, not: {yol}")
+    print("\n--- Devir adımları (gorevler/devir.md) ---\n" + gorev_metni("devir", ayar))
 
 
 def cmd_rapor(a, proje, durum, ayar):
@@ -470,6 +479,7 @@ def cmd_rapor(a, proje, durum, ayar):
     r = subprocess.run([sys.executable, os.path.join(BURASI, "anlatim_testi.py")] + dosyalar + ["--ders", durum["ders"], "--rapor"], capture_output=True, text=True)
     print(r.stdout.rstrip())
     g = gonderilen_adimlar(durum)
+    print("\n--- Konu sonu sırası (gorevler/ozet-ve-test.md) ---\n" + gorev_metni("ozet-ve-test", ayar))
     print("\n--- Ders yöneticisine ünite raporu (taslak) ---")
     print(f"{durum.get('baslik', durum['ad'])}: {len(g)} adım gönderildi ({', '.join(str(s['no']) for s in g) or '-'}), {len(durum['konular'])} konu etiketi.")
     for k in durum.get("kusurlar", []):

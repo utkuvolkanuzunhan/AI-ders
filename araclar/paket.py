@@ -12,6 +12,9 @@ Kod yazılmazsa varsayılan; eksik harfler varsayılandan tamamlanır.
 Alan katmanı (alanlar/<alan>/): --alan ile ya da ders kartının başındaki `alan: <ad>` satırından bulunur.
 Alanın varsayılan kodu (alan.json) depo varsayılanının üstüne biner; verilen kod ikisini de geçer.
 F2 için beğeni listesi: ...F2/W01.W06-W03 (W03 hiç kullanılmaz).
+Profil (yerel/profil.json): varsa ve açıkça yazmışsa terim_dili (C) ile kaynak_gosterim (D) ayar kodundaki C ve D'yi geçer, `tema: neobrutalism`
+ise stil.md + katalog.md yerine gorsel/motor/KURALLAR.md ve F/G/H seçenekleri yerine motor basılır, mini_test_soru görev metnine girer.
+Profil yok ya da --varsayilan verilirse paket eskisi gibi çıkar. Profil dosyası: --profil, AI_DERS_PROFIL ya da proje klasörü (profil.py).
 PDF kapısı: --ek ile çevrilmemiş dosya (PDF/slayt/görsel) verilirse ve rol pdf-cevirici değilse kural paketi
 verilmez; yalnız yönlendirme görevi basılır ve çıkış kodu 3 olur (çeviri ve anlatım ayrı sohbetlerdedir).
 """
@@ -19,6 +22,7 @@ import argparse, json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from kaynak import ham_mi  # noqa: E402
+import profil as PRF  # noqa: E402
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KOD = json.load(open(os.path.join(KOK, "araclar", "kod.json"), encoding="utf-8"))
@@ -106,6 +110,9 @@ def main():
     ap.add_argument("--kod-coz", dest="kodcoz")
     ap.add_argument("--roller", action="store_true")
     ap.add_argument("--ek", action="append", default=[], help="sohbete eklenen/briefte verilen dosya (tekrarlanabilir)")
+    ap.add_argument("--gorev", default="", help="yalnız bu görev metnini bas (pakete girmeyen görevler: ozet-ve-test, devir, kural-guncelle, pdf-yonlendir)")
+    ap.add_argument("--profil", default="", help="profil dosyası (varsayılan: profil.py arama sırası)")
+    ap.add_argument("--varsayilan", action="store_true", help="profili yok say (depo varsayılanıyla paket)")
     a = ap.parse_args()
 
     if a.roller:
@@ -116,6 +123,14 @@ def main():
         cfg = alan_oku(a.alan.lower())
         sec, b, i = kod_coz(a.kodcoz, cfg.get("varsayilan_kod", "") if cfg else "")
         print(f"Kod: {kod_yaz(sec, b, i)}\n\n{tablo(sec)}")
+        return
+    if a.gorev:
+        t = oku(f"gorevler/{a.gorev}.md")
+        if t is None:
+            sys.exit(f"görev yok: {a.gorev}")
+        pyol = None if a.varsayilan else PRF.bul(a.profil or None)
+        deger = PRF.birlestir(pyol, "", None)[0] if pyol else {}
+        print(t.replace("{{mini_test_soru}}", str(deger.get("mini_test_soru", 3)) if pyol else "3"))
         return
     if not a.rol or a.rol not in KOD["roller"]:
         sys.exit(f"--rol gerekli. Roller: {', '.join(KOD['roller'])}")
@@ -131,14 +146,27 @@ def main():
     alan_kart, kart = kart_oku(a.ders) if a.ders else ("", None)
     alan = (a.alan or alan_kart).strip().lower()
     cfg = alan_oku(alan)
-    sec, begen, istemez = kod_coz(a.kod, cfg.get("varsayilan_kod", "") if cfg else "")
+    # Profil: ölçülebilir kişisel tercihler ayar kodundaki çatışan harfleri geçer (profil kazanır)
+    pyol = None if a.varsayilan else PRF.bul(a.profil or None)
+    deger, kaynak = PRF.birlestir(pyol, alan, None) if pyol else ({}, {})
+    acik = lambda k: kaynak.get(k) == "profil"          # dosyada açıkça yazılmış mı (depo varsayılanı sayılmaz)
+    sec, begen, istemez = kod_coz(a.kod or (deger.get("kod", "") if pyol else ""), cfg.get("varsayilan_kod", "") if cfg else "")
+    notlar = []
+    if pyol and acik("terim_dili") and sec["C"] != deger["terim_dili"][1:]:
+        notlar.append(f"C{sec['C']}→{deger['terim_dili']}")
+        sec["C"] = deger["terim_dili"][1:]
+    if pyol and acik("kaynak_gosterim") and sec["D"] != deger["kaynak_gosterim"][1:]:
+        notlar.append(f"D{sec['D']}→{deger['kaynak_gosterim']}")
+        sec["D"] = deger["kaynak_gosterim"][1:]
+    motor = bool(pyol and acik("tema") and deger.get("tema") == "neobrutalism" and os.path.exists(os.path.join(KOK, "gorsel", "motor", "KURALLAR.md")))
     parca = []
     parca.append(f"# AI-ders okuma paketi\n\nRol: **{a.rol}** · Kod: **{kod_yaz(sec, begen, istemez)}**"
+                 + (f" · Profil önceliği: {', '.join(notlar)}" if notlar else "")
                  + (f" · Ders: **{a.ders}**" if a.ders else "")
                  + (f" · Alan: **{alan}**" if cfg else "")
                  + ("\n\n**Bu sohbet ANLATIM YAPMAZ.** Tek çıktı pdf-metin dosyası + indeks; bitince koordinatörden anlatım sohbeti iste." if a.rol == "pdf-cevirici" else "")
-                 + "\n\nBu paket bu sohbetin tüm kurallarıdır. Kullanıcının bu sohbette açıkça söyledikleri her şeyi geçer.\n\n"
-                 + tablo(sec))
+                 + "\n\nBu paket bu sohbetin tüm kurallarıdır. Kullanıcının bu sohbette açıkça söylediği her şeyi geçer."
+                 + ("" if motor else "\n\n" + tablo(sec)))
     if begen or istemez:
         parca.append(f"Beğenilen şablonlar: {', '.join(begen) or '-'} · Kullanılmayacak: {', '.join(istemez) or '-'}")
     parca.append(oku("cekirdek/temel.md"))
@@ -156,13 +184,20 @@ def main():
     for g in rol["gorevler"]:
         parca.append(oku(f"gorevler/{g}.md"))
     harfler = [h["harf"] for h in KOD["harfler"]] if rol["secenekler"] == "hepsi" else rol["secenekler"]
+    if motor:
+        harfler = [h for h in harfler if h not in ("F", "G", "H")]       # widget seçimi, ekran testi, palet: motor ve widget.py yapar
+    if pyol and acik("devir_esik"):
+        harfler = [h for h in harfler if h != "I"]                       # devir eşiğini ders.py sayar ve uyarır
     if harfler:
         parca.append("# Ayar kodu seçenekleri")
         for h in harfler:
             parca.append(oku(KOD["secenek_dosyasi"].format(harf=h, rakam=sec[h])))
     if rol["gorsel"]:
-        parca.append(oku("gorsel/stil.md"))
-        parca.append(oku("gorsel/katalog.md"))
+        if motor:
+            parca.append(oku("gorsel/motor/KURALLAR.md"))
+        else:
+            parca.append(oku("gorsel/stil.md"))
+            parca.append(oku("gorsel/katalog.md"))
         if cfg and cfg.get("katalog"):
             parca.append(oku(f"alanlar/{alan}/{cfg['katalog']}"))
     if rol["ders"] and a.ders:
@@ -178,6 +213,7 @@ def main():
                 if s:
                     parca.append(s)
     metin = "\n\n---\n\n".join(p for p in parca if p)
+    metin = metin.replace("{{mini_test_soru}}", str(deger.get("mini_test_soru", 3)) if pyol else "3")
     print(metin)
     print(f"\n\n<!-- paket boyutu: {len(metin.encode('utf-8')) // 1024} KB -->")
 
