@@ -1,0 +1,11 @@
+{
+  "_aciklama": "Kişisiz varsayılan tema: Neobrutalism resmi değerleri (ekmas/neobrutalism-components, MIT; globals.css). k4-k6 resmi paletin dışında türetilmiş kavram renkleridir. Kişisel renkler depoya yazılmaz: projedeki yerel/tema.json yalnız değiştirmek istediğin anahtarları yazar, bunun üstüne biner. koyu: yalnız açık temadan farklı olanlar.",
+  "ad": "neobrutalism",
+  "acik": {
+    "bg": "#dcebfe", "sf": "#ffffff", "tx": "#000000", "tx2": "#3d4452", "ln": "#000000",
+    "mn": "#5294ff", "yl": "#facc00", "ik": "#15171f", "rd": "#ff4d50",
+    "k1": "#7a83ff", "k2": "#05e17a", "k3": "#facc00", "k4": "#c084fc", "k5": "#f472b6", "k6": "#38bdf8"
+  },
+  "koyu": {"bg": "#272733", "sf": "#3b3d54", "tx": "#f4f4f0", "tx2": "#c6c8d6"},
+  "roller": {"dogru": "k2", "yanlis": "rd", "dikkat": "k3"}
+}

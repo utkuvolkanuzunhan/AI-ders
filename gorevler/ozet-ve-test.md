@@ -2,10 +2,10 @@
 
 Sırayla:
 1. `## Genel Kural`: konuyu tek kalın cümlede toplayan kural.
-2. Tek sayfalık, görsel ağırlıklı özet: W11 özet kartları (kavram başına kart: tanım, formül, birim, tuzak). Kaynak sütunu ayar D'ye göre (D1'de kaynaklar Ekstra'da).
+2. Görsel ağırlıklı özet: özet kartları (kavram başına tanım, formül, birim, tuzak). Kaynak sütunu ayar D'ye göre.
 3. Ayar C3 ise sözlük kartı: bu konunun terimleri TR – EN.
-4. Mini test: W10, 3 soru, zor ve çok adımlı.
-5. Ekstra düğmesi (W05): kaynak tablosu, slayt dışı bilgi, ileriden ipucu.
-6. En son mesaj olarak, isteğe bağlı 1 kapanış sorusu (request_decision). Bundan sonra gönderilecek bir şey kalmamalı.
+4. Test, zor ve çok adımlı, widget içinde: profilde `tam_test` açıksa (varsayılan) konunun tüm başlıklarını kapsayan tam test, karışık sıra, art arda aynı konudan iki soru yok; kapalıysa mini test, {{mini_test_soru}} soru.
+5. Ekstra düğmesi: kaynak tablosu, slayt dışı bilgi, ileriden ipucu, açık kusurlar (`ders.py goster`).
+6. En son mesaj: isteğe bağlı 1 kapanış sorusu (`request_decision`). Bundan sonra gönderilecek bir şey kalmamalı.
 
-Bu görev anlatım içi testtir (W10). Konu anlatımı dışında hazırlanan soru seti için gorevler/soru-seti.md (W24).
+Konu anlatımı dışındaki soru setleri için `gorevler/soru-seti.md` (W24).

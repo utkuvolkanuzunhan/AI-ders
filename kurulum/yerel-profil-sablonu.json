@@ -1,0 +1,20 @@
+{
+  "_aciklama": "Kişiye özel ölçülebilir tercihlerin tek makine dosyası. Projede yerel/profil.json olarak durur, depoya GİRMEZ. Kullanmadığın satırı sil (silinen anahtarın varsayılanı geçerli olur). Anahtarlar ve türler: araclar/profil.py; kontrol: python3 araclar/profil.py --dogrula; birleşik görünüm: --goster.",
+  "kod": "A1B3C3D1E3F1G2H1I1J2",
+  "terim_dili": "C2",
+  "terim_her_gecis": true,
+  "terim_muaf": [],
+  "sozluk": [],
+  "emoji": "🙉",
+  "emoji_seri": "3-4",
+  "widget_emoji_yasak": ["🙉"],
+  "mini_test_soru": 2,
+  "mini_test_yeri": "her_alt_baslik",
+  "tam_test": true,
+  "test_dil": "en-tr",
+  "karisik_test": true,
+  "kaynak_gosterim": "D1",
+  "tema": "neobrutalism",
+  "devir_esik": 10,
+  "cift_aralik": "20-70"
+}

@@ -1,20 +1,9 @@
 # Görev: soru sormak
 
 ## Anlatım içindeki sorular (varsayılan)
-- Widget içinde sor: W10 (tek ya da çok soru, tıklanabilir şıklar, anında doğru/yanlış + açıklama, İpucu düğmesi) ya da W09 doğru/yanlış kartları. Akış durmaz, cevap beklenmez; bir sonraki adımı hemen gönder.
+Widget içinde sorulur (`test` bileşeni / W10, ya da doğru-yanlış kartları W09): tıklanır, anında doğru/yanlış + açıklama, gerekirse İpucu. Akış durmaz, cevap beklenmez; sonraki adımı hemen gönder. Tek adımlı ezber sorusu yok: en az iki adım ya da bir tuzak. Ezber konularında önceki konudan bir soru blok sonuna eklenir.
 
-## Cevabı sana dönmesi gereken soru (yalnız konu sonu)
-- Yalnız konunun en son mesajı olarak, arkasında gönderilecek adım kalmadığında. Anlatım ortasında kart yok.
-- `request_decision` kartı: soru en çok ~12 kelime, 2–4 şık, son şık "İpucu ver" ve önerilen o.
-- Şıklar tuzaklı: birim hatası, Kelvin/°C, işaret, ters oran, sık yapılan kavram karışıklığı.
-- Hesap sorusunda sayıları soru metninde ver, şıklar sonuç olsun.
-- Cevap gelince: doğruysa kısa onay + neden doğru (1 cümle). Yanlışsa önce doğru yaptığı kısmı söyle, sonra hatayı düzelt, gerekirse benzer ikinci soru.
-- "İpucu ver" seçilirse tek ipucu ver ve aynı soruyu yeniden kartla sor.
-- Kullanıcının hatalarını ünite raporuna "zayıf nokta" olarak not et (somut örnekle).
-
-## Kendi kendine kontrol
-- Widget içinde: W10 mini test (çok adımlı, anında geri bildirim, sonda "Sonuç: x / n") ya da W09 doğru/yanlış kartları.
-
-## Zorluk
-- Tek adımlı ezber sorusu yok. En az iki adım ya da bir tuzak.
-- Ezber konularında aralıklı tekrar: önceki konudan bir soru blok sonuna eklenir.
+## Cevabı sana dönmesi gereken soru (yalnız konunun son mesajı)
+- `request_decision` kartı: soru ~12 kelimeyi aşmaz, 2–4 şık, son şık "İpucu ver", önerilen o. Şıklar tuzaklı (birim hatası, Kelvin/°C, işaret, ters oran, sık kavram karışıklığı); hesap sorusunda sayılar soruda, şıklar sonuç.
+- Cevap gelince: doğruysa kısa onay + neden (1 cümle); yanlışsa önce doğru yaptığı kısmı söyle, sonra hatayı düzelt, gerekirse benzer ikinci soru. "İpucu ver" seçilirse tek ipucu verip aynı soruyu yeniden sor.
+- Hataları ünite raporuna "zayıf nokta" olarak somut örnekle not et (`ders.py not zayif "…"`).

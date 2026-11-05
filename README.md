@@ -41,13 +41,13 @@ Tüm seçenekler: [KOD.md](KOD.md). Kodu görsel olarak seçmek için galeri: [g
 | `roller/` | ünite, ders yöneticisi, koordinatör, PDF çevirici, soru çözümü, soru seti |
 | `gorevler/` | kaynak okuma, PDF yönlendirme, konu anlatma, anlatım denetimi, soru sorma, özet/test, devir, PDF çevirme, kural güncelleme |
 | `secenekler/<harf>/` | Ayar kodunun her seçeneği ayrı dosya |
-| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi |
+| `gorsel/` | Stil rehberi, şablon kataloğu (W01–W24), şablonlar, ekran testi, galeri; `soru-testi/` W24 örnek verisi; `motor/` Neobrutalism widget motoru (CSS, motor, kişisiz tema) |
 | `dersler/<ders>/` | Derse özel kaynak önceliği, tuzaklar ve TR–EN sözlük |
 | `claude-sorunlari/` | Claude arayüzünün bilinen sorunları ve denenmiş yazım kuralları (formül/KaTeX vb.), alandan bağımsız, her paketle gelir |
 | `kurulum/` | Proje talimatı, yerel ayar şablonu, Drive ve PDF bölme kurulumu |
 | `alanlar/<alan>/` | Alana özgü katman: kurallar, widget kataloğu, varsayılan kod (`eee`) |
 | `kisiler/` | Kişiye özel katman (ileride) |
-| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları, kişisel profil `yerel/denetim.json`) |
+| `araclar/` | `kod.json` (kodun tek kaynağı), `paket.py` (okuma paketi, PDF kapısı; `yerel/profil.json` varsa C/D ve widget teması profilden gelir, `--varsayilan` profili yok sayar, `--gorev <ad>` pakete girmeyen görev metnini basar), `kaynak.py` (pdf-metin'den sayfa aralığı okur; PDF'i reddeder), `uret.py` (KOD.md + galeri üretir), `soru_testi.py` (soru seti JSON'u → W24 test HTML'i), `anlatim_testi.py` (anlatım mesajını formül, boşluk ve biçim kurallarına karşı denetler, hata raporu üretir; `--kodlar` bulgu kodlarını açıklar; ek kurallar `anlatim_testi_ek.py`: terim dili, emoji serisi, widget ve test soruları), `ders.py` (ders durumu: konu etiketleri, sıradaki adım, `adim` tüm denetimler, `dogrula` yayın karşılaştırması, `devir` notu; durum dosyası projede), `widget.py` (Neobrutalism widget motoru: JSON spec → HTML, `--test` ekran testi, `--karsilastir`; bkz. `gorsel/motor/README.md`), `sadakat.py` (adımın mesajını ve widget'ını kaynak sayfalarla karşılaştırır: S1 düşen sözcük, S2 kaynakta olmayan terim/sayı, S3 liste sayısı; yalnız UYARI, `ders.py adim --sayfa` ile çalışır), `brief.py` (koordinatör brief denetimi: sohbet açılmadan önce PDF ayrımını denetler, B1–B4), `olc.py` (okuma ölçer: bir sohbetin zorunlu okumasını KB ve yaklaşık token olarak basar; `--bolumler`, `--en-fazla`), `profil.py` (kişisel ölçülebilir tercihler `yerel/profil.json`: okur, doğrular, katmanları birleştirir; `--goster`) |
 
 ## Araçlar
 

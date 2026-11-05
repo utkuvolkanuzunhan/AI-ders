@@ -98,13 +98,9 @@
       "aciklama": "Konu anlatan ünite sohbeti",
       "gorevler": [
         "kaynak-oku",
-        "pdf-yonlendir",
         "konu-anlat",
         "anlatim-kontrol",
-        "soru-sor",
-        "ozet-ve-test",
-        "devir",
-        "kural-guncelle"
+        "soru-sor"
       ],
       "secenekler": "hepsi",
       "gorsel": true,

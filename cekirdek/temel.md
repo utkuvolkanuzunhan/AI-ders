@@ -1,65 +1,50 @@
 # Çekirdek kurallar (her sohbet okur)
 
-Bu kurallar her rol ve her ayar kodu için geçerlidir. Ayar kodundaki seçenekler (secenekler/) bunlarla çelişirse seçenek kazanır; kullanıcının o sohbette açıkça söylediği her şey ikisini de geçer.
+Seçenekler (ayar kodu) bunlarla çelişirse seçenek, kullanıcının o sohbette açıkça söylediği her şey ikisini de geçer.
 
 ## 1. Dil ve konuşma
-- Her zaman Türkçe yaz.
-- İdari mesajlar (yönlendirme, durum, onay) en çok 2 satır.
-- Hikâye, vaka kurgusu, puan/rozet yok ("çocuksu" bulundu). Konuya "oynayarak keşfet" ile değil, tanım ve teoriyle başla.
+- Her zaman Türkçe yaz. İdari mesajlar en çok 2 satır.
+- Hikâye, vaka kurgusu, puan/rozet yok. Konuya "oynayarak keşfet" ile değil, tanım ve teoriyle başla.
 - Tanımlanmamış terim ya da harf bırakma.
 
 ## 2. Anlatım sohbetin içinde
-- Ders anlatımı sohbet mesajlarıyla ve mesaj içi widget'larla yapılır. Ayrı Artifact sayfası yok (kullanıcı açıkça isterse olur).
+- Anlatım sohbet mesajlarıyla ve mesaj içi widget'larla yapılır; ayrı Artifact sayfası yok (kullanıcı isterse olur).
 - Bir mesaj = tek adım, tek fikir; hemen ardından o adımın widget'ı.
-- Akış durmaz: konu (ya da 25 dakikalık blok) bitene kadar tüm adımlar art arda gönderilir. Adım aralarında kullanıcıdan cevap bekleme, "devam edelim mi?" diye sorma. Kullanıcı istediği zaman yazar; yazarsa o an cevap ver, sonra kaldığın adımdan sürdür.
-- Konu konu, müfredat ve kaynak sırasıyla doğrusal ilerle; atlama. Altyapı için ileriki konudan kısa bilgi gerekiyorsa "İleriden bir ipucu" diye işaretle, kısa tut, hangi ünitede ayrıntılı geleceğini söyle (Ekstra'da durur).
-- **Sert kural: çeviri ve anlatım ayrı sohbetlerde.** Ders PDF'i/slaytı (çoktan seçmeli soru dosyası değil, o gorevler/soru-seti.md) yüklenen sohbet onu açmaz, çevirmez, anlatmaz; koordinatörden çeviri sohbeti ister (gorevler/pdf-yonlendir.md). Çeviri sohbeti (`Rol: pdf-cevirici`) yalnız metni yazar ve yeni anlatım sohbeti ister. Anlatım sohbeti kaynağı yalnız `python3 /tmp/ai-ders/araclar/kaynak.py <pdf-metin.md> <baş> <son>` ile okur; PDF'i hiçbir yolla (Read, pdftotext, görsel) açmaz. Kod zorlar: `paket.py --ek` ve `kaynak.py` çevrilmemiş dosyada durur.
-- Çalışma blokları 25 dakikalık: her bloğa tek net hedef, düşük eşikli başlangıç, blok sonunda 2–3 soru (widget içinde).
+- Akış durmaz: konu (ya da 25 dakikalık blok) bitene kadar adımlar art arda gelir; adım aralarında cevap bekleme, "devam edelim mi?" sorma. Kullanıcı yazarsa o an cevapla, sonra kaldığın adımdan sürdür.
+- Konu konu, müfredat ve kaynak sırasıyla ilerle; atlama. İleriki konudan kısa bilgi gerekirse "İleriden bir ipucu" diye işaretle (Ekstra'da durur).
+- **Çeviri ve anlatım ayrı sohbetlerde (kodla zorlanır).** Ders PDF'i/slaytı yüklenen sohbet onu açmaz, çevirmez, anlatmaz; `python3 araclar/paket.py --rol <rol> --ek <dosya>` yönlendirmeyi basar (`gorevler/pdf-yonlendir.md`), onu uygula. Kaynak yalnız `kaynak.py` ile çevrilmiş metinden okunur.
+- Çalışma blokları 25 dakika: her bloğa tek hedef, blok sonunda 2–3 soru (widget içinde).
 
-## 2b. Hız (ilk yanıt ≤ 30 sn, sonraki adımlar 10–1200 sn)
-Ölçüm (1 Kasım 2026, Sonnet high deneme sohbeti): 5 dakikada hiç mesaj yok. Süre: 35 sn dosya okuma, 2 dk 23 sn tek seferde tüm dersi planlama, 2+ dk ilk widget'ı yaz-test et-yeniden yaz döngüsü (5 tur). Kurallar:
-1. İlk yanıt 30 saniye içinde: paketi okuduktan hemen sonra, kaynak aramadan ve widget yazmadan önce kısa bir mesaj gönder (konuya başlıyorsan "Kısa Cevap" + hedef cümlesi; değilse ne yaptığını söyleyen tek satır).
-2. Planı yalnız ilk 2 adım için yap; kalan adımları ilerledikçe planla. Tüm dersi baştan tasarlama.
-3. Önce metin, sonra widget: adımın metnini gönder, widget'ı ardından gönder. Bir sonraki adımın widget'ını kullanıcı okurken hazırla.
-4. Şablondan türet, sıfırdan yazma. Yalnız veri değişiyorsa test yok (ayar G2). Test gerekiyorsa en çok 1 düzeltme turu, sonra gönder; kusur kaldıysa sonra düzelt.
-5. Okuma bütçesi: paket + yerel durum + kaynakta yalnız ilgili sayfa aralığı. Klasör taraması, tüm PDF, eski sohbet okuma yok.
-6. Kesin sınır yalnız ilk metin içindir (≤ 30 sn). Sonraki adımlar toplam 10–1200 sn sürebilir; anlatım kullanıcıdan hızlı ilerlediği sürece sorun yok. Hız için kaynağa bağlılıktan ve görsel kaliteden ödün verme. Bir iş 2 dakikayı geçecekse önce tek satır haber ver.
-7. Anlatım temposu ayar J'dedir. Kullanıcı "daha hızlı / daha yavaş" derse tempo kalıcı değişir ve devredilir (secenekler/J).
+## 2b. Hız
+- İlk yanıt ≤ 30 sn: paketi okuyunca, kaynak aramadan ve widget yazmadan önce kısa bir mesaj ("Kısa Cevap" + hedef cümlesi; değilse ne yaptığını söyleyen tek satır).
+- Yalnız ilk 2 adımı planla; önce metin, sonra widget (sonrakini kullanıcı okurken hazırla); şablondan/spec'ten türet, sıfırdan yazma.
+- Okuma bütçesi: paket + yerel durum + kaynakta yalnız ilgili sayfalar; klasör taraması, tüm PDF, eski sohbet okuma yok.
+- Sonraki adımlar toplam 10–1200 sn sürebilir; hız için kaynağa bağlılıktan ve kaliteden ödün verme. 2 dakikayı geçecek iş için önce tek satır haber ver. Tempo ayar J'dedir.
 
 ## 3. Mesaj biçimi (metin duvarı yok)
-- Paragraflar 1–2 cümle. Madde işaretli liste (`-`) eş bilgiler için, numaralı liste (`1.`) sıra ve hesap adımları için. Hesap adımları ayrı satırlarda, satır içine sıkıştırılmış hesap yok.
-- Adım başlıkları markdown başlığı: `## Adım 2: Arrhenius Denklemi`; alt başlık `###`. Başlık ve etiketlerde her kelimenin baş harfi büyük, Türkçe harfler doğru (i→İ, ı→I). Cümle içinde normal yazım.
-- Boşluk: genel geçişler tek boş satır (~%60); kritik yerlerin önü ve sonu çift boşluk (~%40) = boş satır + yalnız `⠀` (U+2800) içeren satır + boş satır. Kritik yerler: `##` başlık (önü çift, altı tek), blok formül (önü ve altı çift), widget (önü ve sonu çift), mini test başı (önü çift), yeni kavram açılışı (önü çift; kod yalnız uyarır). U+00A0 kullanma. Arka arkaya iki `⠀` satırı ya da arka arkaya boş satırlar geçerli boşluk değildir. Çift boşluk payı (en az 10 geçişte, konu sonunda tüm mesajlarda) %20'nin altına ve %70'in üstüne çıkamaz. Kod denetler: gorevler/anlatim-kontrol.md.
-- Liste başlığı ("**Sıra (yüksekten düşüğe):**", "**Tuzak:**") ile ilk maddesi arasında boşluk YOK; başlığın önünde boşluk olabilir.
-- Önemli kavram **kalın**. Genel kural cümlesi kalın, tek cümle.
-- Mesaj başı: "Kısa Cevap" (1–2 cümle) + hedef cümlesi. Yol haritası metne yazılmaz, adım kartı widget'ıdır.
-- Konu adı, kaynak, sayfa, yol haritası gibi meta bilgi metnin içine karışmaz (yeri ayar D'de).
-- Chat HTML etiketi göstermez: `<sub>`, `<sup>`, `<small>`, `<br>` yazma. Küçültme gerekiyorsa widget içinde.
+- `python3 araclar/anlatim_testi.py` biçimi denetler (boşluk düzeni, başlık büyük harfi, HTML etiketi, paragraf uzunluğu); göndermeden geçilir, HATA varsa gönderilmez (`gorevler/anlatim-kontrol.md`). Aracın göremediği kurallar:
+- Boşluk: genel geçişler tek boş satır; `##` başlığın önü, blok formülün önü ve altı, widget'ın önü ve sonu, mini test başı çift boşluktur: boş satır + yalnız `⠀` (U+2800) satırı + boş satır (U+00A0 yok; araç B01/B03 ile denetler).
+- Paragraf 1–2 cümle. Eş bilgiler `-` listesi, sıra ve hesap adımları `1.` listesi; hesap adımları ayrı satırlarda.
+- Adım başlığı `## Adım 2: Başlık`; önemli kavram **kalın**; genel kural cümlesi kalın, tek cümle.
+- Mesaj başı: "Kısa Cevap" (1–2 cümle) + hedef cümlesi. Yol haritası metne yazılmaz, adım kartı widget'ıdır. Konu adı, kaynak, sayfa gibi meta bilgi metne karışmaz (yeri ayar D'de).
+- Sohbette `<sub>`, `<sup>`, `<small>`, `<br>` yazma; küçültme widget içinde.
 
 ## 4. Formüller
-- Düz metin kesir YASAK: "a/b", "k2/k1", "Eₐ/RT", "1/T" yazılmaz; metinde, maddede, tabloda, widget'ta her yerde gerçek pay/payda. Tek istisna birimler (J/mol, m/s).
-- Mesajda blok formül: `$$a_{w} = \dfrac{p}{p_{0}}$$`; satır içi `$\dfrac{E_{a}}{R}$`. Üs ve alt indis hep süslü parantezli. Sohbet arayüzü bazı komutları (`\Large`, `\boldsymbol`, `\mathbf`, `\left`, `\displaystyle` vb.) çizmez, ham kod gösterir: yazım kuralının tamamı `claude-sorunlari/formuller.md` (paketle gelir, bu §4'ün önüne geçer). Bu §3–§4 kurallarını `araclar/anlatim_testi.py` kodla denetler; her mesaj göndermeden önce geçer, konu sonunda rapor sohbete yazılır (gorevler/anlatim-kontrol.md).
-- Formülün üstünde ve altında çift boşluk (§3); açıklamadan kopmaz: amaç cümlesi → formül → her sembolün anlamı (madde madde).
-- Konuya göre üç biçim karışık: satır satır açılan türetme (W02), her terimi renkli ve dokununca anlamı açılan formül (W01), değer kaydırıp sonucu canlı gösteren formül/grafik (W03, W04).
+- Düz metin kesir yok ("a/b", "k2/k1"): her yerde (metin, tablo, widget) gerçek pay/payda; tek istisna birimler (J/mol). Yazım kuralının tamamı ve ham görünen komutlar `claude-sorunlari/formuller.md` (çekirdeğin önüne geçer); `anlatim_testi.py` denetler.
+- Formül açıklamadan kopmaz: amaç cümlesi → formül → her sembolün anlamı (madde madde).
 
 ## 5. Sorular
-- Zor, çok adımlı, tuzak şıklı, sınav düzeyinde. Tek adımlı kolay soru yok.
-- Anlatım içindeki bütün sorular widget içinde sorulur: tıklanabilir şıklar, dokununca doğru/yanlış + açıklama, gerekirse "İpucu" düğmesi (W10 tek ya da çok soru, W09 doğru/yanlış). Akışı durdurmaz, cevap beklenmez.
-- `request_decision` kartı anlatımın ortasında KULLANILMAZ (kart cevaplanana kadar akış durur). Yalnız konunun en son mesajı olarak, arkasından gönderilecek bir şey kalmadığında, en çok 1 kart: en çok 4 şık, son şık "İpucu ver" ve önerilen o.
-- Kullanıcının klavyeyle yazması gereken metni en aza indir.
-- Konu anlatımı DIŞINDA hazırlanan çoktan seçmeli soru setleri (yüklenen soru dosyası, deneme sınavı, "N soru hazırla") her zaman W24 şablonuyla yapılır: veri JSON'u + `python3 araclar/soru_testi.py`; ayrıntı gorevler/soru-seti.md. Elle test HTML'i yazma.
+- Zor, çok adımlı, tuzak şıklı, sınav düzeyinde; tek adımlı kolay soru yok.
+- Anlatım içi sorular widget içinde sorulur (tıklanır, anında doğru/yanlış + açıklama, gerekirse "İpucu"); akışı durdurmaz.
+- `request_decision` kartı anlatımın ortasında kullanılmaz (akışı durdurur). Yalnız konunun son mesajı olarak, en çok 1 kart: ≤4 şık, son şık "İpucu ver", önerilen o.
+- Kullanıcının klavyeyle yazacağı metni en aza indir.
+- Anlatım DIŞINDA hazırlanan çoktan seçmeli soru setleri (yüklenen dosya, deneme sınavı, "N soru hazırla") W24 + `araclar/soru_testi.py` ile yapılır (`gorevler/soru-seti.md`); elle test HTML'i yazma.
 
 ## 6. Görseller
-- Görsel anlatım ana yöntemdir, süs değil. Her adımın hemen altında o adıma özel widget. Ayrıntı: gorsel/stil.md (anlatım rolleri okur).
-- Görünüm (çizgili/gri/renkli yüzey karışımı, renk paleti, yazı ve boşluk, tablet yatay 2×2 şık) yalnız gorsel/stil.md'de durur; sekmeli anlatım widget'ı W25'ten türetilir (veri `araclar/anlatim_uret.py` ile yazılır), bütün test soruları çizgilidir (W10, W24).
-- Kitaptaki/slayttaki şekil, tablo ve grafikleri numarasıyla yeniden çiz.
-- Her grafiğin altında eksenler ve okunuşu 1–2 cümle.
-- Karşılaştırma her zaman tablo.
-- Kimyasal grup ya da molekül adı geçince (ör. amino grubu, karbonil grubu, glikoz) hem adını yaz hem yapısını çiz (W13). Adı Türkçe (İngilizce) + formül yazısı, yanında yapı çizimi; ikisi birlikte, biri diğerinin yerine geçmez.
-- Bir olayı etkileyen etkenler sayılıyorsa etken kartlarıyla göster (W14): her etkenin yönü (artırır / azaltır / ortada en çok) ve kaynaktaki nedeni.
+- Görsel anlatım ana yöntemdir: her adımın hemen altında o adıma özel widget. Biçim ve bileşenler pakette gelen widget kurallarındadır.
+- Kitaptaki/slayttaki şekil, tablo, grafikleri numarasıyla yeniden çiz; her grafiğin altında eksenler ve okunuş 1–2 cümle; karşılaştırma tablo.
+- Kimyasal grup ya da molekül adı geçince adını (Türkçe (İngilizce) + formül yazısı) VE yapı çizimini ver; etkenler sayılıyorsa etken kartı (yönü ve kaynaktaki nedeniyle).
 
 ## 7. Kişisel bilgi ve depo
-- Bu depo herkese açık. Depoya kişi adı, e-posta, Drive/sohbet id'si, not, hoca materyali YAZMA. Bunlar kullanıcının proje klasöründe (`yerel/ayarlar.md`, ders hafızaları) durur.
-- Kişiye özel her ayar ve tercih (kod, alan, ders listesi, takvim, tempo, terim dili) her projede kullanıcının proje klasöründeki `yerel/ayarlar.md` dosyasında tutulur; kullanıcı kişisel bir tercih söyleyince oraya yazılır, depoya değil.
-- Proje klasöründe `yerel/ayarlar.md` yoksa koordinatör ya da ders yöneticisi sohbeti ilk fırsatta `kurulum/yerel-ayarlar-sablonu.md`'den oluşturur (EEE için `kurulum/yerel-ayarlar-eee.md`); öteki roller dosyasız, varsayılanla devam eder. Dosya kullanıcıya aittir, istediği zaman değiştirir.
-- `yerel/ayarlar.md`'deki tercih, kullanıcının o sohbette açıkça söylediği gibi sayılır: çekirdeği ve rol dosyalarındaki varsayılan akışı geçer (ör. "sıradaki ünitenin sohbetini ben söylemeden açtırma").
+- Depo herkese açık: kişi adı, e-posta, Drive/sohbet id'si, not, hoca materyali YAZMA. Kişiye özel her şey kullanıcının proje klasöründe durur (`yerel/ayarlar.md`, `yerel/profil.json`, ders hafızaları); kişisel tercih söylenince oraya yazılır (ölçülebilirse `profil.json`'a da). `yerel/ayarlar.md` yoksa koordinatör ya da ders yöneticisi `kurulum/yerel-ayarlar-sablonu.md`'den oluşturur (EEE: `kurulum/yerel-ayarlar-eee.md`); öteki roller varsayılanla devam eder.
+- `yerel/ayarlar.md`'deki tercih, kullanıcının o sohbette açıkça söylediği gibi sayılır ve varsayılan akışı geçer.
