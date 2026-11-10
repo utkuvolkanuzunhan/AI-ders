@@ -1,7 +1,7 @@
 # Ayar kodu
 
 Her ayar bir harf, her seçenek bir rakam. Kod harf sırasıyla yazılır; eksik harf varsayılandır.
-Depo varsayılanı: **`A1B3C3D1E3F1G2H1I1J2`**
+Depo varsayılanı: **`A1B3C3D1E3F1G2H1I1J2L1`**
 
 Örnekler: `A2` (sıkı kaynak modu, gerisi varsayılan) · `B2C2` (ciddi ton, İngilizce terim önce) · `F2/W01.W06-W03` (W01 ve W06 öncelikli, W03 hiç).
 
@@ -19,6 +19,7 @@ Kodu tıklayarak üretmek için galeri sayfası: `gorsel/galeri/galeri.html` (Ar
 | H | Renk paleti | **H1** Açık tonlar (varsayılan)<br>**H2** Koyu sakin | H1 |
 | I | Sohbet devri | **I1** 10 mesaj, adım bitince<br>**I2** 20 mesaj, adım bitince<br>**I3** Bağlam özetlenince | I1 |
 | J | Tempo | **J1** Yavaş: tek kavram, her adımda teyit<br>**J2** Normal: adım başına bir alt parça<br>**J3** Hızlı: kısa adımlar, soru blok sonunda | J2 |
+| L | Derinlik | **L1** Olağan (ayar bir şey değiştirmez)<br>**L2** Derin: değiştirebilecek ve tasarlayabilecek kadar<br>**L3** Kavramsal: fonksiyon olarak okuyabilecek kadar<br>**L4** Geçer: en az emekle, çıkmış soruyla | L1 |
 
 Alan varsayılanları (alanlar/<alan>/alan.json; verilen kod bunu da geçer): `eee` (Elektrik-Elektronik Mühendisliği): `A4` depo varsayılanının üstüne biner.
 

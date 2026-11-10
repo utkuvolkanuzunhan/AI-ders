@@ -1,6 +1,6 @@
 {
   "surum": 1,
-  "varsayilan": "A1B3C3D1E3F1G2H1I1J2",
+  "varsayilan": "A1B3C3D1E3F1G2H1I1J2L1",
   "harfler": [
     {
       "harf": "A",
@@ -91,6 +91,16 @@
         "2": "Normal: adım başına bir alt parça",
         "3": "Hızlı: kısa adımlar, soru blok sonunda"
       }
+    },
+    {
+      "harf": "L",
+      "ad": "Derinlik",
+      "secenekler": {
+        "1": "Olağan (ayar bir şey değiştirmez)",
+        "2": "Derin: değiştirebilecek ve tasarlayabilecek kadar",
+        "3": "Kavramsal: fonksiyon olarak okuyabilecek kadar",
+        "4": "Geçer: en az emekle, çıkmış soruyla"
+      }
     }
   ],
   "roller": {
@@ -121,7 +131,8 @@
       "secenekler": [
         "A",
         "I",
-        "J"
+        "J",
+        "L"
       ],
       "gorsel": false,
       "ders": true
