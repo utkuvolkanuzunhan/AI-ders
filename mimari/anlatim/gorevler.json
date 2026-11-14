@@ -1,0 +1,651 @@
+{
+ "surum": 1,
+ "bolum": "gorevler",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md",
+   "tur": "dosya",
+   "ozet": "6594dbbb49e7",
+   "iskelet": "3b7ad5a493cb",
+   "baslik": "Anlatım mesajı denetimi",
+   "ne": {
+    "cok_basit": "Her anlatım mesajı gönderilmeden önce bir denetimden geçirilir.",
+    "basit": "Her mesaj önce denetlenir ve hata varsa düzeltilip yeniden denenir. Düzelmeyen hata gizlenmeden bildirilir.",
+    "normal": "Anlatım yazarı her mesajı göndermeden önce bir denetim aracına taslak olarak verir. Kurallar kodla denetlenir: biçim, boşluk, emoji ve terim dili kontrol edilir. Düzeltme turları sınırlıdır, sonra kalan hata açıkça bildirilir.",
+    "gelismis": "Görev, her mesajı gönderilecek haliyle denetletmeyi ister. Denetim formül biçimini, terim dilini, emoji serilerini ve etkileşimli kart kurallarını kontrol eder. Test edilen metin aynen gönderilir, düzelmeyen hata ise kısa bir raporla bildirilir.",
+    "detayli": "Görev, anlatım yazarının her mesajı gönderilmeden önce denetlemesini ister. Denetim bir araçla yapılır, kurallar ayrı dosyalardadır. Her taslak denetlenir ve hata varsa sınırlı sayıda düzeltilir. Terim dili ayara göre, emoji ise yalnız tanımlı seri olarak denetlenir. Konu bitince taslaklar tek raporda toplanır ve kısa özet sohbete yazılır."
+   },
+   "mantik": {
+    "cok_basit": "Hatalı bir mesaj gönderilmeden yakalansın diye her mesaj önce denetlenir.",
+    "basit": "Kurallar çok sayıda ve ince olduğundan elle kontrol güvenilmez. Denetim aracı aynı kuralları her seferinde aynı sırayla uygular.",
+    "normal": "Kuralların metni ayrı dosyalarda durur, bu görev yalnız denetimin nasıl yapılacağını söyler. Mesaj göndermeden önce denetlenmesi, yanlış formül ya da yanlış terim dilinin kullanıcıya ulaşmasını önler.",
+    "gelismis": "Kontrol kodla yapıldığı için aynı taslak her seferinde aynı sonucu verir. Hata ve uyarı ayrımı, yazarın hangi düzeltmenin zorunlu olduğunu hemen görmesini sağlar. Düzelmeyen hata gizlenmediği için sorun sohbette görünür kalır.",
+    "detayli": "Denetim kodla çalıştığı için yazar kuralları ezberlemek zorunda kalmaz. Kural değişince bu görevin akışı aynı kalır, yalnız denetim tarafı güncellenir. Hata ve uyarı ayrımı, zorunlu düzeltmeyle isteğe bağlı iyileştirmeyi birbirinden ayırır. Düzelmeyen hatanın gizlenmemesi, konu sonundaki toplu raporun ve kullanıcının sorunu görmesinin yolunu açık tutar."
+   },
+   "nasil": {
+    "basit": "Mesaj taslağa yazılır ve denetim çalıştırılır. Hata varsa düzeltilip yeniden denenir, gönderilen metin de test edilen metinle aynı olmalıdır.",
+    "normal": "Önce mesaj gönderilecek haliyle bir taslak dosyasına yazılır ve denetim o taslağa karşı çalıştırılır. Hata çıkarsa mesaj düzeltilir ve sınırlı sayıda yeniden denenir. Uyarılar okunur, haklı olanlar düzeltilir. Gönderilen metin test edilen metinle aynı olmalıdır.",
+    "gelismis": "Mesaj taslak dosyaya yazılır ve denetim tek komutla çalıştırılır. Konunun ilk mesajı ve idari mesajlar için denetime ek bir seçenek verilir. Hata çıkarsa düzeltilip sınırlı sayıda yeniden denenir, uyarılar haklıysa düzeltilir. Düzelmeyen hata olursa mesaj yine gönderilir, ama sohbete kısa bir rapor yazılır. Konu bitince taslaklar tek dizinde toplanır ve dizinin raporu sohbete olduğu gibi yazılır. Emoji serisi her mesajda denetlenir. Widget ve test dosyaları yayımlanmadan önce ayrı kontrollerden geçer.",
+    "detayli": "Mesaj taslak dosyaya gönderilecek haliyle yazılır ve denetim tek komutla çalıştırılır. Konunun ilk mesajı ya da idari bir mesaj ise denetime ilgili seçenek verilir. Ders sözlüğü varsa terim dili de kontrol edilir. Denetim formül biçimini, boşlukları ve emojileri tarar. Hata çıkarsa mesaj düzeltilir ve sınırlı sayıda yeniden denenir, uyarılardan haklı olanlar da düzeltilir. Düzelmeyen hata olursa mesaj yine gönderilir, ama hatayı gizlemeden sohbete kısa bir rapor yazılır. Gönderilen metin test edilen metinle aynı olmalıdır ve testten sonra elle değiştirilmez. Konu bittiğinde bütün taslaklar tek dizinde toplanır ve dizinin raporu sohbete olduğu gibi yazılır. Emoji serisi her mesajda denetlenir. Widget ve test dosyaları yayımlanmadan önce etkileşimli kart kuralları, soru yapısı ve yazı boyutu gibi konularda ayrı kontrollerden geçer."
+   },
+   "detay": {
+    "girdiler": [
+     "Gönderilecek mesajın tam metni, taslak dosyada bulunur.",
+     "Konunun ilk mesajı ya da idari bir mesaj olup olmadığı, ayrıca ders sözlüğü varsa onun klasörü denetime verilir."
+    ],
+    "ciktilar": [
+     "Hata ve uyarı listesi, hata yoksa mesajın gönderilmeye hazır olduğu bilgisi.",
+     "Konu sonunda toplu rapor, çift boşluk payı ve toplam hata ile uyarı sayısı."
+    ],
+    "degismezler": [
+     "Gönderilen metin ile test edilen metin birebir aynı olmalıdır.",
+     "Düzeltme turlarının sınırlı olması ve hata raporunun gizlenmemesi, sürecin güvenilirliğini sağlar."
+    ],
+    "kenar": [
+     "Düzelmeyen hata varsa mesaj yine gönderilir, ama sohbete kısa bir rapor yazılır.",
+     "Hata sıfır olsa bile konu sonu raporu yazılır, böylece kuralın uygulandığı görülür."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Taslak dosyadaki metin ile gönderilen metnin birebir aynı olması, denetimin anlamlı olmasının koşuludur.",
+     "Düzeltme turlarının sınırlı olması ve hata raporunun gizlenmemesi, konu sonundaki toplu raporun okunmasını sağlayan sözleşmedir."
+    ],
+    "degisebilir": [
+     "Yeni bir kural çıktığında bu görevin akışı aynı kalır, yalnız denetim tarafı güncellenir.",
+     "Kişisel tercihler kullanıcıya göre serbestçe değişir ve depoya yazılmaz."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa hatalı formül ya da yanlış terim dili kullanıcıya ulaşabilir.",
+   "terimler": [],
+   "belirsiz": [
+    "Denetim aracının içinde hangi kuralları tam olarak çalıştırdığını okumadım, yalnız bu görevde anılan kontrolleri okudum.",
+    "Kullanıcının kişisel tercih dosyasının içeriğini okumadım.",
+    "Uzun satırların bir kısmı paketinde kesik göründü, o kısımların tam metnini okuyamadım.",
+    "Konu bitince rapor çıktısının tam biçimini göremedim."
+   ],
+   "okunan": [
+    "gorevler/anlatim-kontrol.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Emoji (E01–E03)",
+   "tur": "alt",
+   "ozet": "2f93a0128743",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Yalnız tanımlı işaret simgesi, belli bir dizide kullanılır.",
+    "normal": "Kişisel işaret simgesi, yalnız tanımlı uzunlukta bir seri halinde yazılabilir. Seri uzunluğu tutmazsa ya da simge karışık biçimde yazılırsa denetim hata verir. Etkileşimli kartın içine konmaz."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Gönderdikten sonra",
+   "tur": "alt",
+   "ozet": "d4ab9c4945c3",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Mesaj gittikten sonra formül ham kod gibi görünürse mesaj düzeltilir.",
+    "normal": "Gönderilen mesajda formül ham kod gibi görünüyorsa düzeltme yapılır ve bu sorunu yakalayamayan kalıp kural dosyasına ve denetime eklenir. Böylece aynı hata bir sonraki konuda yakalanır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Görev: her anlatım mesajını kodla denetlemek",
+   "tur": "alt",
+   "ozet": "6594dbbb49e7",
+   "iskelet": "7e3c449bf849",
+   "ne": {
+    "cok_basit": "Bu bölüm, anlatım mesajlarının denetlenme amacını söyler.",
+    "normal": "Her mesajın gönderilmeden önce bir denetim aracından geçmesi, kuralların elle değil kodla kontrol edilmesi demektir. Kuralların kendisi başka dosyalarda durur, bu bölüm yalnız denetim sürecini tanımlar."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Her mesaj (konunun ilk metni dahil)",
+   "tur": "alt",
+   "ozet": "4281e4a1595b",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Her mesaj yazılıp denetlenir, hata varsa düzeltilip yeniden denenir.",
+    "normal": "Mesaj önce taslak olarak yazılır ve denetim o taslağa karşı çalıştırılır. Konunun ilk metni de aynı sırayla denetlenir. Hata çıkarsa düzeltme turları sınırlı tutulur, gönderilen metin test edilen metinle aynı kalır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Kişisel ayarlar: yerel/denetim.json",
+   "tur": "alt",
+   "ozet": "4e94444c06eb",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Kişisel tercihler yalnız kullanıcının kendi klasöründe durur.",
+    "normal": "Terim dili, emoji ve mini test sayısı gibi tercihler kişiye özeldir. Bunlar kullanıcının proje klasöründe tutulur ve depoya yazılmaz. Denetim, tercihleri kendisi bulup okur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Konu sonunda rapor",
+   "tur": "alt",
+   "ozet": "7c6c287b2c83",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Konunun bütün taslakları birlikte kontrol edilir ve kısa bir özet yazılır.",
+    "normal": "Taslaklar tek dizinde toplanır ve birlikte denetlenir. Çift boşluk payı ölçülür ve hedef aralığın dışındaysa rapora girer. Çıktı kısa bir özettir, hata sıfır olsa da yazılır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Terim dili (T01–T04)",
+   "tur": "alt",
+   "ozet": "77fbb0005d02",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Yabancı terimlerin Türkçe ile birlikte nasıl yazılacağını denetler.",
+    "normal": "Sözlükteki terimler ayara göre denetlenir: önce İngilizce yazılıp Türkçesi parantezde gösterilebilir, ya da tersi. Ters sıra hata sayılır. Sözlükte olmayan terim kontrol edilmez, yeni terim sözlüğe eklenir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Widget ve test dosyaları (W01–W07, Q01–Q15)",
+   "tur": "alt",
+   "ozet": "7df3036bb70e",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Etkileşimli kartlar yayımlanmadan önce ayrıca kontrol edilir.",
+    "normal": "Kartta düğme yerine etkileşimli öğe, dış kütüphane ya da zamanlayıcı kullanılmaz. Yazı boyutu alt sınırın altına inmez ve sabit renk kodu yazılmaz. Sorular ve şıklar tanımlı kalıba uyar, bu kalıp da ayrı bir kontrolle denetlenir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/anlatim-kontrol.md::Yeni kural ya da yeni formül sorunu çıkınca",
+   "tur": "alt",
+   "ozet": "cd136f96bcac",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Yeni bir sorun çıkarsa önce kural yazılır, sonra denetime eklenir.",
+    "normal": "Kural ana kural metnine ya da ortak sorun dosyalarına yazılır. Kodla denetlenebiliyorsa denetime bir kontrol ve bir yanlış, bir doğru örnek eklenir, sonra denetim yeniden çalıştırılır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/devir.md",
+   "tur": "dosya",
+   "ozet": "2935b363c97a",
+   "iskelet": "912638cdc236",
+   "baslik": "Sohbet devri",
+   "ne": {
+    "cok_basit": "Sohbet dolunca, konuşmanın nerede kaldığını bir nota yazıp yeni sohbete taşıma işi.",
+    "normal": "Ders sohbeti dolmaya yaklaşınca çalışma yeni bir sohbete taşınır. Eski sohbet kalınan yeri, açık soruyu ve zayıf noktaları bir nota yazar. Kurallar nota kopyalanmaz, yeni sohbet onları depodan okur."
+   },
+   "nasil": {
+    "normal": "Not, kullanıcının ders klasöründeki devir klasörüne yazılır. İçinde kod, tempo, kalınan yer, açık soru, zayıf noktalar ve depoya girmeyen tercihler bulunur. Ardından koordinatöre tek satırlık bir mesaj gider. Yeni sohbet açılınca eski sohbet kapatılır. Devir bir adımın ortasında yapılmaz."
+   },
+   "sinir": {
+    "sabit": [
+     "Not yeni sohbetin okuyabileceği yerde, kullanıcının ders klasöründe durmalı, çünkü yeni sohbet ondan devam eder.",
+     "Koordinatöre giden devam satırı, kod ve tempo alanlarıyla aynı biçimde kalmalı."
+    ],
+    "degisebilir": [
+     "Zayıf noktaların örnekleri, o anki konunun hatalarına göre serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa ders sohbeti yarıda kalır ya da yeni sohbet kaldığı yeri ve kullanıcının tercihlerini bilmeden başlar.",
+   "terimler": [],
+   "belirsiz": [
+    "Koordinatörün yeni sohbeti nasıl açtığı bu kayıtta ayrıntılı doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/devir.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/kaynak-oku.md",
+   "tur": "dosya",
+   "ozet": "bbba2de4687f",
+   "iskelet": "7ec11531a68d",
+   "baslik": "Kaynağı az okumak",
+   "ne": {
+    "cok_basit": "Kaynak kitabı az okuyarak ve ona sadık kalarak anlatmak için okuma sırası.",
+    "normal": "Bu görev anlatımın kaynağa sadık kalırken yalnız gereken sayfaları okumasını sağlar. Her belge bir kez metne çevrilir; konu için yalnız o konunun sayfa aralığı okunur. Kaynakta olmayan bilgi ise ayara göre ayrı bir bölümde ya da hiç verilmez."
+   },
+   "nasil": {
+    "normal": "Önce konunun belgesi ve sayfa aralığı dizinden bulunur. Yalnız o aralık okunur; yetmezse bir sayfa önce ya da sonra eklenir. Metin yoksa kullanıcıya belgeyi yüklemesi bir kez hatırlatılır ve çeviri için ayrı bir sohbet istenir. Anlatılan her tanım ve örnek okunan sayfadan gelir, numara da basılı numarayla not edilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Sayfa işaretlerinin biçimi ve basılı numara esası sabit kalmalı, çünkü okuma komutu sayfa aralığını bu işaretlerle bulur.",
+     "Her belgenin metni yalnız bir kez çevrilmeli; aynı aralık sohbet içinde ikinci kez okunmamalı."
+    ],
+    "degisebilir": [
+     "Kaynak notunun ayrıntı düzeyi, konunun zorluğuna göre serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa anlatım kaynaktan sapar ya da her sohbet bütün belgeyi okuyup bütçeyi aşar.",
+   "terimler": [],
+   "belirsiz": [
+    "Sayfa okuma komutunun ayrıntılı seçenekleri bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/kaynak-oku.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/konu-anlat.md",
+   "tur": "dosya",
+   "ozet": "3970e7f0a985",
+   "iskelet": "e8a612a69dbe",
+   "baslik": "Konu anlatım sırası",
+   "ne": {
+    "cok_basit": "Bir konuyu adım adım, sırayla ve soru sorarak gündelik dille öğretme işi.",
+    "normal": "Bu görev konuyu kısa bir cevapla açar ve her adımı tek mesajda öğretir. Her adımın altına o adımı pekiştiren bir kart konur ve kartın sayıları metindekilerle aynı olur. Konu bir özet ve birkaç soruyla biter."
+   },
+   "nasil": {
+    "normal": "Açılışta kısa cevap ve hedef cümlesi bulunur, yol haritası ayrı bir kart olarak gönderilir. Tanım ve kuramla başlanır, her adım tek mesajda başlık, kısa metin ve hemen altındaki kartla sunulur. Metin biçimi adımdan adıma değişir. Formüller nereden geldiğiyle türetilir ve kavram somut bir sayıyla gösterilir. Adımlar arada cevap beklenmeden art arda gönderilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Her adımın metnindeki sayılar ve kartın gösterdiği değerler birebir aynı kalmalı, aksi halde okuyan iki farklı bilgiyle karşılaşır.",
+     "Adımların sırası ve her adımda tek mesaj kuralı korunmalı, çünkü anlatım bu sıraya göre ilerler."
+    ],
+    "degisebilir": [
+     "Metin biçiminin hangi adımda hangi tür olacağı, konunun doğasına göre serbestçe seçilebilir.",
+     "Adımın kartının içeriği, o adımdaki kavramı en iyi gösteren biçimde serbestçe tasarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa anlatım dağılır; sayılar metinle karışır, kartlar yanlış değerleri gösterir ya da adımlar yarıda kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kartın tam olarak nasıl gönderildiği ve kontrol adımının ayrıntıları bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/konu-anlat.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/kural-guncelle.md",
+   "tur": "dosya",
+   "ozet": "cd98df0d4935",
+   "iskelet": "a6810eaf6953",
+   "baslik": "Kalıcı tercih işleme",
+   "ne": {
+    "cok_basit": "Kalıcı bir tercih söylenince onu bu sohbette ve ders deposunda kaydetme işi.",
+    "normal": "Kullanıcı kalıcı bir tercih söylediğinde bu görev devreye girer. Tercih önce bu sohbette uygulanır. Genel tercih depoya işlenir; kişiye özel olan kullanıcının kendi ayar dosyasına yazılır. Her depo değişikliği kısa bir günlük satırıyla kayda geçer."
+   },
+   "nasil": {
+    "normal": "Tercih önce bu sohbette uygulanır, genel olan depodaki doğru dosyaya en küçük değişiklikle işlenir ve aynı kural iki yerde yazılmaz. Seçenekli bir tercihte yeni seçenek eklenir, varsayılan değiştirilmez. Kişiye özelse kullanıcının kendi ayar dosyasına yazılır. Günlüğün başına tek satır eklenir ve kullanıcıya ne değiştiği tek satırla bildirilir. Diğer sohbetlere haber verilmez."
+   },
+   "sinir": {
+    "sabit": [
+     "Günlük satırının biçimi tarih, dosya, ne değiştiği ve neden sırasında kalmalı, çünkü günlük bu düzende tutulur.",
+     "Kişiye özel bilgi depoya hiç girmemeli; bu ayrım sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Seçenek dosyasının içindeki açıklama metninin uzunluğu, tercihin ayrıntısına göre serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa kalıcı tercihler kaybolur ya da aynı kural birden çok yerde çelişerek yazılır.",
+   "terimler": [],
+   "belirsiz": [
+    "Değişikliklerin ana dala doğrudan mı yoksa ayrı bir dala mı gittiği bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/kural-guncelle.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/ozet-ve-test.md",
+   "tur": "dosya",
+   "ozet": "d0081760752a",
+   "iskelet": "de29175eae53",
+   "baslik": "Konu sonu özeti",
+   "ne": {
+    "cok_basit": "Bir konu bitince tek sayfalık özet, kısa sözlük ve mini test verilir.",
+    "normal": "Bu görev bir konunun sonunda kullanıcıya toplu bir bakış verir. Tek cümlelik genel kural, kavram kartlarıyla tek sayfalık özet ve kısa bir mini test bulunur. Ek bölüm kaynak tablosunu ve ileriye dönük ipuçlarını açar."
+   },
+   "nasil": {
+    "normal": "Önce konunun tek cümlelik genel kuralı kalın yazılır. Sonra her kavram için tanım, formül, birim ve tuzağı içeren kartlar tek sayfada toplanır. Kaynak sütunu bir ayara göre gösterilir ya da ek bölüme konur, terimler ise Türkçe ve İngilizce karşılıklarıyla sözlük kartına girer. Mini test zor ve çok adımlı üç sorudan oluşur. En son mesaj isteğe bağlı tek bir kapanış sorusudur."
+   },
+   "sinir": {
+    "sabit": [
+     "Genel kural her zaman tek cümle olmalı, çünkü özet bu cümleyle açılır.",
+     "Bölümün sırası genel kural, özet, sözlük, mini test, ek ve en son kapanış sorusu biçiminde korunmalı."
+    ],
+    "degisebilir": [
+     "Mini testin üç sorusunun konuları, konunun en çok karıştırılan noktalarına göre serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa konu toplu bir özet ve test olmadan kapanır, öğrenilenler sınanmaz.",
+   "terimler": [],
+   "belirsiz": [
+    "Sözlük kartının hangi ayara bağlı olarak eklendiği bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/ozet-ve-test.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/pdf-cevir.md",
+   "tur": "dosya",
+   "ozet": "48be51a9abd9",
+   "iskelet": "742bec8dedf5",
+   "baslik": "Kaynağı metne çevirme",
+   "ne": {
+    "cok_basit": "Kitap ve sunum dosyalarını bir kez yazıya döker; derste bu yazı okunur.",
+    "normal": "Bu görev bir kitabın ya da sunumun metnini bir kez çıkarıp ders klasörüne yazar. Her sayfanın basılı numarası ve sıra numarası yazıda birlikte durur. Şekil ve tablolar mantıkla anlatılır. Ders sohbeti bundan sonra yalnız gereken sayfayı okur."
+   },
+   "nasil": {
+    "normal": "Her sayfada basılı numara aranır; önce alt köşeler, sonra üst köşeler ve kenarlar taranır. Sayfa işareti basılı ve sıra numarasını birlikte taşır. Bitince numaralar ardışık mı ve fark sabit mi diye kontrol edilir. Sapma olan sayfaya nedeni not edilir. Son olarak belgenin konu dizini ayrı bir dizin dosyasına eklenir."
+   },
+   "sinir": {
+    "sabit": [
+     "Sayfa işaretinin biçimi sabit kalmalı, çünkü sayfa okuma komutu sayfa aralığını bu işaretlere göre bulur.",
+     "Basılı numara esas alınmalı; kaynak gösterilirken kitabın kendi numarası kullanılır."
+    ],
+    "degisebilir": [
+     "Şekil ve tablo açıklamalarının uzunluğu, şeklin karmaşıklığına göre serbestçe ayarlanabilir.",
+     "Yazı dışında kalan başlık ve ara bölüm düzeni, belgenin yapısına uyacak biçimde değişebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa ders sohbetleri kaynağı yanlış sayfadan okur ya da her seferinde tüm kitabı okumak zorunda kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Taranmış sayfaların metne nasıl çevrildiği bu kayıtta ayrıntılı doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/pdf-cevir.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/pdf-yonlendir.md",
+   "tur": "dosya",
+   "ozet": "7740f1732d3a",
+   "iskelet": "377a37cf7f57",
+   "baslik": "Dosyayı çeviriye yönlendirme",
+   "ne": {
+    "cok_basit": "Dosya gelirse onu açmaz; çevirmeyi ayrı sohbete bırakır, hazır metinle devam eder.",
+    "normal": "Bu görev, anlatım sohbetine dosya yüklendiğinde ne yapılacağını belirler. Çeviri ile anlatım hiçbir zaman aynı sohbette yapılmaz. Çeviriyi yalnız ayrı bir çeviri sohbeti yapar."
+   },
+   "nasil": {
+    "normal": "Dosya açılmaz, kullanıcı anlat dese bile anlatılmaz. Koordinatöre tek mesajla çeviri sohbeti istenir; mesajda ders, dosya, konu ve kod bulunur. Kullanıcıya tek satırla çevirinin ayrı yapıldığı bildirilir. Yarım bir anlatım varsa önce kısa devir notu yazılır. Çeviri bitince koordinatörün verdiği bağlantı kullanıcıya iletilir ve bu sohbet kapanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Dosyanın çevirisi ile anlatımın aynı sohbette yapılmaması sert bir kuraldır ve değişmez.",
+     "Çeviri sohbetine verilen rol adı ve akış sırası (yükleme, çeviri, anlatım) sabit kalmalı, çünkü koordinatör sohbeti bu role göre açar."
+    ],
+    "degisebilir": [
+     "Koordinatöre gidecek mesajdaki konu ayrıntısı, kullanıcının istediği konuya göre serbestçe yazılabilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa anlatım sohbeti dosyayı kendisi çevirir, çeviri ile anlatım karışır ve kaynak tutarsız okunur.",
+   "terimler": [],
+   "belirsiz": [
+    "Koordinatörün çeviri sohbetini tam olarak nasıl açtığı bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/pdf-yonlendir.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/soru-seti.md",
+   "tur": "dosya",
+   "ozet": "3ba9eb39ff5e",
+   "iskelet": "1512d5431b49",
+   "baslik": "Konu dışı soru seti",
+   "ne": {
+    "cok_basit": "Konu dışı soruları ortak bir test biçimine koyup yayımlama işi.",
+    "normal": "Bu görev konu dışında soru hazırlanırken devreye girer. Test biçimi her zaman aynı şablondan üretilir, elle yazılmaz. Sorular kaynaktan aynen alınır ve cevap anahtarı yeniden çözülerek doğrulanır."
+   },
+   "nasil": {
+    "normal": "Önce kaynak okunur; taranmış belge ise önce çeviri görevine gönderilir. Soru ve şık metni kaynaktan aynen alınır ve her soru yeniden çözülür, ayrışan soru kullanıcıya tek satırla gösterilir. Veri, şablonun kendi örneğine göre yazılır ve test üretilmeden önce kontrol edilir. Test yayımlanır; başkalarına gidecekse tek dosya olarak da verilir. Mesaj en çok iki satır olur."
+   },
+   "sinir": {
+    "sabit": [
+     "Test biçiminin her zaman aynı şablondan üretilmesi ve elle HTML yazılmaması sabit kalmalı.",
+     "Veri biçimi aracın verdiği örnekten alınmalı; biçim elle değiştirilmemeli."
+    ],
+    "degisebilir": [
+     "Sorular, konu ve soru sayısı kullanıcının isteğine göre serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa test biçimi ekranda bozulur ya da yanlış bir cevap anahtarı kullanıcıya gider.",
+   "terimler": [],
+   "belirsiz": [
+    "Ekran testinin hangi genişliklerde nasıl yapıldığı bu kayıtta ayrıntılı doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/soru-seti.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorevler/soru-sor.md",
+   "tur": "dosya",
+   "ozet": "2aa4719a20cb",
+   "iskelet": "4183dc639404",
+   "baslik": "Soru sorma kuralları",
+   "ne": {
+    "cok_basit": "Anlatım sırasında kısa sorular sorulur; konu sonunda ise bir karar sorusu bırakılır.",
+    "normal": "Bu görev, anlatım sırasında soruların akışı durdurmadan nasıl sorulacağını tanımlar. Konu sonunda ise cevabı kullanıcıya ait olan tek bir soru gönderilir. Sorular tuzaklı ve en az iki adımlıdır, yanlış cevapta düzeltme yapılır."
+   },
+   "nasil": {
+    "normal": "Anlatım içindeki sorular, tıklanabilir şıklı bir kart içinde gelir ve cevap anında doğru ya da yanlış olarak görünür. Akış durmaz; bir sonraki adım hemen gönderilir. Konu sonunda tek bir karar sorusu gönderilir, son şık ipucu olur. Yanlış cevapta önce doğru kısım söylenir, sonra hata düzeltilir. Kullanıcının hataları somut bir örnekle zayıf nokta olarak not edilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu sonundaki soru yalnız en son mesaj olarak gönderilmeli; anlatımın ortasında soru kartı kullanılmaz.",
+     "Yanlış cevaba verilen yanıtın sırası, önce doğru kısım sonra düzeltme biçiminde kalmalı."
+    ],
+    "degisebilir": [
+     "Sorunun tuzak türü, birim, işaret ya da ters oran gibi seçenekler arasında serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu görev bozulursa akış sorularla kesilir ya da kullanıcı cevap beklerken konu yarıda kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Sorunun kart üzerinde nasıl gösterildiğinin ayrıntıları bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "gorevler/soru-sor.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:gorevler",
+   "tur": "birim",
+   "ozet": "3c9f8428382f",
+   "iskelet": "fd071e78107a",
+   "baslik": "Sohbet görevleri",
+   "ne": {
+    "cok_basit": "Yapay zekâ sohbetinin belirli durumlarda ne yapacağını söyleyen küçük talimat kâğıtları burada durur.",
+    "basit": "Burada her biri ayrı bir durumu anlatan görev kâğıtları durur: konu anlatma, soru sorma, kaynak okuma, sohbet taşıma, yüklenen dosyayı yönlendirme gibi. Sohbet hangi durumdaysa yalnız o kâğıdı uygular.",
+    "normal": "Bu bölüm, anlatım sohbetinin farklı durumlarda nasıl davranacağını ayrı ayrı tarif eden görev dosyalarını tutar. Konu anlatma, soru hazırlama, soru sorma, kaynak okuma, özet ve test verme, yüklenen dosyayı yönlendirme, dosyayı çevirme, sohbeti taşıma, kalıcı tercihi işleme ve mesajı denetleme ayrı birer görevdir. Her görev yalnız kendi durumu geldiğinde devreye girer.",
+    "gelismis": "Bu bölüm, anlatım sohbetinin her durumda neyi nasıl yapacağını ayrı görev dosyalarına bölerek tutar: konu anlatma, soru hazırlama, soru sorma, kaynak okuma, özet ve test, dosya yönlendirme, dosya çevirme, sohbet devri, kalıcı kural güncelleme ve mesaj denetimi. İş bölümü şöyledir: bir kısmı üretimi yönetir (anlatma, soru, özet), bir kısmı girdiyi hazırlar (çeviri, kaynak okuma), bir kısmı da sohbeti korur (yönlendirme, denetim, devir).",
+    "detayli": "Bu bölüm, anlatım sohbetinin her durumda neyi nasıl yapacağını ayrı görev dosyalarına bölerek tutar: konu anlatma, soru hazırlama, soru sorma, kaynak okuma, özet ve test, dosya yönlendirme, dosya çevirme, sohbet devri, kalıcı kural güncelleme ve mesaj denetimi. İş bölümü şöyledir: bir kısmı üretimi yönetir (konuyu adım adım öğretmek, soruları kurallı sormak, konu sonunda toplu bakış vermek), bir kısmı girdiyi hazırlar (kitabı bir kez metne çevirmek, yalnız gereken sayfayı okutmak), bir kısmı da sohbeti ve depoyu korur (yüklenen dosyayı doğru sohbete yönlendirmek, sohbet dolunca işi yenisine taşımak, tercihi doğru yere yazmak, her mesajı göndermeden denetlemek). Böylece her durumun kuralı tek bir yerde durur."
+   },
+   "mantik": {
+    "cok_basit": "Her durumun talimatı ayrı durunca sohbet yalnız işine yarayanı okur ve kâğıtlar birbirine karışmaz.",
+    "basit": "Her durum için ayrı bir kâğıt tutulur; böylece sohbet yalnız işine yarayanı okur, aynı kural iki yerde yazılıp zamanla birbirinden ayrılmaz.",
+    "normal": "Görevler ayrı dosyalara bölündü, çünkü her durum başka bir adım dizisi ister ve hepsi tek yerde olsa sohbet gereksiz kuralları da okurdu. Ayrı tutulunca her kural tek yerde yazılır, bir durumu değiştirmek ötekileri bozmaz. Çeviri ile anlatımın birbirinden ayrı tutulması da aynı düşünceden gelir: biri metni çıkarır, öteki yalnız o metinden anlatır.",
+    "gelismis": "Görevler ayrı dosyalara bölündü, çünkü her durum başka bir adım dizisi ister ve hepsi tek yerde olsa sohbet gereksiz kuralları da okur, asıl işe geç başlardı. Ayrı tutulunca her kural tek yerde yazılır, bir durumu değiştirmek ötekileri bozmaz. Çevirinin anlatımdan ayrı sohbette yapılması, kaynağın bir kez metne çıkarılıp sonra yalnız gereken sayfanın okunması ve devir notuna kuralların kopyalanmaması aynı düşünceden gelir: bilgi tek yerde durur, her sohbet ihtiyacı kadarını alır.",
+    "detayli": "Görevler ayrı dosyalara bölündü, çünkü her durum başka bir adım dizisi ister ve hepsi tek yerde olsa sohbet gereksiz kuralları da okur, asıl işe geç başlardı. Ayrı tutulunca her kural tek yerde yazılır, bir durumu değiştirmek ötekileri bozmaz. Çevirinin anlatımdan ayrı sohbette yapılması, kaynağın bir kez metne çıkarılıp sonra yalnız gereken sayfanın okunması ve devir notuna kuralların kopyalanmaması aynı düşünceden gelir: bilgi tek yerde durur, her sohbet ihtiyacı kadarını alır. Test biçiminin şablondan üretilmesi, cevap anahtarının yeniden çözülmesi ve mesajın göndermeden denetlenmesi ise hatayı kullanıcıya ulaşmadan yakalamak içindir."
+   },
+   "nasil": {
+    "basit": "Sohbet bir durumla karşılaşınca ilgili görev kâğıdını okur ve adımlarını sırayla uygular. Bir kâğıt kendi işini anlatır; başka bir işe ait olanı o işin kâğıdına bırakır. Böylece her iş tek bir yerde tarif edilir.",
+    "normal": "Sohbet bir durumla karşılaşır: kullanıcı konu ister, dosya yükler, kalıcı bir tercih söyler ya da sohbet dolmaya yaklaşır. Durumun görevi seçilir ve yalnız o görevin adımları uygulanır. Görevler birbirine yaslanır: dosya yüklenen anlatım sohbeti çeviri yapmaz, çeviri ayrı bir sohbete bırakılır; çevrilen metin sonra kaynak okuma görevinde tüketilir. Anlatım yapan sohbet her mesajı göndermeden önce denetim görevinden geçirir.",
+    "gelismis": "Sohbet bir durumla karşılaşır: kullanıcı konu ister, soru ister, dosya yükler, kalıcı bir tercih söyler ya da sohbet dolmaya yaklaşır. Durumun görevi seçilir ve yalnız o görevin adımları uygulanır. Anlatım sırasında konu görevi adım adım öğretir, her adımın altına pekiştirici bir kart koyar; sorular akışı durdurmadan sorulur, konu sonunda tek bir soru gelir. Dosya yüklenmişse anlatım sohbeti çevirmez, yönlendirme görevi onu çeviri sohbetine gönderir; çevrilen metin kaynak okuma görevinde yalnız gereken sayfa aralığıyla okunur. Konu bitince özet ve test görevi toplu bakış verir. Her mesaj ve kart gönderilmeden önce denetim görevinden geçer.",
+    "detayli": "Sohbet bir durumla karşılaşır: kullanıcı konu ister, soru ister, dosya yükler, kalıcı bir tercih söyler ya da sohbet dolmaya yaklaşır. Durumun görevi seçilir ve yalnız o görevin adımları uygulanır. Anlatım sırasında konu görevi konuyu kısa bir cevapla açar, her adımı tek mesajda öğretir ve her adımın altına metindekilerle aynı sayıları taşıyan pekiştirici bir kart koyar. Sorular akışı durdurmadan sorulur; konu sonunda cevabı kullanıcıya ait tek bir soru gelir ve sorular tuzaklıdır. Dosya yüklenmişse anlatım sohbeti çevirmez: yönlendirme görevi onu çeviri sohbetine gönderir, çeviri görevi her sayfayı basılı ve sıra numarasıyla bir kez metne yazar, kaynak okuma görevi de sonradan yalnız konunun sayfa aralığını okur. Kaynakta olmayan bilgi ayara göre ayrı bölümde verilir ya da hiç verilmez. Konu bitince özet ve test görevi tek cümlelik genel kural, kavram kartları ve mini testle toplu bakış verir. Soru hazırlanacaksa soru seti görevi test biçimini her zaman aynı şablondan üretir, soruları kaynaktan aynen alır ve cevap anahtarını yeniden çözerek doğrular. Sohbet dolmaya yaklaşırsa devir görevi kalınan yeri ve zayıf noktaları bir nota yazar, yeni sohbet kuralları depodan okur. Kullanıcı kalıcı tercih söylerse güncelleme görevi tercihi önce bu sohbette uygular, sonra genel ise depoya, kişiye özel ise kullanıcının kendi ayarına işler. Anlatım yapan sohbet her mesajı göndermeden önce denetim görevine verir; düzeltme turları sınırlıdır ve kalan hata açıkça bildirilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Kullanıcının isteği ve sohbetin içinde bulunduğu durum bir görevi seçtirir.",
+     "Yüklenen kitap ya da sunum dosyaları çeviri ve yönlendirme görevlerinin girdisidir.",
+     "Denetim görevinin girdisi, gönderilmeden önceki mesaj taslağıdır."
+    ],
+    "ciktilar": [
+     "Konu görevi adım adım mesajlar, pekiştirici kartlar, özet ve sorular üretir.",
+     "Çeviri görevi, ders klasörüne yazılmış sayfa numaralı bir metin üretir.",
+     "Devir görevi, kalınan yeri taşıyan bir not üretir."
+    ],
+    "degismezler": [
+     "Çeviri ile anlatım hiçbir zaman aynı sohbette yapılmaz.",
+     "Test biçimi elle yazılmaz, hep aynı şablondan üretilir.",
+     "Devir notuna kurallar kopyalanmaz, yalnız durum yazılır."
+    ],
+    "kenar": [
+     "Denetimde düzeltme turları bitince hâlâ kalan hata gizlenmez, açıkça bildirilir.",
+     "Kaynakta olmayan bilgi ayara göre ayrı bir bölümde verilir ya da hiç verilmez."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Her durumun kuralı kendi görev dosyasında durur ve başka görevde tekrar yazılmaz.",
+     "Çeviri ile anlatım ayrı sohbetlerde yapılır; bu ayrım bozulmaz.",
+     "Anlatım yapan sohbet mesajı denetimden geçirmeden göndermez.",
+     "Cevap anahtarı soru seti teslim edilmeden önce yeniden çözülerek doğrulanır."
+    ],
+    "degisebilir": [
+     "Yeni bir durum çıkarsa onun için yeni bir görev dosyası eklenebilir.",
+     "Bir görevin içindeki örnekler ve cümle kalıpları kuralı bozmadan değiştirilebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Yüklenen bir kitabı anlatım sohbeti neden kendisi çevirmez?",
+     "yanit": "Çeviri ile anlatım hiçbir zaman aynı sohbette yapılmaz. Çeviri ayrı sohbette bir kez yapılır, anlatım sonra yalnız gereken sayfayı okuyarak o metne dayanır."
+    },
+    {
+     "soru": "Devir notuna kuralları kopyalasak ne olur?",
+     "yanit": "Kural iki yerde yaşar ve zamanla ayrışır. Bu yüzden nota yalnız kalınan yer ve zayıf noktalar yazılır, yeni sohbet kuralları depodan kendisi okur."
+    },
+    {
+     "soru": "Yeni bir durum için kuralı nereye yazarız?",
+     "yanit": "Mevcut bir görevin içine sıkıştırmak yerine o duruma ait ayrı bir görev dosyasına yazılır; böylece öteki görevler etkilenmez ve kural tek yerde kalır."
+    }
+   ],
+   "kritik_neden": "Bu görevler bozulursa sohbetler durumlarına uygun davranışı kaybeder; özellikle mesaj denetimi bozulursa hatalı anlatım denetlenmeden kullanıcıya ulaşır.",
+   "terimler": [],
+   "belirsiz": [
+    "Görev dosyalarının hangi sırayla ve hangi tetikleyiciyle seçildiği kesin görülemedi; yalnız her görevin kendi durumu anlatıldı."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

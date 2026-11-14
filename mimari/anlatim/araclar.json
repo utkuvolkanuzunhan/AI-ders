@@ -1,0 +1,1535 @@
+{
+ "surum": 1,
+ "bolum": "araclar",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "araclar/anlatim_testi.py",
+   "tur": "dosya",
+   "ozet": "3cfacd686a29",
+   "iskelet": "922f970a7144",
+   "baslik": "Anlatım Metni Denetimi",
+   "ne": {
+    "cok_basit": "Sohbete göndermeden önce yazıyı kurallara uyuyor mu diye bakan kontrol.",
+    "basit": "Sohbete gidecek anlatım metinlerini göndermeden önce denetler. Biçim, boşluk, formül ve cümle kurallarına bakar, hata ve uyarı bildirir.",
+    "normal": "Her anlatım metni gönderilmeden önce bu kontrolden geçer. Kontrol biçim, boşluk, formül, cümle ve başlık kurallarına bakar. Sonunda hata ve uyarıları satır satır döker ve kısa bir özet verir.",
+    "gelismis": "Kontrol, metni önce boş satırlara göre bloklara ayırır: başlık, formül, liste, tablo ve paragraf. Her bloğun önündeki ve arkasındaki boşluk türüne bakar. Formül ve metin kuralları ise büyük ölçüde metnin tamamında denetlenir.",
+    "detayli": "Kontrol her mesajı kendi kuralları ile sınar. Metindeki biçim, boşluk, formül, cümle, başlık ve emoji gibi kuralları sırayla işletir. Her ihlal için bir kod, satır numarası ve açıklama verir. Hata varsa sonuç başarısız olur; yalnız uyarı varsa sonuç geçer. Kendini sınama kipi aracın kendi doğruluğunu ölçer."
+   },
+   "mantik": {
+    "cok_basit": "Kurallara uymayan metin gönderilmeden yakalanır, böylece okur hatayı görmez.",
+    "basit": "Kurallar çok ve hepsini akılda tutmak zor. Kontrol, bütün kuralları göndermeden önce kendisi uygular.",
+    "normal": "Her mesajı elle kurallara göre sınamak yavaştır ve bir şey unutulabilir. Her mesaj aynı ölçüyle sınanırsa tutarlılık korunur. Kurallar kendi dosyalarında durur; bu parça yalnız onları uygular.",
+    "gelismis": "Kurallar değiştikçe bütün mesajların aynı ölçüye uyup uymadığını elle izlemek zorlaşır. Bu araç her bulguya bir kod verir ve kodun hangi kurala bağlı olduğunu söyler; hata düzeltilirken kural sahibi belli olur. Denetim mesaj göndermeden önce çalıştırılır, böylece hata insan dikkatine kalmaz.",
+    "detayli": "Anlatım kalitesi bir kişinin hafızasına bağlı kalırsa her mesajda farklı sonuç çıkar. Bu parça, kodla sayılabilen kuralları her mesajda aynı biçimde sınar. Anlam ve açıklık gibi yorum isteyen yerleri ise kapsamaz; hangi kontrolün otomatik, hangisinin insan işi olduğu böylece ayrı kalır."
+   },
+   "nasil": {
+    "basit": "Kontrol metni okur, boşlukları ve kuralları tek tek sayar. Sonunda hata ve uyarıların listesini ve kısa bir özeti verir. Yalnızca hata varsa sonuç başarısız olur.",
+    "normal": "Önce metin bloklara ayrılır: başlık, formül, liste, tablo ve paragraf. Her bloğun önündeki ve arkasındaki boşluk, o bloğun türüne göre beklenen boşlukla karşılaştırılır. Sonra formül, biçim ve cümle kuralları metne uygulanır. Tüm mesajlar bittikten sonra çift boşluk oranı ayrıca değerlendirilir. Sonuç, bulgu listesi ve özet olarak yazılır.",
+    "gelismis": "Kontrol, her mesajı ayrı ayrı inceler ve her bulguya bir kod verir. Kodun harfi konusunu söyler: F formül, B boşluk, S metin biçimi, T terim dili, E emoji, W widget, Q test soruları. Hata ile uyarı ayrıdır; hata çıkış sonucunu başarısız yapar, uyarı yalnızca sıkı kipte hata sayılır. Terim sözlüğü yoksa terim denetimi atlanır ve bir uyarı çıkar. Kendini deneme kipinde kontrol kendi hazır örnek metinleriyle çalışır ve hiçbir dosyayı okumaz; her örnekte beklenen kodlar bulunmalı, beklenmeyen kodlar bulunmamalıdır.",
+    "detayli": "Kontrol her metin için önce satırları tarar; ham biçimde kalmış para birimi işaretini, düz kesir yazımını ve bozuk boşlukları arar. Ardından blokları çıkarır ve formülleri ayrı bir aşamada inceler. Formül kontrolünde iç içe kesirler, süslü parantez dengesi, indis ve üs yazımı, bir blokta birden çok denklem ve yasak komutlar ölçülür. Sonra başlık, liste ve paragraf düzeyinde cümle sayısı, kalın yazı miktarı, adım başlığı biçimi ve Türkçe karakter kullanımı denetlenir. İlk mesaj kipinde giriş başlığı ve hedef cümlesi aranır. Emoji ya da terim sözlüğü verilmişse o sayılar ve terim uyumu ayrıca hesaplanır. Son olarak tüm mesajların çift boşluk oranı toplu olarak değerlendirilir ve sonuç, kodlarıyla birlikte, yazılır."
+   },
+   "detay": {
+    "girdiler": [
+     "Kontrol edilecek metin dosyaları ya da bu dosyaların bulunduğu klasör; klasörde yalnız md, txt ve html uzantılı dosyalar alınır.",
+     "Tek tire verilirse metin standart girişten okunur.",
+     "Komut satırı seçenekleri: rapor biçimi, ilk ve idari mesaj kipleri, emoji, çift boşluk aralığı ve kişisel ayar dosyası.",
+     "Kendini deneme isteğinde hiçbir dosya okunmaz; hazır örnek metinler kullanılır."
+    ],
+    "ciktilar": [
+     "Her metin için bulgu listesi: düzey, kod, satır numarası ve açıklama; satır numarasına göre sıralı.",
+     "Toplu bölümde tüm mesajlar için çift boşluk oranı ve emoji sayısı ayrıca yazılır.",
+     "Sonuç satırı GEÇTİ ya da hata sayısını gösterir; çıkış kodu da bu sonuca bağlıdır.",
+     "Rapor kipinde iki satır çıkar: genel sayım ve ilk hatalar."
+    ],
+    "degismezler": [
+     "Kontrolün ürettiği hata ve uyarı kodları, her kodun bağlı olduğu kural dosyasıyla birlikte aynı kalır.",
+     "Kurallar bu dosyada kopyalanmaz; her kod kendi kural kaynağına işaret eder.",
+     "Kendini deneme sonunda hata yoksa geçti, varsa başarısız raporu çıkar."
+    ],
+    "kenar": [
+     "Boş metin için tek bir hata çıkar: mesaj boş.",
+     "Geçiş sayısı az olan toplamlarda çift boşluk oranı denetlenmez.",
+     "Terim sözlüğü bulunamazsa terim denetimi atlanır ve bir uyarı verilir.",
+     "Dosya okunamazsa kontrol durur ve yanlış kullanım çıkış kodu verir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Çıkış kodları, yani temiz sonuç, hata var ve kullanım hatası anlamları, aynen kalmalıdır.",
+     "Bulgu kodlarının harf önekleri F, B, S, T, E, W ve Q ile numaraları aynen kalmalıdır, çünkü her kod bir kurala bağlıdır.",
+     "Rapor satırlarının başındaki Anlatım kontrolü ve Hatalar sözcükleri, sohbete yapıştırılan özet için sabittir.",
+     "Ek dosyadan alınan işlevlerin adları ve döndürdükleri biçim sabittir; bu dosya onları adıyla çağırır."
+    ],
+    "degisebilir": [
+     "Metni bloklara ayıran ve geçişleri sayan iç yöntem, sonuç aynı kaldığı sürece yeniden yazılabilir.",
+     "Ayrıştırma ve kalıp eşleme gibi içerideki yardımcı adımların gövdeleri serbestçe değiştirilebilir.",
+     "Hata ve uyarı mesajlarının Türkçe cümleleri daha açık biçimde yeniden yazılabilir; kodlar değişmez.",
+     "Kendini deneme örnekleri, yani hazır metinler, yeni durumları kapsayacak biçimde genişletilebilir."
+    ]
+   },
+   "kritik_neden": "Bu kontrol bozulursa yanlış hata ya da kaçan hata çıkar, ama başka bir parça ondan doğrudan etkilenmez.",
+   "terimler": [],
+   "belirsiz": [
+    "Ek dosyanın içeriği bu kayda alınmadı; yalnız ana dosyanın ondan aldığı işlevler yazıldı.",
+    "Kişisel ayar dosyasının biçimi bu kayıtta ayrıntılı anlatılmadı."
+   ],
+   "okunan": [
+    "araclar/anlatim_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::Sonuc",
+   "tur": "alt",
+   "ozet": "9df1fc812b03",
+   "iskelet": "0f92ce933c50",
+   "ne": {
+    "cok_basit": "Bir mesajın sonucunu tutan kutu: hataları, uyarıları ve sayımları saklar.",
+    "normal": "Bu yapı, bir mesajı denetlerken çıkan bütün bulguları tek yerde toplar. Her bulgunun düzeyi, kodu, satırı ve açıklaması bu kutuda durur. Geçiş sayıları ve terim uyumu da burada tutulur, böylece özet yeniden hesaplanmaz."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::_denemeler",
+   "tur": "alt",
+   "ozet": "ce1e94351676",
+   "iskelet": "8ccd48342edf",
+   "ne": {
+    "cok_basit": "Kontrolün kendini sınamak için kullandığı hazır örnek metinlerinin listesi.",
+    "normal": "Her denetim için iyi ve kötü örnek metinler içerir. Kötü örneklerde beklenen kod, iyi örnekte ise hiçbir hata çıkmamalıdır. Böylece kural değişince denemelerin bozulup bozulmadığı görülür."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::bloklara_ayir",
+   "tur": "alt",
+   "ozet": "9f4b94f32c3d",
+   "iskelet": "3f927649ed25",
+   "ne": {
+    "cok_basit": "Metni boşluk ve işaretlere göre parçalara böler: başlık, formül, liste ve yazı.",
+    "normal": "Metni okurken başlık, formül, liste, tablo ve düz yazıyı ayrı parçalara ayırır. Her parçanın önündeki boş satır düzenini de birlikte kaydeder, çünkü boşluk kuralları bu bilgiye dayanır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::duz_kesir",
+   "tur": "alt",
+   "ozet": "8e9d25aae223",
+   "iskelet": "0e170b00c05f",
+   "ne": {
+    "cok_basit": "Metinde gerçek kesir olmadan yazılmış a bölü b biçimlerini bulur.",
+    "normal": "Formül dışındaki bölme yazımlarını tarar. Birim yazımlarını ve ya da gibi izin verilen kalıpları dışarıda tutar. Kalan her yazım için pay ve payda biçimi önerilir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::incele",
+   "tur": "alt",
+   "ozet": "cfb6ee27bca1",
+   "iskelet": "168f9dda0676",
+   "ne": {
+    "cok_basit": "Bir mesajı baştan sona okuyup bütün kuralları sırayla uygulayan ana bölüm.",
+    "normal": "Satırlarda yasak boşluk var mı diye bakar, sonra boşluk düzenini, blokları ve formülleri sırayla denetler. Her ihlal satır numarasıyla birlikte bir bulgu olarak kaydedilir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::kendini_dene",
+   "tur": "alt",
+   "ozet": "87ee87bb14d1",
+   "iskelet": "631413853002",
+   "ne": {
+    "cok_basit": "Kontrolü kendi örnekleriyle sınar; hepsi geçerse temiz, değilse başarısız der.",
+    "normal": "Bütün örnekleri birlikte çalıştırır ve her birinin beklenen kodları verip vermediğine bakar. Ayrıca toplu hesapların uç durumlarını ve emoji sayısını da sınar. Sonunda bozulan örnekleri yazar ve hata sayısına göre sonucu verir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::main",
+   "tur": "alt",
+   "ozet": "2f068627b649",
+   "iskelet": "ab2add755b6a",
+   "ne": {
+    "cok_basit": "Komut satırından girildiğinde seçenekleri okuyup kontrolü başlatan ana giriş.",
+    "normal": "Komut satırındaki seçenekleri okur, kişisel ayarları ve terim sözlüklerini yükler ve dosyaları toplayıp her birini denetler. Sonra rapor ya da ayrıntılı çıktıyı yazar. Hata varsa çıkış kodu hata, yoksa temiz olur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::maskele",
+   "tur": "alt",
+   "ozet": "50bcfc0e0c6b",
+   "iskelet": "de53e9a1ae49",
+   "ne": {
+    "cok_basit": "Matematik ifadelerini metinden ayırıp yerlerine kısa işaretler koyar.",
+    "normal": "Dolar işareti arasındaki formülleri ve tek satırlık ile blok halindeki formülleri bulur. Bunları ayrı bir listeye kaydeder, hangi satırda olduğunu da not eder. Kalan yazı, sonraki kontroller formülün içine girmesin diye temizlenir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::matematik_kontrol",
+   "tur": "alt",
+   "ozet": "5f2f9ff4fedd",
+   "iskelet": "df9040824541",
+   "ne": {
+    "cok_basit": "Bir formülün yazımına bakar, yasak ve bozuk biçimleri hata olarak bildirir.",
+    "normal": "Formülde yasak komutları, düz kesir yazımını, indis ve üsleri, parantez dengesini sırayla sınar. Her ihlal için kuralın numarasını içeren bir açıklama üretir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::rapor_satirlari",
+   "tur": "alt",
+   "ozet": "bc8bc28d78bf",
+   "iskelet": "576579dc141c",
+   "ne": {
+    "cok_basit": "Sohbete konacak kısa özeti hazırlar: biri sayılar, biri hatalar.",
+    "normal": "Toplam hata ve uyarı sayısını, boşluk oranını ve terim yüzdesini tek satırda toplar. Sonraki satır ilk birkaç hatayı yer bilgisiyle yazar; fazlası varsa kalan sayısını ekler. Hata yoksa bunu açıkça belirtir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::toplu",
+   "tur": "alt",
+   "ozet": "2ff062ee5216",
+   "iskelet": "92ab0ca48f24",
+   "ne": {
+    "cok_basit": "Bütün mesajlara birlikte bakıp çift boşluk oranını ve emoji sayısını denetler.",
+    "normal": "Mesajların tek ve çift geçiş sayılarını toplar, çift boşluk oranını çıkarır. Oran geniş aralığın dışındaysa hata, dar hedefin dışındaysa uyarı verir. Emoji seçeneği verildiyse toplam adedin de aralıkta olmasına bakar."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi.py::yaz_ayrintili",
+   "tur": "alt",
+   "ozet": "f171284e6192",
+   "iskelet": "79a0fb8981ec",
+   "ne": {
+    "cok_basit": "Bütün bulguları ve sayımları ayrıntılı biçimde ekrana yazan bölüm.",
+    "normal": "Her mesaj için önce hata, uyarı ve geçiş sayılarını içeren özet satırını yazar. Ardından her bulguyu satır numarasına göre sıralı olarak listeler. Toplu sonuç ve terim uyumu en sonda gelir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py",
+   "tur": "dosya",
+   "ozet": "d0a6b5d6415d",
+   "iskelet": "9b0ffbcf9004",
+   "baslik": "Ek Kurallar Denetimi",
+   "ne": {
+    "cok_basit": "Ana kontrole ek olarak terim, emoji, widget ve soruya ayrıca bakar.",
+    "basit": "Ana kontrolün yanında çalışır. Terimlerin yazılış sırasına, emoji serisine, widget dosyalarına ve test sorularına bakar.",
+    "normal": "Ana kontrolün denetlediği metin dışında kalan parçaları ayrı kurallarla sınar: terim dilinin yazılış sırası, kişisel emoji serisi, widget biçimi ve test soruları. Her biri ayrı bulgu kodu verir. Tekrarlar tek satırda toplanır.",
+    "gelismis": "Bu parça, mesajdan ayrı iki girdi türünü denetler: widget dosyaları ve soru verileri. Terim denetimi, Türkçe ve İngilizce karşılıkların yazılış sırasına bakar. Kişisel tercihler depoya yazılmaz, kullanıcının kendi klasöründen okunur.",
+    "detayli": "Ana denetimin dışında kalan iki girdi türünü sınar: widget biçimindeki görsel dosyaları ve soru verilerini. Görsel dosyalarda düğme, dış kütüphane ve sürekli çalışan kodlar hata sayılır. Terim sözlüğü ile Türkçe ve İngilizce terimlerin yazılış sırası karşılaştırılır. Test sorularında şık sayısı, doğru cevabın dağılımı, tekrar eden sorular ve sayfa ya da slayt ipuçları denetlenir."
+   },
+   "mantik": {
+    "cok_basit": "Ana kontrol yetmez; ek kurallar terim, emoji, widget ve soruya ayrıca bakar.",
+    "basit": "Mesaj, widget ve soru verisi aynı kurallara uymaz. Bu yüzden her girdi türünün kendi denetimi vardır.",
+    "normal": "Görsel kartlar ve test soruları yanlış biçimde yazılırsa okur doğrudan etkilenir: düğmenin rengi silinir, yazı küçülür, soru ipucu verir. Bu yüzden bu girdiler mesaj kurallarından ayrı, kendi kontrol kümesiyle sınanır.",
+    "gelismis": "Bu parça, mesajdan farklı olarak bir sayfanın iç yapısına ve soru verisinin alanlarına bakar. Widget içindeki betik ve stil sohbette beklenmedik görünebilir. Terimlerde de dil sırası ayrıca denetlenir, çünkü sıra kuralı kişisel tercihe göre değişir.",
+    "detayli": "Ana kontrol metinleri inceler; widget ve soru verileri ise farklı hatalar üretir. Bu parça bu girdileri ayrı kurallarla sınar; emoji serisi ve test dili yalnız kişinin profilinden gelir. Böylece depo kuralları herkese aynı kalır, kişiye özel ayarlar depoya karışmaz."
+   },
+   "nasil": {
+    "basit": "Her girdi türü için ayrı bir kontrol çalışır. Widget ve soru verisi kendi kurallarına göre, terim ve emoji ise ayrıca denetlenir. Sonuçlar ana bulgu listesine eklenir.",
+    "normal": "Önce dosya türüne bakılır: widget sayfası biçim kurallarından, veri dosyası soru kurallarından geçer. Terim sözlüğü varsa metin temizlenip terim sırası kontrol edilir. Soru denetimi şık sayısı ve doğru cevap dağılımına bakar. Emoji serisi yalnız kişisel ayar verilmişse işler. En sonda aynı bulgular tekrarlar tek satırda birleştirilir.",
+    "gelismis": "Dosya uzantısına göre ayrı yol izlenir: html için widget ve soru kuralları, json için soru kuralları. Html dosyasında düğme, dış kütüphane, sabit renk, küçük yazı ve yenilenme kodları taranır. Görünür metin terim sözlüğüyle karşılaştırılır. Soru kurallarında cevaplar tek şıkta toplanmamalı, aynı metin tekrar etmemeli ve ipuçları cevabı vermemelidir. Son olarak aynı bulgular tekrarsız hale getirilir.",
+    "detayli": "Html dosyasında önce stil ve betik blokları çıkarılır, geriye kalan görünür metin terim denetimine verilir. Sonra widget kuralları çalışır: düğme etiketi, dış kaynak bağlantısı, sabit renk, en küçük yazı boyutu ve sürekli çalışan kodlar aranır. Soru dizisi önce sabit tanımda, yoksa işaretli bir veri bloğunda aranır. JSON dosyasında yapı ayrı bir yardımcı denetimden geçer, sonra soru kuralları işler. Soru kuralları şık sayısını, doğru cevabın yerini, aynı metinli şıkları, aynı soruları, açıklamanın boşluğunu ve ipuçlarını inceler. Mini testte soru sayısı ve konu karışıklığı ayrıca denetlenir. Son olarak aynı bulgular tekrarsız hale getirilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Bir html ya da json dosyasının metni; başka uzantılı dosyalar bu parçaya gelmez.",
+     "Komut satırından verilen soru konu adları ve test türü, yani mini ya da tam.",
+     "Kişisel ayar: emoji, emoji serisi, terim dili, terim her geçiş, muaf terimler, mini test soru sayısı, test dili, karışık test ve widget emoji yasağı.",
+     "Terim sözlüğü: markdown tablo ya da json girdileri."
+    ],
+    "ciktilar": [
+     "Her girdi için bulgu listesi: düzey, kod, satır numarası ve açıklama.",
+     "Terim denetiminde ölçüm: toplam terim sayısı ve uyumlu olanların sayısı.",
+     "Aynı düzey, kod, satır ve mesaj tek bulguda birleşir ve tekrar sayısı eklenir.",
+     "Json denetiminde yapı hataları, soru kodu altında yazılır."
+    ],
+    "degismezler": [
+     "Widget, soru ve emoji kodları, yani W, Q ve E ile başlayanlar, sabit kalır.",
+     "Kişisel tercihler depoya yazılmaz; kullanıcının proje klasöründeki profilden okunur.",
+     "Ana kontrolle aynı bulgu biçimi kullanılır: düzey, kod, satır numarası ve mesaj."
+    ],
+    "kenar": [
+     "Emoji serisi tanımlı değilse emoji denetimi hiç çalışmaz.",
+     "Sözlük boşsa terim denetimi yapılmaz.",
+     "Soru dizisi bulunamazsa tek bir hata verilir: soru bulunamadı.",
+     "Json bozuksa ve okunamazsa tek hata ile durulur.",
+     "Metin büyük küçük harf dönüşümünde uzunluğunu değiştiriyorsa terim denetimi atlanır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Bulgu kodlarının önekleri ve numaraları aynen kalmalıdır, çünkü her kod bir kurala bağlıdır.",
+     "Ana kontrolün çağırdığı işlevlerin adları ve döndürdükleri biçimler sabittir.",
+     "Profil dosyasının anahtar adları, yani emoji, terim dili ve test ayarları, sabit kalmalıdır.",
+     "Kendini sınama sonucu, ana kontrolün başarısız sayısına eklenir."
+    ],
+    "degisebilir": [
+     "Widget denetiminde kullanılan düzenli ifadeler ve eşik değerleri, sonuç aynı kaldığı sürece yeniden yazılabilir.",
+     "Soru dizisi ayrıştırıcısı ve json okuyucu iç ayrıntılarıyla değiştirilebilir; yalnız dönen biçim sabit kalır.",
+     "Terim sözlüğünün okunma biçimi, yani tablo ya da json ayrımı, içeride serbestçe düzenlenebilir.",
+     "Kendini sınamanın örnek metinleri yeni durumları kapsayacak biçimde genişletilebilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa widget ve soru hataları sessizce kaçar, ana kontrol ise yine çalışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Json denetiminin dayandığı ayrı yardımcı denetim dosyası bu kayda alınmadı; yalnız çağrıldığı yer yazıldı.",
+    "Bulguların ana kontrolde nasıl birleştirildiği bu kayıtta ayrıntılı yazılmadı, yalnız çağrılan işlevler yazıldı."
+   ],
+   "okunan": [
+    "araclar/anlatim_testi_ek.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::dosya_bulgulari",
+   "tur": "alt",
+   "ozet": "f8cb7d2c4bbe",
+   "iskelet": "ae7bf3e228ba",
+   "ne": {
+    "cok_basit": "Gelen dosyanın türüne göre doğru kontrolü seçip bulguları bir listede toplar.",
+    "normal": "Html dosyasında kart, terim ve varsa soru kuralları çalışır; json dosyasında soru kuralları çalışır. Mesaj dosyaları bu parçanın işi değildir. Tekrarlar tek satırda birleşir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::duz_metin",
+   "tur": "alt",
+   "ozet": "49aefb647985",
+   "iskelet": "f9e59478abca",
+   "ne": {
+    "cok_basit": "Yazının içindeki süsleri silip sadece okunan kelimeleri bırakır.",
+    "normal": "Kalın yazı, altı çizili yazı ve kod işaretlerini boşlukla değiştirir, bağlantıları ve formül yer tutucularını da siler. Uzunluğu değiştirmez, böylece bulunan yerlerin satır numarası kaymaz."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::emoji_bulgulari",
+   "tur": "alt",
+   "ozet": "c29ab0cddf19",
+   "iskelet": "bd2761e8dd29",
+   "ne": {
+    "cok_basit": "Kişisel emoji her seferinde istenen adette yazılmış mı diye bakar.",
+    "normal": "Emojinin ardarda yazılan her grubunun uzunluğunu sayar. Uzunluk izin verilen seri dışındaysa hata, yer sayısı çoksa uyarı verir. Tek ya da çift emoji yazımına da hata olarak bakar."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::kendini_dene",
+   "tur": "alt",
+   "ozet": "af01afb20ff4",
+   "iskelet": "43728407a04c",
+   "ne": {
+    "cok_basit": "Ek kuralların kendi örnekleriyle sınanmasını yönetir ve sonucu özetler.",
+    "normal": "Yanlış ve doğru örnekleri çalıştırıp beklenen kodların çıkıp çıkmadığına bakar. Ardından şablonların ve örnek veri dosyasının hatasız olduğunu denetler. Başarısız sayı ana kontrole eklenir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::kod_c",
+   "tur": "alt",
+   "ozet": "a75a55c3607e",
+   "iskelet": "1d205c5c62e8",
+   "ne": {
+    "cok_basit": "Ayar kodundaki C harfinden sonraki rakamı bulup terim kipini belirler.",
+    "normal": "Kod için önce komut satırındaki değere, sonra proje klasöründeki ayar dosyasının Kod satırına, en son depo varsayılanına bakar. C ile başlayan rakamı çeker, bulunamazsa varsayılan rakamı kullanır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::profil_bul",
+   "tur": "alt",
+   "ozet": "3df411edbbfe",
+   "iskelet": "5d90929a7950",
+   "ne": {
+    "cok_basit": "Kişisel ayar dosyasını birkaç yerde sırayla arar ve ilk bulduğunu verir.",
+    "normal": "Önce komut satırındaki yol, sonra ortam değişkeni, proje klasörü ve son olarak ortak yol denenir. Hiçbiri yoksa sonuç boş kalır. Böylece ayarın hangi yoldan geldiği belli olur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::profil_oku",
+   "tur": "alt",
+   "ozet": "1061e00a78f1",
+   "iskelet": "62b07839e4c4",
+   "ne": {
+    "cok_basit": "Kişisel ayar dosyasını okuyup tercihleri kontrolün anlayacağı biçime çevirir.",
+    "normal": "Emoji, terim dili ve test tercihleri gibi anahtarları alır, aralıkları doğru biçime getirir. Sözlük yollarını proje klasörüne göre tamamlar. Dosya bozuksa işlem hata ile durur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::soru_bulgulari",
+   "tur": "alt",
+   "ozet": "924ce536002f",
+   "iskelet": "9a7eadf06434",
+   "ne": {
+    "cok_basit": "Test sorularının şıklarını, doğru cevabı ve açıklamaları kurallara göre inceler.",
+    "normal": "Şık sayısına, doğru cevabın yerine ve aynı metinli şıklara bakar. Doğru cevapların hep aynı şıkta toplanmasını da engeller. Mini testte soru sayısını ve konuların karışıklığını ayrıca denetler."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::sozluk_topla",
+   "tur": "alt",
+   "ozet": "30fead3bade8",
+   "iskelet": "2da575127301",
+   "ne": {
+    "cok_basit": "Birden çok terim sözlüğünü tek listede toplar ve aynı çiftleri bir kez tutar.",
+    "normal": "Her sözlük dosyasından okunan Türkçe ve İngilizce karşılık çiftlerini sırayla alır. Aynı çift birden çok dosyada varsa tek kez tutulur. Böylece terim denetimi aynı kelimeyi iki kez saymaz."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::sozluk_yollari",
+   "tur": "alt",
+   "ozet": "4a87224c530a",
+   "iskelet": "f240b8c5791d",
+   "ne": {
+    "cok_basit": "Ders için hangi terim sözlüklerinin açılacağını sıralayıp listeler.",
+    "normal": "Önce kişisel ayardaki sözlük yollarını alır. Ders adı verilmişse o dersin klasöründeki sözlük dosyalarını da listeye ekler, biri tablo biçiminde biri JSON biçiminde."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::terim_bulgulari",
+   "tur": "alt",
+   "ozet": "1d541d8331ee",
+   "iskelet": "2083380f2390",
+   "ne": {
+    "cok_basit": "Metindeki terimlerin İngilizce ve Türkçe yazılış sırasını inceler.",
+    "normal": "Metni düz yazıya çevirip sözlükteki her terimin geçtiği yerleri bulur. Her geçişte terimin hangi dilde ve hangi sırayla yazıldığına, ayara göre bakar. Sıra ters ya da çıplak yazılmışsa bulgu üretir; ölçümü de kendi içinde tutar."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_testi_ek.py::terim_mod",
+   "tur": "alt",
+   "ozet": "93155eeb3143",
+   "iskelet": "65fce81c9b8d",
+   "ne": {
+    "cok_basit": "Terim yazım kipinin hangisi olacağını seçer.",
+    "normal": "Önce kişisel ayardaki terim dili tercihine bakar. Tercih yoksa kod rakamından türetilen kipi alır. Tanınmayan bir değer gelirse güvenli varsayılan kullanılır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_uret.py",
+   "tur": "dosya",
+   "ozet": "03dc8fc0039f",
+   "iskelet": "7c5a1afafe7e",
+   "baslik": "Anlatım kartı üretici",
+   "ne": {
+    "cok_basit": "Bu parça, anlatım kartının içeriğini hazır bir sayfa parçasına çevirir.",
+    "basit": "Bu parça, bir anlatımın sekmelerini ve mini testlerini alır, kontrol eder ve hazır bir sayfa üretir. Hata varsa sayfa üretmez.",
+    "normal": "Bu parça, anlatım verisini önce kurallara uyup uymadığını denetler. Denetim temizse sekme içeriklerini ve tanımları kendi şablonunun içine yerleştirir. Ortaya çıkan sayfa doğrudan kullanıma hazırdır.",
+    "gelismis": "Bu parça sekmeleri ve tanımları içeren veriyi önce denetler. Sekme adı, içerik, soru ve doğru şık sırası kontrol edilir, etkileşimli terimlerin tanımı eksikse durur. Geçerli veri hazır şablonun veri bölümüne yazılır. Hatalı veride çıktı üretilmez.",
+    "detayli": "Bu parça anlatım kartının veri bölümünü kurar. Her sekmede bir ad, içerik ve isteğe bağlı mini sorular bulunur, sorunun sayısı sınırlıdır. Denetim sekme adı ve içeriğini, şık sayısını, doğru şık sırasını ve terim tanımlarını kontrol eder. Hatasız veri şablona yazılır ve sorular etkileşimli hale gelir. Bazı eksikler yalnız uyarı olarak bildirilir."
+   },
+   "mantik": {
+    "cok_basit": "Bozuk bir anlatım sayfaya girmeden önce durdurulur.",
+    "basit": "Sayfa elle yazılırsa hatalar kolayca kaçar. Bu parça veriyi önce kontrol eder ve düzeni her seferinde aynı tutar.",
+    "normal": "Anlatım kartının yapısı her derste aynı olsun diye tek bir şablon ve tek bir üretici kullanılır. Veriyi denetlemeden yerleştirmek, hatalı etkileşimli öğe ya da eksik açıklamanın kullanıcıya çıkmasına yol açardı.",
+    "gelismis": "Veri ile görünüm ayrıldığı için içerik değişince şablona dokunulmaz. Denetim hatayı sekme açıldığında değil üretim sırasında yakalar. Böylece içerik çoğalsa da tek bir kalıpla çalışılır.",
+    "detayli": "İçerik ile görünüm ayrı tutulduğu için bir sekmeyi değiştirmek şablonun tasarımına dokunmaz. Denetimsiz üretilen hatalı bir şık öğrenciye yanlış geri bildirim verebilir. Bu yüzden denetim, sayfa üretilmeden önce tek bir yerde yapılır. Yalnız uyarı veren kurallar içerik yazarını durdurmadan iyileştirmeye yönlendirir."
+   },
+   "nasil": {
+    "basit": "Önce veri dosyası denetlenir. Hata yoksa sekme içerikleri ve tanımlar hazır şablona yerleştirilir ve sonuç tek bir sayfa dosyası olarak yazılır.",
+    "normal": "Önce her sekmenin adı ve içeriği kontrol edilir. Mini testlerde şık sayısı, doğru şık sırası ve açıklamalar denetlenir. Kullanılan terimlerin tanımı olup olmadığına bakılır. Hata varsa üretim durur ve hatalar listelenir. Hata yoksa şablondaki veri bölümü yeni verilerle değiştirilir.",
+    "gelismis": "Üretici önce veriyi denetler. Her sekmenin adı ve içeriği, her sorunun soru metni, şıkları, doğru şık sırası ve açıklaması bulunmalıdır. Şık sayısı iki ile beş arasında olmalı ve doğru şık sırası şıkların içinde kalmalıdır. İçerikte gerçek düğme yerine etkileşimli öğe kullanılmalı ve emoji bulunmamalıdır. Terim tanımı eksikse durur, ipucu eksikliği gibi konular yalnız uyarı olur. Hata yoksa veri şablondaki işaretli bölüme yazılır ve tek bir sayfa dosyası olur.",
+    "detayli": "Üretici önce veriyi denetler. Veri bir sekme listesi içermelidir ve her sekmenin adı ile içeriği bulunmalıdır, eksikse hata verilir. Her mini sorunun soru metni, şıkları, doğru şık sırası ve açıklaması olmalıdır. Şık sayısı iki ile beş arasında olmalı ve doğru şık sırası şıkların içinde kalmalıdır. İçerikte gerçek düğme yerine etkileşimli öğe kullanılmalı ve emoji bulunmamalıdır. İçerikteki etkileşimli terimlerin her biri için bir tanım olmalıdır, tanım yoksa üretim durur. Mini test sayısı sınırın üstündeyse ya da soru sonunda Türkçe parantez yoksa, ipucu boşsa yalnız uyarı çıkar. Hata yoksa veri şablondaki işaretli bölüme yazılır, sekmeler ve tanımlar yeni içerikle değiştirilir ve tek bir sayfa dosyası kaydedilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Anlatım verisi, sekmelerden oluşan bir liste olarak verilir.",
+     "Her sekmede ad, içerik, isteğe bağlı mini sorular ve terim tanımları bulunur."
+    ],
+    "ciktilar": [
+     "Hata yoksa, sekmeleri ve tanımları içeren hazır bir sayfa dosyası yazılır.",
+     "Hata varsa sayfa yazılmaz ve hatalar listelenir."
+    ],
+    "degismezler": [
+     "Denetim, sayfa üretilmeden önce yapılmalıdır, çünkü hatalı etkileşimli öğe kullanıcıya ulaşmamalıdır.",
+     "Her etkileşimli terimin bir tanımı olmalıdır, çünkü tanımsız terim sayfada boş bir kutu gibi görünür."
+    ],
+    "kenar": [
+     "Mini test sayısı sınırın üstündeyse yalnız uyarı çıkar.",
+     "Soru sonunda Türkçe parantez yoksa ya da ipucu boşsa üretim durmaz, uyarı verilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Veri biçimindeki sekme adı, içerik ve soru alanlarının adları, üreticinin okuduğu adlardır.",
+     "Şablondaki veri bölümünün başlangıç ve bitiş işaretleri değiştirilirse sayfa üretilemez."
+    ],
+    "degisebilir": [
+     "Örnek veri yalnız yardım amaçlıdır ve üretilen sayfaya girmez, metni serbestçe değiştirilebilir.",
+     "Uyarı mesajlarının metni ve sırası, hataların anlamı korunduğu sürece düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa hatalı ya da eksik bir anlatım sayfası sessizce kullanıcıya çıkabilir.",
+   "terimler": [],
+   "belirsiz": [
+    "Şablon dosyasının içeriğini okumadım, yalnız işaretli veri bölümünün nasıl değiştirildiğini okudum.",
+    "Üretilen sayfanın tarayıcıda nasıl göründüğünü göremedim.",
+    "Bu parçanın hangi araç tarafından çağrıldığını göremedim."
+   ],
+   "okunan": [
+    "araclar/anlatim_uret.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_uret.py::js",
+   "tur": "alt",
+   "ozet": "d2ba650bb5d1",
+   "iskelet": "cb92fe0f5718",
+   "ne": {
+    "cok_basit": "Bu yardımcı, anlatım verisini sayfanın okuyabileceği bir metin biçimine çevirir.",
+    "normal": "Sekme adlarını, içerikleri, soruları ve terim tanımlarını sayfanın okuyacağı bir metin parçasına dönüştürür. Metnin içindeki kapanış işaretleri, sayfanın yanlış yerde bitmemesi için düzeltilir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_uret.py::kontrol",
+   "tur": "alt",
+   "ozet": "9af9bdfa656d",
+   "iskelet": "be76f943e727",
+   "ne": {
+    "cok_basit": "Bu yardımcı, anlatım verisinin kurallara uyup uymadığına bakar.",
+    "normal": "Sekme adı ve içeriği, mini testlerin şık sayısı, doğru şık sırası, terim tanımları ve emoji gibi kuralları tek tek kontrol eder. Hatalar ve uyarılar ayrı listelenir, hata varsa üretim durur. Uyarılar üretimi durdurmaz."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_uret.py::main",
+   "tur": "alt",
+   "ozet": "8520b8ebf474",
+   "iskelet": "1d65140f1b87",
+   "ne": {
+    "cok_basit": "Bu ana bölüm verilen veriyi denetler ve temizse sayfa dosyasını kaydeder.",
+    "normal": "Komut satırından gelen istekleri ayırır: örnek isteniyorsa örneği yazar, yalnız denetim isteniyorsa sonucu söyler. Aksi halde veriyi denetler, hata yoksa sayfayı kaydeder ve kayıt yerini bildirir. Hata varsa çıkış koduyla durur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_uret.py::ornek",
+   "tur": "alt",
+   "ozet": "0bb87ed3f735",
+   "iskelet": "e60938da748f",
+   "ne": {
+    "cok_basit": "Bu yardımcı, anlatım verisinin örnek bir biçimini ekrana yazdırır.",
+    "normal": "Hazır bir örnek veri verir: sekmeli bir anlatım, her sekmede içerik ve mini test, ayrıca terim tanımları. Yeni anlatım yazarken bu biçimi kopyalamak yeterlidir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/anlatim_uret.py::uret",
+   "tur": "alt",
+   "ozet": "d1d887a17f9d",
+   "iskelet": "0833d5bb384a",
+   "ne": {
+    "cok_basit": "Bu yardımcı, hazır sayfa şablonuna yeni veriyi yerleştirip sayfayı üretir.",
+    "normal": "Şablon dosyasını okur, veri başlangıç ve bitiş işaretleri arasındaki kısmı yenisiyle değiştirir. Şablonun başındaki açıklama satırını kaldırır, böylece sonuç temiz bir sayfa olur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/kaynak.py",
+   "tur": "dosya",
+   "ozet": "46f64cc80841",
+   "iskelet": "4c56b5771cc6",
+   "baslik": "Kaynak okuma kapısı",
+   "ne": {
+    "cok_basit": "Bu parça, anlatım sohbetlerinin kaynak metni okuduğu tek kapıdır.",
+    "basit": "Anlatım sohbetleri kaynağı yalnız bu parçadan okur. Yalnızca çevrilmiş metinleri açar.",
+    "normal": "Anlatım sohbetleri kaynağı yalnız bu kapıdan okur. Parça, istenen sayfa aralığındaki bölümü çevrilmiş metinden ayıklayıp verir. Ham dosya verilirse okumaz, çeviri sohbetine gidilmesini söyler.",
+    "gelismis": "Bu parça çevrilmiş metin dosyasını okur ve yalnız sayfa işareti taşıyan metni kabul eder. İstenen sayfa aralığını bulup bu işaretler arasındaki bölümü yazdırır. Ham biçimlerde `dur` işlevi durdurur ve çeviri sohbeti ister.",
+    "detayli": "Anlatım sohbetleri kaynağı yalnız bu parçadan okur. Önce girdinin ham bir belge olup olmadığına bakılır: PDF, slayt, doküman ya da görsel ise okunmaz ve çeviri sohbeti istenir. Çevrilmiş metinde sayfa işareti yoksa parça yine okumaz. İstenen aralık basılı sayfa ya da PDF sıra numarasıyla bulunur ve yalnız o bölüm yazdırılır."
+   },
+   "mantik": {
+    "cok_basit": "Ham belgeler okunmaz, anlatım yalnız çevrilmiş metinden beslenir.",
+    "basit": "Ham belgeleri çevirmek anlatım sohbetinin işi değildir. Bu kapı ham dosyanın yanlışlıkla okunmasını önler.",
+    "normal": "Çeviri ve anlatım ayrı sohbetlerde yapılır, bu kapı iki işi birbirine karıştırmadan ayırır. Ham dosya görüldüğünde durmak, anlatım sohbetinin yalnız hazır metinle çalışmasını sağlar.",
+    "gelismis": "Tek bir kapı olması, kaynağın nereden okunduğunu her seferinde aynı yere bağlar. Ham biçimlerin geri çevrilmesi, yanlış dosyanın okunmasını önler. Sayfa aralığı bilinen bir kanala bağlandığı için yalnız istenen parça açılır.",
+    "detayli": "Anlatım sohbetleri kaynağı yalnız tek bir kapıdan okur, her sayfa aralığı aynı denetimden geçer. Ham belgeler bu denetimde durdurulduğu için çevrilmemiş içerik anlatıma karışmaz ve çeviri işi ayrı sohbette kalır. Aralık yalnız istenen kadar okunduğundan bağlam küçük tutulur."
+   },
+   "nasil": {
+    "basit": "Parça önce dosyanın ham bir belge olup olmadığına bakar. Değilse işaretli sayfaları bulur ve istenen aralığı yazdırır.",
+    "normal": "Önce girdi ham bir belge mi diye denetlenir: uzantıya bakılır, tanınmazsa dosyanın başında belge imzası aranır. Ham ise durdurulur. Değilse sayfa işaretleri taranır, istenen aralığın ilk ve son işareti bulunur ve aradaki metin yazdırılır.",
+    "gelismis": "Parça önce verilen girdiyi tanır. Uzantı ham bir biçim belirtiyorsa ya da dosyanın başında belge imzası varsa `dur` işlevi çağrılır ve çeviri sohbeti istenir. Uzantı listede yoksa dosyanın başı PDF imzası için de denetlenir. Aralık verilmemişse bir uyarı çıkar ve dosyanın tamamı okunmaz. Aralık basılı numaraya ya da PDF sıra numarasına göre seçilir. Başlangıç işareti bulunur ve bitiş işaretinden sonraki işarete kadar olan bölüm yazdırılır. Sayfa bulunamazsa ya da aralık ters ise ayrı bir hata koduyla bitilir.",
+    "detayli": "Parça önce verilen girdiyi tanır. Uzantı ham bir biçim belirtiyorsa ya da dosyanın başında belge imzası varsa `dur` işlevi çağrılır ve çeviri sohbeti istenir. Uzantı listede yoksa dosyanın başı PDF imzası için de denetlenir. Dosya yoksa ayrı bir hata koduyla bitilir. Dosya metinse içeriği tek seferde okunur ve sayfa işaretleri taranır. İşaret yoksa metin çevrilmemiş sayılır ve aynı çeviri isteği yapılır. Aralık verilmemişse bir uyarı çıkar ve dosyanın tamamı okunmaz. Aralık basılı numaraya göre ya da PDF sıra numarasına göre seçilir. Başlangıç işareti bulunur, bitiş işaretinin son geçtiği yer belirlenir ve ondan sonraki işarete kadar olan bölüm yazdırılır. Sayfa bulunamazsa ya da aralık ters ise ayrı bir hata koduyla bitilir. İşaretleri görmek için liste seçeneği, basılı ve PDF numaralarını satır satır yazdırır ve okuma yapmaz."
+   },
+   "detay": {
+    "girdiler": [
+     "Birinci girdi, çevrilmiş metin dosyasının adresidir. Kaynak biçimi değil, metin olmalıdır.",
+     "İkinci ve üçüncü girdiler istenen sayfa numarası ya da aralığıdır. İsteğe bağlı olarak PDF sıra numarası biçimi de kullanılabilir."
+    ],
+    "ciktilar": [
+     "İstenen sayfa aralığındaki metin, sayfa işaretiyle birlikte standart çıktıya yazılır.",
+     "Hata durumlarında kısa bir açıklama hata çıktısına gider ve ayrı bir çıkış kodu döner."
+    ],
+    "degismezler": [
+     "Ham biçim kontrolü dosya okunmadan önce yapılmalıdır, çünkü ham belgeler okunmamalıdır.",
+     "Sayfa işareti biçimi ile çıkış kodlarının anlamı, bu parçayı içe aktaran araçların beklediği sözleşmedir."
+    ],
+    "kenar": [
+     "Sayfa işareti hiç yoksa metin çevrilmemiş sayılır ve çeviri sohbeti istenir.",
+     "Başlangıç işareti bulunmazsa ya da bitiş işareti başlangıçtan önce gelirse hata verilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sayfa işaretli metin biçimi, çeviriyi üreten işçi ile bu parça arasındaki sözleşmedir.",
+     "Ham biçim uzantıları ve çıkış kodlarının anlamı, sohbetlerin bu parçadan beklediği davranıştır."
+    ],
+    "degisebilir": [
+     "Hata ve yönlendirme mesajlarının metni, anlam değişmediği sürece serbestçe düzeltilebilir.",
+     "Yardım metni ve yazdırma biçimi, sayfa işaretleri korunduğu sürece serbestçe düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa anlatım sohbetleri ya ham belgeleri okur ya da hiç kaynak okuyamaz.",
+   "terimler": [],
+   "belirsiz": [
+    "Parçayı içe aktaran araçların hangi işlevleri kullandığını okumadım.",
+    "Çeviri sohbetinin tam olarak hangi metni ürettiğini göremedim, yalnız işaret biçimini okudum.",
+    "Sayfa işaretindeki basılı sayfa biçiminin çevirici tarafında nasıl üretildiğini göremedim.",
+    "Bu kapının neden tek giriş olarak seçildiğine dair bir kayıt görmedim."
+   ],
+   "okunan": [
+    "araclar/kaynak.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/kaynak.py::dur",
+   "tur": "alt",
+   "ozet": "a6854fbbd82e",
+   "iskelet": "0ce5a956e931",
+   "ne": {
+    "cok_basit": "Bu yardımcı, verilen mesajı hata çıktısına yazar ve programı hemen durdurur.",
+    "normal": "Bir durumda okumaya devam etmenin anlamı olmadığında çağrılır: mesajı hata çıktısına yazar, sonra verilen çıkış kodu ile programı kapatır. Kod verilmezse varsayılan kodla kapanır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/kaynak.py::ham_mi",
+   "tur": "alt",
+   "ozet": "88fb41875b3a",
+   "iskelet": "2e428cb1f0ee",
+   "ne": {
+    "cok_basit": "Bu küçük denetim, verilen dosyanın ham bir belge olup olmadığına bakar.",
+    "normal": "Dosyanın adına bakar: ham biçim uzantılarından biriyse evet der. Uzantı tanınmazsa dosyanın başına bakar ve PDF imzası varsa yine evet der. Bu iki denetim de tutmazsa hayır döner."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/kaynak.py::main",
+   "tur": "alt",
+   "ozet": "76eed7b36642",
+   "iskelet": "0fcf38cca1b8",
+   "ne": {
+    "cok_basit": "Bu ana bölüm, programa verilen bilgileri okur ve kaynak metnini yazdırır.",
+    "normal": "Programın asıl girişidir: bilgi verilmezse ya da yardım isteniyorsa yardım metnini gösterir. Sonra ham belge kontrolünü yapar, sayfa işaretlerini okur, istenen aralığı bulup yazdırır. Hatalı aralıklarda hata koduyla kapanır."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/kod.json",
+   "tur": "dosya",
+   "ozet": "8344f5dc8f3c",
+   "iskelet": "b6924aa44694",
+   "baslik": "Ayar dosyasının yapısı",
+   "ne": {
+    "cok_basit": "Bu dosya, sohbetlerin hangi rolde çalışacağını ve hangi seçenekleri kullanacağını belirler.",
+    "basit": "Bu dosya sohbetlerin rollerini, seçeneklerini ve varsayılan seçimlerini tek yerde tutar. Hazırlayan araçlar bu listeyi okuyarak sohbetleri kurar.",
+    "normal": "Bu ayar dosyası, yapay zekâ sohbetlerinin hangi rolde çalışacağını ve her konuda hangi seçeneklerle ilerleyeceğini belirler. Dosyada roller, harflerle adlandırılmış seçenek grupları ve her grup için bir varsayılan seçim bulunur.",
+    "gelismis": "Bu ayar dosyasında ana bölümler `roller`, harflerle anılan seçenek grupları ve `varsayilan` alanıdır. `roller` her sohbetin görevini ve hangi işleri yapabileceğini tanımlar. Seçenek grupları kullanıcıya sunulan tercihleri, `varsayilan` ise her harf için varsayılan olarak seçilecek seçeneği tutar.",
+    "detayli": "Bu ayar dosyası, yapay zekâ sohbetlerinin çalışma düzenini tek yerde tutan ana listedir. Roller bölümünde her rolün açıklaması, izin verilen görevleri ve kullanabileceği seçenek grupları yazılıdır. Harflerle anılan seçenek grupları, her grubun adını ve kullanıcıya gösterilecek seçenek metinlerini taşır. Varsayılan alanı ise her harf için hangi seçeneğin varsayılan olarak seçileceğini tek bir dizgi olarak tutar."
+   },
+   "mantik": {
+    "cok_basit": "Tercihler tek bir yerde durduğu için her sohbetin ayarı aynı kaynaktan okunur.",
+    "basit": "Roller ve seçenekler tek dosyada toplanınca, bir ayarı değiştirmek için birçok yere bakmak gerekmez. Sohbetler de aynı listeden beslenir.",
+    "normal": "Ayar bir yerde tutulunca roller ile seçenekler metinlerden ayrı kalır, metinler değişse bile hangi rolün hangi seçeneği kullanacağı burada belirlenir. Aynı dosya hem hazırlama hem yeniden üretim tarafından okunduğu için iki yön tutarlı kalır.",
+    "gelismis": "Harflerle anılan seçenek grupları ile varsayılan dizgi ayrı tutulduğundan, bir tercih değişince yalnız ilgili harf ve rakam güncellenir. Tek bir dizgi tüm varsayılanları taşıdığı için dağınık anahtarlar yerine kısa bir kayıt yeterli olur. Bu yol, seçimlerin metinlerin içine yazılmasını gereksiz kılar.",
+    "detayli": "Roller, seçenek grupları ve varsayılan seçimler aynı dosyada tutulduğu için tercih düzeni tek kaynaktan okunur. Her rol yalnız hangi harflerle çalışacağını yazar, böylece tercih kapsamı rolden role ayrı ayrı belirlenir. Varsayılan seçimler kısa bir dizgi olarak tutulduğu için okumak ve yeniden üretim aracının değişikliği fark etmesi kolaylaşır."
+   },
+   "nasil": {
+    "basit": "Hazırlayan araç bu dosyayı okur ve sohbetin rolünü seçer. Sonra her harf için varsayılan seçimi alır ve sohbetin metnini bu seçimlere göre kurar.",
+    "normal": "Hazırlayan araç dosyayı okur ve istenen rolün kaydını bulur. Rolün görev listesi ve seçenek grupları okunur, sonra her grup için varsayılan dizgideki harf ve numara eşleşmesi alınır. Böylece hangi tercihin hangi değerle geçerli olduğu bellidir. Dosya değişince yeniden üreten araç aynı okumayı baştan yapar.",
+    "gelismis": "Okuma önce roller bölümünden başlar ve istenen rolün görev listesi ile seçenek alanı alınır. Seçenek alanındaki değer hepsi ise rolün bütün seçenek grupları geçerlidir, bir liste ise yalnız o harfler kullanılır. Seçenek listesi boş olan roller tercih sormaz. Her harf için varsayılan dizgisinde harfin hemen yanındaki rakam okunur ve grubun içindeki o numaralı metin seçilir. Ayarın sonundaki seçenek dosyası kalıbı, harf ve rakam yerine konunca her seçeneğin metninin bulunacağı yeri gösterir.",
+    "detayli": "Okuma önce roller bölümünden başlar ve istenen rolün görev listesi ile seçenek alanı alınır. Seçenek alanındaki değer hepsi ise rolün bütün seçenek grupları geçerlidir, bir liste ise yalnız o harfler kullanılır. Seçenek listesi boş olan roller tercih sormaz. Her harf için varsayılan dizgisinde harfin hemen yanındaki rakam okunur ve grubun içindeki o numaralı metin seçilir. Ayarın sonundaki seçenek dosyası kalıbı, harf ve rakam yerine konunca her seçeneğin metninin bulunacağı yeri gösterir. Her rolün görsel ve ders alanları da okunur: görsel alan rolün çıktıda görsel üretip üretmeyeceğini, ders alanı ise rolün bir ders bağlamında çalışıp çalışmadığını belirtir. Yeniden üretim aracı dosya değiştiğinde aynı okumayı baştan yapar ve sohbet metinlerini yeni değerlerle yeniden kurar."
+   },
+   "detay": {
+    "girdiler": [
+     "Sohbetin hangi rolde çalışacağı bilgisi, yani rol adı.",
+     "Ayar dosyasının tamamı, roller, harfli seçenek grupları ve varsayılan dizgi dahil."
+    ],
+    "ciktilar": [
+     "Seçilen rolün görev listesi, kullanılabilir seçenek grupları ve görsel ile ders bilgisi.",
+     "Her harf için seçilmiş seçeneğin metni, varsayılan dizgiye göre belirlenir."
+    ],
+    "degismezler": [
+     "Her harf bir seçenek grubunu, her rakam o grubun içindeki bir seçeneği anlatır.",
+     "Varsayılan dizgide her harfin hemen yanında tek bir rakam bulunur. Bu biçim bozulursa seçim okunamaz."
+    ],
+    "kenar": [
+     "Seçenek listesi boş olan roller, tercih sormadan yalnız kendi görevini yapar.",
+     "Seçenek listesi hepsi olan roller bütün seçenek gruplarını kullanabilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Roller, harfler, seçenekler ve varsayılan adları, okuyan araçların doğrudan aradığı anahtarlardır.",
+     "Varsayılan dizginin harf ve rakam biçimi ile seçenek dosyası kalıbının yer tutucuları aynen korunmalıdır."
+    ],
+    "degisebilir": [
+     "Seçenek metinlerinin ifadesi serbesttir. Seçimin anlamı korunduğu sürece yeniden yazılabilir.",
+     "Rollerin açıklama metinleri serbestçe düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu dosya bozulursa, ondan okuyan hazırlama ve yeniden üretim araçları yanlış rol ya da seçeneklerle çalışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Varsayılan dizginin harf ve rakamlarını hangi kodun çözdüğünü göremedim.",
+    "Rollerdeki görev adlarının karşılığı olan işleri okumadım.",
+    "Seçenek dosyası kalıbını hangi araçın kullandığını göremedim.",
+    "Ayarın neden bu biçimde tutulduğuna dair bir kayıt görmedim, mantik yalnız işinden görülen yararı anlatır."
+   ],
+   "okunan": [
+    "araclar/kod.json"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py",
+   "tur": "dosya",
+   "ozet": "1826a43642d5",
+   "iskelet": "746b00c62103",
+   "baslik": "Okuma metni birleştirici",
+   "ne": {
+    "cok_basit": "Bu parça, bir sohbetin okuyacağı tüm kuralları tek bir metin haline getirir.",
+    "basit": "Bu parça, seçilen rol ve ayar kodu ile ders bilgisini alıp sohbetin okuyacağı tek metni hazırlar. Ham belge gelirse sohbeti durdurur.",
+    "normal": "Bu parça, bir sohbetin ilk okuduğu metni üretir. Rol, görev, ayar seçenekleri ve gerekiyorsa görsel kurallar ile ders kartını sırayla birleştirir. Ham kaynak varsa yalnız yönlendirme çıkar.",
+    "gelismis": "Bu parça rol, ayar kodu ve ders adını alır ve kodu harf ve rakam çiftlerine çözer. Temel kurallar, arayüz notları ve rolün görevleri sırayla eklenir. Her seçenek için ayrı metin okunur, görsel rolde stil ve katalog eklenir. Ham bir ek varsa yalnız yönlendirme metni çıkar.",
+    "detayli": "Önce rol adı ve ayar kodu okunur, eksik harfler varsayılandan tamamlanır. Alan bilgisi varsa alana özgü kurallar da eklenir. Temel kurallar, rolün metni, görevler ve her seçenek için ilgili metin sırayla gelir. Görsel rolde stil ve katalog eklenir. Ders kartı varsa eklenir, terim dili üçüncü seçenekteyse sözlük de sona konur. Ham bir kaynak eklenirse yalnız yönlendirme çıkar."
+   },
+   "mantik": {
+    "cok_basit": "Her kuralı tek tek aramak yerine sohbet bütün kuralları tek metinle başlar.",
+    "basit": "Sohbetin doğru kurallarla başlaması için parçalar tek yerde birleşir. Rol ya da ders değişince metin kendiliğinden yeniden kurulur.",
+    "normal": "Bu parça, aynı rolün farklı ders ve ayar kodlarında tutarlı davranması için kuralları tek sırada toplar. Kuralların sırası ve seçilen harfler burada belirlenir.",
+    "gelismis": "Bu parça kuralları tek bir sırada ve tek bir yerden kurar, bu yüzden her sohbet aynı düzeni izler. Katmanlar ayrı dosyalarda kalır, birleşim tek yerde yapılır. Alan katmanı ayrı tutulduğu için yeni bir alan eklemek çekirdek kurallara dokunmaz.",
+    "detayli": "Kuralları ayrı katmanlara bölüp tek yerde birleştirmek, değişikliğin yalnız ilgili katmanı etkilemesini sağlar. Çekirdek, alan, rol, görev, seçenek, görsel ve ders katmanları birbirinden bağımsız dosyalardır. Ham kaynak için ayrı bir kapı, çevrilmemiş metnin bu metne karışmasını önler. Ayar kodunun varsayılandan tamamlanması, eksik bir kodda bile tutarlı bir çıktı verilmesini sağlar."
+   },
+   "nasil": {
+    "basit": "Önce rol ve ayar kodu okunur. Sonra temel kurallar, rolün kendi metni, görevler ve seçilen seçenekler sırayla birleştirilip tek bir metin yazdırılır.",
+    "normal": "Önce rol adı kontrol edilir ve ayar kodu harf ve rakam çiftlerine çevrilir. Ders kartı okunurken başındaki alan satırı ayrılır, varsa alana özgü ayarlar yüklenir. Temel kurallar, rolün metni, görevler ve seçenek metinleri sırayla eklenir. Görsel çıktı veren rollerde stil ve katalog, ders bağlamında kart eklenir.",
+    "gelismis": "Önce rol adı kontrol edilir. Ayar kodu harf ve rakam çiftlerine çözülür, eksik harfler varsayılandan tamamlanır. Alan komut satırından ya da ders kartının başındaki satırdan bulunur ve kendi varsayılan kodu genel varsayılanın üstüne biner. Temel kurallar, arayüz notları, alan kuralları, rolün metni ve görevler sırayla eklenir. Görsel rolde stil ve katalog, ders bağlamında kart ve gerekirse sözlük eklenir. Ham bir ek varsa tam metin yerine yalnız yönlendirme basılır.",
+    "detayli": "Önce rol adı kontrol edilir; bilinmeyen bir rol için mevcut roller bildirilip çıkılır. Ayar kodu harf ve rakam çiftlerine çözülür, eksik harfler varsayılandan tamamlanır ve geçersiz seçenek hata verir. Alan komut satırından ya da ders kartının başındaki satırdan bulunur ve kendi varsayılan kodu genel varsayılanın üstüne biner. Temel kurallar, arayüz notları, alan kuralları, rolün metni ve görevler sırayla eklenir. Her seçenek için ilgili metin okunur. Görsel rolde stil ve katalog eklenir. Ders bağlamındaki roller ders kartını alır ve terim dili üçüncü seçenekteyse sözlük de sona konur. Ham bir kaynak eklenmişse tam metin verilmez, yalnız yönlendirme ve özel bir çıkış kodu çıkar."
+   },
+   "detay": {
+    "girdiler": [
+     "Rol adı, ders adı, ayar kodu ve isteğe bağlı alan adı verilir.",
+     "Ek olarak verilen dosyalar varsa, ham biçimde olup olmadıkları denetlenir."
+    ],
+    "ciktilar": [
+     "Sohbetin okuyacağı tek metin, sonunda metnin boyutunu gösteren bir açıklama satırıyla birlikte yazdırılır.",
+     "Ham kaynak verilmişse yalnız yönlendirme metni yazdırılır ve özel bir çıkış kodu döner."
+    ],
+    "degismezler": [
+     "Ham kaynak kontrolü, tam metin kurulmadan önce yapılmalıdır, çünkü ham belge sohbete karışmamalıdır.",
+     "Metnin bölüm sırası ve ayar kodunun biçimi, sohbetlerin ve çağıran araçların beklediği düzendir."
+    ],
+    "kenar": [
+     "Ayar kodunda eksik harf varsa varsayılan değer kullanılır.",
+     "Geçersiz bir rol verilirse geçerli roller bildirilip çıkılır.",
+     "Ders kartı yoksa mevcut ders adları listelenir ve metne bunu belirten bir satır eklenir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Bölümlerin sırası, yani rol, temel kurallar, arayüz notları, alan, görevler ve seçenekler, sohbetin dayandığı düzendir.",
+     "Ayar kodunun biçimi ile çıkış kodlarının anlamı, bu parçayı çağıran tarafların beklediği sözleşmedir."
+    ],
+    "degisebilir": [
+     "Kullanıcıya gösterilen uyarı ve yönlendirme metinleri, anlamı korunduğu sürece serbestçe düzenlenebilir.",
+     "Yardımcı işlevlerin iç düzeni, dış çağrılar aynı kaldığı sürece değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa her sohbet ya eksik kuralla başlar ya da yanlış ayarla çalışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Görev dosyalarının ve rollerin içeriğini okumadım, yalnız bunların nasıl birleştiğini okudum.",
+    "Stil ve katalog dosyalarının içeriğini okumadım.",
+    "Ders kartının ayrı sohbette nasıl kullanıldığını göremedim.",
+    "Bu birleştirmenin neden tek bir metin yerine parçalı kurulmadığına dair bir kayıt görmedim."
+   ],
+   "okunan": [
+    "araclar/paket.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::alan_oku",
+   "tur": "alt",
+   "ozet": "5e8600e4e2d7",
+   "iskelet": "8a507591265c",
+   "ne": {
+    "cok_basit": "Bu yardımcı, bir alan için ayar dosyasını okur ve alan yoksa boş kalır.",
+    "normal": "Alan adı boşsa ya da o alan için bir ayar dosyası yoksa boş sonuç verir. Varsa dosyayı okuyup düzenli bir yapıya çevirir. Böylece genel kurallara ek alan tercihleri okunabilir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::kart_oku",
+   "tur": "alt",
+   "ozet": "afc5101c853f",
+   "iskelet": "d82c58824d55",
+   "ne": {
+    "cok_basit": "Bu yardımcı, bir dersin kart metnini okur ve başındaki alan bilgisini ayırır.",
+    "normal": "Ders kartını bulamazsa boş bilgi döndürür. Kartın en başında iki çizgi arasında alan satırı varsa onu ayırır ve geri kalan metni ayrı verir. Böylece alan bilgisi ile ders metni karışmaz."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::kod_coz",
+   "tur": "alt",
+   "ozet": "14b71f59a18b",
+   "iskelet": "46ba22866301",
+   "ne": {
+    "cok_basit": "Bu yardımcı, ayar kodunu harf ve rakam tablosuna çevirir, yanlış kodda hata verir.",
+    "normal": "Eksik kalan harfleri genel varsayılan doldurur. Alanın kendi varsayılanı bunun üstüne biner ve verilen kod ikisini de geçer. Yanlış bir harf ya da geçersiz bir seçenek görürse nedenini açıklayarak durur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::kod_yaz",
+   "tur": "alt",
+   "ozet": "74c99bbde61c",
+   "iskelet": "667e9b881406",
+   "ne": {
+    "cok_basit": "Bu yardımcı, seçilen harf ve rakamları tek bir kısa kod metnine geri çevirir.",
+    "normal": "Harfleri sıralı bir biçimde dizer ve varsa beğenilen ile istenmeyen şablonları kodun sonuna ekler. Böylece sohbetin başında yazılan kod her zaman aynı düzende görünür."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::main",
+   "tur": "alt",
+   "ozet": "3b7a541149a8",
+   "iskelet": "03629a89667b",
+   "ne": {
+    "cok_basit": "Bu ana bölüm, sohbete verilen seçenekleri okuyup okuma metnini ekrana yazar.",
+    "normal": "Önce ayar kodu ya da rol listesi istenmişse hemen yanıtlar. Sonra rol ve ders bilgisini alıp ham kaynak kapısından geçirir, kuralları sırayla birleştirir ve sonunda metni yazdırır. Yanlış rol verilirse geçerli rolleri söyleyip çıkar."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::oku",
+   "tur": "alt",
+   "ozet": "10c05300cbcc",
+   "iskelet": "a722bb6de628",
+   "ne": {
+    "cok_basit": "Bu yardımcı, verilen yerdeki metni okur ve dosya yoksa boş sonuç verir.",
+    "normal": "Verilen yolu proje klasörüne göre bulur. Dosya yoksa hiçbir şey döndürmez. Varsa metnin başındaki ve sonundaki boşlukları silerek verir."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/paket.py::tablo",
+   "tur": "alt",
+   "ozet": "7c3aca207c2d",
+   "iskelet": "e62cd7873aae",
+   "ne": {
+    "cok_basit": "Bu yardımcı, seçilen ayarları harf, ad ve seçim sütunlu bir tabloya çevirir.",
+    "normal": "Her harf için ayarın adını ve seçilen seçeneğin metnini alt alta yazar. Sohbetin başına konan özet böylece okunabilir olur."
+   },
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py",
+   "tur": "dosya",
+   "ozet": "759ec6778b83",
+   "iskelet": "7078f4aa1708",
+   "baslik": "Soru verisini karta çeviren araç",
+   "ne": {
+    "cok_basit": "Bu dosya hazır soruları ekranda çalışan bir test kartına çevirir.",
+    "basit": "Bu dosya hazır soru listesini ekrana konacak bir test kartına çevirir. Önce soruları kontrol eder, hata varsa işlemi durdurur.",
+    "normal": "Bu dosya, soru verisini ekranda kullanılacak tek bir kart dosyasına dönüştürür. Veriyi önce denetler, boş soru, geçersiz doğru cevap ya da boş açıklama varsa durur. Hatasız veriyi şablona yerleştirip dosyaya yazar.",
+    "gelismis": "Giriş noktası `main` işlevidir. Komut satırından veri dosyasını ve çıktı dosyasını alır, yalnız denetim, örnek yazdırma ya da şablon yenileme gibi kiplerle de çalışır. Denetim `dogrula`da, dönüşüm `donustur`da yapılır. Çok soruda sonuç birden fazla dosyaya bölünür.",
+    "detayli": "Veri dosyası okunur ve denetlenir. Hata varsa hiçbir dosya yazılmaz. Her soru kısa anahtarlı yapıya çevrilir: soru, şıklar, doğru şıkkın sırası ve açıklamalar. Bu yapı şablonun veri işaretleri arasına yerleştirilir. Soru sayısı büyükse eşit parçalara bölünür ve her parça ayrı dosya olur. Tek sayfa seçeneğiyle başlık ve sade stille tam bir sayfa üretilir."
+   },
+   "mantik": {
+    "cok_basit": "Hazır soruları elle biçim uğraşmadan karta çevirmek için var.",
+    "basit": "Elle kart biçimine sokmak zaman alır ve hataya açıktır. Bu araç her soruyu tek düzen içinde taşır.",
+    "normal": "Denetim, hatalı bir soruyu kart çıkmadan yakalamak için vardır. Yanlış harf ya da boş açıklama gibi hatalar işlem başında durdurulur. Şıklar karıştığı için açıklamada harf geçmesi de uyarılır.",
+    "gelismis": "Doğrulama ile dönüşüm ayrı tutulur: önce denetim, sonra çevirme. Böylece hatalı veri hiçbir zaman yarım bir çıktıya dönüşmez. Parçalama ve tek sayfa seçenekleri yalnız çıktının biçimini değiştirir.",
+    "detayli": "Okunur adlar, veriyi hazırlayanın anlamasını kolaylaştırır. Kısa adlar yalnız şablonun okuma biçimi için vardır ve dönüşüm tek yerde yapılır. Hatalar kart oluşmadan veri aşamasında yakalanır. Büyük çıktılar tablette ağır açılabildiği için uzun listeler parçalara ayrılabilir. Aynı veri tam sayfa olarak da çıkarılabilir."
+   },
+   "nasil": {
+    "basit": "Önce veri dosyası okunur ve denetlenir. Hata varsa hiçbir dosya yazılmaz. Hatasız veri, kartın kendi biçimine çevrilip hazır şablona konur.",
+    "normal": "Komut satırından veri ve çıktı dosyası alınır. Önce denetim çalışır, uyarılar ekrana basılır ve hata varsa işlem durur. Her soru kısa anahtarlı yapıya çevrilip şablondaki veri işaretleri arasına yazılır. Soru sayısı fazlaysa eşit parçalara bölünür, adlara sıra numarası eklenir. Son olarak dosyalar yazılır.",
+    "gelismis": "Giriş noktası `main`, komut satırı seçeneklerini okuyup hangi kolun çalışacağına karar verir. Yalnız denetim isteniyorsa `dogrula` sonucu yazdırır ve dosya yazılmaz. Dönüşümde `donustur` veriyi kısa anahtarlı yapıya çevirir, `bol` soruları parçalara ayırır, `doldur` yapıyı şablona yerleştirir. Tek sayfa isteniyorsa `sarmala` başlık ve sade stille tam belge kurar. Son olarak `yaz` dosyaya yazar ve her dosya için bilgi basar.",
+    "detayli": "Önce komut satırı seçenekleri okunur. Veri dosyası `dogrula` ile denetlenir: soru listesi boş mu, doğru şık harfi geçerli mi, yanlış şıkların nedeni var mı, açıklama dolu mu diye bakılır. Türkçe metinde Türkçe harf hiç yoksa uyarı verilir. Hata varsa işlem durur ve hiçbir dosya yazılmaz. Uyarılar ise ekrana basılır. Sonra `donustur` her soruyu kısa anahtarlı bir yapıya çevirir ve doğru şık harfini sayıya dönüştürür. `bol` soruları seçeneğe göre eşit parçalara böler ve başlığa parça bilgisi ekler. `doldur` her parçayı şablonun veri işaretleri arasına yazar. Tek sayfa seçiliyse `sarmala` sayfa başlığı ve sade stil ekler. `yaz` dosyayı UTF-8 olarak diske yazar."
+   },
+   "detay": {
+    "girdiler": [
+     "Komut satırından veri dosyasının yolu ve çıktı dosyasının yolu alınır.",
+     "Kipler: yalnız denetim, örnek yazdırma, şablon yenileme, tek sayfa ve parça boyutu seçenekleri."
+    ],
+    "ciktilar": [
+     "Kart biçiminde ya da tek sayfa biçiminde bir ya da birden çok HTML dosyası.",
+     "Yalnız denetimde dosya yazılmaz, sonuç ekrana basılır."
+    ],
+    "degismezler": [
+     "Okunur alan adları çevrilirken kısa adlara birebir eşlenir.",
+     "Hata varsa hiçbir çıktı dosyası yazılmaz."
+    ],
+    "kenar": [
+     "Soru sayısı küçükse ya da bölme kapalıysa tek parça olur.",
+     "Çok parçalı çıktıda dosya adına sıra numarası eklenir ve başlığa parça bilgisi yazılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Veri dosyasının alan adları ve şablonun okuduğu kısa adlar birbirine uymak zorundadır.",
+     "Doğru şık harfi şık sayısının içindeki harflerden biri olmalıdır.",
+     "Çıktı dosyası adına sıra numarası eklenmesi, parçaların birbirinin üzerine yazmasını engeller."
+    ],
+    "degisebilir": [
+     "Hata ve uyarı mesajlarının metni serbestçe değiştirilebilir.",
+     "Tek sayfa sarmalayıcısındaki başlık ve sade stil ayrıntıları değiştirilebilir.",
+     "Denetim kontrolleri yeniden düzenlenebilir ya da birleştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bu araç bozulursa konu dışı sorular için hazırlanan kart üretilemez ya da yanlış cevaplı kart çıkar. Hatalı çıktı sınav sayfasında yanlış bilgi verir.",
+   "terimler": [],
+   "belirsiz": [
+    "Örnek veri dosyasının içeriğine bakılmadı."
+   ],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::bol",
+   "tur": "alt",
+   "ozet": "d7307978ab49",
+   "iskelet": "2df2a0de3d5f",
+   "ne": {
+    "cok_basit": "Çok sayıda soruyu eşit parçalara ayırır, az sorulu veriyi olduğu gibi bırakır.",
+    "normal": "Seçenek ya da varsayılan kural hangi sayıya kadar tek parça kalacağını belirler. Büyük listeler eşit boyutlu parçalara bölünür. Başlığa kaçıncı parça olduğu eklenir."
+   },
+   "kritik_neden": "Bu parçalama bozulursa uzun listeler tek dosyada ağır açılır ya da sorular parçalar arasında kaybolur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::dogrula",
+   "tur": "alt",
+   "ozet": "2016fa05dd1c",
+   "iskelet": "27c3e0a4a9b1",
+   "ne": {
+    "cok_basit": "Veriyi kontrol eder ve iki liste verir: hatalar ve uyarılar.",
+    "normal": "Veri bütünlüğü için tüm kontroller burada yapılır: soru sayısı, doğru şık harfi, şık sayısı, açıklama ve çeviriler. Gevşek kipte eksik çeviri ya da yanlış şık nedeni hataya değil uyarıya döner. Hatalar kart üretimini durdurur."
+   },
+   "kritik_neden": "Bu denetim bozulursa hatalı veri kart üretimine geçer ya da geçerli veri reddedilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::doldur",
+   "tur": "alt",
+   "ozet": "a6af49dc1b82",
+   "iskelet": "59ee6a766794",
+   "ne": {
+    "cok_basit": "Hazır veriyi kart şablonunun içine yerleştirir.",
+    "normal": "Kart şablonundaki veri işaretlerini bulur ve bu iki işaret arasına veriyi yazar. Veri, metinlerin sayfayı bozmaması için kaçış işaretleriyle temizlenir. İşaret bulunamazsa işlem hata verir."
+   },
+   "kritik_neden": "İşaretler ya da kaçış temizliği bozulursa kart sayfaya yerleşmez ya da sayfa bozulur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::donustur",
+   "tur": "alt",
+   "ozet": "5db83ff3be2b",
+   "iskelet": "c2a27f1a8fd9",
+   "ne": {
+    "cok_basit": "Soru verisini şablonun anladığı kısa biçime çevirir.",
+    "normal": "Okunur adlarla yazılmış soruları şablonun kısa adlı biçimine çevirir. Doğru şık harfini sayıya çevirir ve şıkları kısa biçime toplar. Bölüm, konu, kaynak ve ipucu alanları yalnız doluysa eklenir."
+   },
+   "kritik_neden": "Bu çeviri bozulursa şablon veriyi okuyamaz ve kart boş ya da bozuk görünür.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::main",
+   "tur": "alt",
+   "ozet": "393dd9340dae",
+   "iskelet": "c05ce66005b1",
+   "ne": {
+    "cok_basit": "Programı başlatır, seçeneklere göre ne yapılacağına karar verir.",
+    "normal": "Komut satırı seçeneklerine göre örnek yazdırma, şablon yenileme, yalnız denetim ya da tam dönüşüm kolunu seçer. Tam dönüşümde veriyi okur, denetler, parçalar ve her parçayı dosyaya yazar. Hata varsa çıkış koduyla durur."
+   },
+   "kritik_neden": "Bu giriş noktası bozulursa araç hiç çalışmaz ya da yanlış kolu çalıştırır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::sarmala",
+   "tur": "alt",
+   "ozet": "dedd658adfff",
+   "iskelet": "65ae144afe91",
+   "ne": {
+    "cok_basit": "Kartı tek başına açılan tam bir sayfa haline getirir.",
+    "normal": "Hazır kartı, tarayıcıda tek başına açılabilen tam bir sayfanın içine koyar. Sayfaya başlık, ekrana uyan genişlik ayarı ve sade bir stil ekler. Bu işlem yalnız tek sayfa seçeneğinde çalışır."
+   },
+   "kritik_neden": "Bu sarmalama bozulursa tek sayfa çıktısı başlıksız ya da stilsiz açılır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/soru_testi.py::yaz",
+   "tur": "alt",
+   "ozet": "48f31147e0eb",
+   "iskelet": "f28b2bcc0bb6",
+   "ne": {
+    "cok_basit": "Hazırlanan metni dosyaya kaydeder.",
+    "normal": "Verilen metni verilen yola kaydeder ve dosyayı Türkçe karakterleri bozmadan okunabilecek biçimde yazar. Dosya var olsa üzerine yazılır, uyarı verilmez. Bu nedenle çıktı yolu dikkatle seçilmelidir."
+   },
+   "kritik_neden": "Bu yazma bozulursa çıktı dosyası hiç oluşmaz ya da Türkçe harfler bozulur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "araclar/soru_testi.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "araclar/uret.py",
+   "tur": "dosya",
+   "ozet": "f5626b61c739",
+   "iskelet": "330dc58d9855",
+   "baslik": "Ayar belgesi ve galeri üretimi",
+   "ne": {
+    "cok_basit": "Ayar kodlarının açıklama sayfasını ve galeri sayfasını yeniden hazırlar.",
+    "basit": "Bu parça ayar kodlarının açıklama sayfasını ve galeri sayfasını, tek bir ayar bilgisinden yeniden üretir.",
+    "normal": "Bu parça, ayar kodlarının tanımını okuyup kodların açıklandığı belgeyi ve kodu tıklayarak üretilen galeri sayfasını yazar. Alan klasörlerindeki varsayılanları da belgeye ekler, şablon sayfalarını galeriye gömer.",
+    "gelismis": "Bu parça ayar kodlarının belgesini `KOD.md` olarak, galeri sayfasını `galeri.html` olarak üretir. Ayar bilgisi tek bir veri dosyasından okunur ve tabloya dökülür. Galeri ise şablon sayfalarını ayar verisiyle birlikte tek sayfaya gömer.",
+    "detayli": "Bu parça ayar kodlarını anlatan `KOD.md` belgesini ve `galeri.html` sayfasını yazar. Önce ayar bilgisi harf harf okunur, her harfin seçenekleri ve depo varsayılanı tabloya dökülür. Alan varsayılanları varsa belgenin altına eklenir. Galeri için şablon sayfaları okunur ve ayar verisiyle birlikte galeri şablonuna gömülür."
+   },
+   "mantik": {
+    "cok_basit": "Ayar değişince sayfalar elle düzeltilmeden yeniden yazılır.",
+    "basit": "Ayarlar tek yerde tutulur, belge ve galeri de aynı bilgiden üretilir. Böylece biri eski kalmaz.",
+    "normal": "Ayar bilgisi birden fazla yerde elle tutulsa belge ve galeri birbirinden ayrılabilirdi. Bu parça, çıktıları aynı veriden yazarak bu ayrılmayı önler.",
+    "gelismis": "Bu parça, yeniden üretim akışında ayar verisinden sonra gelen adımdır ve çıktısı belgedir. Belge ve galeri aynı veriden üretildiği için ayar değişince sayfalar birlikte yenilenir; kod ile görsel sayfa arasındaki uyum bu yüzden korunur.",
+    "detayli": "Ayar kodu bir kez tanımlanır; belge ve galeri ondan türetilir, böylece tanım ile çıktı arasında elle tutulmuş bir kopya kalmaz. Yeniden üretim akışında bu betik, ayar verisinden sonra gelen ikinci adımdır ve çıktısı belgedir. Galeri ise şablonları tek sayfada toplar ve kodu tıklayarak üretmeye yarar; bu da kodu elle yazmadan seçmeyi mümkün kılar."
+   },
+   "nasil": {
+    "basit": "Önce ayar bilgisi okunup her harfin seçenekleri tabloya dökülür. Sonra varsayılanı olan alanlar listeye eklenir. Son olarak belge ve galeri sayfası yazılır.",
+    "normal": "Önce ayar bilgisi okunur ve her harfin seçenekleri ile varsayılanı tabloya dökülür. Alan klasörlerindeki varsayılanlar varsa belgenin altına eklenir. Galeri için şablon sayfaları sırayla okunur, başındaki kimlik satırı ayrılır ve kalanı ayar verisiyle birlikte galeri şablonuna gömülür. Sonunda her çıktı üzerine yazılarak kaydedilir.",
+    "gelismis": "Betik önce `kod.json` dosyasını okur ve harfleri sırayla alır; her harfin seçenekleri ve varsayılanı belge tablosuna yazılır. Sonra alan klasörlerinin her birinde `alan.json` aranır; varsayılan kodu olan alanlar belgenin altında tek satırlık bir liste hâlinde verilir. Galeri için şablon klasöründeki html dosyaları sırayla okunur, başındaki açıklama satırından kimlik ve ad çıkarılır ve kalan gövde ayar verisiyle birlikte `galeri.sablon.html` içindeki işaretli yere gömülür.",
+    "detayli": "Betik önce ayar dosyasını baştan sona okur ve her harf için adını, seçeneklerini ve varsayılan değerini belge tablosuna satır olarak yazar. Ardından alan klasörlerinin her birine bakar; içinde alan tanımı ve varsayılan kodu olanların bilgisi belgenin altında tek satırlık bir liste hâlinde verilir. Galeri tarafında şablon klasöründeki html sayfaları sırayla okunur, her birinin başındaki açıklama satırından kimlik ve ad ayrılır ve kalan gövde ayar verisiyle birlikte galeri şablonundaki işaretli yere gömülür. Son olarak belge ve galeri sayfası üzerine yazılır ve ekrana kaç şablonun işlendiği bildirilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Ayar dosyası: harfler, her harfin seçenekleri ve depo varsayılanı.",
+     "Alan klasörlerindeki alan tanımları, varsa her birinin varsayılan kodu.",
+     "Şablon klasöründeki html sayfaları ile galeri şablonu."
+    ],
+    "ciktilar": [
+     "Ayar açıklama belgesi: her harf için bir satır ve varsayılan değer.",
+     "Galeri sayfası: şablonlar ve ayar verisi tek sayfada.",
+     "Ekrana yazılan kaç şablonun işlendiği bilgisi."
+    ],
+    "degismezler": [
+     "Çıktı sayfaları her üretimde baştan yazılır; elle yapılan değişiklik bir sonraki üretimde silinir.",
+     "Ayar dosyası yalnızca okunur, bu betik onu değiştirmez.",
+     "Galeri şablonunda veri yeri tek bir işaretle belirlenir."
+    ],
+    "kenar": [
+     "Alan tanımı dosyası olmayan ya da varsayılan kodu bulunmayan klasörler belgeye eklenmez.",
+     "Şablon klasöründe html olmayan dosyalar atlanır.",
+     "Bir şablon sayfasının başında açıklama satırı yoksa üretim hata verip durur."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Ayar dosyasının yapısı, yani harf, seçenek ve varsayılan alanlarının adları, bu betiğin dayandığı sözleşmedir ve değişirse üretim bozulur.",
+     "Belgenin ve galeri sayfasının adları ve yerleri, belgenin kendisinin galeri sayfasına gönderme yaptığı için sabit kalmalıdır.",
+     "Galeri sayfasındaki veri yeri tek bir işaretle belirlenir; bu işaret kaldırılırsa veri sayfaya yerleşmez."
+    ],
+    "degisebilir": [
+     "Belgedeki tablo başlıkları ve açıklama cümleleri içeride serbestçe değiştirilebilir.",
+     "Galeri sayfasının görünümü ve şablon sayfalarının içeriği, yerleşim işaretine dokunulmadan değiştirilebilir.",
+     "Üretim sonunda ekrana yazılan bilgi cümlesi serbestçe düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa ayar belgesi ve galeri sayfası yenilenmez ya da yarım kalır, eski ayar bilgisi görünmeye devam eder.",
+   "terimler": [
+    "akis"
+   ],
+   "belirsiz": [
+    "Galeri şablonunun gövdesi okunmadı; işaretli yerin sayfada nasıl göründüğü belirsiz.",
+    "Ayar dosyasının içeriği ve alan tanımlarının gerçek değerleri bu kayıtta görülmedi.",
+    "Betiğin nereden çağrıldığını göremedim."
+   ],
+   "okunan": [
+    "araclar/uret.py"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:araclar",
+   "tur": "birim",
+   "ozet": "0e5f3b0695fd",
+   "iskelet": "4ceab2a8119d",
+   "baslik": "Hazırlık ve denetim betikleri",
+   "ne": {
+    "cok_basit": "Bu bölüm, sohbetlere verilecek metni hazırlayan ve yazılanların kurallara uyup uymadığına bakan küçük yardımcı programları toplar.",
+    "basit": "Yardımcı programların evi: sohbetin okuyacağı metni hazırlar, anlatımların kurallara uyup uymadığını denetler, ayar tablosundan belge ve sayfa üretir, kaynak metni doğru kapıdan verir.",
+    "normal": "Bu bölüm, deponun kurallarını sohbetlere ulaştıran ve uyulup uyulmadığını denetleyen yardımcı programları toplar. Biri sohbetin ilk okuyacağı metni birleştirir, biri anlatımları ve test sorularını kurallara göre denetler, biri ayar tablosundan belge ve galeri sayfası üretir, biri kaynak metni yalnız çevrilmiş haliyle verir. Ayar tablosu hangi rolün hangi seçeneklerle çalışacağını belirler.",
+    "gelismis": "Bu bölüm iş bölümü yapar. `paket.py` sohbetin ilk okuyacağı metni rol, görev, ayar seçenekleri ve gerekirse görsel kurallar ile ders kartını birleştirerek üretir. `anlatim_testi.py` ve `anlatim_testi_ek.py` metinleri, terim dilini, widget biçimini ve test sorularını denetler. `soru_testi.py` ve `anlatim_uret.py` doğrulanmış veriyi kullanıma hazır sayfaya çevirir. `uret.py` ayar tablosundan belge ve galeri yazar, `kaynak.py` kaynağı yalnız çevrilmiş metin olarak verir, `kod.json` rolleri ve seçenekleri tanımlar.",
+    "detayli": "Bu bölüm, kuralların depoda durmasıyla sohbetlerin onları kullanması arasındaki köprüdür ve işi dört gruba böler. Hazırlayan: `paket.py` sohbetin ilk okuyacağı metni birleştirir. Denetleyen: `anlatim_testi.py` ve `anlatim_testi_ek.py` anlatımı, terim dilini, widget biçimini ve test sorularını sınar. Üreten: `soru_testi.py`, `anlatim_uret.py` ve `uret.py` denetlenmiş veriyi ve ayar kodlarını kart, sayfa, belge ve galeriye çevirir. Kapı: `kaynak.py` kaynağı yalnız çevrilmiş metinden verir. Hepsinin ortak dayanağı `kod.json` tablosudur."
+   },
+   "mantik": {
+    "cok_basit": "Kuralları sohbete ulaştırmak ve uyulduğunu denetlemek için ayrı küçük yardımcılar daha güvenli ve kolay değiştirilir.",
+    "basit": "Hazırlama, denetleme, üretme ve kaynak verme ayrı programlara bölünmüştür. Böylece biri değişince ötekilerin işi bozulmaz ve her program tek bir işi iyi yapar.",
+    "normal": "Kurallar dosyalarda durur ama sohbetin onları doğru sırayla okuması ve yazılanın kurallara uyduğunun denetlenmesi gerekir. Bunu elle yapmak hata getirirdi. Bu yüzden hazırlama, denetleme, üretme ve kaynak verme işleri ayrı programlara bölünmüştür. Denetimden geçmeyen veri kullanıma çıkmaz, böylece hatalı sayfa üretilmez.",
+    "gelismis": "İş bölümü bilerek tek bir büyük programdan kaçınır: paketin birleştirilmesi, metnin denetlenmesi, sayfanın üretilmesi ve kaynağın verilmesi farklı sıklıkta değişir. Denetim üretimden önce yapılır; `soru_testi.py` ve `anlatim_uret.py` hatalı veride durur, böylece bozuk sayfa oluşmaz. Ayar tablosunun tek yerde durması, rol ve seçenek tanımlarının birden çok yerde çelişmesini önler.",
+    "detayli": "Kuralları yazan dosyalar tek başına yetmez: sohbetin hangi kuralı okuyacağını seçen, yazılan metnin kurallara uyduğunu doğrulayan ve ayardan belge üreten parçalar gerekir. Hepsi tek programda olsaydı bir denetim kuralı değişince paket hazırlama da risk altında kalırdı. Bu yüzden hazırlama, denetim, üretim ve kaynak kapısı ayrıdır. Denetim üretimin önüne konmuştur: hatalı veri sayfaya girmeden durdurulur. Ayar tablosu tek dosyada tutulur, böylece roller ve seçenekler çoğaltılmaz, kod belgesi ve galeri bu tablodan üretilir ve elle yazılıp eskiyen bir kopya oluşmaz. Kaynağın yalnız çevrilmiş metinden verilmesi, ham dosyanın anlatım sohbetinde doğrudan okunmasını bilerek dışarıda bırakır."
+   },
+   "nasil": {
+    "basit": "Sohbet açılırken hazırlayıcı kuralları birleştirip ilk metni verir. Anlatım yazılınca denetim programı kurallara bakar. Ayar tablosu değişince üretici belgeleri yeniden yazar.",
+    "normal": "Sohbet açılırken paket hazırlayıcısı rolü, görevi, ayar seçeneklerini ve gerekirse görsel kuralları sırayla birleştirip ilk metni verir. Anlatım yazıldığında denetim programları biçim, cümle, terim ve test sorusu kurallarına bakar, hataları satır satır döker. Kaynak gerekiyorsa yalnız çevrilmiş metinden istenen aralık alınır. Ayar tablosu ya da şablon değişince üretici, belgeyi ve galeriyi yeniden yazar.",
+    "gelismis": "Bir sohbet açılırken `paket.py` ayar tablosundaki rolü ve seçenekleri okur, ilgili kuralları sırayla birleştirir ve ilk metni üretir. Ham kaynak verilmişse yalnız yönlendirme çıkar. Anlatım yazıldığında `anlatim_testi.py` biçim, boşluk, formül, cümle ve başlık kurallarına bakar; `anlatim_testi_ek.py` terim dilini, widget biçimini ve test sorularını ayrıca sınar. Soru verisi kullanıma çevrilmeden `soru_testi.py` içinde, anlatım verisi sayfaya yerleşmeden `anlatim_uret.py` içinde denetlenir; hata varsa ikisi de durur. Ayar tablosu değişince `uret.py` kod belgesini ve galeriyi yeniden yazar.",
+    "detayli": "Akışın başı `paket.py` ile başlar: rol, görev ve ayar seçenekleri `kod.json` tablosundan okunur, gerekirse görsel kurallar ve ders kartı eklenir, hepsi sırayla birleşir. Ham kaynak verilirse paket yalnız yönlendirme çıkarır; kaynağın kendisi `kaynak.py` kapısından, çevrilmiş metin ve istenen sayfa aralığıyla alınır, ham dosya verilirse çeviri sohbetine gidilmesi söylenir. Anlatım yazıldığında `anlatim_testi.py` metni biçim, boşluk, formül, cümle ve başlık kurallarına göre geçirir ve sonunda hata ile uyarıları satır satır döküp kısa bir özet verir. Aynı anda `anlatim_testi_ek.py` ana denetimin dışında kalanı sınar: terim dilinin yazılış sırasını, kişisel emoji serisini, widget biçimini ve test sorularını. Her biri ayrı bulgu kodu verir, tekrarlar tek satırda toplanır. Soru verisi `soru_testi.py` içinde önce denetlenir: boş soru, geçersiz doğru cevap ya da boş açıklama varsa durur, yoksa şablona yerleşip dosyaya yazılır. `anlatim_uret.py` de aynı biçimde denetimi temizse sekme içeriklerini ve tanımları sayfaya gömer. Ayar tablosu ya da şablon değişince `uret.py` kod belgesini ve alan varsayılanlarını yeniden yazar, şablon sayfalarını galeriye gömer."
+   },
+   "detay": {
+    "girdiler": [
+     "Rol, görev ve ayar kodu; ayar tablosundaki roller ve seçenek grupları.",
+     "Denetlenecek anlatım metni, test soruları ve widget verisi.",
+     "Çevrilmiş kaynak metin ve istenen sayfa aralığı."
+    ],
+    "ciktilar": [
+     "Sohbetin ilk okuyacağı birleşik metin.",
+     "Hata ve uyarı listesi ile kısa özet.",
+     "Kullanıma hazır soru kartı, anlatım sayfası, kod belgesi ve galeri sayfası."
+    ],
+    "degismezler": [
+     "Denetimden geçmeyen veri kullanıma hazır sayfaya çevrilmez.",
+     "Kaynak yalnız çevrilmiş metin olarak verilir, ham dosya okunmaz.",
+     "Ayar tablosundaki rol ve seçenek tanımları tek yerde durur."
+    ],
+    "kenar": [
+     "Ham kaynak verilirse paket yalnız yönlendirme çıkarır.",
+     "Soru verisinde boş soru ya da geçersiz doğru cevap varsa üretim durur.",
+     "Aynı türden tekrar eden bulgular tek satırda toplanır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Ayar tablosundaki rol ve seçenek tanımları, paketi ve belgeleri üreten programların ortak dayanağıdır.",
+     "Bulgu kodlarının adları değişirse denetimi okuyan ve düzelten kişi ya da sohbet şaşırır.",
+     "Paketin birleştirme sırası, sohbetin kuralları hangi sırayla okuyacağını belirler.",
+     "Kaynağın yalnız çevrilmiş metinden verilmesi, anlatım sohbetlerinin dayandığı sözdür."
+    ],
+    "degisebilir": [
+     "Her programın içindeki yardımcı işlevler, dışarıya verilen çıktı aynı kaldıkça serbestçe düzenlenebilir.",
+     "Denetim çıktısının satır düzeni ve özetin söz dizimi, anlam korunduğu sürece değiştirilebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bir denetim kuralını değiştirsem paketi hazırlayan program etkilenir mi?",
+     "yanit": "Hayır. Hazırlama ve denetim ayrı programlardır. Denetim kuralı değişince yalnız denetimin sonucu değişir; paketin birleşme sırası aynı kalır."
+    },
+    {
+     "soru": "Hatalı soru verisi verilirse ne olur?",
+     "yanit": "Soru kartı üretilmez, program durur. Denetim üretimin önünde olduğu için bozuk veri sayfaya girmez."
+    },
+    {
+     "soru": "Rol ya da seçenek eklemek istesem nereyi değiştiririm?",
+     "yanit": "Ayar tablosunu. Paket, belge ve galeri bu tablodan okuduğu için tanım tek yerde durur; sonra üretici belgeleri yeniden yazar."
+    }
+   ],
+   "kritik_neden": "Bu bölüm bozulursa sohbetler eksik ya da yanlış kurallarla açılır, hatalı anlatımlar denetimden geçer ve kod belgesi ile galeri eskir.",
+   "terimler": [],
+   "belirsiz": [
+    "Hazırlayıcının ayar tablosunu tam hangi sırayla okuduğu paketteki anlatımlardan görülmüyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

@@ -1,0 +1,734 @@
+{
+ "surum": 1,
+ "bolum": "alanlar",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "alanlar/README.md",
+   "tur": "dosya",
+   "ozet": "f7f975c024ee",
+   "iskelet": "ebfd59a35224",
+   "baslik": "Alana özgü kurallar",
+   "ne": {
+    "cok_basit": "Derslerin hangi alana ait olduğunu ve o alana özel kuralları tutar.",
+    "normal": "Çekirdek kurallar her alanda aynıdır, alana özgü kurallar ise o alanın kendi klasöründe durur. Bir sohbetin alanı sırayla belirlenir ve alanı hiç yoksa yalnızca çekirdek kurallarla çalışır. Yeni alan eklemenin adımları da burada yazılıdır."
+   },
+   "nasil": {
+    "normal": "Her alanın kendi klasöründe bir ayar dosyası, bir kurallar dosyası ve bir widget kataloğu bulunur. Kurallar dosyasını her rol okur, kataloğu ise anlatım rolleri kullanır. Alan önce kullanıcının ayarlarındaki satırdan, yoksa ders kartındaki satırdan bulunur. Öncelik çekirdek kurallardan başlar ve sohbetteki kullanıcı sözleriyle biter."
+   },
+   "sinir": {
+    "sabit": [
+     "Çekirdek kuralların her alanda aynı kalması gerekir, aksi halde aynı derse iki farklı kural uygulanır.",
+     "Alan adının ders kartındaki satırda ve ayar satırında birebir aynı yazılması gerekir.",
+     "Öncelik sırası sabit kalmalıdır, sırası değişirse hangi kuralın geçerli olacağı belirsizleşir."
+    ],
+    "degisebilir": [
+     "Bir alanın kendi kuralları, yalnız o alanı etkilediği için serbestçe yazılabilir ve düzenlenebilir.",
+     "Yeni bir alan eklenirken alan klasörünün içindeki kurallar ve katalog içerikleri serbestçe doldurulabilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa bir sohbet yanlış alanın kurallarıyla çalışabilir ya da alan kuralları hiç uygulanmayabilir.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırlar kesik geldi; alan seçimi cümlesinin sonu ve bir alan için ek ayrıntı tam okunamadı."
+   ],
+   "okunan": [
+    "alanlar/README.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/alan.json",
+   "tur": "dosya",
+   "ozet": "e6623b426ee9",
+   "iskelet": "7e0a58421abf",
+   "baslik": "Alan varsayılan tanımı",
+   "ne": {
+    "cok_basit": "Elektrik-elektronik alanının adını ve varsayılan kodunu tutan küçük bir karttır.",
+    "basit": "Elektrik-elektronik alanının adını ve bu alan seçilince kullanılacak varsayılan ayar kodunu tutar.",
+    "normal": "Bu parça, Elektrik-Elektronik Mühendisliği alanının adını ve bu alan için varsayılan ayar kodunu tutar. Ayar belgesini hazırlayan betik bu kodu okuyup depo genel varsayılanının üstüne bindirir.",
+    "gelismis": "Bu parça, Elektrik-Elektronik Mühendisliği alanının veri tanımıdır: alanın adı, varsayılan ayar kodu ve kurallar ile katalog belgelerinin adları. Ayar belgesini üreten betik bu tanımı okuyup varsayılanı depo genelinin üstüne bindirir.",
+    "detayli": "Bu parça, Elektrik-Elektronik Mühendisliği alanının küçük bir veri tanımıdır. İçinde alanın adı, varsayılan ayar kodu ve kurallar ile katalog belgelerinin adları bulunur. Ayar belgesini üreten betik bu tanımı her üretimde baştan okur; alanın varsayılanı, depo varsayılanının üzerine biner ve belgenin altına ayrı bir satır olarak yazılır."
+   },
+   "mantik": {
+    "cok_basit": "Her alanın varsayılanı kendi kartında durur, genel ayar elle değişmez.",
+    "basit": "Her alanın kendi varsayılanı kendi kartında durur. Böylece alana özel ayar eklemek için genel ayar dosyasına dokunmak gerekmez.",
+    "normal": "Alan bazlı varsayılanlar genel ayar bilgisinin içine konsaydı, her alan eklendiğinde genel bilgi düzenlenmek zorunda kalırdı. Ayrı bir kartta tutulduğu için bu düzenleme gerekmez ve her alan kendi değerini bağımsız taşır.",
+    "gelismis": "Her alan kendi tanım dosyasını taşıdığı için alan eklemek ya da kaldırmak genel ayar dosyasını değiştirmeyi gerektirmez. Ayar belgesini üreten betik alan klasörlerini tarayarak okuduğu için yeni bir alan, varsayılan kodu tanımlıysa betiğe kayıt eklenmeden belgeye girer.",
+    "detayli": "Alanlara özel varsayılanlar ayrı kartlarda tutulunca, genel ayar dosyası alanların sayısı ya da içeriği değiştikçe yeniden düzenlenmez. Bu, sorumluluğu bölmek anlamına gelir: genel ayar ile alana özel varsayılan birbirinden bağımsız değişir. Yeni alan eklemek için yalnızca klasör ve tanım dosyası yeterlidir, çünkü betik klasörleri kendisi tarar."
+   },
+   "nasil": {
+    "basit": "Betik bu dosyayı her üretimde okur. Alanın adı ve varsayılan kodu belgeye yazılır ve genel varsayılanın üstüne biner.",
+    "normal": "Betik bu dosyayı her üretimde okur ve alanın adını ile varsayılan kodunu alır. Varsayılan kodu bulunan alanlar, belgedeki alan varsayılanları satırında öteki alanlarla birlikte listelenir. Alanın varsayılanı depo varsayılanının üstüne biner. Kurallar ve katalog alanları bu betiğin okuduğu alanlar arasında değildir.",
+    "gelismis": "Betik `alan.json` dosyasını alan klasörlerinin her birinde ayrı ayrı arar ve bulursa açar. Dosyadaki `ad` alanı okunur; yoksa klasör adı kullanılır. `varsayilan_kod` tanımlıysa alan varsayılanı olarak kaydedilir, tanımlı değilse hiçbir şey eklenmez. Toplanan alanlar sırayla dizilir ve tek bir satır hâlinde `KOD.md` belgesinin altına yazılır; her biri depo varsayılanının üstüne bindiği belirtilerek verilir. Bu dosya içindeki `kurallar` ve `katalog` alanları bu betik tarafından okunmaz.",
+    "detayli": "Betik üretim sırasında alanlar klasöründeki alt klasörleri ad sırasına göre tek tek gezer. Her alt klasörde alan tanımı dosyası aranır; yoksa o klasör atlanır. Dosya varsa içeriği okunur ve alanın adı belirlenir: tanımda `ad` varsa o, yoksa klasör adı kullanılır. Ardından `varsayilan_kod` alanına bakılır. Bu alan doluysa alan, adı ve kodu ile birlikte toplanır; boşsa alan belgeye hiç yazılmaz. Toplanan bütün alanlar bitince belgede tek bir satır oluşturulur ve her biri depo varsayılanının üstüne biner ifadesiyle listelenir. Bu satır, belgedeki genel ayar tablosunun hemen altına eklenir. Bu dosyadaki kurallar ve katalog alanları bu betik tarafından okunmaz, yani bunları değiştirmek üretilen belgeyi etkilemez."
+   },
+   "detay": {
+    "girdiler": [
+     "Alan tanım dosyası: alanın adı ve varsayılan ayar kodu.",
+     "Kurallar ve katalog alanları, ancak bu betik tarafından okunmaz."
+    ],
+    "ciktilar": [
+     "Ayar belgesinde alan varsayılanları satırı, varsa tek bir satır olarak.",
+     "Belgeye yazılan her alan adı ile kodunun depo varsayılanının üstüne bindiği bilgisi."
+    ],
+    "degismezler": [
+     "Varsayılan kodu boş olan alan belgeye hiç yazılmaz.",
+     "Tanım dosyası geçerli bir biçimde olmalıdır; bozuksa üretim durur."
+    ],
+    "kenar": [
+     "Alan klasöründe tanım dosyası yoksa o klasör atlanır.",
+     "Tanımda ad yoksa klasör adı kullanılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Tanım dosyasındaki ad ve varsayılan kod alanlarının adları sabit kalmalı; üretim betiği bu adlarla okur.",
+     "Her alan için ayrı bir klasör ve içinde tanım dosyası bulunması düzeni sabittir; betik klasörleri bu düzene göre tarar."
+    ],
+    "degisebilir": [
+     "Kurallar ve katalog alanlarının gösterdiği içerik, bu betik onları okumadığı için serbestçe değiştirilebilir.",
+     "Tanım dosyasına betiğin okumadığı yeni bilgi alanları eklenebilir; betik yalnızca ad ve varsayılan kodu alır."
+    ]
+   },
+   "kritik_neden": "Bu dosya bozuk olursa üretim betiği durur ve ayar belgesi güncellenmez.",
+   "terimler": [],
+   "belirsiz": [
+    "Kurallar ve katalog belgelerinin içeriğini okumadım; bu alanların ayar üzerindeki etkisini göremedim.",
+    "Bu tanım dosyasını başka hangi betiklerin okuduğunu göremedim."
+   ],
+   "okunan": [
+    "alanlar/eee/alan.json"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/katalog.md",
+   "tur": "dosya",
+   "ozet": "dd279146b5f9",
+   "iskelet": "1651c99d996e",
+   "baslik": "EEE şablon kataloğu",
+   "ne": {
+    "cok_basit": "Elektrik ve elektronik dersleri için hazır çizim ve hesap sayfalarının listesi.",
+    "basit": "Elektrik ve elektronik dersleri için hazır şablonlar burada toplanır. Bazıları ortak, bazıları bu alana özgüdür.",
+    "normal": "Elektrik ve elektronik dersleri için çizim ve hesap şablonları burada tanımlanır. Genel katalogdaki şablonların bir kısmı burada da kullanılır; bu sayfa yalnız elektrik ve elektronik için eklenenleri anlatır. Şablonda yalnız veri değişir.",
+    "gelismis": "Elektrik ve elektronik dersleri için çizim ve hesap şablonları burada tanımlanır. Genel katalogdaki şablonların bir kısmı burada da kullanılır, gıdaya özgü olanlar bu alanda kullanılmaz. Eleman sembolleri ortak bir sözlükte durur ve yeni semboller önce oraya eklenir.",
+    "detayli": "Elektrik ve elektronik dersleri için çizim ve hesap şablonları burada tanımlanır. Genel katalogdaki şablonların bir kısmı burada da kullanılır, gıdaya özgü olanlar bu alanda kullanılmaz. Eleman sembolleri ortak bir sözlükte durur ve yeni semboller önce oraya eklenir. Ayrıntılı çizim kuralları ve hangi derste hangi tür şemanın kullanıldığı tabloda yazılıdır; şablon kopyalanır ve yalnız veri değiştirilir."
+   },
+   "mantik": {
+    "cok_basit": "Her ders için çizimi baştan kurmak yerine hazır şablondan başlanır.",
+    "basit": "Her çizimi baştan yapmak zaman alır ve çizimler birbirinden farklı görünür. Hazır şablon aynı düzeni getirir.",
+    "normal": "Şemaları her seferinde baştan çizmek zordur ve ders dersten farklı görünürse öğrenen karışır. Şablon, çizim düzenini ve sembolleri her yerde aynı tutar; yalnız veri değiştiğinde öğrenen yeni bir düzene alışmak zorunda kalmaz.",
+    "gelismis": "Şemaları her seferinde baştan çizmek zordur ve ders dersten farklı görünürse öğrenen karışır. Şablon, çizim düzenini ve sembolleri her yerde aynı tutar; yalnız veri değiştiğinde öğrenen yeni bir düzene alışmak zorunda kalmaz. Semboller tek sözlükte toplanınca aynı eleman her derste aynı görünür.",
+    "detayli": "Şemaları her seferinde baştan çizmek zordur ve ders dersten farklı görünürse öğrenen karışır. Şablon, çizim düzenini ve sembolleri her yerde aynı tutar; yalnız veri değiştiğinde öğrenen yeni bir düzene alışmak zorunda kalmaz. Semboller tek sözlükte toplanınca aynı eleman her derste aynı görünür. Metin de veri olarak kopyalanır; böylece biçim bozulmadan yalnız içerik değişir."
+   },
+   "nasil": {
+    "basit": "Sohbet, tabloda şablonun adını bulur ve veriyi değiştirir. Çizim kuralları şablonla birlikte gelir.",
+    "normal": "Bir ders için çizim gerektiğinde sohbet önce tabloya bakar ve uygun şablonu seçer. Şablon kopyalanır; sayılar, adlar ve etiketler gibi veri değiştirilir, çizim düzeni korunur. Uygun şablon yoksa şablonsuz türlerden biri stil rehberine göre sıfırdan yazılır.",
+    "gelismis": "Sohbet tabloda şablonu bulur ve sayfadaki kuralı uygular: şablon kopyalanır, yalnız veri değişir. Çizimde etiket elemanın yanında durur, değer birimiyle yazılır, referans düğümü ve düğüm adları çizilir. Matris yazarken metne özel bir işaretle satırlar ayrılır ve sütunlar boşlukla ayrılır; küçük betik bunu köşeli parantezli ızgaraya çevirir. Ters matris şablonlarında adımlar sekmelerle ilerler.",
+    "detayli": "Sohbet önce tabloda ders için uygun şablonu bulur. Şablon kopyalanır ve yalnız veri dizileri ya da metne yazılan matris işaretleri değiştirilir. Çizim kuralları, yani etiket yeri, birim, referans düğümü ve tel bağlantısı, her zaman aynı kalır. Ortak sembol sözlüğünde yoksa yeni sembol önce oraya eklenir ve sonra şemaya kopyalanır. Boyut değişen şablonlarda telefon genişliğinde taşma ekran testiyle kontrol edilir. Şablonsuz bir tür istenirse stil rehberine göre sıfırdan çizilir ve iyi çıkarsa şablona eklenir."
+   },
+   "detay": {
+    "girdiler": [
+     "Ders konusu, anlatılacak şemanın türü ve kullanılacak şablonun tablodaki adı.",
+     "Şablonun içindeki veri dizileri ya da metne yazılan matris işaretleri."
+    ],
+    "ciktilar": [
+     "Kopyalanıp yalnız verisi değiştirilmiş, telefon genişliğinde taşmayan bir çizim.",
+     "Şablonsuz türlerde, stil rehberine uygun yeni bir çizim."
+    ],
+    "degismezler": [
+     "Şablon kopyalanır, yalnız veri değişir; çizim biçimi aynı kalır.",
+     "Semboller ortak sözlükte durur; yeni sembol önce oraya eklenir.",
+     "Çizim genişliği 560 birimdir ve telefonda taşma olmaz."
+    ],
+    "kenar": [
+     "Şablonsuz tür, iyi çıkarsa şablona eklenmek üzere sıfırdan yazılır.",
+     "Boyut değişirse taşma ekran testiyle yeniden kontrol edilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Şablonların veri düzeni, yani dizilerin ve matris işaretlerinin biçimi; betikler bu düzene göre okur.",
+     "Semboller ortak sözlükte tek yerde durur ve yeni sembol oraya eklenmeden kopyalanmaz.",
+     "Gıdaya özgü şablonların bu alanda kullanılmaması."
+    ],
+    "degisebilir": [
+     "Tablodaki ders örnekleri, yeni dersler eklenince serbestçe genişletilebilir.",
+     "Şablonsuz türlerin çizimi, stil rehberine uyulduğu sürece yeniden düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu sayfa bozulursa şablon seçimi yanlış olur ve çizimler ders boyunca farklı görünür.",
+   "terimler": [],
+   "belirsiz": [
+    "Tablodaki bazı satırların sonu paketinde kesik geliyor; matris çizim kısayolunun ve bir tablo satırının tam ayrıntısı bilinmiyor.",
+    "Kısaltma olarak geçen bir ifadenin ne anlama geldiği bilinmiyor."
+   ],
+   "okunan": [
+    "alanlar/eee/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/katalog.md::EEE widget kataloğu (W15+)",
+   "tur": "alt",
+   "ozet": "dd279146b5f9",
+   "iskelet": "faf4d2893017",
+   "ne": {
+    "cok_basit": "Genel şablonların bir kısmı burada da kullanılır, gıdaya özgüler kullanılmaz.",
+    "normal": "Bu bölüm, yeni eklenen elektrik ve elektronik şablonlarını tanıtır: eleman sembol kartı, devre şeması, matris işlemi ve göz akımı çözümü gibi. Genel kataloğun gıdaya özgü şablonları bu alanda kullanılmaz."
+   },
+   "kritik_neden": "Bu bölüm bozulursa elektrik ve elektronik şablon seçimi yanlış yapılır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/katalog.md::Lineer Cebir matris şablonları (W18, W19) ve matris çizim kısayolu",
+   "tur": "alt",
+   "ozet": "4312d4cc68ab",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Matris çarpımı ve denklemleri için hazır çizimler ve kısa bir yazım yolu.",
+    "normal": "Matris çarpımını ve bir denklemin matris yazılışını gösteren hazır şablonlar vardır; yalnız veri değiştirilir. Metne özel bir işaretle yazılan matris, köşeli parantezli ızgaraya dönüşür."
+   },
+   "kritik_neden": "Matris şablonları bozulursa çarpım ve denklem çizimleri yanlış veriyle görünür.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/katalog.md::Lineer Cebir ters matris şablonları (W21–W23)",
+   "tur": "alt",
+   "ozet": "c904f976e93a",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Ters matrisi adım adım gösteren hazır çizimler, sekmelerle ilerler.",
+    "normal": "Elemanter matris, ters matris bulma ve denklik zinciri için hazır şablonlar vardır. Her biri yalnız veriyi değiştirerek kullanılır. Hepsi dar telefon ekranında ve yatay ekranda denenmiştir."
+   },
+   "kritik_neden": "Bu şablonlar bozulursa ters matris adımları yanlış sırayla gösterilebilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/katalog.md::Çizim kuralları (W15, W20 ve yeni EEE şemaları)",
+   "tur": "alt",
+   "ozet": "3dad49ac1fcf",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Etiket elemanın yanında durur, değer birimiyle yazılır ve çizgiler sade olur.",
+    "normal": "Semboller kitaptaki standarda uygun çizilir; akım okları dolu uçlu olur, gerilim kutupları artı ve eksi işaretiyle gösterilir. Etiket her zaman elemanın yanında durur, değer birimiyle yazılır. Çizim telefonda taşmaz."
+   },
+   "kritik_neden": "Çizim kuralları bozulursa aynı devre farklı şekillerde çizilir ve okuyucu karışır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/katalog.md::Şablonu olmayan EEE türleri",
+   "tur": "alt",
+   "ozet": "d14f21f4163a",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Hazır şablonu olmayan şemalar, stil rehberine göre sıfırdan çizilir.",
+    "normal": "Bazı şemalar için hazır şablon yoktur; bunlar stil rehberine göre sıfırdan yazılır. İyi çıkan çizim sonra şablona eklenir. Tablo, hangi türün hangi derste kullanıldığını gösterir."
+   },
+   "kritik_neden": "Bu bölüm bozulursa şablonu olmayan şemaların nasıl çizileceği bilinmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md",
+   "tur": "dosya",
+   "ozet": "fb959e285b86",
+   "iskelet": "a97bc00c384f",
+   "baslik": "EEE alan kuralları",
+   "ne": {
+    "cok_basit": "Elektrik ve elektronik derslerinde çizim, hesap ve program için özel kurallar.",
+    "basit": "Elektrik ve elektronik derslerinde genel kurallara ek olarak uyulan özel kurallar burada yazılıdır. Çakışırsa bu sayfa kazanır.",
+    "normal": "Elektrik ve elektronik derslerinde genel kurallara ek olarak uyulan özel kurallar burada yazılıdır. Çakışma olursa bu sayfa kazanır; ders kartı ise bu sayfadan da özeldir. Çizimi, notasyonu, hesap sırasını ve lab işlerini kapsar.",
+    "gelismis": "Elektrik ve elektronik derslerinde genel kurallara ek olarak uyulan özel kurallar burada yazılıdır. Çakışma olursa bu sayfa kazanır; ders kartı ise bu sayfadan da özeldir. Çizimi, notasyonu, hesap sırasını ve lab işlerini kapsar. Ayar kodu ve kullanıcının sohbetteki sözleri bu bölümün üstüne geçer.",
+    "detayli": "Elektrik ve elektronik derslerinde genel kurallara ek olarak uyulan özel kurallar burada yazılıdır. Çakışma olursa bu sayfa kazanır; ders kartı ise bu sayfadan da özeldir. Çizimi, notasyonu, hesap sırasını ve lab işlerini kapsar. Ayar kodu ve kullanıcının sohbetteki sözleri bu bölümün üstüne geçer. Bir dersin kendi kartı bu bölümden daha özeldir, o derste kart esas alınır."
+   },
+   "mantik": {
+    "cok_basit": "Elektrik ve elektronik derslerinde her çizim ve hesap aynı kurallarla yapılır.",
+    "basit": "Bir birim ya da sembol eksik kalırsa okuyan yanlış sonuca gider. Bu sayfa biçimi her derste aynı tutar.",
+    "normal": "Elektrik ve elektronik çizimleri ile hesaplarında sembol, birim ve işaret gibi küçük ayrıntılar kolayca karışır ve okuyucuyu yanıltır. Kurallar tek sayfada olunca her sohbet aynı ayrıntıya uyar.",
+    "gelismis": "Elektrik ve elektronik çizimleri ile hesaplarında sembol, birim ve işaret gibi küçük ayrıntılar kolayca karışır ve okuyucuyu yanıltır. Kurallar tek sayfada olunca her sohbet aynı ayrıntıya uyar. Çekirdek kurallar genel kalır, alana özgü ayrıntı burada durur.",
+    "detayli": "Elektrik ve elektronik çizimleri ile hesaplarında sembol, birim ve işaret gibi küçük ayrıntılar kolayca karışır ve okuyucuyu yanıltır. Kurallar tek sayfada olunca her sohbet aynı ayrıntıya uyar. Çekirdek kurallar genel kalır, alana özgü ayrıntı burada durur. Ders kartı bu sayfadan da özel olduğu için, bir ders kendi kuralını daha öne alabilir."
+   },
+   "nasil": {
+    "basit": "Sohbet, bu alanda çalışırken bu kuralları okur ve çizim ya da hesapta bunlara uyar. Çakışma varsa bu sayfa kazanır.",
+    "normal": "Bir çizim ya da hesap istendiğinde sohbet önce eleman adını, sembolünü ve birimini birlikte verir. Sayılar birimle ve sade biçimde yazılır; çözüm sırası verilenlerden başlar, doğrulamayla biter. Ders bir lab ya da PDF içeriyorsa o kaynağın kendi kuralı önceliklidir.",
+    "gelismis": "Çizimde bir eleman adı geçtiğinde ad, harf sembolü, birim ve çizim birlikte verilir; sembol yoksa basit bir blok çizilir, uydurma sembol yapılmaz. Hesapta işaret kuralı çözümün başında bir kez yazılır ve negatif sonuç ters yönü gösterir, düzeltilmez. Matris ve formüller, genel formül kurallarına ek olarak EEE'ye özgü sınırlarla yazılır: satır genişliği sınırlıdır, her blokta tek matris bulunur.",
+    "detayli": "Bir devre çizilirken her elemanın etiketi, değeri, gerilim kutbu ve akım oku bulunur; referans düğümü ve düğüm adları da çizilir. Hesap, verilenler ve istenen ile başlar, yöntem ve nedeni yazılır, denklemler çözülür, sonuç birimiyle verilir ve bir doğrulama ile bitirilir. Sonuç anlamlı basamak kuralına göre yazılır ve ara adımlarda yuvarlama yapılmaz. PDF çevirisinde devre mantık diliyle, her eleman bir satırda yazılarak anlatılır ve şekil numarası korunur. Kod örneği tam ve derlenebilir olur, çıktı kodun altında gösterilir. Bu alanda kalıcı bir kural çıkarsa, kullanıcı açıkça bütün derslerde demedikçe yalnız bu alanın katmanına yazılır."
+   },
+   "detay": {
+    "girdiler": [
+     "Ders konusu, istenen çizim ya da hesap ve kullanıcının yüklediği soru, föy ya da PDF.",
+     "Ders kartındaki notasyon ve ayar kodu seçimleri."
+    ],
+    "ciktilar": [
+     "Birimli, doğrulanmış bir çözüm ya da kurallara uyan bir çizim.",
+     "Kod örneği, deney anlatımı ya da PDF çevirisi, ilgili kurala göre."
+    ],
+    "degismezler": [
+     "Sembollerin ilgili standarda uygun çizilmesi ve birimin her sayının yanında yazılması.",
+     "Çözüm sırasının verilenlerden başlayıp doğrulamayla bitmesi.",
+     "Metinde ondalık ayırıcının virgül olması."
+    ],
+    "kenar": [
+     "Sembolü olmayan bir eleman için sembol uydurulmaz, basit bir blok çizilir.",
+     "Negatif sonuç düzeltilmez, ters yönde diye yorumlanır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sembol, birim ve çizimin birlikte verilmesi; biri diğerinin yerine geçmez.",
+     "Kod örneklerinin tam olması ve dil etiketli kod bloğunda yazılması.",
+     "Vektör ve matris gösteriminde büyük harf ve kısa biçim kuralı."
+    ],
+    "degisebilir": [
+     "Ders kartındaki standart ve notasyon, kart başka bir şey söylüyorsa değişebilir.",
+     "Örnek devrelerin sayıları ve büyüklükleri, sınav tarzına uygun olduğu sürece serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu sayfa bozulursa elektrik ve elektronik çizimlerinde sembol ya da birim tutarsız çıkar.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırların sonu paketinde kesik geliyor; ders kartı başvurusunun ve formül kurallarının tam metni bilinmiyor.",
+    "Kural güncelleme bölümünün son kısmı kesik geldi; hedefin tam ayrıntısı bilinmiyor."
+   ],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::1. Eleman adı geçince sembolü de çizilir",
+   "tur": "alt",
+   "ozet": "73e77232f8f3",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Bir eleman adı geçtiğinde adı, sembolü, birimi ve çizimi birlikte verilir.",
+    "normal": "Devre elemanı, bileşen ya da kapı adı geçen adımda ad ve sembol birlikte verilir. Türkçe ve İngilizce ad, harf sembolü, birim ve çizim birbirinin yerine geçmez. Sembolü olmayan şey için basit blok çizilir."
+   },
+   "kritik_neden": "Sembol ve ad birlikte verilmezse okuyan elemanın ne olduğunu karıştırır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::2. Notasyon ve birim",
+   "tur": "alt",
+   "ozet": "2734dc4e6a0d",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Her sayının yanında birimi yazılır ve virgül ondalık ayırıcı olarak kullanılır.",
+    "normal": "Her sayının yanında SI birimi yazılır; önekler ve mühendislik gösterimi kullanılır, önek dönüşümü hesapta açıkça yazılır. Metinde ondalık ayırıcı virgüldür. Ara adımlarda yuvarlama yapılmaz."
+   },
+   "kritik_neden": "Birim ya da gösterim bozulursa aynı sayı farklı büyüklükte okunabilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::3. Hesap disiplini",
+   "tur": "alt",
+   "ozet": "d524a7251c8f",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Hesap, neyin verildiğini yazarak başlar ve sonucun doğruluğunu kontrol ederek biter.",
+    "normal": "Çözüm sırası verilenler ve istenenle başlar, yöntem ve nedeni yazılır, denklemler çözülür, sonuç birimiyle verilir ve doğrulama ile biter. Negatif sonuç düzeltilmez, ters yönü gösterir."
+   },
+   "kritik_neden": "Hesap sırası bozulursa sonuç doğru görünse bile kontrol edilmemiş olur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::4. Kod anlatımı (VHDL, C++)",
+   "tur": "alt",
+   "ozet": "c61a6dcaf474",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Program örnekleri eksiksiz yazılır ve kodun ne yaptığı ile nasıl yaptığı anlatılır.",
+    "normal": "Kod örneği tam ve derlenebilir ya da sentezlenebilir olur; parça verilirse kesik nokta işaretiyle belirtilir. Önce ne yaptığı, sonra nasıl yaptığı anlatılır. Gerçek kod yazılır, sözde kod yazılmaz."
+   },
+   "kritik_neden": "Bu kural bozulursa örnek kod çalışmaz ya da yarım kalır ve okuyucu kodu tamamlayamaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::5. Lab ve ölçüm",
+   "tur": "alt",
+   "ozet": "92c950b6afb8",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Laboratuvar anlatımında deneyin amacı, kurulumu ve beklenen sonucu sırayla yazılır.",
+    "normal": "Lab föyü yüklenmişse föy esastır. Deney anlatımında amaç, kurulum, beklenen sonuç, ölçüm hatası kaynakları ve rapor için bir yorum sorusu yer alır. Sonuç grafiği çiziliyorsa eksenler, birimler ve eğimin anlamı yazılır."
+   },
+   "kritik_neden": "Lab kuralı bozulursa deney anlatımı rapora yetecek bilgiyi taşımaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::6. PDF çevirisinde (pdf-cevirici rolü)",
+   "tur": "alt",
+   "ozet": "9b90eca63ffc",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Çeviride her devre şeması ayrıntılarıyla yazılı bir liste olarak anlatılır.",
+    "normal": "Devre şemasında her eleman bir satırda, etiketi, değeri, bağlı olduğu iki düğüm, gerilim kutbu ve akım yönüyle yazılır. Şekil numarası korunur. Lojik devrede kapı listesi, blok şemada bağlantı listesi kullanılır."
+   },
+   "kritik_neden": "Bu kural bozulursa çeviri şekildeki bağlantıları yanlış aktarır ya da eksik bırakır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::7. Kural güncelleme hedefi",
+   "tur": "alt",
+   "ozet": "3a3856eaedd3",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Bu alanda çıkan kalıcı kurallar yalnız bu alanın dosyasına yazılır.",
+    "normal": "Kullanıcı bütün derslerde demedikçe kalıcı kural bu alanın katmanına yazılır. Alan kuralı, widget kataloğu ve şablonlar bu alanın dosyalarıdır. Yeni bir ders eklenirken hazır ders kartı kopyalanır."
+   },
+   "kritik_neden": "Bu hedef bozulursa kurallar yanlış katmana yazılır ve başka dersleri etkiler.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::8. Anlatım başlığı",
+   "tur": "alt",
+   "ozet": "b0faffeb8895",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Her mesajın başına, hangi ünite ve adımda olunduğunu gösteren bir başlık konur.",
+    "normal": "Başlık konumu yazar: ünite ve adım, varsa slayt ya da kitap bölümü de eklenir. Numaralar ders kartına ya da plana göre yazılır. Başlık her mesajda aynı biçimde kalır."
+   },
+   "kritik_neden": "Başlık bozulursa okuyucu mesajın dersin neresinde olduğunu bilemez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "alanlar/eee/kurallar.md::Alan kuralları: Elektrik-Elektronik Mühendisliği (EEE)",
+   "tur": "alt",
+   "ozet": "fb959e285b86",
+   "iskelet": "ff8659c737f0",
+   "ne": {
+    "cok_basit": "Bu bölüm, genel kuralların üstüne eklenen elektrik ve elektronik kurallarıdır.",
+    "normal": "Çekirdek kuralların üstüne eklenen bu bölüm, çekirdekle çelişirse kazanır. Ayar kodu seçimi ve kullanıcının sohbetteki sözleri bunun da üstüne geçer. Ders kartı bu bölümden daha özeldir."
+   },
+   "kritik_neden": "Bu bölüm bozulursa elektrik ve elektronik çizimleri ve hesapları genel kurallarla çelişir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "alanlar/eee/kurallar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:alanlar",
+   "tur": "birim",
+   "ozet": "408e77425e64",
+   "iskelet": "8965f4a66a83",
+   "baslik": "Alana özgü kurallar",
+   "ne": {
+    "cok_basit": "Bu bölüm, her ders alanına özel kuralları kendi köşesinde tutar; herkese ortak kurallar burada durmaz.",
+    "basit": "Her ders alanının kendine özgü kuralları, kendi köşesinde durur. Ortak kurallar herkes için aynıdır, bu bölüm yalnız alana göre değişen şeyleri taşır ve yeni alan eklemenin yolunu anlatır.",
+    "normal": "Bu bölüm alana özgü kuralların evidir. Ortak kurallar her alanda aynı kalır; bir alanın kendine özgü gereksinimleri ise o alanın kendi klasöründe yazılır. Bölümün tanıtım sayfası alanın nasıl belirleneceğini ve yeni alan eklemenin adımlarını anlatır, her alan klasörü de şablon, ek kural ve kimlik bilgisini kendi içinde tutar.",
+    "gelismis": "Bu bölüm, ortak kuralların üstüne alana özgü bir katman koyar. Ortak kurallar her alanda geçerli kalır; bir alana ait çizim ve hesap şablonları, ek kurallar ve alanın adı ile varsayılan ayar kodu o alanın klasöründe durur. Tanıtım sayfası alanın sırayla nasıl belirlendiğini, alanı hiç olmayan bir sohbetin yalnız ortak kurallarla çalıştığını ve yeni alan eklemenin adımlarını söyler.",
+    "detayli": "Bu bölüm iki iş görür. Birincisi alana özgü bilgiyi ortak kurallardan ayrı tutmaktır: ortak kurallar her alanda aynı kalır, bir alanın kendine özgü şablonları, ek kuralları ve kimliği ise o alanın klasöründe yazılır. İkincisi yönlendirmedir: bölümün tanıtım sayfası, bir sohbetin alanının sırayla nasıl belirleneceğini, alanı hiç olmayan sohbetin yalnız ortak kurallarla çalışacağını ve yeni alan eklemenin adımlarını anlatır. Bir alan klasörü şablon, ek kural ve kimlik görevi gören parçalardan oluşur; kimlik parçası alanın adını ve varsayılan ayar kodunu tutar. Böylece bir alanın eklenmesi ya da değişmesi ortak kuralları ve öteki alanları etkilemez."
+   },
+   "mantik": {
+    "cok_basit": "Her dersin ihtiyacı farklıdır; ayrı köşeler olunca biri değişince ötekiler bozulmaz.",
+    "basit": "Her alanın ihtiyacı farklıdır. Ayrı köşelerde tutulunca bir alanın kuralları değişince ötekiler bozulmaz, ortak kurallar da kalabalıklaşmaz.",
+    "normal": "Alana özgü bir kuralı ortak katmana yazmak, o kuralla ilgisi olmayan her alanı da etkilerdi. Bu yüzden ortak kurallar ayrı kalır, alanın kendine özgü gereksinimi kendi klasöründe yazılır. Yeni alan eklemek böylece diğer alanlara dokunmadan yapılabilir.",
+    "gelismis": "Alanlar bilgi gereksinimi bakımından birbirinden çok farklıdır; çizim ve hesap şablonları bir alanda gerekir, ötekinde gerekmez. Ortak kurallara alan ayrıntısı koymak o kuralları şişirir ve ilgisiz alanlara taşırır. Ayrı klasörler, bir alanın kuralını değiştirirken öteki alanların davranışının sabit kalmasını sağlar.",
+    "detayli": "Bir alanın çizim ve hesap şablonları, ek kuralları ve kimliği başka alanları ilgilendirmez. Hepsi ortak kurallara yazılsaydı her sohbet gereksiz bilgi taşırdı ve bir alandaki değişiklik ötekileri bozabilirdi. Bu yüzden ortak kurallar her alanda aynı bırakılır, alana özgü olan şey alanın kendi klasörüne yazılır ve yeni alan eklemenin adımları tanıtım sayfasında bir yerde toplanır. Alanı hiç olmayan sohbetin yalnız ortak kurallarla çalışabilmesi de bu ayrımın bir yararıdır: alan katmanı isteğe bağlı bir eklentidir, zorunlu değil."
+   },
+   "nasil": {
+    "basit": "Sohbetin hangi alana ait olduğu önce belirlenir. Alan bulunursa ortak kuralların üstüne o alanın kuralları eklenir. Alan yoksa sohbet yalnız ortak kurallarla devam eder.",
+    "normal": "Bir sohbet açıldığında alanı sırayla belirlenir. Alan bulunursa sohbet, ortak kurallara ek olarak o alanın klasöründeki şablonları ve ek kuralları da kullanır. Alanı hiç yoksa yalnız ortak kurallarla çalışır. Yeni alan eklemek isteyen kişi tanıtım sayfasındaki adımları izler: alana kendi klasörünü açar ve içine şablon, ek kural ve kimlik bilgisini koyar.",
+    "gelismis": "Alanın belirlenmesi sırayla yapılır; tanıtım sayfası bu sırayı yazar. Alan bulunursa sohbet ortak kurallara ek olarak o alanın klasöründeki şablonları, ek kuralları ve kimlik verisindeki varsayılan ayar kodunu kullanır. Alan bulunmazsa yalnız ortak kurallar işler. Yeni alan eklemek için alanın kendi klasörü açılır ve içine şablon sayfası, ek kural sayfası ve alanın adı ile ayar kodunu tutan küçük veri dosyası konur. Ders kartının başındaki alan satırı dersi alana bağlar.",
+    "detayli": "İşleyiş üç parçalıdır. Birincisi alanın belirlenmesidir: tanıtım sayfası sırayı yazar; sıra sonunda bir alan çıkarsa sohbet o alanı kullanır, çıkmazsa alansız çalışır. İkincisi kuralların birleşmesidir: ortak kurallar her zaman geçerlidir, alan bulunmuşsa o alanın klasöründeki şablonlar ve ek kurallar bunların üstüne eklenir; kimlik verisi alanın adını ve varsayılan ayar kodunu sağlar. Ders kartının başındaki alan satırı bir dersi alana bağlar. Üçüncüsü yeni alan eklemedir: kişi alanın klasörünü açar ve içine şablon sayfasını, ek kural sayfasını ve kimlik veri dosyasını koyar. Ortak kurallara ya da başka alanlara dokunması gerekmez. Alana özgü bir kural ortak katmana yazılmaz; yazılırsa her alan o kuraldan etkilenir."
+   },
+   "detay": {
+    "girdiler": [
+     "Sohbetin açılışında verilen ya da bulunan alan adı.",
+     "Her alanın kendi klasöründeki şablon, ek kural ve kimlik bilgisi."
+    ],
+    "ciktilar": [
+     "Alana özgü kurallarla genişletilmiş okuma paketi.",
+     "Alan yoksa yalnız ortak kurallardan oluşan paket."
+    ],
+    "degismezler": [
+     "Alana özgü kural ortak katmana yazılmaz, alanın kendi klasöründe durur.",
+     "Ortak kurallar her alanda aynı kalır."
+    ],
+    "kenar": [
+     "Alanı olmayan sohbet yalnız ortak kurallarla çalışır.",
+     "Yeni alan eklemek için ortak kurallara dokunmak gerekmez."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Alanın belirlenme sırası değişirse aynı sohbet farklı kurallarla açılabilir.",
+     "Alanın adı ve varsayılan ayar kodu, o alanı kullanan her dersin dayandığı bilgidir.",
+     "Ortak katmanın her alanda aynı kalması, alanların birbirinden bağımsız çalışmasını sağlar."
+    ],
+    "degisebilir": [
+     "Bir alanın şablonlarının ve ek kurallarının içeriği, başka alanları etkilemeden değiştirilebilir.",
+     "Yeni alanlar eklenebilir; var olan alanların çalışması bundan etkilenmez."
+    ]
+   },
+   "kurulus": [
+    {
+     "baslik": "Tanıtım sayfasını yaz",
+     "metin": "Önce bölümün kendi mantığını anlatan sayfayı yaz: ortak kurallar her alanda aynı, alana özgü olanlar alanın klasöründe, alan sırayla belirlenir, alan yoksa yalnız ortak kurallar işler.",
+     "parcalar": [
+      "alanlar/README.md"
+     ]
+    },
+    {
+     "baslik": "İlk alan klasörünü aç",
+     "metin": "Bir alan için kendi klasörünü aç. Klasör bağımsızdır, ortak kurallara dayanmaz; bu yüzden tanıtım sayfasından sonra ilk bu kurulur.",
+     "parcalar": [
+      "k:alanlar/eee"
+     ]
+    },
+    {
+     "baslik": "Alana kimlik ver",
+     "metin": "Alanın klasörüne adını ve varsayılan ayar kodunu tutan küçük veri dosyasını koy. Şablon ve ek kural bu kimliğe bağlanır.",
+     "parcalar": [
+      "k:alanlar/eee"
+     ]
+    },
+    {
+     "baslik": "Şablon ve ek kuralı ekle",
+     "metin": "Alana özgü çizim ve hesap şablonlarını, ardından ortak kurallara eklenen özel kuralları ayrı sayfalara yaz. Ortak kurallara dokunma.",
+     "parcalar": [
+      "k:alanlar/eee"
+     ]
+    }
+   ],
+   "sorular": [
+    {
+     "soru": "Bir alana özgü kuralı ortak kurallara yazsam ne olur?",
+     "yanit": "O kural ilgisi olmayan her alanı da etkiler. Alana özgü kural, alanın kendi klasöründe kalmalıdır."
+    },
+    {
+     "soru": "Alanı hiç belirlenmemiş bir sohbet ne yapar?",
+     "yanit": "Yalnız ortak kurallarla çalışır. Alan katmanı isteğe bağlıdır; yokluğu sohbeti engellemez."
+    },
+    {
+     "soru": "Yeni alan eklerken öteki alanlara dokunmak gerekir mi?",
+     "yanit": "Hayır. Yeni alan kendi klasöründe şablon, ek kural ve kimlik bilgisiyle kurulur; ortak kurallar ve diğer alanlar aynı kalır."
+    }
+   ],
+   "kritik_neden": "Bu bölüm bozulursa alana özgü kurallar yanlış sohbete uygulanır ya da hiç uygulanmaz, ders anlatımı alanın gerektirdiği şablonlardan yoksun kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Alanın belirlenme sırasının tam adımları tanıtım sayfasında yazılı; burada özetlenmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:alanlar/eee",
+   "tur": "birim",
+   "ozet": "74d2523693d9",
+   "iskelet": "2009c34118ed",
+   "baslik": "Elektrik ve elektronik alanı",
+   "ne": {
+    "cok_basit": "Bu parça elektrik ve elektronik alanının çizim ve hesap kurallarını bir arada tutar.",
+    "basit": "Bu parça elektrik ve elektronik mühendisliği alanının şablonlarını, kendine özgü kurallarını ve alan adını bir araya getirir. Genel kurallara ek olarak bu alanda neyin geçerli olduğunu gösterir.",
+    "normal": "Bu parça bir alanın yardımcı parçalarını bir arada tutar: elektrik ve elektronik için çizim ve hesap şablonlarını tanımlayan bir sayfa, genel kurallara ek özel kuralları yazan bir sayfa ve alanın adını ile varsayılan ayar kodunu tutan küçük bir veri dosyası. Biri şablon, biri kural, biri kimlik görevi görür.",
+    "gelismis": "Bu birim elektrik ve elektronik mühendisliği alanının yardımcı kaynaklarını bir arada tutar. Şablon sayfası çizim ve hesap şablonlarını tanımlar; kural sayfası bu alana özgü kuralları yazar; küçük bir veri dosyası alanın adını ve varsayılan ayar kodunu tutar. Bunlar birlikte, genel ayarın üstüne alana özgü bir katman oluşturur.",
+    "detayli": "Bu birim elektrik ve elektronik mühendisliği alanının alana özgü bütün parçalarını tek yerde toplar. Birincisi çizim ve hesap şablonlarını tanımlayan sayfadır; genel kataloğun bazı şablonlarını da kullanır ve yalnız bu alana eklenenleri anlatır. İkincisi alana özgü kuralları yazan sayfadır: çizim, notasyon, hesap sırası ve laboratuvar işlerini kapsar. Son parça alanın adını ve varsayılan ayar kodunu tutan küçük bir veri dosyasıdır; ayar belgesini hazırlayan betik bu kodu okuyup depo genel varsayılanının üstüne bindirir."
+   },
+   "mantik": {
+    "cok_basit": "Alana özgü şeyler ayrı tutulur ki genel kurallar herkes için aynı kalsın, elektrik işleri de kendi kurallarını taşısın.",
+    "basit": "Genel kurallar her alanda ortak kalırsa yeni bir alan eklemek kolaylaşır. Elektrik ve elektronikte ek kurallar ayrı yazılınca genel düzen bozulmaz ve alana özgü işler kendi yerinde durur.",
+    "normal": "Elektrik ve elektronik işleri çizim, hesap ve laboratuvarda genel kurallardan ayrılır; bunları genel kurallara karıştırmak hem genel düzeni bozar hem alanı bulanıklaştırır. Alan katmanı ayrı tutulduğu için genel katalogdan yalnız gerekeni alır, kalanını kendi sayfasında tanımlar.",
+    "gelismis": "Alan adı ve varsayılan ayar kodu ayrı bir veri dosyasında durduğu için betik, genel ayarı değiştirmeden alan ayarını üstüne koyabilir. Şablon sayfası ile kural sayfasının ayrı durması, çizim biçimi ile alanın kurallarının birbirine karışmasını önler.",
+    "detayli": "Genel kurallar ve genel katalog tüm depo için ortak kalır; alana özgü her şeyin bu ortak düzenin üstüne ayrı bir katman olarak konması, genel düzeni bozmadan yeni bir alan eklemeyi mümkün kılar. Şablon sayfası genel şablonları yeniden kullanır ama elektrik ve elektronik için eklenenleri ayrı tutar; böylece alana özgü şablon genel katalogu değiştirmek zorunda kalmaz. Kural sayfası çakışmada kazanarak alana özgü istisnaları açıkça gösterir; bu, hangi kuralın geçerli olduğunu okuyana tek bir yerde söyler. Alan kodunu bir veri dosyasında tutmak ise betiğin alanı kod içine gömmeden okuyabilmesini sağlar."
+   },
+   "nasil": {
+    "basit": "Şablon sayfası, genel katalogdaki şablonların bir kısmını da kullanır; bu sayfa yalnız elektrik ve elektronik için eklenenleri anlatır. Kural sayfası çizim, notasyon, hesap sırası ve laboratuvar işlerini kapsar; çakışma olursa kendisi kazanır.",
+    "normal": "Bu alan, genel kuralların üstüne ek kurallar ve şablonlar koyar. Şablon sayfası, genel kataloğun şablonlarından bir kısmını yeniden kullanır ve yalnız elektrik ve elektronik için eklenenleri ekler; şablonda yalnızca veri değişir. Kural sayfası çizimi, notasyonu, hesap sırasını ve laboratuvar işlerini kapsar; genel kurallarla çakışırsa o kazanır, ders kartı ise bundan da özeldir. Veri dosyası alanın adını ve varsayılan ayar kodunu tutar; ayar belgesini hazırlayan betik bu kodu okur ve genel varsayılanın üstüne uygular.",
+    "gelismis": "Birim şöyle çalışır. Ayar kodu bir betik tarafından okunur ve depo genel varsayılanının üstüne bindirilir; böylece alan, genel ayarın üzerine kendi ayarını koyar. Şablon sayfası genel kataloğun şablonlarından bir kısmını kullanır ve yalnız bu alana eklenenleri anlatır; şablonda değişen tek şey veridir. Kural sayfası çizimi, notasyonu, hesap sırasını ve laboratuvar işlerini kapsar; genel kurallarla çakışırsa kendisi kazanır, ders kartı ise bundan da özeldir.",
+    "detayli": "Alan ayarı genel düzenin üstüne katman olarak eklenir. Önce veri dosyasındaki alan kodu okunur; ayar belgesini hazırlayan betik bu kodu depo genel varsayılanının üstüne bindirir. Şablon sayfası, genel kataloğun şablonlarından bir kısmını yeniden kullanır ve yalnız elektrik ve elektronik için eklenenleri anlatır; bu sayfada şablonun biçimi sabit, yalnızca veri değişir. Kural sayfası, genel kurallara ek olarak çizimi, notasyonu, hesap sırasını ve laboratuvar işlerini tanımlar; çakışma olursa bu sayfa kazanır. Ders kartı ise bu sayfadan da özeldir, yani en son ve en dar katmandır. Bu sıra, genelden alana, alandan derse doğru daralan bir okumayı korur."
+   },
+   "detay": {
+    "girdiler": [
+     "Alanın adı ve varsayılan ayar kodu, genel katalogdan alınan şablonlar ve genel kurallar."
+    ],
+    "ciktilar": [
+     "Elektrik ve elektronik için eklenen şablonlar, alanın kuralları ve ayar belgesine bindirilen alan ayarı."
+    ],
+    "degismezler": [
+     "Alan kodunun ve şablon biçiminin değişmeden kalması, betiğin ve şablonların bağlantısını korur."
+    ],
+    "kenar": [
+     "Genel ve alan kuralı çakıştığında alanın kural sayfası kazanır; ders kartı bundan da özeldir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Alan kodu ve alanın adı, ayar belgesini hazırlayan betik tarafından okunduğu için aynı biçimde kalmalıdır.",
+     "Şablonun biçimi sabittir; bir şablonda yalnızca veri değişir.",
+     "Kural sayfasının çakışmada kazanması ve ders kartının bundan da özel olması okuma sırasını belirler; sıra değişirse yanlış kural geçerli olur."
+    ],
+    "degisebilir": [
+     "Alana yeni bir çizim ya da hesap şablonu eklemek, genel düzene dokunmadan serbestçe yapılabilir.",
+     "Kural sayfasının içindeki maddeler, çizim, notasyon ve laboratuvar sıralaması korunduğu sürece yeniden düzenlenebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Genel kuralla alan kuralı çelişirse hangisi geçerli olur?",
+     "yanit": "Alanın kural sayfası kazanır. Ders kartı ise bu sayfadan da özeldir, yani kendi konusu için en son söz onundur."
+    },
+    {
+     "soru": "Alanın adını ya da varsayılan ayar kodunu değiştirirsem ne olur?",
+     "yanit": "Ayar belgesini hazırlayan betik bu kodu okuyup genel varsayılanın üstüne bindirdiği için alanın davranışı değişir. Bu yüzden kod sabit tutulmalı; kodun değişmesi genel ayarla alan ayarı arasındaki bağlantıyı bozar."
+    }
+   ],
+   "terimler": [],
+   "belirsiz": [
+    "Şablon sayfasının ve kural sayfasının ayrıntılı maddeleri görülmedi; anlatım yalnızca sayfaların kapsamına dayanıyor.",
+    "Betiğin bindirme işleminin tam ayrıntısı ve hangi genel şablonların yeniden kullanıldığı görülmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}
