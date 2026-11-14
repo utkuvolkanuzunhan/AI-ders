@@ -1,0 +1,50 @@
+{
+  "aciklama": "Görsel arayüz ayarı: volkan-merkez deposundaki araclar/mimari_cikar.py bu depoyu bu kurallarla okur ve mimarisini çizer. Kural: CLAUDE.md bölüm 2.",
+  "ad": "AI-ders",
+
+  "bekci": ["araclar/kod.json", "BASLA.md", "mimari-ayar.json"],
+
+  "kirik_bag_yoksay": ["hafiza.md", "araclar/mimari_cikar.py"],
+
+  "komutlar": [
+    { "desen": "araclar/paket.py", "komut": "python3 araclar/paket.py --rol unite --ders <ders>" },
+    { "desen": "araclar/uret.py", "komut": "python3 araclar/uret.py" },
+    { "desen": "araclar/anlatim_testi.py", "komut": "python3 araclar/anlatim_testi.py --kendini-dene" }
+  ],
+
+  "denetimler": [
+    { "ad": "Anlatım kuralları kendini dener", "komut": ["python3", "-X", "utf8", "araclar/anlatim_testi.py", "--kendini-dene"] }
+  ],
+
+  "gorunum": { "yukseklik": "satir", "taban": "giren", "renk": "durum" },
+
+  "akislar": [
+    {
+      "ad": "Sohbet başlar: okuma paketi",
+      "aciklama": "BASLA.md sırası: sohbet depoyu klonlar, paket.py rolüne ve ayar koduna ait parçaları tek pakette verir; başka kural dosyası okunmaz.",
+      "adimlar": [
+        { "dugum": "araclar/paket.py", "not": "Okuma paketi ve PDF kapısı" },
+        { "dugum": "araclar/kod.json", "not": "Ayar kodunun tek kaynağı" }
+      ]
+    },
+    {
+      "ad": "Anlatım denetimi",
+      "aciklama": "Anlatım yapan rol her mesajı göndermeden önce denetler; HATA varsa göndermez.",
+      "adimlar": [
+        { "dugum": "gorevler/anlatim-kontrol.md", "not": "Kural" },
+        { "dugum": "araclar/anlatim_testi.py", "not": "Denetim" },
+        { "dugum": "araclar/anlatim_testi_ek.py", "not": "Ek denetimler" },
+        { "dugum": "araclar/soru_testi.py", "not": "Soru seti widget'ı" }
+      ]
+    },
+    {
+      "ad": "Kod ya da şablon değişince yeniden üretim",
+      "aciklama": "kod.json ya da widget şablonu değişince KOD.md ve galeri yeniden üretilir.",
+      "adimlar": [
+        { "dugum": "araclar/kod.json", "not": "Değişen kaynak" },
+        { "dugum": "araclar/uret.py", "not": "Üretici" },
+        { "dugum": "KOD.md", "not": "Üretilen belge" }
+      ]
+    }
+  ]
+}

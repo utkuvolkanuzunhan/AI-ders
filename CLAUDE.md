@@ -23,6 +23,7 @@ Kullanıcı sohbette kalıcı bir tercih söylerse: genel ise depoya, kişiye ö
 - Widget şablonu ekleyince ya da `kod.json` değişince `python3 araclar/uret.py` ile KOD.md ve galeriyi yeniden üret.
 - Alana özgü kural çekirdeğe değil `alanlar/<alan>/` katmanına yazılır (`alanlar/README.md`); ders kartının başındaki `alan: <ad>` satırı dersi alana bağlar.
 - Claude arayüzü sorunları (formül görüntüleme vb.) alandan bağımsız `claude-sorunlari/` bölümüne yazılır (README'sindeki adımlar); `paket.py` hepsini her pakete ekler. Çekirdek ve alan kuralları formül biçimini tekrar yazmaz, oraya bağlanır.
+- Her değişiklik mimari görünümüne uyar: depo, `volkan-merkez` deposundaki görsel arayüzle çizilir ve ayarı kökteki `mimari-ayar.json` dosyasıdır. Yeni klasör, yeni araç, yeni denetim ya da ayardaki bir akışın adımına dokunan değişiklik ayarı aynı değişiklikte günceller. Ölçüm `volkan-merkez` içinden: `python araclar/mimari_cikar.py <AI-ders yolu> --calistir --ozet` (hata 0, denetim yeşil, her akışta `dogrulanmamis` 0).
 - Her değişiklik `DEGISIKLIKLER.md`'ye bir satır: `- tarih · dosya · ne değişti · neden` (en yenisi en üstte).
 - Değişiklikten sonra çalıştır: `python3 araclar/anlatim_testi.py --kendini-dene` ve `python3 araclar/uret.py`; hata varsa düzeltmeden bırakma. Paket etkileniyorsa `python3 araclar/paket.py --rol unite --ders <ders>` ile dene.
 - Kullanıcı PR istediyse PR aç ve onaysız birleştirme; aksi hâlde `gorevler/kural-guncelle.md` akışı geçerlidir.
