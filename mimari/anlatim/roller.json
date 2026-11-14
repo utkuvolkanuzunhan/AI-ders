@@ -1,0 +1,310 @@
+{
+ "surum": 1,
+ "bolum": "roller",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "k:roller",
+   "tur": "birim",
+   "ozet": "6709785d7e32",
+   "iskelet": "866c278c240e",
+   "baslik": "Sohbet rolleri",
+   "ne": {
+    "cok_basit": "Her sohbetin hangi işi yapacağını ve neyi yapmayacağını söyleyen görev tanımları burada durur; her sohbet tek bir iş görür.",
+    "basit": "Burada sohbet türlerinin görev tanımları durur: ders sohbetini yöneten, ünite anlatan, dosya çeviren, soru çözen ve soru testi hazırlayan sohbet. Her sohbet yalnız kendi işini yapar, diğerinin işine karışmaz.",
+    "normal": "Bu bölüm, aynı depoyu okuyan sohbetlerin iş bölümünü tanımlar. Biri projeyi yönlendirir, biri bir dersin takibini tutar, biri dersin tek ünitesini anlatır, biri dosyayı metne çevirir, biri tek soruyu çözer, biri de soru dosyasını teste dönüştürür. Her tanım sohbetin neyi yaptığını ve neyi yapmadığını söyler, böylece iki sohbet aynı işe girişmez.",
+    "gelismis": "Bu bölüm, aynı depoyu okuyan sohbetlerin iş bölümünü tanımlar. Ana sohbet projeyi yönlendirir ve işi doğru sohbete gönderir; ders yöneticisi dersin ünite tablosunu, zayıf noktalarını ve kararlarını tutar ama anlatmaz; ünite sohbeti tek üniteyi anlatır; çevirici dosyayı metne çevirir ama anlatmaz; soru çözücü tek soruyu çözer; soru seti sohbeti soru dosyasını teste çevirir ama konu anlatmaz. Her tanım hem yapılacak işi hem de yapılmayacak işi sınırlar.",
+    "detayli": "Bu bölüm, aynı depoyu okuyan sohbetlerin iş bölümünü tanımlar. Ana sohbet projeyi yönlendirir, derse dair işi o dersin sohbetine gönderir ve dosya geldiğinde çeviri için ayrı sohbet açtırır. Ders yöneticisi dersin ünite tablosunu, zayıf noktalarını ve kararlarını tutar, üniteleri sırayla açtırır ama anlatmaz. Ünite sohbeti tek üniteyi anlatır ve dersin sohbetine tek rapor gönderir. Çevirici dosyayı anlatım sohbetinin okuyacağı metne çevirir, anlatmaz. Soru çözücü tek soruyu adım adım çözer; çok soru gelirse soru seti sohbetine yönlendirir, o da soru dosyasını tıklanabilir teste çevirir. Her tanım yapılacak işi de yapılmayacak işi de sınırlar."
+   },
+   "mantik": {
+    "cok_basit": "İşler sohbetlere paylaştırılınca her biri kendi işini iyi yapar, kimse başkasının işine karışmaz ve kayıp olmaz.",
+    "basit": "Tek sohbet her şeyi yaparsa karışır ve şişer. İş sohbetlere paylaştırılınca her biri tek işe odaklanır, ders hafızası da temiz kalır.",
+    "normal": "Bir sohbet hem yönetip hem anlatıp hem çevirirse kısa sürede dolar ve işleri birbirine karışır. Bu yüzden her iş ayrı bir sohbete verildi: yöneten anlatmaz, anlatan çevirmez, çeviren anlatmaz. Her tanımın hem yapılacağı hem yapılmayacağı işi söylemesi, iki sohbetin aynı işe girişmesini ve iş arasında boşluk kalmasını engeller.",
+    "gelismis": "Bir sohbet hem yönetip hem anlatıp hem çevirirse kısa sürede dolar ve işleri birbirine karışır. Bu yüzden her iş ayrı bir sohbete verildi: yöneten anlatmaz, anlatan çevirmez, çeviren anlatmaz. Her tanımın hem yapılacağı hem yapılmayacağı işi söylemesi, iki sohbetin aynı işe girişmesini önler. Ünitelerin ayrı sohbetlerde anlatılıp tek raporla ders hafızasına işlenmesi, uzun bir dersin tek sohbeti şişirmeden sürmesini sağlar.",
+    "detayli": "Bir sohbet hem yönetip hem anlatıp hem çevirirse kısa sürede dolar ve işleri birbirine karışır. Bu yüzden her iş ayrı bir sohbete verildi: yöneten anlatmaz, anlatan çevirmez, çeviren anlatmaz. Her tanımın hem yapılacağı hem yapılmayacağı işi söylemesi, iki sohbetin aynı işe girişmesini ve iş arasında boşluk kalmasını önler. Ünitelerin ayrı sohbetlerde anlatılıp tek raporla ders hafızasına işlenmesi, uzun bir dersin tek sohbeti şişirmeden sürmesini sağlar; hafızada yalnız tablo, zayıf noktalar ve kararlar durduğu için sonraki sohbet ağır bir geçmiş taşımaz. Soru çözmenin ve soru testi üretmenin ayrı roller olması, tek soru ile çok soruluk işin farklı biçim istemesindendir."
+   },
+   "nasil": {
+    "basit": "Kullanıcının işi önce ana sohbete gelir. Ana sohbet işin türüne bakar ve uygun sohbete gönderir: ders işi ders sohbetine, dosya çevirisi çeviri sohbetine, soru işi soru sohbetine. Her sohbet işi bitirince sonucu bildirir.",
+    "normal": "Kullanıcının işi önce ana sohbete gelir. Ana sohbet işin türüne bakar: derse dair iş o dersin sohbetine gider, dosya gelirse çeviri için ayrı bir sohbet açılır, tek soru ve soru testi kendi sohbetlerine gider. Ders sohbeti üniteleri sırayla açtırır; her ünite bitince özet ve kısa test yapılır ve ders sohbetine tek rapor gider, ders sohbeti bunu hafızasına işler. Bir sohbet kendi işi dışında bir istek alırsa yapmaz, uygun sohbete yönlendirir.",
+    "gelismis": "Kullanıcının işi önce ana sohbete gelir. Ana sohbet işin türüne bakar: derse dair iş o dersin sohbetine gider, dosya gelirse çeviri için ayrı bir sohbet açılır, çeviri ile anlatım hiçbir zaman aynı sohbette olmaz. Ders sohbeti ünite tablosuna bakar ve üniteleri sırayla açtırır. Ünite sohbeti üniteyi anlatır, sonunda özet ve kısa test yapar ve ders sohbetine tek rapor gönderir; ders sohbeti raporu hafızasına işler, sonraki üniteyi başka bir sohbette açtırır. Tek soru gelirse soru çözücüye, birden çok çoktan seçmeli soru gelirse soru seti sohbetine gider. Bir sohbet kendi işi dışında bir istek alırsa yapmaz, uygun sohbete yönlendirir.",
+    "detayli": "Kullanıcının işi önce ana sohbete gelir. Ana sohbet işin türüne bakar: derse dair iş o dersin sohbetine gider, dosya gelirse çeviri için ayrı bir sohbet açılır, çeviri ile anlatım hiçbir zaman aynı sohbette olmaz. Ders sohbeti ünite tablosuna bakar ve üniteleri sırayla açtırır; kendisi anlatmaz, yalnız tabloyu, zayıf noktaları ve kararları hafızada tutar. Ünite sohbeti tek üniteyi anlatır, sonunda özet ve kısa test yapar ve ders sohbetine tek rapor gönderir; ders sohbeti raporu hafızasına işler, sonraki ünite başka bir sohbette açılır. Çevirici yalnız koordinatörün açtığı çeviri sohbetinde çalışır, çıktısı bir metin dosyası ve bir indeks satırıdır. Tek soru gelirse soru çözücüye gider: önce kısa cevap, sonra adım adım çözüm. Birden çok çoktan seçmeli soru gelirse soru seti sohbetine gider; o, İngilizce ve Türkçe tıklanabilir testi her zaman aynı biçimde üretir. Bir sohbet kendi işi dışında bir istek alırsa yapmaz, uygun sohbete yönlendirir."
+   },
+   "detay": {
+    "girdiler": [
+     "Ana sohbet kullanıcının her türlü isteğini alır ve işi uygun sohbete gönderir.",
+     "Ünite sohbeti ders yöneticisinden bir üniteyi anlatma işi alır.",
+     "Çevirici bir ders PDF'ini ya da OCR metnini girdi olarak alır.",
+     "Soru seti sohbeti bir soru dosyasını ya da istenen sayıda soruyu alır."
+    ],
+    "ciktilar": [
+     "Ünite sohbeti anlatımın yanında özet, kısa test ve ders sohbetine giden tek rapor üretir.",
+     "Çevirici bir metin dosyası ve bir indeks satırı üretir.",
+     "Soru seti sohbeti iki dilli, tıklanabilir ve hep aynı biçimde bir test üretir."
+    ],
+    "degismezler": [
+     "Çeviri ile anlatım aynı sohbette yapılmaz.",
+     "Ders yöneticisi ders anlatmaz, yalnız hafızayı tutar ve üniteleri açtırır.",
+     "Her ünite ayrı bir sohbette anlatılır ve tek raporla biter.",
+     "Çoktan seçmeli soru çok sayıdaysa soru çözücü çözmez, soru seti sohbetine yönlendirir."
+    ],
+    "kenar": [
+     "Kullanıcı çeviri sohbetinde anlat dese bile çevirici anlatmaz.",
+     "Soru seti sohbeti ders içeriği yerine soru dosyasıyla çalışır ve konu anlatmaz."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Her sohbet türünün yaptığı ve yapmadığı iş tanımı, diğer sohbetlerin ona güvendiği söz olarak sabit kalır.",
+     "Çeviri ile anlatımın ayrı sohbetlerde yapılması bozulmaz.",
+     "Ünitenin ders sohbetine tek rapor göndermesi, ders hafızasının dayandığı biçimdir.",
+     "Soru testinin biçimi her zaman aynıdır."
+    ],
+    "degisebilir": [
+     "Bir sohbetin kendi işini görürken kullandığı örnekler ve cümle kalıpları kuralı bozmadan değişebilir.",
+     "Yeni bir iş türü için yeni bir sohbet tanımı eklenebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Çevirici sohbet kullanıcı isterse neden anlatmaz?",
+     "yanit": "Çeviri ile anlatım aynı sohbette yapılmaz. Çeviri metni bir kez çıkarır; anlatım ayrı sohbette o metinden yapılır, böylece iki iş birbirinin bağlamını şişirmez."
+    },
+    {
+     "soru": "Ders yöneticisi kendisi ders anlatsa ne bozulur?",
+     "yanit": "Ders sohbeti dersin ünite tablosunu, zayıf noktalarını ve kararlarını tutar. Anlatım onu şişirir ve hafızayı karıştırır; bu yüzden anlatım ünite sohbetlerine bırakılır."
+    },
+    {
+     "soru": "Çok sayıda çoktan seçmeli soru gelirse hangi sohbet ele alır, neden?",
+     "yanit": "Soru seti sohbeti alır. Soru çözücü tek soru için kısa cevap ve adım adım çözüm verir; çok soruluk iş ise hep aynı biçimde tıklanabilir teste dönüştürülür."
+    }
+   ],
+   "kritik_neden": "Bozulursa sohbetler hangi işin kime ait olduğunu şaşırır; aynı iş iki yerde yapılır ya da hiç yapılmaz, ders hafızası karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Sohbet türlerinin hangi mesajla ya da hangi ayarla seçildiği görülemedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "roller/ders-yoneticisi.md",
+   "tur": "dosya",
+   "ozet": "c12f752bee50",
+   "iskelet": "249885099835",
+   "baslik": "Ders yöneticisi rolü",
+   "ne": {
+    "cok_basit": "Bu sohbet ders anlatmadan dersin planını ve notlarını tutar.",
+    "normal": "Bu sohbet bir dersin ana sohbetidir ve ders anlatmaz. Dersin ünite tablosunu, zayıf noktalarını ve kararlarını hafızada tutar. Ünite sohbetlerini sırayla açtırır ve biten ünitenin raporunu hafızaya işler."
+   },
+   "nasil": {
+    "normal": "Sohbet önce ders hafızasını okur ve ünite listesini müfredat sırasına göre tutar. Ünite sohbetlerini sırayla ve ihtiyaç oldukça açtırır: önceki ünite bitmeden sonrakini açmaz. Bir ünite raporu gelince hafızaya işler ve kullanıcıya sıradaki bağlantıyı verir. PDF listeleri de doğrudan bu sohbete gelir."
+   },
+   "sinir": {
+    "sabit": [
+     "Ünite sohbetine gönderilen brief satırının biçimi ve Rol alanındaki adlar sabittir; sohbetler bunlara göre tanınır.",
+     "Ünite sohbetlerinin sırası sabittir: bir ünite bitmeden sonraki açılmaz.",
+     "Ders hafızasının adı ve yeri sabittir, çünkü ünite sohbetleri ilerlemeyi oradan okur."
+    ],
+    "degisebilir": [
+     "Kullanıcıya gösterilen sıradaki ünite bağlantısının hangi cümleyle sunulacağı serbesttir.",
+     "Hafızadaki karar ve zayıf nokta satırlarının sırası ve ayrıntısı, ünite tablosu bozulmadığı sürece içeride serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu rolle açılan ders sohbeti yanlış çalışır; başka parça bundan etkilenmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "roller/ders-yoneticisi.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "roller/koordinator.md",
+   "tur": "dosya",
+   "ozet": "cc18c33e9794",
+   "iskelet": "a9c1fafc6de6",
+   "baslik": "Ana sohbet koordinatörü",
+   "ne": {
+    "cok_basit": "Bu sohbet projenin ana sohbeti olarak isteği doğru sohbete yönlendirir.",
+    "normal": "Bu sohbet projenin ana sohbetidir ve işi yönlendirir. Derse dair her iş o dersin sohbetine gider. PDF gelirse çeviri için ayrı bir sohbet açılır; çeviri ve anlatım aynı sohbette olmaz."
+   },
+   "nasil": {
+    "normal": "Yeni sohbet açarken brief satırının ilk cümlesi her zaman aynı biçimde yazılır; kod ayarlardan gelir, ders hafızasındaki tempo satırı varsa o kullanılır. Devir isteği gelince yeni sohbet açılır ve bağlantısı eskisine bildirilir. Yeni kural gelirse yalnız o an aktif anlatım sohbetine tek satır haber verilir; toplu iletim yapılmaz."
+   },
+   "sinir": {
+    "sabit": [
+     "Sohbet açarken brief satırının ilk cümlesi, AI-ders oku ile başlayan biçim, sabittir; bütün roller bunu okur.",
+     "Ders sohbetlerine toplu iletim yapılmaması ve ünite sohbetlerinin sırayla açılması, başka sohbetlerin beklediği düzen olduğu için sabittir.",
+     "Proje hafızasının yalnız ilerleme, karar ve bağlantı tutması sabittir; kural kopyası oraya girmez."
+    ],
+    "degisebilir": [
+     "Ayarlar dosyasında kişisel tercihlerin hangi sırayla ve hangi başlıklarla yazılacağı serbesttir.",
+     "Konu ağacı panelinin görünümü ve ağaç verisinin biçimi, panel kullanan projede serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa sohbetler yanlış brief ile açılır ve iş yanlış ders ya da rolde yapılır; diğer roller bu sohbetin açtığı ya da yönlendirdiği sohbetlerle çalışır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "roller/koordinator.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "roller/pdf-cevirici.md",
+   "tur": "dosya",
+   "ozet": "4f17858f8553",
+   "iskelet": "5fee0025f1f0",
+   "baslik": "PDF çevirici rolü",
+   "ne": {
+    "cok_basit": "Bu sohbet PDF dosyasını okunabilir metne çevirir, ders anlatmaz.",
+    "normal": "Bu sohbetin tek işi, bir ders PDF'ini ya da OCR metnini anlatım sohbetinin okuyacağı metne çevirmektir. Yalnız koordinatörün açtığı çeviri sohbetinde çalışır. Anlatım yapmaz, kullanıcı anlat dese bile; çıktısı metin dosyası ve indeks satırıdır."
+   },
+   "nasil": {
+    "normal": "Önce tek satırla çevirinin başladığını söyler. Dosyayı metne çevirir ve ders klasörüne kaydeder, indekse bir satır ekler. Koordinatöre tek mesajla anlatım sohbeti istenir. Bağlantıyı PDF'in yüklendiği sohbete, sayfa listesini ders sohbetine iletir."
+   },
+   "sinir": {
+    "sabit": [
+     "Çevirinin çıktısının bir metin dosyası ve indekse eklenen bir satır olması sabittir; anlatım sohbetleri bu dosyayı okur.",
+     "Brief biçimi, yani anlatım sohbetine verilen ders ve kaynak bilgisinin sırası sabittir; koordinatör ve anlatım sohbetleri buna dayanır.",
+     "Anlatım ve çevirinin ayrı sohbetlerde kalması sabittir."
+    ],
+    "degisebilir": [
+     "Çeviri sırasında hangi araçların ya da yöntemlerin kullanılacağı, sonucu bozmadığı sürece serbesttir.",
+     "Koordinatöre giden mesajın kelime seçimi, brief bilgisi değişmeden serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa anlatım sohbetleri kaynak metnine ulaşamaz ve ders anlatımı başlayamaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "roller/pdf-cevirici.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "roller/soru-cozumu.md",
+   "tur": "dosya",
+   "ozet": "39bb92eafd7e",
+   "iskelet": "faba5f4b1fff",
+   "baslik": "Soru çözüm rolü",
+   "ne": {
+    "cok_basit": "Bu sohbet tek bir soruyu çözer ve cevabı adım adım gösterir.",
+    "normal": "Bu sohbet kullanıcının getirdiği tek soruyu, çıkmış soruyu ya da ödev sorusunu çözer. Birden çok çoktan seçmeli soru gelirse bu sohbet çözmez, soru seti sohbetine yönlendirir. Önce kısa cevap, sonra adım adım çözüm gelir."
+   },
+   "nasil": {
+    "normal": "Önce sorunun hangi konuya ait olduğu bulunur ve kaynakta yalnız ilgili sayfa okunur. Cevap önce kısa verilir, sonra her adım ayrı satırda numaralanır. Gerekirse adım adım hesap ya da türetme gösterilir. Tuzaklar madde madde yazılır, benzer bir sınav sorusu kart üzerinden sunulur. Ödevde yöntem gösterilir, son adım kullanıcıya bırakılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Kısa cevabın önce gelmesi ve adımların ayrı satırda numaralanması sabittir.",
+     "Birden çok soru gelince soru seti sohbetine yönlendirme kuralı sabittir, çünkü o sohbet ayrı bir test üretir.",
+     "Kaynağın yalnız ilgili sayfasının okunması yöntemi sabittir."
+    ],
+    "degisebilir": [
+     "Tuzakların kaç madde olduğu ve benzer sınav sorusunun hangi zorlukta seçileceği soruya göre serbesttir.",
+     "Adım sayısı ve hesap ayrıntısı, sorunun zorluğuna göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa tek soruların çözümü yanlış ya da ödevde doğrudan cevapla gelebilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "roller/soru-cozumu.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "roller/soru-seti.md",
+   "tur": "dosya",
+   "ozet": "3fb9edece526",
+   "iskelet": "463c7b659e9e",
+   "baslik": "Soru seti rolü",
+   "ne": {
+    "cok_basit": "Bu sohbet çoktan seçmeli soru dosyasını tıklanabilir bir teste çevirir.",
+    "normal": "Bu sohbet soru dosyasını ya da istenen sayıda soruyu İngilizce ve Türkçe tıklanabilir bir teste çevirir. Konu anlatmaz; ders içeriği yerine soru dosyasıyla çalışır. Testin biçimi her zaman aynıdır."
+   },
+   "nasil": {
+    "normal": "Soru dosyası gelince tek satırla işin başladığı söylenir. Soru sayısı, bölüm ve kaynak dosyadan çıkarılır; eksik bilgi sorulur ya da hesaplanıp söylenir. Görünüm ya da davranış şikâyeti şablon değişikliğidir. Yanlış çözülen konular ders sohbetine tek satırla zayıf nokta olarak bildirilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Testin biçiminin her zaman aynı olması sabittir; sohbet kendi sayfasını yazmaz.",
+     "Kullanıcıya İngilizce ve Türkçe birlikte gösterilmesi sabittir; test ikisini birlikte taşır.",
+     "Konu anlatılmadan yalnız soru dosyasının işlenmesi sabittir."
+    ],
+    "degisebilir": [
+     "Eksik bilgi için kullanıcıya hangi sırayla soru sorulacağı serbesttir.",
+     "Kaynağın hesaplanarak mı yoksa sorulup mu alınacağı, o anki durum ve sorunun ayrıntısına göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa çoktan seçmeli soru dosyaları teste dönüşmez ve kullanıcı çalışması için hazır test alamaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "roller/soru-seti.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "roller/unite.md",
+   "tur": "dosya",
+   "ozet": "deeb1aa7435f",
+   "iskelet": "6d2e39bb9981",
+   "baslik": "Ünite sohbeti rolü",
+   "ne": {
+    "cok_basit": "Bu sohbet dersin tek bir ünitesini anlatır, bitince sıradaki ünite başlar.",
+    "normal": "Bu sohbet bir dersin tek bir ünitesini kullanıcıya anlatır. Ünite bitince özet ve kısa test yapılır, ders sohbetine tek rapor gider. Sonraki ünite başka bir sohbette açılır."
+   },
+   "nasil": {
+    "normal": "Açılışta ayarlar, dersin hafızası ve yalnız bu ünitenin kaynak aralığı okunur. Devir notu varsa önce o okunur. Konu planı sohbete yazılmadan çıkarılır; aynı türde adım art arda gelmez. Ünite sonunda özet, mini test ve ekstra yapılır; ders hafızasına doğrudan yazılmaz."
+   },
+   "sinir": {
+    "sabit": [
+     "Ünite sohbetinin açılış sırası ve ilerleme dosyasından okunan bilgiler sabittir; diğer sohbetler bu kayda dayanır.",
+     "Ünite bitince ders sohbetine tek rapor gönderilmesi sabittir; rapor blok başına değil ünite sonunda gider.",
+     "Sıradaki ünitenin sohbeti, kullanıcı başlamak isteyince ve koordinatör üzerinden açılır; bu sıra sabittir."
+    ],
+    "degisebilir": [
+     "Konu anlatımında hangi örneklerin seçileceği ve anlatımın dili ayrıntısı, kullanıcının düzeyine göre serbesttir.",
+     "Konu planının sohbet içinde nasıl tutulacağı ve adımların sayısı serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa ünite anlatımı sırayı kaçırır ya da raporu ders sohbetine iletmez, bu da sonraki ünitelerin başlamamasına yol açar.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "roller/unite.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

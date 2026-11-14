@@ -1,0 +1,1975 @@
+{
+ "surum": 1,
+ "bolum": "gorsel",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "gorsel/galeri/galeri.html",
+   "tur": "dosya",
+   "ozet": "3ea3ec6ab259",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Ayar galerisi sayfası",
+   "ne": {
+    "cok_basit": "Ayarları seçtirip şablonları canlı gösteren, tarayıcıda açılan bir sayfadır.",
+    "basit": "Bu sayfa anlatım ayarlarını seçtirir, seçilen kodu gösterip kopyalatır ve şablonları canlı önizler.",
+    "normal": "Bu sayfa ayar satırlarını ve şablon kartlarını tek ekranda toplar. Seçim yapıldıkça üstteki kod anında güncellenir, önizlemeler de seçilen renk paletine göre yeniden çizilir.",
+    "gelismis": "Bu sayfa, gömülü veriyle üretilen tek dosyalık bir arayüzdür. Ayar satırları veriden okunur ve her şablon kendi küçük önizleme alanında çalışır. Beğen ve Kullanma düğmeleri şablonu kodun sonuna ekler ve ilgili ayar ikinci seçeneğe geçer.",
+    "detayli": "Bu sayfa, betik tarafından üretilen tek bir sayfadır; ayar tanımlarını ve şablon kartlarını içine gömülü taşır. Üstteki sabit çubukta kod canlı gösterilir, varsayılan harfler soluk görünür; Kopyala kodu panoya alır, Varsayılana dön tüm seçimleri sıfırlar. Altta ayar satırları ve her şablonun önizlemesi ile Beğen ve Kullanma düğmeleri bulunur."
+   },
+   "mantik": {
+    "cok_basit": "Ayarları elle yazmak yerine tıklayarak seçmek, hatayı azaltır.",
+    "basit": "Kodu elle yazmak yerine düğmelerle seçmek hata riskini azaltır. Şablonları canlı görmek karar vermeyi kolaylaştırır.",
+    "normal": "Ayar kodu harf ve rakamlardan oluştuğu için elle yazıldığında kolay bozulur. Bu sayfa seçimi düğmelere çevirir, kodu otomatik kurar ve şablonları gerçek görünümleriyle yan yana gösterir.",
+    "gelismis": "Kod ile sonucu aynı ekranda göstermek, ayar değiştiren kişinin etkisini hemen görmesini sağlar. Önizlemelerin seçilen renk paletine ve açık ya da koyu temaya göre yeniden çizilmesi, şablonların sohbetteki görünümüne yakın durmasını korur.",
+    "detayli": "Seçimler ve kod tek bir yerde tutulduğu için kod alanı ile ayar satırları her zaman aynı durumu gösterir. Önizlemelerin tema ve palet değişince yeniden kurulması, koyu ve açık görünümde şablonların doğru renkle kalmasını sağlar. Pano izni yoksa kod seçilerek elle kopyalanmaya hazır bırakılır."
+   },
+   "nasil": {
+    "basit": "Sayfa açılınca ayar satırları ve şablon kartları oluşur. Bir ayar seçildikçe üstteki kod anında değişir. Önizlemeler de seçilen renge göre yenilenir.",
+    "normal": "Açılışta ayar tanımları okunur ve her harf için seçenek düğmeleri çizilir; varsayılan seçenek etiketlenir. Her şablon kartı için küçük bir önizleme alanı açılır ve şablon orada çalıştırılır. Bir düğmeye basılınca üstteki kod yeniden yazılır ve önizlemeler seçilen palete göre yeniden çizilir. Beğen ve Kullanma seçimleri kodun sonuna eklenir.",
+    "gelismis": "Sayfa, ayar tanımlarını ve şablon verisini içine gömülü bir veri alanından okur. Her ayarın seçili değeri bir tabloda tutulur ve başlangıçta depo varsayılanıyla dolar. Bir şablon beğenildiğinde ya da kullanılmadığında ilgili ayar ikinci seçeneğe geçer ve seçimler kodun sonuna eklenir. Önizleme alanları, tema ya da palet değişince yeniden kurulur; yükseklikleri içeriğe göre ölçülerek ayarlanır. Kopyala düğmesi kodu panoya yazar ve izin yoksa metni seçili hâle getirir.",
+    "detayli": "Sayfa açılınca gömülü veri okunur: ayar tanımları ve şablon kartları. Her ayarın seçili değeri ayrı tutulur ve depo varsayılanıyla başlar; varsayılan seçenek soluk bir etiketle işaretlenir. Bir düğmeye basılınca yalnızca o ayarın değeri değişir ve kod baştan birleştirilir. Bir şablon beğenildiğinde ya da kullanılmadığında ilgili ayar ikinci seçeneğe geçer ve şablonların kimlikleri kodun sonuna eklenir. Her şablon kendi önizleme alanında çalışır; tema ya da palet değişince önizlemeler yeniden kurulur ve eski renkle kalmaz. Önizleme yüksekliği içeriğe göre ölçülür. Kopyala düğmesi kodu panoya yazmaya çalışır, izin yoksa metni seçili bırakır. Varsayılana dön düğmesi tüm seçimleri ve beğenileri sıfırlar."
+   },
+   "detay": {
+    "girdiler": [
+     "Ayar tanımları: her ayarın adı, seçenekleri ve depo varsayılanı.",
+     "Şablon verisi: her şablonun kimliği, adı, açıklaması ve kendi görünümü."
+    ],
+    "ciktilar": [
+     "Kopyalanacak ayar kodu, sohbet başına yapıştırılmak üzere.",
+     "Canlı önizlemeli şablon kartları ve ayar satırları."
+    ],
+    "degismezler": [
+     "Varsayılan seçenekler soluk etiketle belirtilir ve sıfırlanınca bu değerlere dönülür.",
+     "Kopyalanan kodda harfler ayar sırasıyla yer alır."
+    ],
+    "kenar": [
+     "Panoya yazma izni yoksa kod seçili bırakılır ve elle kopyalanır.",
+     "Önizleme yüksekliği içerik ölçülerek ayarlanır; ölçülemezse başlangıç yüksekliği kalır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sayfanın içindeki veri alanının yeri ve biçimi sabit kalmalı; bu yere veri yerleştirildiği için diğer kısımlar buna dayanır.",
+     "Kodun harf ve rakam çiftleriyle yazılma biçimi sabit kalmalı, çünkü kopyalanan metin bu biçimle kullanılır.",
+     "Beğen ve Kullanma seçimlerinin kodun sonuna eğik çizgiyle eklenmesi düzeni sabittir."
+    ],
+    "degisebilir": [
+     "Sayfanın renkleri, yazı tipleri ve düzeni serbestçe değiştirilebilir; veri alanına dokunulmaz.",
+     "Şablon kartlarındaki başlık ve açıklama metinleri içeride serbestçe değiştirilebilir.",
+     "Üstteki sohbet başı satırının ifadesi ve yardım metinleri serbestçe düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu sayfa bozulursa seçim ve kopyalama işlemleri durabilir, şablon önizlemeleri görünmeyebilir.",
+   "terimler": [],
+   "belirsiz": [
+    "Sayfadaki uzun veri satırları kesik geldi; ayar adlarının ve şablon metinlerinin tam içeriğini göremedim.",
+    "Şablon kartlarının kendi görünümlerini ve hangi şablonların bulunduğunu okumadım."
+   ],
+   "okunan": [
+    "gorsel/galeri/galeri.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/galeri/galeri.sablon.html",
+   "tur": "dosya",
+   "ozet": "e51d45c1a65d",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Galeri sayfası kalıbı",
+   "ne": {
+    "cok_basit": "Galeri sayfasının boş kalıbıdır; içine ayar bilgisi konunca gerçek sayfa olur.",
+    "basit": "Bu dosya galeri sayfasının boş kalıbıdır. Ayar bilgisi ve şablon listesi buraya yerleştirilince sayfa çalışır hâle gelir.",
+    "normal": "Bu sayfa, ayar satırlarını ve şablon kartlarını gösteren galeri sayfasının boş kalıbıdır. Kod ile şablon bilgisinin yerleştirileceği bir veri alanı içerir; bu alan doldurulunca sayfa tam işlevli olur.",
+    "gelismis": "Bu parça, galeri sayfasının verisiz hâlidir: sayfanın tüm görünümü ve davranışı burada durur, ayar tanımları ise sonradan yerleştirilen veri alanından gelir. Üretim betiği bu alanı bulup ayar ve şablon bilgisini yazarak galeri sayfasını oluşturur.",
+    "detayli": "Bu parça, galeri sayfasının kalıbıdır ve üretilen galeri sayfası bu kalıptan çıkar. Aralarındaki fark, veri alanında yer tutucu olarak duran boş değerdir. Veri yerine boş bir değer konmuşsa sayfa açıldığında ayar satırları ve şablon kartları oluşmaz. Betik bu yer tutucuyu kod ve şablon verisiyle değiştirerek galeri sayfasını üretir."
+   },
+   "mantik": {
+    "cok_basit": "Veriyi sonradan koymak, aynı sayfayı her seferinde baştan yazmadan güncel tutar.",
+    "basit": "Görünüm tek yerde durur, ayar bilgisi her üretimde dışarıdan yerleştirilir. Böylece görünüm değişince veri elle yeniden yazılmaz.",
+    "normal": "Görünüm ile veri ayrı tutulunca, ayar tanımı değiştiğinde sayfa kalıbı yeniden düzenlenmek zorunda kalmaz. Üretim sırasında yalnızca yer tutucu doldurulur, geri kalan sayfa aynı kalır.",
+    "gelismis": "Kalıbın veri alanı tek bir işaretle belirlendiği için görünüm ve veri birbirinden bağımsız değişir. Bu, sayfanın tasarımını bozmadan ayar tanımlarının güncellenmesine izin verir. Böylece görsel düzeni değiştiren kişi veriye, veriyi değiştiren kişi görünüme dokunmak zorunda kalmaz.",
+    "detayli": "Galeri sayfası bir kalıp olarak tutulursa, ayar ya da şablon listesi değiştiğinde görünümün kendisi değişmez; yalnızca veri alanı yeniden doldurulur. Bu, tasarımla içeriğin ayrı evrilmesini sağlar. Ayrıca kalıp üzerinde yapılan görsel düzenleme, üretilen her galeri sayfasına aynı anda yansır, çünkü hepsi aynı kalıptan çıkar."
+   },
+   "nasil": {
+    "basit": "Sayfa açılınca önce veri alanı okunur. Veri boşsa ayar satırları ve kartlar oluşmaz. Veri doluysa sayfa galeri sayfası gibi çalışır.",
+    "normal": "Sayfa açılınca veri alanındaki kod ve şablon bilgisi okunur. Kodun harfleri için seçenek düğmeleri çizilir, şablon listesi için kartlar oluşturulur. Her kart kendi önizleme alanında çalışır. Düğmelere basıldıkça üstteki kod yeniden yazılır, önizlemeler de seçilen renk paletine göre yenilenir.",
+    "gelismis": "Kalıpta veri alanı tek bir yer tutucu olarak durur; üretim betiği bu yer tutucuyu kod ve şablon verisiyle değiştirir. Sayfa çalışınca önce kod varsayılanları okunur ve her ayarın seçili değeri belirlenir. Ardından şablon listesi kart kart çizilir ve her kart kendi önizleme alanında çalıştırılır. Düğme seçimleri seçili değerleri değiştirir ve kod her seferinde harf sırasıyla yeniden birleştirilir. Beğen ya da Kullanma seçildiğinde ilgili ayar ikinci seçeneğe geçer ve şablon kimlikleri kodun sonuna eklenir.",
+    "detayli": "Betik üretim sırasında kalıptaki yer tutucuyu bulur ve yerine kod ile şablon verisini yazar. Sayfa tarayıcıda açıldığında önce bu veri okunur; ayarların depo varsayılanları ayrı alınır ve her ayarın seçili değeri bu varsayılanla başlar. Ayar satırları seçenek düğmesi olarak çizilir, varsayılan seçenek soluk bir etiketle işaretlenir. Şablon listesi kart kart oluşturulur ve her kart kendi önizleme alanında, o anki temanın renkleriyle çalışır. Bir düğmeye basılınca yalnızca o ayarın değeri değişir ve kod baştan birleştirilir. Beğen ya da Kullanma seçimleri ilgili ayarı ikinci seçeneğe çeker ve kimlikleri kodun sonuna ekler. Tema ya da palet değişince önizlemeler yeniden kurulur. Kopyala düğmesi kodu panoya yazmaya çalışır, izin yoksa metni seçili bırakır."
+   },
+   "detay": {
+    "girdiler": [
+     "Veri alanındaki yer tutucu, betik tarafından kod ve şablon verisiyle değiştirilir.",
+     "Ayar tanımları ve şablon listesi, kalıbın içinde gömülü veri olarak okunur."
+    ],
+    "ciktilar": [
+     "Tarayıcıda çalışan galeri sayfası: ayar satırları, kod alanı ve şablon kartları.",
+     "Kopyalanacak ayar kodu ve seçimlere göre yenilenen önizlemeler."
+    ],
+    "degismezler": [
+     "Veri alanındaki yer tutucu tek bir işaretle belirlenir; işaret bozulursa veri yerleşmez.",
+     "Kod alanı her seçimde yeniden yazılır; eski kod sayfada kalmaz."
+    ],
+    "kenar": [
+     "Veri boş bırakılırsa sayfa ayar satırlarını ve kartları oluşturamaz.",
+     "Panoya yazma izni yoksa kod seçili bırakılır ve elle kopyalanır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Veri alanındaki yer tutucu sayfada tek ve aynı yerde kalmalı; üretim betiği tam bu yere veriyi yazar.",
+     "Veriden okunan kod ve şablon alanlarının adları sabit kalmalı; sayfa bu adlara göre çalışır.",
+     "Şablon kimliklerinin ve seçim kodunun harf ile rakam düzeni sabittir, çünkü kopyalanan kod bu düzenle kullanılır."
+    ],
+    "degisebilir": [
+     "Sayfanın görünümü, renkleri ve yazı tipleri serbestçe değiştirilebilir; veri yeri dışındaki her şey içeride düzenlenebilir.",
+     "Giriş metni, yardım metinleri ve düğme yazıları içerik olarak serbestçe düzenlenebilir.",
+     "Önizleme alanlarının boyut ayarları serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bu kalıp bozulursa veri yerleşmez ve üretilen galeri sayfası çalışmaz hâle gelir.",
+   "terimler": [],
+   "belirsiz": [
+    "Kalıbın uzun satırlarının tamamı kesik geldi; görünüm ayrıntılarını ve bağlantılı yazı tiplerinin davranışını göremedim.",
+    "Bu kalıbın başka hangi betiklerce okunduğunu göremedim."
+   ],
+   "okunan": [
+    "gorsel/galeri/galeri.sablon.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/katalog.md",
+   "tur": "dosya",
+   "ozet": "18c328770c5d",
+   "iskelet": "844492fa1db4",
+   "baslik": "Etkileşimli kutu kataloğu",
+   "ne": {
+    "cok_basit": "Anlatımda kullanılacak hazır etkileşimli kutuların listesi; konuya göre seçilir.",
+    "normal": "Bu sayfa, anlatım yazarken hangi hazır kutunun kullanılacağını tek yerde toplar. Her satırda kutunun kimliği, türü, ne zaman kullanılacağı ve hangi dosyada durduğu yazar. Kutular konuya göre seçilir ve yalnız veri değiştirilir."
+   },
+   "nasil": {
+    "normal": "Konuya göre tablodan kutu seçilir ve şablonu kopyalanır. Yalnız sayılar, metinler ve diziler değiştirilir; yapı değişirse ekran testi yapılır. Anlatım için varsayılan karma tasarım seçilir; eski yapılar yalnız şekil, grafik ve matris gibi özel parçalar için kullanılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Kutu kimlikleri her biri tek bir kutuya karşılık gelmeli; iki kutu aynı kimliği taşırsa seçim karışır.",
+     "Şablondan kopyalanan kutuda yapı değişirse ekran testi zorunludur."
+    ],
+    "degisebilir": [
+     "Tablodaki ne zaman metinleri, kutunun kullanım yerini bozmadan daha açık yazılabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa hangi kutunun seçileceği belirsiz kalır, ama bu dosyaya dayanan başka parça olmadığı için etki bu kadarla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırların sonu kesik görünüyor; tablodaki kutu ayrıntıları eksik olabilir."
+   ],
+   "okunan": [
+    "gorsel/katalog.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W01-formul-kutulu.html",
+   "tur": "dosya",
+   "ozet": "37e1a5ac9f82",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Dokunulabilir formül kutuları",
+   "ne": {
+    "cok_basit": "Formülün her parçasına dokununca o parçanın ne anlama geldiği görünür.",
+    "normal": "Sayfada bir formül, parçalara ayrılmış kutular halinde durur. Bir kutuya dokunulunca o terimin anlamı ve formüldeki yeri açılır. Kesir ve üs gibi yapılar doğru yerlerinde gösterilir, çünkü anlam büyük ölçüde bu yerlere bağlıdır."
+   },
+   "nasil": {
+    "normal": "Sayfa açılınca formül, dokunulabilir kutular halinde görünür. Bir kutuya dokunulunca o parçanın anlamı ve formüldeki yeri açıklanır. Her terimin açıklaması ayrı tutulduğundan okuyucu istediği kısmı kendi hızında, sırayla inceleyebilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Formülün kesir ve üs gibi yapıları kendi konumlarında kalmalıdır; bu konumlar değişirse öğretilen okuma bozulur."
+    ],
+    "degisebilir": [
+     "Terimlerin yazıları ve açıklama metinleri serbestçe değiştirilebilir.",
+     "Kutuların renkleri başta tanımlanan renklerden gelir ve bunlar serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca bu formül sayfası yanlış okunur; başka bir parça ona bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Kutuya dokunulunca çıkan açıklamanın tam biçimi ve sayfanın ayrıntılı çalışması bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W01-formul-kutulu.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W02-turetme-satir-satir.html",
+   "tur": "dosya",
+   "ozet": "8e684a7058a0",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Formülün adım adım türetilmesi",
+   "ne": {
+    "cok_basit": "Formülün nereden çıktığını adım adım gösterir; her tıklamada bir satır açılır.",
+    "normal": "Bu sayfa bir formülün nereden geldiğini gösterir. Her tıklamada yeni bir satır açılır ve yanında o adımı doğuran kural yazılır. Böylece formül ezberlenmek yerine adım adım anlaşılır."
+   },
+   "nasil": {
+    "normal": "Sayfa açılınca satırlar gizli başlar; her tıklamada bir sonraki satır görünür olur ve yanındaki kuralla birlikte açılır. Okuyucu satırı ve kuralı okuyup bir sonraki tıklamaya geçer, böylece hiçbir adım atlanmadan ilerler."
+   },
+   "sinir": {
+    "sabit": [
+     "Satırların sırası ve her satırın yanındaki kuralla eşleşmesi değişirse formülün nereden geldiği yanlış anlatılır."
+    ],
+    "degisebilir": [
+     "Satırların yazıları ve kuralların açıklama metinleri serbestçe değiştirilebilir.",
+     "Başta tanımlanan renkler içeride değiştirilebilir ve anlatılan adımları etkilemez."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca bu sayfa yanlış adımlar gösterir; başka bir parça bu sayfaya bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Satırların tam içeriği ve kuralların yazılı metinleri bu kayıtta ayrıntılı okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W02-turetme-satir-satir.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W03-grafik-dogru.html",
+   "tur": "dosya",
+   "ozet": "12b581779950",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Doğru grafiğinden değer bulma",
+   "ne": {
+    "cok_basit": "Düz bir çizgiyle değer bulmayı gösterir; kaydırıcıyla çizgi değiştirilir.",
+    "normal": "Bu sayfada eğrisi olmayan, düz bir çizgi görünür; eksenler sabit tutulur. Eğri bir ilişki, uygun bir dönüşümle düz çizgiye çevrilerek okunmasını kolaylaştırır. Kaydırıcıyla değer değiştirilerek aynı çizgi üzerinde farklı okumalar yapılabilir."
+   },
+   "nasil": {
+    "normal": "Eksenler sayfa boyunca sabit kalır; bu sayede farklı durumlar aynı zeminde karşılaştırılabilir. Kaydırıcı, aynı eksenler üzerinde çizginin nasıl değiştiğini gösterir. Okuyucu bir değeri çizgi üzerinden bulur ve bu değerin eğimden nasıl çıktığını kendisi kontrol eder."
+   },
+   "sinir": {
+    "sabit": [
+     "Eksenlerin aynı kalması gerekir; değişirse durumların karşılaştırması ve okunan değerler yanıltıcı olur."
+    ],
+    "degisebilir": [
+     "Açıklama yazıları ve başta tanımlanan renkler serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca bu grafik sayfası yanlış okunur; başka bir parça bu sayfaya bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Kaydırıcının ve çizginin hesaplama ayrıntıları bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W03-grafik-dogru.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W04-grafik-egri.html",
+   "tur": "dosya",
+   "ozet": "bfa8d704ceed",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Eğride durumları karşılaştırma",
+   "ne": {
+    "cok_basit": "Bir şeyin değişince sonucun nasıl değiştiğini eğri üzerinde gösterir.",
+    "normal": "Sabit eksenli bir eğri ve üzerinde ayrı noktalar görünür; her nokta bir durumu gösterir. Bir değişkenin etkisi, noktalar arasındaki farka bakılarak okunur. Eksenler sabit olduğu için durumlar doğrudan karşılaştırılabilir."
+   },
+   "nasil": {
+    "normal": "Sayfa eğriyi ve noktaları aynı eksen üzerinde gösterir. Okuyucu noktaların yerine bakarak değişkenin etkisini kendisi görür. Eksenler değişmediği için bu karşılaştırma okumanın tutarlı kalmasını sağlar."
+   },
+   "sinir": {
+    "sabit": [
+     "Eksenlerin aynı kalması gerekir; değişirse durumların karşılaştırması yanıltıcı olur."
+    ],
+    "degisebilir": [
+     "Açıklama yazıları ve başta tanımlanan renkler serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca bu sayfadaki karşılaştırma yanlış görünür; başka bir parça buna bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Eğrinin nasıl hesaplandığı ve noktaların nasıl hareket ettiği bu kayıtta ayrıntılı okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W04-grafik-egri.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W05-ekstra.html",
+   "tur": "dosya",
+   "ozet": "edd3dc17cfab",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Konu sonu ek bölümü",
+   "ne": {
+    "cok_basit": "Konunun sonunda açılan ek bölüm; kaynaklar, ek bilgiler ve ipuçları burada durur.",
+    "normal": "Bu düğme konu sonunda açılan bir ek bölüm sunar. İçinde kaynak tablosu, slaytlarda yer almayan bilgi ve ipuçları bulunur. Ana anlatımdan ayrı durduğu için ders akışı bu ayrıntılarla bölünmez."
+   },
+   "nasil": {
+    "normal": "Ekstra düğmesine basılınca konunun ek bölümü açılır. Ek bölüm kaynak tablosu, slayt dışı bilgi ve ipucu olarak düzenlenmiştir. Bu yapı, asıl konuyu bölmeden ek bilgiyi ayrı tutmak için kurulmuştur."
+   },
+   "sinir": {
+    "sabit": [
+     "Düğmenin konu sonunda ek bölümü açması gerekir; değişirse ek bilgiye ulaşmak zorlaşır."
+    ],
+    "degisebilir": [
+     "Kaynakların, ek bilgilerin ve ipuçlarının metinleri serbestçe değiştirilebilir.",
+     "Düğmenin yazısı ve başta tanımlanan renkler içeride değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca ek bilgiye ulaşılamaz; başka bir parça buna bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Ek bölümün içindeki kaynak tablosunun ayrıntıları bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W05-ekstra.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W06-adim-adim-hesap.html",
+   "tur": "dosya",
+   "ozet": "e7336cfaae5e",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Adım adım çözümlü hesap",
+   "ne": {
+    "cok_basit": "Sınav tipi bir soruyu adım adım çözen kutu; her adım ayrı açılır.",
+    "normal": "Bir hesap sorusunu adım adım çözüp sonunda büyük bir sonuç kartıyla bitiren kutu. Her adımda işlem, kısa bir kural ve birim tuzağı uyarısı birlikte görünür; sorudaki verilenler en üstte ayrı bir kutuda durur."
+   },
+   "nasil": {
+    "normal": "Sonraki adım düğmesine basıldıkça bir adım daha açılır; son adımdan sonra büyük sonuç kartı görünür. Her adımın başlığı, matematiksel ifadesi ve kuralı ayrı satırlarda durur. Sıcaklık gibi verilenler önce uygun birimlere çevrilir; sonra oran ve üs işlemi yapılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Adımların sırası ve her adımın başlık, ifade, kural düzeni korunmalı; sıra değişirse adım adım anlatım bozulur.",
+     "Sonuç kartındaki değer, son adımın sonucu ile aynı olmalı; aksi halde öğrenci yanlış bir sonuçla karşılaşır."
+    ],
+    "degisebilir": [
+     "Soru metni ve açıklama cümleleri serbestçe yeniden yazılabilir.",
+     "Renkler ve düğme yerleşimi içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu çözüm kutusu yanlış ya da karışık görünür; başka parça bu dosyaya dayanmadığı için etki bu kutuyla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı adım kurallarının sonu kesik görünüyor; ikinci adımın kuralının tam metni okunamadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W06-adim-adim-hesap.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W07-siniflama-agaci.html",
+   "tur": "dosya",
+   "ozet": "8d4d5bd1e8ce",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Sınıflama ağacı",
+   "ne": {
+    "cok_basit": "Yağlar gibi maddelerin sınıflarını ve alt türlerini ağaç şeklinde gösterir.",
+    "normal": "Lipit adı verilen yağ benzeri maddeleri ana sınıflarına ve alt türlerine ayırır. Bir sınıfa dokununca yapısını kısaca anlatan renkli bir ayrıntı paneli açılır ve o sınıfın örnekleri, örneğin yağlar ile mumlar, yanında görünür."
+   },
+   "nasil": {
+    "normal": "Ağacın en üstünde ana başlık durur; altındaki ana sınıflar ızgarada dizilir. Her sınıf kendi rengiyle ve bir simgeyle gösterilir. Dokununca o sınıf vurgulanır ve altındaki ayrıntı paneli, sınıfın tanımını ve alt türlerini liste halinde açar."
+   },
+   "sinir": {
+    "sabit": [
+     "Sınıflar ve alt türler, veri listesinde yazılı iç içe düzende tutulmalı; bir alt tür yanlış sınıfa bağlanırsa ağaç yanlış bilgi verir.",
+     "Her sınıfın kendi rengi ve simgesi, panelin rengiyle aynı kimlikte kalmalı; renk ile panel ayrılırsa seçilen sınıf karışır."
+    ],
+    "degisebilir": [
+     "Sınıf adları, tanımlar ve alt türlerin örnekleri içerik olarak serbestçe değiştirilebilir.",
+     "Simgeler ve kart boyutları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu sınıflandırma kutusu karışır; başka parça bu dosyaya dayanmadığı için etki bu kutuyla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Diğer sınıfların adları ile alt türleri kesik satırlardan okunamadı; yalnız basit sınıfın ayrıntısı yazıldı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W07-siniflama-agaci.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W08-karsilastirma-tablosu.html",
+   "tur": "dosya",
+   "ozet": "b3fc89aa4fd2",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Karşılaştırma tablosu",
+   "ne": {
+    "cok_basit": "Isıl işlem yöntemlerini yan yana koyup farklarını gösterir.",
+    "normal": "Pastörizasyon, UHT ve sterilizasyon sıcaklık ve süre gibi özellikler açısından yan yana karşılaştırılır. Bir özelliğin satırına dokununca o satır vurgulanır ve altta, yöntemler arasındaki farkı ve sınav ipucunu açıklayan bir kart çıkar."
+   },
+   "nasil": {
+    "normal": "Açılışta kartta, bir satırın etiketine dokunulması istenir; dokunulunca o satırın açıklaması kartta görünür. Her yöntemin sütunu kendi rengiyle ayrılır, böylece aynı satırdaki değerlerin hangi yönteme ait olduğu bir bakışta anlaşılır. Satır, dokunulduğunda hafifçe renklenir ve açıklama kartı yalnız o satırın bilgisini gösterir."
+   },
+   "sinir": {
+    "sabit": [
+     "Yöntemlerin adları ve renkleri sütun başlıklarında aynı sırada tutulmalı; satır değerleri de bu sütunlara göre dizilmelidir.",
+     "Eksik bir hücre olursa değerler yanlış sütuna kayar ve okuyucu başka yönteme ait bir değer okur."
+    ],
+    "degisebilir": [
+     "Ayrıntı kartındaki açıklama cümleleri ve sınav ipucu serbestçe yeniden yazılabilir.",
+     "Yöntem renkleri ve yazı boyutları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu karşılaştırma kartı yanlış okunur; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Tablonun bazı satırları ve sütun değerleri kesik görünüyor; devamındaki özelliklerin ayrıntıları yazılamadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W08-karsilastirma-tablosu.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W09-dogru-yanlis-kartlari.html",
+   "tur": "dosya",
+   "ozet": "1c59bab8139e",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Doğru yanlış kartları",
+   "ne": {
+    "cok_basit": "Doğru mu yanlış mı diye sorulan kısa cümleler; dokununca cevap çıkar.",
+    "normal": "Tuzak içeren kısa cümleler tek tek sunulur: kişi doğru ya da yanlış diye karar verir. Kart bu karara göre renklenir ve tuzağın ne olduğunu açıklayan kısa bir not çıkar."
+   },
+   "nasil": {
+    "normal": "Karta dokununca cevap ve açıklama açılır, kart da doğru ya da yanlış renginde boyanır. Açıklama, kartın neden doğru ya da yanlış olduğunu kısa bir cümleyle anlatır. Her cümle ayrı bir kart olarak sıralanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her cümlenin doğru ya da yanlış cevabı cümleyle birlikte tutulmalı; cevap ters kalırsa kart yanlış bilgi verir.",
+     "Açıklama metni her cümlenin kendi kaydında yer almalı; açıklamalar karışırsa tuzağın neden olduğu anlaşılmaz."
+    ],
+    "degisebilir": [
+     "Cümle metinleri ve açıklamalar içerik olarak serbestçe değiştirilebilir; yeni cümleler listenin sonuna eklenebilir.",
+     "Kart renkleri ve yazı boyutu içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu kart listesi yanlış cevap gösterir; başka parça bu dosyaya dayanmadığı için etki bu kutuyla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Listenin son cümlesi ve açıklaması kesik görünüyor; son kartın içeriği tam okunamadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W09-dogru-yanlis-kartlari.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W10-mini-test.html",
+   "tur": "dosya",
+   "ozet": "91fc2dd6d6ef",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Anlatım içi soru kutusu",
+   "ne": {
+    "cok_basit": "Anlatımın içine konan kısa sorular; cevap verince doğru ya da yanlış görünür.",
+    "normal": "Anlatımın içine konan soru kutusu; az soru alt alta, çok soru tek tek sorulur. Bir şık seçilince doğru şık yeşil, yanlış seçim turuncu görünür ve açıklama çıkar."
+   },
+   "nasil": {
+    "normal": "Soru ve şıklar İngilizce yazılır; Türkçe karşılığı ayrı bir satırda, altta durur. Soru sayısı azsa hepsi alt alta listelenir ve en sonda puan gösterilir. Soru çoksa her seferinde tek soru çıkar; üstte ilerleme şeridi ve sonda puan dairesi görünür."
+   },
+   "sinir": {
+    "sabit": [
+     "Her sorunun doğru şıkkının sırası soruyla birlikte tutulur; şıklar yeniden sıralanırsa doğru cevabın yeri de güncellenmelidir.",
+     "Soru dizisindeki her kayıt metin, şıklar, doğru şık, açıklama ve isteğe bağlı ipucu sırasıyla durmalıdır."
+    ],
+    "degisebilir": [
+     "Soru metinleri, şıklar ve açıklamalar serbestçe değiştirilebilir; dizinin sonuna kayıt eklemek soru sayısını artırır.",
+     "Renk tonları ve yazı boyutları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız soru kutusu çalışmaz; bu parçaya dayanan başka parça olmadığı için etki bu kutuyla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Betiğin bazı satırları kesik görünüyor; ayrıntılı davranış tam okunmadan yazıldı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W10-mini-test.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W11-ozet-kartlari.html",
+   "tur": "dosya",
+   "ozet": "09984bbf6717",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Özet kartları ve sözlük",
+   "ne": {
+    "cok_basit": "Konu sonunda tek sayfalık özet ve kelime listesi gösteren kartlar.",
+    "normal": "Bir konunun en önemli noktalarını tanım, formül, birim ve tuzak başlıklarıyla kartlara ayırır. Sonunda Türkçe ve İngilizce terimlerin yan yana durduğu küçük bir sözlük bulunur."
+   },
+   "nasil": {
+    "normal": "Her kart bir kavramı tanımlar: kartın başlığında kavramın adı, yanında kısaltması durur; alt satırlarda tanım, birim ve formül sırayla gelir. Tuzak satırı turuncu tonla ayrılır, sınavda yanlışa düşülen noktayı hatırlatır. Sözlük kartı çift sütunlu bir liste olarak sol tarafta Türkçe, sağ tarafta İngilizce terimi gösterir."
+   },
+   "sinir": {
+    "sabit": [
+     "Kartların satır düzeni, yani tanım, birim ve tuzak sırası, bütün kartlarda aynı kalmalı.",
+     "Sözlükte Türkçe ve İngilizce terimlerin eşleşmesi aynı satırdaki sütunlarda kalmalı; eşleşme kayarsa terim yanlış çevrilir."
+    ],
+    "degisebilir": [
+     "Kartların tanım ve tuzak metinleri ile sözlük terimleri içerik olarak serbestçe değiştirilebilir.",
+     "Kart renkleri ve başlık ikonları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa konu sonu özeti yanlış ya da eksik kalır; başka parça bu dosyaya dayanmadığı için etki bu özetle sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Formül satırlarının ve bazı birim açıklamalarının sonu kesik görünüyor; ayrıntılar tam okunamadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W11-ozet-kartlari.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W12-akis-semasi.html",
+   "tur": "dosya",
+   "ozet": "d32b58b3bdae",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Adım adım akış şeması",
+   "ne": {
+    "cok_basit": "Bir işin adımlarını sırayla gösterir; her adıma dokununca nedeni açılır.",
+    "normal": "Bir yöntemin ya da sürecin adımlarını oklarla bağlı kutular halinde sıralar. Her kutuya dokununca o adımın ne işe yaradığı ve nerede hata yapıldığı kısa bir açıklamada görünür, böylece sıra hem görülür hem de anlaşılır."
+   },
+   "nasil": {
+    "normal": "Kutular yukarıdan aşağı sıralanır ve aralarındaki oklar sırayı gösterir. Açılışta bir adıma dokunulması istenir; dokununca o kutu vurgulanır ve açıklaması altta görünür. Açıklama, adımın neden gerektiğini ve en sık yapılan hatayı anlatır."
+   },
+   "sinir": {
+    "sabit": [
+     "Adımların sırası ve oklar, süreçte neyin önce neyin sonra geldiğini belirler; bu sıra değişirse yöntem yanlış anlatılmış olur.",
+     "Her adımın kendi kutusu ile açıklaması birlikte tutulmalı; açıklama başka bir adıma karışırsa nedeni yanlış okunur."
+    ],
+    "degisebilir": [
+     "Adım adlarının yazımı ve açıklama cümleleri içerik olarak serbestçe değiştirilebilir.",
+     "Kutu renkleri ve ok biçimi içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu adım sırası kartı yanlış ya da karışık görünür; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kutuların bazı açıklamaları ve son adımın adı kesik görünüyor; tam metinler okunamadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W12-akis-semasi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W13-kimyasal-yapi.html",
+   "tur": "dosya",
+   "ozet": "f0b87a640a00",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Kimyasal grup kartı",
+   "ne": {
+    "cok_basit": "Kimyada sık geçen küçük parçalar; birine dokununca adı ve şekli açılır.",
+    "normal": "Moleküllerde sık geçen grupları tek tek gösterir: amino, karbonil, karboksil ve hidroksil. Bir gruba dokununca Türkçe ve İngilizce adı, kısa formülü ve renkli atomlarla çizimi açılır."
+   },
+   "nasil": {
+    "normal": "Kartlardan biri seçilir ve ilk açılışta amino grubu gösterilir. Nerede ve Nasıl tanırsın satırları grubun hangi maddelerde bulunduğunu ve çizimde nasıl tanınacağını söyler. Amino grubunda bir azot ve ona bağlı iki hidrojen; hidroksilde bir oksijen ve ona bağlı bir hidrojen aranır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her grubun renk, kısa formül, ad, formül, atom ve bağ listesi ile yer ve tanıma metinleri aynı sırada tutulmalı.",
+     "Atom listesinde grubun parçası olan atomlar işaretlenmeli; işaretli atomların çevresine kesikli kutu çizilir."
+    ],
+    "degisebilir": [
+     "Nerede ve Nasıl tanırsın metinleri ile Türkçe ve İngilizce adlar, bilgi bozulmadan serbestçe yeniden yazılabilir.",
+     "Renk tonları ve kart aralıkları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu grup kartı yanlış ya da eksik gösterilir; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Karbonil ve karboksil grubunun tanıma metinleri kesik görünüyor; ayrıntıları yazılmadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W13-kimyasal-yapi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W14-etken-kartlari.html",
+   "tur": "dosya",
+   "ozet": "a4e2058326d3",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Tepkime hızı etkenleri",
+   "ne": {
+    "cok_basit": "Bir olayın hızını etkileyen etkenleri ve bunların nasıl etki ettiğini gösterir.",
+    "normal": "Bir tepkimenin hızını etkileyen etkenler liste halinde durur; her etkenin hızlandırdığı mı, yavaşlattığı mı yoksa ortada en çok etkili olduğu mu yazılıdır. Bir etkene dokununca o etkenin hızı nasıl değiştirdiği kısa bir cümleyle açılır."
+   },
+   "nasil": {
+    "normal": "Her etken satırında bir yön simgesi ve kısa bir yazı durur: yukarı ok artırır, aşağı ok azaltır, tepe biçimli simge ara değerde en çok etkiyi anlatır. Etkenlere dokununca yalnız biri açık kalır; başka bir etkene dokunulunca önceki kapanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her etkenin yön bilgisi, yani artırır, azaltır ya da ortada en çok, etkenin kendisiyle birlikte tutulmalı.",
+     "Yön simgeleri ile yön yazıları birbirine uygun kalmalı; simge ile yazı çelişirse okuyucu yanlış yönü öğrenir."
+    ],
+    "degisebilir": [
+     "Etkenlerin açıklama cümleleri ve adları içerik olarak serbestçe yeniden yazılabilir.",
+     "Etken simgeleri ve renk tonları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu etken listesi yanlış yönle gösterilir; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı açıklama satırlarının sonu kesik görünüyor; kaynak açıklamalarının tamamı okunamadı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W14-etken-kartlari.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W15-eleman-sembol-karti.html",
+   "tur": "dosya",
+   "ozet": "b0785ebb4d0d",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Eleman sembol kartı",
+   "ne": {
+    "cok_basit": "Elektrik parçalarının kartı; bir parçaya dokununca adı, harfi ve şekli açılır.",
+    "normal": "Devre parçalarını tek tek gösteren kart: direnç, kondansatör, bobin, diyot, gerilim kaynağı, işlemsel yükselteç ve mantık kapıları. Bir parçaya dokununca adı, harf sembolü, birimi ve standart çizimi görünür."
+   },
+   "nasil": {
+    "normal": "Her parça yatay bir çizimle gösterilir; kapılarda girişler solda, çıkış sağda durur. Direnç için zikzak çizgi, kondansatör için paralel çizgiler, bobin için ardışık yarım daireler aranır. Diyotta ok ve ucundaki dik çizgi, gerilim kaynağında içinde artı ve eksi işareti olan daire görülür."
+   },
+   "sinir": {
+    "sabit": [
+     "Her elemanın kısa harf, adlar, birim ve açıklama alanları aynı sırada tutulmalı; kart bu sıraya göre dizilir.",
+     "Sembol çizimleri ortak yatay düzeni korumalı; uçlar sabit yerlerde durmalı, girişler solda, çıkışlar sağda kalmalı."
+    ],
+    "degisebilir": [
+     "Açıklama metinleri ile Türkçe ve İngilizce adlar serbestçe değiştirilebilir; ne yapar cümleleri de yeniden yazılabilir.",
+     "Kart renkleri içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız elektrik parçaları kartı yanlış ya da eksik görünür; bu dosyaya dayanan başka parça olmadığı için etki sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı açıklama satırlarının sonu kesik görünüyor; yazılan bilgiler yalnız görünen kısımlara dayanır."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W15-eleman-sembol-karti.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W16-devre-sema-goz-akimi.html",
+   "tur": "dosya",
+   "ozet": "a543177d1477",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Devre çözümünde yöntemleri karşılaştırma",
+   "ne": {
+    "cok_basit": "Bir elektrik devresindeki akımları nasıl bulduğumuzu gösterir.",
+    "normal": "Bu sayfa çözülecek bir elektrik devresini şema olarak gösterir. Her elemanın etiketi ve değeri, kaynağın kutbu ve halkalarda dolaşan akım okla belirtilir. Sekmeler, halkalı bir örneği denklemle ve Gauss çözümüyle adım adım gösterir."
+   },
+   "nasil": {
+    "normal": "Sayfa devre şemasını gösterir; sekmelerden biri seçildiğinde o yöntemin adımları açılır. Her yöntemde aynı devre çözüldüğü için sonuçlar birbiriyle karşılaştırılabilir. Örnekteki değerler değiştiğinde sonuç her yöntemde yeniden hesaplanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Şemadaki bağlantılar ve akım okları değişirse çözümün sonucu yanlış okunur."
+    ],
+    "degisebilir": [
+     "Örnekteki değerler ve elemanların etiketleri serbestçe değiştirilebilir.",
+     "Sekmelerin yazıları ve başta tanımlanan renkler içeride değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa bu sayfadaki devre çözümü yanlış anlatılır; başka bir parça buna bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Sekmelerin ayrıntılı adımları ve Gauss çözümünün hesaplama biçimi bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W16-devre-sema-goz-akimi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W17-matris-satir-islemi.html",
+   "tur": "dosya",
+   "ozet": "9de35c3f4497",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Satır işlemiyle adım adım çözüm",
+   "ne": {
+    "cok_basit": "Bir tabloyu satır satır sadeleştirerek çözümü bulmayı adım adım gösterir.",
+    "normal": "Bu sayfa bir sayı tablosunu satır işlemleriyle adım adım sadeleştirerek çözer. Her adımda işlem ileri ya da geri yönde uygulanır; değişen satır turuncu, öncü değer yeşil görünür. Sona gelince geri yerine koyma ile sonuca ulaşılır."
+   },
+   "nasil": {
+    "normal": "Sayfa tablonun ilk hâlini gösterir; her satır işlemi kendi adımında uygulanır. Adımın yönü ileri ya da geri olarak etiketlenir; değişen satır turuncu, öncü değer ise yeşil ile işaretlenir. Sonda geri yerine koyma yapılarak çözüm elde edilir; bu adım ayrı bir aşama olarak gösterilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Satır işlemlerinin sırası ve ileri geri yönleri değişirse adımların anlatımı yanlış yola girer."
+    ],
+    "degisebilir": [
+     "Tablonun sayıları, yani sayfanın verisi, serbestçe değiştirilebilir.",
+     "Değişen satırın ve öncü değerin renkleri başta tanımlanan renklerden gelir ve değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa çözüm adımları yanlış sırayla gösterilir; bu sayfaya bağlı başka parça yoktur.",
+   "terimler": [],
+   "belirsiz": [
+    "Gauss ve Gauss–Jordan yöntemlerinin farkı ile geri yerine koymanın ayrıntılı hesabı bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W17-matris-satir-islemi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W18-matris-carpimi.html",
+   "tur": "dosya",
+   "ozet": "e1d7cf445612",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Matris çarpımı etkileşimli",
+   "ne": {
+    "cok_basit": "İki tablo çarpılınca her sonuç kutusunun hesabı adım adım görünür.",
+    "normal": "Sonuç kutusuna dokununca birinci tablonun bir satırı ve ikinci tablonun bir sütunu renkle yanar. Altta o kutunun hesabı, karşılıklı çarpımların toplamı olarak açılır."
+   },
+   "nasil": {
+    "normal": "Tablolar veri olarak verilir; sonuçlar sayfa açılırken bu sayılardan hesaplanır. Kutulara sırayla dokunulur ve her kutunun değeri, kendi hesabıyla birlikte açılır. Hepsini göster düğmesi tüm sonuçları birden açar, sıfırla düğmesi seçimleri temizler. Negatif sayılar parantez içinde yazılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Tablo boyutları kodda sabit yazılıdır; boyut değişirse hesap ve düzen birlikte güncellenmelidir.",
+     "Sonuç kutusunun satır ve sütun numaraları, seçilen satır ve sütunla eşleşir; bu eşleşme bozulursa yanlış hesap açılır."
+    ],
+    "degisebilir": [
+     "Tablolardaki sayılar, yani A ve B içindeki değerler, veri olarak serbestçe değiştirilebilir.",
+     "Renkler, düğme metinleri ve açıklama dili içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu çarpma kartı yanlış hesap gösterebilir; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırların sonu kesik görünüyor; sayfa düzeninin ayrıntıları eksik olabilir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W18-matris-carpimi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W19-matris-denklemi.html",
+   "tur": "dosya",
+   "ozet": "3739dbe74e37",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Denklem sistemi bakışları",
+   "ne": {
+    "cok_basit": "Bir denklem grubunu farklı bakışlarla gösterir.",
+    "normal": "Denklem grubu bir tablo ve bir sayı sütunu olarak gösterilir. Satır bakışında her satır bir denklemdir; sütun bakışında ise sütunların birleşimi sonucu verir."
+   },
+   "nasil": {
+    "normal": "Satır bakışında seçilen satırın sayıları x, y ve z ile çarpılıp toplanır ve sağdaki sayıya eşitlenir. Sütun bakışında seçilen sütun, ilgili bilinmeyenle çarpılır ve diğer sütunlarla toplanarak sonucu verir. Her bakış aynı denklemi farklı sırayla okur."
+   },
+   "sinir": {
+    "sabit": [
+     "Sistem kare yapıda yazılmıştır; boyut değişirse tablo, sekme ve hesap birlikte güncellenmelidir.",
+     "Kodda yazılı x, y, z değerleri A ve b ile birlikte tutulmalı; biri değişip öbürü eski kalırsa açıklamalar yanlış sonuç verir."
+    ],
+    "degisebilir": [
+     "Renkler, sekme adları ve açıklama cümleleri içeride serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu denklem kartı yanlış gösterilir; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırların sonu kesik görünüyor; sekme düzeninin ayrıntıları eksik olabilir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W19-matris-denklemi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W20-devre-semasi.html",
+   "tur": "dosya",
+   "ozet": "470cd8f2ba16",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Basit elektrik devresi",
+   "ne": {
+    "cok_basit": "Basit bir elektrik devresi; parçalara dokununca ne yaptıkları görünür.",
+    "normal": "Bir gerilim kaynağı ile dirençler, tek bir kapalı yol üzerinde seri bağlanmış olarak gösterilir. Her parçaya dokununca adı, değeri, yüksek gerilimli ucu ve akım okunun yönü açılır. Açıklamada o parçaya uyan yasa da yer alır."
+   },
+   "nasil": {
+    "normal": "Sayfa açılınca ilk açıklama bir dirençtir; öbür parçalara dokununca açıklama kutusu aynı yerde değişir. Akım okuna dokununca tek çevrenin akımı görünür; kaynağın gerilimi toplam dirence bölünerek bulunur. Gerilimler her direncin üstündeki düşüm olarak yazılır ve toplamları kaynağın gerilimine eşittir."
+   },
+   "sinir": {
+    "sabit": [
+     "Bu devrede elemanlar tek çevrimde seri bağlıdır; bu bağlantı değişirse akım ve gerilim açıklamalarının hepsi yeniden hesaplanmalıdır.",
+     "Hesap satırları, verilen değer ve birimlerle birlikte tutulmalı; değer değişirse bu satırlar da güncellenmelidir."
+    ],
+    "degisebilir": [
+     "Kaynağın gerilimi ve dirençlerin değerleri, ilgili açıklama satırları birlikte güncellenerek serbestçe değiştirilebilir.",
+     "Renk tonları, kutu konumları ve çizgi kalınlıkları içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu devre kartı yanlış hesap gösterir; başka parça bu dosyaya dayanmadığı için etki bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı kod satırlarının sonu kesik görünüyor; çizim ayrıntıları tam okunmadan yazıldı."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W20-devre-semasi.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W21-elemanter-matris.html",
+   "tur": "dosya",
+   "ozet": "9d78b94c9598",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Satır işleminin tersini gösterme",
+   "ne": {
+    "cok_basit": "Bir satır işleminin tablo üzerindeki etkisini ve onu geri almayı gösterir.",
+    "normal": "Bu sayfa bir satır işleminin bir tabloya nasıl uygulandığını gösterir. Aynı işlemi geri alan tablo da yanında durur ve her biri sekmede ayrı incelenir. Sonuç, işlem tablosunun satır işlemi ile çarpılmasıyla elde edilir."
+   },
+   "nasil": {
+    "normal": "Sayfada her işlem bir sekmeye karşılık gelir. Sekmede işlem tablosu, asıl tablo, ikisinin çarpımı ve geri alma tablosu yer alır. Değişen satırlar ve kısa bir not da gösterilir, böylece hangi satırın neden değiştiği görülür."
+   },
+   "sinir": {
+    "sabit": [
+     "Geri alma tablosunun işlemin tersi olması gerekir; bu ilişki bozulursa anlatılan geri alma yanlış görünür."
+    ],
+    "degisebilir": [
+     "Tabloların sayıları ve sekmelerdeki kısa notların metni serbestçe değiştirilebilir.",
+     "Değişen satırların renkleri başta tanımlanan renklerden gelir ve değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa işlemin etkisi ve geri alma yanlış anlatılır; başka bir parça bu sayfaya bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Tablo hesaplarının ayrıntısı ve sekmelerin nasıl seçildiği bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W21-elemanter-matris.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W22-gauss-jordan-ters.html",
+   "tur": "dosya",
+   "ozet": "63af0f05fe44",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Ters tabloyu bulma",
+   "ne": {
+    "cok_basit": "Bir tablonun tersini, satır işlemleriyle adım adım bulmayı gösterir.",
+    "normal": "Bu sayfada asıl tablo ile birim tablo yan yana yazılır. Asıl tablo sol tarafta birim hâline gelene kadar satır işlemleri uygulanır; aynı işlemler sağ tarafa da yansır. Sonunda sağ taraf, asıl tablonun tersi olarak kalır."
+   },
+   "nasil": {
+    "normal": "Her adımda tek bir satır işlemi uygulanır ve sayfa bu işlemin açıklamasını birlikte gösterir. Değişen satır turuncu, öncü değer ise yeşil görünür; böylece hangi satırın neden değiştiği izlenir. Adımlar bitince sağ taraf okunarak sonuç elde edilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Sağ tarafa aynı işlemlerin uygulanması değişirse sonuçta okunan ters tablo yanlış çıkar."
+    ],
+    "degisebilir": [
+     "Tablonun sayıları, yani sayfanın verisi, serbestçe değiştirilebilir.",
+     "Adımların açıklama metinleri ve başta tanımlanan renkler içeride değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa ters tablo yanlış okunur; başka bir parça bu sayfaya bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Sayfanın çizim ve tıklama ayrıntıları ile tablo verisinin ayrıntıları bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W22-gauss-jordan-ters.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W23-denklik-zinciri.html",
+   "tur": "dosya",
+   "ozet": "cbd8278e6965",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Denklik zinciriyle ispat",
+   "ne": {
+    "cok_basit": "Birbirini gerektiren ifadeleri sırayla gösterir; her biri bir sonrakini gerektirir.",
+    "normal": "Bu sayfada ifadeler bir halka oluşturur: her ifade bir sonrakini gerektirir ve sonuncu da ilkine döner. Bu yapıda zincirin bir yerindeki ifadeyi kabul etmek, öteki ifadeleri de kabul etmek demektir."
+   },
+   "nasil": {
+    "normal": "Sayfada her ifade bir kart olarak görünür. Karta dokunulunca bu ifadenin bir sonrakini nasıl gerektirdiği açılır. Açıklamada ifadenin numarası, metni, kısa notu ve neden öteki ifadeyi gerektirdiği yer alır, böylece zincir bir yönde adım adım okunur."
+   },
+   "sinir": {
+    "sabit": [
+     "Halkaların birbirini sırayla gerektirmesi ve son halkanın ilkine dönmesi değişirse zincir kapanmaz ve anlatılan denklik bozulur."
+    ],
+    "degisebilir": [
+     "İfadelerin metinleri, kısa notları ve nedenleri serbestçe değiştirilebilir.",
+     "Başta tanımlanan renkler içeride değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa zincirin gösterdiği ilişki yanlış anlatılır; başka bir parça bu sayfaya bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dokunulunca açılan notların ve kartların tam davranışı bu kayıtta okunmadı; yalnız üst tanım satırı bilinir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W23-denklik-zinciri.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W24-coktan-secmeli-test.html",
+   "tur": "dosya",
+   "ozet": "d68768fa6605",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Çoktan seçmeli soru seti",
+   "ne": {
+    "cok_basit": "Bu sayfa soruları sırayla çözdürür ve her cevabı hemen değerlendirir.",
+    "basit": "Bu sayfa çoktan seçmeli bir test sunar. Her soruda seçenekler arasından bir cevap seçilir ve sonuç hemen görülür.",
+    "normal": "Sayfa bir soru setini test olarak çözdürür. Öğren modunda her cevap hemen değerlendirilir; açıklama istenirse yanlış şıkkın nedeni de açılır. Sonda sonuç halkası ve yanlış sorular listelenir.",
+    "gelismis": "Üstteki soru düğmeleri her sorunun durumunu renkle gösterir ve istenen soruya dokunarak geçilir. Harf ya da sayı tuşuyla seçim, ok tuşlarıyla gezinme yapılır. Sınav modunda cevap sonradan değiştirilebilir; öğren modunda ilk cevap kilitlenir.",
+    "detayli": "Sayfa, soru verisini kendi içine gömülü olarak alır ve her soru için metni, şıkları, doğru şıkkı, isteğe bağlı ipucunu ve kaynak bilgisini bu veriden okur. Veriye göre şıklar ve soru sırası karıştırılır; sabitlenmiş şıklar yerini korur. Sonuç ekranından her soruya dönüp açıklamasına bakılabilir, yanlış ve boş sorular tekrar çözülebilir."
+   },
+   "mantik": {
+    "cok_basit": "Bilgiyi soru çözerek pekiştirmek için; hatalar hemen görülüp tekrar çözülsün diye.",
+    "basit": "Öğrenme ve sınav ayrı ihtiyaçlar olduğu için iki mod var; sınavda doğru şık gösterilmezse sonuç gerçek kalır.",
+    "normal": "Konu anlatımı olmadan yalnız soru çözmek için tasarlanmış. Aynı sorular öğrenme ve sınav olarak iki ayrı ihtiyacı karşılar; hatalar tekrar turunda yeniden çözülür.",
+    "gelismis": "Öğren modunda cevap kilitlenir, böylece şıkları deneyerek doğruyu bulmak engellenir. Şıklar karıştırıldığında öğrenci harf konumunu ezberlemez, içeriği öğrenir. Yanlışları ayrı tekrar turu, eksik bilgiyi aynı sorularda yeniden çözdürerek kapatır.",
+    "detayli": "Stil, veri ve davranış tek dosyada toplandığı için ayrı bir sunucu ya da kurulum gerekmez. Doğru ve yanlış durumu simge ve yazıyla da gösterilir; renk tek başına anlam taşımaz, bu da renkleri ayırt etmekte zorlanan kişilere yarar. Sonuç ekranı, hangi bölümde zayıf kalındığını ve hangi sorulara dönüleceğini ayrı ayrı gösterir."
+   },
+   "nasil": {
+    "basit": "Öğren modunda her cevaptan sonra doğru şık gösterilir, sınav modunda ise cevaplar sonda açılır. Yanlışlar tekrar çözdürülür.",
+    "normal": "Açılışta soru sırası veriye göre belirlenir, ilk soru gösterilir. Öğren modunda bir şık seçilince doğru ve yanlış şıklar renklenir; sonraki soruya düğmeyle geçilir. Sınav modunda cevaplar birikir; son soruda ya da 'Sınavı şimdi bitir' ile sonuç ekranına geçilir. Sonuç ekranında doğru, yanlış ve çözülmemiş sayıları ile halka görünür; yanlışlar tekrar çözdürülebilir.",
+    "gelismis": "Soru ekranında üstte sorunun sırası ve soru düğmeleri durur; öğren modunda doğru ve yanlış sayıları da görünür. Öğren modunda cevap verilince doğru şık gösterilir, yanlış şık için açıklama istenebilir. Sınav modunda geri bildirim gösterilmez; cevap değiştirilebilir ve cevapsız da geçilebilir. Sınav, son soruda ya da 'Sınavı şimdi bitir' ile erken bitirilir. Sonuç ekranında yanlış ve boş sorular için tekrar turu başlatılabilir. Tekrar turunda yalnız o sorular, öğren modunda gelir. Soruda ipucu varsa cevap vermeden açılabilir.",
+    "detayli": "Sayfa önce veriyi okur ve başlığı ile alt açıklamayı üstte gösterir. Veriye göre şıklar ve soru sırası karıştırılır; karıştırılan şıklardan doğru olan yine doğru sayılır, sabitlenmiş şıklar yerinde kalır. Her soru açıldığında soru düğmesi durumunu gösterir; ilk cevap öğren modunda kilitlenir ve açıklama için ayrı bir düğme çıkar. Sınav modunda her cevap sonda değerlendirilir; soruya dönüp cevabı değiştirmek mümkündür. Sonuç ekranında halka, varsa bölüm bazlı çubuklar ve her sorunun düğmesi görünür. Soruda ipucu varsa cevap vermeden açılabilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Soru verisi sayfanın içine gömülü gelir; soru metni, şıklar, doğru şık, ipucu, kaynak ve yanlış şık açıklamaları bu veride bulunur.",
+     "Kullanıcı şık seçer, soru geçer, mod değiştirir ya da tekrar ister."
+    ],
+    "ciktilar": [
+     "Seçilen moda göre geri bildirim, sonuç halkası, varsa bölüm çubukları ve yanlış soru listesi görünür.",
+     "Sonuç ekranından bir soruya dönüldüğünde o sorunun doğru şıkkı ve açıklaması gösterilir."
+    ],
+    "degismezler": [
+     "Doğru, yanlış ve boş sayıları ayrı tutulur; sonuç halkası ve çubuklar bu ayrımın üzerine kurulur."
+    ],
+    "kenar": [
+     "Şık sayısı harf etiketlerini aşan bir soruda harf etiketi eksik kalır.",
+     "Sınav modunda hiç cevap verilmeden sonuca gidilirse boş sorular yanlıştan ayrı sayılır.",
+     "Tekrar turunda doğru cevaplanan sorular listeden çıkar; kalan yanlış ve boşlar yeniden çözülür."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Veri alanlarının kısa adları ve veri yerini gösteren işaret, veriyi hazırlayan araçla birlikte sabittir.",
+     "Doğru şık kontrolü şıkların özgün sıra numarasıyla yapılır; karıştırma bu kontrolü değiştirmez.",
+     "Sınav modunda cevap hemen gösterilmez; bu fark modların ayırt edici özelliğidir."
+    ],
+    "degisebilir": [
+     "Renkler, boşluklar ve yazı boyutları serbestçe değiştirilebilir; bunlar doğru ya da yanlış durumunu etkilemez.",
+     "Düğme ve geri bildirim yazıları daha sade ya da daha ayrıntılı yapılabilir; mantık aynı kalır."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sayfaya dayanmadığı için bozulursa etkisi yalnız bu soru setinde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Uzun dosya: her bölümün girişi okundu, gövdelerin tamamı okunmadı.",
+    "Satırlar kesik geldiği için veriyi hazırlayan aracın adı ve kalıcı bir kayıt olup olmadığı tam görülmedi."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W24-coktan-secmeli-test.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/sablonlar/W25-anlatim-karma.html",
+   "tur": "dosya",
+   "ozet": "0011b7ddcbea",
+   "iskelet": "e3b0c44298fc",
+   "baslik": "Sekmeli anlatım sayfası",
+   "ne": {
+    "cok_basit": "Konuyu sekmelere bölen anlatım sayfası; her sekmede kısa sorular da bulunur.",
+    "normal": "Konu sekmelere bölünür; her sekmede formül ya da kart bulunur. Bir terime ya da karta dokununca kısa açıklama açılır; hesap bölümü gri zeminde ve büyük yazıyla durur, her sekmenin sonunda çizgili mini test bulunur."
+   },
+   "nasil": {
+    "normal": "Sekmeler üstte durur; dokunulan sekme açılır ve diğerleri gizlenir. Formülde her terim ya da kart dokunulabilir; dokununca altındaki açıklama kutusu o öğeye göre değişir. Açılışta her sekmenin ilk öğesinin açıklaması gösterilir; mini testte her soru bir kez cevaplanır ve doğru sayısı en sonda çıkar."
+   },
+   "sinir": {
+    "sabit": [
+     "Sekmeler veri listesinde yazılı sırayla gösterilir; sıra değişirse üstteki sekme düğmeleri de aynı sırayla yer değiştirir.",
+     "Mini test sorularında doğru şık sırası soruyla birlikte tutulmalı; şıklar yeniden sıralanırsa doğru cevabın yeri de güncellenmelidir."
+    ],
+    "degisebilir": [
+     "Formül, kart ve açıklama metinleri içerik olarak serbestçe değiştirilebilir; yeni cümleler aynı yapı içinde yazılabilir.",
+     "Renk tonları, sekme yazı boyutları ve geniş ekran düzeni içeride serbestçe ayarlanabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa bu anlatım sayfasının tamamı etkilenir; başka parça bu dosyaya dayanmadığı için etki bu sayfayla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Veri bölümündeki bazı satırlar kesik görünüyor; sekmelerin tam listesi ve içerikleri eksik okunmuş olabilir."
+   ],
+   "okunan": [
+    "gorsel/sablonlar/W25-anlatim-karma.html"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/soru-testi/kararlar.md",
+   "tur": "dosya",
+   "ozet": "27ac14b95fc9",
+   "iskelet": "976b117417a7",
+   "baslik": "Soru testi karar kaydı",
+   "ne": {
+    "cok_basit": "Test kutusunun tasarımında hangi seçeneğin seçildiğini tutan kayıt.",
+    "normal": "Bu kayıt, çoktan seçmeli test kutusunun görünüş, işlev ve sonradan eklenen kararlarını tek yerde tutar. Bir karar değişince önceki satır silinmez; yalnız geçersiz olduğu belirtilir."
+   },
+   "nasil": {
+    "normal": "Kayıt görünüm, işlev, sonradan eklenenler, tasarım değişikliği ve değişmeyen ilkeler bölümlerinden oluşur. Her satırda konu, seçilen çözüm ve kısa bir not bulunur. Tasarım değişikliği bölümü, önceki bazı satırları geçersiz kılar; bu satırlar silinmeden kayıtta bırakılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her satırın konu, seçilen çözüm ve not sütunları aynı düzende kalmalı; sütun sırası değişirse satırların anlamı karışır.",
+     "Geçersiz kılınan satırlar kayıtta silinmeden durmalı; böylece önceki kararların neden değiştiği izlenebilir."
+    ],
+    "degisebilir": [
+     "Not sütunundaki açıklamalar, anlamı bozulmadan serbestçe yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa testin neden böyle tasarlandığı kaybolur; ama başka parça bu kayda dayanmadığı için çalışan kutular etkilenmez.",
+   "terimler": [],
+   "belirsiz": [
+    "Sonradan eklenenler bölümündeki ilk şık renkleri satırı kesik görünüyor; tamamı okunamadı."
+   ],
+   "okunan": [
+    "gorsel/soru-testi/kararlar.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/soru-testi/ornek.json",
+   "tur": "dosya",
+   "ozet": "3f43954e5128",
+   "iskelet": "bb1d96d24fd7",
+   "baslik": "Örnek soru testi verisi",
+   "ne": {
+    "cok_basit": "Bu dosya, soru testi için örnek bir soru listesidir.",
+    "basit": "Bu dosya, test kartına hangi bilgilerin nasıl yazılacağını gösteren bir örnektir. Gıda kimyasından kısa sorular içerir.",
+    "normal": "Bu dosya, soru testi aracının örnek aldığı veriyi tutar. Başlık ve ayarların ardından gıda kimyasıyla ilgili sorular gelir. Her soru İngilizce ve Türkçe metinleri, şıkları, doğru şıkkı ve açıklamayı taşır.",
+    "gelismis": "Dosya, soru testi aracının örnek olarak okuduğu veri biçimidir. Örnek yazdırma bu dosyayı basar, şablon yenilenirken de bu dosya örnek alınır. Üst alanda başlık, kip ve ayarlar durur. Sorular listesi her soru için metin, şıklar, doğru harf ve açıklama taşır.",
+    "detayli": "Üst alanda başlık, alt başlık ve ayarlar durur. Sorular su aktivitesi, Maillard tepkimesi ve hız sabiti konularını kapsar. Her soru sıra, bölüm, konu, metinler, şıklar, doğru harf, açıklama ve kaynak bilgisi taşır. Yanlış şıklara nedeni yazılabilir, doğru şıkta ise neden olmaz. Doğru harf kaynaktaki harftir ve karıştırma sonrası ekranda değişebilir."
+   },
+   "mantik": {
+    "cok_basit": "Soru testi aracına bir örnek göstermek için var.",
+    "basit": "Yeni test hazırlayan biri, bilginin nereye yazılacağını bu örnekte görebilir. Böylece biçim hatası baştan azalır.",
+    "normal": "Biçimi gösteren tek bir örnek, her seferinde biçimi yeniden anlatma ihtiyacını azaltır. Aynı dosya hem örnek yazdırmada hem şablon yenilemede kullanıldığı için biçim tek yerde tutulur.",
+    "gelismis": "Örnek ile araç aynı dosyayı okuduğu için örnek ile aracın beklediği biçim kendiliğinden birbirine uyar. Ayrı bir belge tutulsaydı iki kopya zamanla ayrışabilirdi, burada tek kopya vardır.",
+    "detayli": "Veri ile biçimi bir dosyada toplamak, değişikliklerin tek yerde görülmesini sağlar. Doğru cevap ile açıklamanın birlikte durması, cevabın gerekçesinin soruyla kopmadan okunmasını sağlar. Yanlış şıkların nedenini şık şık yazmak, okuyanın hatasını hemen görmesine yardım eder. Türkçe ve İngilizce metinlerin yan yana durması da iki dilli kullanımı kolaylaştırır."
+   },
+   "nasil": {
+    "basit": "Araç dosyayı okur ve veriyi kart biçimine çevirir. Örnek olarak yazdırılabilir ve kart şablonunu yenilemek için kullanılır.",
+    "normal": "Araç önce bu dosyayı denetler: başlık boş mu, şık sayısı uygun aralıkta mı, doğru harf geçerli mi, açıklama dolu mu bakılır. Denetimden geçen soruların her biri kart verisine çevrilir. Örnek yazdırma ve şablon yenileme bu dosyayı doğrudan kullanır. Türkçe metinlerde Türkçe harf kontrolü de yapılır.",
+    "gelismis": "Dosyanın başlık ve ayar alanları önce okunur. Kip, yanlış cevap notu, kaynak, karıştırma ve dil değerleri tanımlı seçeneklerden biri olmalıdır. Sorular tek tek denetlenir: numara tekrar etmemeli, soru ve açıklama dolu olmalı, doğru harf şık sayısına uymalı ve aynı metinli iki şık bulunmamalıdır. Türkçe karşılığı eksik ya da İngilizcesiyle aynı olan metinler uyarı üretir. Sonra her soru kısa anahtarlı yapıya çevrilir ve soru sayısı büyükse parçalara ayrılır.",
+    "detayli": "Dosya, örnek olarak iki ayrı yerde kullanılır: örnek yazdırma ve şablon yenileme. Bu yüzden biçim değişirse aracın her iki kolu da bozulur. Okuma sırasında başlık, alt başlık ve kip alanları kart başlığına taşınır. Yanlış cevap notu, kaynak ve karıştırma değerleri kartın davranışını belirler. Karıştırma açıkken şıklar her başlangıçta yeniden dizilir ve doğru cevap kendi yeni yerinde kalır. Açıklamalarda doğru şık harfine gönderme yapılmaması, karıştırmanın anlamı bozmasını önler. Dil ayarı iki dilli kartta İngilizce soru ve şıkların Türkçe karşılığını ister. Kaynak seçeneği ikisi olduğunda kaynak bilgisi açıklamanın altında ve sonda ayrıca gösterilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Başlık, alt başlık ve ayar alanları.",
+     "Her soru için sıra, bölüm, konu, metinler, şıklar, doğru harf, açıklama ve kaynak bilgisi."
+    ],
+    "ciktilar": [
+     "Test kartının başlık ve ayar bilgileri.",
+     "Denetim sonucunda hata ya da uyarı listesi, örnek yazdırmada ise bu verinin kendisi."
+    ],
+    "degismezler": [
+     "Üst alan adları ve soru alan adları aracın okuyacağı biçimde kalmalıdır.",
+     "Doğru harf, şık listesinin sırasına göre tutulmalıdır."
+    ],
+    "kenar": [
+     "Soru ya da şık metni boşsa denetim hata verir.",
+     "Açıklama boş bırakılırsa denetim hata verir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Üst alan adları ve soru alan adları, aracın okuduğu biçimle birebir eşleşmek zorundadır.",
+     "Her soruda doğru harf, şık listesinin içindeki bir konuma karşılık gelmelidir.",
+     "Açıklamalarda doğru şık harfine gönderme yapılmaması, şıklar karıştığında yanlış bilgi oluşmasını önler."
+    ],
+    "degisebilir": [
+     "Sorunun konusu, bölümü, metinleri ve kaynak adları serbestçe değiştirilebilir.",
+     "Örnek soruların sayısı ve konuları, aynı biçim korunduğu sürece değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bu dosya bozulursa şablon yenileme durur ve örnek yazdırma yanlış biçimde çıkar.",
+   "terimler": [],
+   "belirsiz": [
+    "Ek denetim aracının bu dosyadan tam olarak ne okuduğu görülmedi."
+   ],
+   "okunan": [
+    "gorsel/soru-testi/ornek.json"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md",
+   "tur": "dosya",
+   "ozet": "91d31fe36644",
+   "iskelet": "6bc312d7de39",
+   "baslik": "Görsel stil kuralları",
+   "ne": {
+    "cok_basit": "Bu dosya, ders sayfalarındaki küçük parçaların nasıl görüneceğini sıralar.",
+    "basit": "Bu dosya, anlatımdaki küçük etkileşimli parçaların ortak görünüş kurallarını toplar. Yeni parça hazır bir örnekten türetilir.",
+    "normal": "Bu dosya, ders sayfalarındaki etkileşimli parçaların yüzeyini, renklerini, yazı boyutlarını, yerleşimini ve test arayüzünü tek bir yerde toplar. Her parça bu kurallara göre çizilir ve parçalar arasında tutarlılık sağlanır.",
+    "gelismis": "Dosya, hazır bir örnek olan referans parçadan yola çıkan bir görünüş sistemi tanımlar. Yüzeyler zemin düzeyleriyle ayrılır, renkler her kavram için sabitlenir, test soruları yalnız çizgiyle gösterilir. Formül, grafik ve kimyasal yapı gibi özel parçalar kendi kurallarıyla ele alınır.",
+    "detayli": "Dosyanın çekirdeği, her parçanın tek bir fikri anlatması ve bunun sade bir yapıyla kurulmasıdır. Önce yüzey, sonra renk, en son yazı ve boşluk kuralları uygulanır. Yerleşimde küçük parça anlatıldığı yerin hemen altında durur; test soruları ve formül, grafik, kimyasal yapı gibi özel parçalar kendi kurallarını taşır. Gönderilmeden önce farklı ekran boyutlarında ve iki temada kontrol edilir."
+   },
+   "mantik": {
+    "cok_basit": "Her parça aynı görünürse okuyan hangi parçanın ne anlattığını daha kolay anlar.",
+    "basit": "Dağınık renk ve kutular okuyanın dikkatini dağıtır. Bu yüzden zemin ve renk sayısı sınırlanır, her şey yazının boyutuyla sıralanır.",
+    "normal": "Ortak bir görünüş kuralı olmadan her parça kendi dilini kurabilir. Bu dosya bu kuralı koyar ve tutarlılığı sağlar; yeni parça, hazır referans olan bir örnekten türetilir ve sıfırdan kurulmaz.",
+    "gelismis": "Yüzey düzeyleri, kavram renkleri ve yazı ölçüleri birlikte okuyucunun dikkatini yönlendirir. Test sorularında yalnız çizgi kullanılır; cevap sonrası renkler doğru ile yanlışı ayırır. Formül ve grafik kendi kurallarıyla ele alınır.",
+    "detayli": "Kurallar tek yerde toplandığı için her parça aynı kaynaktan okunur ve kendi kuralını uydurmaz. Teknik kurallar ise ekranın sürekli gidip gelmesi gibi hataları önlemeye yöneliktir. Gönderme öncesi kontrol listesi, yüzey, renk ve taşma kurallarının parça bittiğinde yeniden gözden geçirilmesini sağlar."
+   },
+   "nasil": {
+    "basit": "Yeni bir parça önce hazır bir örnekten kopyalanır. Sonra zemin, renk ve yazı boyutu kurallara göre seçilir. En sonda telefonda ve tablette denenir.",
+    "normal": "Parça kurulurken önce ne göstereceği netleştirilir; bir parça bir fikir taşır. Sonra soru ya da sonuç en üstte ve en büyük yazıyla yerleşir, gövde ve soluk açıklama altına gelir. Zemin seçimi yüzey düzeyine göre yapılır: çoğu parça çizgide, hesap gri kutuda, ana sonuç koyu kutuda durur. Parçanın altında kısa bir cümleyle ne yapılacağı yazılır.",
+    "gelismis": "Test parçası soruyu ve İngilizce şıkları, hemen altında Türkçe karşılıklarıyla gösterir. Cevap verilince doğru şık yeşil, seçilen yanlış şık turuncu işaretlenir; öteki şıklar soluklaşır ve durumu açıklayan bir satır açılır. Az soru varsa hepsi alt alta, çoksa tek tek ilerlenir. Formülde her terim dokunulabilir olur ve dokununca açıklaması değişir. Grafikte eksen aralığı baştan seçilir ve sabit kalır. Kontrolde telefonda taşma aranır; geniş ekranda şıklar iki sütuna geçer.",
+    "detayli": "Yeni parça önce hazır bir örnekten alınır; yüzey düzeyi, renkler ve yazı ölçüleri oradan devralınır. En üstte soru ya da sonuç, altında gövde ve soluk açıklama gelir. Çoğu parça çizgide, hesap ve formül gri kutuda, en önemli birkaç parça koyu kutuda durur. Test soruları İngilizce şıkla, altta Türkçe karşılıkla gösterilir; cevap sonrası doğru şık yeşil, seçilen yanlış şık turuncu işaretlenir ve durum simge ile yazıyla da belirtilir. Formülde her terim dokunulabilir olur ve açıklaması altta değişir. Grafikte eksen aralığı baştan seçilir ve ayarla değişmez. Gönderilmeden önce telefonda ve tablette taşma kontrol edilir; geniş ekranda şıklar iki sütuna geçer. Parçanın altına ne yapılacağını anlatan kısa bir cümle eklenir."
+   },
+   "detay": {
+    "girdiler": [
+     "Anlatılan konunun sayıları ve metni; parçadaki soru, şık, hesap ya da grafik değerleri mesajdaki sayılarla aynı olmalıdır.",
+     "Hazır şablon ve sayfanın tema değişkenleri; yazı ve zemin renkleri sayfadan alınır."
+    ],
+    "ciktilar": [
+     "Mesajın içine yerleşen, dokunulunca tepki veren ve açıklamaları açılabilen etkileşimli bir parça.",
+     "Parçanın altında kısa bir açıklama: ne yapılacağı ve ne görüleceği."
+    ],
+    "degismezler": [
+     "Yazı, zemin ve çizgi renkleri tema değişkenleriyle alınır; sabit renk kodu hiçbir parçada yazılmaz.",
+     "Aynı kavram her parçada aynı rengi alır; doğru ve yanlış durumu renkle birlikte simge ve yazıyla gösterilir.",
+     "Test sorularında yüzey hep çizgidir ve harf, İngilizce, Türkçe sıralaması değişmez."
+    ],
+    "kenar": [
+     "Bir konuda aynı türden parça art arda gelirse çeşitlilik kuralı bozulur.",
+     "Kaydırıcılı parça konunun büyük bölümünü oluşturursa kural bozulur.",
+     "Grafikte kaydırıcı eksen aralığını değiştirirse eksen kuralı bozulur.",
+     "Dar telefonda şıklar tek sütunda kalır; geniş ekranda sütunlara ayrılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Test sorularının yalnız çizgiyle gösterilmesi ve harf, İngilizce, Türkçe sıralaması sabittir; tüm test parçaları aynı görünümü taşır.",
+     "Düğmelerin sohbetin düğme stilinden ayrı kurulması ve yazıların en küçük sınırın altına inmemesi sabittir.",
+     "Kavram renk eşlemesi, parçalar arası tutarlılığın dayanağıdır; bu eşleme değişirse parçalar birbirine uymaz."
+    ],
+    "degisebilir": [
+     "Koyu ve açık temadaki tonlar ile boşluk ölçüleri ince ayarla değiştirilebilir.",
+     "Açıklama metinlerinin uzunluğu ve kelime seçimi, kuralları bozmadan serbestçe değiştirilebilir.",
+     "Yeni bir konunun parça sırası ve türleri, çeşitlilik kuralı korunarak serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yeni yazılan parçalar birbirinden farklı görünür; bu dosyaya dayanan başka parça yoktur.",
+   "terimler": [],
+   "belirsiz": [
+    "Uzun dosya: her bölümün girişi okundu, gövdelerin tamamı okunmadı.",
+    "Bazı satırlar pakette kesik geldi; girişteki kullanım notu ile test bölümünün bazı ayrıntıları tam görülmedi."
+   ],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::1. Kalite çıtası: sade, net, bol boşluklu",
+   "tur": "alt",
+   "ozet": "ef984cbc47f7",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Her parça sade olur; bir parçada tek bir fikir bulunur ve önce başlık gelir.",
+    "normal": "Parçalar az ögeyle ve net bir sırayla kurulur. Kalın renkli çerçeve, renkli dolgu ve çok renk karmaşık görünür ve kullanılmaz. Hiyerarşi yazıyla kurulur, kutuyla ya da renkle değil. Grafik ve şema için ilgili beceriler önce yüklenir."
+   },
+   "kritik_neden": "Bozulursa parçalar gereğinden kalabalık görünür ve okuyan ana fikri kaçırır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::2. Yüzey seviyeleri (kullanıcı kararı, 2 Kasım 2026): anlatım karma, sorular çizgili",
+   "tur": "alt",
+   "ozet": "a2522335ec46",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Parçalar birkaç zeminde durur; çoğu çizgide, bazıları gri ya da koyu kutuda.",
+    "normal": "Varsayılan akış çizgidir ve test soruları yalnız çizgiyle gösterilir. Hesap ve formül gri zeminde, ana kural ve sonuç koyu zeminde durur. Aynı türdeki parça hep aynı zeminde kalır ve kutu içinde kutu kullanılmaz."
+   },
+   "kritik_neden": "Bozulursa test soruları ve önemli sonuçlar birbirine karışır, neyin önemli olduğu anlaşılmaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::3. Yerleşim",
+   "tur": "alt",
+   "ozet": "465245a1f3c5",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Her küçük konu, anlatıldığı yerin hemen altında kendi parçasıyla gösterilir.",
+    "normal": "Her anlatılan küçük parça, kendi etkileşimli parçasının hemen altında durur; başa çok şey yığılmaz. Parçanın altında kısa bir cümleyle ne yapılacağı yazılır. Aynı tür parça art arda gelmez ve karşılaştırma tablo ile yapılır."
+   },
+   "kritik_neden": "Bozulursa parçalar ilgili anlatımdan uzaklaşır ve tek tip parçalar art arda gelir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::4. Renk paleti",
+   "tur": "alt",
+   "ozet": "0f36caf6b3f5",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Renkler sabit bir listeden seçilir ve her renk tek bir şeyi anlatır.",
+    "normal": "Yazı, çizgi ve zemin için sayfanın tema renkleri kullanılır; sabit renk kodu yazılmaz. Aynı kavram her parçada aynı rengi alır. Doğru ve yanlış durumu renkle birlikte simge ve yazıyla da gösterilir."
+   },
+   "kritik_neden": "Bozulursa aynı kavram farklı renklerle görünür ve doğru ile yanlış karışır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::5. Yazı, boşluk, dokunma",
+   "tur": "alt",
+   "ozet": "d184649bccd9",
+   "iskelet": "e9137ff317a8",
+   "ne": {
+    "cok_basit": "Yazılar okunaklı bir boyutta olur; en küçük yazı bile rahat okunur.",
+    "normal": "Soru, şık, gövde ve açıklama için her biri ayrı boyut ve kalınlıkta yazılır; hiçbir yazı en küçük sınırın altına inmez. Düğmeler sohbetin kendi stiline bırakılmaz; rolü verilmiş kutular kullanılır."
+   },
+   "kritik_neden": "Bozulursa yazılar küçük ya da dağınık kalır ve dokunmak zorlaşır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::6. Test arayüzü (W10, W24, W25'in mini testi)",
+   "tur": "alt",
+   "ozet": "e76958e81839",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Test sorusu tek tek gösterilir ve cevap verilince doğru şık yeşil olur.",
+    "normal": "Sorular yalnızca çizgiyle görünür; her şık harf, İngilizce metin ve Türkçe karşılıktan oluşur. Cevap verilince doğru şık yeşil, yanlış seçilen şık turuncu, öteki şıklar soluk görünür. Soruda konu adı ya da numara yazılmaz."
+   },
+   "kritik_neden": "Bozulursa testler birbirinden farklı görünür ve cevabın doğru ya da yanlış olduğu anlaşılmaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::6b. Formül widget'ı (W01, W25 `.fm`)",
+   "tur": "alt",
+   "ozet": "285372e25291",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Formül kesir çizgisiyle yazılır ve her parçaya dokunulunca açıklaması çıkar.",
+    "normal": "Kesirler pay, çizgi ve payda olarak yazılır; eğik çizgiyle düz yazı kullanılmaz. Kuvvet ve alt indis küçük yazılır ve kaydırılarak yerleştirilir. Her terim dokunulabilir; seçilen terim kendi renginde çizgiyle belli olur ve açıklaması görünür."
+   },
+   "kritik_neden": "Bozulursa kesirler yanlış okunur ve terim açıklamaları eşleşmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::7. Grafik (W03, W04)",
+   "tur": "alt",
+   "ozet": "84c8433089b2",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Grafiğin eksenleri hep aynı kalır; ayar çubuğu eksenleri değiştirmez.",
+    "normal": "Eksen aralığı önceden seçilir ve bir ayarla değişmez. Eksen adları ve birimleri yazılır, her değer okunabilir kalır ve eğri grafiğin dışına taşmaz. Grafiğin altında kısa bir açıklamayla yatay ve dikey eksenin ne anlama geldiği anlatılır."
+   },
+   "kritik_neden": "Bozulursa eksenler kayar ve grafik yanlış okunur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::7b. Kimyasal yapı (W13)",
+   "tur": "alt",
+   "ozet": "b7cbb63eea3e",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Yapının adı ve formülü çizimin yanında durur ve atomların rengi hep aynıdır.",
+    "normal": "Bileşiğin İngilizce adı kalın, Türkçesi soluk yazılır ve formül her zaman çizimin yanında durur. Atomların renkleri sabittir: azot, oksijen ve karbon her yerde aynı renktedir. Grup kesikli renkli halkayla gösterilir."
+   },
+   "kritik_neden": "Bozulursa yapının adı ya da formülü çizimden kopar ve atomlar karışır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::8. Teknik",
+   "tur": "alt",
+   "ozet": "fbae8be48ef4",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Parça yalnız kendi içinde çalışır, dış bir yardımcı kullanılmaz ve hareket yoktur.",
+    "normal": "Parça kendi içinde, dış bir kütüphane olmadan çalışır. Boyut değişimine yalnız pencere genişliği belirgin biçimde değişince tepki verilir; sürekli izleme yapılmaz ve animasyon yoktur. Saydam renkler açık biçimde yazılır."
+   },
+   "kritik_neden": "Bozulursa parçalar yüklenirken ekran titrer ya da bazı tabletlerde çalışmaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::9. Gönderme öncesi kontrol listesi",
+   "tur": "alt",
+   "ozet": "17599f27783b",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Göndermeden önce parça telefonda, tablette ve açık ile koyu temada denenir.",
+    "normal": "Parça gönderilmeden önce dikey telefonda, yatay telefonda ve tablette taşma olmadığı kontrol edilir. Geniş ekranda şıklar sütunlara ayrılır. Açık ve koyu temada okunduğu, kurallara uyduğu ve ne yapılacağını anlatan cümlenin bulunduğu doğrulanır."
+   },
+   "kritik_neden": "Bozulursa taşan ya da okunmayan parçalar gönderilir ve bu fark edilmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/stil.md::Görsel stil: widget kuralları",
+   "tur": "alt",
+   "ozet": "91d31fe36644",
+   "iskelet": "ffa89c8a7095",
+   "ne": {
+    "cok_basit": "Ders sayfalarındaki küçük parçaların görünüşünü ve kurallarını toplar.",
+    "normal": "Ders sayfalarındaki etkileşimli parçaların ortak görünüş kurallarını özetler. Bu bölüm, yeni bir parçanın hazır bir örnekten türetilmesini ister ve sonraki bölümlerdeki kuralların temelini kurar."
+   },
+   "kritik_neden": "Bozulursa yeni yazılan parçalar birbirinden farklı görünür.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "gorsel/stil.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "gorsel/test/ekran-testi.js",
+   "tur": "dosya",
+   "ozet": "16233de90f3f",
+   "iskelet": "69091e90831e",
+   "baslik": "Sayfa ekran görüntüsü alma",
+   "ne": {
+    "cok_basit": "Bir sayfanın ekran görüntüsünü, istenen boyutta ve tema ile resim olarak kaydeder.",
+    "normal": "Bu araç, verilen sayfayı telefon boyutunda açıp sonucu resim olarak kaydeder. Koyu ya da açık tema seçilebilir; isteğe bağlı olarak bir öğeye tıklanır. Amacı, sayfanın küçük ekranda bozulup bozulmadığını hızlıca görmektir."
+   },
+   "nasil": {
+    "normal": "Araç önce sayfanın yorum satırlarını çıkarır, sonra verilen boyutta mobil dokunma özelliği açık olarak açar. Temaya göre arka plan ve yazı renkleri ayarlanır. Gerekirse bir öğeye tıklanır ve kısa bir bekleme sonrası tüm sayfa resim olarak kaydedilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Verilen boyut, tema ve öğe bilgilerinin sırası değişirse araç yanlış görüntü alır."
+    ],
+    "degisebilir": [
+     "Bekleme süreleri ve tema renklerinin değerleri içeride serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca ekran kontrolü yapılamaz; başka bir parça bu araca bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Betiğin çalıştığı dış modülün ayrıntıları bu kayıtta yer almadı."
+   ],
+   "okunan": [
+    "gorsel/test/ekran-testi.js"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:gorsel",
+   "tur": "birim",
+   "ozet": "7ed5797a9e92",
+   "iskelet": "f72d891bdebe",
+   "baslik": "Görsel kutular",
+   "ne": {
+    "cok_basit": "Ders anlatırken kullanılan hazır görsel kutuların nasıl görüneceğini, hangisinin ne zaman seçileceğini ve nasıl denendiğini burada toplanır.",
+    "basit": "Burada ders anlatımındaki görsel kutuların hepsi durur: hazır sayfa biçimleri, görünüş kuralları, hangi kutunun ne zaman kullanılacağını söyleyen liste, seçeneklerin denendiği ekran ve küçük ekranda deneme.",
+    "normal": "Bu bölüm, ders anlatımında kullanılan görsel kutuları bir bütün olarak tutar. Hazır sayfa biçimleri kutuların kendisidir, görünüş kuralları hepsinin aynı dilde çizilmesini sağlar, liste anlatım yazarına hangi kutuyu ne zaman seçeceğini söyler. Galeri seçenekleri bir arada gösterir, soru testi kutusu kendi verisiyle gelir, ekran denemesi ise telefon boyutunda bozulma olup olmadığına bakar.",
+    "gelismis": "Bu bölüm, ders anlatımındaki etkileşimli görsel kutuların tamamını ve etraflarındaki iş bölümünü tutar: hazır sayfa biçimleri kutuların kendisidir; görünüş kuralları yüzeyi, rengi ve yerleşimi tek yerde toplar; liste hangi kutunun ne zaman seçileceğini söyler. Galeri seçenekleri tek ekranda gösterir, soru testi birimi test kutusunu taşır, ekran denemesi küçük ekranda bozulmayı görmeyi sağlar.",
+    "detayli": "Bu bölüm, ders anlatımındaki etkileşimli görsel kutuların tamamını ve etraflarındaki iş bölümünü tutar. Hazır sayfa biçimleri kutuların kendisidir: her biri tek bir anlatım yolunu seçer ve yalnız veri değiştirilerek kullanılır. Görünüş kuralları yüzeyi, rengi, yazı boyutunu ve yerleşimi tek yerde toplayıp kutuları aynı dilde çizdirir. Liste her kutunun türünü ve ne zaman kullanılacağını yazarak seçim yaptırır. Galeri seçim yapıldıkça kodu günceller ve önizlemeleri palete göre yeniden çizer. Soru testi birimi, test kutusunun beklediği soru biçimini taşır. Ekran denemesi sayfayı telefon boyutunda açıp resim kaydeder."
+   },
+   "mantik": {
+    "cok_basit": "Kutular tek yerde toplanınca hepsi birbirine benzer görünür ve yazar her seferinde baştan çizmek yerine hazır olanı seçer.",
+    "basit": "Görsel kutular hazır tutulur ki yazar her konuda baştan çizim yapmasın; yalnız veriyi değiştirsin. Görünüş kuralı tek yerde durduğu için kutular birbirine benzer, listeden seçmek de işi hızlandırır.",
+    "normal": "Her konu için görseli baştan çizmek hem yavaş hem tutarsız olurdu. Bu yüzden hazır kutular, ortak görünüş kuralları ve seçim listesi bir arada tutulur: yazar yalnız veriyi değiştirir, kutular birbirine benzer. Galeri ve ekran denemesi ise seçimi ve küçük ekranda bozulmayı yazarın gözüyle görmesini sağlar.",
+    "gelismis": "Her konu için görseli baştan çizmek hem yavaş hem tutarsız olurdu. Bu yüzden hazır kutular, ortak görünüş kuralları ve seçim listesi bir arada tutulur: yazar yalnız veriyi değiştirir, kutular birbirine benzer ve bir kuralı değiştirmek bütün kutulara tek yerden yansır. Galeri seçenekleri yan yana gösterir, ekran denemesi ise hatayı kullanıcı görmeden telefon boyutunda yakalamak için ayrı tutulur.",
+    "detayli": "Her konu için görseli baştan çizmek hem yavaş hem tutarsız olurdu. Bu yüzden hazır kutular, ortak görünüş kuralları ve seçim listesi bir arada tutulur: yazar yalnız veriyi değiştirir, kutular birbirine benzer ve bir kuralı değiştirmek bütün kutulara tek yerden yansır. Görünüş kuralı ile kutu sayfaları ayrı tutulduğu için kural kopyalanmaz; liste ile kutular ayrı olduğu için yeni bir kutu eklemek eskileri bozmaz. Galeri seçenekleri yan yana gösterir ve ayarlarla kodu bağlar, ekran denemesi ise hatayı kullanıcı görmeden telefon boyutunda yakalamak için ayrı tutulur."
+   },
+   "nasil": {
+    "basit": "Anlatım yazarı önce listeden konuya uyan kutuyu seçer, sonra kutunun hazır sayfasına yalnız kendi verisini koyar. Kutu görünüş kurallarına göre çizilir. Gerekirse sayfa telefon boyutunda denenir ve galeriden seçenekler gözle karşılaştırılır.",
+    "normal": "Anlatım yazarı konuya bakar ve listeden uygun kutuyu seçer. Seçilen kutunun hazır sayfası alınır, içine yalnız konunun verisi konur; kutunun yapısı değişmez. Çizim sırasında görünüş kuralları renkleri, yazı boyutlarını ve yerleşimi belirler, böylece bütün kutular birbirine benzer. Seçenekleri kıyaslamak için galeri açılır: ayar değiştikçe üstteki kod güncellenir, önizlemeler seçilen palete göre yeniden çizilir. Son olarak sayfa telefon boyutunda açılıp resmi alınır ve bozulma var mı diye bakılır.",
+    "gelismis": "Anlatım yazarı konuya bakar ve katalogdan uygun kutuyu seçer; liste her kutunun ne zaman kullanılacağını söyler. Seçilen kutunun hazır sayfası alınır ve içine yalnız konunun verisi konur; kutunun yapısı değişmez. Çizim sırasında görünüş kuralları renkleri, yazı boyutlarını, yerleşimi ve test arayüzünü belirler, böylece bütün kutular birbirine benzer. Test sorusu gerekiyorsa soru testi birimindeki örnek veri kalıbı izlenir: her soruda iki dilde metin, şıklar, doğru şık ve açıklama bulunur. Seçenekleri kıyaslamak için galeri açılır; ayar değiştikçe üstteki kod güncellenir ve önizlemeler seçilen palete göre yeniden çizilir. Son olarak ekran denemesi sayfayı telefon boyutunda açıp resmini kaydeder.",
+    "detayli": "Anlatım yazarı konuya bakar ve katalogdan uygun kutuyu seçer; liste her kutunun kimliğini, türünü ve ne zaman kullanılacağını söyler. Seçilen kutunun hazır sayfası alınır ve içine yalnız konunun verisi konur; kutunun yapısı değişmez, çünkü ayrıntılar dokunmayla açılır ve her sayfa kendi konusunu taşır. Çizim sırasında görünüş kuralları yüzeyi, renkleri, yazı boyutlarını, yerleşimi ve test arayüzünü belirler; kutular arasında tutarlılık buradan gelir. Test sorusu gerekiyorsa soru testi birimindeki örnek veri kalıbı izlenir: her soruda İngilizce ve Türkçe metin, şıklar, doğru şık ve açıklama bulunur; kutunun görünüşünü, işlevini ve sonradan alınan kararları ise karar kaydı tutar. Seçenekleri gözle kıyaslamak için galeri açılır: ayar satırları ve kutu kartları tek ekrandadır, seçim yapıldıkça üstteki kod anında güncellenir ve önizlemeler seçilen palete göre yeniden çizilir. Galerinin boş kalıbı, veri alanına kod ile kutu bilgisi yerleşince tam işlevli olur. Son adımda ekran denemesi sayfayı verilen temada telefon boyutunda açar, istenirse bir öğeye tıklar ve sonucu resim olarak kaydeder; küçük ekranda bozulma varsa burada görülür."
+   },
+   "detay": {
+    "girdiler": [
+     "Anlatılacak konu ve seçilen kutunun türü, kutunun hangi veriyi alacağını belirler.",
+     "Galeri, ayar satırlarını ve kutu bilgisini veri alanından alır.",
+     "Soru testi kutusu her soru için iki dilde metin, şıklar, doğru şık ve açıklama bekler."
+    ],
+    "ciktilar": [
+     "Konuya göre doldurulmuş, aynı görünüşü taşıyan etkileşimli kutu sayfaları çıkar.",
+     "Galeri, seçime göre güncellenen kod ve yeniden çizilen önizlemeler verir.",
+     "Ekran denemesi, sayfanın telefon boyutundaki resmini verir."
+    ],
+    "degismezler": [
+     "Kutular konuya göre seçilir ve yalnız verisi değişir, yapısı değişmez.",
+     "Bütün kutular tek bir görünüş kuralından çizilir.",
+     "Soru verisinin biçimi kutunun beklediği biçimle aynı kalır."
+    ],
+    "kenar": [
+     "Açık ya da koyu tema seçilebilir; ekran denemesi ikisinde de sayfayı açabilir.",
+     "Ekran denemesi, istenirse sayfadaki bir öğeye tıklayıp ondan sonra resim alır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Soru verisinin biçimi, test kutusunun beklediği biçimle aynı kalmalıdır.",
+     "Katalogdaki her kutunun kimliği, anlatım yazarının onu seçtiği ad olarak sabit durur.",
+     "Görünüş kuralları bütün kutular için tek yerde yazılır ve kutulara kopyalanmaz."
+    ],
+    "degisebilir": [
+     "Kutuların içindeki veri, yani konunun sayıları, metinleri ve soruları serbestçe değişir.",
+     "Galerideki önizleme palet seçenekleri kutuların kendisini bozmadan değişebilir."
+    ]
+   },
+   "kurulus": [
+    {
+     "baslik": "Görünüş kurallarını yaz",
+     "metin": "Önce kimseye dayanmayan parçayı kur: yüzey, renk, yazı boyutu, yerleşim ve test arayüzü için tek bir kural dosyası yaz. Bütün kutular buna bakacak.",
+     "parcalar": [
+      "gorsel/stil.md"
+     ]
+    },
+    {
+     "baslik": "Hazır sayfa biçimlerini yap",
+     "metin": "Her anlatım yolu için bir hazır sayfa kur: formül, türetme, hesap, grafik, devre, test gibi. Her biri kurallara uyar ve yalnız veri alır.",
+     "parcalar": [
+      "k:gorsel/sablonlar"
+     ]
+    },
+    {
+     "baslik": "Soru testi kutusunu ekle",
+     "metin": "Test kutusunun beklediği soru biçimini belirleyen örnek veriyi ve kutunun kararlarını yaz; sonra gerçek sorular bu kalıba göre girilir.",
+     "parcalar": [
+      "k:gorsel/soru-testi"
+     ]
+    },
+    {
+     "baslik": "Seçim listesini çıkar",
+     "metin": "Her kutu için kimlik, tür ve ne zaman kullanılacağını yazan bir liste hazırla; anlatım yazarı seçimini buradan yapacak.",
+     "parcalar": [
+      "gorsel/katalog.md"
+     ]
+    },
+    {
+     "baslik": "Galeri ve ekran denemesini bağla",
+     "metin": "Seçenekleri tek ekranda gösteren galeriyi kur, sonra sayfayı telefon boyutunda açan denemeyi ekle ki bozulma yazar tarafından hemen görülsün.",
+     "parcalar": [
+      "k:gorsel/galeri",
+      "gorsel/test/ekran-testi.js"
+     ]
+    }
+   ],
+   "sorular": [
+    {
+     "soru": "Yeni bir konu için görsel kutu hazırlarken ne değişir, ne aynı kalır?",
+     "yanit": "Yalnız kutunun verisi değişir: sayılar, metinler, sorular. Kutunun yapısı ve görünüş kuralı aynı kalır; çünkü bütün kutuların birbirine benzemesi bu kurala dayanır."
+    },
+    {
+     "soru": "Görünüş kuralını her kutunun içine kopyalasak ne olur?",
+     "yanit": "Kural değiştirilmek istendiğinde her kutuyu tek tek düzeltmek gerekir ve bir kısmı unutulup tutarsızlık doğar. Tek yerde durduğu için değişiklik bütün kutulara yansır."
+    },
+    {
+     "soru": "Ekran denemesi neden ayrı bir parça?",
+     "yanit": "Kutunun doğru çizilmesi ile küçük ekranda bozulmaması ayrı sorulardır. Deneme sayfayı telefon boyutunda açıp resmini kaydeder, böylece sorun kullanıcıdan önce yazar tarafından görülür."
+    }
+   ],
+   "kritik_neden": "Bozulursa kutular birbirine benzemez, yazar doğru kutuyu seçemez ve küçük ekranda bozulan sayfalar fark edilmeden ders anlatımına girer.",
+   "terimler": [],
+   "belirsiz": [
+    "Galerinin ve ekran denemesinin hangi akışla çağrıldığı görülemedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:gorsel/galeri",
+   "tur": "birim",
+   "ozet": "8eef2992d0aa",
+   "iskelet": "705868760914",
+   "baslik": "Görsel şablon galerisi",
+   "ne": {
+    "cok_basit": "Biri şablonları ve ayarları tek ekranda gösteren sayfa, öbürü bu sayfanın içine bilgi yerleştirilecek boş kalıptır.",
+    "basit": "Biri sayfa, öbürü boş kalıp: sayfa ayar satırlarını ve şablon kartlarını aynı ekranda toplar, seçim yapıldıkça üstteki kod anında güncellenir. Kalıp ise kodun ve şablon bilgisinin yerleşeceği veri alanını taşır.",
+    "normal": "Bu birim iki parçadan oluşur ve iş bölümü nettir. Birincisi, ayar satırlarını ve şablon kartlarını tek ekranda gösteren sayfadır. Seçim yapıldıkça üstteki kod anında güncellenir ve önizlemeler seçilen renk paletine göre yeniden çizilir. İkincisi bu sayfanın boş kalıbıdır; veri alanına kod ile şablon bilgisi yerleşince sayfa tam işlevli olur.",
+    "gelismis": "Birim iki parçalıdır. `galeri.html` kişinin gördüğü sayfadır: ayar satırları ve şablon kartları aynı ekranda durur; seçim yapıldıkça üstteki kod anında yenilenir ve önizlemeler seçilen renk paletine göre yeniden çizilir. `galeri.sablon.html` ise bu sayfanın boş kalıbıdır; içinde kod ile şablon bilgisinin yerleşeceği bir veri alanı bulunur. Bu alan doldurulunca sayfa tam işlevli olur.",
+    "detayli": "Birim iki parçalıdır. `galeri.html` kişinin gördüğü sayfadır: ayar satırları ve şablon kartları aynı ekranda durur; seçim yapıldıkça üstteki kod anında yenilenir ve önizlemeler seçilen renk paletine göre yeniden çizilir. `galeri.sablon.html` ise bu sayfanın boş kalıbıdır; içinde kod ile şablon bilgisinin yerleşeceği bir veri alanı bulunur. Bu alan doldurulunca sayfa tam işlevli olur. Kişi bir seçim yaptığında yalnızca kod ve önizlemeler değişir; ayar satırlarının ve kartların yeri aynı kalır."
+   },
+   "mantik": {
+    "cok_basit": "Ayarları ve şablonları tek ekranda görmek, her seçimde kodu elle aramaktan kurtarır.",
+    "basit": "Düzen ile bilgi ayrı durur, böylece sayfanın yerleşimi bir kez kurulur ve şablon bilgisi değişse bile yeniden yazılmaz. Kişi seçiminin sonucunu hemen görür.",
+    "normal": "Düzen ile bilgi ayrı tutulunca iki ihtiyaç aynı anda karşılanır. Sayfanın ekranı hep aynı kalır, kişi ayarlara bakarken kodun ne olduğunu hemen görür. Şablon bilgisi değişse bile düzen yeniden yazılmaz, yalnızca veri alanına konan bilgi değişir.",
+    "gelismis": "Boş kalıp ile dolu sayfanın ayrı durması, düzenin tek yerde tutulması anlamına gelir. Bu sayede kodla şablon bilgisi değiştiğinde ekranın düzenini ayrıca kurmak gerekmez. Kişi seçim yaptığında kod ve önizleme anında yenilenir; ayarlar ve kartlar yerinde kalır, göz nereye bakacağını bilir. Kalıp doldurulmadan açılırsa sayfa işlevsiz kalır; bu yüzden iki parça birlikte düşünülür.",
+    "detayli": "Boş kalıp ile dolu sayfanın ayrı durması, düzenin tek yerde tutulması anlamına gelir. Bu sayede kodla şablon bilgisi değiştiğinde ekranın düzenini baştan kurmak gerekmez; yalnızca veri alanına konan bilgi değişir. Kişi seçim yaptığında kod ve önizleme anında yenilenir, ama ayar satırları ve kartlar yerinde kalır; bu, kişinin ekranda kendini kaybetmeden seçim yapabilmesi için görülen bir yarardır. Önizlemelerin renk paletine göre yeniden çizilmesi aynı düzen içinde farklı görünümleri denemeyi kolaylaştırır. Kalıp doldurulmadan açılırsa sayfa işlevsiz kalır; bu yüzden iki parça birlikte düşünülür ve kalıbın hazır olması sayfanın ön koşuludur."
+   },
+   "nasil": {
+    "basit": "Önce kalıptaki veri alanına kod ile şablon bilgisi yerleşir ve sayfa tam işlevli olur. Kişi sayfada ayar satırlarından seçim yapar. Üstteki kod anında güncellenir, önizlemeler seçilen renk paletine göre yeniden çizilir.",
+    "normal": "Bir iş bu birimden iki adımda geçer. Önce kalıp hazırlanır: kod ile şablon bilgisi kalıptaki veri alanına yerleşir ve alan dolunca sayfa tam işlevli olur. Sonra kişi sayfada ayar satırlarından seçim yapar. Her seçimde üstteki kod anında güncellenir ve önizlemeler seçilen renk paletine göre yeniden çizilir. Kalıp doldurulmadan açılırsa sayfa tam işlevli olmaz ve yalnızca boş kalıp görünür.",
+    "gelismis": "Bir iş bu birimin içinden iki kademede geçer. Önce kalıp hazırlanır: kod ile şablon bilgisi veri alanına yerleşir ve alan dolunca sayfa tam işlevli olur. Sonra kişi ayar satırlarından seçim yapar; üstteki kod anında güncellenir, önizlemeler seçilen renk paletine göre yeniden çizilir. Kalıp doldurulmadan açılırsa sayfa tam işlevli olmaz ve yalnızca boş kalıp görünür.",
+    "detayli": "Bir iş bu birimin içinden iki kademede geçer. Birinci kademede kalıp hazırlanır: kod ile şablon bilgisi, kalıpta ayrılmış veri alanına yerleşir ve alan dolunca sayfa tam işlevli olur. İkinci kademede kişi sayfada ayar satırlarından bir seçim yapar. Seçim anında üstteki kod güncellenir; önizlemeler de seçilen renk paletine göre yeniden çizilir, kartlar ve ayar satırları olduğu yerde kalır. Kalıp doldurulmadan açılırsa sayfa tam işlevli olmaz ve yalnızca boş kalıp görünür. Bu yüzden iş, kalıp hazır olduktan sonra sayfa üzerinde yürür."
+   },
+   "detay": {
+    "girdiler": [
+     "Kişinin ayar satırlarında yaptığı seçimler ve seçilen renk paleti.",
+     "Kalıptaki veri alanına yerleşen kod ile şablon bilgisi."
+    ],
+    "ciktilar": [
+     "Üstte anında güncellenen kod.",
+     "Seçilen renk paletine göre yeniden çizilen önizlemeler."
+    ],
+    "degismezler": [
+     "Veri alanı kalıbın içinde aynı yerde kalır."
+    ],
+    "kenar": [
+     "Kalıp doldurulmadan açılırsa sayfa tam işlevli olmaz ve yalnızca boş kalıp görünür."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kalıptaki veri alanının yeri sabit kalmalı; kod ile şablon bilgisi oraya yerleşir.",
+     "Seçim yapıldığında üstteki kodun anında güncellenmesi, kişinin sayfadan beklediği davranıştır."
+    ],
+    "degisebilir": [
+     "Önizlemelerin çizim ayrıntısı ve kartların görsel düzeni içeride serbestçe değişebilir.",
+     "Renk paletlerinin görünümü, veri alanının yerini etkilemeden değişebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Seçim yapılınca hangi parça değişir, hangisi yerinde kalır?",
+     "yanit": "Üstteki kod ve önizlemeler değişir; ayar satırları ile şablon kartlarının yeri aynı kalır."
+    },
+    {
+     "soru": "Veri alanı doldurulmadan sayfa açılırsa ne olur?",
+     "yanit": "Sayfa tam işlevli olmaz; yalnızca boş bir kalıp görünür. Bu yüzden iki parça birlikte düşünülmelidir."
+    }
+   ],
+   "kritik_neden": "Ayar satırları ya da veri alanı bozulursa seçimler kodu güncellemez ve kalıp tam işlevli bir sayfaya dönüşmez.",
+   "terimler": [],
+   "belirsiz": [
+    "Veri alanını dolduran parçanın bu birimin dışında olup olmadığı anlatımdan görülmüyor.",
+    "Kalıbın hangi adımda ve hangi parça tarafından doldurulduğu ayrıntılı olarak bilinmiyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:gorsel/sablonlar",
+   "tur": "birim",
+   "ozet": "3c66abd6578f",
+   "iskelet": "b34fa6728721",
+   "baslik": "Hazır sayfa biçimleri",
+   "ne": {
+    "cok_basit": "Bu klasörde, bir konuyu göstermek için hazır sayfa biçimleri durur: kartlar, adım adım çözümler, testler ve benzerleri.",
+    "basit": "Bu birimde hazır sayfa biçimleri bir arada durur. Her biri bir konuyu tek bir yoldan gösterir: kart, adım adım çözüm, grafik, matris, devre ya da test.",
+    "normal": "Bu birim, ders anlatımında kullanılacak hazır sayfa biçimlerini bir arada tutar. Her sayfa tek bir anlatım yolunu seçer: formül kutusu, satır satır türetme, adım adım hesap, grafik, matris işlemi, devre şeması ya da sıralı test. Ayrıntılar dokunmayla açılır ve her sayfa kendi konusunu taşır.",
+    "gelismis": "Birim, dersin farklı konularına uygun hazır sayfa biçimlerini tek klasörde toplar. Biçimler anlatım türüne göre ayrılır: formül ve kart sayfaları terimleri kutularla, çözüm sayfaları bir sonucun nasıl kurulduğunu adım adım, grafik sayfaları sabit eksenli çizgi ve eğri üzerinde okumayı gösterir. Matris ve devre sayfaları işlemi ve yapıyı görünür kılar; test sayfaları ise kişinin bilgisini ölçer.",
+    "detayli": "Birim, dersin farklı konularına uygun hazır sayfa biçimlerini tek klasörde toplar. Her biçim konunun yapısına göre seçilmiştir: formül ve kart sayfaları terimleri kutularla, çözüm sayfaları sonucun nasıl kurulduğunu adım adım, grafik sayfaları sabit eksenli çizgi ve eğrilerde okumayı gösterir. Matris ve devre sayfaları işlemi ve yapıyı görünür kılar, test sayfaları ise bilgiyi ölçer. Bir öğeye dokununca açılan kısa açıklama, görünen yapı ile anlatılan kuralın birlikte okunmasını sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Her konunun kendine uygun bir gösterimi olsun diye farklı sayfa biçimleri var.",
+    "basit": "Konular farklı biçimde anlaşılır: formül için kutu, tablo için satır işlemi, grafik için sabit eksen daha iyi çalışır. Tek bir biçim hepsine uymadığı için birim çeşitli biçimleri bir arada tutar.",
+    "normal": "Konular farklı biçimde anlaşılır: formül için kutu, tablo için satır işlemi, grafik için sabit eksen daha iyi çalışır. Tek bir biçim hepsine uymadığı için birim çeşitli biçimleri bir arada tutar. Böylece kişi, konunun yapısına en çok uyan sayfayı açabilir.",
+    "gelismis": "Konular farklı biçimde anlaşılır: formül için kutu ve türetme, tablo için satır işlemi, grafik için sabit eksen, devre için yapı şeması daha iyi çalışır. Tek bir biçim hepsine uymadığı için birim çeşitli biçimleri bir arada tutar ve kişi konunun yapısına en çok uyan sayfayı açar.",
+    "detayli": "Konular farklı biçimde anlaşılır: formül için kutu ve türetme, tablo için satır işlemi, grafik için sabit eksen, devre için yapı şeması daha iyi çalışır. Tek bir biçim hepsine uymadığı için birim çeşitli biçimleri bir arada tutar ve kişi konunun yapısına en çok uyan sayfayı açar. Bir sonucu adım adım gösteren sayfa ile bilgiyi ölçen sayfa aynı biçimde kurulursa ikisinin işi karışır; bu yüzden her biçim kendi anlatım yolunu korur."
+   },
+   "nasil": {
+    "basit": "Bir konu için uygun biçim seçilir ve sayfa açılır. Kişi kutulara, satırlara ya da düğmelere dokundukça ayrıntı açılır; testlerde her cevap hemen değerlendirilir.",
+    "normal": "Bir konu için uygun sayfa biçimi seçilir ve sayfa açılır. Kişi sayfada dokunduğu öğeye göre ayrıntıyı görür: formül kutusunda terimin anlamı ve yeri, türetmede yeni satır ve o satırı doğuran kural, grafikte okunan değer. Test biçiminde her cevap hemen değerlendirilir; doğru şık yeşil, yanlış seçim turuncu görünür ve açıklama çıkar. Sonda sonuç özeti ya da yanlış sorular listelenir.",
+    "gelismis": "Bir ders konusu için sayfa biçimi seçildikten sonra kişi sayfayı baştan sona izler. Formül sayfasında kutulara dokunulur ve terimin anlamı açılır; türetme sayfasında her tıklama bir satır ekler ve yanına o satırı doğuran kural yazılır. Hesap sayfasında verilenler en üstte durur, her adım bir kural ve birim uyarısıyla birlikte görünür ve sonda büyük bir sonuç kartı çıkar. Matris sayfasında değişen satır turuncu, öncü değer yeşil olur. Test sayfasında her cevap hemen değerlendirilir ve yanlış şıkkın nedeni istenirse açılır; sonda sonuç halkası ve yanlış sorular listelenir.",
+    "detayli": "Bir ders konusu için sayfa biçimi seçildikten sonra kişi sayfayı baştan sona izler. Formül sayfasında kutulara dokunulur ve terimin anlamı açılır; türetme sayfasında her tıklama bir satır ekler ve yanına o satırı doğuran kural yazılır. Hesap sayfasında verilenler en üstte durur, her adım bir kural ve birim uyarısıyla birlikte görünür ve sonda büyük bir sonuç kartı çıkar. Matris sayfasında değişen satır turuncu, öncü değer yeşil olur. Test sayfasında her cevap hemen değerlendirilir ve yanlış şıkkın nedeni istenirse açılır; sonda sonuç halkası ve yanlış sorular listelenir. Konu sonunda açılan ek bölüm, kaynak tablosu ve ipuçlarıyla ana anlatımdan ayrı bir alanda durur; ders akışı bu ayrıntılarla bölünmez. Her etkileşim tek bir öğe üzerinden ilerler ve her dokunuş yalnızca o öğenin açıklamasını değiştirir."
+   },
+   "detay": {
+    "girdiler": [
+     "Konuya uygun sayfa biçimi ve kişinin dokunduğu öğe.",
+     "Test sayfasında kişinin verdiği cevap."
+    ],
+    "ciktilar": [
+     "Açılan ayrıntı, renklenen kutu ya da vurgulanan satır.",
+     "Test sayfasında doğru ya da yanlış cevabın sonucu."
+    ],
+    "degismezler": [
+     "Her sayfanın kendi biçimi korunur; biçimler birbirine karıştırılmaz."
+    ],
+    "kenar": [
+     "Dokunulmayan öğe ayrıntı açmaz; sayfa yalnızca görünen içeriği gösterir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Her sayfa biçiminin adı ve kendi düzeni sabit kalmalı; sayfalar bu biçimlere göre seçilir.",
+     "Testlerde doğru şıkkın yeşil, yanlış seçimin turuncu görünmesi kişinin beklediği bir davranıştır."
+    ],
+    "degisebilir": [
+     "Her sayfadaki metinlerin ayrıntısı ve sayfaya eklenecek yeni öğeler içeride serbestçe değişebilir.",
+     "Grafiklerin kaydırıcı aralığı ve matris sayfalarındaki renk vurgusu, birimin dışını etkilemeden değişebilir."
+    ]
+   },
+   "kurulus": [
+    {
+     "baslik": "Kart ve formül sayfalarını kur",
+     "metin": "Önce tek bir kavramı gösteren kart ve formül sayfaları kurulur: formül kutusu, doğru yanlış kartları ve özet kartları. Bu sayfalar tek başlarına açılabildiği için ilk sırada yer alır.",
+     "parcalar": [
+      "gorsel/sablonlar/W01-formul-kutulu.html",
+      "gorsel/sablonlar/W09-dogru-yanlis-kartlari.html",
+      "gorsel/sablonlar/W11-ozet-kartlari.html"
+     ]
+    },
+    {
+     "baslik": "Adım adım çözüm sayfalarını kur",
+     "metin": "Ardından bir sonucun nasıl kurulduğunu gösteren sayfalar gelir: satır satır türetme, adım adım hesap ve grafik okuma. Bu sayfalar kart düzeninin üstüne adım ve grafik ekler.",
+     "parcalar": [
+      "gorsel/sablonlar/W02-turetme-satir-satir.html",
+      "gorsel/sablonlar/W06-adim-adim-hesap.html",
+      "gorsel/sablonlar/W03-grafik-dogru.html",
+      "gorsel/sablonlar/W04-grafik-egri.html"
+     ]
+    },
+    {
+     "baslik": "Matris ve test sayfalarını kur",
+     "metin": "Son olarak matris işlemi, devre yapısı ve test sayfaları eklenir. Matris işlemleri satır satır sadeleşir; testler ise kişinin cevaplarına göre renk değiştirir.",
+     "parcalar": [
+      "gorsel/sablonlar/W17-matris-satir-islemi.html",
+      "gorsel/sablonlar/W21-elemanter-matris.html",
+      "gorsel/sablonlar/W22-gauss-jordan-ters.html",
+      "gorsel/sablonlar/W10-mini-test.html",
+      "gorsel/sablonlar/W24-coktan-secmeli-test.html"
+     ]
+    }
+   ],
+   "sorular": [
+    {
+     "soru": "Bir sayfa biçimi değiştirilse, sabit kalması gereken ne olmalı?",
+     "yanit": "Sayfa biçiminin adı ve kendi düzeni sabit kalmalı; sayfalar bu biçimlere göre seçilir. Metinlerin ayrıntısı ise değişebilir."
+    },
+    {
+     "soru": "Testlerde doğru ve yanlış cevabın renkleri değişirse ne olur?",
+     "yanit": "Kişinin doğruyu ya da yanlışı hemen ayırt etme beklentisi bozulur. Bu yüzden renk anlamı sabit tutulmalıdır."
+    }
+   ],
+   "kritik_neden": "Bir sayfa biçimi bozulursa o konunun anlatımı eksik kalır ve dokunulan öğeler açıklama göstermez.",
+   "terimler": [],
+   "belirsiz": [
+    "Konuya uygun sayfa biçiminin kim tarafından seçildiği anlatımdan görülmüyor.",
+    "Kurulum adımlarının gerçek sırası bu anlatımdan görülmüyor; sıra işlerin doğasına göre önerilen bir düzendir."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:gorsel/soru-testi",
+   "tur": "birim",
+   "ozet": "be90679992dd",
+   "iskelet": "a9926da0ecd5",
+   "baslik": "Çoktan seçmeli test verisi",
+   "ne": {
+    "cok_basit": "Bu birimde çoktan seçmeli test kutusunun örnek soru verisi ve bu kutunun aldığı kararların kaydı durur.",
+    "basit": "Bu birimde bir test kutusu için iki parça çalışır. Biri örnek soruları tutar, öbürü kutunun görünüşünü, işlevini ve sonradan alınan kararları kaydeder.",
+    "normal": "Bu birim, çoktan seçmeli test kutusunun iki yanını birlikte tutar. Örnek soru verisi, kutunun beklediği soru biçimini gösterir: her soruda İngilizce ve Türkçe metinler, şıklar, doğru şık ve açıklama bulunur. Kararlar kaydı ise kutunun görünüşünü, işlevini ve sonradan alınan kararları tutar.",
+    "gelismis": "Birimde veri ile karar kaydı ayrı işler görür. `ornek.json` kutunun beklediği veriyi örnekler: başlık ve ayarların ardından gıda kimyasıyla ilgili sorular gelir, her soruda İngilizce ve Türkçe metinler, şıklar, doğru şık ve açıklama bulunur. `kararlar.md` ise kutunun görünüşünü ve işlevini, sonradan alınan kararlarla birlikte tek yerde tutar.",
+    "detayli": "Birimde iki ayrı iş vardır: veri, kutunun beklediği soru biçimini gösterir; karar kaydı ise kutunun görünüşünü ve işlevini sonradan alınan kararlarla birlikte tutar. Örnek veri, başlık ve ayarların ardından gıda kimyasıyla ilgili soruları getirir; her soruda İngilizce ve Türkçe metinler, şıklar, doğru şık ve açıklama yer alır. Karar kaydında bir karar değiştiğinde eski satır silinmez, yalnızca geçersiz olduğu belirtilir. Böylece veri ile kaydın birlikte okunması, kutunun ne beklediğini ve bu beklentinin nasıl değiştiğini görmeyi sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Test kutusunun ne beklediği somut bir örnekle gösterilsin, kararlar da kaybolmasın diye var.",
+    "basit": "Kutuyu kurmak için somut bir soru örneği gerekir; kutunun neden böyle olduğunu sonradan görmek için de kararların izi tutulur. Bu yüzden veri ile kararlar ayrı durur ve eski kararlar silinmez.",
+    "normal": "Örnek veri, kutunun beklediği soru biçimini tek bir yerde tutar; böylece soru yazarken ya da kutuyu değiştirirken ölçüt hazır bulunur. Kararlar ayrı bir kayıtta durduğu için, bir değişikliğin neden yapıldığı ve hangi kararın artık geçerli olmadığı izlenebilir. Eski kararı silmemek, geçmişte neyin denendiğini de görünür kılar.",
+    "gelismis": "Soruların biçimi bir örnekte sabitlenirse, soru içeriği değişse bile kutunun okuduğu alanlar aynı kalır; bu da kutuyu bozmadan soru eklemeyi kolaylaştırır. Kararların ayrı bir kayıtta tutulması, görünüş ve işlev hakkındaki tartışmalarda neyin seçildiğini ve hangi kararın yerini aldığını ayırt etmeyi sağlar. Eski satırın silinmemesi, bir karardan vazgeçildiğinde bile önceki düşüncenin izini korur; geriye dönük okuma yapılabilir.",
+    "detayli": "Soruların biçimi bir örnekte sabitlenirse, soru içeriği değişse bile kutunun okuduğu alanlar aynı kalır; bu da kutuyu bozmadan soru eklemeyi kolaylaştırır. Kararların ayrı bir kayıtta tutulması, görünüş ve işlev hakkındaki tartışmalarda neyin seçildiğini ve hangi kararın yerini aldığını ayırt etmeyi sağlar. Eski satırın silinmemesi, bir karardan vazgeçildiğinde bile önceki düşüncenin izini korur. Veri ve kayıt ayrı tutulunca içerik ile davranış birbirine karışmaz; kutunun davranışına dair bir karar, soruların içeriğine bağlı kalmadan değiştirilebilir."
+   },
+   "nasil": {
+    "basit": "Bir soru testi için veri örnek alınır; kutu bu biçimde sorular okur. Bir karar değişince kayda yeni satır eklenir ve eski satır geçersiz diye işaretlenir.",
+    "normal": "Araç, örnek verideki biçimi kendine ölçüt alır: başlık ve ayarlar önce gelir, ardından her soru İngilizce ve Türkçe metinleriyle, şıklarıyla, doğru şıkkı ve açıklamasıyla yer alır. Bir karar değiştiğinde yeni karar kayda yazılır, önceki satır silinmeden geçersiz diye işaretlenir. Böylece bugünkü beklenti ile geçmiş kararlar aynı yerde izlenir.",
+    "gelismis": "Araç örnek verideki biçimi kendine ölçüt alır: başlık ve ayarlar önce gelir, ardından gıda kimyasıyla ilgili sorular sıralanır. Her soruda İngilizce ve Türkçe metinler, şıklar, doğru şık ve açıklama bulunur; bu alanlar örnekten okunur. Kutunun görünüşü ya da işlevi hakkında bir karar alındığında kayda yeni satır yazılır, eski satır silinmez ve yalnız geçersiz olduğu belirtilir. Bu sayede bugünkü beklenti ile geçmiş kararlar aynı yerde, okunabilir biçimde durur.",
+    "detayli": "Araç örnek verideki biçimi kendine ölçüt alır. Önce başlık ve ayarlar gelir, ardından gıda kimyasıyla ilgili sorular sıralanır. Her soruda İngilizce ve Türkçe metinler, şıklar, doğru şık ve açıklama bulunur; bu alanlar örnekten okunur. Kutunun görünüşü ya da işlevi hakkında bir karar alındığında kayda yeni satır yazılır; eski satır silinmez, yalnız geçersiz olduğu belirtilir. Böylece bir değişiklik yapılırken hangi kararın hâlâ geçerli olduğu, hangisinin geçersiz kaldığı kayıtta görülebilir. Veri ile karar kaydı birbirinden ayrı tutulduğu için, soru içeriği değişse bile kutunun görünüş ve işlev kararlarının izi kaybolmaz. Örnek veri ve kayıt birlikte okunduğunda, bir sorunun nasıl kurulduğu ile kutunun neden o biçimde davrandığı aynı anda izlenir."
+   },
+   "detay": {
+    "girdiler": [
+     "Örnek soru verisi ve kutunun görünüş ile işlevine ilişkin kararlar.",
+     "Yeni alınan bir karar ya da değiştirilen bir soru içeriği."
+    ],
+    "ciktilar": [
+     "Kutunun beklediği biçimde kurulmuş bir soru listesi.",
+     "Geçersiz kılınmış eski satırlar ile yeni karar satırı içeren bir karar kaydı."
+    ],
+    "degismezler": [
+     "Her sorunun metin, şık, doğru şık ve açıklama alanları aynı yerde kalır."
+    ],
+    "kenar": [
+     "Bir karar değişince eski satır silinmez; yalnızca geçersiz olduğu belirtilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Örnek verideki her sorunun İngilizce ve Türkçe metinleri, şıkları, doğru şıkkı ve açıklaması aynı alanlarda kalmalı.",
+     "Karar kaydında eski satırların silinmeyip geçersiz diye işaretlenmesi, geçmiş kararların izini tutan bir sözdür."
+    ],
+    "degisebilir": [
+     "Örnek veride hangi konunun seçildiği ve sorunun içeriği, düzen korunduğu sürece serbestçe değişebilir.",
+     "Kutunun görünüşüne ilişkin kararların ayrıntısı ve açıklama yazılarının üslubu içeride değişebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Soru içeriği değişirse hangi kısım sabit kalmalı?",
+     "yanit": "Her sorunun metin, şık, doğru şık ve açıklama alanları aynı yerde kalmalı. Konu ve soru içeriği ise serbestçe değişebilir."
+    },
+    {
+     "soru": "Bir karar değişince eski satır silinirse ne olur?",
+     "yanit": "Geçmişte neyin denendiği ve neden vazgeçildiği görünmez olur. Bu yüzden eski satır silinmez, yalnız geçersiz olduğu belirtilir."
+    }
+   ],
+   "kritik_neden": "Örnek verinin alan düzeni bozulursa araç soruları beklenen biçimde okuyamaz.",
+   "terimler": [],
+   "belirsiz": [
+    "Örnek verinin hangi aşamada kullanıldığı bu birimin anlatımından görülmüyor.",
+    "Aracın örnek veriyi tam olarak nasıl okuduğu ayrıntılı biçimde görülmüyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

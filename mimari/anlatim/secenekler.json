@@ -1,0 +1,1930 @@
+{
+ "surum": 1,
+ "bolum": "secenekler",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "k:secenekler",
+   "tur": "birim",
+   "ozet": "4d535d3fe89a",
+   "iskelet": "dade212fb501",
+   "baslik": "Anlatım seçenekleri",
+   "ne": {
+    "cok_basit": "Kişinin anlatımı kendi isteğine göre ayarlamasını sağlayan seçenekler burada durur; kimi ister, kimi istemez.",
+    "basit": "Burada anlatımın kişiye göre değişebilen yanları seçenek olarak durur: malzemenin nereden alınacağı, konu düzeni, ton, terim yazımı, görsel, tempo ve sohbetin ne zaman devredileceği. Herkesin varsayılanı vardır.",
+    "normal": "Bu bölüm, anlatımın kişiden kişiye değişebilen yanlarını seçenek gruplarına ayırır. Bir grup malzemenin kaynağını, biri konunun düzenini, biri tonu, biri terim yazımını, biri kaynak bilgisinin yerini, biri görsel seçimini ve denemesini ve renk paletini, biri dersin temposunu, biri de sohbetin ne zaman devredileceğini belirler. Kişi her gruptan birini seçer; seçmeyen varsayılanı kullanır.",
+    "gelismis": "Bu bölüm, anlatımın kişiden kişiye değişebilen yanlarını seçenek gruplarına ayırır ve her grup bir konuyu yönetir. Biri malzemenin hocanın kaynağından mı kitaptan mı geleceğini, biri konunun düzenini, biri tonu, biri terimin iki dildeki yazımını, biri kaynak bilgisinin yerini belirler. Görsel türü, deneme ve renk paleti ayrı gruplardır; tempo ile sohbetin devri de öyle. Kişi her gruptan birini seçer.",
+    "detayli": "Bu bölüm, anlatımın kişiden kişiye değişebilen yanlarını seçenek gruplarına ayırır ve her grup tek bir konuyu yönetir. Biri malzemenin hocanın yüklediği kaynaktan mı yoksa kitaptan mı geleceğini, biri konunun hangi düzende anlatılacağını, biri tonu, biri terimin Türkçe ve İngilizce karşılığının nasıl yazılacağını, biri kaynak bilgisinin nerede gösterileceğini belirler. Görsel için tür seçimi, denemenin yapılıp yapılmayacağı ve renk paleti ayrı gruplardır. Tempo ve ara soruların sıklığı ile uzayan sohbetin devri de ayrı gruplardır. Her grupta birkaç seçenek bulunur; kişi birini seçer, seçmeyen varsayılanı kullanır ve seçim kişinin kendi ayarına yazılır."
+   },
+   "mantik": {
+    "cok_basit": "Herkes aynı biçimde öğrenmez; seçenekler sayesinde sistem herkese kendi isteğine göre davranır, kurallar da bozulmaz.",
+    "basit": "Herkes aynı biçimde öğrenmez, bu yüzden değişebilen yanlar seçenek yapıldı. Kural dosyası kişi sayısı kadar çoğalmaz; herkes aynı kuralları paylaşır, yalnız seçimi farklı olur.",
+    "normal": "Anlatımda herkesin istediği aynı değildir: kimi samimi ton ister, kimi sınav odaklı; kimi yavaş tempo, kimi hızlı. Her kişi için ayrı kural yazmak yerine değişebilen yanlar gruplara ayrıldı ve her grupta birkaç seçenek tutuldu. Böylece ortak kurallar tek kalır, kişi yalnız seçimini söyler. Varsayılanın bulunması, kimsenin hepsini seçmek zorunda kalmamasını sağlar.",
+    "gelismis": "Anlatımda herkesin istediği aynı değildir: kimi samimi ton ister, kimi sınav odaklı; kimi yavaş tempo, kimi hızlı. Her kişi için ayrı kural yazmak yerine değişebilen yanlar gruplara ayrıldı ve her grupta birkaç seçenek tutuldu. Böylece ortak kurallar tek kalır, kişi yalnız seçimini söyler. Varsayılanın bulunması, kimsenin hepsini seçmek zorunda kalmamasını sağlar. Grupların ayrı tutulması da bir seçimin başka bir konuyu bozmamasını sağlar.",
+    "detayli": "Anlatımda herkesin istediği aynı değildir: kimi samimi ton ister, kimi sınav odaklı; kimi yavaş tempo, kimi hızlı. Her kişi için ayrı kural yazmak yerine değişebilen yanlar gruplara ayrıldı ve her grupta birkaç seçenek tutuldu. Böylece ortak kurallar tek kalır, kişi yalnız seçimini söyler. Varsayılanın bulunması, kimsenin hepsini seçmek zorunda kalmamasını sağlar. Grupların ayrı tutulması da bir seçimin başka bir konuyu bozmamasını sağlar: ton değişince bilgi, görsel değişince terim yazımı aynı kalır. Her seçeneğin ayrı bir kural dosyası olması, istenmeyen kuralın sohbete hiç okutulmamasına da imkân verir."
+   },
+   "nasil": {
+    "basit": "Kişi her grup için bir seçenek seçer ve seçim ayarına yazılır. Sohbet başlarken seçilen seçeneklerin kuralları okunur. Seçmediği grupta varsayılan geçerlidir, böylece aynı sistem herkes için farklı davranabilir.",
+    "normal": "Kişi her grup için bir seçenek seçer ve seçimi ayarına yazar. Sohbet başlarken seçilen seçeneklerin kuralları okunur ve anlatım onlara göre yapılır. Seçmediği grupta varsayılan geçerlidir, bu yüzden hiçbir seçim yapmamış biri de çalışan bir sistem alır. Bir seçeneğin kuralı yalnız o konuyu değiştirir; ton değişince bilgi değişmez, görsel değişince terim yazımı değişmez.",
+    "gelismis": "Kişi her grup için bir seçenek seçer ve seçimi ayarına yazar. Sohbet başlarken seçilen seçeneklerin kuralları okunur ve anlatım onlara göre yapılır. Seçmediği grupta varsayılan geçerlidir, bu yüzden hiçbir seçim yapmamış biri de çalışan bir sistem alır. Seçenekler birbirine karışmaz: ton değişince bilgi değişmez, görsel değişince terim yazımı değişmez. Kaynak seçeneği anlatımın kapsamını ve sırasını belirler, düzen seçeneği o içeriğin hangi yapıda sunulacağını söyler. Devir seçeneği ise bir blok tamamen bittikten sonra devreder, konunun ortasında kesmez.",
+    "detayli": "Kişi her grup için bir seçenek seçer ve seçimi ayarına yazar. Sohbet başlarken seçilen seçeneklerin kuralları okunur ve anlatım onlara göre yapılır. Seçmediği grupta varsayılan geçerlidir, bu yüzden hiçbir seçim yapmamış biri de çalışan bir sistem alır. Seçenekler birbirine karışmaz: ton değişince bilgi değişmez, görsel değişince terim yazımı değişmez. Kaynak seçeneği anlatımın kapsamını, sırasını ve terimlerini belirler; yüklenen belge her zaman kitabın üstündedir. Düzen seçeneği içeriğin hangi yapıda sunulacağını söyler; konunun türü ders kartında yazıyorsa o, yoksa ünite başında belirlenen kullanılır. Terim seçeneği ilk ve sonraki geçişlerde hangi dilin önce geleceğini belirler, açıklama cümleleri Türkçe kalır. Kaynak bilgisi seçeneği sayfa, şekil ve tablo bilgisini mesajın altına ya da konu sonuna koyar. Görsel seçenekleri türü, denemeyi ve paleti ayrı ayrı yönetir. Tempo seçeneği adımların büyüklüğünü ve ara soru sıklığını ayarlar. Devir seçeneği bir blok bittikten sonra devreder, konunun ortasında kesmez."
+   },
+   "detay": {
+    "girdiler": [
+     "Kişinin her grup için seçtiği seçenek, kişisel ayarında bir kod olarak durur.",
+     "Seçilen seçeneğin kural metni sohbetin okuduğu pakete dahil edilir.",
+     "Seçim yapılmamış gruplar için varsayılan seçenek girdi sayılır."
+    ],
+    "ciktilar": [
+     "Sohbetin anlatım biçimi seçilen seçeneklere göre şekillenir.",
+     "Her seçim anlatımın yalnız bir yanını değiştirir, diğerlerini etkilemez."
+    ],
+    "degismezler": [
+     "Her seçenek grubu tek bir konuyu yönetir ve başka grubun işine karışmaz.",
+     "Varsayılan seçenek değiştirilmez.",
+     "Yüklenen belge her zaman ders kitabının üstündedir."
+    ],
+    "kenar": [
+     "Devir, bir konu ya da blok tamamen bittikten sonra yapılır; konunun ortasında kesilmez.",
+     "Test ekranında denenmeyen bir görsel doğrudan gönderilir; hata bildirilirse önce yeniden üretilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Her seçenek grubunun kodu ve seçeneklerinin sırası, kişilerin ayarlarının dayandığı adrestir.",
+     "Varsayılan seçenek, seçim yapmayan herkesin davrandığı biçim olarak değişmez.",
+     "Bir seçenek yalnız kendi konusunu değiştirir; bilginin kendisi seçimden etkilenmez."
+    ],
+    "degisebilir": [
+     "Yeni bir seçenek ekleyerek bir gruba yeni bir davranış kazandırılabilir.",
+     "Bir seçeneğin kural metnindeki örnekler ve açıklama cümleleri anlamı bozmadan yeniden yazılabilir."
+    ]
+   },
+   "kurulus": [
+    {
+     "baslik": "İçerik kaynağı ve düzen",
+     "metin": "Önce anlatımın neye dayanacağını kur: malzeme hocanın yüklediği kaynaktan mı gelir, konunun düzeni hesap, kavram, ezber ya da okumaya göre mi seçilir.",
+     "parcalar": [
+      "k:secenekler/A",
+      "k:secenekler/E"
+     ]
+    },
+    {
+     "baslik": "Ton, terim ve tempo",
+     "metin": "Sonra anlatımın sesini kur: kullanıcıya nasıl seslenileceği, terimin iki dilde nasıl yazılacağı ve dersin hızıyla ara soruların sıklığı.",
+     "parcalar": [
+      "k:secenekler/B",
+      "k:secenekler/C",
+      "k:secenekler/J"
+     ]
+    },
+    {
+     "baslik": "Kaynak bilgisinin yeri",
+     "metin": "Sayfa, şekil ve tablo bilgisinin mesajın altında mı yoksa konu sonunda mı gösterileceğini belirle; böylece kaynak bilgisi anlatımın sesini bölmez.",
+     "parcalar": [
+      "k:secenekler/D"
+     ]
+    },
+    {
+     "baslik": "Görsel seçimi, renk ve deneme",
+     "metin": "Görsel türünü kimin seçeceğini, renklerin palet olarak nasıl kurulacağını ve görselin yayından önce denenip denenmeyeceğini ayrı gruplarla belirle.",
+     "parcalar": [
+      "k:secenekler/F",
+      "k:secenekler/H",
+      "k:secenekler/G"
+     ]
+    },
+    {
+     "baslik": "Sohbet devri",
+     "metin": "En sonda uzayan sohbetin kalan işinin ne zaman yeni sohbete taşınacağını belirle; devir bir blok bittikten sonra yapılır, konunun ortasında kesilmez.",
+     "parcalar": [
+      "k:secenekler/I"
+     ]
+    }
+   ],
+   "sorular": [
+    {
+     "soru": "Ton seçeneğini değiştirirsek anlatılan bilgi de değişir mi?",
+     "yanit": "Hayır. Ton yalnız seslenişi ve havayı belirler; bilginin kendisi bu seçimden etkilenmez. Her seçenek kendi konusunu değiştirir, başka grubun işine karışmaz."
+    },
+    {
+     "soru": "Kişi hiçbir seçim yapmazsa sistem çalışır mı?",
+     "yanit": "Çalışır. Seçilmeyen her grupta varsayılan seçenek geçerlidir. Bu yüzden kimse bütün grupları doldurmak zorunda kalmaz."
+    },
+    {
+     "soru": "Yeni bir tercih gerekirse mevcut bir seçeneğin içine mi yazılır?",
+     "yanit": "Hayır, ilgili gruba yeni bir seçenek olarak eklenir. Mevcut seçeneğin davranışı ve varsayılan değişmez, böylece o seçeneği seçmiş kişiler etkilenmez."
+    }
+   ],
+   "kritik_neden": "Bozulursa kişilerin seçimleri doğru kurala bağlanmaz; ton, tempo ya da görsel gibi tercihler uygulanmaz ya da birbirinin yerine geçer.",
+   "terimler": [],
+   "belirsiz": [
+    "Seçenek gruplarının harf adlarının ayarda hangi kodla seçildiği görülemedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/A",
+   "tur": "birim",
+   "ozet": "b87c7a0af526",
+   "iskelet": "96bd2de23d94",
+   "baslik": "Kaynak öncelikli anlatım",
+   "ne": {
+    "cok_basit": "Anlatım önce hocanın verdiği belgeye dayanır, belge yoksa ders kitabındaki bilgiyle anlatılır.",
+    "basit": "Bu seçenekte anlatımın sırası ve içeriği, hocanın verdiği slayt ya da not gibi kaynaktan gelir ve kaynak yoksa ders kitabı devreye girer. Kaynakta olmayan bilgi anlatıma karışmaz, ayrı bir yerde durur.",
+    "normal": "Bu seçenek anlatımın malzemesini hocanın yüklediği kaynaktan alır. Kaynak varsa anlatım onun kapsamını, sırasını ve terimlerini izler; sohbet yalnızca geçiş cümlesi ve yeniden ifade ekler. Kaynak yoksa ders kitabı ve genel bilgi temel olur, ama yüklenen belge her zaman kitabın üstündedir.",
+    "gelismis": "Bu seçenek, anlatım malzemesinin kaynağını öncelik sırasıyla belirler. Birinci sıra hocanın yüklediği slayt ya da nottur; kapsam, sıra ve terimler oradan gelir. İkinci sıra ders kitabıdır ve yalnızca belgenin eksik bıraktığı yerleri tamamlar. Belge hiç yoksa kitap ve standart bilgi anlatımı tek başına taşır.",
+    "detayli": "Bu seçenek, bir anlatımın malzemesinin nereden geleceğini belgenin varlığına göre belirler. Hocanın yüklediği slayt ya da not varsa anlatım kapsamını, sırasını ve terimlerini ondan alır; sohbet yalnızca geçiş cümlesi ile yeniden ifade ekler. Belge yoksa ders kitabı ve genel bilgi temel olur. Belge varken bile kitaptan gelen parçalar kendi etiketiyle ayrılır ve sınav kapsamı belgedir. Her durumda kaynakta olmayan bilgi yalnızca sonda ayrı tutulur."
+   },
+   "mantik": {
+    "cok_basit": "Anlatım hocanın belgesine bağlı kalsın diye kaynak önceliklidir, belge yoksa kitap yedek olur.",
+    "basit": "Hocanın slaytı ya da notu dersin sırasını ve vurgusunu taşıdığı için anlatım kendi bilgisinden önce onu izler. Belge yoksa kitap yedek olarak devreye girer.",
+    "normal": "Ders kitabı ile hocanın belgesi aynı şey değildir: hocanın sırası ve vurgusu esastır, bu yüzden belge kitabın üstünde tutulur. Kaynakta olmayan bilgi ayrı durunca dersin sırası ve vurgusu belgede kalır. Belge yokken de anlatımın durmaması için kitap yedek olarak devreye girer.",
+    "gelismis": "Anlatımın kaynağını tek bir sırada tutmak, hocanın sırasının sohbetin genel bilgisiyle karışmasını önler. Belge üstte, kitap ise belgenin eksik bıraktığı yerde durur. Bu düzen belge olmayan derslerde de anlatımın çalışmasını sağlar. Kitaptan gelen parçanın ayrı işaretlenmesi okuyana bilginin kimden geldiğini gösterir.",
+    "detayli": "Hocanın belgesi sınavın kapsamını ve vurgusunu taşır, bu yüzden anlatımın kaynağı önce o olmalıdır. Sohbetin kendi bilgisiyle belgenin birbirine karışması sınav kapsamını bulanıklaştırır. Bu seçenek belgeyi ilk sıraya koyup kitabı tamamlayıcı yapar; böylece iki kaynağın sırası birbirine geçmez. Belge olmayan derslerde de anlatım durmaz, çünkü kitap ve genel bilgi yedek olarak çalışır. Kitaptan gelen her parça etiketiyle ayrılır; okuyan neyin nereden geldiğini görür. Kaynakta olmayan bilgi ana akışa girmeden sonda durur."
+   },
+   "nasil": {
+    "basit": "Anlatıcı önce hangi kaynağın olduğuna bakar ve kaynak varsa onun sırasını izler, araya yalnızca geçiş cümleleri ile yeniden ifadeler ekler. Kaynak yoksa kitaba döner ve kitaptan gelen bilgi soluk bir etiketle ayrılır.",
+    "normal": "Anlatıcı her konuya kaynak kontrolüyle başlar. Kaynak varsa konunun sırası ve terimleri oradan alınır; sohbet yalnızca geçiş cümlesi ve yeniden ifade ekler. Kaynak tek başına yetiyorsa kaynakta olmayan adım açıkça belirtilip geçilir. Kitaptan gelen parçalar, belge olsun olmasın soluk bir etiketle ayrılır. Kaynakta olmayan bilgi cevabın sonunda Ekstra başlığı altında durur, ana anlatımın içine girmez.",
+    "gelismis": "Anlatım bir konuya girerken önce hangi kaynağın yüklü olduğuna bakar. Slayt ya da not varsa konular onun sırasıyla ilerler; sohbet bu sıraya yalnızca geçiş cümlesi ve yeniden ifade ekler. Kitaptan alınan her kavram soluk bir etiketle işaretlenir, böylece okuyan hocanın vurgusu ile kitabın anlatımını ayırabilir. Belge varsa sınav kapsamı onun kapsamıdır. Yalnızca belge yoksa anlatım kitaba ve genel bilgiye döner. Kaynakta olmayan bilgi, varsa, cevabın sonunda ayrı bir Ekstra kısmında durur ve ana anlatımın içine girmez.",
+    "detayli": "Anlatım bir konuya girerken önce hangi kaynağın yüklü olduğuna bakar. Hocanın slaytı ya da notu varsa konular onun sırasıyla ilerler, kapsam ve terimler oradan gelir. Sohbet bu sıraya yalnızca geçiş cümlesi ve yeniden ifade ekler. Kaynak tek başına yeterliyse, kaynakta olmayan bir adım açıkça belirtilip geçilir ve sohbet kendi bilgisinden tanım, örnek ya da yorum üretmez. Kitaptan gelen her parça soluk bir etiketle işaretlenir; belge varken kitap yalnızca belgenin boş bıraktığı yeri doldurur. Belge hiç yüklenmemişse anlatım ders kitabına ve genel bilgiye döner. Sınav kapsamı belge varken onun kapsamıdır. Kaynakta olmayan bilgi, varsa, cevabın sonunda Ekstra başlığı altında durur ve ana anlatımın içine girmez."
+   },
+   "detay": {
+    "girdiler": [
+     "Hocanın yüklediği slayt ya da not, varsa.",
+     "Ders kitabından alınan bilgi ve genel bilgi, belge yoksa."
+    ],
+    "ciktilar": [
+     "Kaynağa bağlı, sıralı ve geçiş cümleli bir anlatım."
+    ],
+    "degismezler": [
+     "Belge, kitabın önündedir; kitap yalnızca belgenin eksik bıraktığını tamamlar.",
+     "Kaynakta olmayan bilgi sonda ayrı tutulur."
+    ],
+    "kenar": [
+     "Belgenin hiç yüklenmediği durumda anlatım kitaba ve genel bilgiye döner."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Belge varsa anlatımın sırası ve kapsamı ondan gelir; kitap yalnızca belgenin boş bıraktığı yeri doldurur.",
+     "Kaynakta olmayan bilgi, anlatımın içine karışmadan sonda ayrı bir Ekstra kısmında durur.",
+     "Kitaptan alınan parçalar soluk bir etiketle ayrılır; okuyan hangi bilginin kimden geldiğini görür."
+    ],
+    "degisebilir": [
+     "Geçiş cümlelerinin ve yeniden ifadelerin kelimeleri, anlam korunduğu sürece serbesttir.",
+     "Alt parçaların her birinin anlatım cümleleri, anlam korunduğu sürece yeniden kurulabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Belge yokken anlatım neye dayanır?",
+     "yanit": "Ders kitabına ve genel bilgiye dayanır; belge varken bu kaynak belgenin altında kalır."
+    },
+    {
+     "soru": "Belgede olmayan bir bilgi anlatıya girerse ne olur?",
+     "yanit": "Kaynakta olmayan bilgi ana anlatımdan ayrılır ve sonda Ekstra kısmında durur; hocanın sırası bozulmaz."
+    }
+   ],
+   "kritik_neden": "Bu seçenek bozulursa belgeye bağlı anlatım ile kitaba dönen anlatım birbirine karışır ve hocanın sırası kaybolur.",
+   "terimler": [],
+   "belirsiz": [
+    "Bu seçeneğin kullanıcıya gösterilen adı ve hangi durumda varsayılan olduğu kayıttan çıkmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/B",
+   "tur": "birim",
+   "ozet": "01f75a831099",
+   "iskelet": "0277de418293",
+   "baslik": "Anlatımın dili ve tonu",
+   "ne": {
+    "cok_basit": "Bu parça, anlatmanın kullanıcıya nasıl seslendiğini ve ne kadar ciddi konuştuğunu belirler.",
+    "basit": "Bu seçenek, anlatımın kullanıcıya nasıl seslendiğini ve konuşma tonunu belirler. Kullanıcı sen diye karşılanır; konuşma samimi ya da ciddi olabilir, bilgi ise aynı kalır.",
+    "normal": "Bu seçenek, anlatımın kullanıcıya nasıl seslendiğini ve hangi tonda konuştuğunu belirler. Kullanıcı sen diye karşılanır; ton samimi ve esprili, düz ve olgun ya da ciddi ve sınav odaklı olabilir, ama bilginin kendisi bu tondan etkilenmez.",
+    "gelismis": "Bu seçenek, anlatımın üslubunu tek bir yerde toplar; konuşma tarzı kullanıcıya sen diye seslenirken değişir. Samimi biçimde moral cümlelerine yer verilebilir, ama hikâye, vaka kurgusu ve puan ya da rozet kullanılmaz. Sınav odaklı biçimde cümleler düz ve olgun kurulur; geçişlerde yine de samimi bir dil seçilebilir.",
+    "detayli": "Bu seçenek, bir anlatımın hitap ve ton kurallarını ayrı bir parça olarak tutar. Kullanıcıya her zaman sen diye seslenilir; tonun iki ana yönü vardır: samimi ve esprili olan ile düz, olgun ve sınav odaklı olan. Samimi tonda moral cümleleri serbesttir, ama hikâye, vaka kurgusu ve puan ya da rozet yer almaz. Sınav odaklı tonda espri ve emoji kullanılmaz, cümleler sade ve olgun kurulur."
+   },
+   "mantik": {
+    "cok_basit": "Anlatım herkese aynı sesle konuşmasın diye ton ayrılır.",
+    "basit": "Kimi kullanıcı sıcak bir dil ister, kimi sınava dönük sade bir dil. Ton ayrı tutulduğu için bilgi ile üslup birbirine karışmaz.",
+    "normal": "Aynı bilgi, kullanıcıya göre farklı bir sesle anlatılabilir. Ton bir seçenek olarak ayrı tutulduğu için kullanıcı kendi tercihini koyabilir. Sade ve sınav odaklı dil, ders çalışmaya uygun bir ciddiyet sağlar.",
+    "gelismis": "Üslup, anlatımın içeriğinden ayrı tutulduğunda her kullanıcı kendi rahatlığına göre bir dil seçebilir. Samimi biçimde moral ve espri yer alabilir, sınav odaklı biçimde ise cümleler sadeleşir. Her iki biçimde de sen diye hitap ortak bir zemin oluşturur.",
+    "detayli": "Bu seçenek, konuşma üslubunu içerikten ayırarak tek bir sistem içinde toplar. Böylece kullanıcı ister samimi bir sohbet ister sınava dönük sade bir anlatım seçebilir. Samimi biçim ile sınav odaklı biçim birbirinden ayrı tutulduğu için birinin esprisi öbürünün ciddiyetine karışmaz. Sen diye hitap ise bütün biçimlerde aynı kalarak anlatıma tutarlılık kazandırır."
+   },
+   "nasil": {
+    "basit": "Kullanıcıya her zaman sen diye seslenilir. Ton, geçiş ve moral cümlelerinde belli olur. Ciddi tonda espri ve emoji yer almaz, samimi tonda ise moral cümleleri serbesttir.",
+    "normal": "Her cümle kullanıcıya sen diye seslenerek kurulur. Anlatımın tonu seçilen biçime göre belirlenir: samimi biçimde espri ve moral cümleleri yer alabilir, düz biçimde cümleler sade ve olgun olur. Samimi biçimde hikâye, vaka kurgusu ve puan ya da rozet kullanılmaz; geçişler sınav odaklı biçimde bile samimi tutulabilir.",
+    "gelismis": "Anlatım, kullanıcıya sen diye seslenerek başlar ve her geçişte aynı hitabı korur. Samimi biçimde moral cümleleri serbesttir ve bu cümleler esprili olabilir, ama bilgi bölümü sade kalır. Sınav odaklı biçimde cümleler düz ve olgun kurulur, espri ve emoji yer almaz. Geçiş ve moral mesajları ise sen diye, samimi ve biraz esprili kurulabilir.",
+    "detayli": "Anlatım, kullanıcıya her zaman sen diye seslenerek başlar. Tonun samimi biçiminde moral cümleleri ve biraz espri kullanılabilir; bu biçimde hikâye, vaka kurgusu ve puan ya da rozet yer almaz. Düz ve olgun biçimde cümleler sade kurulur. Sınav odaklı biçimde espri, hikâye ve emoji kullanılmaz; bu biçim ders çalışmaya uygun bir sadelik taşır. Geçiş ve moral mesajlarında, ciddi tonun içinde bile, sen diye samimi ve biraz esprili bir dil seçilebilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Seçilen ton biçimi ve anlatılacak bilgi."
+    ],
+    "ciktilar": [
+     "Aynı bilgiyi kullanıcıya sen diye ve seçilen tonda sunan metin."
+    ],
+    "degismezler": [
+     "Kullanıcıya her zaman sen diye hitap edilir.",
+     "Samimi biçimde bile hikâye, vaka kurgusu ve puan ya da rozet kullanılmaz."
+    ],
+    "kenar": [
+     "Sınav odaklı tonda geçiş cümlelerinin samimi kalması ayrı bir durumdur ve buna göre yazılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kullanıcıya her zaman sen diye hitap edilir, bu değişmez.",
+     "Samimi biçimde bile hikâye, vaka kurgusu ve puan ya da rozet kullanılmaz."
+    ],
+    "degisebilir": [
+     "Moral cümlelerinin ve esprilerin biçimi, samimi tonun içinde serbesttir.",
+     "Düz ve sınav odaklı biçimde cümlelerin uzunluğu ve kurgusu, sadelik korunduğu sürece yeniden kurulabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Samimi ve sınav odaklı tonlar arasındaki fark nedir?",
+     "yanit": "Samimi tonda moral cümleleri ve biraz espri olabilir; sınav odaklı tonda espri ve emoji yer almaz, cümleler düz ve olgun kurulur."
+    },
+    {
+     "soru": "Ton değişince hitap da değişir mi?",
+     "yanit": "Hayır, kullanıcıya her zaman sen diye hitap edilir; değişen yalnızca tonun samimiliği ve espri düzeyidir."
+    }
+   ],
+   "kritik_neden": "Bu seçenek bozulursa anlatımın dili kullanıcının seçtiği tonla uyuşmaz ve sınav odaklı çalışma samimi bir sese karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bu tonların hangi durumda varsayılan olduğu ve kullanıcının tonu nasıl seçtiği kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/C",
+   "tur": "birim",
+   "ozet": "89dbfb56600e",
+   "iskelet": "84da98598fc7",
+   "baslik": "Terimlerin dili ve sırası",
+   "ne": {
+    "cok_basit": "Bu parça, anlatımda İngilizce karşılığı olan kelimelerin nasıl yazılacağını belirler.",
+    "basit": "Bu seçenek, anlatımdaki yeni kelimelerin Türkçe ve İngilizce karşılıklarını nasıl vereceğini belirler. Kelimenin ilk geçtiği yer ile sonraki geçişler ayrı kurallara bağlıdır.",
+    "normal": "Bu seçenek, bir terimin anlatımda ilk ve sonraki geçişlerde nasıl yazılacağını belirler. Türkçe ve İngilizce karşılıklar birlikte bulunur, ama hangisinin önce geleceği ve sonraki geçişlerde hangi dilin kullanılacağı biçime göre değişir. Açıklama cümleleri ise Türkçe kalır.",
+    "gelismis": "Bu seçenek, anlatımın terimlerle kurduğu ilişkiyi tek bir kuralla düzenler: terim ilk geçtiğinde karşılığı birlikte verilir, sonraki geçişlerde ise yalnız tek bir dil kullanılır. Biçimlerin ortak noktası bu tutarlılıktır. Biçimlerden biri, konunun sonunda terimler için bir sözlük kartı çıkarır.",
+    "detayli": "Bu seçenek, bir anlatımda terimlerin dilini ve sırasını düzenleyen kuralları bir arada tutar. İlk geçişte terim, Türkçesi ve İngilizcesi ile birlikte gelir; hangisinin önce yazılacağı seçilen biçime göre değişir. Sonraki geçişlerde terim yalnızca bir dille yazılır ve karşılığı yeniden verilmez. Açıklama cümleleri Türkçe kalır. Sözlükte olmayan yeni bir terim geçerse, biçimlerden birinde sözlüğe eklenir ve konunun sonunda sözlük kartı çıkarılır."
+   },
+   "mantik": {
+    "cok_basit": "Okuyan terimi bilmeden bir kelimeyle karşılaşmasın diye karşılık yazılır.",
+    "basit": "Terim ilk geçtiğinde iki dilde görünür, böylece okuyan hem Türkçesini hem İngilizcesini öğrenir. Sonra karşılığı tekrar edilmez, böylece metin gereksiz uzamaz.",
+    "normal": "İlk geçişteki iki dilli karşılık, okuyanın terimi kaynakta İngilizce olarak da görebilmesini sağlar. Sonraki geçişlerde tek dil kullanmak metni sadeleştirir. Açıklama Türkçe kaldığı için anlatımın dili tek kalır.",
+    "gelismis": "Terim sözlüğünün tek bir yerde tutulması, aynı kavramın farklı geçişlerde farklı adlarla yazılmasını önler. İlk geçişteki iki dilli karşılık, okuyanın terimi başka kaynaklarda da tanımasını kolaylaştırır. Sonraki geçişlerde tek dil kullanmak anlatımı sadeleştirir ve tekrarı azaltır.",
+    "detayli": "Bir terimin ilk geçişte iki dilde verilmesi, okuyanın kullanılan adı hem Türkçe hem İngilizce olarak tanımasını sağlar. Sonraki geçişlerde tek dille yazmak, metnin tekrar yükünü hafifletir ve aynı kavramın farklı adlarla karışmasını önler. Sözlükte olmayan yeni terimlerin sözlüğe eklenmesi, tutarlılığın sonradan dağılmasını engeller. Açıklama Türkçe kalarak anlatımın ana dili korunur."
+   },
+   "nasil": {
+    "basit": "Terim ilk geçtiğinde iki dilde birlikte yazılır. Sonraki geçişlerde yalnızca bir dil kullanılır ve karşılık yeniden yazılmaz. Açıklama cümleleri Türkçe kalır.",
+    "normal": "Terim ilk geçtiğinde Türkçe ve İngilizce karşılığı birlikte verilir; hangisinin önce yazılacağı seçilen biçime bağlıdır. Sonraki geçişlerde terim yalnızca tek bir dille yazılır ve karşılığı yeniden verilmez. Açıklama cümleleri Türkçe kalır. Biçimlerden birinde, sözlükte olmayan yeni bir terim geçerse sözlüğe eklenir ve konunun sonunda bir sözlük kartı çıkarılır.",
+    "gelismis": "Bir terim ilk kez geçtiğinde, karşılığı ve İngilizce adı aynı cümlede yer alır; sıra biçime göre değişir. Sonraki geçişlerde terim tek bir dille yazılır, İngilizce karşılık yeniden verilmez ve açıklama cümleleri Türkçe kalır. Sözlükte bulunmayan yeni bir terim, biçim bunu istediğinde sözlüğe eklenir. Konunun sonunda bu terimler için bir sözlük kartı çıkabilir.",
+    "detayli": "Anlatım bir terimle karşılaştığında önce o terimin sözlükte olup olmadığına bakar. İlk geçişte Türkçe ve İngilizce karşılık birlikte verilir; hangisinin önce gideceği seçilen biçime göre değişir. Sonraki geçişlerde terim tek dille yazılır ve karşılık tekrar edilmez. Açıklama cümleleri her biçimde Türkçe kalır. Sözlükte olmayan yeni bir terim geçerse, bunu destekleyen biçimde sözlüğe eklenir. Konunun sonunda bu terimler için bir sözlük kartı çıkarılabilir."
+   },
+   "detay": {
+    "girdiler": [
+     "Anlatılan konudaki terimler ve sözlük."
+    ],
+    "ciktilar": [
+     "Terimleri iki dilde ve tutarlı biçimde gösteren metin."
+    ],
+    "degismezler": [
+     "Sonraki geçişlerde karşılık yeniden yazılmaz.",
+     "Açıklama cümleleri Türkçe kalır."
+    ],
+    "kenar": [
+     "Sözlükte olmayan yeni bir terim geçtiğinde sözlüğe ekleme, seçilen biçime göre yapılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sonraki geçişlerde terim tek bir dille yazılır ve karşılık yeniden verilmez.",
+     "Açıklama cümleleri her biçimde Türkçe kalır."
+    ],
+    "degisebilir": [
+     "İlk geçişte Türkçenin mi İngilizcenin mi önce geleceği, seçilen biçimle serbestçe değişebilir.",
+     "Sözlük kartı, biçim bunu istediğinde ayrı bir bölüm olarak eklenebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Terim ilk geçtiğinde neden iki dilde yazılır?",
+     "yanit": "Okuyanın terimi iki adıyla tanıması için; sonraki geçişlerde karşılık tekrar edilmez."
+    },
+    {
+     "soru": "Açıklama cümlesini İngilizce yazsam ne olur?",
+     "yanit": "Anlatımın dili karışır; açıklamalar Türkçe kaldığı sürece terimin İngilizcesi yalnızca bir ad olarak kalır."
+    }
+   ],
+   "kritik_neden": "Bu kural bozulursa aynı terim farklı biçimlerde yazılır ve okuyan kavramı hangi adla izleyeceğini kestiremez.",
+   "terimler": [],
+   "belirsiz": [
+    "Hangi biçimin varsayılan olduğu ve sözlük kartının hangi koşulda çıktığı kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/D",
+   "tur": "birim",
+   "ozet": "3d830df233e4",
+   "iskelet": "763b07bd354d",
+   "baslik": "Kaynak bilgisinin yeri",
+   "ne": {
+    "cok_basit": "Bu parça, anlatılan kaynağın hangi yerden geldiğini gösteren bilginin nereye yazılacağını belirler.",
+    "basit": "Bu seçenek, anlatılan kaynağın sayfa ve şekil bilgisini nerede göstereceğini belirler. Bilgi ya metnin içinde ya da ayrı bir yerde durur.",
+    "normal": "Bu seçenek, anlatılan kaynağın sayfa, şekil ve tablo bilgisinin okuyana nerede gösterileceğini belirler. Bilgi ya her mesajın altında kısa bir satırda ya da konunun sonundaki ek bölümde toplanır. Böylece kaynak bilgisi anlatımın sesini bölmez.",
+    "gelismis": "Bu seçenek, kaynak bilgisinin anlatımla arasındaki sınırı çizer: sayfa ve kaynak adı gibi temel bilgi mesajın altında görünür, şekil ve tablo numaraları ile slayt dışı bilgiler ise sondaki ek düğmesinde toplanır. Biçimler bu dengeyi farklı oranlarda kurar. Ortak amaç, okuyanın hangi kaynaktan geldiğini bilmesi ile metnin sade kalmasıdır.",
+    "detayli": "Bu seçenek, kaynak bilgisini anlatımdan ayırarak okuyanın hem nereden geldiğini görmesini hem de metnin okunaklı kalmasını sağlar. Biçimlere göre kaynak bilgisi ya tamamen ek bölümde toplanır, ya da her mesajın altında tek bir soluk satır olarak durur. Kaynak adı ve sayfa, çoğu biçimde mesajın altında kalır; şekil ve tablo numaraları ise ek bölümde yer alır. Bu ayrım, anlatımın sesinin bu bilgilerle bölünmemesini amaçlar."
+   },
+   "mantik": {
+    "cok_basit": "Kaynağın nereden geldiği bilinsin diye bilgi ayrı bir yerde tutulur.",
+    "basit": "Kaynak bilgisi metnin içine karışırsa anlatım okunmaz hâle gelir. Bu yüzden kaynak bilgisi ayrı bir yerde durur, okuyan yine de nereden geldiğini görür.",
+    "normal": "Sayfa ve şekil numaraları anlatımın akışını sık sık böler. Bunları ayrı tutmak, metni sade bırakırken kaynağa dönüş yolunu açık tutar. Her mesajda kaynak adının görünmesi ise okuyanın bilginin kaynağını her an kontrol edebilmesini sağlar.",
+    "gelismis": "Kaynak bilgisini metinden ayırmak, anlatımın ritmini korumak için yapılır; şekil ve tablo numaraları gibi ayrıntılar okuma sırasında dikkati dağıtır. Buna karşılık kaynak adının ve sayfanın her mesajda görünmesi, okuyanın bilginin hangi belgeden geldiğini sürekli bilmesini sağlar. İki ihtiyaç birbirine karşıt görünse de biçimler bu dengeyi farklı yerlere koyar.",
+    "detayli": "Sayfa, şekil ve tablo numaraları anlatımın içine girerse metnin akışı sürekli bölünür ve okuyan konuya odaklanamaz. Bu yüzden bu ayrıntılar sondaki ek düğmesinde toplanır. Öte yandan okuyanın her mesajda hangi kaynaktan geldiğini bilmesi gerekir; bu nedenle kaynak adı ve sayfa mesajın altında kalır. Biçimler, bu iki ihtiyacın arasındaki dengeyi kaynak bilgisinin ne kadarının mesajın altında duracağını değiştirerek kurar."
+   },
+   "nasil": {
+    "basit": "Her anlatım mesajının altında kaynağın adı ve sayfası yazılabilir. Şekil ve tablo numaraları metnin içine girmez. Bunlar konunun sonundaki ek düğmesinde toplanır.",
+    "normal": "Anlatım yazılırken kaynak bilgisi metnin dışında tutulur. Bazı biçimlerde her mesajın altında kaynağın dosya, sayfa ve şekil bilgisini gösteren tek ve soluk bir satır bulunur. Diğer biçimlerde bu satır yalnızca kaynak adını ve sayfayı taşır, şekil ve tablo numaraları ile slayt dışı bilgiler ise sondaki ek düğmesinde toplanır.",
+    "gelismis": "Anlatım her mesajı yazarken kaynak bilgisini ayrı bir katman olarak tutar. Mesajın en altında, biçime göre ya tek bir soluk satır ya da yalnızca kaynak adı ile sayfa görünür. Şekil ve tablo numaraları, metnin içine hiç girmeden, konunun sonundaki ek düğmesinde kapalı bir bölüm olarak toplanır. Böylece okuyan kaynağı her mesajda görür, ama anlatımın akışı bölünmez.",
+    "detayli": "Anlatım bir mesajı kurarken önce metni yazar, sonra kaynak bilgisini metnin dışında ayrı bir katman olarak ekler. Bu katman bazı biçimlerde mesajın altında tek bir soluk satır olur ve dosya, sayfa ile şekil bilgilerini birlikte taşır. Başka bir biçimde ise yalnızca kaynak adı ve sayfa yazılır. Şekil ve tablo numaraları ile slayt dışı bilgiler her iki durumda da sondaki ek düğmesinde toplanır ve kapalı bir bölüm olarak durur. Kaynak bilgisinin böyle ayrılması, anlatımın sade kalmasını ve okuyanın yine de hangi kaynaktan geldiğini görmesini birlikte sağlar."
+   },
+   "detay": {
+    "girdiler": [
+     "Anlatılan kaynağın adı, sayfası ve şekil ile tablo bilgileri."
+    ],
+    "ciktilar": [
+     "Metnin içinde sade bir anlatım ve altında ya da sonunda yer alan kaynak bilgisi."
+    ],
+    "degismezler": [
+     "Şekil ve tablo numaraları metnin içine girmez.",
+     "Kaynak bilgisi her biçimde anlatımdan ayrı tutulur."
+    ],
+    "kenar": [
+     "Slayt dışı bir bilgi geçtiğinde, bu bilgi sondaki ek düğmesinde yer alır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Şekil ve tablo numaraları anlatımın metninde ve köşesinde yazılmaz.",
+     "Kaynak bilgisi anlatımdan ayrı bir yerde durur ve metnin sesini bölmez."
+    ],
+    "degisebilir": [
+     "Mesajın altındaki satırın kaynak adı, sayfa ve dosya bilgisinden hangilerini taşıyacağı biçimle serbestçe değişebilir.",
+     "Ek düğmesinin içindeki bölümün başlığı ve kapalı başlayıp başlamayacağı biçime göre yeniden kurulabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Şekil ve tablo numaraları neden metnin içinde yazılmaz?",
+     "yanit": "Metnin akışı bu numaralarla sık sık bölünür; bunlar sondaki ek düğmesinde toplanınca anlatım sade kalır."
+    },
+    {
+     "soru": "Kaynak adı mesajın altından çıkarılırsa ne olur?",
+     "yanit": "Okuyan her mesajda hangi kaynaktan geldiğini göremez; bu yüzden kaynak adı ve sayfa mesajın altında kalması gereken bilgidir."
+    }
+   ],
+   "kritik_neden": "Bu kural bozulursa şekil numaraları metnin içine girer ya da kaynak bilgisi kaybolur ve okuyan bilginin nereden geldiğini izleyemez.",
+   "terimler": [],
+   "belirsiz": [
+    "Hangi biçimin varsayılan olduğu ve ek düğmesinin hangi koşulda görüneceği kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/E",
+   "tur": "birim",
+   "ozet": "051e50502771",
+   "iskelet": "d41bc771a344",
+   "baslik": "Konu türüne göre düzen",
+   "ne": {
+    "cok_basit": "Bu parça, bir konunun nasıl bir düzende anlatılacağını belirler.",
+    "basit": "Bu seçenek, bir konunun hangi sırayla ve hangi yapıyla anlatılacağını belirler. Konunun türüne göre örnek, tablo ya da metin parçası kullanılır.",
+    "normal": "Bu seçenek, bir konunun hangi düzende anlatılacağını belirler. Konunun türü ders kartında yazıyorsa o kullanılır, yoksa ünite başında belirlenir. Hesap, kavram, ezber ve okuma konularında farklı yapılar öne çıkar.",
+    "gelismis": "Bu seçenek, anlatımın yapısını konunun türüne göre seçer. Hesap konusunda çözümlü sınav örneği zorunludur; kavramda neden ve karşılaştırma tablosu öne çıkar. Ezberde gruplu liste ve hatırlatma, okumada ise bir metin parçası kullanılır. Düzenin hangi biçimde kurulacağı, konunun türüne bağlı olarak belirlenir.",
+    "detayli": "Bu seçenek, bir anlatımın iç düzenini konunun türüne göre belirler. Türün ders kartında yazması durumunda o tür esas alınır; yazmıyorsa ünite başında bir tür seçilir. Hesap konusunda her adım çözümlü bir sınav örneğiyle desteklenir. Kavram konusunda neden ve karşılaştırma tablosu öne çıkar. Ezber konusunda gruplu bir liste ve hatırlatma verilir, okuma konusunda ise bir metin parçası kullanılır. Bu düzen, konunun öğrenilme biçimine uyan bir yapı sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Her konu aynı biçimde anlatılmasın diye türüne göre bir düzen seçilir.",
+    "basit": "Hesap ile ezber aynı yolla öğrenilmez. Bu yüzden konunun türüne göre örnek, tablo ya da liste seçilir.",
+    "normal": "Her konu kendi türüne uygun bir yapıda öğrenildiğinde okuyan neyi nasıl çalışacağını bilir. Hesapta örnek, kavramda neden ve tablo, ezberde liste, okumada metin parçası bu nedenle seçilir. Tür belirlenmeden yapı kurulursa anlatım konunun gerektirdiği işi göremez.",
+    "gelismis": "Konunun türü, öğrenmenin hangi yoldan ilerleyeceğini belirler: hesap uygulama ister, kavram nedeni ister, ezber tekrar ister, okuma ise bağlam ister. Türe göre seçilen yapı, bu ihtiyaçları karşılayacak biçimde kurulur. Türün ders kartında yazılı olması, hocanın vurgusunun anlatıma taşınmasını sağlar.",
+    "detayli": "Her konunun öğrenme biçimi farklıdır: hesap, adım adım çözümlü örneklerle kavranır; kavram, neden ve karşılaştırma ile oturur; ezber, tekrar edilebilir liste ve hatırlatmalarla pekişir; okuma ise bir metin bağlamı ister. Anlatım bu ayrımları tek bir yapıya zorlarsa konunun gerektirdiği çalışma kaybolur. Bu nedenle tür önce belirlenir ve yapı ona göre kurulur. Ders kartındaki tür, hocanın konuya verdiği önemi de yansıttığı için öncelikli kabul edilir."
+   },
+   "nasil": {
+    "basit": "Önce konunun türüne bakılır. Hesapta çözümlü bir örnek, kavramda neden ve karşılaştırma tablosu kullanılır. Ezberde liste, okumada metin parçası verilir.",
+    "normal": "Anlatım önce konunun türünü belirler. Tür ders kartında yazıyorsa o kullanılır, yoksa ünite başında seçilir. Hesapta çözümlü sınav örneği zorunludur ve her adım bu örnekle ilerler. Kavramda neden ve karşılaştırma tablosu öne çıkar; ezberde gruplu liste ve hatırlatma, okumada metin parçası kullanılır.",
+    "gelismis": "Her konuda anlatım, önce türün hangi yapıyı gerektirdiğine bakar. Hesap konularında çözümlü sınav örneği her bölümde yer alır. Kavram konularında önce neden anlatılır, ardından karşılaştırma tablosu gelir. Ezber konularında gruplu liste ve hatırlatmalar, okuma konularında ise kısa bir metin parçası kullanılır. Tür belirsizse ünite başındaki karar esas alınır.",
+    "detayli": "Anlatım bir konuya başlarken önce türünü belirler; tür ders kartında yazıyorsa o esas alınır, yazmıyorsa ünite başındaki karar kullanılır. Hesap konusunda her adım çözümlü bir sınav örneğiyle birlikte ilerler ve örnek zorunludur. Kavram konusunda önce neden ve tanım anlatılır, ardından karşılaştırma tablosu ile konunun öne çıkan farkları gösterilir. Ezber konusunda bilgiler gruplu bir liste hâlinde verilir ve bunun yanında kısa bir hatırlatma yer alır. Okuma konusunda ise anlatım bir metin parçası üzerinden ilerler. Her tür kendi yapısını taşıdığı için aynı konu içinde bile bu düzen sabit kalır."
+   },
+   "detay": {
+    "girdiler": [
+     "Konunun türü, ders kartında yazıyorsa o; yazmıyorsa ünite başında belirlenen tür."
+    ],
+    "ciktilar": [
+     "Türe uygun yapıda, sıralı bir anlatım."
+    ],
+    "degismezler": [
+     "Hesap konularında çözümlü sınav örneği zorunludur.",
+     "Kavram konusunda neden ve karşılaştırma tablosu öne çıkar."
+    ],
+    "kenar": [
+     "Tür ders kartında yoksa ünite başındaki karar esas alınır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Hesap konularında çözümlü sınav örneği her zaman bulunur.",
+     "Konunun türü, anlatımın yapısını belirleyen tek kaynaktır."
+    ],
+    "degisebilir": [
+     "Ezber konusundaki listenin ve hatırlatmanın biçimi, türün içinde serbestçe değişebilir.",
+     "Kavram konusunda neden ile tablo arasındaki sıra, anlam korunduğu sürece yeniden kurulabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bir hesap konusunda örnek neden zorunludur?",
+     "yanit": "Hesap, adım adım çözülerek öğrenilir; çözümlü örnek olmadan yöntemin nasıl işlediği görülmez."
+    },
+    {
+     "soru": "Konu türü belirsizse ne olur?",
+     "yanit": "Ünite başında belirlenen tür esas alınır; bu karar olmadan anlatımın yapısı kurulmaz."
+    }
+   ],
+   "kritik_neden": "Bu düzen bozulursa hesap konusu açıklamada kalır ya da ezber konusu tablo içinde kaybolur ve konunun öğrenilme biçimi değişir.",
+   "terimler": [],
+   "belirsiz": [
+    "Ünite başındaki türün nasıl seçildiği ve bu seçimin hangi koşulda değiştiği kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/F",
+   "tur": "birim",
+   "ozet": "6e6afaddbd52",
+   "iskelet": "11aceffc8487",
+   "baslik": "Görsel türünü seçen kişi",
+   "ne": {
+    "cok_basit": "Bu parça, anlatımda hangi görsel türünün kullanılacağına kimin karar vereceğini belirler.",
+    "basit": "Bu seçenek, anlatım için görsel türünü kimin seçeceğini belirler. Sohbet kendisi seçebilir ya da kişiye önizleme ile seçtirebilir.",
+    "normal": "Bu seçenek, anlatıma uygun görsel türünün kimin kararıyla seçileceğini belirler. Sohbet, konuya uygun türü katalogdan kendisi seçebilir ya da beğenilen şablonlar listesinden başlayabilir. Bir başka biçimde ise her yeni konunun başında birkaç tür önizleme olarak gösterilir.",
+    "gelismis": "Bu seçenek, görsel seçiminin sahibini belirler: sabit bir görsel yerine kararın kime ait olduğu biçime göre değişir. Biçimlerden biri sohbetin katalogdan kendi seçimini yapmasıdır; bir diğeri önce beğenilen şablon listesine bakmasıdır. Üçüncü bir biçimde kişi, her yeni konunun başında karar kartıyla bir türü seçer ve seçim o konu boyunca geçerli kalır.",
+    "detayli": "Bu seçenek, bir anlatımda görsel türünü kimin seçeceği sorusunu yanıtlar. Sohbet konuya uygun türü katalogdan kendisi seçebilir ve seçimde çeşitlilik kuralları uygulanır. Ya da kodun sonunda bir beğeni listesi varsa sohbet önce oradan seçer; listede eksi işaretiyle geçen şablonlar hiç kullanılmaz ve yeterli olmazsa katalogdan tamamlanır. Bir başka biçimde ise her yeni konunun başında birkaç tür kısa önizleme olarak gösterilir ve kişi karar kartıyla birini seçer. Bu seçim o konu boyunca geçerli kalır."
+   },
+   "mantik": {
+    "cok_basit": "Her konu aynı görselle anlatılmasın diye seçim bir yerde yapılır.",
+    "basit": "Görsel türünü kimin seçtiği, anlatımın ne kadar kişiye uygun olacağını belirler. Bu yüzden seçim sohbete, listeye ya da kişiye bırakılır.",
+    "normal": "Sabit tek bir görsel her konuya uymayabilir. Seçimi sohbete, beğeni listesine ya da kişiye bırakmak, konunun gerektirdiği türü seçmeyi mümkün kılar. Eksi işaretli şablonların dışarıda tutulması, daha önce sevilmeyen biçimlerin tekrar gelmesini önler.",
+    "gelismis": "Görsel türünün kimin kararıyla seçileceği, anlatımın hem konuya uygunluğunu hem de kişinin beğenisini etkiler. Katalog ile sohbetin kendi seçimi konuya uyum sağlar; beğeni listesi ise kişinin geçmiş tercihlerini taşır. Önizleme ve karar kartı, kişinin seçimi bilinçli yapmasını sağlar ve seçimin konu boyunca sabit kalması karışıklığı önler.",
+    "detayli": "Tek bir sabit görsel türü, her konunun yapısına uymayabilir ve bu da anlatımı zorlaştırır. Seçimi sohbetin katalogdan yapması, konuya uyumu öne çıkarır; beğeni listesi ise kişinin geçmişteki tercihlerini korur. Eksi işaretli şablonların dışarıda tutulması, daha önce hoşlanılmayan biçimlerin tekrar gelmesini önler. Önizleme ve karar kartı biçimi ise kişinin seçimi bilerek yapmasını sağlar ve seçim o konu boyunca değişmeden kalarak okuyanın karışıklığını azaltır."
+   },
+   "nasil": {
+    "basit": "Sohbet konuya uygun görsel türünü seçebilir. Ya da konunun başında birkaç türü önizleme olarak gösterip kişinin seçmesini sağlayabilir.",
+    "normal": "Görsel seçimi, bir öncelik sırasıyla yapılır. Kodun sonunda beğenilen şablonların listesi varsa sohbet önce oradan seçer; eksi işaretli şablonlar hiç kullanılmaz. Liste yetmezse katalogdan tamamlanır. Bazı biçimlerde ise her yeni konunun başında önizlemeler gösterilir ve kişi karar kartıyla bir tür seçer.",
+    "gelismis": "Seçim, konunun başında başlar. Bir biçimde sohbet katalogdan konuya en uygun türü kendisi seçer ve seçimde çeşitlilik kuralları uygulanır. Başka bir biçimde önce beğenilen şablonlar listesine bakılır, eksi işaretli olanlar dışarıda tutulur ve gerekirse katalogdan tamamlanır. Üçüncü biçimde birkaç tür önizleme olarak sunulur, kişi karar kartıyla birini seçer ve o konu boyunca bu seçim geçerli kalır.",
+    "detayli": "Görsel seçimi her konunun başında yeniden ele alınır. Sohbetin kendi seçimi biçiminde katalogdan konuya en uygun tür alınır ve seçim, çeşitlilik kurallarına göre yapılır. Beğeni listesi biçiminde önce kodun sonundaki liste okunur; listedeki beğenilen şablonlar öncelik alır, eksi işaretli olanlar hiç kullanılmaz ve liste yetmezse katalogdan tamamlanır. Önizleme biçiminde birkaç tür kısa bir önizleme olarak gösterilir, kişi karar kartıyla birini seçer. Bu seçim o konu boyunca değişmeden kalır."
+   },
+   "detay": {
+    "girdiler": [
+     "Konuya uygun görsel türleri katalogu.",
+     "Varsa kodun sonundaki beğenilen şablon listesi."
+    ],
+    "ciktilar": [
+     "Konu için seçilmiş bir görsel türü."
+    ],
+    "degismezler": [
+     "Eksi işaretli şablonlar hiç kullanılmaz.",
+     "Önizleme biçiminde seçim o konu boyunca geçerli kalır."
+    ],
+    "kenar": [
+     "Beğeni listesi yetmezse katalogdan tamamlama yapılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Eksi işaretli şablonlar hiçbir biçimde kullanılmaz.",
+     "Önizleme biçiminde seçilen tür, konunun sonuna kadar değişmez."
+    ],
+    "degisebilir": [
+     "Katalogdan seçimin hangi çeşitlilik ölçütüyle yapılacağı, kural içinde serbestçe ayarlanabilir.",
+     "Önizlemede kaç türün gösterileceği ve önizlemelerin sırası biçimle birlikte değişebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Eksi işaretli bir şablon neden hiç kullanılmaz?",
+     "yanit": "Listede eksi işaretiyle geçen şablon, kişinin sevmediği bir biçim olarak işaretlenmiştir; sohbet onu hiç seçmez."
+    },
+    {
+     "soru": "Önizlemeden seçilen tür konu ortasında değişirse ne olur?",
+     "yanit": "Seçim o konu boyunca geçerli kalır; kişinin kararı konunun ortasında sessizce değişmez."
+    }
+   ],
+   "kritik_neden": "Bu seçim bozulursa kişinin sevmediği görsel tekrar gelir ya da bir konunun ortasında görsel türü değişerek okuyanın dikkatini böler.",
+   "terimler": [],
+   "belirsiz": [
+    "Katalogdan seçimde hangi çeşitlilik kuralının uygulandığı ve önizleme sayısının kaç olduğu kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/G",
+   "tur": "birim",
+   "ozet": "71e8f8817913",
+   "iskelet": "e11874bdcda2",
+   "baslik": "Görsel yayın öncesi deneme",
+   "ne": {
+    "cok_basit": "Bu parça, bir görselin yayına çıkmadan önce ekranda denenip denenmeyeceğini belirler.",
+    "basit": "Bu seçenek, bir görselin yayına çıkmadan önce ekranda denenip denenmeyeceğini belirler. Bozuk görünümün kullanıcıya ulaşmaması için deneme yapılır ya da doğrudan gönderilir.",
+    "normal": "Bu seçenek, bir görselin yayına çıkmadan önce test ekranında denenip denenmeyeceğini belirler. Deneme yapıldığında görsel farklı boyutlarda açılır ve ekran görüntüsü okunur. Deneme yapılmadığında görsel doğrudan gönderilir ve hata bildirildiğinde önce yeniden üretilir.",
+    "gelismis": "Bu seçenek, görsel yayınının güvence düzeyini belirler. Biçimlerden biri her görseli yayından önce dikey ve yatay boyutlarda açıp tıklanmış hâlini de görür. Bir diğeri yalnızca yapı değiştiğinde deneme ister; yeni düzen, yeni grafik, yeni görsel türü ya da satırlara bölünen formül bu kapsamdadır. Üçüncü bir biçimde deneme yapılmadan gönderilir, hata bildirilirse önce yeniden üretilip ardından düzeltilir.",
+    "detayli": "Bu seçenek, bir görselin kullanıcıya ulaşmadan önce ne kadar sınanacağını belirler. Tam sınamada görsel test ekranında dikey ve yatay boyutlarda açılır, ekran görüntüsü okunur ve tıklanmış hâli de çekilir; böylece bozuk görünüm yayından önce görülür. Yapısal değişiklik biçiminde bu deneme, yeni düzen, yeni grafik, yeni görsel türü ya da satırlara bölünen bir formül söz konusuysa zorunludur. Sınamasız biçimde görsel doğrudan gönderilir; bu durumda bir hata bildirilirse önce hata yeniden üretilir, sonra düzeltilir."
+   },
+   "mantik": {
+    "cok_basit": "Bozuk bir görsel kullanıcıya gitmesin diye yayından önce denenir.",
+    "basit": "Bazı görsel değişiklikleri kendiliğinden bozulabilir. Bu yüzden yapı değiştiğinde görsel önce ekranda denenir.",
+    "normal": "Bir görselin yayından sonra bozuk çıkması kullanıcının anlatımı yanlış okumasına yol açabilir. Yapısal değişiklikte deneme zorunlu tutulursa bu risk yayından önce görülür. Deneme yapılmadan gönderilen biçimde ise hata bildirildiğinde gerçek hata ilk önce yeniden üretilir.",
+    "gelismis": "Yapısal değişiklikler görünümü kolayca bozar; boyut ve tıklama durumu gibi ayrıntılar yalnızca gerçek ekranda görülür. Bu yüzden deneme, değişikliğin büyüklüğüne göre zorunlu tutulur. Deneme yapılmayan biçimde ise hata gerçekten görülmeden düzeltme yapılmaması, yanlış düzeltmenin önüne geçer.",
+    "detayli": "Görselin yapısı değiştiğinde, boyut ve tıklama gibi durumlarda bozulmanın nerede çıkacağı önceden bilinemez. Yapısal değişiklikte deneme zorunlu tutulursa bu tür bozulmalar yayından önce görülür. Deneme yapılmayan biçimde ise hata bildirildiğinde önce o hatanın gerçekten yeniden üretilmesi istenir; böylece görülmeden yapılan bir düzeltme, asıl sorunu gizleyip yenisini yaratmaz. Deneme düzeyi, değişikliğin kapsamına göre ayarlanmış bir denge olarak durur."
+   },
+   "nasil": {
+    "basit": "Görsel, test ekranında dikey ve yatay boyutlarda açılıp ekran görüntüsü okunabilir. Bazı biçimlerde ise deneme yapılmadan doğrudan gönderilir.",
+    "normal": "Deneme yapılan biçimde görsel önce test ekranında dikey ve yatay boyutlarda açılır ve ekran görüntüsü okunur. Ardından görselin tıklanmış hâli de çekilir. Yapı değişiyorsa deneme zorunludur; bu kapsamda yeni düzen, yeni grafik, yeni görsel türü ya da satırlara bölünen bir formül vardır. Deneme yapılmayan biçimde ise görsel doğrudan gönderilir ve bir hata bildirilirse önce yeniden üretilir.",
+    "gelismis": "Bir görsel hazırlandığında önce yapının değişip değişmediğine bakılır. Yapı değişiyorsa görsel test ekranında dikey ve yatay boyutlarda açılır ve tıklanmış hâli de dahil denenir. Yeni düzen, yeni grafik ya da formülün satırlara bölünmesi bu kapsamdadır. Deneme yapılmayan biçimde görsel doğrudan gönderilir; kullanıcı hata bildirirse önce hata yeniden üretilir, sonra düzeltme yapılır.",
+    "detayli": "Anlatım bir görselin yayına hazırlanmasında önce yapısal bir değişiklik olup olmadığına bakar. Yapısal değişiklik varsa görsel test ekranında dikey ve yatay boyutlarda açılır; ekran görüntüsü okunur ve tıklanmış hâli çekilerek tüm durumlar sınanır. Bu kapsamda yeni düzen, yeni grafik, yeni görsel türü ve satırlara bölünen bir formül yer alır. Deneme yapılmayan biçimde görsel sınanmadan gönderilir. Kullanıcı bir hata bildirdiğinde ise önce bu hata ekranda yeniden üretilir, ardından düzeltme yapılır."
+   },
+   "detay": {
+    "girdiler": [
+     "Hazırlanan görsel ve yapısal değişiklik olup olmadığı."
+    ],
+    "ciktilar": [
+     "Yayına hazır görsel ya da sınanmadan gönderilmiş görsel."
+    ],
+    "degismezler": [
+     "Yapısal değişiklikte test ekranı denemesi zorunludur.",
+     "Hata bildirildiğinde önce hata yeniden üretilir."
+    ],
+    "kenar": [
+     "Deneme yapılmayan biçimde görsel doğrudan gönderilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Yapısal değişiklikte test ekranı denemesi atlanmaz.",
+     "Hata bildirildiğinde önce hata gerçekten görülür, sonra düzeltme yapılır."
+    ],
+    "degisebilir": [
+     "Ekran görüntüsünün nasıl okunacağı ve hangi boyutların kullanılacağı biçim içinde serbestçe ayarlanabilir.",
+     "Deneme yapılmayan biçimde gönderimin hangi kanaldan yapılacağı kayıtta değişebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Yapı değişmediyse ekran denemesi neden atlanabilir?",
+     "yanit": "Bu biçimde deneme yalnızca yapısal değişiklikte zorunludur; değişmeyen görsel doğrudan gönderilebilir."
+    },
+    {
+     "soru": "Hata bildirildiğinde doğrudan düzeltme yapılsa ne olur?",
+     "yanit": "Gerçek hata görülmeden yapılan düzeltme asıl sorunu gizleyebilir; bu yüzden önce hata yeniden üretilir."
+    }
+   ],
+   "kritik_neden": "Bu kural bozulursa yapısı değişmiş bir görsel ekran denemesi olmadan yayına çıkar ve kullanıcı bozuk bir görünümle karşılaşır.",
+   "terimler": [],
+   "belirsiz": [
+    "Deneme yapılmayan biçimde gönderimin hangi kanaldan yapıldığı ve ekran denemesinin hangi araçla açıldığı kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/H",
+   "tur": "birim",
+   "ozet": "fed2eb3efeb4",
+   "iskelet": "3b795fb51dc5",
+   "baslik": "Vurgu renk paleti",
+   "ne": {
+    "cok_basit": "Bu parça, görsellerde kullanılan renklerin hangi tonda ve nerede kullanılacağını belirler.",
+    "basit": "Bu seçenek, görsellerdeki vurgu renklerinin hangi tonda olacağını ve nerede kullanılacağını belirler. Renkler bir palet olarak birlikte düşünülür.",
+    "normal": "Bu seçenek, görsellerdeki vurgu renklerinin bir palet olarak nasıl kurulacağını belirler. Her renk farklı tonlarda kullanılır ve her ton kendi yerine düşer. Biçimlerden biri de eski şablonlardaki renk değerlerini bu paletle yazar.",
+    "gelismis": "Bu seçenek, görsel renklerinin tek bir palette toplanmasını ve her rengin tonuna göre bir yere atanmasını belirler. Orta ton çizgi ve simgeye, derin ton dolu zemine, açık ton ise derin zemin üzerindeki alt çizgiye gider. Bir biçimde palet mavi, yeşil, turuncu, mor ve pembeyi koyu ve sakin bir tonda sunar.",
+    "detayli": "Bu seçenek, görsel renklerinin nasıl bir palet olarak düzenleneceğini ve her tonun nerede kullanılacağını belirler. Palette her vurgu rengi birden çok tonda bulunur ve bu tonlar birbirinden ayrı işler görür. Orta ton, çizgi ve simgelere gider; derin ton, dolu zeminlere; açık ton ise derin zemin üzerindeki alt çizgilere atanır. Bir biçimde palet, mavi, yeşil, turuncu, mor ve pembeyi koyu ve sakin bir tonda sunar. Eski şablonlardaki renk değişkenleri bu renklerin değerleriyle yazılır, başka bir şey değişmez."
+   },
+   "mantik": {
+    "cok_basit": "Renkler rastgele seçilmesin diye her tonun bir yeri vardır.",
+    "basit": "Aynı renk her yerde aynı tonda olursa görsel karışır. Bu yüzden orta, derin ve açık tonlar kendi yerlerine ayrılır.",
+    "normal": "Bir rengin her yerde tek tonla kullanılması, çizgi ile dolu zemin arasındaki ayrımı kaybettirir. Tonları yerlerine ayırmak, görselin okunabilirliğini korur. Eski şablonların renk değişkenlerinin bu palet ile yazılması, değişikliğin tek bir yerden yürümesini sağlar.",
+    "gelismis": "Vurgu renginin tek tonla kullanılması, çizgi, zemin ve alt çizgi arasındaki ayrımı zayıflatır. Tonları ayrı işlere ayırmak bu ayrımı korur ve görselin tüm biçimlerde aynı dille konuşmasını sağlar. Eski şablonlardaki değişkenlerin paletten yazılması, renk düzeninin tek bir kaynaktan yürümesini sağlar.",
+    "detayli": "Bir görselde aynı vurgu rengi her yerde tek bir tonla kullanılırsa, çizgi ile dolu zemin arasındaki ayrım kaybolur ve okuyan hangi öğenin ne anlama geldiğini ayıramaz. Bu nedenle orta, derin ve açık tonlar kendi işlerine ayrılır. Palet mavi, yeşil, turuncu, mor ve pembeyi koyu ve sakin bir tonda sunduğu için renkler birbirini bastırmadan yan yana durur. Eski şablonlardaki renk değişkenlerinin bu paletle yazılması, bütün renk düzeninin tek bir yerden değiştirilebilmesini sağlar."
+   },
+   "nasil": {
+    "basit": "Vurgu renkleri bir palet olarak alınır. Her renk farklı tonlarda kullanılır ve orta ton çizgi ve simgelere, derin ton dolu zemine gider.",
+    "normal": "Vurgu renkleri bir palet olarak düzenlenir ve her renk birkaç tonda kullanılır. Orta ton çizgi ve simgelere, derin ton dolu zemine, açık ton ise derin zemin üzerindeki alt çizgiye gider. Bir biçimde palet mavi, yeşil, turuncu, mor ve pembeyi koyu ve sakin bir tonda sunar.",
+    "gelismis": "Palet önce vurgu renklerini toplar; her renk için orta, derin ve açık tonlar belirlenir. Orta ton çizgi ve simgelere, derin ton dolu zeminlere atanır ve açık ton derin zemin üzerindeki alt çizgide kullanılır. Eski şablonlardaki renk değişkenlerinin değerleri bu paletten yazılır. Bu işlem dışında başka hiçbir değer değiştirilmez.",
+    "detayli": "Anlatım bir görselin renklerini kurarken önce vurgu renklerini bir palet olarak toplar. Her vurgu rengi için orta, derin ve açık olmak üzere ayrı tonlar çıkarılır. Orta ton, çizgi ve simgelerde kullanılır; derin ton, dolu zeminlerde; açık ton ise derin zemin üzerindeki alt çizgilerde yer alır. Palet biçiminde mavi, yeşil, turuncu, mor ve pembe koyu ve sakin bir tonda sunulur. Eski şablonlardaki renk değişkenleri bu palet değerleriyle yeniden yazılır ve bu değişiklik dışında başka bir şeye dokunulmaz."
+   },
+   "detay": {
+    "girdiler": [
+     "Vurgu renkleri ve her rengin orta, derin ve açık tonları."
+    ],
+    "ciktilar": [
+     "Çizgi, simge, dolu zemin ve alt çizgi için belirlenmiş renkler."
+    ],
+    "degismezler": [
+     "Orta ton çizgi ve simgeye, derin ton dolu zemine gider.",
+     "Eski şablonlardaki renk değişkenleri dışında hiçbir değer değişmez."
+    ],
+    "kenar": [
+     "Derin zemin üzerindeki alt çizgi için yalnızca açık ton kullanılır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Orta ton çizgi ve simgeye, derin ton dolu zemine gider; bu eşleşme değişmez.",
+     "Eski şablonlardaki renk değişkenleri dışında başka hiçbir değer değişmez."
+    ],
+    "degisebilir": [
+     "Palete hangi vurgu renklerinin girdiği, biçime göre serbestçe seçilebilir.",
+     "Koyu ve sakin tonun ayarı, palet içinde serbestçe ince ayar yapılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Orta ton neden çizgi ve simgeye, derin ton neden dolu zemine gider?",
+     "yanit": "Her tonun ayrı bir işi vardır; orta ton ince öğelerde görünür, derin ton ise geniş dolu alanlarda rahat durur."
+    },
+    {
+     "soru": "Palet dışından bir renk eklenirse ne olur?",
+     "yanit": "Eşleşme bozulur ve bu renk palet düzeninin dışında kalır; palet tonları bu yüzden birlikte tutulur."
+    }
+   ],
+   "kritik_neden": "Bu palet bozulursa tonların yerleri karışır, çizgi ile zemin ayırt edilemez hâle gelir ve eski şablonların renkleri tutarsız görünür.",
+   "terimler": [],
+   "belirsiz": [
+    "Açık ve derin tonların hangi değerlerle yazılacağı ve palet değişkenlerinin hangi dosyada tutulduğu kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/I",
+   "tur": "birim",
+   "ozet": "91423418bb04",
+   "iskelet": "1db9100e699e",
+   "baslik": "Sohbet devri zamanı",
+   "ne": {
+    "cok_basit": "Bu parça, uzayan bir sohbetin ne zaman yeni bir sohbete devredileceğini belirler.",
+    "basit": "Bu seçenek, uzun süren bir sohbetin ne zaman yeni bir sohbete devredileceğini belirler. Devir, iş bir parça bittikten sonra yapılır.",
+    "normal": "Bu seçenek, uzayan bir sohbetin kalan işinin ne zaman yeni bir sohbete devredileceğini belirler. Devir, bir konu ya da blok tamamen bittikten sonra yapılır ve konunun ortasında kesilmez. Devrin zamanı sabit bir eşikle ya da bağlamın durumuyla belirlenebilir.",
+    "gelismis": "Bu seçenek, uzun sohbetlerin devrini zamanlar. Biçimlerden biri sohbet belli bir uzunluğa gelince devreder ve eşiğe yaklaşıldığında tek satırlık bir uyarı verir. Bir diğeri eşiği sabit tutmaz; bağlam özetlenmeye başlamışsa devir, o anki adım bittiğinde yapılır. Her biçimde devir, konunun ya da adımın ortasında yapılmaz ve kalınan yer aynen taşınır.",
+    "detayli": "Bu seçenek, uzun bir sohbetin ne zaman ve nasıl yeni bir sohbete devredileceğini belirler. Sabit eşikli biçimde sohbet belli bir uzunluğa varınca devredilir ve eşiğe yaklaşıldığında tek satırlık uyarı çıkar. Eşiği sonradan gelen biçimde ise uyarı son mesajlarda görünür. Eşiksiz biçimde bağlam özetlenmeye başladığında, devir o anki adım bittiğinde yapılır. Bütün biçimlerde devir, bir konu ya da blok tamamlandıktan sonra yapılır ve kaldığı yer aynen taşınır."
+   },
+   "mantik": {
+    "cok_basit": "Uzun bir sohbet dolunca iş kaybolmasın diye yeni bir sohbete geçilir.",
+    "basit": "Sohbet çok uzarsa cevaplar yavaşlar ve eski bilgiler karışabilir. Bu yüzden iş belli bir noktada yeni bir sohbete taşınır.",
+    "normal": "Uzun bir sohbet, başlangıçtaki bilgilerin unutulmasına ve yanıtların bozulmasına yol açabilir. Devri bir konu ya da blok bittikten sonra yapmak, öğrenme akışının ortasında kesilmeyi önler. Eşiği uyarıyla birlikte koymak, kişinin devre hazırlanmasına zaman bırakır.",
+    "gelismis": "Bağlam büyüdükçe sohbetin verimi düşebilir; bu nedenle devir kaçınılmaz bir noktaya gelir. Devrin adım bitiminde yapılması, öğrenilen parçanın yarıda kalmasını önler. Sabit eşik öngörülebilirlik sağlar; eşiksiz biçim ise bağlamın gerçek durumuna göre hareket eder.",
+    "detayli": "Uzayan bir sohbette bağlam büyüdükçe eski bilgilerin etkisi zayıflar ve yanıtların kalitesi düşebilir. Devir, bu noktaya gelmeden ama yalnızca bir adım bittiğinde yapılırsa, öğrenilen parça yarıda kalmaz. Sabit eşik, kişinin devre ne zaman yaklaşacağını önceden bilmesini sağlar. Eşiksiz biçim ise bağlamın gerçek durumuna göre hareket ettiği için sabit bir sayıya bağlı kalmaz. Her iki biçimde de kalınan yerin aynen taşınması, devrin bilgi kaybına yol açmasını engeller."
+   },
+   "nasil": {
+    "basit": "Sohbet uzadığında kalan iş yeni bir sohbete devredilir. Devir, konu ya da blok bittikten sonra yapılır ve kalınan yer aynen taşınır.",
+    "normal": "Devir, bir konu ya da blok tamamen gönderildikten sonra yapılır. Sabit eşikli biçimde sohbet belli bir uzunluğa yaklaşınca tek satırlık bir uyarı çıkar. Eşiksiz biçimde bağlam özetlenmeye başladığında devir, o anki adım bittiğinde yapılır ve adımın ortasında yeni sohbete geçilmez.",
+    "gelismis": "Sohbet uzadıkça devir durumu izlenir. Sabit eşikli biçimde eşiğe yaklaşıldığında son mesajlarda bir uyarı çıkar ve devir, konu ya da blok bittiğinde yapılır. Eşiksiz biçimde bağlam özetlenmeye başladığında devir, o anki adım tamamlandığında yapılır. Her iki biçimde de kaldığı yer aynen yeni sohbete taşınır.",
+    "detayli": "Anlatım, sohbetin uzunluğunu ve bağlamın durumunu takip eder. Sabit eşikli biçimde sohbet belli bir uzunluğa yaklaşınca tek satırlık bir uyarı çıkar, ama devir hemen yapılmaz; mevcut konu ya da blok tamamlandıktan sonra gerçekleşir. Eşiği sonradan gelen biçimde uyarı son mesajlarda belirir ve aynı kural uygulanır. Eşiksiz biçimde bağlam özetlenmeye başlarsa devir, o anki adım bittiğinde yapılır ve adımın ortasında yeni bir sohbete geçilmez. Bütün biçimlerde kalınan yer aynen taşınır."
+   },
+   "detay": {
+    "girdiler": [
+     "Sohbetin uzunluğu ya da bağlamın durumu, ve tamamlanmakta olan konu ya da blok."
+    ],
+    "ciktilar": [
+     "Yeni sohbette kaldığı yerden devam edilebilen bir devir."
+    ],
+    "degismezler": [
+     "Devir, konu ya da blok tamamlanmadan yapılmaz.",
+     "Kalınan yer aynen yeni sohbete taşınır."
+    ],
+    "kenar": [
+     "Bağlam özetlenmeye başladığında sabit bir eşik beklenmez."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Devir, konunun ya da adımın ortasında yapılmaz.",
+     "Kalınan yer yeni sohbete aynen taşınır."
+    ],
+    "degisebilir": [
+     "Eşiğe yaklaşıldığında çıkan uyarının metni ve biçimi serbestçe değişebilir.",
+     "Sabit eşikli ile eşiksiz biçim arasındaki seçim, bağlamın durumuna göre içeride yeniden kurulabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Devir neden konunun ortasında yapılmaz?",
+     "yanit": "Yarım kalan bir konu yeni sohbette eksik anlaşılır; devir, konu ya da blok tamamlandıktan sonra yapılır."
+    },
+    {
+     "soru": "Sabit eşik yerine bağlamın durumuna bakılsa ne olur?",
+     "yanit": "Devrin zamanı sabit bir sayıya bağlı kalmaz; bağlam özetlenmeye başladığında adım bitince devredilir."
+    }
+   ],
+   "kritik_neden": "Bu kural bozulursa devir adımın ortasında yapılır ya da kalınan yer taşınmaz ve öğrenen yeni sohbette kaldığı noktayı kaybeder.",
+   "terimler": [],
+   "belirsiz": [
+    "Sabit eşiğin hangi uzunlukta olduğu ve hangi biçimin varsayılan olduğu kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:secenekler/J",
+   "tur": "birim",
+   "ozet": "97752a0d7a25",
+   "iskelet": "202f20d8ca63",
+   "baslik": "Anlatım temposu",
+   "ne": {
+    "cok_basit": "Bu parça, bir dersin ne kadar hızlı ilerleyeceğini ve ara soruların ne sıklıkta geleceğini belirler.",
+    "basit": "Bu seçenek, bir dersin ne kadar hızlı ilerleyeceğini belirler. Yavaş, normal ve hızlı tempo arasında seçim yapılabilir.",
+    "normal": "Bu seçenek, bir dersin tempoyu ve ara soruların sıklığını belirler. Yavaş tempoda her adım tek bir kavramı anlatır ve sık teyit sorusu gelir. Hızlı tempoda yakın parçalar birleşir, sorular yalnızca bir bloğun sonunda gelir.",
+    "gelismis": "Bu seçenek, anlatımın temposunu ve teyit sorularının dağılımını belirler. Yavaş biçimde her adım tek bir kavramı ayrıntılı anlatır ve her adımın sonunda kısa bir teyit sorusu gelir. Normal biçimde bir adım bir alt parçaya karşılık gelir ve tempo sohbet içinde kademe kademe değiştirilebilir. Hızlı biçimde yakın parçalar tek adımda birleşir, ara sorular kalkar ve konu sonunda özet ile mini test gelir.",
+    "detayli": "Bu seçenek, bir dersin temposunu ve kişinin ne sıklıkla teyit edileceğini belirler. Yavaş biçimde her adım tek bir kavramı ayrıntılı anlatır, adımın sonunda kısa bir teyit sorusu gelir ve cevap beklenmeden anlatım sürer. Normal biçimde her adım bir alt parçaya karşılık gelir; adım sonunda gerekirse tek soru sorulur ve tempo sohbet içinde değiştirilebilir. Hızlı biçimde yakın alt parçalar aynı adımda birleşir, metin madde madde kısa tutulur ve sorular yalnızca bir bloğun sonunda gelir. Hızlı biçimde konu sonunda bir özet ve bir mini test bulunur."
+   },
+   "mantik": {
+    "cok_basit": "Herkes aynı hızda öğrenmediği için tempo ayrı tutulur.",
+    "basit": "Kimi kişi her adımda durup düşünmek ister, kimi hızlı ilerlemek ister. Bu yüzden tempo ayarlanabilir tutulur.",
+    "normal": "Kişiler yeni bir konuyu farklı hızlarda kavrar. Yavaş tempo, anlamakta zorlanan biri için her kavramı ayırır. Hızlı tempo ise kolay gelen parçalarda zaman kaybını önler. Sorular, kişinin anlayıp anlamadığını ölçmek için bu hıza göre seyrelir ya da sıklaşır.",
+    "gelismis": "Tempo, öğrenenin kavrama hızına ve konunun zorluğuna göre değişir. Yavaş biçim anlaşılmayan kavramı tek tek ayırarak sağlam bir zemin kurar. Hızlı biçim ise tanıdık parçalarda gereksiz tekrarı kaldırır. Teyit sorularının sıklığı da bu dengeye bağlanır: sık sorular yavaş tempoda anlamayı ölçer, seyrek sorular hızlı tempoda akışı korur.",
+    "detayli": "Her öğrenenin bir konuyu kavrama hızı farklıdır ve aynı tempo herkese uymaz. Yavaş tempo, zor bir kavramın tek tek ayrılmasını ve her adımda anlamın yoklanmasını sağlar. Hızlı tempo ise tanıdık parçalarda zaman kaybını önler ve akışı hızlandırır. Teyit sorularının sıklığı tempoyla birlikte ayarlanır; sık sorular anlamayı yakından izler, seyrek sorular ise akışı bölmeden yalnızca bloğun sonunda kontrol eder. Konu sonunda özet ve mini test, hızlı tempoda kaçan noktaları yakalamak için kalır."
+   },
+   "nasil": {
+    "basit": "Yavaş tempoda her adım tek bir kavramı anlatır ve sonunda kısa bir soru gelir. Hızlı tempoda birkaç parça birlikte anlatılır ve sorular yalnızca bloğun sonunda gelir.",
+    "normal": "Yavaş tempoda her adım tek bir kavramı ayrıntılı anlatır ve adım sonunda kısa bir teyit sorusu gelir; cevap beklenmeden anlatım sürer. Normal tempoda bir adım bir alt parçaya karşılık gelir ve gerekirse tek bir soru sorulur. Hızlı tempoda yakın parçalar tek adımda birleşir, metin madde madde kısa kalır ve sorular yalnızca bir bloğun sonunda gelir.",
+    "gelismis": "Tempo, her konunun başında seçilen biçime göre uygulanır. Yavaş biçimde adım tek kavrama ayrılır, her adımın sonunda teyit sorusu gelir ve ara özet verilir. Normal biçimde bir adım bir alt parçaya ve onun görseline karşılık gelir; tempo sohbet içinde kademe kademe değiştirilebilir. Hızlı biçimde yakın parçalar birleşir ve ara sorular kalkar; konu sonunda özet ve mini test yer alır.",
+    "detayli": "Anlatım bir konuya başlarken seçilen tempoyu uygular. Yavaş tempoda her adım tek bir kavramı ayrıntılı anlatır; metin uzun tutulur, adım sonunda kısa bir teyit sorusu gelir ve cevap beklenmeden anlatım devam eder. Kaynakta ikinci bir örnek varsa eklenir, ara özet de verilir. Normal tempoda bir adım bir alt parçaya karşılık gelir; kısa bir metin ve o adımın görseli sunulur, adım sonunda gerekirse tek bir soru sorulur ve bir blok bittiğinde birkaç soru gelir. Hızlı tempoda yakın alt parçalar aynı adımda birleşir, metin madde madde kısa tutulur, ara teyit soruları kalkar ve sorular yalnızca bir bloğun sonunda gelir. Konunun sonunda özet ve mini test bulunur."
+   },
+   "detay": {
+    "girdiler": [
+     "Seçilen tempo ve konunun alt parçaları."
+    ],
+    "ciktilar": [
+     "Tempoya uygun adımlar, teyit soruları ve konu sonu özeti."
+    ],
+    "degismezler": [
+     "Hızlı tempoda ara teyit soruları kalkar.",
+     "Yavaş tempoda her adımın sonunda kısa bir teyit sorusu gelir."
+    ],
+    "kenar": [
+     "Normal tempoda tempo sohbet içinde kademe kademe değiştirilebilir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Hızlı tempoda sorular yalnızca bir bloğun sonunda gelir.",
+     "Yavaş tempoda cevap beklenmeden anlatım sürer."
+    ],
+    "degisebilir": [
+     "Yavaş tempoda kaynakta varsa eklenen ikinci örneğin seçimi serbesttir.",
+     "Normal tempodaki tek sorunun konusu ve biçimi her adıma göre serbestçe değişebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Yavaş tempoda neden her adımın sonunda soru gelir?",
+     "yanit": "Her kavram tek tek ayrıldığı için o kavramın anlaşıldığını hemen teyit etmek gerekir; cevap beklenmeden anlatım sürer."
+    },
+    {
+     "soru": "Hızlı tempoda sorular neden yalnızca bloğun sonunda gelir?",
+     "yanit": "Ara sorular kalkınca akış bölünmez; anlama kontrolü blok bittiğinde yapılır ve konu sonunda özet ile mini test gelir."
+    }
+   ],
+   "kritik_neden": "Bu düzen bozulursa tempo ile sorular birbirinden kopar; yavaş anlatımda anlama yoklanmaz ya da hızlı anlatımda akış sürekli bölünür.",
+   "terimler": [],
+   "belirsiz": [
+    "Varsayılan tempo ve tempo değişikliğinin hangi koşulda yapıldığı kayıtta yazmıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/A/A1.md",
+   "tur": "dosya",
+   "ozet": "82084adfc0bd",
+   "iskelet": "31a91d6e10ba",
+   "baslik": "Slayta bağlı anlatım",
+   "ne": {
+    "cok_basit": "Anlatım hocanın slaytlarına ve notlarına dayanır; yeni bilgi eklenmez.",
+    "normal": "Anlatım, yüklenen slayt ya da ders notundaki kapsam, sıra ve terimlerle yapılır. Sohbet yalnız geçiş cümlesi ve yeniden ifade ekler. Kaynakta olmayan bilgi yalnız sondaki Ekstra kısmında durur."
+   },
+   "nasil": {
+    "normal": "Kaynak önceliği ders kartından okunur; yazmıyorsa slayt, ders notu, kitap ve müfredat sırasıyla gidilir. Listeler kaynaktaki sırayla ve eksiksiz verilir. Slayt ya da not yoksa kullanıcıya bir kez yükleme hatırlatılır ve müfredata göre anlatılır. Kullanıcı kaynağa bağlı kalmak isterse konu boyunca sıkı kaynak moduna geçilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Kaynak öncelik sırası sabittir: slayt önce, sonra ders notu, kitap ve müfredat gelir.",
+     "Anlatımdaki bilginin yalnız kaynaktan gelmesi ve kaynakta olmayanın Ekstra kısmında durması sabittir.",
+     "Listelerin kaynakla aynı sayıda ve sırada verilmesi sabittir, çünkü özet için madde silinmez."
+    ],
+    "degisebilir": [
+     "Geçiş cümlelerinin nasıl kurulacağı ve bir kavramın nasıl yeniden ifade edileceği serbesttir.",
+     "Sorunun biçimi, kaynaktaki bilgiyi aynen kullanmak koşuluyla, serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa anlatım hocanın kapsamından ve sırasından uzaklaşır, kullanıcı kaynakla uyumsuz bilgi alır.",
+   "terimler": [],
+   "belirsiz": [
+    "Anlatımda yeni olgu eklenmemesine ilişkin cümlenin sonu eksik geldi; yalnız kalan ilkeler yazıldı."
+   ],
+   "okunan": [
+    "secenekler/A/A1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/A/A2.md",
+   "tur": "dosya",
+   "ozet": "cfe4dea7e027",
+   "iskelet": "6711017120a0",
+   "baslik": "Sıkı kaynak modu",
+   "ne": {
+    "cok_basit": "Yalnız hocanın materyalinde yazanı anlatır, kendi bilgisini eklemez.",
+    "normal": "Bu mod, anlatımı yalnızca yüklenen kaynakla sınırlar: slayt, not ya da PDF metni. Sohbet kendi bilgisinden tanım, örnek, sayı ya da yorum üretmez. Kaynakta olmayan adım açıkça belirtilip geçilir."
+   },
+   "nasil": {
+    "normal": "Anlatılan her şey kaynakta bulunmalıdır. Hesap örneklerinde yalnız kaynaktaki örnekler kullanılır ve sayıları değiştirilmez. Görseller ve tablolar yalnız kaynaktaki verileri kullanır. Sorular yalnız kaynaktaki bilgiyle cevaplanabilir olmalıdır. Gerekli bir ek bağlantı varsa tek cümleyle, kaynak dışı etiketiyle Ekstra kısmında verilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Yalnız kaynakta yazan bilginin anlatılması sabittir; kaynak dışı bir şey anlatıma girmez.",
+     "Hesap örneklerindeki sayıların kaynakla birebir aynı kalması sabittir.",
+     "Kaynak dışı bağlantının yalnız Ekstra kısmında etiketli durması sabittir."
+    ],
+    "degisebilir": [
+     "Kaynaktaki bilginin cümle yapısı ve anlatım akışı içeride serbesttir, bilgi değişmez."
+    ]
+   },
+   "kritik_neden": "Bozulursa anlatım kaynak dışı bilgiyle karışır ve kullanıcı hocanın materyalinden çıkmış gibi yanlış bilgi öğrenebilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/A/A2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/A/A3.md",
+   "tur": "dosya",
+   "ozet": "9f6745fd06a6",
+   "iskelet": "0de5bde44783",
+   "baslik": "Slayt ve kitap dengesi",
+   "ne": {
+    "cok_basit": "Anlatım önce hocanın slaytlarına dayanır, eksik kalan yerleri kitap tamamlar.",
+    "normal": "Anlatımın temeli hocanın slaytlarıdır; slaytın eksik bıraktığı yerler ders kitabından tamamlanır. Kitaptan gelen parçalar soluk bir etiketle ayrılır, sınav kapsamı slayttır."
+   },
+   "nasil": {
+    "normal": "Anlatım slayt temel alınarak kurulur. Slaytın eksik bıraktığı yerler ders kitabından tamamlanır ve bu kısımlar etiketlenir. Kitaptan gelen kısım derinleştirme diye anılır, sınav kapsamı ise slayttır."
+   },
+   "sinir": {
+    "sabit": [
+     "Sınav kapsamının slayt olduğu ayrımı sabittir; kitap kısmı slayt kapsamına karıştırılmaz.",
+     "Kitap kısmının her zaman ayrı bir etiketle işaretlenmesi sabittir."
+    ],
+    "degisebilir": [
+     "Kitaptan alınan parçanın ne kadar uzun olacağı ve hangi bölümden seçileceği içerikle serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa sınav kapsamı ile kitap ek bilgisi birbirine karışır ve kullanıcı neyin sınavda çıkacağını yanlış ayırt eder.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/A/A3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/A/A4.md",
+   "tur": "dosya",
+   "ozet": "8f51e506f6db",
+   "iskelet": "bbf4a7cce75d",
+   "baslik": "Kitap temel kaynak modu",
+   "ne": {
+    "cok_basit": "Kaynak yüklenmemişse konu ders kitabı ve genel bilgiyle anlatılır.",
+    "normal": "Yüklenen kaynak yokken anlatım ders kitabına ve standart bilgiye dayanır. Yüklenen slayt ya da not her zaman kitabın üstündedir, çünkü hocanın sırası ve vurgusu esastır."
+   },
+   "nasil": {
+    "normal": "Kapsam ve sıra müfredata göre ilerler. Emin olunmayan sayı ya da formül yazılmaz, kitaptan doğrulanması için işaretlenir. Listeler eksiksiz verilir. Ekstra düğmesi her kısmın kaynağını gösteren bir satır taşır. Kullanıcı kaynağa bağlı kalmak isterse konu boyunca sıkı kaynak moduna geçilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Yüklenen kaynağın kitabın üstünde sayılması sabittir; bu öncelik sıra ve notasyonu korur.",
+     "Bölüm ve sayfa numarasının yalnız emin olunduğunda ve bölüm adıyla yazılması sabittir.",
+     "Kullanıcının kaynağa bağlı kalma isteğinin sıkı kaynak moduna geçişi tetiklemesi sabittir."
+    ],
+    "degisebilir": [
+     "Tanım, örnek ve çözümlü soruların hangi sırayla ve kaç tane verileceği, kaynakta yoksa, serbesttir.",
+     "Ekstra kısmındaki kaynak durumu satırının cümle biçimi serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa kaynak öncelik sırası karışır ve yanlış sayı ya da bölüm numarası anlatılabilir.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı uzun maddelerin sonu eksik geldi: yüklenen kaynağın kitapla çelişmesi ve sayfa numarasının hangi indeksten alındığı tam anlatılamadı."
+   ],
+   "okunan": [
+    "secenekler/A/A4.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/B/B1.md",
+   "tur": "dosya",
+   "ozet": "aa64c7c632a4",
+   "iskelet": "41a79c9e9201",
+   "baslik": "Samimi ve esprili ton",
+   "ne": {
+    "cok_basit": "Ton arkadaşça ve sıcak olur, arada espri yapılır.",
+    "normal": "Kullanıcıya sen diye hitap edilir, konuşma arkadaş gibi samimi ve esprilidir. Moral cümleleri serbesttir, ama hikâye, vaka kurgusu ve puan ya da rozet kullanılmaz."
+   },
+   "nasil": {
+    "normal": "Kullanıcıya sen diye, arkadaş gibi hitap edilir. Espri ve emoji ara ara kullanılır; her mesajda en fazla tek emoji olur. Moral verici cümleler serbesttir."
+   },
+   "sinir": {
+    "sabit": [
+     "Kullanıcıya sen diye hitap edilmesi sabittir; samimi tonun bütün cümleleri bu hitap biçimine dayanır.",
+     "Hikâye, vaka kurgusu ve puan ya da rozet kullanılmaması sabittir."
+    ],
+    "degisebilir": [
+     "Espri ve moral cümlelerinin hangi konuda kullanılacağı, içeriğe göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu tonla anlatılan metnin üslubu değişir; başka parça bundan etkilenmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/B/B1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/B/B2.md",
+   "tur": "dosya",
+   "ozet": "bc9ffe164d94",
+   "iskelet": "cce5d08360fc",
+   "baslik": "Sade ve ciddi ton",
+   "ne": {
+    "cok_basit": "Yazı düz ve ciddi olur, şaka ve simge kullanılmaz.",
+    "normal": "Kullanıcıya sen diye hitap edilir, ama espri ve emoji yoktur. Cümleler düz, olgun ve sınav odaklı kurulur. Bu ton sınav odaklı çalışmaya uygun bir sadeliktedir."
+   },
+   "nasil": {
+    "normal": "Hitap sen diye yapılır, ancak espri ve emoji kullanılmaz. Cümleler düz, olgun ve sınav odaklı kurulur. Bu ton, mesajların hepsinde aynı ciddiyeti korur. Ciddi bir içerik, sen diye hitapla birlikte sade bir çizgide sunulur."
+   },
+   "sinir": {
+    "sabit": [
+     "Kullanıcıya sen diye hitap edilmesi sabittir ve ton boyunca değişmez.",
+     "Espri ve emoji kullanılmaması sabittir, bu ton için tanımdır."
+    ],
+    "degisebilir": [
+     "Cümlelerin uzunluğu ve konu başına düşen açıklama miktarı, içeriğe göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu tonla yazılan metinlerin üslubu değişir; başka parça bundan etkilenmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/B/B2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/B/B3.md",
+   "tur": "dosya",
+   "ozet": "14b4d950b681",
+   "iskelet": "8d704d9367a8",
+   "baslik": "Anlatım ciddi, sohbet samimi",
+   "ne": {
+    "cok_basit": "Ders anlatılırken ciddi, sohbet ederken samimi ve arada espri yapılır.",
+    "normal": "Anlatım ciddi ve sınav odaklıdır, espri ve hikâye içermez. Geçiş ve moral mesajları sen diye, samimi ve biraz esprilidir."
+   },
+   "nasil": {
+    "normal": "Konu anlatımı ve sorularda cümleler sade ve olgun kurulur. Geçiş, karşılama ve moral mesajlarında sen diye hitap edilir, emoji arada bir kullanılır. Bir hata düzeltilirken önce doğru kısım söylenir, sonra düzeltme yapılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu anlatımında espri ve hikâye kullanılmaması sabittir.",
+     "Ciddi anlatım ile samimi sohbet tonunun ayrı tutulması sabittir; iki ton birbirine karışmaz."
+    ],
+    "degisebilir": [
+     "Geçiş mesajlarında kullanılacak emojinin hangisi olacağı içeriğe göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa anlatım ile sohbet tonu karışır ve sınav konusu anlatılırken gereksiz espri girer.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/B/B3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/C/C1.md",
+   "tur": "dosya",
+   "ozet": "8f446d3d8a96",
+   "iskelet": "9951bfcf2cba",
+   "baslik": "Terim dilinin düzeni",
+   "ne": {
+    "cok_basit": "Bir kelime ilk geçtiğinde önce Türkçesi, hemen ardından İngilizcesi söylenir.",
+    "normal": "Bir terim ilk geçtiği yerde Türkçe karşılığı yazılır, İngilizcesi bunun yanında verilir. Sonraki geçişlerde yalnız Türkçe kullanılır ve İngilizce karşılık yeniden yazılmaz."
+   },
+   "nasil": {
+    "normal": "Terim ilk geçtiğinde Türkçe karşılığı önce gelir, İngilizcesi ardından verilir. Aynı düzen her yeni terimde tekrarlanır. Sonraki geçişlerde yalnız Türkçe kullanılır."
+   },
+   "sinir": {
+    "sabit": [
+     "İlk geçişte Türkçe ile İngilizce birlikte verilmesi ve sıranın değişmemesi sabittir.",
+     "Sonraki geçişlerde yalnız Türkçe kullanılması sabittir."
+    ],
+    "degisebilir": [
+     "Açıklama cümlesinin uzunluğu ve kelimelerinin seçimi, terim dili düzenine dokunmadan serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu terim düzenine göre yazılan metinler karışık görünür; başka parça bundan etkilenmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/C/C1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/C/C2.md",
+   "tur": "dosya",
+   "ozet": "3a24bd76262d",
+   "iskelet": "7f7705d423af",
+   "baslik": "İngilizce önce terim düzeni",
+   "ne": {
+    "cok_basit": "Bir kelime ilk geçtiğinde önce İngilizcesi, sonra Türkçesi söylenir.",
+    "normal": "Bir terim ilk geçtiği yerde İngilizce karşılığı önce gelir, Türkçesi ardından verilir. Sonraki geçişlerde yalnız İngilizce kullanılır, açıklama cümleleri ise Türkçe kalır."
+   },
+   "nasil": {
+    "normal": "Terim ilk geçtiğinde İngilizce karşılığı önce yazılır, Türkçesi ardından gelir. Aynı düzen her yeni terimde tekrarlanır. Sonraki geçişlerde terim yalnız İngilizce yazılır. Metindeki açıklama cümleleri Türkçe kurulur."
+   },
+   "sinir": {
+    "sabit": [
+     "İlk geçişte İngilizce karşılığın önce yazılması sabittir.",
+     "Sonraki geçişlerde terimin yalnız İngilizce yazılması sabittir."
+    ],
+    "degisebilir": [
+     "Açıklama cümlelerinin nasıl kurulacağı ve hangi örneklerle anlatılacağı serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnız bu düzenle yazılan terimler karışır; başka parça bundan etkilenmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/C/C2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/C/C3.md",
+   "tur": "dosya",
+   "ozet": "343ea20ab420",
+   "iskelet": "4ba319f64752",
+   "baslik": "Ders sözlüğüne uyum",
+   "ne": {
+    "cok_basit": "Çeviri her zaman ders sözlüğüyle aynıdır, yeni terim sözlüğe eklenir.",
+    "normal": "Terimler Türkçe önce, İngilizce ardından gelir ve çeviri sözlükle aynıdır. Sözlükte olmayan yeni bir terim kullanılırsa sözlüğe eklenir. Konunun sonunda terimler için sözlük kartı çıkarılır."
+   },
+   "nasil": {
+    "normal": "Terim ilk geçtiği yerde Türkçesi yazılır ve İngilizcesi bunun yanında gösterilir. Çeviri, dersin sözlüğündeki karşılıkla birebir aynı olmalıdır. Sözlükte olmayan yeni bir terim kullanıldığında sözlüğe doğrudan eklenir. Konu bitince o konunun terimleri sözlük kartında toplanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Çevirinin ders sözlüğüyle birebir aynı olması sabittir.",
+     "Sözlükte olmayan yeni bir terimin sözlüğe eklenmesi sabittir."
+    ],
+    "degisebilir": [
+     "Sözlük kartının tablo mu yoksa madde listesi mi olacağı içerik boyutuna göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa aynı terim farklı çevirilerle geçer ve dersin sözlüğü ile metinler birbirinden ayrılır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/C/C3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/D/D1.md",
+   "tur": "dosya",
+   "ozet": "031a18c5c737",
+   "iskelet": "68b93c1d9f15",
+   "baslik": "Kaynakları tek düğmede toplama",
+   "ne": {
+    "cok_basit": "Kaynak bilgileri metinde yazmaz, konunun sonundaki tek bir düğmede toplanır.",
+    "normal": "Sayfa, şekil ve tablo numaraları anlatımın içinde ve köşede yazılmaz. Bunlar konunun sonundaki tek bir ek düğmesinde, kapalı başlayan bir bölümde toplanır. Böylece anlatım sade kalır."
+   },
+   "nasil": {
+    "normal": "Düğmenin içinde sırayla kaynaklar, slayt dışı ek bilgi, ileriden bir ipucu ve ek notlar bulunur. Kaynaklar bölümü her adımın kaynağını tablo halinde, eksiksiz gösterir."
+   },
+   "sinir": {
+    "sabit": [
+     "Kaynak bilgisinin yalnız ek düğmesinde yer alması sabittir; anlatım metninde numara yazılmaz.",
+     "Kaynaklar bölümünün her adımın kaynağını eksiksiz tablo olarak vermesi sabittir."
+    ],
+    "degisebilir": [
+     "Slayt dışı ek bilgi ile ileriden ipucu ve ek notların uzunluğu ve sayısı içeriğe göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa kaynak bilgisi metnin içine dağılır ve adımların hangi kaynaktan geldiği kullanıcı için belirsizleşir.",
+   "terimler": [],
+   "belirsiz": [
+    "Ekstra düğmesinin boş bölümleriyle ilgili cümlenin sonu eksik geldi; bu ayrıntı yazılmadı."
+   ],
+   "okunan": [
+    "secenekler/D/D1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/D/D2.md",
+   "tur": "dosya",
+   "ozet": "e417267f1b07",
+   "iskelet": "0cc9fd7d7d0c",
+   "baslik": "Mesaj altında kaynak satırı",
+   "ne": {
+    "cok_basit": "Her mesajın altında tek soluk bir satır kaynağı gösterir, metne karışmaz.",
+    "normal": "Her anlatım mesajının en altında, kaynağın dosya, sayfa ve şekil bilgisini gösteren tek ve soluk bir satır bulunur. Bu satır metnin içine karışmaz ve okuyan kişi hangi kaynaktan geldiğini her mesajda görür."
+   },
+   "nasil": {
+    "normal": "Satır her anlatım mesajının en altında yer alır ve kaynak dosyayı, sayfa aralığını ve şekil numarasını tek satırda toplar. Slayt dışı bilgi ve ipuçları yine konunun sonundaki Ekstra düğmesinde durur."
+   },
+   "sinir": {
+    "sabit": [
+     "Kaynak satırının her anlatım mesajının en altında tek satır olarak durması sabittir.",
+     "Slayt dışı bilgi ve ipuçlarının sondaki Ekstra düğmesinde kalması sabittir."
+    ],
+    "degisebilir": [
+     "Satırdaki kaynak bilgisinin hangi sırayla dizileceği, aynı bilgiyi koruduğu sürece serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa kaynak bilgisi mesajların içine karışır ya da Ekstra ile çakışır ve okuyan kişi hangi bilginin nereden geldiğini ayıramaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/D/D2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/D/D3.md",
+   "tur": "dosya",
+   "ozet": "54f0cd609489",
+   "iskelet": "3d69169d6847",
+   "baslik": "Kısa kaynak satırı ve Ekstra",
+   "ne": {
+    "cok_basit": "Her mesajın altında yalnız kaynak ve sayfa yazılır, ayrıntı düğmede durur.",
+    "normal": "Her anlatım mesajının en altında yalnız kaynak adı ve sayfa yazılır. Şekil ve tablo numaraları ile slayt dışı bilgiler sondaki Ekstra düğmesinde toplanır."
+   },
+   "nasil": {
+    "normal": "Satırda yalnız kaynak adı ve sayfa aralığı bulunur. Ekstra düğmesi, şekil ve tablo numaralarını, slayt dışı bilgiyi ve ipuçlarını birlikte tutar; mesajın kendisi bu ayrıntılarla yüklenmez."
+   },
+   "sinir": {
+    "sabit": [
+     "Her mesajın altındaki satırın yalnız kaynak ve sayfa taşıması sabittir.",
+     "Şekil ve tablo numaralarının sondaki Ekstra düğmesinde yer alması sabittir."
+    ],
+    "degisebilir": [
+     "Ekstra düğmesinin içindeki bölümlerin dizilişi, içeriğe göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa her mesajın altına fazla ayrıntı girer ve sayfa bilgisi mesaj ile Ekstra arasında dağılır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/D/D3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/E/E1.md",
+   "tur": "dosya",
+   "ozet": "d7bce1ea6934",
+   "iskelet": "c33e4fb03077",
+   "baslik": "Her adımın yazım sırası",
+   "ne": {
+    "cok_basit": "Bu belge, bir konuyu anlatırken her adımın hangi sırayla yazılacağını gösterir.",
+    "normal": "Her adım önce neden var olduğunu, sonra tanımını söyler. Formül varsa kendi satırında yazılır ve her sembolün anlamı eklenir. Ardından endüstrideki karşılığı, sınavda nasıl sorulduğu ve çözüm sırası gelir. En sonda tuzaklar yazılır."
+   },
+   "nasil": {
+    "normal": "Yazan önce adımın başlığını koyar. Sonra belgedeki sıraya göre parçaları doldurur: neden, tanım, formül, karşılık, sınav ve tuzak. Formül ayrı bir satırda durduğu için okuyan sembolleri tek tek takip edebilir. Her parça kısa bir paragraf ya da madde olarak yazılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her adımdaki parçaların sırası sabit kalmalı; okuyan bu sıraya güvenerek okur.",
+     "Formülün kendi satırında blok olarak durması sabit kalmalı; belge bunu açıkça ister."
+    ],
+    "degisebilir": [
+     "Her parçanın kısa paragraf mı yoksa madde mi olacağı serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız bu konunun kendi metninde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Belgenin hangi konularda ve kimler için kullanıldığı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/E/E1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/E/E2.md",
+   "tur": "dosya",
+   "ozet": "f64f1c3101c5",
+   "iskelet": "c22b9a05c2e8",
+   "baslik": "Kısa adım yazım kalıbı",
+   "ne": {
+    "cok_basit": "Bu belge, kısa konularda her adımın tanım, formül ve örnekle yazılacağını söyler.",
+    "normal": "Her adım önce tanım, varsa formül, sonra bir örnekten oluşur. Endüstri karşılığı ile tuzaklar her adımda değil, konunun sonunda toplu yazılır."
+   },
+   "nasil": {
+    "normal": "Yazan her adımı aynı kalıpla kurar: önce tanım kısa bir cümleyle verilir, varsa formül kendi satırında gösterilir ve hemen ardından bir örnek gelir. Örnek, kavramı somut bir duruma bağlar. Adım bittiğinde bir sonrakine geçilir. Endüstri karşılığı ve tuzaklar konunun sonunda ayrı bir bölümde toplanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her adımda tanım, formül ve örnek sırası sabit kalmalı; okuyan bu sıraya güvenir.",
+     "Endüstri karşılığı ve tuzakların konu sonunda toplu verilmesi sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Örneğin içeriği ve uzunluğu konuya göre serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Başka parçalar bu belgeye dayanmadığı için bozulursa etkisi yalnız bu kısa yazım kalıbında kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Hangi konuların bu kısa kalıpla yazılacağı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/E/E2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/E/E3.md",
+   "tur": "dosya",
+   "ozet": "2c9d58bd8266",
+   "iskelet": "948ca653f0c6",
+   "baslik": "Konu tipine göre adım",
+   "ne": {
+    "cok_basit": "Konunun türüne göre adımların kalıbı değişir: hesap, kavram, ezber ya da okuma.",
+    "normal": "Konunun türü ders kartında yazıyorsa o kullanılır, yoksa ünite başında belirlenir. Hesapta çözümlü sınav örneği zorunlu, kavramda neden ve karşılaştırma tablosu öne çıkar. Ezberde gruplu liste ve hatırlatma, okumada metin parçası kullanılır."
+   },
+   "nasil": {
+    "normal": "Hesap kalıbı formül ve sayısal çözümü adım adım gösterir. Kavram kalıbı mekanizmayı neden ve karşılaştırma tablosuyla anlatır. Ezber kalıbı gruplu listeden sonra hatırlatma tekniği ve tekrar sorusu ekler. Okuma kalıbı metin parçasını, terim sözlüğünü ve anlam sorularını sıralar. Karışık konularda tür değişebilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Yalnız belirlenen türler kullanılır ve tür adları değişmez.",
+     "Hesap konusunda çözümlü sınav örneğinin zorunlu olması sabittir.",
+     "Adım başlığına tür adı yazılmaması sabittir, çünkü tür konu içinde değişebilir."
+    ],
+    "degisebilir": [
+     "Kavram ve ezber kalıplarındaki parçaların sırası, konunun içeriğine göre serbesttir.",
+     "Ezberdeki hatırlatma tekniğinin hangi türde olacağı, kısaltmadan görsel bağa kadar serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa her konu aynı kalıpla anlatılır ve hesap ya da ezber konularında beklenen örnek ya da liste eksik kalır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/E/E3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/F/F1.md",
+   "tur": "dosya",
+   "ozet": "b59d017292bb",
+   "iskelet": "1ecabf02c60b",
+   "baslik": "Görsel seçimini sohbet yapar",
+   "ne": {
+    "cok_basit": "Sohbet, konuya uygun görseli kataloğa bakarak kendisi seçer.",
+    "normal": "Görsel seçimini sohbet yapar: konuya en uygun görsel türünü katalogdan kendisi seçer. Seçimde çeşitlilik kuralları uygulanır. Bu parça görsel seçiminin sahibini belirler: sabit bir görsel yerine sohbetin kararı."
+   },
+   "nasil": {
+    "normal": "Sohbet önce konunun ne olduğuna bakar, sonra katalogdaki görsel türlerinden konuya en uygun olanı seçer. Seçimde çeşitlilik kuralları önce gözetilir, yani kurallar hangi türlerin öne çıkacağını etkiler."
+   },
+   "sinir": {
+    "sabit": [
+     "Seçimin sohbet tarafından ve katalogdan yapılması sabit kalmalı; bu belge bunu açıkça ister."
+    ],
+    "degisebilir": [
+     "Hangi görsel türünün seçileceği, konunun içeriğine göre serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız görsel seçimi kararında kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Katalogun içeriği ve çeşitlilik kurallarının ayrıntısı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/F/F1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/F/F2.md",
+   "tur": "dosya",
+   "ozet": "43f96b656639",
+   "iskelet": "96e25ba8a85f",
+   "baslik": "Beğenilen şablonlar öncelikli",
+   "ne": {
+    "cok_basit": "Önce beğenilen şablonlardan seçilir; eksi işaretli olanlar hiç kullanılmaz.",
+    "normal": "Kodun sonunda beğenilen şablonların bir listesi varsa, sohbet önce oradan seçer. Listede eksi işaretiyle geçen şablonlar hiç kullanılmaz. Beğenilenler yetmezse katalogdan tamamlanır."
+   },
+   "nasil": {
+    "normal": "Önce kodun sonuna bakılır. Liste varsa içindeki şablonlardan seçilir. Eksi işaretli şablonlar listede olsa bile kullanılmaz. Liste yetmezse katalogdan tamamlanır ve çeşitlilik kuralı yine uygulanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Eksi işaretli şablonların hiç kullanılmaması sabit kalmalı; bu kural istisnasız uygulanır.",
+     "Beğenilen listenin önce, katalogun sonra gelmesi sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Listedeki şablonların sayısı ve içeriği her kod için serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız şablon seçimi kararında kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Beğenilen listenin kodun sonunda nasıl biçimlendiği ve katalogun ayrıntısı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/F/F2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/F/F3.md",
+   "tur": "dosya",
+   "ozet": "4cafb0030d00",
+   "iskelet": "81f0ca11a72c",
+   "baslik": "Konu başında görsel önizlemesi",
+   "ne": {
+    "cok_basit": "Konu başlarken birkaç görsel önizleme olarak gösterilir ve kişi birini seçer.",
+    "normal": "Her yeni konunun başında birkaç görsel türü kısa önizleme olarak gösterilir. Kişi karar kartıyla birini seçer. Seçim o konu boyunca geçerli kalır."
+   },
+   "nasil": {
+    "normal": "Konu başında görsel türlerinden birkaçı kısa önizleme olarak sunulur. Sohbet bu önizlemeleri karar kartıyla kişiye gösterir ve seçtirir. Kişi bir tür seçince o konunun geri kalanında aynı seçim kullanılır. Konu değişince yeni bir seçim için aynı adım tekrarlanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Seçimin konu başında alınması ve o konu boyunca geçerli kalması sabit kalmalı.",
+     "Önizlemenin seçimden önce, kısa biçimde gösterilmesi sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Önizlemede hangi görsel türlerinin öne çıkacağı konuya göre serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız konu başındaki seçimde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Önizlemede hangi görsel türlerinin kullanılacağı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/F/F3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/G/G1.md",
+   "tur": "dosya",
+   "ozet": "b22313a07a7e",
+   "iskelet": "7c3bb4b128c6",
+   "baslik": "Yayın öncesi ekran testi",
+   "ne": {
+    "cok_basit": "Her görsel yayınlanmadan önce dikey ve yatay ekran boyutunda denenir.",
+    "normal": "Her görsel yayından önce test ekranında dikey ve yatay boyutlarda açılır ve ekran görüntüsü okunur. Ardından görselin tıklanmış hali de çekilir. Böylece bozuk görünüm yayından önce görülür."
+   },
+   "nasil": {
+    "normal": "Test, her görseli önce dikey ekran boyutunda, sonra yatay ekran boyutunda açar ve görüntüsünü alır. Görüntü incelenir. Görselin tıklanmış hali de ayrıca çekilir ve o görüntü de incelenir."
+   },
+   "sinir": {
+    "sabit": [
+     "Her görselin yayından önce hem dikey hem yatay boyutta denenmesi sabit kalmalı.",
+     "Tıklanmış halinin de ayrıca çekilmesi sabit kalmalı; bu adım atlanmaz."
+    ],
+    "degisebilir": [
+     "Görüntülerin hangi sırayla inceleneceği serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız yayın öncesi kontroldeki görünümde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Görüntüleri kimin incelediği ve testin neleri sınadığı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/G/G1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/G/G2.md",
+   "tur": "dosya",
+   "ozet": "59240d660f88",
+   "iskelet": "d03379a9bf3b",
+   "baslik": "Yapı değişince ekran testi",
+   "ne": {
+    "cok_basit": "Görsel yalnız yazısı, sayısı ya da renk sırası değişmişse ekran denemesi gerekmez.",
+    "normal": "Yapı değişiyorsa ekran denemesi zorunludur. Yeni düzen, yeni grafik, yeni görsel türü ya da formülün satırlara bölünmesi bu kapsama girer. Bu durumda görsel dikey ve yatay boyutlarda açılır ve tıklanmış hali de dahil test edilir."
+   },
+   "nasil": {
+    "normal": "Sayı, metin ya da renk sırası dışında değişiklik yoksa test atlanır. Yapı değişikliği varsa görsel önce dikey, sonra yatay ekran boyutunda açılıp görüntüsü alınır. Görüntü okunur, ardından tıklanmış hali de aynı şekilde çekilir. Kullanıcı hata bildirirse önce hata yeniden üretilir, sonra düzeltilir; tahminle düzeltme yapılmaz."
+   },
+   "sinir": {
+    "sabit": [
+     "Yapı değişikliğinde ekran denemesinin atlanmaması sabit kalmalı; bu belge bunu zorunlu kılar.",
+     "Hata bildiriminde önce yeniden üretme, sonra düzeltme sırası sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Hata yeniden üretilirken hangi görüntünün önce inceleneceği serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız yayın öncesi ekran kontrolünde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Görüntülerin kimin tarafından okunduğu bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/G/G2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/G/G3.md",
+   "tur": "dosya",
+   "ozet": "e1efc6b7adb7",
+   "iskelet": "aac9da5f446f",
+   "baslik": "Ekran testi olmayan görsel",
+   "ne": {
+    "cok_basit": "Görsel hemen gönderilir; kişi bir hata söylerse önce hata yeniden denenir.",
+    "normal": "Bu parçada görsel ekran testi yapılmadan doğrudan gönderilir. Kullanıcı bir hata bildirirse önce hata yeniden üretilir, ardından düzeltilir. Böylece hata gerçekten görülmeden düzeltme yapılmaz."
+   },
+   "nasil": {
+    "normal": "Görsel hazırlandıktan sonra ekran testi olmadan doğrudan kullanıcıya iletilir. Kullanıcı hata bildirirse yapılacak ilk iş hatayı yeniden üretmektir. Yeniden üretildikten sonra düzeltme yapılır ve düzeltilen görsel tekrar gönderilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Hata bildirildiğinde tahminle düzeltme yapılmaması sabit kalmalı.",
+     "Görselin hazır olduğu anda doğrudan gönderilmesi sabit kalmalı; test araya girmez."
+    ],
+    "degisebilir": [
+     "Hatanın yeniden nasıl üretileceği konuya göre serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız bu görselin yayın akışında kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Hangi görsellerin bu yola gireceğinin ayrıntısı bilinmiyor.",
+    "Kullanıcının hata bildirme yolunun nasıl olduğu bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/G/G3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/H/H1.md",
+   "tur": "dosya",
+   "ozet": "8561ed5c49fd",
+   "iskelet": "139ce3ea5cb2",
+   "baslik": "Sade ve derin renk paleti",
+   "ne": {
+    "cok_basit": "Vurgu renkleri ayrı tonlarda kullanılır; yazı ve zemin temaya göre değişir.",
+    "normal": "Vurgu renkleri bir palet oluşturur ve her renk ayrı tonlarda kullanılır. Orta ton çizgi ve simgeye, derin ton dolu zemine, açık ton derin zemin üzerindeki alt çizgiye gider."
+   },
+   "nasil": {
+    "normal": "Renkler kullanım yerine göre seçilir: indigo ana vurgu ve seçili öğe içindir, turkuaz yeşil doğru ve olumlu sonuçlar için, amber yanlış ve dikkat için, mor ipucu için. Kavramlar sırayla renklere atanır; sıradaki kavram sıradaki renkle gösterilir. Pastel zemin, orta tonun seyrek kullanılan saydam hali olarak yapılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Yazı ve zeminin her zaman tema değişkeni olması sabittir; renk paleti bunları taşımaz.",
+     "Her rengin orta, derin ve açık tonlarının birlikte tanımlı kalması sabittir.",
+     "Eski şablonlardaki renk adlarının orta tonları göstermesi sabittir."
+    ],
+    "degisebilir": [
+     "Bir sayfada hangi kavramın hangi renkle gösterileceği, sayfanın içeriğine göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa doğru ya da yanlış gibi anlam taşıyan renkler yanlış yerde kullanılır ve şablonlar birbirine uymaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/H/H1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/H/H2.md",
+   "tur": "dosya",
+   "ozet": "6633e9324387",
+   "iskelet": "223a794f529d",
+   "baslik": "Koyu sakin renk paleti",
+   "ne": {
+    "cok_basit": "Daha koyu ve sakin bir renk seti, eski şablonların renklerini değiştirir.",
+    "normal": "Bu palet mavi, yeşil, turuncu, mor ve pembe renklerini koyu ve sakin bir tonla sunar. Eski şablonlardaki renk değişkenlerinin değerleri bu renklerle yazılır; başka hiçbir şey değişmez."
+   },
+   "nasil": {
+    "normal": "Palet her renk için bir ad ve bir değer verir. Bu değerler, eski şablonlardaki renk değişkenlerinin yerine yazılır. Yalnız renk değerleri değişir; başka hiçbir alana dokunulmaz."
+   },
+   "sinir": {
+    "sabit": [
+     "Renklerin adları ve değerleri sabittir; şablonlar bu değerlere dayanır.",
+     "Yalnız renk değişkenlerinin değerlerinin değişmesi sabittir; düzen ve yazı ayarlarına dokunulmaz."
+    ],
+    "degisebilir": [
+     "Hangi renklerin hangi şablonda öne çıkarılacağı, içerik ve tasarıma göre serbesttir."
+    ]
+   },
+   "kritik_neden": "Bozulursa bu paleti kullanan şablonlar yanlış renklerle görünür ve görünüm tutarsız kalır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "secenekler/H/H2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/I/I1.md",
+   "tur": "dosya",
+   "ozet": "cfb1a8df0e5b",
+   "iskelet": "c0e657a3b8b0",
+   "baslik": "Sohbet devri eşiği",
+   "ne": {
+    "cok_basit": "Sohbet uzayınca yeni bir sohbete taşınır; kaldığı yer aynen aktarılır.",
+    "normal": "Sohbet belli bir uzunluğa gelince kalan iş yeni bir sohbete devredilir. Devir, bir konu ya da blok tamamen gönderildikten sonra yapılır; konunun ortasında kesilmez. Eşiğe yaklaşınca sohbete tek satırlık bir uyarı çıkar."
+   },
+   "nasil": {
+    "normal": "Eşiğe yaklaşılan son mesajların sonunda, kalan mesaj sayısını ve kaldığı yerin aynen taşınacağını söyleyen tek satır yazılır. Eşikte, konu ya da blok tamamen gönderildikten sonra devir yapılır. Bağlam özetlemesi olduysa eşik beklenmez; adım bitince devir yapılır. Devir, devir notu üzerinden gerçekleşir."
+   },
+   "sinir": {
+    "sabit": [
+     "Devrin konu ya da blok tamamen gönderildikten sonra yapılması sabit kalmalı; akış ortasında kesilmez.",
+     "Kaldığın yerin yeni sohbete aynen taşınması sabit kalmalı; bu verilmiş bir söz gibi korunur."
+    ],
+    "degisebilir": [
+     "Devir notunun ayrıntısı, yani konunun neresinde durulduğunun nasıl yazıldığı serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız sohbet geçişinde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Devir notunun biçimi bilinmiyor.",
+    "Eşiğin sohbetin hangi ayarlarından okunduğu bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/I/I1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/I/I2.md",
+   "tur": "dosya",
+   "ozet": "9a3992bcb912",
+   "iskelet": "6275d7392d7d",
+   "baslik": "Uzun sohbette devir eşiği",
+   "ne": {
+    "cok_basit": "Bu kurallar öncekiyle aynı, sadece sohbet daha uzun sürdükten sonra geçiş yapılır.",
+    "normal": "Geçiş kuralı bir önceki anlatımla aynıdır: devir konu ya da blok bittikten sonra yapılır ve kaldığı yer aynen taşınır. Tek fark, eşiğin daha sonra gelmesidir. Eşiğe yaklaşılınca son mesajlarda uyarı çıkar."
+   },
+   "nasil": {
+    "normal": "Sohbet ilerledikçe mesajlar sayılır. Eşiğe yaklaşılan son mesajlarda uyarı verilir. Eşikte, konu ya da blok tamamen gönderildikten sonra devir yapılır. Uyarının ve devrin nasıl yapılacağı, önceki anlatımdaki kurallarla aynı biçimde sürdürülür."
+   },
+   "sinir": {
+    "sabit": [
+     "Devrin konu ya da blok tamamen gönderildikten sonra yapılması sabit kalmalı.",
+     "Eşiğe yaklaşılırken uyarının sohbetin son mesajlarında verilmesi sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Uyarının hangi ayrıntıları taşıyacağı serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız uzun sohbetlerin geçişinde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Haber sözcüğünün tam anlamı ve uyarının biçimi bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/I/I2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/I/I3.md",
+   "tur": "dosya",
+   "ozet": "3803996f5a17",
+   "iskelet": "a2bc5db52442",
+   "baslik": "Bağlam özetlenince devir",
+   "ne": {
+    "cok_basit": "Sabit mesaj sayısı yok; bağlam özetlenirse bir adım bitince yeni sohbete geçilir.",
+    "normal": "Bağlam özetlenmeye başlamışsa sabit bir mesaj eşiği beklenmez. Devir, o anki adım bittiğinde yapılır; adımın ortasında yeni sohbete geçilmez. Sabit bir eşik olmadığı için ne zaman devredileceği bağlamın durumuna göre belirlenir."
+   },
+   "nasil": {
+    "normal": "Sohbette bağlam özetlemesi yapılıp yapılmadığı takip edilir. Özetleme olduysa mesaj sayısına bakılmaz. Mevcut adım bittiğinde devir notu hazırlanır ve yeni sohbete geçilir. Adım bitmeden devredilmez."
+   },
+   "sinir": {
+    "sabit": [
+     "Bağlam özetlenince devrin adım bitince yapılması sabit kalmalı.",
+     "Devir notunun yeni sohbete taşınması sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Sabit bir eşik olmadığı için devrin hangi mesajda yapılacağı serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız bağlamı özetlenen sohbetlerde kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bağlam özetlemesinin ne zaman olduğu ve nasıl algılandığı bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/I/I3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/J/J1.md",
+   "tur": "dosya",
+   "ozet": "f1d1283e9f94",
+   "iskelet": "16aae93742fb",
+   "baslik": "Yavaş tempoda anlatım",
+   "ne": {
+    "cok_basit": "Yavaş modda her adım tek bir kavramı anlatır ve sonunda kısa bir soru gelir.",
+    "normal": "Yavaş tempoda her adım tek bir kavramı anlatır, metin ayrıntılıdır. Her adımın sonunda kısa bir teyit sorusu gelir, cevap beklenmeden anlatım sürer. Kaynakta varsa ikinci bir örnek eklenir, ara özet de verilir."
+   },
+   "nasil": {
+    "normal": "Kullanıcı hızlanmak isterse tempo bir kademe yukarı, yavaşlamak isterse bir kademe aşağı alınır. Değişiklik o andan itibaren geçerli ve kalıcıdır, bu yüzden ilgili devir notu güncellenir. Kaynağa bağlılık, listelerin eksiksizliği ve ilk metnin hızlıca gelmesi tempo ne olursa olsun korunur. Sonraki adımlar daha uzun sürebilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Kaynağa bağlılığın, listelerin eksiksizliğinin ve ilk metnin kısa sürede gelmesinin sabit kalması gerekir.",
+     "Tempo değişiminin tek kademe adımlarla yapılması ve basamak atlanmaması sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Teyit sorusunun cümlesi her adımda serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız yavaş tempodaki anlatımda kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Devir notunun hangi alanlarının güncelleneceği paketteki satırda kesik geldiği için tam bilinmiyor.",
+    "Widget'ın teyit sorusunu nasıl gösterdiği bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/J/J1.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/J/J2.md",
+   "tur": "dosya",
+   "ozet": "d755d0ac3733",
+   "iskelet": "b0faae1df0aa",
+   "baslik": "Normal tempoda adım yapısı",
+   "ne": {
+    "cok_basit": "Normal tempoda her adım kısa bir metinle ve o adıma ait görselle anlatılır.",
+    "normal": "Normal tempoda bir adım bir alt parçaya karşılık gelir: kısa bir metin ve o adımın görseli. Adım sonunda gerekirse tek bir soru sorulur; bir blok bittiğinde birkaç soru gelir. Tempo ayarı sohbet içinde kademe kademe değiştirilir."
+   },
+   "nasil": {
+    "normal": "Her adımda önce kısa metin yazılır, ardından o adımın görseli gelir. Adım sonunda gerekiyorsa tek soru sorulur; bir bloğun sonunda birkaç soru yer alır. Kullanıcı tempoyu değiştirmek isterse tempo bir kademe kaydırılır. Kaynağa bağlılık ve listelerin eksiksizliği tempoya göre değişmez."
+   },
+   "sinir": {
+    "sabit": [
+     "Her adımın kısa metin ve o adımın görseli olarak kurulması sabit kalmalı.",
+     "Kaynağa bağlılığın ve listelerin eksiksizliğinin tempodan bağımsız korunması sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Adım sonundaki sorunun gerekip gerekmediğine konu bazında serbestçe karar verilebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız normal tempodaki anlatımda kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Devir notunun hangi alanlarının güncelleneceği paketteki satırda kesik geldiği için tam bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/J/J2.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "secenekler/J/J3.md",
+   "tur": "dosya",
+   "ozet": "fda8aba720b3",
+   "iskelet": "8c5ace7533ad",
+   "baslik": "Hızlı tempoda birleşik adım",
+   "ne": {
+    "cok_basit": "Hızlı modda yakın konular aynı adımda toplanır, anlatım kısa maddelerle gider.",
+    "normal": "Hızlı tempoda yakın alt parçalar aynı adımda birleşebilir ve metin madde madde, kısa kalır. Ara teyit soruları kalkar; sorular yalnız bir bloğun sonunda gelir. Konu sonunda özet ve mini test kalır."
+   },
+   "nasil": {
+    "normal": "Hızlı tempoda aynı adımdaki yakın alt parçalar birleşebilir ve metin madde madde kısa tutulur. Ara teyit sorusu sorulmaz; sorular yalnız bir bloğun sonunda gelir. Widget sayısı azalmaz; yalnız aynı adımdaki küçük görseller tek widget içinde birleşebilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Hızlı tempoda sorunun yalnız bir bloğun sonunda sorulması sabit kalmalı.",
+     "Kaynağa bağlılığın ve listelerin eksiksizliğinin tempo ne olursa olsun korunması sabit kalmalı."
+    ],
+    "degisebilir": [
+     "Hangi yakın alt parçaların aynı adımda birleşeceği konuya göre serbestçe değişebilir."
+    ]
+   },
+   "kritik_neden": "Başka parça bu belgeye dayanmadığı için bozulursa etkisi yalnız hızlı tempodaki anlatımda kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Devir notunun hangi alanlarının güncelleneceği paketteki satırda kesik geldiği için tam bilinmiyor.",
+    "Birleşen görsellerin hangi kurala göre seçildiği bilinmiyor."
+   ],
+   "okunan": [
+    "secenekler/J/J3.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

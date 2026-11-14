@@ -1,0 +1,339 @@
+{
+ "surum": 1,
+ "bolum": "kurulum",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "k:kurulum",
+   "tur": "birim",
+   "ozet": "7217381872fd",
+   "iskelet": "52f958b7ebfb",
+   "baslik": "Yeni kullanıcı kurulumu",
+   "ne": {
+    "cok_basit": "Yeni bir kişinin sistemi ilk kez kendine göre kurması için gereken rehber ve doldurulacak boş formlar burada durur.",
+    "basit": "Burada yeni bir kullanıcının sistemi kurması için gerekenler durur: sırayla izlenecek rehber, projeye yapıştırılacak talimat, kişisel ayar formları ve ders dosyalarının bulut klasöründe nasıl düzenleneceği.",
+    "normal": "Bu bölüm, sistemi ilk kez kullanacak kişinin kendi düzenini kurmasını sağlar. Sırayla izlenen bir rehber, projeye yapıştırılan talimat metni, kişisel ayarlar için boş formlar ve ders dosyalarının bulut klasöründe nasıl dizileceğini anlatan bir kılavuz vardır. Doldurulan kişisel bilgiler depoya değil kişinin kendi proje klasörüne gider.",
+    "gelismis": "Bu bölüm, sistemi ilk kez kullanacak kişiyi kuruluma götüren parçaları tutar. Rehber sırayı verir; proje talimatı her sohbetin önce kuralları okuyup kendi rolüne uygun paketi almasını sağlar; ayar formları ders listesi, takvim ve tercihler gibi kişisel bilgiyi toplar; denetim formu dil, karışık test ve simge gibi tercihleri tek yerde tutar; bulut klasörü kılavuzu ders dosyalarının düzenini anlatır. Ortak kısım depoda kalır, kişiye özel kısım kişinin klasöründe doldurulur.",
+    "detayli": "Bu bölüm, sistemi ilk kez kullanacak kişiyi kuruluma götüren parçaları tutar. Rehber sırayı verir: önce proje talimatı yapıştırılır, sonra depo projeye eklenir ve ayar dosyası hazırlanır; bulut klasörü ve denetim isteğe bağlıdır. Proje talimatı her sohbetin önce kuralları okuyup kendi rolüne uygun paketi almasını sağlar. Ayar formları ders listesi, takvim ve tercihleri toplar; elektrik ve elektronik alanı için hazır bir örnek de vardır. Denetim formu dil, karışık test ve simge gibi tercihleri tek yerde tutar. Bulut kılavuzu ders dosyalarının düzenini anlatır. Ortak kısım depoda kalır, kişiye özel kısım kişinin kendi klasöründe doldurulur."
+   },
+   "mantik": {
+    "cok_basit": "Herkes kendi bilgisini ayrı yerde tuttuğu için ortak kurallar herkese açık kalır, kişisel şeyler kimseye görünmez.",
+    "basit": "Kurulum ayrı tutuldu ki ortak kurallar herkese açık depoda kalsın, kişisel bilgiler ise yalnız kişinin kendi klasöründe dursun. Boş formlar kurulumu her kişi için aynı ve kolay yapar.",
+    "normal": "Depo herkese açık olduğu için kişiye özel bilgi orada tutulamaz. Bu yüzden ortak kurallar depoda, kişisel ayarlar ise kişinin kendi proje klasöründe durur ve kurulum bölümü bu ikisini birbirine bağlar. Boş formlar ve sıralı rehber, her yeni kullanıcının aynı adımlarla kolayca kurulum yapmasını sağlar. Bulut klasörü ve denetimin isteğe bağlı olması, kurulumu gereğinden ağırlaştırmaz.",
+    "gelismis": "Depo herkese açık olduğu için kişiye özel bilgi orada tutulamaz. Bu yüzden ortak kurallar depoda, kişisel ayarlar ise kişinin kendi proje klasöründe durur ve kurulum bölümü bu ikisini birbirine bağlar. Boş formlar ve sıralı rehber, her yeni kullanıcının aynı adımlarla kurulum yapmasını sağlar. Proje talimatının tek metin olarak yapıştırılması, her sohbetin aynı noktadan kuralları okuyarak başlamasını garanti eder. Bulut klasörü ve denetimin isteğe bağlı olması, ilk kurulumu gereğinden ağırlaştırmaz.",
+    "detayli": "Depo herkese açık olduğu için kişiye özel bilgi orada tutulamaz. Bu yüzden ortak kurallar depoda, kişisel ayarlar ise kişinin kendi proje klasöründe durur ve kurulum bölümü bu ikisini birbirine bağlar. Boş formlar ve sıralı rehber, her yeni kullanıcının aynı adımlarla kurulum yapmasını sağlar. Proje talimatının tek metin olarak yapıştırılması, her sohbetin aynı noktadan kuralları okuyarak başlamasını garanti eder; kurallar talimata kopyalanmadığı için kural değişince talimatı yenilemek gerekmez. Bulut klasörü ve denetimin isteğe bağlı olması, ilk kurulumu gereğinden ağırlaştırmaz. Alana özel örnek ayar dosyasının ayrı durması, ortak formu alana özgü ayrıntıyla şişirmekten kaçınır."
+   },
+   "nasil": {
+    "basit": "Yeni kullanıcı rehberi baştan sona izler. Önce talimatı projeye yapıştırır, sonra depoyu projeye ekler ve ayar formunu kendi bilgileriyle doldurur. İsterse bulut klasörünü ve denetim tercihlerini de hazırlar, en sonda ilk ders sohbetini açar.",
+    "normal": "Yeni kullanıcı rehberi sırayla izler. Önce proje talimatı projenin talimat alanına aynen yapıştırılır. Sonra depo projeye eklenir ve ayar formu kopyalanıp kişinin kendi bilgileriyle doldurulur; doldurulan kopya kişinin proje klasöründe kalır. Bulut klasörü ve denetim tercihleri isteğe bağlıdır, istenirse hazırlanır. En sonda ilk ders sohbeti açılır ve sohbet talimat sayesinde kuralları depodan okuyarak başlar.",
+    "gelismis": "Yeni kullanıcı rehberi sırayla izler. Önce proje talimatı projenin talimat alanına aynen yapıştırılır. Sonra depo projeye eklenir ve ayar formu kopyalanıp kişinin ders listesi, takvimi ve tercihleriyle doldurulur; doldurulan kopya kişinin proje klasöründe kalır, çünkü depo herkese açıktır. Alan için hazır örnek varsa onun üstünden gidilir ve bir satır silinirse alanın varsayılanı kullanılır. Denetim formu doldurulursa tercihler tek dosyada durur. Bulut klasörü isteğe bağlıdır: ders dosyaları orada dizilir, sohbetler dosyaları doğrudan oradan değil bir kez çevrilmiş metinden okur. En sonda ilk ders sohbeti açılır.",
+    "detayli": "Yeni kullanıcı rehberi sırayla izler. Önce proje talimatı projenin talimat alanına aynen yapıştırılır; böylece her sohbet önce kuralları okur, kendi rolüne uygun paketi alır ve kişisel ayarları ayrı tutmayı bilir. Sonra depo projeye eklenir ve ayar formu kopyalanıp kişinin ders listesi, takvimi ve tercihleriyle doldurulur; doldurulan kopya kişinin proje klasöründe kalır, çünkü depo herkese açıktır. Elektrik ve elektronik alanı için hazır bir örnek vardır; onun üstünden gidilir ve bir satır silinirse alanın varsayılan ayarı kullanılır. Denetim formu doldurulursa dil, karışık test, mini testteki soru sayısı ve simge gibi tercihler tek dosyada durur ve depoya girmez. Bulut klasörü isteğe bağlıdır: ders dosyaları kılavuzdaki düzenle dizilir, sohbetler dosyaları doğrudan oradan değil bir kez çevrilmiş metinden okur, istenirse otomatik çeviri taranmış sayfaları metne çevirir. En sonda ilk ders sohbeti açılır."
+   },
+   "detay": {
+    "girdiler": [
+     "Kişinin kendi ders listesi, takvimi ve tercihleri ayar formunu doldurur.",
+     "Dil, karışık test, mini testteki soru sayısı ve simge tercihleri denetim formuna girilir.",
+     "Ders dosyaları isteğe bağlı olarak bulut klasörüne dizilir."
+    ],
+    "ciktilar": [
+     "Kişinin proje klasöründe doldurulmuş bir ayar dosyası oluşur.",
+     "Proje talimat alanında her sohbetin kurallara başlamasını sağlayan metin yer alır.",
+     "İstenirse tercihler tek bir denetim dosyasında toplanır."
+    ],
+    "degismezler": [
+     "Doldurulan kişisel bilgi depoya konmaz, yalnız kişinin proje klasöründe kalır.",
+     "Proje talimatı projenin talimat alanına aynen yapıştırılır.",
+     "Bulut klasörü ve denetim isteğe bağlıdır, rehber bunları zorunlu saymaz."
+    ],
+    "kenar": [
+     "Ayar dosyasından bir satır silinirse alanın varsayılan ayarı kullanılır.",
+     "Sohbetler dosyaları bulut klasöründen doğrudan değil, bir kez çevrilmiş metinden okur."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kişisel ayar ve denetim bilgisi depoya değil, kişinin kendi proje klasörüne yazılır.",
+     "Proje talimatı her sohbetin önce kuralları okuyup kendi rolüne uygun paketi almasını sağlar.",
+     "Formlardaki alan adları, kişinin doldurduğu dosyanın okunabilmesi için aynı kalmalıdır."
+    ],
+    "degisebilir": [
+     "Alana özel örnek ayar dosyaları eklenebilir ya da çıkarılabilir; ortak kısım bozulmaz.",
+     "Rehberdeki anlatım cümleleri ve adım açıklamaları sıra korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Doldurulmuş kişisel ayar dosyası neden depoya konmaz?",
+     "yanit": "Depo herkese açıktır. Ders listesi, takvim ve tercihler kişiye özeldir; bu yüzden yalnız kişinin kendi proje klasöründe kalır, depoda yalnız boş formlar durur."
+    },
+    {
+     "soru": "Proje talimatını kısaltmak için içine bütün kuralları yazsak ne olur?",
+     "yanit": "Kural iki yerde yaşar ve değişince talimat eskir. Talimat yalnız sohbeti kuralları depodan okumaya yönlendirir; kurallar depoda tek yerde kalır."
+    },
+    {
+     "soru": "Ayar dosyasından bir satırı silersek ne olur?",
+     "yanit": "Silinen alan için alanın varsayılan ayarı kullanılır. Yani dosya eksik de olsa sistem çalışır; kişi yalnız değiştirmek istediği tercihleri yazar."
+    }
+   ],
+   "kritik_neden": "Bozulursa yeni kullanıcı sistemi doğru kuramaz; kişisel bilgi yanlışlıkla herkese açık depoya girebilir ya da sohbetler kuralları okumadan başlar.",
+   "terimler": [],
+   "belirsiz": [
+    "Kurulum rehberinin ve formların hangi aracla okunduğu görülemedi; yalnız kullanıcının izlediği sıra anlatıldı."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "kurulum/README.md",
+   "tur": "dosya",
+   "ozet": "c9ef8fdb4069",
+   "iskelet": "497649ea5905",
+   "baslik": "Yeni kullanıcı kurulumu",
+   "ne": {
+    "cok_basit": "Yeni bir kullanıcının sistemi adım adım nasıl kuracağını gösterir.",
+    "normal": "Bu sayfa, sistemi ilk kez kullanacak kişiye sırayla yol gösterir. Önce proje talimatı yapıştırılır, sonra depo projeye eklenir ve kişisel ayar dosyası hazırlanır. Drive ve denetim isteğe bağlıdır; en sonda ilk ders sohbeti açılır."
+   },
+   "nasil": {
+    "normal": "Adımlar sırayla yapılır: önce talimat, sonra depo, sonra kişisel ayarlar gelir. Kişisel ayar dosyası proje dosyalarında tutulur ve yalnız orada yer alır. İlk ders sohbeti açılınca ünite listesini sistem kendisi çıkarır. Sayfanın sonunda konu anlatan sohbet için daha yüksek düşünme ayarı, idari işler için orta ayar önerilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Talimat metninin ve kişisel ayar dosyasının beklenen adı ve yeri değişirse sohbetler ayarı bulamaz."
+    ],
+    "degisebilir": [
+     "Model önerisi, deneme sürdükçe serbestçe güncellenebilir.",
+     "Ders sohbeti açılışındaki örnek ifade kişiye göre değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yeni kullanıcılar kurulumu yanlış yapar; başka bir parça bu yönergeye bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Depoyu projeye ekleme adımının hangi ortamda nasıl yapıldığı bu kayıtta ayrıntılı işlenmedi."
+   ],
+   "okunan": [
+    "kurulum/README.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "kurulum/drive.md",
+   "tur": "dosya",
+   "ozet": "1ab1a5a79afc",
+   "iskelet": "da419c768589",
+   "baslik": "Bulut klasör düzeni",
+   "ne": {
+    "cok_basit": "Ders dosyalarının bulut klasöründe nasıl düzenleneceğini anlatan kısa bir rehberdir.",
+    "normal": "Bu rehber, ders dosyalarının bulut klasöründe nasıl sıralanacağını anlatır. Sohbetler dosyaları doğrudan oradan değil, bir kez çevrilmiş metinden okur. İsteğe bağlı otomatik çeviri, taranmış sayfaları metne dönüştürür."
+   },
+   "nasil": {
+    "normal": "Kök klasörün altında dönemler, sonra numaralı ders klasörleri ve her derste ders notları, slaytlar, çıkmış sorular, ödevler ve el notu fotoğrafları için ayrı klasörler yer alır. Sistemin çalışma klasörüne elle dokunulmaz. Kurulumu, bağlayıcı açıksa Claude yapabilir; ya da kişi kendisi açar ve kök klasör adresini kişisel ayar dosyasına yazar."
+   },
+   "sinir": {
+    "sabit": [
+     "Klasör adlarının numaralı ve dönem, ders, alt klasör sırasında kalması gerekir; değişirse sohbetler ders metinlerini bulamaz."
+    ],
+    "degisebilir": [
+     "Haftalık klasörlerin açılması ve dosya adlandırma tercihi kişiye göre serbestçe değiştirilebilir.",
+     "Kök klasörün yerel adı ve kişisel ders listesi kişiye göre serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa ders dosyalarının bulunması zorlaşır; başka bir parça bu düzene doğrudan bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Çeviri betiğinin sayfa sayfa nasıl işlediği ve günlük kontrol rutininin ayrıntıları bu kayıtta ele alınmadı."
+   ],
+   "okunan": [
+    "kurulum/drive.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "kurulum/proje-talimati.md",
+   "tur": "dosya",
+   "ozet": "cf88958ff893",
+   "iskelet": "1693ccd29cb4",
+   "baslik": "Proje talimat metni",
+   "ne": {
+    "cok_basit": "Sohbete her açılışta ne yapacağını bildiren kısa bir talimat metnidir.",
+    "normal": "Bu metin, Claude projesinin talimat alanına aynen yapıştırılır. Her sohbetin önce kuralları okuyup kendi rolüne uygun paketi almasını sağlar. Türkçe yazım, kısa idari mesajlar ve kişisel ayarların ayrı tutulması da burada yer alır."
+   },
+   "nasil": {
+    "normal": "Metin, sohbetin her mesajı ve her widget'ı göndermeden önce bir denetimden geçirmesini ister; hata varsa mesaj gönderilmez, düzeltilir ve kalan sorunlar sohbete raporlanır. Ölçülebilir kişisel tercihler ayrı bir denetim dosyasında tutulur ve denetim bu dosyayı kendisi bulur."
+   },
+   "sinir": {
+    "sabit": [
+     "Talimattaki kural kaynağı adresi ve denetim adımının sırası değişirse sohbetler kuralları okuyamaz ya da denetlemez."
+    ],
+    "degisebilir": [
+     "Talimat metnindeki açıklayıcı cümleler, kuralları bozmadan serbestçe yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa her sohbet kuralları yanlış uygular; başka bir parça bu talimata bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Talimatın hangi projelerde kullanıldığı ve nasıl kopyalanacağı bu kayıtta ayrıntılı işlenmedi."
+   ],
+   "okunan": [
+    "kurulum/proje-talimati.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "kurulum/yerel-ayarlar-eee.md",
+   "tur": "dosya",
+   "ozet": "c159f63682fd",
+   "iskelet": "a194450f7cb4",
+   "baslik": "Mühendislik alanı ayar örneği",
+   "ne": {
+    "cok_basit": "Hazır bir kişisel ayar örneğidir; kopyalanıp kendi bilgilerle doldurulur.",
+    "normal": "Bu örnek, elektrik ve elektronik mühendisliği alanı için hazırlanmış kişisel ayarları gösterir. Ders listesi, takvim ve tercihler gibi alanlar kişinin kendi bilgileriyle doldurulur. Kod satırı silinirse alanın varsayılan ayarı kullanılır."
+   },
+   "nasil": {
+    "normal": "Örnek, kopyalanıp proje klasöründeki kişisel ayar dosyasına yazılmak üzere hazırlanmıştır. Dersler tablosunda ders klasörü, ders sohbeti ve vize kapsamı sütunları bulunur; alanın dersleri bu listede sıralanır. Kişisel tercihler bölümü, sohbetin kendiliğinden ne yapmayacağını belirleyen örnek satırlar içerir."
+   },
+   "sinir": {
+    "sabit": [
+     "Ders tablosunun sütunlarının ve Alan satırının adı değişirse sohbetler ders listesini ve alan ayarını okuyamaz."
+    ],
+    "degisebilir": [
+     "Ders listesindeki dersler, vize kapsamı ve kişisel tercihler öğrencinin kendi durumuna göre serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa yalnızca bu örneği kopyalayanlar yanlış ayar alır; başka bir parça buna bağlı değildir.",
+   "terimler": [],
+   "belirsiz": [
+    "Alan varsayılan ayarının içeriği bu kayıtta ayrıntılı açıklanmadı."
+   ],
+   "okunan": [
+    "kurulum/yerel-ayarlar-eee.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "kurulum/yerel-ayarlar-sablonu.md",
+   "tur": "dosya",
+   "ozet": "673cccdc4afe",
+   "iskelet": "ec4d26c8532f",
+   "baslik": "Kişisel ayar şablonu",
+   "ne": {
+    "cok_basit": "Kişisel ayarların boş bir şablonu; bilgiler yalnız kendi projende tutulur.",
+    "normal": "Bu şablon kişisel ayarların nasıl yazılacağını gösterir: ders listesi, takvim ve tercihler. Doldurulan kopya yalnız kendi proje klasöründe kalır, çünkü depo herkese açıktır."
+   },
+   "nasil": {
+    "normal": "Her başlık ayrı bir ayar alanıdır; ders tablosu, koordinatörün sohbet açarken kullandığı listedir. Kod satırı depo ve alan varsayılan kodunun yerine geçer; alan satırı sohbetin hangi katmanı okuyacağını seçer. Ölçülebilir tercihler ayrı bir denetim dosyasında tutulur ve anlatım denetimi bunu kendisi bulur."
+   },
+   "sinir": {
+    "sabit": [
+     "Kod ve alan satırlarının adları ile ders tablosunun sütunları değişirse sohbetler ayarı okuyamaz."
+    ],
+    "degisebilir": [
+     "Ders tablosunun satır içeriği ile takvim ve tercihlerin açıklama metinleri kişiye göre serbestçe değiştirilebilir."
+    ]
+   },
+   "kritik_neden": "Bozulursa kişisel ayarların nasıl yazılacağı yanlış anlaşılır; başka bir parça buna dayanmaz.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu ağacı panelinin nasıl çalıştığı bu kayıtta ele alınmadı."
+   ],
+   "okunan": [
+    "kurulum/yerel-ayarlar-sablonu.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "kurulum/yerel-denetim-sablonu.json",
+   "tur": "dosya",
+   "ozet": "bc852a05c0f0",
+   "iskelet": "e97b37e8619b",
+   "baslik": "Kişisel test tercihleri",
+   "ne": {
+    "cok_basit": "Bu dosya kişiye özel ayarları tutar ve yalnızca bu bilgisayarda kalır.",
+    "basit": "Bu dosya, test ve terimlerin nasıl hazırlanacağına dair kişisel tercihleri tutar. Bir yardımcı betik bu tercihleri okur.",
+    "normal": "Bu dosya bir kişinin dil, karışık test, mini testteki soru sayısı ve simge gibi tercihlerini tek yerde toplar. Tercihler kişiye özel olduğu için ayrı bir dosyada tutulur ve depoya konmaz.",
+    "gelismis": "Ayarlar tek bir dosyada toplandığı için betik her ayarı adına göre bulabilir. Kişisel tercihler depo dışında tutulur ve böylece deponun kendisi kişiden bağımsız kalır. Yasak simgeler listesi ile simge tercihi aynı dosyada durduğu için bu bilgiler birlikte okunabilir.",
+    "detayli": "Dosya kişiye özel olduğu için depo dışında tutulur; bu, deponun herkes için ortak kalmasına yardım eder. Ayarlar tek bir yapılandırma dosyasında toplanınca ek betik her ayarı adına göre bulup okuyabilir. Dil seçimi, karışık test, soru sayısı ve simge tercihi gibi değerler kişinin kendi kararlarıdır. Yasak simgeler listesi ile simge tercihi aynı dosyada durur."
+   },
+   "mantik": {
+    "cok_basit": "Kişisel tercihler yerelde tutulur, böylece depo herkes için aynı kalır.",
+    "basit": "Her kişinin tercihi farklıdır, bu yüzden tercihler depoda değil bu bilgisayarda durur. Ek betik onları adına göre bulup okur.",
+    "normal": "Kişisel tercihleri ayrı bir dosyada tutmak, bunları depodan ayırır. Böylece her kişi kendi değerini depoya dokunmadan değiştirebilir.",
+    "gelismis": "Betik ayarları adına göre okuduğu için adların ve yerin sabit kalması gerekir; değişebilen kısım değerlerdir. Yasak simgeler listesi ile simge tercihi aynı dosyada durduğu için birlikte gözden geçirilebilir.",
+    "detayli": "Kişisel tercihler depo dışında tutulduğu için deponun ortak kalması sağlanır; kişi kendi değerini kendi makinesinde ayarlayabilir. Ek betik ayarları adına göre bulduğu için her ayar bir ad ve bir değerle tanımlanır. Ayar dosyası yerelde kaldığı için denetimin tercihleri depo kurallarından ayrı tutulur."
+   },
+   "nasil": {
+    "basit": "Bir ek betik bu dosyayı okur. Betik her ayarı adına göre bulur ve değerini alır.",
+    "normal": "Dosya depoya konmaz ve yerelde durur. Bir ek betik dosyayı açıp okur, her ayarı adına göre bulur ve değerini alır. Değerler kişinin tercihine göre belirlenir; anahtar adlarının ve biçiminin değişmemesi, betiğin okuyabilmesi için gerekir.",
+    "gelismis": "Dosya yerel bir kopya olarak tutulur ve depoya girmez. Ek betik dosyayı açıp okur ve her ayarı adına göre bulur. Bulunan değer, betiğin o ayarla ilgili kısmında kullanılır. Test dili İngilizce ile Türkçe olarak ayarlıdır ve karışık test açıktır. Terim dili ve terim geçişine ilişkin ayar da dosyada durur.",
+    "detayli": "Dosya yerel bir kopya olarak tutulur ve depoya girmez. Ek betik dosyayı açıp okur ve her ayarı adına göre bulur. Bulunan değer, betiğin o ayarla ilgili kısmında kullanılır. Test dili İngilizce ile Türkçe olarak ayarlıdır ve karışık test açıktır. Terim dili ve terim geçişine ilişkin ayar da dosyada durur. Simge tercihi ile widget'lar için yasak simgeler listesi aynı simgeyi içerir. Çift aralık değeri için bir alt ve üst sınır tanımlıdır."
+   },
+   "detay": {
+    "girdiler": [
+     "Kişinin kendi tercihleri: dil ayarları, karışık test seçimi, mini test soru sayısı ve simge tercihleri.",
+     "Ek betiğin okuyacağı anahtar ve değer çiftleri."
+    ],
+    "ciktilar": [
+     "Ek betiğin kullanabileceği, adına göre bulunan ayar değerleri.",
+     "Yasak simgeler listesi, widget tarafında kullanılmaması gereken simgeleri verir."
+    ],
+    "degismezler": [
+     "Anahtar adları, betiğin onları adına göre bulabilmesi için değişmemelidir.",
+     "Dosya depoya konmaz; kişiye özel tercihler yerelde kalır."
+    ],
+    "kenar": [
+     "Dosyada tanımlı olmayan bir ayar okunursa betik bu ayarı bulamaz.",
+     "Simge tercihi, yasak simgeler listesinde de geçiyorsa widget'larda o simge kullanılamaz.",
+     "Ek sözlük boş olduğundan kişiye özel bir sözcük eklenmemiştir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Anahtar adları ve yapı biçimi sabittir; ek betik bu adları kullanarak değerleri bulur.",
+     "Dosyanın depoya konmaması ve yerelde tutulması sabittir; kişisel tercihler başka yere kopyalanmaz."
+    ],
+    "degisebilir": [
+     "Dil ve karışık test seçimi kişinin tercihine göre değiştirilebilir.",
+     "Simge tercihi ve mini testteki soru sayısı, kişinin kendi kararına bırakılmıştır."
+    ]
+   },
+   "kritik_neden": "Bozulursa ek betik ayarları bulamaz ve kişisel tercihler okunmadan kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Terim dili ayarının değeri ve terim geçişine ilişkin ayarın etkisi dosyadan anlaşılmadı.",
+    "Çift aralık için verilen değer aralığının neyi ayarladığı belli değil.",
+    "Ayar dosyada yoksa ek betiğin ne yapacağı görülmedi."
+   ],
+   "okunan": [
+    "kurulum/yerel-denetim-sablonu.json"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

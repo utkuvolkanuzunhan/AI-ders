@@ -1,0 +1,299 @@
+{
+ "surum": 1,
+ "bolum": "claude-sorunlari",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "claude-sorunlari/README.md",
+   "tur": "dosya",
+   "ozet": "af831cb06e73",
+   "iskelet": "7502a0f31887",
+   "baslik": "Claude arayüz sorunları",
+   "ne": {
+    "cok_basit": "Sohbet ekranının bilinen sorunlarını ve denenmiş yazım yollarını tutar.",
+    "normal": "Claude arayüzünün bilinen sorunlarını ve bunlara karşı denenmiş yazım kurallarını tutar. Her sorun için belirtisi, işe yarayan kalıbı ve denendiği tarih yazılıdır. Bu sorunlar her derste aynıdır."
+   },
+   "nasil": {
+    "normal": "Her sorun ayrı bir dosyada durur ve dosyada önce belirti, sonra kural, en sonda test yazılır. Bu klasördeki her dosya tüm sohbetlerin okuma paketine girdiği için kurallar kısa ve emir kipinde tutulur. Teyit edilmemiş bir varsayım kural gibi yazılmaz, Teyit bekleyen bölümünde bekler ve test edilince kurala taşınır."
+   },
+   "sinir": {
+    "sabit": [
+     "Belirti, kural ve test bölümlerinin sırası sabit kalmalıdır, kuralın nasıl okunacağını bu sıra belirler.",
+     "Her dosyanın kısa ve emir kipinde yazılması sabit kalmalıdır, çünkü her dosya tüm sohbetlerin okuma paketine girer.",
+     "Teyit edilmemiş bir varsayım kural gibi yazılmamalıdır, aksi halde yanlış bir kural tüm sohbetlere yayılır."
+    ],
+    "degisebilir": [
+     "Bir sorunun belirti anlatımı daha açık bir dille yeniden yazılabilir.",
+     "Yeni bir sorun için dosyanın konusu serbestçe seçilebilir."
+    ]
+   },
+   "kritik_neden": "Bu parça bozulursa denenmiş kurallar kaybolur ya da yanlış kurallar her sohbete yayılır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırlar kesik geldi; giriş paragrafının ve neden ayrı bir bölüm açıklamasının sonu tam okunamadı."
+   ],
+   "okunan": [
+    "claude-sorunlari/README.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "claude-sorunlari/formuller.md",
+   "tur": "dosya",
+   "ozet": "6353babcce60",
+   "iskelet": "1a5c6e928c0a",
+   "baslik": "Formül yazım kuralı",
+   "ne": {
+    "cok_basit": "Sohbet mesajlarında formüllerin ekranda düzgün çıkması için yazım kuralları.",
+    "basit": "Mesajlarda formüller bazen ham yazı gibi görünür ya da kesirler bozulur. Bu sayfa düzgün çıkan yazım biçimini toplar.",
+    "normal": "Mesajdaki formül çizilmeyebilir; ham yazı olarak görünebilir ya da kesir ve indis bozulabilir. Bu sayfa denenmiş yazım kurallarını verir; eski kalıpların önüne geçer. Kurallar tablet ve telefonda sınanmıştır.",
+    "gelismis": "Mesajdaki formül çizilmeyebilir; ham yazı olarak görünebilir ya da kesir ve indis bozulabilir. Bu sayfa denenmiş yazım kurallarını verir; eski kalıpların önüne geçer. Kurallar tablet ve telefonda sınanmıştır. Çelişirse bu sayfa kazanır; yeni bir sorun buraya eklenir.",
+    "detayli": "Mesajdaki formül çizilmeyebilir; ham yazı olarak görünebilir ya da kesir ve indis bozulabilir. Bu sayfa denenmiş yazım kurallarını verir; eski kalıpların önüne geçer. Kurallar tablet ve telefonda sınanmıştır. Çelişirse bu sayfa kazanır; yeni bir sorun buraya eklenir. Bloğun kendi satırında olması, tek blokta tek denklem ve gönderilen mesajın sonradan kontrol edilmesi gerekir."
+   },
+   "mantik": {
+    "cok_basit": "Formüller düzgün çıkmazsa okuyan denklemi okuyamaz; bu yüzden yazım kuralları var.",
+    "basit": "Bozuk bir formül okuyanı yanıltır, hatta anlamsız bir yazı gibi görünür. Bu yüzden biçim her mesajda aynı tutulur.",
+    "normal": "Formül bozulunca okuyucu denklemi göremez ve konu anlaşılmaz. Ham komutlar ve yanlış kesirler fark edilmeden geçer. Denenmiş kurallar aynı hatanın tekrarını önler.",
+    "gelismis": "Formül bozulunca okuyucu denklemi göremez ve konu anlaşılmaz. Ham komutlar ve yanlış kesirler fark edilmeden geçer. Denenmiş kurallar aynı hatanın tekrarını önler. Tek yerde durduğu için her ders aynı biçimi kullanır.",
+    "detayli": "Formül bozulunca okuyucu denklemi göremez ve konu anlaşılmaz. Ham komutlar ve yanlış kesirler fark edilmeden geçer. Denenmiş kurallar aynı hatanın tekrarını önler. Tek yerde durduğu için her ders aynı biçimi kullanır. Bozuk bir formül gönderildikten sonra da düzeltilebildiği için, kontrol ve düzeltme adımı kuralın bir parçasıdır."
+   },
+   "nasil": {
+    "basit": "Formül, kendi satırında özel işaretlerle çevrilmiş bir blok olarak yazılır. Kısa formüller satır içinde yazılır.",
+    "normal": "Her blok tek bir denklem içerir; birden çok denklem varsa her biri ayrı blok olur. Üst ve alt indisler hep süslü parantezle yazılır. Kesir içine kesir konmaz; ara değer ayrı blokta tanımlanır. Para birimi için işaret kullanılmaz, metinde yazılır. Gönderdikten sonra formül kontrol edilir.",
+    "gelismis": "Büyütme, kalınlık, renk ve vurgu komutları ham metin olarak görünür; bu yüzden formüle eklenmez, büyüklük zaten bloktan gelir. Renk ve vurgu gerekiyorsa formülün dışında metinle verilir. Kesir ile çarpan birlikte kullanılacaksa çarpan payın içine alınır. Parantez için özel sol ve sağ komutları yerine düz parantez kullanılır. Kesir, üs, indis, karekök, logaritma ve Yunan harfleri güvenle kullanılır.",
+    "detayli": "Yazım sırası şöyledir: önce formül kendi satırına ayrı bir blok olarak konur, üstünde ve altında boş satır bulunur. Denklem sadeleştirilir; karmaşık kesirler ara değerlere bölünür ve her ara değer ayrı bir blokta tanımlanır. İndis ve üsler süslü parantezle yazılır. Para birimi bir işaretle değil metinle anlatılır, çünkü tek bir işaret aynı satırdaki bütün formülleri bozar. Mesaj gönderildikten sonra formüllerin çizilip çizilmediğine bakılır; bozuk bir formül varsa mesaj düzeltilir. Bilinmeyen ya da tek örnekten gelen kalıplar, ilk kez kullanılırken görünüşü sorularak denenir."
+   },
+   "detay": {
+    "girdiler": [
+     "Sohbet mesajında yazılacak formül ya da denklem.",
+     "Uygulamada formülün çizilip çizilmediğine dair gözlem."
+    ],
+    "ciktilar": [
+     "Ekranda düzgün çizilen, bozulmayan formüller.",
+     "Ham komut görünmeyen, telefon genişliğine sığan denklemler."
+    ],
+    "degismezler": [
+     "Blok formül kendi satırında ve boş satırlarla çevrili olur.",
+     "Büyütme ve renk komutları formülün içinde kullanılmaz.",
+     "Para birimi bir işaretle değil metinle yazılır."
+    ],
+    "kenar": [
+     "Tek bir işaret yanlışlıkla konursa aynı satırdaki bütün formüller bozulur.",
+     "Teyit bekleyen kalıplar, ilk kez kullanılmadan önce sorulur."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Formül biçimi bu sayfadan alınır; çekirdek ve alan kuralları bu biçimi kullanır.",
+     "Blok formül ile satır içi formül ayrımı ve tek blokta tek denklem kuralı.",
+     "İndis ve üslerin süslü parantezle yazılması."
+    ],
+    "degisebilir": [
+     "Örnek formüllerin içeriği, yeni denemelerde değişebilir.",
+     "Teyit bekleyen gözlemler, yeni bir deneme sonucuna göre yeniden değerlendirilebilir."
+    ]
+   },
+   "kritik_neden": "Bu sayfa bozulursa formüller ekranda ham metin olarak görünür ve okunmaz.",
+   "terimler": [],
+   "belirsiz": [
+    "Paketin son bölümü ve bazı satırların sonu kesik geldi; denetim aracının adı ve tam kullanım yeri bilinmiyor.",
+    "Denemenin yapıldığı uygulama sürümü bilinmiyor; sınamanın ayrıntıları yalnız özet olarak görüldü."
+   ],
+   "okunan": [
+    "claude-sorunlari/formuller.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "claude-sorunlari/formuller.md::Bu kurala bağlı yerler",
+   "tur": "alt",
+   "ozet": "7865a274477e",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Çekirdek ve alan kuralları formül biçimini bu sayfadan alır.",
+    "normal": "Çekirdekteki formül bölümü ve alan kuralları bu biçimi kullanır; çelişki olursa bu sayfa kazanır. Yeni bir ham komut görünürse düzeltme yalnız buraya eklenir."
+   },
+   "kritik_neden": "Bu bağ bozulursa çekirdek ve alan kuralları farklı formül biçimleri kullanır.",
+   "terimler": [],
+   "belirsiz": [
+    "Formül denetim aracının adı ve nasıl çalıştığı kesik satırdan dolayı bilinmiyor."
+   ],
+   "okunan": [
+    "claude-sorunlari/formuller.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "claude-sorunlari/formuller.md::Kurallar",
+   "tur": "alt",
+   "ozet": "acec1963fdb9",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Formül kendi satırında durur; büyütme ve renk komutları yazılmaz.",
+    "normal": "Formül ya ayrı bir blok ya da kısa satır içi yazılır; blokta tek denklem olur. Büyütme, kalınlık, renk ve vurgu komutları yazılmaz, büyüklük bloktan gelir. Kesir içine kesir konmaz, ara değer ayrı blokta yazılır."
+   },
+   "kritik_neden": "Kural bozulursa tek bir işaret aynı satırdaki bütün formülleri de bozabilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "claude-sorunlari/formuller.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "claude-sorunlari/formuller.md::Sohbet mesajlarında formül yazımı",
+   "tur": "alt",
+   "ozet": "6353babcce60",
+   "iskelet": "56c351550997",
+   "ne": {
+    "cok_basit": "Formüller çizilsin diye özel işaretler ve düzenli bir yazım biçimi kullanılır.",
+    "normal": "Mesajdaki formül yanlış yazılırsa ya ham komut görünür ya da kesir ve indis bozulur. Bu bölüm, uygulamada denenmiş kuralları ve bir örneği verir; teyit edilmemiş kalıplar ayrı tutulur."
+   },
+   "kritik_neden": "Bu bölüm bozulursa formüller ekranda okunmaz hâle gelir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "claude-sorunlari/formuller.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "claude-sorunlari/formuller.md::Teyit bekleyen (kural değil, ihtiyat)",
+   "tur": "alt",
+   "ozet": "02a62dc28137",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Bu kalıplar tek bir denemeden geldi; kesin kural olmadığı için kullanılmaz.",
+    "normal": "Boşluk komutları, rakamla başlayan satır içi formüller ve matris blokları tek gözlemden gelir. Güvenli yol bunları kullanmamaktır; ilk kez kullanılacaksa görünüş önceden sorulur."
+   },
+   "kritik_neden": "Bu bölüm bozulursa denenmemiş kalıplar kesin kural sanılıp kullanılır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "claude-sorunlari/formuller.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "claude-sorunlari/formuller.md::Örnek",
+   "tur": "alt",
+   "ozet": "0bd5be0d42d6",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Bir kesirin doğru biçimi, ara değerin ayrı blokta yazılmasıyla gösterilir.",
+    "normal": "Yanlış örnekte ara değer kesrin içinde yazılıp çarpan dışarıda kalır; formül ham metin gibi görünür. Doğru örnekte her ara değer kendi bloğunda, çarpan payın içinde ve indisler süslü parantezli yazılır."
+   },
+   "kritik_neden": "Örnek bozulursa yanlış kalıp doğru diye kopyalanabilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "claude-sorunlari/formuller.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:claude-sorunlari",
+   "tur": "birim",
+   "ozet": "604a00787c4e",
+   "iskelet": "e5876a328107",
+   "baslik": "Arayüz sorunları kaydı",
+   "ne": {
+    "cok_basit": "Bu bölüm, sohbet ekranında görülen bilinen aksaklıkları ve bunlardan kaçınmak için denenmiş yazma yollarını toplar.",
+    "basit": "Sohbet ekranının bilinen aksaklıkları ve onları aşmak için denenmiş yazım yolları burada durur. Bu aksaklıklar hangi ders olursa olsun aynıdır, o yüzden derslerden ayrı tutulur.",
+    "normal": "Bu bölüm, Claude arayüzünün bilinen sorunlarını ve bunlara karşı denenmiş yazım kurallarını tek yerde toplar. Bir tanıtım sayfası sorunları genel olarak anlatır, formül sayfası ise formüllerin ekranda bozulması sorununa karşı işe yarayan yazım biçimlerini verir. Bu sorunlar her derste aynı olduğu için alandan bağımsız bir köşede durur.",
+    "gelismis": "Bu bölüm, alandan bağımsız bir sorun kayıt köşesidir. `README.md` her sorun için belirtiyi, işe yarayan kalıbı ve denendiği tarihi tutar. `formuller.md` mesajdaki formülün çizilmemesi, ham yazı olarak görünmesi ya da kesir ve indisin bozulması sorununa karşı denenmiş yazım kurallarını verir ve eski kalıpların tekrar kullanılmasını önler. Kurallar tablet ve telefonda sınanmıştır.",
+    "detayli": "Bu bölüm, arayüzden gelen ve dersin konusuna bağlı olmayan sorunların kayıt yeridir. `README.md` sorunların listesini tutar; her sorun için belirtisi, işe yarayan yazım kalıbı ve kalıbın denendiği tarih yazılıdır. `formuller.md` bu kayıtların en belirgin örneğidir: mesajdaki formül çizilmeyebilir, ham yazı olarak kalabilir ya da kesir ve indis bozulabilir, bu sayfa o durumlar için denenmiş yazım kurallarını verir. Amaç yalnız bugünkü sorunu çözmek değil, eski ve işe yaramayan kalıpların tekrar yazılmasını da önlemektir. Kurallar tablet ve telefonda sınanmıştır."
+   },
+   "mantik": {
+    "cok_basit": "Ekran aksaklıkları herkesin başına gelir; çözümü bir kez bulup tek yerde saklamak herkesi tekrar uğraşmaktan kurtarır.",
+    "basit": "Aynı ekran aksaklığıyla her derste yeniden uğraşmak yerine, işe yarayan çözüm bir kez bulunur ve tek yerde saklanır. Böylece her sohbet aynı çözümü kullanır.",
+    "normal": "Arayüz sorunları dersin konusuna bağlı değildir; her derste aynı biçimde çıkar. Bu yüzden alana özgü kuralların yanına değil, ayrı bir köşeye yazılır. Çözüm bir kez bulunup tarihle kaydedilir, ortak kurallar da formül biçimini yeniden yazmaz, bu köşeye bağlanır.",
+    "gelismis": "Bir arayüz sorununun çözümünü her ders ya da alan kendi kurallarına yazsaydı aynı bilgi çoğalır ve biri güncellenince ötekiler eski kalırdı. Ayrı bir köşe bunu önler: çözüm bir yerde durur, tarihiyle kaydedilir ve eskiyip eskimediği görülebilir. Alandan bağımsız tutulması, her alanın aynı çözümden yararlanmasını sağlar.",
+    "detayli": "Formülün ekranda bozulması gibi sorunlar dersin konusundan değil, arayüzden gelir; bu yüzden hangi alan olursa olsun aynıdır. Çözümü her alanın kendi kuralına yazmak aynı bilgiyi çoğaltır ve biri güncellenince ötekileri eskitir. Ayrı bir köşe, çözümün tek yerde durmasını sağlar. Kayıtta tarih tutulması da bilinçli bir seçimdir: arayüz değişince bir kalıbın hâlâ işe yarayıp yaramadığı bu tarihe bakılarak anlaşılır, eski kalıplar da yenisiyle değiştirilir. Çekirdek ve alan kuralları formül biçimini yeniden yazmaz, buraya bağlanır."
+   },
+   "nasil": {
+    "basit": "Bir sorun görülünce önce tanıtım sayfasına bakılır. Orada sorunun belirtisi ve işe yarayan yazım yolu bulunur. Formül sorunları için ayrı bir sayfa vardır.",
+    "normal": "Ekranda bir aksaklık görüldüğünde tanıtım sayfasındaki kayıtlara bakılır: her kayıt belirtiyi, işe yarayan kalıbı ve denendiği tarihi söyler. Formül bozulması gibi sık görülen sorunun ayrı sayfası vardır; orada formülün hangi biçimde yazılacağı anlatılır. Yazan sohbet bu kalıplara uyar, eski kalıba dönmez.",
+    "gelismis": "Kayıt, sorunun belirtisinden başlar: formül çizilmiyor, ham yazı olarak kalıyor ya da kesir ve indis bozuluyor. Aynı kayıtta işe yarayan yazım kalıbı ve denendiği tarih durur. `formuller.md` bu kalıpları formül için ayrıntılandırır. Yazan sohbet, mesajını göndermeden önce bu kurallara göre formülünü yazar; tarih, kalıbın ne zaman son kez sınandığını gösterir ve eskimiş bilgiyi ayırt etmeye yarar.",
+    "detayli": "Bir kayıt üç parçadan oluşur: belirti, işe yarayan kalıp ve denendiği tarih. Belirti, sorunun ekranda nasıl göründüğünü söyler; formülde bu çizilmeme, ham yazı olarak görünme ya da kesir ve indisin bozulmasıdır. Kalıp, sorunu aşan yazım biçimidir. Tarih ise o kalıbın ne zaman denendiğini gösterir; arayüz değiştiğinde eski bir kalıbın hâlâ geçerli olup olmadığı buradan anlaşılır. `README.md` bu kayıtları genel olarak tutar, `formuller.md` formül sorununa özel ayrıntıyı verir ve eski kalıpların önüne geçer. Yazan sohbet, mesajını göndermeden önce bu kalıplara bakarak formülünü yazar. Kurallar tablet ve telefonda sınanmıştır, bu yüzden küçük ekranda da geçerlidir."
+   },
+   "detay": {
+    "girdiler": [
+     "Arayüzde görülen bir aksaklığın belirtisi.",
+     "Yazan sohbetin bir formül ya da benzeri içeriği ekrana göndermesi."
+    ],
+    "ciktilar": [
+     "İşe yarayan yazım kalıbı.",
+     "Kalıbın en son ne zaman denendiği bilgisi."
+    ],
+    "degismezler": [
+     "Her sorun kaydında belirti, kalıp ve deneme tarihi birlikte durur.",
+     "Bu sorunlar alandan bağımsızdır, her derste aynıdır."
+    ],
+    "kenar": [
+     "Eski bir kalıp yeni arayüzde işe yaramayabilir; tarih bu yüzden tutulur.",
+     "Kurallar tablet ve telefonda sınanmıştır, her ekranda aynı sonucu garanti etmez."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kayıt biçimi olan belirti, kalıp ve tarih üçlüsü, kayıtları okuyanın dayandığı düzendir.",
+     "Bu bölüm alandan bağımsız kalır; alana özgü bilgi buraya yazılmaz."
+    ],
+    "degisebilir": [
+     "Yeni sorunlar eklenebilir ve eskimiş kalıplar yenisiyle değiştirilebilir.",
+     "Tanıtım sayfasının anlatım biçimi, kayıt düzeni korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Formül sorununa yeni bir çözüm bulunursa nereye yazılır?",
+     "yanit": "Bu köşedeki formül sayfasına, tarihiyle birlikte. Ortak kurallara ya da bir alana yazılmaz; yoksa aynı bilgi iki yerde durur ve biri eskir."
+    },
+    {
+     "soru": "Kayıttaki tarih ne işe yarar?",
+     "yanit": "Kalıbın ne zaman denendiğini gösterir. Arayüz değişirse eski bir kalıbın hâlâ çalışıp çalışmadığı buradan anlaşılır."
+    }
+   ],
+   "kritik_neden": "Bu bölüm bozulursa sohbetler formülleri ekranda bozuk gösteren eski yazım kalıplarına döner ve aynı aksaklık her derste yeniden çıkar.",
+   "terimler": [],
+   "belirsiz": [
+    "Tanıtım sayfasında kayıtlı başka sorunların neler olduğu anlatımlardan görülmüyor, yalnız formül sorunu belli."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

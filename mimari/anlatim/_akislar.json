@@ -1,0 +1,64 @@
+{
+ "surum": 1,
+ "bolum": "akislar",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "akis:ayar:anlatim-denetimi",
+   "tur": "akis",
+   "ozet": "a2e4cd4e02f0",
+   "iskelet": "819d5b0407e8",
+   "ne": {
+    "cok_basit": "Yazılan her ders anlatımı gönderilmeden önce kurallara uyup uymadığına bakılır, hata varsa düzeltilir.",
+    "normal": "Anlatım yazan sohbet her mesajı göndermeden önce denetim aracına verir. Araç biçim, boşluk, cümle ve başlık kurallarına bakar, hata ve uyarıları satır satır döker. Ek denetim terim dilini, widget biçimini ve test sorularını ayrı kurallarla sınar. Soru verisi kart dosyasına çevrilmeden önce yine denetlenir, hatalıysa durur; düzeltme turları sınırlıdır ve kalan hata açıkça bildirilir."
+   },
+   "kritik_neden": "Bozulursa kurallara uymayan anlatımlar denetlenmeden kullanıcıya ulaşır ya da hatalı test soruları ekrana kadar gider.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "akis:ayar:kod-ya-da-sablon-degisince-yeniden-uretim",
+   "tur": "akis",
+   "ozet": "59a5b7f76a03",
+   "iskelet": "c51b173763e6",
+   "ne": {
+    "cok_basit": "Tercih listesi değişince açıklama belgesi ve seçim sayfası elle düzeltilmez, yeniden kendiliğinden yazılır.",
+    "normal": "Ayar dosyasında roller, seçenek grupları ve varsayılanlar tanımlıdır. Üretici araç bu tanımı okur, ayar kodunu anlatan belgeyi ve kodu tıklayarak seçtiren galeri sayfasını yazar. Alan klasörlerindeki varsayılanlar belgeye eklenir, şablon sayfaları galeriye gömülür. Belge elle yazılmadığı için tanımla hiçbir zaman ayrışmaz."
+   },
+   "kritik_neden": "Bozulursa ayar kodu belgesi ve galeri gerçek tanımdan ayrışır, kullanıcı varolmayan ya da eski bir seçeneği seçebilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "akis:ayar:sohbet-baslar-okuma-paketi",
+   "tur": "akis",
+   "ozet": "dbbe5e21e402",
+   "iskelet": "05ebca5f4224",
+   "ne": {
+    "cok_basit": "Sohbet açılırken kendine düşen kuralları tek bir metin olarak alır ve işe yalnız onu okuyarak başlar.",
+    "normal": "Ayar dosyası sohbetin hangi rolde çalışacağını ve her seçenek grubunda neyin varsayılan olduğunu söyler. Paket aracı bu tanıma bakarak rolün kurallarını, görevi, seçilen ayarları ve gerekiyorsa görsel kuralları ile ders kartını sırayla birleştirip sohbetin ilk okuyacağı metni üretir. Ham kaynak eklenmişse metin yerine yalnız yönlendirme çıkar."
+   },
+   "kritik_neden": "Bozulursa sohbet yanlış ya da eksik kuralla başlar, ders anlatımı seçilen role ve tercihlere uymaz.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

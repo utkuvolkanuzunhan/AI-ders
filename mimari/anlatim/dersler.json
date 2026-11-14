@@ -1,0 +1,2351 @@
+{
+ "surum": 1,
+ "bolum": "dersler",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "dersler/_sablon/ders.md",
+   "tur": "dosya",
+   "ozet": "483265008b86",
+   "iskelet": "5a7579548fd1",
+   "baslik": "Ders kartı kalıbı",
+   "ne": {
+    "cok_basit": "Yeni bir ders kartı açarken doldurulacak boş bir kalıp.",
+    "normal": "Yeni bir dersin genel bilgi kartını hazırlamak için kullanılan boş kalıp. Kalıbın kendisi bir ders değildir; içindeki bölümler kaynak önceliği, konu türleri, gösterim kuralları, sık hatalar ve örnek havuzu gibi ayrılır."
+   },
+   "nasil": {
+    "normal": "Kalıp her yeni ders kartında aynı sırayla açılır: önce kaynak önceliği, sonra konu türleri, gösterim kuralları, sık hatalar ve endüstri örnekleri. Parantez içindeki açıklamalar yer tutucudur ve gerçek bilgiyle değiştirilir. Alan katmanına bağlı derslerde dosyanın en başına kısa bir üst bilgi eklenir; katmanı olmayan derslerde eklenmez."
+   },
+   "sinir": {
+    "sabit": [
+     "Bölüm başlıklarının adı ve sırası korunmalı; bütün ders kartları aynı düzende kalmalı.",
+     "Konu türü tablosunun Konu ve Tip sütunlu biçimi korunmalı; bu bölüm bir ayar için ayrılmış.",
+     "Dosyanın en başındaki üst bilgi satırları yalnız alan katmanına bağlı derslerde bulunmalı."
+    ],
+    "degisebilir": [
+     "Bölümlerin içindeki örnekler ve maddeler, her dersin kendi bilgisine göre serbestçe yazılabilir.",
+     "Kart başlığındaki ders adı ve Türkçe karşılığı, her ders için kendi bilgisiyle yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu kalıba dayanmadığı için bozulursa yalnız yeni açılacak dersler etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Üst bilgi satırındaki alan düzeninin nasıl kullanıldığını göremedim."
+   ],
+   "okunan": [
+    "dersler/_sablon/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/_sablon/sozluk.md",
+   "tur": "dosya",
+   "ozet": "d119c6d4726c",
+   "iskelet": "366d72f2e030",
+   "baslik": "Ders sözlüğü kalıbı",
+   "ne": {
+    "cok_basit": "Yeni bir ders sözlüğü için boş kalıp; tablonun başlığı hazır gelir.",
+    "normal": "Bu dosya, yeni bir ders için sözlük açılırken başlangıç olarak kullanılan hazır bir kalıptır. Başlık ve üç sütunlu tablo önceden yazılıdır, satırlar ise boş bırakılır. Üstteki kural, terimlerin hep aynı çevrilmesini ve alfabetik eklenmesini ister."
+   },
+   "nasil": {
+    "normal": "Yeni sözlük bu kalıpla açılır, ilk satırdaki ayar ve kurallar korunur. Tablonun başlık satırı Türkçe, İngilizce ve Not sütunlarından oluşur. Yeni terimler satır satır eklenir ve her eklemede alfabetik sıra gözetilir."
+   },
+   "sinir": {
+    "sabit": [
+     "Üç sütunlu başlık satırının sırası ve adları aynı kalmalı, çünkü bu kalıptan açılan her sözlük aynı biçimi taşır.",
+     "Üstteki kural satırı aynı kalmalı, çünkü her yeni sözlük bu kuralı ilk satırlarında taşır."
+    ],
+    "degisebilir": [
+     "Başlık metni ders adına göre yeniden yazılabilir ve tabloya ilk terimler eklenebilir."
+    ]
+   },
+   "kritik_neden": "Bu kalıp başka parçalara dayanmadığı için bozulursa yalnız yeni açılacak sözlüklerin başlangıcı etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Üst satırdaki ayarın hangi kodda okunduğu bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "dersler/_sablon/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md",
+   "tur": "dosya",
+   "ozet": "07d188660a53",
+   "iskelet": "ae3254cd68d7",
+   "baslik": "Devre analizi ders kartı",
+   "ne": {
+    "cok_basit": "Devre dersinin genel bilgilerini tek yerde toplar, kişisel notları ise tutmaz.",
+    "basit": "Devre analizi dersinin genel bilgilerini toplar. Kaynak ve konu sırası, yazım kuralları ve sık hatalar burada durur.",
+    "normal": "Devre analizi dersinin genel bilgilerini tek yerde toplar. Kaynak sırasını, konuların işleniş sırasını, yazım kurallarını ve sık yapılan hataları gösterir. Kişisel notlar bu kartta yer almaz.",
+    "gelismis": "Devre analizi dersinin genel bilgi kartıdır ve kişisel ilerleme bilerek ayrı tutulur. Kaynak önceliği, konuların işleniş sırası ve kitap bölümleri, konu türleri, yazım kuralları, sık hatalar ile uygulama örnekleri burada bir aradadır.",
+    "detayli": "Devre analizi dersinin genel bilgi kartıdır. Kart, kişisel ilerlemeden bilerek ayrı tutulur. Hangi kaynağa önce bakılacağını, konuların hangi sırayla ve hangi kitap bölümleriyle işlendiğini, konu türlerini, yazım ve birim kurallarını, sık yapılan hataları ve uygulama örneklerini bir arada verir."
+   },
+   "mantik": {
+    "cok_basit": "Bilgiler tek yerde dursun diye toplanır, kişisel notlar karışmasın diye ayrıdır.",
+    "basit": "Bilgi dağınık olunca öğrenci neyin önce geleceğini bilemez. Bu kart sırayı tek yerde verir.",
+    "normal": "Ders bilgisi dağınık olursa çalışma sırası ve güvenilecek kaynak her seferinde yeniden tartışılır. Kart bu kararları tek yerde verir. Kişisel notlar ayrı tutulur, çünkü ders bilgisi herkes için aynıdır.",
+    "gelismis": "Dersin genel bilgisi herkes için aynıdır, kişisel ilerleme ise kişiye göre değiştiği için ayrı tutulur. Kaynak önceliği ve konu sırası bir kez belirlendiğinde kart bunları tek yerde sabitler. Böylece her konuya başlarken kaynak aramak zorunda kalınmaz.",
+    "detayli": "Bu kart, derse ait ve herkes için aynı olan bilgiyi kişisel ilerlemeden ayırır. Kişisel notlar zamanla değiştiği için ortak kartın bozulmaması gerekir. Kaynak önceliği ve konu sırası tek yerde durunca farklı kaynaklar arasındaki çelişki bir kez çözülür. Notasyonun kitapla aynı tutulması okuyanın iki farklı gösterimle uğraşmasını önler."
+   },
+   "nasil": {
+    "basit": "Kart düz yazılmış bir metin ve her konusu kendi başlığıyla ayrılmıştır. Tablolar konuların sırasını ve türünü gösterir.",
+    "normal": "Kart düz yazılmış bir metin ve her konusu kendi başlığıyla ayrılmıştır. Başlıkların her biri ayrı bir konuya bakar: kaynak sırası, müfredat çizelgesi, konu türleri, yazım kuralları, sık hatalar ve uygulama örnekleri. Müfredat çizelgesi konuları işleniş sırasıyla dizer.",
+    "gelismis": "Kart başlıklara göre okunur. Kaynak sırası kısa bir paragrafta verilir. Müfredat çizelgesi her konunun sırasını ve kitap bölümünü tutar, basım değişirse bölüm numaraları kayabilir. Konu türleri her konunun kavram mı hesap mı ağırlıklı olduğunu söyler. Notasyon bölümü işaret kuralını ve temel formülleri düz yazıyla verir. Sık hatalar yapılan yanlış işlemleri sıralar.",
+    "detayli": "Kart düz yazılmış bir metindir ve her bölüm kendi başlığıyla ayrılır. Önce kaynak önceliği gelir. Derste verilen notlar ve slaytlar en üstte, ders kitabı ortada, genel bilgi en altta yer alır. Bu sıra, iki kaynak çeliştiğinde hangisine güvenileceğini belirler. Müfredat çizelgesi konuları işleniş sırasıyla dizer ve her konunun kitapta hangi bölümde olduğunu gösterir. Kitabın başka bir basımı kullanılırsa bölüm numaraları kayabilir. Konu türleri, her konunun kavram mı hesap mı yoksa grafik mi ağırlıklı olduğunu işaretler. Notasyon bölümü işaret kuralını, direnç ve bölücü bağıntılarını, Thévenin ve maksimum güç ilişkisini, ideal op-amp kurallarını, bobin ve kondansatörün temel bağıntılarını ve birinci derece devrelerin zaman sabitini düz yazıyla verir. Sık hatalar bölümü tekrar tekrar düşülen yanlış işlemleri sıralar. Uygulama örnek havuzu ise konuların gerçek cihazlarda nerede kullanıldığını listeler."
+   },
+   "detay": {
+    "girdiler": [
+     "Derste verilen slayt, ders notu ve laboratuvar föyleri kaynak sırasında en üstte yer alır.",
+     "Ders kitabı ve yardımcı kitap bu sıradan sonra gelen kaynaklardır."
+    ],
+    "ciktilar": [
+     "Okuyanın hangi kaynağa önce güveneceği ve hangi sırayla çalışacağı.",
+     "Her konunun kitaptaki bölümü ve konu türüne göre beklenen yaklaşım."
+    ],
+    "degismezler": [
+     "Kart genel bilgidir, kişisel ilerleme ve notlar bu kartta yazılmaz.",
+     "Sembol ve gösterim kitapla aynıdır, zikzak direnç ve IEEE/ANSI gösterimi kullanılır."
+    ],
+    "kenar": [
+     "Kitap başka bir basımdaysa bölüm numaraları kayabilir.",
+     "Sanal toprak kuralı yalnız negatif geri beslemede geçerlidir, doymuş op-amp için kullanılmaz."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Müfredat çizelgesindeki konu sırası, okuyanın çalışma yolunu belirler ve değişirse herkes yanlış sırayla çalışır.",
+     "Kaynak öncelik sırası değişirse çelişen bilgide hangi kaynağa güvenileceği de değişir.",
+     "Notasyonun kitapla aynı kalması gerekir, aksi halde okuyan iki farklı gösterimle karşılaşır."
+    ],
+    "degisebilir": [
+     "Sık hatalar listesine yeni madde eklenebilir ya da mevcut maddeler daha açık yazılabilir.",
+     "Uygulama örnek havuzuna yeni uygulama alanı eklemek serbesttir."
+    ]
+   },
+   "kritik_neden": "Kart hatalıysa çalışma sırası ve kitap bölümü yanlış gösterilir, etkisi bu kartla sınırlı kalır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırlar paket dosyasında kesik geldi; RLC bölümünün son kısmı ve örnek havuzunun sonu tam okunamadı."
+   ],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Ders kartı: Circuit Analysis 1 · Devre Analizi 1",
+   "tur": "alt",
+   "ozet": "9d36bdfb11f0",
+   "iskelet": "a4382addceb8",
+   "ne": {
+    "cok_basit": "Kartın girişi: dersin genel bilgisini verir, kişisel notlar burada yer almaz.",
+    "normal": "Kartın girişi dersin genel bilgisini tanıtır ve kartın kişisel ilerlemeyi içermediğini belirtir. Kişisel ilerleme ayrı bir dosyada tutulur, böylece bu kart herkes için aynı kalır. Okuyan kartın geri kalanına buradan geçer."
+   },
+   "kritik_neden": "Giriş yanlış olursa okuyan kartın kime ait olduğunu ve kişisel notların nerede olduğunu yanlış anlar.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Kaynak önceliği",
+   "tur": "alt",
+   "ozet": "c4c2b827e9dc",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Önce derste verilenler, sonra kitap, en son genel bilgi gelir.",
+    "normal": "Bilgiler çeliştiğinde hangi kaynağın üstün tutulacağını söyler. Üstte derste verilen slayt, ders notu ve laboratuvar föyü, sonra ders kitabı, en altta genel bilgi durur. Ders ve sınav İngilizcedir."
+   },
+   "kritik_neden": "Kaynak sırası bozulursa çelişen bilgide yanlış kaynağa güvenilir ve yanlış öğrenilebilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Konu tipleri (ayar E3)",
+   "tur": "alt",
+   "ozet": "5c34be9b8742",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Her konunun kavram mı, hesap mı yoksa grafik mi ağırlıklı olduğunu söyler.",
+    "normal": "Her konunun kavram, hesap ya da grafik olarak ağırlığını gösterir. Birçok konu iki türü birden taşır, bobin ve kondansatör gibi. Ağırlık, çalışma zamanının nereye harcanacağını söyler."
+   },
+   "kritik_neden": "Tür yanlış okunursa çalışma zamanı yanlış yere harcanır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Müfredat sırası (konu → Nilsson bölümü, 10. basıma göre)",
+   "tur": "alt",
+   "ozet": "5e658ff75947",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Konuların hangi sırayla işleneceğini ve kitapta nerede olduğunu gösterir.",
+    "normal": "Konuları işleniş sırasıyla dizer ve her birinin kitapta hangi bölüme denk geldiğini yazar. Başta temel kavramlar, ortada analiz yöntemleri, sonda bobin ve kondansatör gelir. Laboratuvar konuları altta anılır."
+   },
+   "kritik_neden": "Sıra bozulursa çalışma yanlış konudan başlayabilir ve kitap bölümü yanlış bulunur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Notasyon ve birim",
+   "tur": "alt",
+   "ozet": "7656686a0c16",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Çözümlerde kullanılacak yazım kurallarını ve birimleri bir arada verir.",
+    "normal": "Çözüme başlamadan bilinmesi gereken yazım kurallarını toplar. Pasif işaret kuralı, bölücüler, Thévenin ve maksimum güç ile op-amp kuralları burada durur."
+   },
+   "kritik_neden": "Yazım kuralı yanlış uygulanırsa güç ve gerilim işaretleri ters çıkar ve çözümün tamamı yanlış olur.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Sık tuzaklar",
+   "tur": "alt",
+   "ozet": "9d6a3e38302b",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Sık yapılan hataları sıralar, böylece onlardan önce uyanık olunabilir.",
+    "normal": "Çözümde en çok yanlış yapılan noktaları sıralar: güç işaretini ters okumak, akım bölücüde yanlış direnci paya koymak ve güçte süperpozisyon kullanmak. Anahtarlamada bobin akımı ve kondansatör gerilimi ani değişmez."
+   },
+   "kritik_neden": "Bu liste silinirse en çok yapılan hatalar fark edilmeden tekrar edilir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/ders.md::Uygulama örnek havuzu",
+   "tur": "alt",
+   "ozet": "2111da201ae3",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Konuların gerçek hayatta nerede kullanıldığını gösteren örnekleri verir.",
+    "normal": "Derste işlenen konuların gündelik cihazlardaki karşılıklarını gösterir. Bir LED için direnç, bir sensör için gerilim bölücü, bir mikrofon için ön yükselteç ve bir akünün iç direnci gibi örnekler bulunur."
+   },
+   "kritik_neden": "Bu liste bozulursa konuların gerçek hayattaki karşılığı kaybolur, hesap kuralları değişmez.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/sozluk.md",
+   "tur": "dosya",
+   "ozet": "aa1f2f4e17e0",
+   "iskelet": "12008cbc8380",
+   "baslik": "Devre analizi sözlüğü",
+   "ne": {
+    "cok_basit": "Derste geçen kelimelerin Türkçe ve İngilizce adlarını yan yana verir.",
+    "basit": "Derste geçen kavramların Türkçe adlarını İngilizce karşılıklarıyla yan yana verir. Her kavram için tek bir karşılık seçilmiştir.",
+    "normal": "Bu sözlük devre kavramlarının Türkçe adlarını İngilizce karşılıklarıyla eşleştirir. Bir kavram hep aynı Türkçe adla anılır ve yeni kavramlar alfabetik sırayla eklenir. Bazı satırlar büyüklük ve kısaltma notu taşır.",
+    "gelismis": "Sözlük Türkçe kavram adlarını İngilizce karşılıklarıyla eşleştirir ve her kavrama tek bir karşılık verir. Tablo alfabetik düzendedir. Bazı satırlarda elemanın büyüklüğü, bazılarında sembol ya da kısaltma notu bulunur.",
+    "detayli": "Sözlük, derste geçen kavramların Türkçe adlarını İngilizce karşılıklarıyla yan yana koyan tek bir tablodur. Her Türkçe ad tek bir İngilizce karşılığa bağlanır, böylece bir kavram hep aynı adla anılır. Tablo alfabetik sırayla dizilidir. Notlar sütununda elemanların büyüklük adları, sembol gösterimleri ve kısaltmalar bulunur."
+   },
+   "mantik": {
+    "cok_basit": "Aynı kavram farklı adlarla karışmasın diye tek bir liste yapılmıştır.",
+    "basit": "Aynı şeye farklı adlar verilince öğrenci hangi adın doğru olduğunu bilemez. Bu tablo her kavrama tek bir ad koyar.",
+    "normal": "Aynı kavram farklı adlarla geçerse okuyan bunları ayrı kavram sanabilir. Tek Türkçe ad ile tek İngilizce karşılık bu karışıklığı önler. Eleman ile büyüklük adlarının ayrı tutulması da karışıklığı azaltır.",
+    "gelismis": "Sözlük kavram adlarını sabitleyerek metinlerin aynı dili konuşmasını sağlar. Bir kavrama ikinci bir Türkçe ad ya da ikinci bir İngilizce karşılık verilirse okuyan bunları ayrı şeyler sanabilir. Bu yüzden her kavram tek satırda tutulur ve tablo alfabetik sırada büyür.",
+    "detayli": "Bu sözlük elektrik devresi kavramlarının adlarını tek yerde sabitler. Amaç, aynı kavramın farklı adlarla geçip okuyanı şaşırtmasını önlemektir. Her Türkçe ad yalnızca bir İngilizce karşılığa bağlanır. Eleman ile büyüklük adları ve semboller not sütununda tutulur, kavramın ana adı böylece sade kalır. Yeni kavramlar alfabetik sırada eklenir."
+   },
+   "nasil": {
+    "basit": "Sözlük üç sütunlu bir tablodur. Her satırda önce Türkçe ad, sonra İngilizce karşılık, en sonda kısa bir not yer alır.",
+    "normal": "Sözlük Türkçe ad, İngilizce karşılık ve not sütunlarından oluşan bir tablodur. Her satır tek bir kavramı taşır ve satırlar Türkçe adın alfabetik sırasına göre dizilir. Not sütunu boş olabilir, dolu olduğunda elemanın büyüklük adını, bir sembolü ya da bir kısaltmayı verir. Yeni bir kavram alfabetik yerine konur, böylece tablo düzenli kalır.",
+    "gelismis": "Sözlük Türkçe ad, İngilizce karşılık ve not sütunlarından oluşan bir tablo olarak yazılmıştır. Satırlar Türkçe adın alfabetik sırasına göre dizilir ve her satır tek bir kavramı taşır. Bir kavramın İngilizce karşılığı tek satırda tutulur. Notlar sütunu büyüklük adı, sembol ya da kısaltma gibi ek bilgi verir. Bazı satırlarda Türkçe için ikinci bir ad da yazılır. Yeni kavram alfabetik yerine konur ve sütun biçimi korunur.",
+    "detayli": "Sözlük derste geçen kavramların Türkçe adlarını İngilizce karşılıklarıyla yan yana koyan, Türkçe ad, İngilizce karşılık ve not sütunlarından oluşan bir tablodur. Sütunlar sırasıyla Türkçe ad, İngilizce karşılık ve not olarak düzenlenmiştir. Her satır tek bir kavramı taşır ve satırlar Türkçe adın alfabetik sırasına göre dizilir. Bir kavramın İngilizce karşılığı yalnızca bir satırda durur, bu yüzden aynı kavram için iki ayrı İngilizce ad yazılmaz. Notlar sütununda elemanın büyüklük adı, bir sembolün ya da koşulun anlamı ve bir kısaltmanın açılımı gibi bilgi türleri bulunur. Bazı satırlarda Türkçe ad için ikinci bir Türkçe ad da yazılır. Yeni bir kavram eklenirken alfabetik sıraya göre yerleştirilir ve sütun biçimi aynen korunur."
+   },
+   "detay": {
+    "girdiler": [
+     "Derste geçen kavramların Türkçe adları ve İngilizce karşılıkları, tablonun ana kaynağıdır.",
+     "Notlar sütunundaki büyüklük adları ve semboller, kavramı tamamlayan ek bilgilerdir."
+    ],
+    "ciktilar": [
+     "Okuyanın bir kavramı Türkçe ve İngilizce adlarıyla bulabileceği bir eşleşme listesi.",
+     "Aynı kavram için tek bir Türkçe adın kullanılması, metinler arası karışıklığı azaltır."
+    ],
+    "degismezler": [
+     "Bir Türkçe ad tabloda tek bir İngilizce karşılığa bağlıdır.",
+     "Eleman ile büyüklük adı ayrı tutulur, bobin bir eleman endüktans ise onun büyüklüğüdür."
+    ],
+    "kenar": [
+     "Bazı kavramların Türkçe için ikinci bir adı vardır, göz akımı için çevre akımı da kullanılır.",
+     "Kirchhoff yasalarında Türkçe kısaltmalar KAY ve KGY, İngilizce kısaltmalar KCL ve KVL'dir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Bir Türkçe adın tek bir İngilizce karşılığa bağlı kalması gerekir, aksi halde aynı kavram iki adla okunur.",
+     "Tablonun sütun düzeni ve Türkçe alfabetik sıra korunmalıdır.",
+     "Kısaltma ve sembol notları, ilgili kavramla aynı satırda kalmalıdır."
+    ],
+    "degisebilir": [
+     "Not sütunundaki açıklamalar sadeleştirilebilir ya da yeniden yazılabilir.",
+     "Tablodaki kavramların kapsamı derse göre serbestçe genişletilebilir."
+    ]
+   },
+   "kritik_neden": "Sözlük bozulursa aynı kavram farklı adlarla okunur ve derste karşılıklar karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Notlar sütunundaki sembollerin ve koşulların ayrıntısı dosyada yazılı değil, yalnızca adları metne alındı."
+   ],
+   "okunan": [
+    "dersler/circuit-analysis-1/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/circuit-analysis-1/sozluk.md::Sözlük: Circuit Analysis 1",
+   "tur": "alt",
+   "ozet": "aa1f2f4e17e0",
+   "iskelet": "e3b0c44298fc",
+   "ne": {
+    "cok_basit": "Sözlüğün başlığıdır ve bir kavramın her yerde aynı adla çevrildiğini söyler.",
+    "normal": "Sözlüğün giriş kısmıdır. Burada sözlüğün hangi derse ait olduğu yazılır ve bir kavramın her zaman aynı Türkçe karşılığıyla çevrilmesi gerektiği belirtilir. Yeni kavramlar tabloya alfabetik sırayla eklenir."
+   },
+   "kritik_neden": "Giriş yanlış olursa okuyan sözlüğün hangi ders için yazıldığını ve çeviri kuralını yanlış anlar.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/circuit-analysis-1/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/digital-systems/ders.md",
+   "tur": "dosya",
+   "ozet": "d4a668c87075",
+   "iskelet": "e970fdc02d3f",
+   "baslik": "Sayısal sistemler ders kartı",
+   "ne": {
+    "cok_basit": "Sayısal sistemler dersinin genel bilgisini verir, kişisel notları ise tutmaz.",
+    "normal": "Sayısal sistemler dersinin genel bilgi kartıdır. Kaynak sırasını, konuların işleniş sırasını, yazım kurallarını ve sık hataları gösterir. Kişisel ilerleme bu kartta yer almaz."
+   },
+   "nasil": {
+    "normal": "Kart düz yazılmış bir metindir ve her konusu kendi başlığıyla ayrılır. Müfredat çizelgesi konuları işleniş sırasıyla dizer ve kitap bölümlerini gösterir. Konu türleri her konunun kavram, tasarım ya da kod olarak ağırlığını söyler. Sık hatalar ve uygulama örnekleri de ayrı başlıklarda durur."
+   },
+   "sinir": {
+    "sabit": [
+     "Müfredat sırası ile kitap bölümü eşleşmesi sabit kalmalıdır, sıra değişirse okuyan yanlış bölüme yönlenir.",
+     "Notasyon ve VHDL yazım biçimi kitapla aynı kalmalıdır, aksi halde aynı kavram iki farklı biçimde okunur."
+    ],
+    "degisebilir": [
+     "Sık hatalar ve uygulama örnek havuzuna yeni madde eklemek serbesttir.",
+     "Lab konularının yazılış biçimi ve örneklerin sırası yeniden düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Kart yanlış olursa çalışma sırası bozulur ve kitap bölümleri yanlış okunur.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırlar kesik geldi; kitap basımına ilişkin son cümlenin devamı ve bazı örnek satırları tam okunamadı."
+   ],
+   "okunan": [
+    "dersler/digital-systems/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/digital-systems/sozluk.md",
+   "tur": "dosya",
+   "ozet": "6066ad23e7e7",
+   "iskelet": "a1c439211858",
+   "baslik": "Sayısal sistemler sözlüğü",
+   "ne": {
+    "cok_basit": "Derste geçen kelimelerin Türkçe ve İngilizce karşılıklarını yan yana verir.",
+    "normal": "Bu sözlük derste geçen kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir. Her kavrama tek bir Türkçe ad verilir ve yeni kavramlar alfabetik sırayla eklenir. Notlar sütununda kısaltmalar ve eş anlamlı adlar bulunur."
+   },
+   "nasil": {
+    "normal": "Sözlük Türkçe ad, İngilizce karşılık ve not sütunlarından oluşan bir tablodur. Satırlar Türkçe adın alfabetik sırasına göre dizilir ve her kavrama tek bir İngilizce karşılık verilir. Yeni bir kavram alfabetik yerine eklenir. Not sütunu bazı satırlarda kısaltmanın açılımını ya da eş adı gösterir."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe adla İngilizce karşılığın eşleşmesi sabit kalmalıdır, aksi halde aynı kavram farklı adlarla okunur.",
+     "Tablonun sütun düzeni ve Türkçe alfabetik sıra korunmalıdır."
+    ],
+    "degisebilir": [
+     "Not sütunundaki kısa açıklamalar sadeleştirilebilir ya da genişletilebilir.",
+     "Tablonun kapsadığı kavram listesi derse göre serbestçe genişletilebilir."
+    ]
+   },
+   "kritik_neden": "Sözlük bozulursa aynı kavram farklı adlarla okunur ve dersteki karşılıklar karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Yalnızca adlar verildi; bazı eş adların hangi bağlamda kullanıldığı dosyadan anlaşılmadı."
+   ],
+   "okunan": [
+    "dersler/digital-systems/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/economics/ders.md",
+   "tur": "dosya",
+   "ozet": "070b8b52cd83",
+   "iskelet": "65c41ed15e80",
+   "baslik": "Ekonomi ders kartı",
+   "ne": {
+    "cok_basit": "Bu kart, ekonomi dersinin konularını ve her konunun nasıl işleneceğini anlatır.",
+    "normal": "Ekonomi dersinin genel bilgi kartı. Konular kıtlık ve fırsat maliyetiyle başlar, talep, arz ve dengeye geçer, esneklik ve milli gelirle sürer, işsizlik, enflasyon ve büyümeyle biter."
+   },
+   "nasil": {
+    "normal": "Kaynak önceliği şöyledir: slayt, ders notu, ders kitabı, en son müfredat; çakışırsa soldaki kaynak esas alınır. Her konunun türü belirtilir: kavram, grafik ya da hesap. Bazı konularda kavram ve hesap birlikte gelir; esneklik konusu hesap ve grafiği birlikte kullanır. Sık tuzaklar bölümünde birbirine karışan iki kavram yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türleri tablosunun Konu ve Tip sütunlu biçimi korunmalı; bu bölüm adı geçen bir ayar için tutulmuş.",
+     "Kaynak önceliği sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir karışıklık eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece dersin içeriğine göre yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız ekonomi dersinin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/economics/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/economics/sozluk.md",
+   "tur": "dosya",
+   "ozet": "5f416aaff77a",
+   "iskelet": "0eb15960aab4",
+   "baslik": "Ekonomi sözlüğü",
+   "ne": {
+    "cok_basit": "Ekonomi kelimelerinin Türkçe adlarını İngilizce karşılıklarıyla yan yana verir.",
+    "normal": "Bu sözlük ekonomi kavramlarının Türkçe adlarını İngilizce karşılıklarıyla eşleştirir. Talep, arz ve esneklik gibi kavramlar burada tek bir adla geçer. Notlar sütunu bazı satırlarda kısaltma açılımı verir."
+   },
+   "nasil": {
+    "normal": "Sözlük Türkçe ad, İngilizce karşılık ve not sütunlarından oluşan bir tablodur. Satırlar Türkçe adın alfabetik sırasına göre dizilir ve her kavrama tek bir İngilizce karşılık verilir. Notlar sütunu sembolleri, kısaltmaları ve ilgili adları gösterir. Yeni bir kavram alfabetik yerine eklenir."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe adla İngilizce karşılığın eşleşmesi sabit kalmalıdır, aksi halde aynı kavram farklı adlarla okunur.",
+     "Tablonun sütun düzeni ve Türkçe alfabetik sıra korunmalıdır."
+    ],
+    "degisebilir": [
+     "Not sütunundaki açılım ve açıklamalar yeniden yazılabilir ya da genişletilebilir.",
+     "Tablonun kapsadığı kavram listesi derse göre serbestçe genişletilebilir."
+    ]
+   },
+   "kritik_neden": "Sözlük bozulursa aynı kavram farklı adlarla okunur ve dersteki karşılıklar karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Toplam gelir ile toplam hasılat aynı İngilizce karşılığa bağlanmış, hangisinin asıl ad olduğu dosyada belirtilmemiş."
+   ],
+   "okunan": [
+    "dersler/economics/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/electronic-materials-device-physics/ders.md",
+   "tur": "dosya",
+   "ozet": "692804952338",
+   "iskelet": "fd3045540c6a",
+   "baslik": "Elektronik malzeme ders kartı",
+   "ne": {
+    "cok_basit": "Elektronik malzeme dersinin genel bilgilerini verir, kişisel notları tutmaz.",
+    "normal": "Elektronik malzemeler ve aygıt fiziği dersinin genel bilgi kartıdır. Kaynak sırasını, konuların işleniş sırasını, yazım kurallarını ve sık hataları gösterir. Kişisel ilerleme bu kartta yer almaz."
+   },
+   "nasil": {
+    "normal": "Kart düz yazılmış bir metindir ve her konusu kendi başlığıyla ayrılır. Müfredat çizelgesi konuları işleniş sırasıyla dizer ve kitap bölümlerini gösterir. Müfredat, kitap sırasından farklı olarak BJT'nin FET'ten önce işlendiğini bir notla belirtir. Konu türleri her konunun kavram, grafik ya da hesap olarak ağırlığını söyler."
+   },
+   "sinir": {
+    "sabit": [
+     "Müfredat sırası ile kitap bölümü eşleşmesi sabit kalmalıdır, sıra değişirse okuyan yanlış bölüme yönlenir.",
+     "Enerji seviyesi ve birim gösterimleri kitapla uyumlu kalmalıdır, aksi halde hesaplar birbirine uymaz."
+    ],
+    "degisebilir": [
+     "Sık hatalar ve uygulama örnek havuzuna yeni madde eklemek serbesttir.",
+     "Uygulama örneklerinin sırası yeniden düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Kart yanlış olursa çalışma sırası bozulur ve kitap bölümleri yanlış okunur.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırlar kesik geldi; birim notunun sonu ve sayısal değer notunun devamı tam okunamadı."
+   ],
+   "okunan": [
+    "dersler/electronic-materials-device-physics/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/electronic-materials-device-physics/sozluk.md",
+   "tur": "dosya",
+   "ozet": "5218f74885d8",
+   "iskelet": "13e9d13ffa8c",
+   "baslik": "Elektronik malzeme sözlüğü",
+   "ne": {
+    "cok_basit": "Elektronik dersinin kelimelerini Türkçe ve İngilizce adlarıyla yan yana verir.",
+    "normal": "Bu sözlük elektronik malzeme kavramlarının Türkçe adlarını İngilizce karşılıklarıyla eşleştirir. Yarıiletken, eklem ve taşıyıcı gibi kavramlar tek bir adla tutulur. Notlar sütununda sembol ve kısaltmalar yer alır."
+   },
+   "nasil": {
+    "normal": "Sözlük Türkçe ad, İngilizce karşılık ve not sütunlarından oluşan bir tablodur. Satırlar Türkçe adın alfabetik sırasına göre dizilir ve her kavrama tek bir İngilizce karşılık verilir. Not sütunu sembolleri, kısaltmaları ve bazı kavramların ilgili adlarını gösterir. Yeni bir kavram alfabetik yerine eklenir."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe adla İngilizce karşılığın eşleşmesi sabit kalmalıdır, aksi halde aynı kavram farklı adlarla okunur.",
+     "Sembol notları ilgili kavramla aynı satırda kalmalıdır, ayrı yere taşınırsa kavram ile sembol arasındaki bağ kopar."
+    ],
+    "degisebilir": [
+     "Not sütunundaki kısa açıklamalar sadeleştirilebilir ya da genişletilebilir.",
+     "Tablonun kapsadığı kavram listesi derse göre serbestçe genişletilebilir."
+    ]
+   },
+   "kritik_neden": "Sözlük bozulursa aynı kavram farklı adlarla okunur ve transistör ile eklem gibi kavramlar karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Sembollerin ve kısaltmaların anlamı yalnızca adlarıyla verildi, bazı notların bağlamı dosyadan anlaşılmadı."
+   ],
+   "okunan": [
+    "dersler/electronic-materials-device-physics/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/food-chemistry-1/ders.md",
+   "tur": "dosya",
+   "ozet": "8720d59418b7",
+   "iskelet": "781de7347534",
+   "baslik": "Gıda kimyası ders kartı",
+   "ne": {
+    "cok_basit": "Bu kart, gıda kimyası dersinin konularını ve her konunun türünü anlatır.",
+    "normal": "Gıda kimyası I dersinin genel bilgi kartı. Konular suyla ve su aktivitesiyle başlar, yağlar ve yağ reaksiyonlarıyla sürer, laboratuvar analizleri ve amino asitlerle devam eder, mineralle biter."
+   },
+   "nasil": {
+    "normal": "Kaynak sırası slayt, ders notu, ders kitabı, müfredat; çakışırsa önce gelen esas alınır. Her konunun türü belli: kavram, hesap ya da ezber; çoğu konuda ikisi birlikte gelir. Lab analizlerinde hesap ve ezber birlikte gelir. Sık tuzaklar bölümünde su aktivitesiyle toplam su miktarının karıştırılması gibi yaygın hatalar yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türü tablosunun Konu ve Tip sütunlu biçimi korunmalı; tablo adı geçen bir ayar için tutulmuş.",
+     "Kaynak öncelik sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir karışıklık eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız gıda kimyası dersinin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun hangi ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/food-chemistry-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/food-chemistry-1/sozluk.md",
+   "tur": "dosya",
+   "ozet": "285c16fa6a07",
+   "iskelet": "58c103984b87",
+   "baslik": "Gıda kimyası sözlüğü",
+   "ne": {
+    "cok_basit": "Gıda kimyasındaki kelimelerin Türkçe ve İngilizce karşılıkları.",
+    "normal": "Gıda kimyası I dersindeki yağ, su, protein ve mineral konularının terimlerini Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Tablonun sütunları Türkçe karşılık, İngilizce karşılık ve kısa nottur. Bu sözlükte not sütunu boştur; satırlar yalnızca karşılıkları verir. Dosyanın başındaki not, bu tablonun bir ayar tarafından okunduğunu söylüyor. Satırlar alfabetik ilerler; yeni satır doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Terimler alfabetik sırada durmalı; dosyanın kuralı yeni terimin bu sıraya göre ekleneceğini söylüyor.",
+     "Bir Türkçe terimin tek bir İngilizce karşılığı olmalı; aynı terim başka yerde farklı çevrilmemeli."
+    ],
+    "degisebilir": [
+     "Not sütunu, tablonun biçimi bozulmadan yeni açıklamalarla doldurulabilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/food-chemistry-1/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/instrumental-food-analysis/ders.md",
+   "tur": "dosya",
+   "ozet": "9d54dc27e3cd",
+   "iskelet": "8ea0336142dd",
+   "baslik": "Enstrümental gıda analizi kartı",
+   "ne": {
+    "cok_basit": "Bu kart, gıda analizinde cihazlarla çalışmayı öğreten dersin konularını anlatır.",
+    "normal": "Enstrümental gıda analizi dersinin genel bilgi kartı. Konular kromatografi temelleriyle başlar, cihaz parçalarıyla ve ayırma yöntemleriyle sürer, ışık ölçümleri ve potansiyometriyle biter."
+   },
+   "nasil": {
+    "normal": "Kaynak sırası slayt, ders notu, ders kitabı, müfredat; çakışırsa önce gelen esas alınır. Her konunun türü belirtilir: kavram, hesap ya da ezber; kromatogram okumada hesap ve kavram birlikte gelir. Sık tuzaklar bölümünde alıkonma süresi ile pik alanının karıştırılması gibi hatalar yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türü tablosunun Konu ve Tip sütunlu biçimi korunmalı; tablo adı geçen bir ayar için tutulmuş.",
+     "Kaynak öncelik sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir karışıklık eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece dersin içeriğine göre yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız bu dersin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun hangi ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/instrumental-food-analysis/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/instrumental-food-analysis/sozluk.md",
+   "tur": "dosya",
+   "ozet": "7d89afe3089d",
+   "iskelet": "00eef51601c6",
+   "baslik": "Enstrümental analiz sözlüğü",
+   "ne": {
+    "cok_basit": "Cihazlı gıda analizinde geçen kelimelerin Türkçe ve İngilizce karşılıkları.",
+    "normal": "Enstrümental gıda analizinde kullanılan kromatografi ve cihaz terimlerinin Türkçe ve İngilizce karşılıklarını alfabetik sırada tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Tablonun sütunları Türkçe karşılık, İngilizce karşılık ve kısa nottur. Bu sözlükte not sütunu boştur; satırlar yalnızca karşılıkları verir. Dosyanın başındaki not, tablonun bir ayar tarafından okunduğunu söylüyor. Satırlar alfabetik ilerler; yeni satır doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Terimler alfabetik sırada durmalı; dosyanın kuralı yeni terimin bu sıraya göre ekleneceğini söylüyor.",
+     "Kromatografi ve cihaz terimlerinin karşılıkları ders boyunca aynı kalmalı; karşılık değişirse aynı terim iki farklı adla görünür."
+    ],
+    "degisebilir": [
+     "Not sütunu, tablonun biçimi bozulmadan yeni açıklamalarla doldurulabilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/instrumental-food-analysis/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/linear-algebra/ders.md",
+   "tur": "dosya",
+   "ozet": "a72e2fb60c01",
+   "iskelet": "97c8613f892c",
+   "baslik": "Lineer cebir ders kartı",
+   "ne": {
+    "cok_basit": "Lineer cebir dersinin genel bilgilerini verir, kişisel notları tutmaz.",
+    "normal": "Lineer cebir dersinin genel bilgi kartıdır. Kart, hangi kaynağa öncelik verileceğini, konuların işleniş sırasını, konu türlerini, yazım kurallarını ve sık hataları gösterir. Kişisel ilerleme bu kartta yer almaz."
+   },
+   "nasil": {
+    "normal": "Kart düz yazılmış bir metindir ve her konusu kendi başlığıyla ayrılır. Müfredat çizelgesi konuları işleniş sırasıyla ve kitap bölümleriyle birlikte dizer. Sıra, sistemlerden matrislere ve özdeğerlere doğru ilerler. Konu türleri her konunun hesap, kavram ya da geometri olarak ağırlığını söyler."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu sırası ile kitap bölümü eşleşmesi sabit kalmalıdır, sıra değişirse çalışma yolu bozulur.",
+     "Türkçe terimin İngilizce karşılığının yanında yer alması sabit kalmalıdır, aksi halde terimler tutarsız okunur."
+    ],
+    "degisebilir": [
+     "Sık hatalar ve uygulama örnek havuzuna yeni madde eklemek serbesttir.",
+     "Örneklerin sırası ve anlatım biçimi yeniden düzenlenebilir."
+    ]
+   },
+   "kritik_neden": "Bu kart hatalı olursa çalışma yolu yanlış kurulur ve kitapta yanlış yer aranır.",
+   "terimler": [],
+   "belirsiz": [
+    "Bazı satırlar kesik geldi; uygulama örneklerinin sonu ile bir notasyon satırının tamamı okunamadı."
+   ],
+   "okunan": [
+    "dersler/linear-algebra/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/linear-algebra/sozluk.md",
+   "tur": "dosya",
+   "ozet": "a78a1c5aac92",
+   "iskelet": "dfc1f0d94bc5",
+   "baslik": "Doğrusal cebir sözlüğü",
+   "ne": {
+    "cok_basit": "Doğrusal cebirdeki kelimelerin Türkçe ve İngilizce karşılıklarının listesi.",
+    "normal": "Doğrusal cebir terimlerinin Türkçe ve İngilizce karşılıklarını, kısa notlarıyla birlikte alfabetik sırayla tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Tablonun sütunları Türkçe karşılık, İngilizce karşılık ve kısa nottur. Not sütunu yalnız ayrım gerektiğinde dolar; iç çarpımın yanında nokta çarpım gibi. Dosyanın başındaki not, bu tablonun bir ayar tarafından okunduğunu söylüyor. Satırlar alfabetik ilerler, yeni satır doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Satırların alfabetik sırası korunmalı; dosyanın kendi kuralı yeni terimi bu sıraya göre eklemeyi istiyor.",
+     "Bir Türkçe terimin hep aynı İngilizce karşılığıyla yazılması korunmalı; aynı terim farklı yerlerde farklı çevrilmemeli."
+    ],
+    "degisebilir": [
+     "Terimlerin yanındaki kısa not sütunu, tablonun biçimi bozulmadıkça serbestçe düzeltilebilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/linear-algebra/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/material-energy-balances/ders.md",
+   "tur": "dosya",
+   "ozet": "edc9046ef4cc",
+   "iskelet": "1e90c624f588",
+   "baslik": "Kütle ve enerji denklikleri kartı",
+   "ne": {
+    "cok_basit": "Bu kart, malzeme ve enerji hesaplarının dersini ve konularının türünü anlatır.",
+    "normal": "Kütle ve enerji denklikleri dersinin genel bilgi kartı. Konular birimler, boyutlar ve bileşimle başlar, kütle denkliğiyle sürer, geri döngü ve yanmalı sistemlere geçer, nem ve buhar hesaplarıyla enerji denkliğinde biter."
+   },
+   "nasil": {
+    "normal": "Kaynak sırası slayt, ders notu, ders kitabı, müfredat; çakışırsa önce gelen esas alınır. Her konunun türü hesaptır; nem ve buhar konusunda grafik de eklenir. Sık tuzaklar bölümünde sıcaklık farkında birimlerin karıştırılması ve hesaba başlamadan temel seçilmemesi gibi hatalar yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türü tablosu, bir ayarın okuyacağı biçimde tutulduğu için sütun düzeni korunmalı.",
+     "Kaynak öncelik sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir.",
+     "Kartın başlığı ders adını İngilizce ve Türkçe birlikte taşımalı."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir hata eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece dersin içeriğine göre yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız bu dersin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun hangi ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/material-energy-balances/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/material-energy-balances/sozluk.md",
+   "tur": "dosya",
+   "ozet": "0572c907fb5d",
+   "iskelet": "6ace5107f14d",
+   "baslik": "Kütle ve enerji sözlüğü",
+   "ne": {
+    "cok_basit": "Kütle ve enerji hesaplarındaki kelimelerin Türkçe ve İngilizce karşılıkları.",
+    "normal": "Kütle ve enerji denklikleri dersindeki terimlerin Türkçe ve İngilizce karşılıklarını, kısa notlarıyla birlikte alfabetik sırada tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Tablonun sütunları Türkçe karşılık, İngilizce karşılık ve kısa nottur. Bu sözlükte not sütunu boştur; satırlar yalnızca karşılıkları verir. Dosyanın başındaki not, bu tablonun bir ayar tarafından okunduğunu söylüyor. Satırlar alfabetik ilerler; yeni satır doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Terimler alfabetik sırada durmalı; dosyanın kuralı yeni terimin bu sıraya göre ekleneceğini söylüyor.",
+     "Bir terimin İngilizce karşılığı hep aynı kalmalı, çünkü dosyanın kendi kuralı budur."
+    ],
+    "degisebilir": [
+     "Not sütunu, tablonun biçimi bozulmadan yeni açıklamalarla doldurulabilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/material-energy-balances/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/material-science/ders.md",
+   "tur": "dosya",
+   "ozet": "a959768cb482",
+   "iskelet": "a8601be90b1b",
+   "baslik": "Malzeme bilimi ders kartı",
+   "ne": {
+    "cok_basit": "Bu kart, malzeme bilimi dersinin konularını ve her konunun türünü anlatır.",
+    "normal": "Malzeme bilimi dersinin genel bilgi kartı. Konular malzemenin sınıflandırılmasıyla başlar, atomlar arası bağlar ve kristal yapılarla sürer, mekanik özelliklerle devam eder, gıda ambalajı malzemeleriyle biter."
+   },
+   "nasil": {
+    "normal": "Kaynak sırası slayt, ders notu, ders kitabı, müfredat; çakışırsa önce gelen esas alınır. Konu türleri çoğunlukla kavramdır; kristal yapılarda hesap, mekanik özelliklerde hesap ve grafik gelir. Sık tuzaklar bölümünde birim hücredeki atom sayımı ile elastik ve plastik bölgenin karıştırılması yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türü tablosunun Konu ve Tip sütunlu biçimi korunmalı; bu bölüm bir ayar için tutulmuş.",
+     "Kaynak öncelik sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir.",
+     "Kartın başlığı ders adını İngilizce ve Türkçe birlikte taşımalı."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir karışıklık eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece dersin içeriğine göre yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız malzeme bilimi dersinin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun hangi ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/material-science/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/material-science/sozluk.md",
+   "tur": "dosya",
+   "ozet": "336c82cd64c3",
+   "iskelet": "4f1a1cad8355",
+   "baslik": "Malzeme bilimi sözlüğü",
+   "ne": {
+    "cok_basit": "Malzeme bilimindeki kelimelerin Türkçe ve İngilizce karşılıkları.",
+    "normal": "Malzeme bilimi terimlerinin Türkçe ve İngilizce karşılıklarını, kısa notlarıyla birlikte alfabetik sırada tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Her satırda Türkçe terim ve İngilizce karşılığı bulunur; bu sözlükte not sütunu boştur. Dosyanın başındaki not, tablonun bir ayar tarafından okunduğunu söylüyor. Yeni satır, alfabetik sırada doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Terimler alfabetik sırada durmalı; dosyanın kuralı yeni terimin bu sıraya göre ekleneceğini söylüyor.",
+     "Bir terimin İngilizce karşılığı hep aynı kalmalı; dosyanın kendi kuralı bunu istiyor."
+    ],
+    "degisebilir": [
+     "Not sütunu, tablonun biçimi bozulmadan yeni açıklamalarla doldurulabilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/material-science/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/object-oriented-programming/ders.md",
+   "tur": "dosya",
+   "ozet": "d9a637619104",
+   "iskelet": "d1249186853c",
+   "baslik": "Nesne yönelimli programlama dersi",
+   "ne": {
+    "cok_basit": "Bu kart, nesne yönelimli programlama dersinin konu sırasını anlatır.",
+    "normal": "Nesne yönelimli programlama dersinin genel bilgi kartı. Konular C'den C++'a geçişle başlar, sınıflar, kalıtım ve çok biçimlilikle ilerler, giriş çıkış ve dosyalarla sürer, bir tasarım vaka çalışmasıyla biter."
+   },
+   "nasil": {
+    "normal": "Önce kaynak önceliği gelir: derste yüklenen slayt ve notlar, sonra ders kitabı, en son genel bilgi. Konu planı her konunun kitaptaki karşılığını gösterir ve her konunun bir tipi vardır: kavram ve kod, kod izleme ya da tasarım. Sınavda kod yazma ve kod izleme bulunur; çıktı tahmini sorularında satır satır izleme tablosu kullanılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu sırası ve her konunun kitaptaki bölüm karşılığı birlikte durur; birini değiştirmek öbürüyle uyumu bozar.",
+     "Kaynak öncelik sırası, yani ders materyali, kitap, genel bilgi, kartın nasıl okunacağını belirler ve korunmalı.",
+     "Konu tipleri ile kod ve diyagram biçim kuralları ders boyunca tutarlı kalmalı."
+    ],
+    "degisebilir": [
+     "Örnek havuzundaki uygulama önerileri ders ihtiyacına göre yeniden yazılabilir.",
+     "Sık tuzaklar listesine yeni bir madde eklenebilir ya da mevcut bir açıklama daha net yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notlar ayrı tutulduğu sürece güncellenebilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız bu dersin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Kitap notunun sonu ve örnek havuzunun son satırı kesik geldi; bu kısımların tamamını okuyamadım."
+   ],
+   "okunan": [
+    "dersler/object-oriented-programming/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/object-oriented-programming/sozluk.md",
+   "tur": "dosya",
+   "ozet": "fcbee4d88e39",
+   "iskelet": "c7ec624d79f3",
+   "baslik": "Nesne yönelimli terim sözlüğü",
+   "ne": {
+    "cok_basit": "Nesne yönelimli programlama kelimelerinin Türkçe ve İngilizce karşılıkları.",
+    "normal": "Nesne yönelimli programlama derslerindeki terimleri Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutan bir sözlük. Aynı terim her yerde aynı biçimde çevrilir, yeni terim de doğru yere eklenir."
+   },
+   "nasil": {
+    "normal": "Tablonun sütunları Türkçe karşılık, İngilizce karşılık ve kısa nottur. Not sütunu yalnız ayrım gerektiğinde dolar; kapsülleme yanında veri gizleme gibi. Dosyanın başındaki not, bu tablonun bir ayar tarafından okunduğunu söylüyor. Satırlar alfabetik ilerler; yeni satır doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Satırların alfabetik sırası korunmalı; dosyanın kendi kuralı yeni terimi bu sıraya göre eklemeyi istiyor.",
+     "Her Türkçe terim tek bir İngilizce karşılıkla yazılmalı; aynı terim farklı yerlerde farklı çevrilmemeli."
+    ],
+    "degisebilir": [
+     "Not sütunundaki kısa açıklamalar, tablonun biçimi bozulmadıkça serbestçe düzeltilebilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/object-oriented-programming/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/physical-chemistry/ders.md",
+   "tur": "dosya",
+   "ozet": "09ebe6754196",
+   "iskelet": "c7280ffbc197",
+   "baslik": "Fizikokimya ders kartı",
+   "ne": {
+    "cok_basit": "Bu kart, fizikokimya dersinin konularını ve her konunun türünü anlatır.",
+    "normal": "Fizikokimya dersinin genel bilgi kartı. Konular hal değişkenleri ve gazlarla başlar, yasalar ve enerjiyle sürer, entropi ve dengeyle devam eder, kimyasal kinetikle biter."
+   },
+   "nasil": {
+    "normal": "Kaynak sırası slayt, ders notu, ders kitabı, müfredat; çakışırsa önce gelen esas alınır. Konuların çoğu hesaba dayanır; sıfırıncı ve birinci yasa, ikinci yasa gibi konularda kavram da birlikte gelir. Sık tuzaklar bölümünde işaret kuralı, yoğun ve kapsamlı özellik ayrımı ile Cp ve Cv karışıklığı yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türü tablosunun Konu ve Tip sütunlu biçimi korunmalı; bu bölüm bir ayar için tutulmuş.",
+     "Kaynak öncelik sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir.",
+     "Kartın başlığı ders adını İngilizce ve Türkçe birlikte taşımalı."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir karışıklık eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece dersin içeriğine göre yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız fizikokimya dersinin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun hangi ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/physical-chemistry/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/physical-chemistry/sozluk.md",
+   "tur": "dosya",
+   "ozet": "1f3a1733f31d",
+   "iskelet": "d5fe7c7828a5",
+   "baslik": "Fizikokimya sözlüğü",
+   "ne": {
+    "cok_basit": "Fizikokimya kelimelerinin Türkçe ve İngilizce karşılıkları.",
+    "normal": "Fizikokimya dersindeki terimlerin Türkçe ve İngilizce karşılıklarını alfabetik sırada tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Her satırda Türkçe terim ve İngilizce karşılığı bulunur; bu sözlükte not sütunu boştur. Dosyanın başındaki not, tablonun bir ayar tarafından okunduğunu söylüyor. Yeni satır, alfabetik sırada doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Terimler alfabetik sırada durmalı; dosyanın kuralı yeni terimin bu sıraya göre ekleneceğini söylüyor.",
+     "Bir terimin İngilizce karşılığı hep aynı kalmalı; dosyanın kendi kuralı bunu istiyor."
+    ],
+    "degisebilir": [
+     "Not sütunu, tablonun biçimi bozulmadan yeni açıklamalarla doldurulabilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/physical-chemistry/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/physics-1/ders.md",
+   "tur": "dosya",
+   "ozet": "b75a3d88244e",
+   "iskelet": "3f97a2986231",
+   "baslik": "Fizik I ders kartı",
+   "ne": {
+    "cok_basit": "Bu kart, fizik dersinin konu sırasını ve her konunun türünü anlatır.",
+    "normal": "Fizik I dersinin genel bilgi kartı. Konular hareketle başlar, Newton yasalarıyla, enerji ve momentumla, dönmeyle, yerçekimiyle, salınım ve dalgalarla ilerler; termodinamikle biter."
+   },
+   "nasil": {
+    "normal": "Önce kaynak önceliği gelir: derste yüklenen slayt ve notlar, sonra ders kitabı, en son genel bilgi. Konu planı kitaptaki sıradan farklıdır: akışkanlar, periyodik hareketten sonra işlenir. Her konunun türü de belirtilir: hesap, kavram ya da grafik. Laboratuvarda grafik, doğrusal uydurma ve hata yorumu yapılır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu sırası ve her konunun kitaptaki bölüm karşılığı birlikte durur; birini değiştirmek öbürüyle uyumu bozar.",
+     "Anlatım müfredat sırasıyla yapılmalı; kitap sırası ile müfredat sırası aynı değildir ve bu fark korunmalı.",
+     "Konu tipleri ile birim ve işaret kuralları ders boyunca tutarlı kalmalı."
+    ],
+    "degisebilir": [
+     "Örnek havuzundaki uygulama önerileri ders ihtiyacına göre yeniden yazılabilir.",
+     "Sık tuzaklar listesine yeni bir hata eklenebilir ya da mevcut bir uyarı daha net yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız bu dersin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Kitap notunun ve laboratuvar ayrıntısının sonu kesik geldi; bu kısımların tamamını okuyamadım."
+   ],
+   "okunan": [
+    "dersler/physics-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/physics-1/sozluk.md",
+   "tur": "dosya",
+   "ozet": "025700c19a78",
+   "iskelet": "547a95149a33",
+   "baslik": "Fizik I sözlüğü",
+   "ne": {
+    "cok_basit": "Fizik dersindeki kelimelerin Türkçe ve İngilizce karşılıklarının listesi.",
+    "normal": "Fizik I terimlerinin Türkçe ve İngilizce karşılıklarını, kısa notlarıyla birlikte alfabetik sırada tutan bir sözlük. Her terim hep aynı biçimde çevrilir; yeni terim doğru alfabetik yere eklenir."
+   },
+   "nasil": {
+    "normal": "Tablonun sütunları Türkçe karşılık, İngilizce karşılık ve kısa nottur. Not sütunu yalnız ayrım gerektiğinde dolar; örneğin hızın yanında sürat yazılır. Dosyanın başındaki not, bu tablonun bir ayar tarafından okunduğunu söylüyor. Satırlar alfabetik ilerler; yeni satır doğru harfin yerine girer."
+   },
+   "sinir": {
+    "sabit": [
+     "Türkçe, İngilizce ve not sütunlu tablo biçimi korunmalı; dosyanın başındaki not bu biçime göre okunuyor.",
+     "Satırların alfabetik sırası korunmalı; dosyanın kendi kuralı yeni terimi bu sıraya göre eklemeyi istiyor.",
+     "Fizik terimlerinin karşılıkları ders boyunca aynı İngilizce ifadeyle kullanılmalı; aynı terim farklı çevrilmemeli."
+    ],
+    "degisebilir": [
+     "Not sütunundaki kısa açıklamalar, tablonun biçimi bozulmadıkça serbestçe düzeltilebilir.",
+     "Dosyanın başındaki açıklama cümlesi, tablo biçimi korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu sözlüğe dayanmadığı için bozulursa yalnız bu terim listesi etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Dosyanın başındaki notta anılan ayarın bu tabloyu tam olarak nasıl okuduğunu göremedim."
+   ],
+   "okunan": [
+    "dersler/physics-1/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/reaction-kinetics/ders.md",
+   "tur": "dosya",
+   "ozet": "86ffae41dad2",
+   "iskelet": "c495206d67cf",
+   "baslik": "Reaksiyon kinetiği ders kartı",
+   "ne": {
+    "cok_basit": "Bu kart, tepkimelerin hızını anlatan dersin konularını ve türlerini gösterir.",
+    "normal": "Reaksiyon kinetiği dersinin genel bilgi kartı. Konular tepkimenin hızı ve aktivasyon enerjisiyle başlar, mertebe ve yarı ömürle sürer, enzim ve inhibisyon konularıyla devam eder, fermentasyon kinetiğiyle biter."
+   },
+   "nasil": {
+    "normal": "Kaynak sırası slayt, ders notu, ders kitabı, müfredat; çakışırsa önce gelen esas alınır. Konuların çoğu hesaba dayanır; mertebe, enzim ve inhibisyon konularında grafik de gelir. Sık tuzaklar bölümünde sıcaklığın kelvin cinsinden alınması ve yarı ömrün yalnız birinci mertebede derişimden bağımsız olması gibi noktalar yer alır."
+   },
+   "sinir": {
+    "sabit": [
+     "Konu türü tablosunun Konu ve Tip sütunlu biçimi korunmalı; bu bölüm bir ayar için tutulmuş.",
+     "Kaynak öncelik sırası korunmalı, çünkü çakışan bilgide hangi kaynağın esas alınacağı bu sıraya göre belirlenir.",
+     "Kartın başlığı ders adını İngilizce ve Türkçe birlikte taşımalı."
+    ],
+    "degisebilir": [
+     "Sık tuzaklar bölümüne yeni bir hata eklenebilir ya da mevcut bir madde daha açık yazılabilir.",
+     "Genel bilgi cümlesi, kişisel notların ayrı tutulduğu sürece dersin içeriğine göre yeniden yazılabilir."
+    ]
+   },
+   "kritik_neden": "Başka hiçbir parça bu karta dayanmadığı için bozulursa yalnız reaksiyon kinetiği dersinin okuma düzeni etkilenir.",
+   "terimler": [],
+   "belirsiz": [
+    "Konu türü tablosunun hangi ayarın hangi bölümünü beslediğini göremedim."
+   ],
+   "okunan": [
+    "dersler/reaction-kinetics/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/reaction-kinetics/sozluk.md",
+   "tur": "dosya",
+   "ozet": "ec4ab9567633",
+   "iskelet": "270b01f7a9fb",
+   "baslik": "Tepkime kinetiği sözlüğü",
+   "ne": {
+    "cok_basit": "Tepkime kelimelerinin Türkçe ve İngilizce karşılıklarını gösteren kısa liste.",
+    "normal": "Tepkime hızıyla ilgili kelimelerin Türkçe ve İngilizce karşılıklarını tek tabloda toplar. Bir Türkçe kelime her zaman aynı İngilizce karşılığa bağlanır, böylece ders boyunca karışıklık olmaz. Yeni terimler alfabetik sıraya göre eklenir."
+   },
+   "nasil": {
+    "normal": "Sayfa bir başlık ve tek cümlelik bir kuralla açılır: aynı terim her zaman aynı çevrilir. Altındaki tablo üç sütunludur: Türkçe kelime, İngilizce karşılığı ve Not. Satırlar Türkçe kelimelerin alfabetik sırasıyla dizilidir. Yeni bir terim eklendiğinde aynı sıraya uyularak doğru yere yazılır. Not sütunu şu an boştur."
+   },
+   "sinir": {
+    "sabit": [
+     "Bir Türkçe terim her yerde aynı İngilizce karşılıkla yazılmalı, aksi halde ders boyunca karışıklık oluşur.",
+     "Terimlerin alfabetik sırası korunmalı ve yeni terim kendi harfinin yerine eklenmelidir."
+    ],
+    "degisebilir": [
+     "Tabloya yeni terim satırları eklenebilir.",
+     "Not sütunu boş olduğu için oraya açıklamalar serbestçe yazılabilir."
+    ]
+   },
+   "kritik_neden": "Bu liste başka parçalara dayanmadığı için bozulursa yalnız bu dersin çeviri kayıtları yanlış görünür.",
+   "terimler": [],
+   "belirsiz": [
+    "Üst satırdaki ayarın hangi kodda okunduğu bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "dersler/reaction-kinetics/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/statistics/ders.md",
+   "tur": "dosya",
+   "ozet": "ed26b628e21f",
+   "iskelet": "91e43a5b706e",
+   "baslik": "İstatistik ders kartı",
+   "ne": {
+    "cok_basit": "Dersin genel bilgisi: önce hangi kaynağa bakılacağı ve sık yapılan hatalar.",
+    "normal": "Sayfa dersin genel bilgisini tutar, kişisel ilerleme burada yer almaz. Kaynaklar slayt, ders notu, ders kitabı ve müfredat sırasıyla öncelenir. Konular kavram, grafik ya da hesap türüne göre ayrılır. Sık tuzaklar da sayfanın sonunda toplanır."
+   },
+   "nasil": {
+    "normal": "Sayfa önce kısa bir tanıtımla açılır, ardından kaynak önceliği gelir. Konu tablosunda her konunun yanında çalışma türü yazılıdır. Son bölümde sık yapılan hatalar madde madde sıralanır."
+   },
+   "sinir": {
+    "sabit": [
+     "Kaynak öncelik sırası slayttan müfredata doğru gider; sıra değişirse hangi bilginin esas alınacağı karışır.",
+     "Konu türü adları aynı kalmalı, böylece her konunun ne tür bir çalışma gerektirdiği aynı dille okunur."
+    ],
+    "degisebilir": [
+     "Konu tablosuna yeni konu satırları eklenebilir.",
+     "Sık tuzaklar listesine yeni maddeler eklenebilir."
+    ]
+   },
+   "kritik_neden": "Bu sayfa başka parçalara dayanmadığı için bozulursa yalnız bu dersin kaynak sırası ve konu bilgisi etkilenir.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/statistics/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/statistics/sozluk.md",
+   "tur": "dosya",
+   "ozet": "aae24da4c1f9",
+   "iskelet": "14ac6d32aabf",
+   "baslik": "İstatistik sözlüğü",
+   "ne": {
+    "cok_basit": "İstatistik kelimelerinin Türkçe ve İngilizce karşılıklarını gösteren kısa liste.",
+    "normal": "Sayfa istatistik dersinde geçen terimlerin Türkçe karşılığını İngilizce adıyla eşleştirir. Her terim tek bir çeviriye bağlanır, böylece aynı kelime farklı biçimlerde yazılmaz. Liste alfabetik sıradadır, yeni terimler harfine göre eklenir."
+   },
+   "nasil": {
+    "normal": "Sayfa kısa bir kuralla başlar: bir terim hep aynı çevrilmelidir. Altındaki tablo üç sütunludur: Türkçe terim, İngilizce karşılık ve Not. Satırlar Türkçe adların alfabetik sırasıyla dizilmiştir, bu yüzden bir terimi aramak kolaydır. Yeni terim eklenirken aynı sıra korunur."
+   },
+   "sinir": {
+    "sabit": [
+     "Her terimin tek bir İngilizce karşılığı olmalı, aksi halde aynı kavram iki farklı adla geçer.",
+     "Terimler alfabetik sırada durmalı ve yeni terim kendi harfinin yerine konmalı."
+    ],
+    "degisebilir": [
+     "Tabloya yeni terim satırları eklenebilir ve Not sütunu açıklamalarla doldurulabilir."
+    ]
+   },
+   "kritik_neden": "Bu liste başka parçalara dayanmadığı için bozulursa yalnız bu dersin çeviri kayıtları yanlış görünür.",
+   "terimler": [],
+   "belirsiz": [
+    "Üst satırdaki ayarın hangi kodda okunduğu bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "dersler/statistics/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/technical-english-1/ders.md",
+   "tur": "dosya",
+   "ozet": "cc63393baa1c",
+   "iskelet": "866220b9b0e7",
+   "baslik": "Teknik İngilizce dersi",
+   "ne": {
+    "cok_basit": "Teknik İngilizce dersinin genel bilgisi, kaynak sırası ve konu türleri.",
+    "normal": "Bu sayfa Teknik İngilizce dersinin genel bilgisini tutar. Kaynaklar slayt, ders notu, ders kitabı ve müfredat sırasıyla öncelenir. Konular okuma ya da okuma ve ezber türüne göre ayrılır. Sık tuzak olarak terimi kelime kelime çevirmek gösterilir."
+   },
+   "nasil": {
+    "normal": "Sayfa önce kısa bir tanıtım satırıyla açılır, ardından kaynak önceliği gelir. Konu tablosunda her konunun yanında okuma, ezber ya da ikisi birden yazılıdır. Son bölümde sık yapılan hatalar yer alır; listede terimi kelime kelime çevirmek bulunur."
+   },
+   "sinir": {
+    "sabit": [
+     "Kaynak öncelik sırası slayttan müfredata doğru gider; sıra değişirse hangi bilginin esas alınacağı karışır.",
+     "Konu türü adları aynı kalmalı, böylece her konunun ne tür bir çalışma gerektirdiği aynı dille okunur."
+    ],
+    "degisebilir": [
+     "Konu tablosuna yeni konu satırları eklenebilir.",
+     "Sık tuzaklar listesine yeni maddeler eklenebilir."
+    ]
+   },
+   "kritik_neden": "Bu kart başka parçalara dayanmadığı için bozulursa yalnız bu dersin kaynak ve konu bilgisi yanlış görünür.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [
+    "dersler/technical-english-1/ders.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "dersler/technical-english-1/sozluk.md",
+   "tur": "dosya",
+   "ozet": "864f6b041b7e",
+   "iskelet": "6d5ac0cc5403",
+   "baslik": "Teknik İngilizce sözlüğü",
+   "ne": {
+    "cok_basit": "Gıda işi terimlerinin Türkçe ve İngilizce adlarını yan yana gösteren liste.",
+    "normal": "Sayfa Teknik İngilizce dersindeki terimlerin Türkçe karşılığını İngilizce adıyla eşleştirir. Her terim tek bir İngilizce karşılığa bağlanır, böylece aynı kavram farklı adlarla geçmez. Liste alfabetik sıradadır ve yeni terimler harfine göre eklenir."
+   },
+   "nasil": {
+    "normal": "Sayfa, bir terimin her yerde aynı karşılığıyla yazılacağını söyleyen kısa bir kuralla açılır. Ardından üç sütunlu tablo gelir: Türkçe terim, İngilizce karşılık ve açıklama için boş bir Not sütunu. Satırlar Türkçe terimlerin alfabetik sırasıyla dizilmiştir, bu yüzden bir terimi bulmak kolaydır."
+   },
+   "sinir": {
+    "sabit": [
+     "Her terimin tek bir İngilizce karşılığı olmalı, aksi halde aynı kavram iki farklı adla karşımıza çıkar.",
+     "Terimler alfabetik sırada durmalı ve yeni terim kendi harfinin yerine konmalı."
+    ],
+    "degisebilir": [
+     "Tabloya yeni terim satırları eklenebilir ve Not sütunu açıklamalarla doldurulabilir."
+    ]
+   },
+   "kritik_neden": "Bu sözlük başka parçalara dayanmadığı için bozulursa yalnız bu dersin terim çevirileri yanlış görünür.",
+   "terimler": [],
+   "belirsiz": [
+    "Üst satırdaki ayarın hangi kodda okunduğu bu kayıtta doğrulanmadı."
+   ],
+   "okunan": [
+    "dersler/technical-english-1/sozluk.md"
+   ],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler",
+   "tur": "birim",
+   "ozet": "b83cb9df518b",
+   "iskelet": "9fca5165fae8",
+   "baslik": "Ders bilgi kartları",
+   "ne": {
+    "cok_basit": "Bu bölüm, her dersin genel bilgisini ve terim listesini ayrı ayrı saklar; yeni ders için de hazır kalıplar sunar.",
+    "basit": "Her ders için iki şey tutulur: dersin genel bilgi kartı ve terimlerin Türkçe ile İngilizce karşılıklarını eşleştiren sözlük. Yeni ders açmak için hazır kalıplar da burada durur.",
+    "normal": "Bu bölüm derslerin genel bilgisini tutar. Her dersin kendi köşesinde iki sayfa bulunur: kaynakların hangi sırayla okunacağını, konuların nasıl işleneceğini, yazım kurallarını ve sık yapılan hataları gösteren genel bilgi kartı ile terimlerin hep aynı Türkçe adla anılmasını sağlayan sözlük. Kişisel ilerleme bu sayfalara yazılmaz. Yeni ders için hazır kalıplar da vardır.",
+    "gelismis": "Bu bölüm her dersi kendi klasöründe tutar. Bir dersin klasöründeki ders sayfası genel bilgi kartıdır: kaynak önceliğini, konu sırasını, yazım kurallarını ve sık hataları verir. Sözlük sayfası ise terimleri alfabetik sırada Türkçe ve İngilizce karşılığıyla eşleştirir; bir terim hep aynı adla geçer. Kişisel ilerleme bu sayfalara yazılmaz, kişiye özel bilgi depoda tutulmaz. Yeni ders için kalıp klasörü hazırdır; kalıpların kendisi bir ders değildir.",
+    "detayli": "Bu bölüm derslerin ortak ve herkese açık bilgisinin yeridir. Her ders kendi klasöründe iki sayfa taşır. Ders sayfası genel bilgi kartıdır: kaynakların slayt, ders notu, ders kitabı ve müfredat sırasıyla önceliği, konuların kavram, grafik, hesap ya da okuma türüne göre ayrılması, gösterim kuralları ve öğrencilerin sık yaptığı hatalar burada toplanır. Sözlük sayfası terimleri alfabetik sırada Türkçe ve İngilizce karşılığıyla, gerekiyorsa kısa notlarla tutar; bir Türkçe terim hep aynı İngilizce karşılığa bağlanır. Kişisel ilerleme ve notlar bu sayfalara yazılmaz. Yeni ders açmak için kalıp klasöründe hazır bir genel kart ve boş satırlı bir sözlük kalıbı durur."
+   },
+   "mantik": {
+    "cok_basit": "Her dersin bilgisi kendi köşesinde durunca bir dersi değiştirmek ötekileri bozmaz.",
+    "basit": "Derslerin bilgisi kurallardan ayrı tutulur. Böylece ders eklemek ya da değiştirmek kuralları bozmaz, terimler de her yerde aynı adla geçer.",
+    "normal": "Dersin içeriği kurallardan ayrı bir yerde durur, çünkü dersler sık eklenir ve değişir, kurallar ise sabit kalmalıdır. Terim listesi bir kavramın ders boyunca farklı adlarla anılmasını önler. Kişisel ilerlemenin bu sayfalara yazılmaması, depoyu herkese açık tutmayı mümkün kılar. Hazır kalıplar her dersin aynı iskeletle başlamasını sağlar.",
+    "gelismis": "Ders bilgisini kurallardan ayırmak, dersin eklenmesini ya da değişmesini kural dosyalarına dokunmadan mümkün kılar. Her dersin kendi klasöründe durması bir dersin değişikliğinin ötekini etkilememesini sağlar. Sözlükte terim başına tek karşılık tutulması, dersin farklı sohbetlerinde çevirinin tutarlı kalmasını sağlar. Kişiye özel ilerleme bilerek bu sayfalara yazılmaz.",
+    "detayli": "Dersler kural değil, veridir: sık eklenir, sık değişir. Kural dosyalarına karıştırılsaydı her yeni ders kuralları da etkilerdi. Bu yüzden her ders kendi klasöründe, iki sayfayla durur ve bir dersin değişikliği ötekine dokunmaz. Sözlüğün terim başına tek karşılık tutması bilinçli bir seçimdir: farklı sohbetler aynı kavramı farklı adlarla yazmaz. Kişisel ilerlemenin bu sayfalara yazılmaması da bilinçlidir; depo herkese açıktır ve kişiye özel bilgi orada tutulmaz. Kalıp klasörü her yeni dersin aynı iskeletle başlamasını sağlar, ancak kendisi bir ders sayılmaz."
+   },
+   "nasil": {
+    "basit": "Bir ders anlatılırken önce dersin genel bilgi kartı okunur, sonra sözlükten terimlerin karşılığına bakılır. Yeni ders açılacaksa hazır kalıplar kopyalanıp doldurulur.",
+    "normal": "Bir ders anlatılacağında dersin kartı okunur: kaynaklar öncelik sırasına konur, konular kendi sırasıyla işlenir, sık hatalar bilinir. Terim gerektiğinde sözlüğe bakılır ve hep aynı Türkçe ad kullanılır. Yeni terim çıkarsa doğru alfabetik yere eklenir. Yeni ders açılırken hazır kalıplar doldurulur, böylece her dersin iskeleti aynı olur.",
+    "gelismis": "Bir sohbet bir dersi anlatacağı zaman o dersin klasöründeki ders sayfası okunur; kaynakların slayt, ders notu, ders kitabı ve müfredat sırasıyla öncelendiği, konuların türe göre ayrıldığı ve sık tuzakların sayfa sonunda toplandığı bu kartta görülür. Terim çevirisi gerektiğinde sözlük sayfası açılır; terim tek bir karşılığa bağlıdır ve yeni terim harfine göre eklenir. Yeni ders açılırken kalıp klasöründeki genel kart ve sözlük kalıbı kopyalanır, başlıklar ve tablo hazırdır, satırlar boştur.",
+    "detayli": "İşleyiş şöyledir. Ders anlatan sohbet, dersin klasöründeki genel bilgi kartını okur. Kart kaynakların hangi sırayla öncelendiğini, konuların hangi türe göre ayrıldığını, gösterim kurallarını ve sık yapılan hataları verir; kişisel ilerleme kartta yer almaz. Anlatım sırasında bir terimin çevirisi gerektiğinde sözlük sayfası açılır; sözlük terimleri alfabetik sırada tutar, her terim tek bir karşılığa bağlıdır, bu yüzden aynı kavram dersin sonuna kadar aynı adla anılır. Dersin konusu sözlükte olmayan bir terim çıkarırsa terim doğru alfabetik yere eklenir. Konu sırası derse göre değişir: bir derste tepkime hızıyla başlayıp fermentasyon kinetiğiyle biter, bir başkasında malzemenin sınıflandırılmasıyla başlayıp ambalaj malzemeleriyle biter. Yeni ders açmak isteyen kişi kalıp klasöründeki genel kart ve sözlük kalıbını kopyalar; kart kalıbında kaynak önceliği, konu türleri, gösterim kuralları, sık hatalar ve örnek havuzu ayrı bölümlerdir, sözlük kalıbında başlık ve sütunlar hazır, satırlar boştur."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin kaynakları, konu sırası ve sık yapılan hatalar.",
+     "Dersin terimleri ile Türkçe ve İngilizce karşılıkları."
+    ],
+    "ciktilar": [
+     "Her ders için genel bilgi kartı.",
+     "Her ders için alfabetik terim sözlüğü."
+    ],
+    "degismezler": [
+     "Bir terim her zaman aynı karşılığa bağlanır.",
+     "Sözlükte terimler alfabetik sırada durur.",
+     "Kişisel ilerleme ve notlar ders sayfalarına yazılmaz."
+    ],
+    "kenar": [
+     "Kalıp klasörü bir ders değildir; yalnız yeni ders için iskelet verir.",
+     "Her ders aynı iki sayfadan oluşur ama konu sırası dersten derse değişir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Her dersin klasöründe genel kart ve sözlük bulunması, ders anlatan sohbetlerin dayandığı düzendir.",
+     "Bir terimin tek karşılığa bağlı olması, dersin sonuna kadar tutarlılığı sağlayan sözdür.",
+     "Kişisel bilgi bu bölüme girmez, depo herkese açıktır."
+    ],
+    "degisebilir": [
+     "Bir dersin konu listesi ve örnekleri, öteki dersleri etkilemeden serbestçe güncellenebilir.",
+     "Yeni dersler ve yeni terimler eklenebilir; var olanların düzeni bundan bozulmaz."
+    ]
+   },
+   "kurulus": [
+    {
+     "baslik": "Kalıp klasörünü hazırla",
+     "metin": "Önce kimseye dayanmayan kalıpları yaz: genel kart kalıbı ve başlık ile sütunları hazır, satırları boş sözlük kalıbı. Her yeni ders bunlardan başlar.",
+     "parcalar": [
+      "k:dersler/_sablon"
+     ]
+    },
+    {
+     "baslik": "İlk dersi aç",
+     "metin": "Kalıbı kopyalayıp bir dersin klasörünü aç. Genel kartta kaynak önceliğini, konu sırasını, yazım kurallarını ve sık hataları doldur.",
+     "parcalar": [
+      "k:dersler/economics",
+      "k:dersler/linear-algebra"
+     ]
+    },
+    {
+     "baslik": "Sözlüğü doldur",
+     "metin": "Dersin terimlerini alfabetik sırayla, Türkçe ve İngilizce karşılıklarıyla yaz. Her terim tek bir karşılığa bağlanır.",
+     "parcalar": [
+      "dersler/statistics/sozluk.md",
+      "dersler/physical-chemistry/sozluk.md"
+     ]
+    },
+    {
+     "baslik": "Diğer dersleri ekle",
+     "metin": "Her yeni ders aynı iki sayfayla kendi klasöründe kurulur. Bir dersin eklenmesi ötekilere dokunmaz.",
+     "parcalar": [
+      "k:dersler/physics-1",
+      "k:dersler/digital-systems",
+      "k:dersler/food-chemistry-1"
+     ]
+    }
+   ],
+   "sorular": [
+    {
+     "soru": "Bir terimin çevirisini bir derste değiştirsem ne olur?",
+     "yanit": "O ders içinde tutarlılık bozulabilir. Terim tek karşılığa bağlı olmalıdır; değişiklik yapılırsa sözlükte tek yerde yapılır, derse özgü kalır."
+    },
+    {
+     "soru": "Kişisel ilerleme notunu ders kartına yazmak uygun mu?",
+     "yanit": "Hayır. Depo herkese açıktır ve ders sayfaları ortak bilgidir. Kişiye özel bilgi kullanıcının kendi yerel dosyasında kalır."
+    },
+    {
+     "soru": "Yeni ders eklemek başka derslere dokunmayı gerektirir mi?",
+     "yanit": "Hayır. Her ders kendi klasöründe iki sayfayla durur. Kalıp klasörü yeni dersin iskeletini verir, diğer dersler aynı kalır."
+    }
+   ],
+   "kritik_neden": "Bu bölüm bozulursa dersler tutarsız terimlerle ve eksik kaynak önceliğiyle anlatılır, aynı kavram farklı sohbetlerde farklı adlarla geçer.",
+   "terimler": [],
+   "belirsiz": [
+    "Kalıp klasörünün hangi araç ya da sohbet tarafından kopyalandığı anlatımlardan görülmüyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/_sablon",
+   "tur": "birim",
+   "ozet": "80e673e88f6a",
+   "iskelet": "dc9f37603fd9",
+   "baslik": "Ders kalıbı ve sözlük",
+   "ne": {
+    "cok_basit": "Yeni bir ders açılırken doldurulan hazır kalıpları tutar; kalıpların kendisi bir ders değildir, doldurulunca ders olurlar.",
+    "basit": "Bu klasör, yeni bir ders açıldığında doldurulacak hazır iki sayfa tutar: genel ders kartı ve sözlük. Sayfalar boş bırakılmıştır; her ders kendi bilgisini bunlara yazar.",
+    "normal": "Bu klasör yeni bir ders açıldığında kullanılan iki hazır kalıp tutar. Genel ders kartında kaynak önceliği, konu türleri, gösterim kuralları, sık hatalar ve örnek havuzu ayrı bölümler olarak durur. Sözlük kalıbında başlık ve üç sütunlu tablo önceden yazılıdır, satırlar boştur. İkisi birlikte yeni dersin ilk iskeletini oluşturur; kalıpların kendisi bir ders değildir.",
+    "gelismis": "Yeni bir ders açıldığında iki kalıp birlikte ele alınır: genel ders kartı ve sözlük. Genel kart, kaynak önceliği, konu türleri, gösterim kuralları, sık hatalar ve örnek havuzu gibi bölümleri önceden ayırır. Sözlük ise terimler için hazır bir başlık ve üç sütunlu tablo sunar. Bu iki kalıp, dersin içeriğini doldurmadan önce düzenini belirler; kalıpların kendisi bir ders değildir, doldurulunca ders olurlar.",
+    "detayli": "Yeni bir ders açıldığında iki hazır kalıp birlikte ele alınır: genel ders kartı ve sözlük. Genel ders kartı, dersin ana bilgisinin yazılacağı bölümleri önceden ayırır. Kaynak önceliği, hangi kaynağın önce geleceğini tutar. Konu türleri ve gösterim kuralları, metinlerin hangi biçimde yazılacağını belirler. Sık hatalar ve örnek havuzu ise dersin kendi tekrarlayan yanlışlarını ve örneklerini toplamak için boş durur. Sözlük kalıbı başlığı ve üç sütunlu tabloyu önceden hazırlar; satırlar boştur. Kalıpların kendisi bir ders değildir, doldurulunca ders olurlar."
+   },
+   "mantik": {
+    "cok_basit": "Bu kalıp, her yeni dersin aynı düzenle başlamasını sağlar; böylece dersler birbirine benzer ve terimler hep aynı çevrilir.",
+    "basit": "Yeni bir ders her seferinde aynı iskeletle açılır, böylece bölümler yerinde durur ve kaynak önceliği ile gösterim kuralları her derste aynı yerde bulunur. Sözlük kuralı terimlerin tutarlı kalmasını sağlar.",
+    "normal": "Bu kalıplar, yeni bir ders açılırken boş bir başlangıç noktası verir ve her dersin aynı iskeletle kurulmasını sağlar. Genel kart bölümleri aynı sırayla durduğu için derslerin okunuşu tanıdık kalır. Sözlük kuralı, aynı terimin farklı derslerde farklı karşılık almasını önler.",
+    "gelismis": "Yeni dersler her seferinde sıfırdan kurulursa bölüm düzeni ve kaynak önceliği derslerden derslere değişir; bu da öğrenenin dersleri karşılaştırmasını zorlaştırır. Kalıp, bu düzeni baştan sabitler. Sözlük kuralı ise aynı terimin farklı derslerde farklı karşılıklarla yazılmasını önler; öğrenen bir kavramı bir dersten diğerine taşırken aynı adla karşılaşır.",
+    "detayli": "Kalıp, yeni bir ders açılırken her dersin aynı iskelet üzerine kurulmasını sağlar. Böylece genel ders kartı, kaynak önceliği, konu türleri, gösterim kuralları, sık hatalar ve örnek havuzu gibi bölümler her derste aynı yerde ve aynı sırayla bulunur; okuyan biri bir dersten diğerine geçtiğinde yerini kaybetmez. Sözlük kalıbı ise terimlerin tutarlılığını sabitler: başlık ve üç sütunlu tablo hazır olduğu için her yeni terim aynı yapıya girer, alfabetik ekleme kuralı da terimlerin dağınık kalmasını önler. İçerik her derste ayrı yazılır, yapı ise ortak kalır; böylece iskelet bir kez kurulur ve dersler ona göre doldurulur."
+   },
+   "nasil": {
+    "basit": "Bir ders açılırken kalıplar ele alınır ve her bölüm o dersin bilgisiyle doldurulur. Sözlüğe her terim bir satır olarak alfabetik sırayla eklenir ve hep aynı biçimde çevrilir.",
+    "normal": "Yeni bir ders açıldığında önce genel ders kartı ele alınır. Bölümler o dersin kaynaklarına, konu türlerine ve gösterim kurallarına göre doldurulur; sık hatalar ve örnek havuzu da dersin kendi bilgisiyle dolar. Sonra sözlük kalıbına terimler satır satır eklenir: her terim alfabetik sıraya yerleşir ve her yerde aynı biçimde çevrilir.",
+    "gelismis": "Bir ders açıldığında iki kalıp birlikte kullanılır: genel ders kartı ve sözlük. Önce genel ders kartı ele alınır. Kaynak önceliği bölümü, dersin hangi kaynağının önce geleceğini yazdığı yerdir. Konu türleri ve gösterim kuralları bölümleri, metinlerin tek bir biçimde yazılmasını sağlar. Sık hatalar ve örnek havuzu bölümleri ise dersin kendi bilgisiyle doldurulur. Sözlük adımında başlık ve üç sütunlu tablo hazır gelir; her terim tek satır olarak yazılır, üstteki kural gereği alfabetik eklenir ve hep aynı biçimde çevrilir.",
+    "detayli": "Bir ders açıldığında iki kalıp belirli bir sırayla ele alınır. Birinci adımda genel ders kartı açılır ve bölümler dersin bilgisiyle sırayla doldurulur. Kaynak önceliği bölümü, dersin hangi kaynağa önce dayanacağını belirler. Konu türleri bölümü, her konunun hangi türe girdiğini ayırır. Gösterim kuralları bölümü, metinlerin nasıl biçimlendirileceğini sabitler. Sık hatalar bölümü dersin tekrar eden yanlışlarını toplamak için, örnek havuzu ise dersin örneklerini bir arada tutmak için kullanılır. İkinci adımda sözlük açılır: başlık ve üç sütunlu tablo hazır gelir, satırlar boştur. Her terim tek satırda ve alfabetik sıraya göre eklenir; üstteki kural gereği terim her seferinde aynı biçimde çevrilir. Bu iki adım tamamlanınca kalıplar bir derse dönüşmüş olur."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin kendi bilgisi, kalıp bölümlerine yazılacak içerik olarak girer."
+    ],
+    "ciktilar": [
+     "Bölümleri doldurulmuş bir genel ders kartı ve terimleri tutarlı bir sözlük."
+    ],
+    "degismezler": [
+     "Kalıp bölüm adları, bölüm sırası ve sözlük tablosunun biçimi değişmez."
+    ],
+    "kenar": [
+     "Bölüm boş kalırsa kart eksik görünür; kalıbın kendisi bir ders değildir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Genel ders kartındaki bölüm adları ve sırası sabit kalmalı; yeni dersler bu sırayla doldurulur.",
+     "Sözlük sayfasındaki başlık ve üç sütunlu tablo biçimi sabit kalmalı.",
+     "Sözlüğün üstündeki çeviri ve alfabetik ekleme kuralı değişirse, derslerdeki terimler tutarsız kalır."
+    ],
+    "degisebilir": [
+     "Bölümlerin içindeki örnekler, sık hatalar ve kaynak maddeleri her ders için serbestçe değiştirilebilir.",
+     "Sözlükteki satırlar her dersin kendi terimleriyle doldurulabilir ve satır sayısı derse göre değişebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Yeni bir ders açılırken neyin sabit kalması gerekir?",
+     "yanit": "Genel ders kartındaki bölüm adları ve sırası ile sözlük tablosunun biçimi değişmemelidir; yeni dersler bu iskeleti bekler."
+    },
+    {
+     "soru": "Sözlükteki çeviri kuralı gevşetilirse ne olur?",
+     "yanit": "Aynı terim farklı derslerde farklı karşılıklarla yazılır; öğrenen iki dersi karşılaştırdığında kafası karışır."
+    }
+   ],
+   "kritik_neden": "Kalıp bozulursa yeni dersler farklı iskeletlerle açılır ve aynı terim derslerde tutarsız çevrilir.",
+   "terimler": [],
+   "belirsiz": [
+    "Kalıp dosyalarının içeriği okunmadı; anlatım kalıpların adına ve komşu parça metinlerine dayanıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/circuit-analysis-1",
+   "tur": "birim",
+   "ozet": "a261ec27d71e",
+   "iskelet": "940452057bef",
+   "baslik": "Devre analizi dersi",
+   "ne": {
+    "cok_basit": "Devre analizi dersinin genel bilgilerini tek yerde toplar ve dersin kelimelerini tutarlı çeviren bir sözlük tutar.",
+    "basit": "Bu parça, devre analizi dersinin genel bilgi kartı ile sözlüğünü bir arada tutar. Kart kaynak sırasını, konu sırasını ve sık hataları gösterir; sözlük kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir.",
+    "normal": "Devre analizi dersinin tüm genel bilgileri tek bir kartta toplanır. Kart; kaynakların hangi sırayla okunacağını, konuların hangi sırayla işleneceğini, yazım kurallarını ve öğrencilerin sık yaptığı hataları gösterir. Sözlük, her kavramın Türkçe adını ve İngilizce karşılığını eşleştirir; bir kavram hep aynı adla anılır. Kişisel notlar bu kartta yer almaz.",
+    "gelismis": "Devre analizi dersinin ortak bilgisi tek bir genel kartta toplanır; kart kaynak sırasını, konu sırasını, yazım kurallarını ve sık hataları gösterir. Bunun yanında dersin sözlüğü, kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir ve her kavramı hep aynı adla anar. Kişisel notlar bu iki sayfanın dışında tutulur; yalnız ortak bilgi burada durur.",
+    "detayli": "Devre analizi dersinin tüm ortak bilgisi, yani hangi kaynakların hangi sırayla okunacağı, konuların hangi düzende işleneceği, yazım kuralları ve öğrencilerin sık yaptığı hatalar, tek bir genel kartta toplanır. Kart, bu bilgileri ders boyunca başvurulacak bir referans olarak tutar. Yanındaki sözlük, devre kavramlarının Türkçe adlarını İngilizce karşılıklarıyla eşleştirir; bir kavram her yerde aynı Türkçe adla anılır ve yeni kavramlar alfabetik sırayla eklenir. Bazı satırlar büyüklük ve kısaltma notu taşıyarak kavramın hangi biçimde geçtiğini de gösterir. Kişisel notlar bu iki sayfaya girmez; böylece ortak bilgi ile kişisel düşünce birbirine karışmaz."
+   },
+   "mantik": {
+    "cok_basit": "Derse ait ortak bilgiler tek yerde durunca herkes aynı yere bakar ve kavramların adı hep aynı kalarak karışmaz.",
+    "basit": "Ortak bilgiyi tek bir kartta toplamak, dağınık notların ders bilgisiyle karışmasını önler. Sözlük ise aynı kavramın farklı adlarla anılmasını engeller.",
+    "normal": "Genel kart, dersin kaynak sırasını, konu sırasını, yazım kurallarını ve sık hataları tek yerde tuttuğu için bir ders hakkındaki bilgi dağılmaz. Kişisel notların bu kartın dışında bırakılması, ortak bilginin karışmadan kalmasını sağlar. Sözlük, aynı kavramın farklı metinlerde farklı adlarla anılmasını önler.",
+    "gelismis": "Bir dersin bilgisi kaynak, konu, yazım ve hata olarak dört yere dağılsaydı, her biri ayrı aranmak zorunda kalırdı; genel kart bunları aynı sayfada toplar. Sözlük, kavramların Türkçe adlarının sabit kalmasını sağlar; böylece iki metinde aynı kavramın iki adla anılıp okuyanı şaşırtması önlenir. Kişisel notları dışarıda tutmak, ortak kartın ortak kalmasına yardım eder.",
+    "detayli": "Genel kartın tek yerde durması, ders bilgisi dağılınca hangisinin güncel olduğunun ayırt edilememesini önler. Kaynak sırası ve konu sırası birlikte okunduğunda hangi kaynağın hangi konuda kullanılacağı görülür; yazım kuralları metinlerin tek biçimde kalmasını sağlar; sık hatalar bölümü aynı yanlışın tekrar yazılmasını önler. Sözlüğün ayrı tutulması, kavram adlarının kart ve metinler arasında aynı kalmasını sağlar: aynı kavram iki farklı Türkçe adla anılırsa okuyan iki ayrı kavram sanabilir. Kişisel notların dışarıda tutulması, ortak bilginin ders için tek kaynak kalmasını sağlar."
+   },
+   "nasil": {
+    "basit": "Dersin kaynak sırası ve konu sırası kartta yazılıdır. Kavramlar sözlükte tek bir Türkçe adla tutulur ve yeni kavramlar alfabetik sırayla eklenir.",
+    "normal": "Ders bilgisi genel kartta toplanır: kaynak sırası dersin hangi kaynakla başlayacağını, konu sırası kavramların hangi düzende ele alınacağını gösterir. Yazım kuralları metinlerin biçimini, sık hatalar ise tekrarlanmaması gereken yanlışları verir. Yeni bir kavram sözlüğe eklenirken Türkçe adı ve İngilizce karşılığı yan yana yazılır ve kavram alfabetik sıraya girer. Bazı satırlar büyüklük ya da kısaltma notu taşır.",
+    "gelismis": "Dersin genel kartı önce okunur; burada kaynak sırası, konu sırası, yazım kuralları ve sık hatalar bir arada durur. Kaynak sırası hangi kaynağın önce kullanılacağını söyler; konu sırası ise kavramların hangi düzende ele alındığını gösterir. Yazım kuralları metinlerin biçimini, sık hatalar ise tekrarlanmaması gereken yanlışları sabitler. Sözlük ayrı bir sayfa olarak çalışır: her satırda bir kavramın Türkçe adı ve İngilizce karşılığı yan yana durur. Yeni kavram eklenirken alfabetik sıraya girer ve aynı kavram her yerde aynı Türkçe adla anılır. Bazı satırlar büyüklük ve kısaltma notu taşır; bu notlar kavramın hangi ölçekte ya da hangi kısaltmayla geçtiğini belirler.",
+    "detayli": "Dersin ortak bilgisi genel kartta toplanır ve kart iki yönüyle okunur: içerik ve kurallar. Kaynak sırası, dersin hangi kaynakla başlayıp hangisiyle devam edeceğini gösterir. Konu sırası, kavramların işleniş düzenini verir; bu sıra kaynak sırasıyla birlikte okunduğunda ders hangi yolla ilerleyeceğini söyler. Yazım kuralları, ders metinlerinin nasıl biçimleneceğini belirler. Sık hatalar bölümü öğrencilerin tekrar eden yanlışlarını toplar, böylece aynı yanlış yeniden yazılmaz. Kişisel notlar kartın dışında tutulur; kartta yalnız ortak bilgi bulunur. Sözlük ise kartın yanında ayrı durur. Her satır bir kavramdır: Türkçe ad, İngilizce karşılık ve varsa büyüklük ya da kısaltma notu. Yeni kavramlar alfabetik sırayla eklenir; aynı kavram hep aynı Türkçe adla anıldığı için kart ile sözlük arasında adların karışması önlenir. Ders ilerledikçe yeni kavramlar sözlüğe girer."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin kaynak sırası, konu sırası ve yazım kuralları genel karta girer."
+    ],
+    "ciktilar": [
+     "Ortak bilgiyi tek yerde tutan bir genel kart ve tutarlı bir kavram sözlüğü."
+    ],
+    "degismezler": [
+     "Sözlüğün Türkçe ad ve İngilizce karşılık düzeni ile yeni kavramların alfabetik eklenmesi."
+    ],
+    "kenar": [
+     "Bir kavramın büyüklük ya da kısaltma notu yoksa satır yalnızca Türkçe ad ve İngilizce karşılıkla yetinir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kartın bölüm adları ve sırası ile kaynak, konu, yazım ve hata bölümlerinin varlığı sabit kalmalı.",
+     "Sözlüğün Türkçe ad, İngilizce karşılık ve alfabetik ekleme biçimi sabit kalmalı.",
+     "Bir kavramın Türkçe adı değiştirilirse, aynı kavramı anan diğer metinler ayrı bir adla kalır ve okuyan karışır."
+    ],
+    "degisebilir": [
+     "Sık hata maddeleri, ders ilerledikçe serbestçe eklenebilir ya da düzeltilebilir.",
+     "Sözlüğe yeni kavram satırları eklenebilir; her satır alfabetik sıraya yerleşir ve satır sayısı serbesttir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bu parçada neyin sabit kalması gerekir?",
+     "yanit": "Kartın bölüm adları ve sırası ile sözlüğün Türkçe ad ve İngilizce karşılık düzeni sabit kalmalıdır; aksi hâlde okuyan kavramları ve bölümleri karıştırır."
+    },
+    {
+     "soru": "Bir kavramın Türkçe adı değiştirilse ne olur?",
+     "yanit": "Aynı kavram eski ve yeni adlarla anılır; okuyan bunları iki ayrı kavram sanabilir."
+    }
+   ],
+   "kritik_neden": "Bu parça bozulursa dersin ortak bilgisi dağılır ve aynı kavram farklı adlarla anılarak öğrenen karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kart ve sözlük dosyalarının gerçek satırları okunmadı; anlatım yalnız bölüm adlarına ve komşu metinlere dayanıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/digital-systems",
+   "tur": "birim",
+   "ozet": "b5fc2531fd2e",
+   "iskelet": "04bf937471d3",
+   "baslik": "Sayısal sistemler dersi",
+   "ne": {
+    "cok_basit": "Sayısal sistemler dersinin genel bilgilerini tek yerde toplar ve dersin kelimelerini tutarlı çeviren bir sözlük tutar.",
+    "basit": "Bu parça, sayısal sistemler dersinin genel bilgi kartı ile sözlüğünü bir arada tutar. Kart kaynak sırasını, konu sırasını ve sık hataları gösterir; sözlük kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir.",
+    "normal": "Sayısal sistemler dersinin genel bilgileri tek bir kartta toplanır. Kart; kaynak sırasını, konu sırasını, yazım kurallarını ve sık yapılan hataları gösterir. Sözlük her kavrama tek bir Türkçe ad verir ve İngilizce karşılığını yanına yazar. Notlar sütununda kısaltmalar ve eş anlamlı adlar da yer alır.",
+    "gelismis": "Sayısal sistemler dersinin ortak bilgisi tek bir genel kartta toplanır; kart kaynak sırasını, konu sırasını, yazım kurallarını ve sık hataları gösterir. Yanındaki sözlük her kavrama tek bir Türkçe ad verir, İngilizce karşılığını yanına yazar ve notlar sütununda kısaltmaları ile eş anlamlı adları tutar. Kişisel ilerleme bu iki sayfanın dışında kalır; burada yalnız ortak bilgi durur.",
+    "detayli": "Sayısal sistemler dersinin tüm ortak bilgisi tek bir genel kartta toplanır: hangi kaynakların hangi sırayla okunacağı, konuların hangi düzende işleneceği, yazım kuralları ve sık yapılan hatalar. Kart bu bilgileri ders boyunca dönülecek bir referans olarak tutar. Yanındaki sözlük, derste geçen kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir; her kavrama tek bir Türkçe ad verilir ve yeni kavramlar alfabetik sırayla eklenir. Notlar sütununda kısaltmalar ve eş anlamlı adlar bulunur. Kişisel ilerleme bu iki sayfaya girmez; ortak bilgi ile kişisel durum birbirine karışmaz."
+   },
+   "mantik": {
+    "cok_basit": "Dersin ortak bilgileri tek yerde durur, kavramların adı da hep aynı kalır; böylece karışıklık olmaz.",
+    "basit": "Bilgi tek bir kartta toplanınca ders hakkında dağınık notlar birbirine karışmaz. Sözlük, aynı kavramın farklı adlarla anılmasını engeller.",
+    "normal": "Genel kart, kaynak sırasını, konu sırasını, yazım kurallarını ve sık hataları tek yerde tuttuğu için ders bilgisi dağılmaz. Kişisel ilerlemenin bu kartın dışında bırakılması, ortak bilginin karışmadan kalmasını sağlar. Sözlük, aynı kavramın farklı metinlerde farklı adlarla anılmasını önler.",
+    "gelismis": "Bir dersin bilgisi kaynak, konu, yazım ve hata olarak dört yere dağılsaydı, her biri ayrı aranmak zorunda kalırdı; genel kart bunları aynı sayfada toplar. Sözlük, kavramların Türkçe adlarının sabit kalmasını sağlar; böylece iki metinde aynı kavramın iki adla anılıp okuyanı şaşırtması önlenir. Kişisel ilerlemeyi dışarıda tutmak, ortak kartın ortak kalmasına yardım eder.",
+    "detayli": "Genel kartın tek yerde durması, ders bilgisi dağılınca hangisinin güncel olduğunun ayırt edilememesini önler. Kaynak sırası ve konu sırası birlikte okunduğunda hangi kaynağın hangi konuda kullanılacağı görülür; yazım kuralları metinlerin tek biçimde kalmasını sağlar; sık hatalar bölümü aynı yanlışın tekrar yazılmasını önler. Sözlüğün ayrı tutulması, kavram adlarının kart ve metinler arasında aynı kalmasını sağlar: aynı kavram iki Türkçe adla anılırsa okuyan iki ayrı kavram sanabilir. Kişisel ilerlemenin dışarıda tutulması, ortak bilginin tek kaynak kalmasını sağlar."
+   },
+   "nasil": {
+    "basit": "Kaynak sırası ve konu sırası kartta yazılıdır. Kavramlar sözlükte tek bir Türkçe adla tutulur ve yeni kavramlar alfabetik sırayla eklenir.",
+    "normal": "Ders bilgisi genel kartta toplanır: kaynak sırası dersin hangi kaynakla başlayacağını, konu sırası kavramların hangi düzende ele alınacağını gösterir. Yazım kuralları metinlerin biçimini belirler, sık hatalar ise tekrarlanmaması gereken yanlışları toplar. Yeni bir kavram sözlüğe eklenirken Türkçe adı ve İngilizce karşılığı yan yana yazılır ve kavram alfabetik sıraya girer. Notlar sütununda kısaltmalar ile eş anlamlı adlar yer alır.",
+    "gelismis": "Dersin genel kartı önce okunur; kaynak sırası, konu sırası, yazım kuralları ve sık hatalar burada bir arada durur. Kaynak sırası hangi kaynağın önce kullanılacağını, konu sırası ise kavramların hangi düzende ele alındığını söyler. Yazım kuralları metinlerin biçimini sabitler; sık hatalar bölümü tekrarlanmaması gereken yanlışları toplar. Sözlük ayrı bir sayfa olarak çalışır: her satırda bir kavramın tek Türkçe adı ve İngilizce karşılığı yan yana durur. Yeni kavram eklenirken alfabetik sıraya girer ve aynı kavram her yerde aynı Türkçe adla anılır. Notlar sütununda kısaltmalar ve eş anlamlı adlar bulunur; bu notlar, aynı kavramın farklı biçimde geçtiğinde karışıklığı önler.",
+    "detayli": "Ders bilgisi genel kartta toplanır ve kart iki yönüyle okunur: içerik ve kurallar. Kaynak sırası, dersin hangi kaynakla başlayıp hangisiyle devam edeceğini gösterir. Konu sırası, kavramların işleniş düzenini verir; bu sıra kaynak sırasıyla birlikte okunduğunda dersin hangi yolla ilerleyeceği görülür. Yazım kuralları, ders metinlerinin nasıl biçimleneceğini belirler. Sık hatalar bölümü tekrar eden yanlışları toplar; böylece aynı yanlış yeniden yazılmaz. Kişisel ilerleme kartın dışında tutulur; kartta yalnız ortak bilgi bulunur. Sözlük ise kartın yanında ayrı durur. Her satır bir kavramdır: tek Türkçe ad, İngilizce karşılık ve notlar sütununda kısaltma ya da eş anlamlı adlar. Yeni kavramlar alfabetik sırayla eklenir ve aynı kavram hep aynı Türkçe adla anılır."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin kaynak sırası, konu sırası ve yazım kuralları genel karta girer."
+    ],
+    "ciktilar": [
+     "Ortak bilgiyi tek yerde tutan bir genel kart ve tutarlı bir kavram sözlüğü."
+    ],
+    "degismezler": [
+     "Sözlüğün tek Türkçe ad ve İngilizce karşılık düzeni ile alfabetik ekleme biçimi."
+    ],
+    "kenar": [
+     "Bir kavramın notu yoksa satır yalnızca Türkçe ad ve İngilizce karşılıkla yetinir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kartın bölüm adları ve sırası ile kaynak, konu, yazım ve hata bölümlerinin varlığı sabit kalmalı.",
+     "Sözlüğün tek Türkçe ad, İngilizce karşılık ve alfabetik ekleme biçimi sabit kalmalı.",
+     "Bir kavramın Türkçe adı değiştirilirse, aynı kavramı anan diğer metinler ayrı bir adla kalır ve okuyan karışır."
+    ],
+    "degisebilir": [
+     "Sık hata maddeleri, ders ilerledikçe serbestçe eklenebilir ya da düzeltilebilir.",
+     "Notlar sütunundaki kısaltmalar ve eş anlamlı adlar, kavram adı sabit kaldığı sürece serbestçe genişletilebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bu parçada neyin sabit kalması gerekir?",
+     "yanit": "Kartın bölüm adları ve sırası ile sözlüğün tek Türkçe ad ve İngilizce karşılık düzeni sabit kalmalıdır; aksi hâlde okuyan kavramları ve bölümleri karıştırır."
+    },
+    {
+     "soru": "Bir kavramın Türkçe adı değiştirilse ne olur?",
+     "yanit": "Aynı kavram eski ve yeni adlarla anılır; okuyan bunları iki ayrı kavram sanabilir."
+    }
+   ],
+   "kritik_neden": "Bu parça bozulursa dersin ortak bilgisi dağılır ve aynı kavram farklı adlarla anılarak öğrenen karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kart ve sözlük dosyalarının gerçek satırları okunmadı; anlatım yalnız bölüm adlarına ve komşu metinlere dayanıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/economics",
+   "tur": "birim",
+   "ozet": "9407332c3af0",
+   "iskelet": "a949a8039f3a",
+   "baslik": "Ekonomi dersi",
+   "ne": {
+    "cok_basit": "Ekonomi dersinin genel bilgilerini tek yerde toplar ve dersin kelimelerini tutarlı çeviren bir sözlük tutar.",
+    "basit": "Bu parça, ekonomi dersinin genel bilgi kartı ile sözlüğünü bir arada tutar. Kart konuların sırasını gösterir, sözlük ise kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir.",
+    "normal": "Ekonomi dersinin genel bilgi kartı, konuların hangi sırayla işleneceğini tek bir yerde gösterir. Konular kıtlık ve fırsat maliyetiyle başlar, talep, arz ve dengeye geçer, esneklik ve milli gelirle sürer; işsizlik, enflasyon ve büyümeyle biter. Sözlük, talep ve arz gibi kavramları tek bir Türkçe adla ve İngilizce karşılığıyla tutar.",
+    "gelismis": "Ekonomi dersinin ortak bilgisi genel kartta toplanır; kart konuların işleniş sırasını gösterir: kıtlık ve fırsat maliyetinden başlayıp talep, arz, denge, esneklik ve milli gelir üzerinden işsizlik, enflasyon ve büyümeye uzanan düzen. Yanındaki sözlük kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir; talep, arz ve esneklik gibi kavramlar tek bir adla geçer. Bazı satırlarda kısaltmanın açılımı bulunur.",
+    "detayli": "Ekonomi dersinin tüm ortak bilgisi genel kartta toplanır ve kart konuların işleniş düzenini verir. Düzen kıtlık ve fırsat maliyetiyle başlar; talep, arz ve dengeye geçer; esneklik ve milli gelirle sürer; işsizlik, enflasyon ve büyümeyle biter. Yanındaki sözlük, derste geçen kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir; talep, arz ve esneklik gibi kavramlar her yerde tek bir adla geçer. Bazı satırlar kısaltmanın açılımını notlar sütununda verir, böylece kısaltma ile tam ad arasında karışıklık olmaz."
+   },
+   "mantik": {
+    "cok_basit": "Derse ait bilgiler tek yerde durunca konuların sırası ve kavramların adı hep aynı kalır.",
+    "basit": "Konuların sırası tek kartta durunca ders bilgisi dağılmaz. Sözlük, aynı kavramın farklı adlarla anılmasını engeller.",
+    "normal": "Genel kart, konuların işleniş sırasını tek yerde tuttuğu için ekonomi dersinin bütün akışı bir bakışta görülebilir. Sözlük ise talep ve arz gibi kavramların metin boyunca aynı Türkçe adla kalmasını sağlar. Kısaltmaların açılımı notlar sütununda durduğu için kısaltmalar kavramla karıştırılmaz.",
+    "gelismis": "Konu sırası kartta toplanmasaydı, kıtlıktan işsizliğe giden akış başka yerlerde dağınık kalırdı ve okuyan bağlantıyı kendisi kurmak zorunda kalırdı. Sözlük, kavramların tek Türkçe adla tutulmasını sağlar; aynı kavram iki adla anılırsa okuyan iki ayrı kavram sanabilir. Kısaltma açılımlarının notlar sütununda durması, kısaltmanın hangi kavrama ait olduğunu sabitler.",
+    "detayli": "Konuların sırası genel kartta tek bir düzen olarak durur; böylece kıtlık ve fırsat maliyetinden başlayıp işsizlik ve büyümeye varan akış her yerde aynı görünür. Bu düzen okuyanın hangi kavramın önce gelmesi gerektiğini ayırt etmesine yardım eder. Sözlüğün ayrı tutulması, talep, arz ve esneklik gibi kavramların metin boyunca tek bir Türkçe adla kalmasını sağlar; aynı kavram farklı adlarla anılırsa okuyan bunları ayrı kavramlar sanabilir. Kısaltmaların açılımı notlar sütununda tutulduğu için kısaltma ile tam ad arasında karışıklık çıkmaz."
+   },
+   "nasil": {
+    "basit": "Konu sırası kartta yazılıdır: önce kıtlık ve fırsat maliyeti, en sonda işsizlik, enflasyon ve büyüme gelir. Kavramlar sözlükte tek bir Türkçe adla tutulur ve kısaltmalar notlar sütununda açılır.",
+    "normal": "Ders bilgisi genel kartta konu sırasıyla okunur: kıtlık ve fırsat maliyeti temel kavramlarla başlar, ardından talep, arz ve denge ele alınır; esneklik ile milli gelir gelir, işsizlik, enflasyon ve büyüme ise en sonda yer alır. Sözlük bu kavramları tek Türkçe adla tutar; bir kavramın İngilizce karşılığı yanında durur ve kısaltması varsa notlar sütununda açılır.",
+    "gelismis": "Dersin genel kartı konuların işleniş sırasını taşır ve baştan sona okunur. Sıra kıtlık ve fırsat maliyetiyle başlar, ardından talep, arz ve denge gelir. Sonra esneklik ve milli gelir ele alınır; işsizlik, enflasyon ve büyüme en sonda yer alır. Sözlük bu kavramların her birini tek bir Türkçe adla tutar ve Türkçe adın yanına İngilizce karşılığını yazar. Bazı satırlar notlar sütununda kısaltmanın açılımını verir, böylece kısaltma ile tam ad birbirine karışmaz.",
+    "detayli": "Ekonomi dersinin ortak bilgisi genel kartta toplanır ve kart konuların işleniş sırasını baştan sona verir. İlk durakta kıtlık ve fırsat maliyeti yer alır, ardından talep, arz ve denge gelir. Talep, arz ve denge işlendikten sonra esneklik ve milli gelir ele alınır. Son durakta işsizlik, enflasyon ve büyüme yer alır. Sözlük bu kavramların her birini tek bir Türkçe adla tutar; her satırda Türkçe ad, İngilizce karşılık ve varsa kısaltma açılımı birlikte durur. Talep, arz ve esneklik gibi kavramlar sözlükte tek bir adla geçer. Notlar sütunundaki açılımlar, kısaltmanın hangi kavrama ait olduğunu gösterir."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin konu sırası ve kavram listesi genel karta ve sözlüğe girer."
+    ],
+    "ciktilar": [
+     "Konuların işleniş sırasını gösteren bir genel kart ve tutarlı bir kavram sözlüğü."
+    ],
+    "degismezler": [
+     "Sözlüğün tek Türkçe ad ve İngilizce karşılık düzeni ile kısaltma notlarının yeri."
+    ],
+    "kenar": [
+     "Bir kavramın kısaltması yoksa satır yalnızca Türkçe ad ve İngilizce karşılık taşır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Konuların sırası, yani kıtlıktan başlayıp işsizlik, enflasyon ve büyümeyle biten düzen sabit kalmalı.",
+     "Sözlükteki her kavramın tek Türkçe adı ve İngilizce karşılığı sabit kalmalı.",
+     "Talep, arz ve esneklik gibi kavramların adı değişirse, bu adları anan diğer metinler ayrı kalır ve okuyan karışır."
+    ],
+    "degisebilir": [
+     "Her bölümün içindeki örnekler ve açıklama cümleleri, kavram adı sabit kaldığı sürece serbestçe değişebilir.",
+     "Notlar sütunundaki kısaltma açılımları, yeni satırlar eklenerek genişletilebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bu parçada neyin sabit kalması gerekir?",
+     "yanit": "Konuların kıtlıktan işsizliğe uzanan sırası ile her kavramın tek Türkçe adı ve İngilizce karşılığı sabit kalmalıdır; aksi hâlde konular ve kavramlar birbirine karışır."
+    },
+    {
+     "soru": "Bir kavramın Türkçe adı değiştirilse ne olur?",
+     "yanit": "Aynı kavram eski ve yeni adlarla anılır; okuyan bunları iki ayrı kavram sanabilir."
+    }
+   ],
+   "kritik_neden": "Bu parça bozulursa ekonomi dersinin konu akışı dağılır ve aynı kavram farklı adlarla anılarak öğrenen karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kart ve sözlük dosyalarının gerçek satırları okunmadı; anlatım yalnız konu başlıklarına ve komşu metinlere dayanıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/electronic-materials-device-physics",
+   "tur": "birim",
+   "ozet": "85e5cf2b189b",
+   "iskelet": "b335d116239f",
+   "baslik": "Elektronik malzemeler dersi",
+   "ne": {
+    "cok_basit": "Elektronik malzemeler dersinin genel bilgilerini tek yerde toplar ve dersin kelimelerini tutarlı çeviren bir sözlük tutar.",
+    "basit": "Bu parça, elektronik malzemeler dersinin genel bilgi kartı ile sözlüğünü bir arada tutar. Kart kaynak ve konu sırasını, sık hataları gösterir; sözlük ise kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir.",
+    "normal": "Elektronik malzemeler ve aygıt fiziği dersinin genel bilgi kartı, kaynak sırasını, konuların işleniş sırasını, yazım kurallarını ve sık yapılan hataları tek yerde gösterir. Kişisel ilerleme bu kartta yer almaz. Yanındaki sözlük, yarıiletken, eklem ve taşıyıcı gibi kavramları tek bir Türkçe adla tutar; İngilizce karşılıklarını ve sembol ile kısaltmalarını notlar sütununda verir.",
+    "gelismis": "Elektronik malzemeler ve aygıt fiziği dersinin ortak bilgisi genel kartta toplanır; kart kaynak sırasını, konuların işleniş sırasını, yazım kurallarını ve sık hataları gösterir. Yanındaki sözlük kavramların Türkçe adlarını İngilizce karşılıklarıyla eşleştirir; yarıiletken, eklem ve taşıyıcı gibi kavramlar tek bir adla tutulur. Notlar sütununda semboller ve kısaltmalar yer alır.",
+    "detayli": "Elektronik malzemeler ve aygıt fiziği dersinin tüm ortak bilgisi genel kartta toplanır: hangi kaynakların hangi sırayla okunacağı, konuların hangi düzende işleneceği, yazım kuralları ve sık yapılan hatalar. Kart bu bilgileri ders boyunca başvurulacak bir referans olarak tutar. Yanındaki sözlük, derste geçen elektronik malzeme kavramlarının Türkçe adlarını İngilizce karşılıklarıyla eşleştirir; yarıiletken, eklem ve taşıyıcı gibi kavramlar tek bir adla tutulur. Notlar sütununda semboller ve kısaltmalar bulunur. Kişisel ilerleme kartın dışında kalır; kartta yalnız ortak bilgi yer alır."
+   },
+   "mantik": {
+    "cok_basit": "Derse ait bilgiler tek yerde toplanınca okuyan hep aynı yere bakar, kavramlar da hep aynı adla anılır.",
+    "basit": "Bilgi tek bir kartta toplanınca ders hakkındaki notlar birbirine karışmaz. Sözlük, aynı kavramın farklı adlarla anılmasını ve sembollerin kavramla karıştırılmasını engeller.",
+    "normal": "Genel kart, kaynak sırasını, konu sırasını, yazım kurallarını ve sık hataları tek yerde tuttuğu için ders bilgisi dağılmaz. Kişisel ilerlemenin kartın dışında kalması, ortak bilginin ders için tek kaynak olarak kalmasını sağlar. Sözlük, yarıiletken ve eklem gibi kavramların metin boyunca aynı adla kalmasını önler.",
+    "gelismis": "Bir dersin bilgisi kaynak, konu, yazım ve hata olarak dağılsaydı, her biri ayrı aranmak zorunda kalırdı; genel kart bunları aynı sayfada toplar. Sözlük, taşıyıcı gibi kavramların Türkçe adını sabit tutar; böylece aynı kavram iki adla anılıp okuyanı şaşırtmaz. Semboller ve kısaltmaların notlar sütununda durması, simgenin hangi kavrama ait olduğunu sabitler.",
+    "detayli": "Genel kartın tek yerde durması, ders bilgisi dağılınca hangisinin güncel olduğunun ayırt edilememesini önler. Kaynak sırası ve konu sırası birlikte okunduğunda hangi kaynağın hangi konuda kullanılacağı görülür; yazım kuralları metinlerin tek biçimde kalmasını sağlar; sık hatalar bölümü aynı yanlışın tekrar yazılmasını önler. Sözlüğün ayrı tutulması, yarıiletken, eklem ve taşıyıcı gibi kavram adlarının kart ve metinler arasında aynı kalmasını sağlar; aynı kavram iki Türkçe adla anılırsa okuyan iki ayrı kavram sanabilir. Kişisel ilerlemenin dışarıda tutulması, ortak bilginin tek kaynak kalmasını sağlar."
+   },
+   "nasil": {
+    "basit": "Kart, dersin kaynak sırasını ve konu sırasını verir; konular bu sırayla ele alınır. Kavramlar sözlükte tek bir Türkçe adla tutulur ve sembol ile kısaltmalar notlar sütununda durur.",
+    "normal": "Ders bilgisi genel kartta toplanır: kaynak sırası dersin hangi kaynakla başlayacağını, konu sırası kavramların hangi düzende ele alınacağını gösterir. Yazım kuralları metinlerin biçimini belirler, sık hatalar ise tekrarlanmaması gereken yanlışları toplar. Sözlükte her kavram tek bir Türkçe adla durur; İngilizce karşılığı yanında yer alır ve sembol ya da kısaltması varsa notlar sütununda açılır.",
+    "gelismis": "Dersin genel kartı önce okunur; kaynak sırası, konu sırası, yazım kuralları ve sık hatalar burada bir arada durur. Kaynak sırası hangi kaynağın önce kullanılacağını, konu sırası ise kavramların hangi düzende ele alındığını söyler. Yazım kuralları metinlerin biçimini sabitler; sık hatalar bölümü tekrarlanmaması gereken yanlışları toplar. Sözlük her kavramı tek bir Türkçe adla tutar: yarıiletken, eklem ve taşıyıcı gibi adlar metin boyunca değişmez. Her satırda İngilizce karşılık yanında durur; semboller ve kısaltmalar notlar sütununda yer alır.",
+    "detayli": "Dersin ortak bilgisi genel kartta toplanır ve kart iki yönüyle okunur: içerik ve kurallar. Kaynak sırası, dersin hangi kaynakla başlayıp hangisiyle devam edeceğini gösterir. Konu sırası, kavramların işleniş düzenini verir; bu sıra kaynak sırasıyla birlikte okunduğunda dersin hangi yolla ilerleyeceği görülür. Yazım kuralları, ders metinlerinin nasıl biçimleneceğini belirler. Sık hatalar bölümü tekrar eden yanlışları toplar; böylece aynı yanlış yeniden yazılmaz. Kişisel ilerleme kartın dışında kalır. Sözlük ise kartın yanında ayrı durur. Her satır bir kavramdır: tek Türkçe ad, İngilizce karşılık ve notlar sütununda sembol ya da kısaltma. Yarıiletken, eklem ve taşıyıcı gibi kavramlar sözlükte tek bir adla tutulur; aynı kavram farklı adlarla anılmaz."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin kaynak sırası, konu sırası ve yazım kuralları genel karta girer."
+    ],
+    "ciktilar": [
+     "Ortak bilgiyi tek yerde tutan bir genel kart ve tutarlı bir kavram sözlüğü."
+    ],
+    "degismezler": [
+     "Sözlüğün tek Türkçe ad ve İngilizce karşılık düzeni ile sembol notlarının yeri."
+    ],
+    "kenar": [
+     "Bir kavramın sembolü ya da kısaltması yoksa satır yalnızca Türkçe ad ve İngilizce karşılık taşır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Kartın bölüm adları ve sırası ile kaynak, konu, yazım ve hata bölümlerinin varlığı sabit kalmalı.",
+     "Sözlüğün tek Türkçe ad, İngilizce karşılık ve sembol notu biçimi sabit kalmalı.",
+     "Yarıiletken, eklem ve taşıyıcı gibi kavramların Türkçe adı değişirse, eski adla yazılmış metinler karışır."
+    ],
+    "degisebilir": [
+     "Sık hata maddeleri ve örnek açıklamaları ders ilerledikçe serbestçe eklenebilir ya da düzeltilebilir.",
+     "Notlar sütunundaki sembol ve kısaltmalar, kavram adı sabit kaldığı sürece genişletilebilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bu parçada neyin sabit kalması gerekir?",
+     "yanit": "Kartın bölüm adları ve sırası ile sözlüğün tek Türkçe ad ve İngilizce karşılık düzeni sabit kalmalıdır; aksi hâlde okuyan kavramları ve bölümleri karıştırır."
+    },
+    {
+     "soru": "Bir kavramın Türkçe adı değiştirilse ne olur?",
+     "yanit": "Aynı kavram eski ve yeni adlarla anılır; okuyan bunları iki ayrı kavram sanabilir."
+    }
+   ],
+   "kritik_neden": "Bu parça bozulursa dersin ortak bilgisi dağılır ve aynı kavram farklı adlarla anılarak öğrenen karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kart ve sözlük dosyalarının gerçek satırları okunmadı; anlatım yalnız bölüm adlarına ve komşu metinlere dayanıyor."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/food-chemistry-1",
+   "tur": "birim",
+   "ozet": "f1e86288c392",
+   "iskelet": "f50e5876c9ae",
+   "baslik": "Gıda kimyası dersi",
+   "ne": {
+    "cok_basit": "Gıda kimyası dersinin genel bilgilerini tek yerde toplar ve dersteki kelimelerin hep aynı çevrilmesini sağlayan bir sözlük tutar.",
+    "basit": "Bu parça, gıda kimyası I dersinin genel bilgi kartı ile sözlüğünü bir arada tutar. Sözlük yağ, su ve mineral gibi terimleri Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar.",
+    "normal": "Gıda kimyası I dersinin genel bilgi kartı, konuların hangi sırayla işleneceğini tek bir yerde gösterir. Konular suyla ve su aktivitesiyle başlar, yağlar ve yağ reaksiyonlarıyla sürer, laboratuvar analizleri ve amino asitlerle devam eder, mineralle biter. Sözlük yağ, su, protein ve mineral terimlerini Türkçe ve İngilizce karşılıklarıyla tutar; her terim hep aynı biçimde çevrilir.",
+    "gelismis": "Gıda kimyası I dersinin ortak bilgisi genel kartta toplanır; kart konuların işleniş sırasını verir: suyla ve su aktivitesiyle başlayan düzen, yağlar ve yağ reaksiyonları, laboratuvar analizleri ve amino asitlerden geçip mineralle biter. Yanındaki sözlük, yağ, su, protein ve mineral konularının terimlerini Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar. Her terim hep aynı biçimde çevrilir ve yeni terimler doğru alfabetik yere eklenir.",
+    "detayli": "Gıda kimyası I dersinin tüm ortak bilgisi genel kartta toplanır ve kart konuların işleniş düzenini baştan sona verir. Düzen suyla ve su aktivitesiyle başlar; yağlar ve yağ reaksiyonlarıyla sürer; laboratuvar analizleri ve amino asitlerle devam eder; mineralle biter. Yanındaki sözlük, yağ, su, protein ve mineral konularının terimlerini Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar. Her terim hep aynı biçimde çevrilir, yeni terimler doğru alfabetik yere eklenir ve böylece aynı kavram farklı adlarla karşımıza çıkmaz."
+   },
+   "mantik": {
+    "cok_basit": "Derse ait bilgiler tek yerde durunca konuların sırası belli olur ve terimler hep aynı adla anılır.",
+    "basit": "Konu sırası tek kartta durunca ders bilgisi dağılmaz. Sözlük, aynı terimin farklı karşılıklarla yazılmasını engeller.",
+    "normal": "Genel kart konuların işleniş sırasını tek yerde tuttuğu için dersin akışı bir bakışta görülebilir. Sözlük ise yağ, su ve mineral gibi terimlerin metin boyunca aynı Türkçe karşılığı taşımasını sağlar. Alfabetik düzen, yeni terimlerin nereye ekleneceğini ve eski terimlerin aranmasını kolaylaştırır.",
+    "gelismis": "Konu sırası ile terim karşılıkları ayrı ayrı düzenlenseydi, bir konudan diğerine geçen okuyan aynı kavramı yeniden tanımak zorunda kalabilirdi. Genel kart bu akışı tek yerde tutar; sözlük ise her terimin tek karşılığını ve alfabetik yerini sabitler. Bu ayrım, kart değiştiğinde terimlerin de kendiliğinden kaymasını önler.",
+    "detayli": "Konu sırasının genel kartta tek bir düzen olarak durması, su ile başlayıp mineralle biten akışın her yerde aynı görünmesini sağlar. Bu akış, okuyanın hangi terimin hangi konuda geçeceğini tahmin etmesine yardım eder. Sözlüğün ayrı tutulması, yağ, su, protein ve mineral gibi terimlerin metin boyunca tek bir Türkçe karşılıkla kalmasını sağlar; aynı terim farklı adlarla anılırsa okuyan bunları ayrı kavramlar sanabilir. Alfabetik düzen, yeni terimin nereye ekleneceğini belli eder ve sözlüğün dağılmasını önler."
+   },
+   "nasil": {
+    "basit": "Konu sırası kartta yazılıdır: önce su ve su aktivitesi, en sonda mineral gelir. Sözlükteki her terim tek bir Türkçe karşılıkla tutulur ve yeni terimler alfabetik yere eklenir.",
+    "normal": "Ders bilgisi genel kartta konu sırasıyla okunur: su ve su aktivitesi ile başlanır, yağlar ve yağ reaksiyonlarına geçilir, laboratuvar analizleri ile amino asitler ele alınır ve mineralle bitilir. Sözlük bu konuların terimlerini Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar; yeni bir terim geldiğinde doğru alfabetik yere eklenir ve hep aynı biçimde çevrilir.",
+    "gelismis": "Dersin genel kartı konuların işleniş sırasını taşır ve baştan sona okunur. İlk konu su ve su aktivitesidir; bunun ardından yağlar ve yağ reaksiyonları gelir. Laboratuvar analizleri ve amino asitler sonra ele alınır, mineral ise en sonda yer alır. Sözlük aynı konuların terimlerini alfabetik sırada tutar: her terimin tek bir Türkçe karşılığı vardır, İngilizce karşılığı yanında durur ve yeni terimler doğru alfabetik yere eklenir. Bu iki sayfa birlikte okunduğunda, bir konunun terimlerinin hangi adla geçeceği belli olur.",
+    "detayli": "Dersin ortak bilgisi genel kartta toplanır ve konu sırası kartta okunur. İlk durakta su ve su aktivitesi vardır; bu konuyu yağlar ve yağ reaksiyonları izler. Sonraki durakta laboratuvar analizleri ve amino asitler yer alır; son durak mineraldir. Sözlük ise kartın yanında ayrı durur ve her satırda bir terimi tutar: Türkçe karşılık, İngilizce karşılık ve alfabetik yer. Her terim hep aynı biçimde çevrilir; yeni terim geldiğinde doğru alfabetik yere eklenir. Konu sırası ile sözlük birlikte okunduğunda, bir konunun terimlerinin hangi adla geçeceği belli olur."
+   },
+   "detay": {
+    "girdiler": [
+     "Dersin konu sırası ve konu terimleri genel karta ve sözlüğe girer."
+    ],
+    "ciktilar": [
+     "Konuların işleniş sırasını gösteren bir genel kart ve alfabetik bir terim sözlüğü."
+    ],
+    "degismezler": [
+     "Sözlükte her terimin tek Türkçe karşılığı ve alfabetik ekleme düzeni."
+    ],
+    "kenar": [
+     "Yeni bir konu sözlüğe eklendiğinde mevcut terimlerin çevirisi değiştirilmez."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Konuların sırası, yani su ile başlayıp mineralle biten düzen sabit kalmalı.",
+     "Sözlükteki her terimin tek Türkçe karşılığı ve alfabetik yeri sabit kalmalı.",
+     "Bir terimin Türkçe karşılığı değişirse, o terimi kullanan diğer metinler eski adla kalır ve okuyan karışır."
+    ],
+    "degisebilir": [
+     "Konu içindeki ayrıntılar ve örnekler, konu sırası korunduğu sürece serbestçe değişebilir.",
+     "Sözlüğe yeni terim satırları eklenebilir, satır sayısı serbesttir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bu parçada neyin sabit kalması gerekir?",
+     "yanit": "Konuların su ile başlayıp mineralle biten sırası ile sözlükteki her terimin tek Türkçe karşılığı sabit kalmalıdır; aksi hâlde konular ve terimler birbirine karışır."
+    },
+    {
+     "soru": "Bir terimin Türkçe karşılığı değiştirilse ne olur?",
+     "yanit": "Aynı terim eski ve yeni karşılıklarla anılır; okuyan bunları iki ayrı kavram sanabilir."
+    }
+   ],
+   "kritik_neden": "Bu parça bozulursa dersin konu akışı dağılır ve aynı terim farklı karşılıklarla yazılarak öğrenen karışır.",
+   "terimler": [],
+   "belirsiz": [
+    "Kartın kaynak sırası, yazım kuralları ve sık hata bölümleri pakette yer almadığı için anlatılmadı; kart ve sözlük dosyalarının gerçek satırları da okunmadı."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/instrumental-food-analysis",
+   "tur": "birim",
+   "ozet": "675b5679dd72",
+   "iskelet": "9c47d6cbb086",
+   "baslik": "Gıda analizi dersi materyali",
+   "ne": {
+    "cok_basit": "Bu parça bir dersin yardımcı kâğıtlarını bir arada tutar: kelime listesi ve genel ders kartı.",
+    "basit": "Bu parça bir dersin kelime listesini ve genel tanıtım kartını bir araya getirir. Liste terimlerin tutarlı çevirisini saklar, kart konuları sırayla anlatır.",
+    "normal": "Bu parça bir ders biriminin yardımcı parçalarını bir arada tutar: terimleri tek biçimde çeviren bir kelime listesi ile dersin baştan sona konularını özetleyen genel tanıtım kartı. Biri sözcük tutarlılığını, diğeri konu yolunu sağlar.",
+    "gelismis": "Bu birim bir enstrümental gıda analizi dersinin yardımcı kaynaklarını bir arada tutar. Sözlük kromatografi ve cihaz terimlerinin Türkçe ve İngilizce karşılıklarını alfabetik sırada saklar; ders kartı ise konuların öğretim sırasını belirler. Sözlük her terimi hep aynı biçimde çevirir, böylece ders boyunca kavram kayması olmaz.",
+    "detayli": "Bu birim, bir enstrümental gıda analizi dersinin öğretim malzemesinin yardımcı parçalarını tek yerde toplar. Birincisi sözlüktür: kromatografi ve cihaz terimlerinin Türkçe ve İngilizce karşılıklarını harf sırasıyla tutar. İkincisi ders kartıdır: dersin konularını kromatografi temellerinden başlayıp cihaz parçaları ve ayırma yöntemleriyle sürdürerek ışık ölçümleri ve potansiyometriyle bitirir. İkisi birlikte, dersteki her kavramın tek bir çevirisi ve tek bir yeri olmasını sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Kelimeler ve konular ayrı tutulur ki aynı kelime her yerde aynı çıksın, tek karşılık herkes için aynı kalsın.",
+    "basit": "Terimler harf sırasıyla tutulursa yeni bir kavram eklemek kolaylaşır ve eski çeviriler kaybolmaz. Ders konuları ayrı tutulunca sıra ile sözcük listesi birbirini karıştırmaz.",
+    "normal": "Bir derste aynı kavram birkaç konuda geçer; her geçişte farklı çevrilirse öğrenci kafası karışır. Sözlüğü harf sırasıyla ve değişmez karşılıklarla tutmak bu sorunu çözer. Ders kartını ayrı tutmak ise konu sırasının sözlük eklemeleriyle bozulmasını önler.",
+    "gelismis": "Bu iki parçanın ayrı olması, ders anlatımında hangi sırayla ilerleneceğini ile hangi terimin hangi karşılıkla kullanılacağını birbirinden bağımsız tutar. Böylece konu sırası değişse bile sözlük tutarlı kalır. Harf sırası da yeni terimlerin nereye ekleneceğini tek bir kuralla belirler.",
+    "detayli": "Terim sözlüğünü bir ders kartının içine gömmek, kartın uzamasıyla sözlüğün de dağılmasına yol açabilir. Ayrı bir sözlük, aynı karşılığın her derste tutarlı kalmasını sağlar ve kart değiştiğinde bile çeviriyi korur. Konuların sırası ise ders kartında kalır; böylece bir konu eklenip çıkarıldığında karşılıklar kaybolmaz. Harf sırası da ekleme yerini herkes için aynı kılar."
+   },
+   "nasil": {
+    "basit": "Kelime listesi harf sırasıyla tutulur ve her yeni terim doğru yere eklenir. Ders kartı konuları sırayla anlatır: önce kromatografinin temeli, sonra cihaz parçaları ve ayırma yöntemleri, en sonda ışık ölçümü ve potansiyometri gelir.",
+    "normal": "Ders kartı konuları kromatografi temellerinden başlatır, cihaz parçaları ve ayırma yöntemleriyle sürdürür, ışık ölçümleri ile potansiyometriyle bitirir. Kelime listesi bu konularda geçen terimlerin Türkçe ve İngilizce karşılıklarını harf sırasıyla tutar. Her karşılık hep aynı biçimde durur; yeni terim doğru harf yerine eklenir ve ders ile liste aynı dili konuşur.",
+    "gelismis": "Birim şöyle çalışır. Sözlük tarafında her yeni terim alfabetik sırada doğru yere eklenir ve daha önce verilmiş bir çeviri değiştirilmez; böylece bir terim hangi konuda geçerse geçsin aynı karşılıkla okunur. Ders kartı tarafında konular kromatografi temelleriyle başlar, cihaz parçaları ve ayırma yöntemleriyle devam eder, ışık ölçümleri ve potansiyometriyle biter. Kart ile liste aynı dersin dilini ve konularını birlikte taşır.",
+    "detayli": "Ders sırasıyla ilerlerken sözlük de paralel büyür. Kromatografi temelleri bölümünde geçen terimler harf sırasına girer ve sonraki cihaz anlatımında aynı çeviriyle geri döner. Cihaz parçaları ve ayırma yöntemleri bölümü yeni terimleri getirdiğinde her biri alfabetik sırada doğru yere eklenir; daha önce verilmiş bir karşılık değiştirilmez. Işık ölçümü ve potansiyometri bölümünde geçen terimler de aynı kurala uyar. Sonuçta ders kartındaki bir konuyu okuyan biri sözlükte aynı kavramı bulduğunda aynı karşılığı görür. Bu yüzden konu sırası ile çeviri birlikte korunur."
+   },
+   "detay": {
+    "girdiler": [
+     "Sözlük için yeni terim ve karşılıkları, ders kartı için dersin konu başlıkları."
+    ],
+    "ciktilar": [
+     "Harf sırasına göre düzenlenmiş bir karşılık listesi ve konu sırasıyla yazılmış bir ders tanıtımı."
+    ],
+    "degismezler": [
+     "Her karşılığın bir kez verildikten sonra değişmemesi ve konu sırasının ders kartında kalması."
+    ],
+    "kenar": [
+     "Aynı terimin iki farklı yerde geçmesi durumunda karşılığın tek kalması gerekir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sözlükteki her terimin Türkçe ve İngilizce karşılığı bir kez verildikten sonra aynı biçimde kalır.",
+     "Sözlük alfabetik sırada tutulur; yeni terim bu sıraya göre doğru yere eklenir.",
+     "Ders kartındaki konu sırası dersin öğrenciye verdiği yoldur; değişirse izlenecek sıra bozulur."
+    ],
+    "degisebilir": [
+     "Sözlüğe yeni terim eklemek, mevcut karşılıklara dokunmadan serbestçe yapılabilir.",
+     "Ders kartındaki konu anlatımlarının cümleleri, konu sırası korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Sözlükteki bir karşılığı değiştirirsem ne olur?",
+     "yanit": "Aynı terim ders kartının başka bir konusunda eski karşılıkla geçerse öğrenci iki farklı çeviri görür. Karşılık değişecekse tüm listede aynı anda değişmesi gerekir."
+    },
+    {
+     "soru": "Ders kartındaki konu sırası değişirse sözlük de değişmek zorunda mı?",
+     "yanit": "Hayır. Sözlük harf sırasıyla tutulduğu için konu sırasından bağımsızdır. Yeni bir konu eklendiğinde yalnızca yeni terimler harf sırasına girer, mevcut girdiler yerinde kalır."
+    }
+   ],
+   "terimler": [],
+   "belirsiz": [
+    "Ders kartının ve sözlüğün tam içeriği görülmedi; anlatım yalnızca komşu parçaların tanımına dayanıyor.",
+    "Bu birimin kendi dosyalarında hangi girdilerin ve çıktıların kullanıldığı görülmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/linear-algebra",
+   "tur": "birim",
+   "ozet": "7c1d8ed2d63a",
+   "iskelet": "0e310f36d859",
+   "baslik": "Doğrusal cebir dersi materyali",
+   "ne": {
+    "cok_basit": "Bu parça bir matematik dersinin yardımcı kâğıtlarını bir arada tutar: kelime listesi ve genel ders kartı.",
+    "basit": "Bu parça doğrusal cebir dersinin kelime listesini ve genel ders kartını bir araya getirir. Liste terimlerin tutarlı çevirisini saklar, kart hangi kaynağa öncelik verileceğini ve konuların sırasını gösterir.",
+    "normal": "Bu parça bir ders biriminin yardımcı parçalarını bir arada tutar: doğrusal cebir terimlerinin Türkçe ve İngilizce karşılıklarını kısa notlarla sıralayan bir kelime listesi ile dersin genel bilgi kartı. Biri sözcük tutarlılığını, diğeri dersin nasıl okunacağını sağlar.",
+    "gelismis": "Bu birim bir doğrusal cebir dersinin yardımcı kaynaklarını bir arada tutar. Kelime listesi terimlerin Türkçe ve İngilizce karşılıklarını kısa notlarla alfabetik sırada saklar; ders kartı ise dersin hangi kaynağa dayandığını, konuların sırasını ve yazım kurallarını gösterir. Liste ile kart birlikte, dersin dilini ve yolunu aynı anda taşır.",
+    "detayli": "Bu birim bir doğrusal cebir dersinin öğretim malzemesinin yardımcı parçalarını tek yerde toplar. Birincisi sözlüktür: terimlerin Türkçe ve İngilizce karşılıklarını, kısa notlarıyla birlikte alfabetik sırada tutar. İkincisi ders kartıdır: hangi kaynağa öncelik verileceğini, konuların işleniş sırasını, konu türlerini, yazım kurallarını ve sık yapılan hataları gösterir. Kişisel ilerleme kartta yer almaz. İkisi birlikte, dersteki her terimin tek bir çevirisi ve tek bir yeri olmasını sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Kelimeler ve dersin genel kartı ayrı tutulur ki aynı terim her yerde aynı çıksın, kart da yolunu korusun.",
+    "basit": "Terimler harf sırasıyla tutulursa yeni bir terim eklemek kolaylaşır ve eski çeviriler kaybolmaz. Kişisel ilerlemenin kartta olmaması, herkes için aynı genel düzenin korunmasını sağlar.",
+    "normal": "Bir matematik dersinde aynı terim farklı konularda geçer; her geçişte farklı karşılık verilirse okuyan kafası karışır. Sözlüğü alfabetik sırada ve değişmez karşılıklarla tutmak bu sorunu çözer. Kartı ayrı tutmak ise konu öncelik ve sıra bilgisinin terim eklemeleriyle karışmasını önler.",
+    "gelismis": "Hangi kaynağa güvenileceği ile hangi karşılığın kullanılacağı ayrı sorulardır; bu yüzden biri kartta, öteki sözlükte tutulur. Böylece sözlük büyürken kartın yolu bozulmaz. Alfabetik sıra da yeni terimin nereye gideceğini tek bir kuralla belirler.",
+    "detayli": "Terim çevirilerini ders kartının içine yazmak, kartın büyümesiyle çevirilerin dağılmasına yol açabilir. Ayrı bir sözlük, aynı karşılığın her konuda tutarlı kalmasını sağlar ve kart değişse bile çeviriyi korur. Kaynak önceliği ve konu sırası kartta kalır, çünkü dersin yolu bir terim girdisi değil, okuyanın izleyeceği bir düzendir. Yazım kuralları ve sık hataların kartta toplanması, aynı hataların farklı konularda tekrarlanmasını engeller. Harf sırası da ekleme yerini herkes için aynı kılar."
+   },
+   "nasil": {
+    "basit": "Kelime listesi harf sırasıyla tutulur ve her terim kısa bir notla birlikte doğru yere eklenir. Ders kartı önce hangi kaynağa güvenileceğini söyler, sonra konuların işleniş sırasını, konu türlerini ve yazım kurallarını anlatır, sık yapılan hataları da sonda gösterir.",
+    "normal": "Ders kartı önce hangi kaynağa öncelik verileceğini söyler, sonra konuların işleniş sırasını ortaya koyar ve konu türlerini tanıtır. Yazım kurallarını ve sık yapılan hataları da kartta bulunur. Kelime listesi bu konularda geçen terimleri Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar; her terim hep aynı biçimde çevrilir ve yeni terim doğru yere eklenir. Kart kişisel ilerlemeyi taşımaz; yalnızca dersin genel düzenini gösterir.",
+    "gelismis": "Birim şöyle çalışır. Kart önce hangi kaynağa öncelik verileceğini söyler. Ardından konuların işleniş sırası, konu türleri ve yazım kuralları gelir; sık yapılan hatalar kartın sonunda yer alır. Kelime listesi bu konularda geçen terimleri alfabetik sırada tutar; her terim için bir kez verilen karşılık değişmez ve kısa not terimin anlamına dair kısa bir bilgi taşır. Kart kişisel ilerlemeyi taşımadığı için dersin genel düzeni değişmeden kalır.",
+    "detayli": "Ders sırasıyla ilerlerken sözlük de paralel büyür. Kart önce hangi kaynağa öncelik verileceğini belirler; bu öncelik, konuların nasıl okunacağı konusunda rehberdir. Konuların işleniş sırası kartta yazılıdır ve kart konu türlerini de tanıtır. Konu anlatımlarında geçen terimler sözlükte alfabetik sırada yerini alır ve daha önce verilmiş bir karşılık değiştirilmez. Yazım kuralları ve sık yapılan hatalar kartın sonunda toplanır; bu bölüm hem ders düzenini hem de sözlük çevirisini sabit tutan düzeni tamamlar. Kişisel ilerleme kartta bulunmadığından, dersin genel yolu herkes için aynı kalır."
+   },
+   "detay": {
+    "girdiler": [
+     "Terim listesi için yeni terimler ve kısa notları, ders kartı için dersin kaynak ve konu bilgileri."
+    ],
+    "ciktilar": [
+     "Alfabetik sırada bir karşılık listesi ve kaynak önceliği, konu sırası, konu türleri, yazım kuralları ile hatalar içeren bir ders kartı."
+    ],
+    "degismezler": [
+     "Her terimin bir kez verilen karşılığının değişmemesi ve kişisel ilerlemenin kartta bulunmaması."
+    ],
+    "kenar": [
+     "Aynı terimin farklı konularda geçmesi durumunda karşılığın tek kalması gerekir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sözlükteki her terimin Türkçe ve İngilizce karşılığı bir kez verildikten sonra aynı biçimde kalır.",
+     "Sözlük alfabetik sırada tutulur; yeni terim bu sıraya göre doğru yere eklenir.",
+     "Ders kartının kaynak önceliği ve konu sırası, okuyanın izleyeceği yolu belirler; değişirse yol bozulur."
+    ],
+    "degisebilir": [
+     "Sözlüğe yeni terim eklemek ve kısa notları genişletmek, mevcut karşılıklara dokunmadan serbestçe yapılabilir.",
+     "Ders kartındaki konu anlatımlarının cümleleri, sıra ve öncelik korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bir terimin karşılığını değiştirirsem ne olur?",
+     "yanit": "Aynı terim başka bir konuda eski karşılıkla geçerse okuyan iki farklı çeviri görür. Karşılık değişecekse sözlükte tüm girdilerde aynı anda değişmesi gerekir."
+    },
+    {
+     "soru": "Kaynak önceliğini ya da konu sırasını değiştirirsem sözlük de değişmek zorunda mı?",
+     "yanit": "Hayır. Sözlük harf sırasıyla tutulduğu için konu sırasından bağımsızdır. Yeni bir konu eklendiğinde yalnızca yeni terimler harf sırasına girer, mevcut karşılıklar yerinde kalır."
+    }
+   ],
+   "terimler": [],
+   "belirsiz": [
+    "Ders kartındaki konuların tam adları ve içerikleri görülmedi; anlatım yalnızca kartın genel düzenine dayanıyor.",
+    "Sözlükteki terimlerin toplam sayısı ve hangi konularda geçtikleri görülmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/material-energy-balances",
+   "tur": "birim",
+   "ozet": "32c3c8b3a346",
+   "iskelet": "15e01178b11a",
+   "baslik": "Kütle ve enerji denkliği materyali",
+   "ne": {
+    "cok_basit": "Bu parça bir mühendislik dersinin yardımcı kâğıtlarını bir arada tutar: kelime listesi ve genel ders kartı.",
+    "basit": "Bu parça kütle ve enerji denkliği dersinin kelime listesini ve genel ders kartını bir araya getirir. Liste terimlerin tutarlı çevirisini saklar, kart konuların hangi sırayla ilerlediğini gösterir.",
+    "normal": "Bu parça bir ders biriminin yardımcı parçalarını bir arada tutar: kütle ve enerji denkliği terimlerinin Türkçe ve İngilizce karşılıklarını kısa notlarla sıralayan bir kelime listesi ile dersin genel bilgi kartı. Biri sözcük tutarlılığını, diğeri konu yolunu sağlar.",
+    "gelismis": "Bu birim bir kütle ve enerji denkliği dersinin yardımcı kaynaklarını bir arada tutar. Kelime listesi terimlerin Türkçe ve İngilizce karşılıklarını kısa notlarla alfabetik sırada saklar; ders kartı ise konuların sırasını, birimler ve bileşimden başlayarak enerji denkliğine kadar gösterir. Liste ile kart birlikte dersin dilini ve yolunu aynı anda taşır.",
+    "detayli": "Bu birim bir kütle ve enerji denkliği dersinin öğretim malzemesinin yardımcı parçalarını tek yerde toplar. Birincisi sözlüktür: terimlerin Türkçe ve İngilizce karşılıklarını, kısa notlarıyla birlikte alfabetik sırada tutar. İkincisi ders kartıdır: birimler, boyutlar ve bileşimle başlayıp kütle denkliğine, geri döngü ve yanmalı sistemlere, nem ve buhar hesaplarıyla enerji denkliğine uzanan konu yolunu gösterir. İkisi birlikte, dersteki her terimin tek bir çevirisi ve tek bir yeri olmasını sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Kelimeler ve dersin genel kartı ayrı tutulur ki aynı terim her yerde aynı çıksın, kart da konu yolunu korusun.",
+    "basit": "Terimler harf sırasıyla tutulursa yeni terim eklemek kolaylaşır ve eski çeviriler kaybolmaz. Konu yolunun kartta durması, dersin genel düzeninin sözlük eklemeleriyle karışmasını önler.",
+    "normal": "Bu derste aynı terim birimler, kütle ve enerji konularında farklı bağlamda geçer; her geçişte farklı karşılık verilirse okuyan karışır. Sözlüğü alfabetik ve değişmez karşılıklarla tutmak bu karışıklığı önler. Kartı ayrı tutmak ise konu yolunun terim eklemeleriyle bozulmadan kalmasını sağlar.",
+    "gelismis": "Hangi terimin hangi karşılıkla kullanılacağı ile dersin hangi sırayla ilerleyeceği ayrı sorulardır; bu yüzden biri sözlükte, öteki kartta tutulur. Böylece konu sırası değişse bile terim çevirileri tutarlı kalır. Alfabetik sıra da yeni terimin nereye gideceğini tek bir kuralla belirler.",
+    "detayli": "Terim çevirilerini ders kartının içine gömmek, kart büyüdükçe çevirilerin dağılmasına yol açabilir. Ayrı bir sözlük, aynı karşılığın her konuda tutarlı kalmasını sağlar ve kart değişse bile çeviriyi korur. Konu yolu kartta kalır, çünkü dersin sırası bir terim girdisi değil, okuyanın izleyeceği bir düzendir. Birimler, boyutlar ve bileşim gibi başlangıç konularının kartın başında durması, okuyanın ilk terimleri tanımasını kolaylaştırır. Harf sırası da ekleme yerini herkes için aynı kılar."
+   },
+   "nasil": {
+    "basit": "Kelime listesi harf sırasıyla tutulur ve her terim kısa notuyla birlikte doğru yere eklenir. Ders kartı birimler, boyutlar ve bileşimle başlar; kütle denkliğine geçer, geri döngü ve yanmalı sistemlerle sürer, nem ve buhar hesaplarıyla enerji denkliğinde biter.",
+    "normal": "Ders kartı önce birimler, boyutlar ve bileşim konularını verir; ardından kütle denkliğine geçer, geri döngü ve yanmalı sistemlerle devam eder, nem ve buhar hesaplarıyla enerji denkliğinde biter. Kelime listesi bu konularda geçen terimleri Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar; her terim hep aynı biçimde çevrilir ve yeni terim doğru yere eklenir.",
+    "gelismis": "Birim şöyle çalışır. Ders kartı önce birimler, boyutlar ve bileşim konularını verir, ardından kütle denkliğine geçer. Kütle denkliği geri döngü ve yanmalı sistemlerle genişler; nem ve buhar hesapları ile enerji denkliği sonda gelir. Kelime listesi bu konularda geçen terimleri alfabetik sırada tutar; her terim için bir kez verilen karşılık değişmez ve kısa not terimin anlamına dair kısa bir bilgi taşır.",
+    "detayli": "Ders sırasıyla ilerlerken sözlük de paralel büyür. Ders kartı birimler, boyutlar ve bileşim konularıyla açılır ve bu bölümde geçen terimler sözlüğe alfabetik sırada girer. Kütle denkliği konusu kendi terimlerini getirir; her biri harf sırasına göre yerleşir ve daha önce verilmiş bir karşılık değiştirilmez. Geri döngü ve yanmalı sistemler konusu yeni terimler ekler ve aynı kurala uyar. Nem ve buhar hesapları ile enerji denkliği dersi sonda bitirir; bu hesaplarda geçen terimler de aynı kurala uyar. Sonuçta kart konu yolunu, sözlük ise her terimin tek çevirisini tutar; okuyan aynı kavramı her konuda aynı adla görür."
+   },
+   "detay": {
+    "girdiler": [
+     "Terim listesi için yeni terimler ve kısa notları, ders kartı için dersin konu başlıkları."
+    ],
+    "ciktilar": [
+     "Alfabetik sırada bir karşılık listesi ve konu yolunu gösteren bir ders kartı."
+    ],
+    "degismezler": [
+     "Her terimin bir kez verilen karşılığının değişmemesi ve konu sırasının kartta kalması."
+    ],
+    "kenar": [
+     "Aynı terimin farklı konularda geçmesi durumunda karşılığın tek kalması gerekir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sözlükteki her terimin Türkçe ve İngilizce karşılığı bir kez verildikten sonra aynı biçimde kalır.",
+     "Sözlük alfabetik sırada tutulur; yeni terim bu sıraya göre doğru yere eklenir.",
+     "Ders kartındaki konu sırası, okuyanın izleyeceği yolu belirler; değişirse yol bozulur."
+    ],
+    "degisebilir": [
+     "Sözlüğe yeni terim eklemek ve kısa notları genişletmek, mevcut karşılıklara dokunmadan serbestçe yapılabilir.",
+     "Ders kartındaki konu anlatımlarının cümleleri, sıra korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bir terimin karşılığını değiştirirsem ne olur?",
+     "yanit": "Aynı terim başka bir konuda eski karşılıkla geçerse okuyan ayrı çeviriler görür. Karşılık değişecekse sözlükte tüm girdilerde aynı anda değişmesi gerekir."
+    },
+    {
+     "soru": "Konu sırasını değiştirirsem sözlük de değişmek zorunda mı?",
+     "yanit": "Hayır. Sözlük harf sırasıyla tutulduğu için konu sırasından bağımsızdır. Yeni bir konu eklendiğinde yalnızca yeni terimler harf sırasına girer; mevcut karşılıklar yerinde kalır."
+    }
+   ],
+   "terimler": [],
+   "belirsiz": [
+    "Ders kartındaki konuların ayrıntılı içerikleri ve hangi hesap yöntemlerinin kullanıldığı görülmedi.",
+    "Sözlükteki terimlerin toplam sayısı ve hangi konularda geçtiği görülmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/object-oriented-programming",
+   "tur": "birim",
+   "ozet": "01a35450d464",
+   "iskelet": "9bd00b017a23",
+   "baslik": "Nesne yönelimli programlama materyali",
+   "ne": {
+    "cok_basit": "Bu parça bir programlama dersinin yardımcı kâğıtlarını bir arada tutar: kelime listesi ve genel ders kartı.",
+    "basit": "Bu parça nesne yönelimli programlama dersinin kelime listesini ve genel ders kartını bir araya getirir. Liste terimlerin tutarlı çevirisini saklar, kart konuların hangi sırayla işlendiğini gösterir.",
+    "normal": "Bu parça bir ders biriminin yardımcı parçalarını bir arada tutar: nesne yönelimli programlama terimlerinin Türkçe ve İngilizce karşılıklarını alfabetik sırada tutan bir kelime listesi ile dersin genel bilgi kartı. Biri sözcük tutarlılığını, diğeri konu yolunu sağlar.",
+    "gelismis": "Bu birim nesne yönelimli programlama dersinin yardımcı kaynaklarını bir arada tutar. Kelime listesi terimlerin Türkçe ve İngilizce karşılıklarını alfabetik sırada saklar; ders kartı ise konuların işleniş sırasını, eski bir dilden yeni bir dile geçişten tasarım örneğine kadar gösterir. Liste ile kart birlikte dersin dilini ve yolunu aynı anda taşır.",
+    "detayli": "Bu birim nesne yönelimli programlama dersinin öğretim malzemesinin yardımcı parçalarını tek yerde toplar. Birincisi sözlüktür: derste geçen terimlerin Türkçe ve İngilizce karşılıklarını alfabetik sırada tutar ve her terimi her yerde aynı biçimde çevirir. İkincisi ders kartıdır: eski bir dilden yeni bir dile geçişle başlayan, sınıflar, kalıtım ve çok biçimlilikle ilerleyen, giriş çıkış ve dosyalarla süren ve bir tasarım örneğiyle biten konu yolunu gösterir. İkisi birlikte, dersteki her terimin tek çevirisi ve tek yeri olmasını sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Kelime listesi ile ders kartı ayrı tutulur; böylece aynı kelime her yerde aynı biçimde çıkar.",
+    "basit": "Terimler harf sırasıyla tutulursa yeni terim eklemek kolaylaşır ve eski çeviriler kaybolmaz. Konu yolunun kartta durması, öğrenme sırasının sözlük eklemeleriyle karışmasını önler.",
+    "normal": "Bu derste aynı terim farklı konularda, farklı örneklerle geçer; her geçişte farklı karşılık verilirse okuyan karışır. Sözlüğü alfabetik sırada ve değişmez karşılıklarla tutmak bu karışıklığı önler. Kartı ayrı tutmak da konu yolunun terim eklemeleriyle bozulmadan kalmasını sağlar.",
+    "gelismis": "Terim çevirileriyle dersin hangi sırayla işleneceği ayrı sorulardır; bu yüzden biri sözlükte, öteki kartta tutulur. Böylece konu sırası değişse bile terim karşılıkları tutarlı kalır. Alfabetik sıra da yeni terimin nereye gideceğini tek bir kuralla belirler.",
+    "detayli": "Terim çevirilerini ders kartının içine gömmek, kart büyüdükçe çevirilerin dağılmasına yol açabilir. Ayrı bir sözlük, aynı karşılığın her konuda tutarlı kalmasını sağlar ve kart değişse bile çeviriyi korur. Konu yolu kartta kalır, çünkü dersin sırası bir terim girdisi değil, okuyanın izleyeceği bir düzendir. Eski bir dilden yeni bir dile geçişin başta durması, okuyanın temel terimleri ilk önce tanımasını kolaylaştırır. Harf sırası da ekleme yerini herkes için aynı kılar."
+   },
+   "nasil": {
+    "basit": "Kelime listesi harf sırasıyla tutulur ve her yeni terim doğru yere eklenir. Ders kartı önce eski bir dilden yeni bir dile geçişi anlatır, sonra sınıfları, kalıtımı ve çok biçimliliği işler; giriş çıkış ve dosyalarla devam eder, bir tasarım örneğiyle biter.",
+    "normal": "Ders kartı konuları eski bir dilden yeni bir dile geçişle başlatır; sınıflar, kalıtım ve çok biçimlilikle ilerler, giriş çıkış ve dosyalarla sürdürür, bir tasarım örneğiyle bitirir. Kelime listesi bu konularda geçen terimleri Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar; aynı terim her yerde aynı biçimde çevrilir ve yeni terim doğru yere eklenir.",
+    "gelismis": "Birim şöyle çalışır. Ders kartı eski bir dilden yeni bir dile geçişle açılır, ardından sınıfları, kalıtımı ve çok biçimliliği işler; giriş çıkış ve dosyalarla sürer ve bir tasarım vaka çalışmasıyla biter. Kelime listesi bu konularda geçen terimleri alfabetik sırada tutar; aynı terim her yerde aynı biçimde çevrilir ve yeni terim doğru yere eklenir.",
+    "detayli": "Ders sırasıyla ilerlerken sözlük de paralel büyür. Kart, eski bir dilden yeni bir dile geçişle açılır; bu bölümde geçen temel terimler sözlüğe alfabetik sırada girer. Sınıflar, kalıtım ve çok biçimlilik bölümü kendi terimlerini getirir ve her biri harf sırasına göre yerleşir; daha önce verilmiş bir karşılık değiştirilmez. Giriş çıkış ve dosyalar bölümü yeni terimler ekler ve aynı kurala uyar. Son olarak tasarım vaka çalışması konuyu bitirir. Sonuçta kart konu yolunu, sözlük ise her terimin tek çevirisini tutar; okuyan aynı kavramı her konuda aynı adla görür."
+   },
+   "detay": {
+    "girdiler": [
+     "Terim listesi için yeni terimler ve karşılıkları, ders kartı için dersin konu başlıkları."
+    ],
+    "ciktilar": [
+     "Alfabetik sırada bir karşılık listesi ve konu yolunu gösteren bir ders kartı."
+    ],
+    "degismezler": [
+     "Her terimin bir kez verilen karşılığının değişmemesi ve konu sırasının kartta kalması."
+    ],
+    "kenar": [
+     "Aynı terimin farklı konularda geçmesi durumunda karşılığın tek kalması gerekir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sözlükteki her terimin Türkçe ve İngilizce karşılığı bir kez verildikten sonra aynı biçimde kalır.",
+     "Sözlük alfabetik sırada tutulur; yeni terim bu sıraya göre doğru yere eklenir.",
+     "Ders kartındaki konu sırası, okuyanın izleyeceği yolu belirler; değişirse yol bozulur."
+    ],
+    "degisebilir": [
+     "Sözlüğe yeni terim eklemek ve kısa notları genişletmek, mevcut karşılıklara dokunmadan serbestçe yapılabilir.",
+     "Ders kartındaki konu anlatımlarının cümleleri, sıra korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bir terimin karşılığını değiştirirsem ne olur?",
+     "yanit": "Aynı terim başka bir konuda eski karşılıkla geçerse okuyan ayrı çeviriler görür. Karşılık değişecekse sözlükteki tüm girdilerde aynı anda değişmesi gerekir."
+    },
+    {
+     "soru": "Konu sırasını değiştirirsem sözlük de değişmek zorunda mı?",
+     "yanit": "Hayır. Sözlük harf sırasıyla tutulduğu için konu sırasından bağımsızdır. Yeni bir konu eklendiğinde yalnızca yeni terimler harf sırasına girer; mevcut karşılıklar yerinde kalır."
+    }
+   ],
+   "terimler": [],
+   "belirsiz": [
+    "Ders kartındaki örneklerin ve tasarım vaka çalışmasının ayrıntıları görülmedi.",
+    "Sözlükteki terimlerin toplam sayısı ve hangi konularda geçtiği görülmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  },
+  {
+   "kimlik": "k:dersler/physics-1",
+   "tur": "birim",
+   "ozet": "be2d5ac168a7",
+   "iskelet": "d486ed20e043",
+   "baslik": "Fizik dersi materyali",
+   "ne": {
+    "cok_basit": "Bu parça bir fizik dersinin yardımcı kâğıtlarını bir arada tutar: kelime listesi ve genel ders kartı.",
+    "basit": "Bu parça fizik dersinin kelime listesini ve genel ders kartını bir araya getirir. Liste terimlerin tutarlı çevirisini saklar, kart konuların hangi sırayla işlendiğini gösterir.",
+    "normal": "Bu parça bir ders biriminin yardımcı parçalarını bir arada tutar: fizik terimlerinin Türkçe ve İngilizce karşılıklarını kısa notlarla alfabetik sırada tutan bir kelime listesi ile dersin genel bilgi kartı. Biri sözcük tutarlılığını, diğeri konu yolunu sağlar.",
+    "gelismis": "Bu birim bir fizik dersinin yardımcı kaynaklarını bir arada tutar. Kelime listesi terimlerin Türkçe ve İngilizce karşılıklarını kısa notlarla alfabetik sırada saklar; ders kartı ise konuların hareketten termodinamiğe uzanan sırasını gösterir. Liste ile kart birlikte dersin dilini ve yolunu aynı anda taşır.",
+    "detayli": "Bu birim bir fizik dersinin öğretim malzemesinin yardımcı parçalarını tek yerde toplar. Birincisi sözlüktür: terimlerin Türkçe ve İngilizce karşılıklarını kısa notlarıyla birlikte alfabetik sırada tutar ve her terimi her yerde aynı biçimde çevirir. İkincisi ders kartıdır: hareketle başlayan, Newton yasaları, enerji ve momentum, dönme, yerçekimi, salınım ve dalgalarla ilerleyen, termodinamikle biten konu yolunu gösterir. İkisi birlikte, dersteki her terimin tek çevirisi ve tek yeri olmasını sağlar."
+   },
+   "mantik": {
+    "cok_basit": "Kelime listesi ile ders kartı ayrı tutulur; böylece aynı kelime her yerde aynı biçimde çıkar.",
+    "basit": "Terimler harf sırasıyla tutulursa yeni terim eklemek kolaylaşır ve eski çeviriler kaybolmaz. Konu yolunun kartta durması, öğrenme sırasının sözlük eklemeleriyle karışmasını önler.",
+    "normal": "Bu derste bazı terimler farklı konularda tekrar geçer; her geçişte farklı karşılık verilirse okuyan karışır. Sözlüğü alfabetik sırada ve değişmez karşılıklarla tutmak bu karışıklığı önler. Kartı ayrı tutmak da konu yolunun terim eklemeleriyle bozulmadan kalmasını sağlar.",
+    "gelismis": "Terim çevirileriyle dersin hangi sırayla işleneceği ayrı sorulardır; bu yüzden biri sözlükte, öteki kartta tutulur. Böylece konu sırası değişse bile terim karşılıkları tutarlı kalır. Alfabetik sıra da yeni terimin nereye gideceğini tek bir kuralla belirler.",
+    "detayli": "Terim çevirilerini ders kartının içine gömmek, kart büyüdükçe çevirilerin dağılmasına yol açabilir. Ayrı bir sözlük, aynı karşılığın her konuda tutarlı kalmasını sağlar ve kart değişse bile çeviriyi korur. Konu yolu kartta kalır, çünkü dersin sırası bir terim girdisi değil, okuyanın izleyeceği bir düzendir. Hareketle başlayan temel konuların kartın başında durması, okuyanın ilk terimleri tanımasını kolaylaştırır. Harf sırası da ekleme yerini herkes için aynı kılar."
+   },
+   "nasil": {
+    "basit": "Kelime listesi harf sırasıyla tutulur ve her yeni terim doğru yere eklenir. Ders kartı hareketle başlar, Newton yasalarıyla, enerji ve momentumla sürer; dönme, yerçekimi, salınım ve dalgalarla devam eder, termodinamikle biter.",
+    "normal": "Ders kartı konuları hareketle başlatır; Newton yasalarıyla, enerji ve momentumla, dönmeyle, yerçekimiyle, salınım ve dalgalarla ilerler ve termodinamikle bitirir. Kelime listesi bu konularda geçen terimleri Türkçe ve İngilizce karşılıklarıyla alfabetik sırada tutar; aynı terim her yerde aynı biçimde çevrilir ve yeni terim doğru yere eklenir.",
+    "gelismis": "Birim şöyle çalışır. Ders kartı hareketle açılır, Newton yasalarıyla, enerji ve momentumla, dönmeyle, yerçekimiyle, salınım ve dalgalarla devam eder ve termodinamikle kapanır. Kelime listesi bu konularda geçen terimleri alfabetik sırada tutar; her terim için bir kez verilen karşılık değişmez ve kısa not terimin anlamına dair kısa bir bilgi taşır.",
+    "detayli": "Ders sırasıyla ilerlerken sözlük de paralel büyür. Kart hareketle açılır; bu bölümde geçen temel terimler sözlüğe alfabetik sırada girer. Newton yasaları, enerji ve momentum bölümü kendi terimlerini getirir ve her biri harf sırasına göre yerleşir; daha önce verilmiş bir karşılık değiştirilmez. Dönme, yerçekimi, salınım ve dalgalar bölümleri yeni terimler ekler ve aynı kurala uyar. Termodinamik konusu dersi bitirir ve bu bölümde geçen terimler de aynı kurala uyar. Sonuçta kart konu yolunu, sözlük ise her terimin tek çevirisini tutar; okuyan aynı kavramı her konuda aynı adla görür."
+   },
+   "detay": {
+    "girdiler": [
+     "Terim listesi için yeni terimler ve kısa notları, ders kartı için dersin konu başlıkları."
+    ],
+    "ciktilar": [
+     "Alfabetik sırada bir karşılık listesi ve hareketten termodinamiğe uzanan konu yolunu gösteren bir ders kartı."
+    ],
+    "degismezler": [
+     "Her terimin bir kez verilen karşılığının değişmemesi ve konu sırasının kartta kalması."
+    ],
+    "kenar": [
+     "Aynı terimin farklı konularda geçmesi durumunda karşılığın tek kalması gerekir."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Sözlükteki her terimin Türkçe ve İngilizce karşılığı bir kez verildikten sonra aynı biçimde kalır.",
+     "Sözlük alfabetik sırada tutulur; yeni terim bu sıraya göre doğru yere eklenir.",
+     "Ders kartındaki konu sırası, hareketten termodinamiğe uzanan okuma yolunu belirler; değişirse yol bozulur."
+    ],
+    "degisebilir": [
+     "Sözlüğe yeni terim eklemek ve kısa notları genişletmek, mevcut karşılıklara dokunmadan serbestçe yapılabilir.",
+     "Ders kartındaki konu anlatımlarının cümleleri, sıra korunduğu sürece yeniden yazılabilir."
+    ]
+   },
+   "sorular": [
+    {
+     "soru": "Bir terimin karşılığını değiştirirsem ne olur?",
+     "yanit": "Aynı terim başka bir konuda eski karşılıkla geçerse okuyan ayrı çeviriler görür. Karşılık değişecekse sözlükteki tüm girdilerde aynı anda değişmesi gerekir."
+    },
+    {
+     "soru": "Konu sırasını değiştirirsem sözlük de değişmek zorunda mı?",
+     "yanit": "Hayır. Sözlük harf sırasıyla tutulduğu için konu sırasından bağımsızdır. Yeni bir konu eklendiğinde yalnızca yeni terimler harf sırasına girer; mevcut karşılıklar yerinde kalır."
+    }
+   ],
+   "terimler": [],
+   "belirsiz": [
+    "Ders kartındaki örneklerin ve sayısal problemlerin ayrıntıları görülmedi.",
+    "Sözlükteki terimlerin toplam sayısı ve hangi konularda geçtiği görülmedi."
+   ],
+   "okunan": [],
+   "yazan": {
+    "model": "haiku",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}

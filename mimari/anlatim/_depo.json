@@ -1,0 +1,133 @@
+{
+ "surum": 1,
+ "bolum": "depo",
+ "dil": "tr",
+ "kayitlar": [
+  {
+   "kimlik": "@depo",
+   "tur": "depo",
+   "ozet": "839d167b96f3",
+   "iskelet": "4a582149b0da",
+   "baslik": "Ders kuralları deposu",
+   "ne": {
+    "cok_basit": "Yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları tek yerde toplar ve her sohbete hazır bir okuma metni verir.",
+    "basit": "Bu depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları, rolleri, seçenekleri ve görsel kutuları tutar. Araçlar bunları sohbetin okuyacağı tek metinde birleştirir ve uyulup uyulmadığını denetler.",
+    "normal": "Depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları tek yerde tutar. Kurallar rollere, görevlere, kişisel seçeneklere, alana özgü katmanlara ve görsel kutulara ayrılmıştır. Araçlar bunları her sohbet için tek bir okuma paketinde birleştirir ve anlatımın kurallara uyup uymadığını denetler. Kurulum rehberi ve kök dosyalar da yanındadır.",
+    "gelismis": "Depo bir kural deposudur: uygulama kodu yoktur, yapay zekâ sohbetlerinin ders anlatırken uyacağı kurallar vardır. İş bölümü şöyledir: roller kimin ne yaptığını, görevler hangi durumda nasıl davranılacağını, seçenekler kişiden kişiye değişen tercihleri, görsel kutular anlatımın ekranda nasıl görüneceğini söyler. Alanlar derse özgü gereksinimleri, Claude arayüzü sorunları ise ekran kaynaklı yazım kurallarını ayrı köşede tutar. Araçlar hepsini sohbete tek pakette ulaştırır ve denetler.",
+    "detayli": "Depo bir kural deposudur: uygulama kodu yoktur, yapay zekâ sohbetlerinin ders anlatırken uyacağı kurallar, roller, seçenekler ve görsel şablonlar vardır. İş bölümü şöyledir: roller kimin ne yaptığını, görevler hangi durumda nasıl davranılacağını, seçenekler kişiden kişiye değişen tercihleri, görsel kutular anlatımın ekranda nasıl görüneceğini söyler. Alanlar derse özgü gereksinimleri, Claude arayüzü sorunları ise ekran kaynaklı yazım kurallarını alandan bağımsız ayrı köşede tutar. Dersler bölümü ders başına genel bilgi ve sözlük taşır. Araçlar bütün bunları sohbete tek pakette ulaştırır, anlatımı denetler ve belgeleri üretir. Kişiye özel bilgi depoya girmez, kullanıcının kendi proje klasöründe kalır."
+   },
+   "mantik": {
+    "cok_basit": "Kural tek yerde durur ki her sohbet aynı şeyi okusun ve ders anlatımı sohbetten sohbete dağılmasın.",
+    "basit": "Kurallar tek yerde toplanır ki her sohbet aynı şeyi okusun. Kişiden kişiye değişen şeyler ayrı seçeneklere konur, böylece herkesin tercihi kurallara dokunmadan uygulanır.",
+    "normal": "Ders anlatan sohbetler kuralı kendi başına hatırlayamaz, her seferinde okuması gerekir. Kurallar rollere, görevlere ve seçeneklere bölününce her sohbet yalnız kendine düşeni okur. Kişiye özel şeyler depoya değil kullanıcının klasörüne yazıldığı için depo herkese açık kalabilir. Kuralın tek yerde durması, aynı kuralın iki yerde ayrı ayrı eskimesini önler.",
+    "gelismis": "Ders anlatan sohbetler kuralı kendi başına hatırlayamaz, her seferinde okuması gerekir. Tek paket, sohbetin yanlış ya da eksik dosya okumasını engeller. Kurallar rollere, görevlere ve seçeneklere bölününce her sohbet yalnız kendine düşeni okur, kişiden kişiye değişen tercih de kuralı bozmadan uygulanır. Kuralın tek yerde durması, aynı kuralın iki yerde ayrı ayrı eskimesini önler. Kişiye özel bilgi kullanıcının klasöründe kaldığı için depo herkese açık olabilir.",
+    "detayli": "Ders anlatan sohbetler kuralı kendi başına hatırlayamaz, her seferinde okuması gerekir. Tek paket, sohbetin yanlış ya da eksik dosya okumasını engeller ve hangi kuralın geçerli olduğu konusunda tartışmayı bitirir. Kurallar rollere, görevlere ve seçeneklere bölününce her sohbet yalnız kendine düşeni okur, kişiden kişiye değişen tercih de kuralı bozmadan uygulanır. Alana özgü gereksinim çekirdeğe karışmaz, böylece bir dersin ihtiyacı başka dersin kuralını kirletmez. Kuralın tek yerde durması, aynı kuralın iki yerde ayrı ayrı eskimesini önler. Kişiye özel bilgi kullanıcının klasöründe kaldığı için depo herkese açık olabilir. Denetim aracı da uyulmayan kuralı sohbet gitmeden yakalar."
+   },
+   "nasil": {
+    "basit": "Bir sohbet açılınca araç, sohbetin rolüne ve dersine uygun kuralları toplayıp tek pakete yazar. Sohbet yalnız bu paketi okuyup işe başlar. Anlatım yazılırken denetim aracı kurallara uyulup uyulmadığına bakar.",
+    "normal": "Bir sohbet açılınca paket aracı, sohbetin rolüne, koduna ve dersine bakarak çekirdek kuralları, role ait kuralları, seçilen seçenekleri ve varsa alan katmanını birleştirir. Sohbet başka kural dosyası okumaz, yalnız bu paketi uygular. Kişisel ilerleme ve tercihler kullanıcının kendi klasöründen gelir. Anlatım gönderilmeden önce denetim aracı metni kurallara göre sınar. Ayar tablosu ya da bir şablon değişince belge ve galeri sayfaları yeniden üretilir.",
+    "gelismis": "Bir sohbet açılınca paket aracı rolü, kodu ve dersi bulur: önce mesajdaki değerlere, sonra kullanıcının yerel ayarlarına, en son deponun varsayılanlarına bakar. Ardından çekirdek kuralları, role ait tarifi, seçilen seçenek dosyalarını, dersin alan katmanını ve Claude arayüzü sorunları bölümünü tek pakette birleştirir. Sohbet başka kural dosyası okumaz; paket onun kuralıdır. Kişisel durum kullanıcının proje klasöründen okunur. Anlatım yapan rol her mesajı göndermeden önce denetim aracından geçirir, hata varsa göndermez. Ayar tablosu ya da widget şablonu değişince üretici belgeyi ve galeriyi yeniden yazar.",
+    "detayli": "Bir sohbet açılınca ilk iş depoyu alıp paket aracını rolle, kodla ve dersle çalıştırmaktır. Rol, kod ve alan şu sırayla bulunur: mesajdaki değerler, kullanıcının yerel ayarları, deponun varsayılanı. Paket aracı çekirdek kuralları, role ait tarifi, seçilen seçenek dosyalarını, dersin bağlı olduğu alan katmanını ve Claude arayüzü sorunları bölümünü tek metinde birleştirir; sohbet başka kural dosyası okumaz. Ardından sohbet kullanıcının proje klasöründeki yerel ayarları, dersin hafızasını ve varsa devir notunu okur, selamlama yazmadan işe girer. Anlatım yapan rol her mesajı ve görsel kutuyu göndermeden önce denetim aracından geçirir; hata varsa göndermez. Yüklenen belge sohbette çevrilmez, ayrı bir çeviri sohbetine yönlendirilir ve anlatım yalnız çevrilmiş metinden okunur. Ayar tablosu ya da widget şablonu değişince üretici belgeyi ve galeriyi yeniden yazar. Kalıcı bir tercih söylenirse genel olan depoya, kişiye özel olan kullanıcının yerel ayarına işlenir."
+   },
+   "detay": {
+    "girdiler": [
+     "Sohbetin rolü, kodu ve dersi paket aracının girdisidir.",
+     "Kullanıcının kendi proje klasöründeki yerel ayarlar ve ders hafızası sohbete kişisel durumu taşır.",
+     "Ayar tablosu hangi rolün hangi seçeneklerle çalışacağını belirler."
+    ],
+    "ciktilar": [
+     "Sohbetin okuyup uyguladığı tek kural paketi.",
+     "Ayar tablosundan üretilen belge ve görsel galeri sayfası.",
+     "Anlatım ve test sorusu denetiminin hata ya da geçti sonucu."
+    ],
+    "degismezler": [
+     "Her kural tek yerde durur, başka yere kopyalanmaz.",
+     "Depo herkese açıktır; kişi adı, kimlik ve hoca bilgisi depoya girmez.",
+     "Seçenek eklenirken varsayılan seçenek değiştirilmez."
+    ],
+    "kenar": [
+     "Sohbete belge, slayt ya da görsel eklendiyse o sohbet çevirmez ve anlatmaz, yönlendirme alır.",
+     "Seçim yapmayan kullanıcı her seçenek grubunda varsayılanı kullanır."
+    ]
+   },
+   "sinir": {
+    "sabit": [
+     "Rol, seçenek ve ayar kodunun adları ile biçimi sabittir; sohbetler ve araçlar bunlara dayanır.",
+     "Sohbetin tek kural kaynağı paket aracının ürettiği metindir.",
+     "Kişiye özel bilgi depoya girmez, yalnız kullanıcının kendi proje klasöründe kalır.",
+     "Alana özgü kural çekirdeğe değil alan katmanına yazılır."
+    ],
+    "degisebilir": [
+     "Bir dersin ya da alanın içindeki kural metinleri, dışarıya verilen adlar ve biçimler korunduğu sürece serbestçe yazılabilir.",
+     "Yeni alan, yeni seçenek ya da yeni görsel kutu eklenebilir.",
+     "Kurulum rehberinin anlatım sırası ve sözcükleri serbestçe düzeltilebilir."
+    ]
+   },
+   "kurulus": [
+    {
+     "baslik": "Önce kök dosyalar ve çekirdek",
+     "metin": "Hiçbir şeye dayanmayan başlangıç budur: depoyu tanıtan, sohbetin nasıl açılacağını söyleyen ve kuralların nerede durduğunu gösteren kök dosyalar yazılır.",
+     "parcalar": [
+      "f:u"
+     ]
+    },
+    {
+     "baslik": "Roller, görevler ve seçenekler",
+     "metin": "Sonra sohbetlerin iş bölümü, durum başına davranışlar ve kişiden kişiye değişen tercih grupları yazılır. Bunlar çekirdeğe dayanır, birbirine dayanmaz.",
+     "parcalar": [
+      "k:roller",
+      "k:gorevler",
+      "k:secenekler"
+     ]
+    },
+    {
+     "baslik": "Görsel kutular ve ekran sorunları",
+     "metin": "Anlatımda kullanılan görsel kutuların biçimi ve görünüş kuralları ile Claude arayüzünün bilinen sorunlarına karşı yazım kuralları eklenir.",
+     "parcalar": [
+      "k:gorsel",
+      "k:claude-sorunlari"
+     ]
+    },
+    {
+     "baslik": "Dersler ve alanlar",
+     "metin": "Her dersin genel bilgisi ve sözlüğü ile alana özgü kurallar kurulur. Bunlar ortak kurallara dayanır ama onları değiştirmez.",
+     "parcalar": [
+      "k:dersler",
+      "k:alanlar"
+     ]
+    },
+    {
+     "baslik": "Araçlar ve kurulum rehberi",
+     "metin": "En sonda paketi birleştiren, denetleyen ve belge üreten araçlar ile yeni kullanıcıyı yönlendiren kurulum rehberi yazılır; çünkü hepsi öncekilere dayanır.",
+     "parcalar": [
+      "k:araclar",
+      "k:kurulum"
+     ]
+    }
+   ],
+   "sorular": [
+    {
+     "soru": "Sohbet neden depodaki kural dosyalarını tek tek okumaz?",
+     "yanit": "Çünkü kuralın tek kaynağı paket aracının birleştirdiği metindir. Dosyaları tek tek okumak eksik ya da çelişkili kural okuma riskini getirir."
+    },
+    {
+     "soru": "Bir kullanıcının kişisel tercihi nereye yazılır, neden depoya değil?",
+     "yanit": "Kullanıcının kendi proje klasörüne yazılır. Depo herkese açıktır, kişiye özel bilgi orada durursa ortaya çıkar."
+    },
+    {
+     "soru": "Yeni bir dersin özel gereksinimi ortaya çıkarsa kural nereye eklenir?",
+     "yanit": "Çekirdeğe değil o dersin bağlı olduğu alan katmanına eklenir. Böylece öteki derslerin ortak kuralları değişmez."
+    }
+   ],
+   "kritik_neden": "Bozulursa sohbetler kuralları eksik ya da çelişkili okur ve ders anlatımı sohbetten sohbete tutarsızlaşır.",
+   "terimler": [],
+   "belirsiz": [],
+   "okunan": [],
+   "yazan": {
+    "model": "sonnet",
+    "ajan": "claude-code",
+    "tarih": "2026-11-14"
+   }
+  }
+ ]
+}
