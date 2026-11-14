@@ -495,59 +495,57 @@
   {
    "kimlik": "DEGISIKLIKLER.md",
    "tur": "dosya",
-   "ozet": "7c3fe5f78875",
+   "ozet": "1d8cab332dd9",
    "iskelet": "98b8f60d112a",
    "baslik": "Değişiklik geçmişi",
    "ne": {
-    "cok_basit": "Bu dosya, depodaki değişikliklerin kaydını en yenisi üstte olacak biçimde tutar.",
-    "basit": "Bu dosya, depodaki her değişikliği tek satırda kaydeder: ne zaman, hangi dosyada, ne değiştiği ve neden. En yeni kayıt en üsttedir.",
-    "normal": "Bu dosya, depodaki değişikliklerin kaydını tutar. Her satır bir değişikliğin tarihini, hangi dosyaya dokunduğunu, ne değiştiğini ve neden değiştiğini söyler. Böylece geriye dönüp bir kararın nereden geldiği bulunabilir.",
-    "gelismis": "Dosyanın kendisi bir kural değildir; her giriş tarih, değiştirilen dosyalar, ne değiştiği ve neden bilgilerini taşır. Girişler yeni bir özellik eklenmesi ya da bir kuralın baştan yazılması gibi farklı türlerde olabilir.",
-    "detayli": "Kayıtlar, bir kuralın neden bu hale geldiğini ve hangi tarihte değiştiğini sonradan izlemeye yarar. Son kayıtlar mimari görünüm ayarının eklenmesi, sohbet akışının baştan yazılması, anlatım denetim aracının eklenmesi ve ders sözlüklerine terim eklenmesi gibi değişikliklerin ayrı ayrı izlenebilmesini sağlar. Ders sözlüklerine eklenen terimler de burada görünür; her giriş tek satırda yazılır ve nedenini de belirtir."
+    "cok_basit": "Bu dosya, depoda yapılan değişikliklerin kaydını tutar.",
+    "basit": "Bu dosya her değişikliği tek satırda kaydeder: ne zaman, hangi dosyada, ne değiştiği ve neden. En yeni kayıt en üsttedir.",
+    "normal": "Bu dosya, depodaki değişikliklerin kaydını tutar. Her satır tarihi, değişen dosyaları, ne değiştiğini ve nedenini söyler. Böylece bir kararın nereden geldiği sonradan bulunabilir.",
+    "gelismis": "Bu dosya bir kural değil, depodaki değişikliklerin kaydıdır; en yeni kayıt en üstte durur. Her satır tarihi, değişen dosyaları, ne değiştiğini ve nedenini tek satırda taşır. Büyük yapısal değişiklikler de aynı biçimde kaydedilir.",
+    "detayli": "Değişiklik geçmişi, bir kuralın neden bu hâle geldiğini ve hangi değişiklikle değiştiğini sonradan izlemeye yarar. Son kayıtlar mimari arayüz, sohbet akışı ve anlatım denetimi gibi değişiklikleri ayrı ayrı gösterir. Her değişiklik tek satırda, neden kısmıyla birlikte yazılır. Ders sözlüklerine eklenen terimler de burada izlenir."
    },
    "mantik": {
-    "cok_basit": "Yapılanların kaydı varsa, bir şeyin neden böyle olduğu sonradan öğrenilir.",
-    "basit": "Depo her değişiklikte biraz değişir ve bunun izi kalmazsa, eski bir kararın nedeni unutulur. Bu dosya, izi bir satırla tutar.",
-    "normal": "Değişikliğin gerekçesi çoğu zaman kodda görünmez. Bu dosya, bu gerekçeyi tek satırla saklar, böylece sonradan okuyan kişi ya da sohbet kararın nedenini görebilir.",
-    "gelismis": "Kayıtların zamanla birikmesi, deponun neden bugünkü hâlini aldığını izlemeyi mümkün kılar. Bu, yeni bir kişinin eski kararları yeniden tartışmadan önce nedenlerine bakabilmesini sağlar. Kayıt sıralaması en yeniyi öne koyduğu için, en güncel durum her zaman ilk görünür.",
-    "detayli": "Değişiklik geçmişi, depoda neyin ne zaman ve neden değiştiğini tek bir yerde toplar. Son kayıtlar, mimari görünüm ayarının eklenmesi, sohbet akışının baştan yazılması, anlatım denetim aracının eklenmesi ve ders sözlüklerine terim eklenmesi gibi değişikliklerin ayrı ayrı izlenebilmesini sağlar. Kayıtlara bakan kişi, bir kuralın nereden geldiğini bulmak için yeniden tüm depoyu taramak zorunda kalmaz."
+    "cok_basit": "Yapılan işlerin kaydı tutulursa bir şeyin neden böyle olduğu sonradan öğrenilir.",
+    "basit": "Değişikliğin nedeni unutulursa eski bir karar yeniden tartışılır. Bu dosya gerekçeyi tek satırda tutar.",
+    "normal": "Değişikliğin gerekçesi çoğu zaman kodda görünmez. Bu dosya gerekçeyi tek satırda saklar, böylece sonradan bakan kişi ya da sohbet kararın nedenini görebilir.",
+    "gelismis": "Kayıtlar zamanla birikerek deponun neden bugünkü hâlini aldığını izlemeyi mümkün kılar. Yeni bir kişi eski kararları yeniden tartışmadan önce nedenlerine bakabilir. En yeni kayıt en üstte durduğu için güncel durum hep ilk görünür.",
+    "detayli": "Değişiklik geçmişi, depoda neyin ne zaman ve neden değiştiğini tek bir yerde toplar. Bir kuralın nereden geldiğini bulmak için tüm depoyu yeniden taramak gerekmez. Son kayıtlar mimari arayüz, sohbet akışı ve anlatım denetimi gibi değişiklikleri ayrı ayrı izlenebilir kılar."
    },
    "nasil": {
-    "basit": "Her değişiklikten sonra bir satır eklenir. Satır, en üstte görünecek şekilde yazılır.",
+    "basit": "Her değişiklikten sonra kayda bir satır eklenir. Yeni satır en üste yazılır.",
     "normal": "Her değişiklikten sonra kayda tek satır eklenir: tarih, değişen dosyalar, ne değiştiği ve neden. Yeni satır listenin en üstüne yazılır; böylece en yeni kayıt her zaman ilk görünür.",
-    "gelismis": "Her değişiklik bu dosyaya bir satır olarak işlenir; bu, değişikliğin yapıldığı işin parçasıdır. Satırdaki dosya kısmı değişen dosyaları, neden kısmı ise gerekçeyi taşır. Yeni satır her zaman en üste eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Büyük yapısal değişiklikler de aynı biçimde kaydedilir.",
-    "detayli": "Her değişiklik bu dosyaya bir satır olarak işlenir ve bu, değişikliğin yapıldığı işin parçasıdır. Satır, tarih, değişen dosyalar, ne değiştiği ve neden kısımlarından oluşur; her kısım kısa ve tek satırda yazılır. Yeni satır her zaman en üste eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Büyük yapısal değişiklikler de aynı biçimde kaydedilir. Bir değişiklik birden fazla dosyaya dokunduysa dosya kısmında hepsi sıralanır; neden kısmı ise bu değişikliğin neden yapıldığını söyler."
+    "gelismis": "Her değişiklik, işin parçası olarak bu dosyaya bir satır olarak yazılır; satırın dosya kısmı değişen dosyaları, neden kısmı ise gerekçeyi taşır. Yeni satır her zaman en üste eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Bir değişiklik birden fazla dosyaya dokunduysa dosya kısmında hepsi sıralanır ve kayıt yine tek satır kalır.",
+    "detayli": "Her değişiklik bu dosyaya bir satır olarak işlenir ve bu, değişikliğin yapıldığı işin parçasıdır. Satır tarih, değişen dosyalar, ne değiştiği ve neden kısımlarından oluşur. Her kısım kısa ve tek satırda yazılır; neden kısmı değişikliğin gerekçesini söyler. Yeni satır her zaman en üste eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Büyük yapısal değişiklikler de aynı biçimde kaydedilir ve geri dönüp bakıldığında kararın izi buradan bulunur."
    },
    "detay": {
     "girdiler": [
-     "Yapılan değişiklik: hangi tarihte, hangi dosyalarda, ne değiştiği ve neden."
+     "Yapılan değişikliğin tarihi, değişen dosyalar, ne değiştiği ve neden bilgisi."
     ],
     "ciktilar": [
-     "Üstte en yeni olacak biçimde sıralanmış, her biri tek satırlık bir geçmiş."
+     "Okuyana, bir kuralın neden ve ne zaman değiştiğini gösteren en yeni üstte sıralı kayıt listesi."
     ],
     "degismezler": [
-     "Satırın biçimi, yani tarih, dosya, ne değiştiği ve neden sırası, sabittir; okuyan bu sıraya güvenir.",
-     "En yeni kaydın en üstte durması kuralı değişmez."
+     "Her kayıt tek satırdır ve tarih, dosya, ne değiştiği ile neden sırasıyla yazılır."
     ],
     "kenar": [
-     "Bir değişiklik birden fazla dosyaya dokunduysa dosya kısmında hepsi yazılır.",
-     "Aynı gün birden fazla değişiklik olduğunda, her biri ayrı satır olarak yazılır."
+     "Aynı gün birden fazla değişiklik olursa her biri ayrı satır olarak en üste eklenir."
     ]
    },
    "sinir": {
     "sabit": [
-     "Satırın biçimi, yani tarih, dosya, ne değiştiği ve neden sırası, sabittir; okuyan bu sıraya güvenir.",
-     "En yeni kaydın en üstte durması sabittir."
+     "Satırdaki tarih, dosya, değişiklik ve neden sırası ile ayırıcı işaret, kaydı okuyan kişinin satırları tanıması için sabit kalmalıdır.",
+     "En yeni kaydın en üstte durması sıralamanın temelidir; bu sıra değişirse okuyan güncel durumu yanlış yerde arar."
     ],
     "degisebilir": [
-     "Kayıtların ayrıntı düzeyi, değişikliğin büyüklüğüne göre serbestçe seçilebilir."
+     "Kayıtların uzunluğu ve ayrıntısı, her değişikliğin gerekçesine göre serbestçe ayarlanabilir.",
+     "Eski satırların metni kısaltılabilir, yeter ki kaydın tarihi ve dosyası yerinde kalsın."
     ]
    },
-   "kritik_neden": "Bozulursa değişikliklerin nedenleri kaybolur ve sonradan gelen kişi kararların gerekçesine ulaşamaz.",
+   "kritik_neden": "Bu dosya başka bir parçaya dayanmadığı için bozulursa yalnız değişiklik geçmişi kaybolur, depo çalışmaya devam eder.",
    "terimler": [],
    "belirsiz": [
-    "Uzun dosya: her bölümün girişi okundu, gövdelerin tamamı okunmadı.",
-    "Satırların sonları kesik geldiği için bazı girişlerin tam gerekçesi görülmedi."
+    "Kayıtlarda anılan dosyaların içeriği okunmadı; kayıtların doğruluğu bu anlatımdan doğrulanamadı."
    ],
    "okunan": [
     "DEGISIKLIKLER.md"
@@ -561,13 +559,12 @@
   {
    "kimlik": "DEGISIKLIKLER.md::Değişiklikler",
    "tur": "alt",
-   "ozet": "7c3fe5f78875",
+   "ozet": "1d8cab332dd9",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Bu bölüm, değişikliklerin tek satırlık kayıt olarak nasıl yazıldığını gösterir.",
-    "normal": "Bölüm, en yeni kaydın en üstte olacağını belirten kısa bir biçim açıklaması ile başlar. Ardından her girişin tarih, dosya, ne değiştiği ve neden kısımlarından oluştuğu gösterilen bir liste gelir."
+    "cok_basit": "Yapılan her değişikliğin kısa notu, en yenisi en üstte olacak şekilde durur.",
+    "normal": "Her satır bir değişikliği tarih, dosya, ne değiştiği ve neden ile birlikte anlatır. Yeni satır en üste eklenir; böylece geriye dönüp bakan kişi güncel durumu hemen görür. Kayıt, kuralın neden bu hâle geldiğini sonradan izlemeye yarar."
    },
-   "kritik_neden": "Bozulursa kayıtların hangi sırayla ve hangi biçimde yazıldığı belirsiz kalır.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -670,64 +667,58 @@
   {
    "kimlik": "README.md",
    "tur": "dosya",
-   "ozet": "e904a909f66f",
+   "ozet": "3dfcce849763",
    "iskelet": "22014d5d3ce8",
    "baslik": "Depo giriş sayfası",
    "ne": {
-    "cok_basit": "Bu depo, yapay zekâ ile ders yaptırırken kuralları bir yerde toplar.",
-    "basit": "Depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları tek yerde tutar. Her sohbet yalnız kendi işine ait kuralları okur.",
-    "normal": "Bu depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları, rolleri, seçenekleri ve görsel şablonları tutar. Her sohbet yalnız kendi rolüne ve ayar koduna ait parçaları okur.",
-    "gelismis": "Bu depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları, rolleri, seçenekleri ve görsel şablonları tutar. Kurallar modülerdir: her sohbet kendi rolüne ve ayar kodunun seçimlerine ait parçaları okur, geri kalanını görmez.",
-    "detayli": "Bu depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları, rolleri, seçenekleri ve görsel şablonları tutar. Kurallar modülerdir: her sohbet kendi rolüne ve ayar kodunun seçimlerine ait parçaları okur, geri kalanını görmez. Depo herkese açıktır ve yalnız kural içerir; kişiye özel bilgiler her projede ayrı bir dosyada kalır."
+    "cok_basit": "Bu sayfa, ders kurallarının nerede durduğunu gösteren giriş sayfasıdır.",
+    "basit": "Bu sayfa, yapay zekâ sohbetlerinin uyacağı kuralların hangi klasörde durduğunu gösteren giriş sayfasıdır.",
+    "normal": "Bu depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları, rolleri, seçenekleri ve görsel şablonları tutar. Bu sayfa ise hangi klasörün neyi tuttuğunu gösteren bir giriş sayfasıdır; ayrıntı klasörlerde durur.",
+    "gelismis": "Bu sayfa, yapay zekâ sohbetlerinin ders kurallarını nerede bulacağını söyleyen giriş sayfasıdır. Kurallar parçalara bölünmüştür; her sohbet yalnız kendi rolüne ve ayar kodunun seçimlerine ait parçaları okur. Ayar kodu seçimleri tek satırda taşır, tam tablo `KOD.md` içindedir.",
+    "detayli": "Bu sayfa, kuralların, rollerin, seçeneklerin ve görsel şablonların nerede durduğunu gösteren giriş sayfasıdır. Kurallar parçalara bölünmüştür; her sohbet yalnız kendi rolüne ve ayar kodunun seçimlerine ait parçaları okur, geri kalanını görmez. Depo herkese açıktır ve yalnız kural içerir; kişiye özel bilgiler proje dosyasında kalır. Ayar kodu seçimleri tek satırda taşır, tam tablo `KOD.md` içindedir."
    },
    "mantik": {
-    "cok_basit": "Depoya ilk bakan kişiye neyin nerede olduğunu gösterir.",
-    "basit": "Depoya ilk bakan kişi, hangi işin hangi klasöre ait olduğunu tek sayfada görsün diye var. Ayrıntı ilgili dosyada kalır.",
-    "normal": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir; bu sayfa okuyana hangi parçanın nerede olduğunu verir. Ayrıntı ilgili klasörde kalır, böylece giriş kısa ve anlaşılır tutulur.",
-    "gelismis": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir; bu sayfa okuyana hangi parçanın nerede olduğunu verir. Ayrıntı ilgili klasörde kalır, böylece giriş kısa ve anlaşılır tutulur. Ayar kodunun kısa bir yazı olması, seçimin konuşma içinde tek satırda taşınabilmesi için faydalıdır.",
-    "detayli": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir; bu sayfa okuyana hangi parçanın nerede olduğunu verir. Ayrıntı ilgili klasörde kalır, böylece giriş kısa ve anlaşılır tutulur. Ayar kodunun kısa bir yazı olması, seçimin konuşma içinde tek satırda taşınabilmesi için faydalıdır. Gizlilik kuralı, depoyu herkese açık tutarken kişisel bilgilerin sızmasını önlemek için yararlıdır."
+    "cok_basit": "Depoya ilk bakan kişi aradığını hemen bulsun diye var olan giriş sayfası.",
+    "basit": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir; bu sayfa, hangi işin hangi klasöre ait olduğunu tek bakışta verir.",
+    "normal": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir. Ayrıntı ilgili klasörde kalır, böylece giriş kısa ve anlaşılır tutulur; her sohbet de yalnız kendi parçasını açar.",
+    "gelismis": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir. Ayrıntı ilgili klasörde kalır, böylece giriş kısa tutulur. Ayar kodunun kısa bir yazı olması, seçimin konuşma içinde tek satırda taşınabilmesi için faydalıdır; bu sayfa o kodun ne anlama geldiğini de açıklar.",
+    "detayli": "Kurallar çok parçaya bölündüğü için bir yön gösterici gerekir; bu sayfa okuyana hangi parçanın nerede olduğunu verir. Ayrıntı ilgili klasörde kalır, giriş kısa tutulur. Gizlilik bölümü, depo herkese açık tutulurken kişisel bilgilerin sızmasını önlemek için vardır ve kişisel ayarların proje dosyasında kalacağını baştan söyler."
    },
    "nasil": {
-    "basit": "Sohbet, klasör tablosuna bakarak gereken parçayı bulur. Ayar kodu seçenekleri belirler.",
-    "normal": "Proje talimatına kurulum satırları yapıştırılır, sohbete konu yazılır ve istenirse ayar kodu eklenir. Sohbet depoyu kopyalayıp okuma paketini üretir ve dersi o paketle başlatır.",
-    "gelismis": "Sohbet, bu sayfadaki tablodan hangi klasörün ne içerdiğini öğrenir. Çekirdek klasörü her sohbetin okuduğu temel kuralları tutar; roller ve görevler sohbetin işine göre seçilir; seçenekler ise ayar kodunun her harfi için ayrı dosyada durur. Okuma paketini araçlar üretir; kaynak okuma aracı ise yalnız istenen sayfa aralığını okur.",
-    "detayli": "Sohbet önce proje talimatındaki kurulum satırlarını okur ve kullanıcının yazdığı konuyu alır. Ayar kodu varsa seçenekleri ona göre belirlenir; yoksa depo varsayılanı kullanılır. Sohbet depoyu kopyalar, okuma paketini araçlarla üretir ve dersi o paketle başlatır. Kişiye özel ayarlar yerel ayar dosyasından gelir ve depodaki varsayılanın üstüne yazılır. Klasör tablosu, her sohbetin hangi parçaları okuyacağını belirler; çeviri gereken kaynak ayrı bir çeviri sohbetine gider ve çevrilen metin ile yeni bir anlatım sohbeti açılır."
+    "basit": "Sayfa, klasörleri ve ne içerdiklerini bir tabloda sıralar. Ayar kodu ve araç komutları da ayrı bölümlerde yazılıdır.",
+    "normal": "Sayfa kısa bölümlerle ilerler: önce hızlı başlangıç, sonra kişisel ayarların nerede tutulduğu gelir. Ayar kodunda her harf bir ayar, her rakam bir seçenektir ve varsayılan kod burada yazılıdır. Klasörler tablosu ile araçlar bölümü, sonraki adımları gösterir.",
+    "gelismis": "Sayfa, okuyana hangi işin hangi klasörde olduğunu söyler ve ayrıntıyı ilgili dosyaya bırakır. Hızlı başlangıç, proje talimatına eklenecek satırları ve sohbete konunun nasıl yazılacağını anlatır. Ayar kodu, her ayarın seçimini tek harf ve rakamla belirler; varsayılan kod sayfada yazılıdır. Araçlar bölümü okuma paketi, kaynak okuma ve sayfa üretme komutlarını sıralar. Kişisel ayarlar bölümü, kişiye özel tercihlerin depodaki varsayılanın üstüne yazıldığını söyler.",
+    "detayli": "Sayfa, okuyana önce yapılacakları gösterir: proje talimatına kurulum satırlarını eklemek, sohbete konuyu yazmak ve istenirse ayar kodunu eklemek. Sohbet bu sırayı izleyerek depoyu kopyalar ve okuma paketini üretir; sayfanın kendisi sohbeti çalıştırmaz, yalnız yönünü verir. Ayar kodu bölümünde her harf bir ayar, her seçenek bir rakamdır; tam tablo `KOD.md` dosyasındadır. Kişisel ayarlar her projede ayrı bir dosyada tutulur ve depodaki varsayılanın üstüne yazılır. Klasörler tablosu, çekirdek, roller, görevler ve seçenekler gibi işleri birbirinden ayırır. Son bölümde araç komutları, kaynak okuma, çeviri ve anlatım ayrımı ile değişiklik kaydı yer alır."
    },
    "detay": {
     "girdiler": [
-     "Proje talimatına yapıştırılan kurulum satırları, sohbete yazılan konu ve isteğe bağlı ayar kodu.",
-     "Depo içindeki klasörler, araçlar ve yerel ayar dosyası."
+     "Okuyanın hangi işi yapmak istediği; bu sayfa girdi almaz, yalnız yön gösterir."
     ],
     "ciktilar": [
-     "Sohbetin depoyu kopyalayıp tek bir okuma paketi üretmesi ve bu paketle derse başlaması.",
-     "Kişiye özel ayar dosyası yoksa şablondan oluşturulması."
+     "Okuyana verilen klasör tablosu, ayar kodu açıklaması ve komut listesi."
     ],
     "degismezler": [
-     "Ayar harflerinin ve seçeneklerin anlamı; sohbetler bu anlamlara göre seçim yapar.",
-     "Klasör adları ve paket üreten araç; sohbetler yollarını bu adlarla bulur.",
-     "Kişiye özel bilgilerin depoda değil yerel ayar dosyasında tutulması."
+     "Depo herkese açık kalır ve kişisel bilgi bu sayfaya yazılmaz."
     ],
     "kenar": [
-     "Yerel ayar dosyası yoksa ilk sohbet onu şablondan oluşturur.",
-     "Çeviri gerektiren kaynak, anlatım sohbetine değil çeviri sohbetine gider."
+     "Bağlantılı bir kurulum dosyası taşınır ya da adı değişirse, bu sayfadaki bağlantı çalışmaz."
     ]
    },
    "sinir": {
     "sabit": [
-     "Ayar kodunun harf ve seçenek düzeni; sohbetler kodu bu düzene göre okur.",
-     "Klasör adları ve okuma paketi komutunun adı; başka sohbetler bunlara dayanır.",
-     "Kişiye özel bilgilerin yalnız yerel ayar dosyasında kalması."
+     "Ayar kodunun her harfin bir ayar, her rakamın bir seçenek olduğu düzeni değişmemelidir; kullanıcılar kodu bu biçimle saklar.",
+     "Sayfadaki bölüm adları, okuyanın aradığı yeri bulabilmesi için sabit kalmalıdır."
     ],
     "degisebilir": [
-     "Kişiye özel ayar dosyasındaki değerler depoya dokunmadan değiştirilebilir.",
-     "Bu sayfanın anlatım metni, kuralların anlamını bozmadan yeniden yazılabilir."
+     "Klasörler tablosuna yeni bir satır eklenebilir, yeter ki satır tek bir klasörü anlatsın.",
+     "Araçlar bölümündeki komut listesi, yeni araçlar eklendikçe serbestçe güncellenebilir."
     ]
    },
-   "kritik_neden": "Başka parçalar bu sayfaya dayanmadığı için bozulursa yalnız okuyucunun yönü şaşar.",
+   "kritik_neden": "Başka hiçbir parça bu sayfaya dayanmadığı için bozulursa yalnız okuyanın yönü şaşar, sohbetlerin çalışması etkilenmez.",
    "terimler": [],
    "belirsiz": [
-    "BASLA ve kurulum dosyalarının içeriği bu sayfada yalnız adlarıyla geçiyor; ayrıntıları bilinmiyor.",
-    "Araç komutlarının içeride tam olarak nasıl çalıştığı bilinmiyor; yalnız kullanım biçimleri görüldü."
+    "Bağlantılı kurulum ve sohbet dosyalarının içeriği okunmadı; yalnız bu sayfadaki yönlendirme metni okundu.",
+    "Kişisel ayarların yerel dosyada nasıl okunduğu bu sayfadan doğrulanamadı."
    ],
    "okunan": [
     "README.md"
@@ -741,13 +732,12 @@
   {
    "kimlik": "README.md::AI-ders",
    "tur": "alt",
-   "ozet": "e904a909f66f",
+   "ozet": "3dfcce849763",
    "iskelet": "fbe0c8a6c2e8",
    "ne": {
-    "cok_basit": "Bu depo, yapay zekâ sohbetlerine ders anlatma kurallarını verir.",
-    "normal": "Claude sohbetlerinde ders anlatımını tutarlı, kaynağa sadık ve düşük token harcayarak yaptırmak için kurallar bu depoda toplanmıştır. Kurallar parçalıdır: her sohbet yalnız rolüne ve ayar koduna ait parçaları okur."
+    "cok_basit": "Sayfanın başı: depo, ders anlatan yapay zekâ için kuralları tutar.",
+    "normal": "Sayfanın en üstünde depo adı ve kısa bir tanım yer alır. Depo, yapay zekâ sohbetlerinin ders anlatırken uyacağı kuralları, rolleri ve seçenekleri tutar; her sohbet yalnız kendi parçasını okur."
    },
-   "kritik_neden": "Bu bölümü başka parçalar kullanmaz; bozulursa yalnız okuyucunun ilk izlenimi etkilenir.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -765,10 +755,9 @@
    "ozet": "135a021c742a",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Depoda paket hazırlayan ve kaynak okuyan küçük yardımcı programlar var.",
-    "normal": "Araçlar okuma paketi üretir, çevrilmiş metinden sayfa aralığı okur, kural çıktılarını yeniden üretir ve test sorularını hazırlar. Sohbetler bu komutları yönergelerinden alır."
+    "cok_basit": "Hazır komut listesi: okuma paketi, kaynak okuma, sayfa üretme ve test.",
+    "normal": "Bu bölüm, okuma paketini üretme, kaynaktan belirli sayfaları okuma, ayar kodunu açıklama, ayar sayfasını ve galeriyi yeniden üretme, soru seti ve anlatım denetimi için kullanılacak komutları sıralar. Her komut tek bir işi yapar."
    },
-   "kritik_neden": "Komutlar bozulursa paket üretimi ve sayfa okuma durur.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -786,10 +775,9 @@
    "ozet": "74afa77c2658",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Ayar kodu, sohbetin nasıl ders anlatacağını kısa bir yazıyla seçer.",
-    "normal": "Ayar kodu, her ayarın bir harfle ve her seçeneğin bir rakamla gösterildiği kısa bir yazıdır. Harfler kaynağa bağlılık, ton, terimler ve palet gibi ayarları, rakamlar o ayarın seçeneğini anlatır."
+    "cok_basit": "Kısa bir kodla sohbetin seçimleri belirlenir; kod yoksa varsayılan geçerlidir.",
+    "normal": "Her ayar bir harfle, her seçenek bir rakamla gösterilir. Tablo, harflerin neyi ayarladığını ve varsayılan seçeneği gösterir; tüm seçenekler ayrı bir dosyadadır ve görsel galeriyle de seçilebilir."
    },
-   "kritik_neden": "Harf ve rakam düzeni bozulursa sohbetler ayarları yanlış okur.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -807,10 +795,9 @@
    "ozet": "4166fd9a1881",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Kural değişikliği doğrudan ana kopyaya yazılır ve kısa bir not düşülür.",
-    "normal": "Kural değişiklikleri ayrı bir dal açılmadan doğrudan ana dala yazılır ve değişiklik listesine bir satır eklenir. Böylece hangi kuralın ne zaman değiştiği listede tek tek izlenebilir."
+    "cok_basit": "Her kural değişikliği ana kopyaya yazılır ve listeye bir satır eklenir.",
+    "normal": "Kural değişiklikleri doğrudan ana kopyaya yazılır. Her değişiklik için kayıt listesine tek satır eklenir; böylece bir kuralın ne zaman ve neden değiştiği sonradan izlenebilir."
    },
-   "kritik_neden": "Değişiklik listesi bozulursa kuralların ne zaman değiştiği izlenemez.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -828,10 +815,9 @@
    "ozet": "e8b922d43cbc",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Depo herkese açıktır, bu yüzden içine kişisel bilgi yazılmaz.",
-    "normal": "Depo herkese açık olduğu için ad, e-posta, sürücü ya da sohbet kimliği, not ve hoca materyali yazılmaz. Kişiye özel her şey proje dosyalarındaki yerel ayar dosyasında kalır."
+    "cok_basit": "Depo herkese açık olduğu için kişisel bilgi buraya yazılmaz.",
+    "normal": "Depo herkese açık tutulur ve yalnız kural içerir. Ad, e-posta, kimlik ya da not gibi kişiye özel bilgiler depoya girmez; bunlar proje dosyasındaki yerel ayar dosyasında kalır."
    },
-   "kritik_neden": "Bu kural bozulursa depo herkese açık olduğu için kişisel veriler açığa çıkabilir.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -849,10 +835,9 @@
    "ozet": "8f89f55aee54",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Kullanmak için talimatı yapıştır, konuyu yaz ve sohbetin başlamasını bekle.",
-    "normal": "Proje talimatına kurulum satırları yapıştırılır, sohbete konu yazılır ve istenirse ayar kodu eklenir. Sohbet depoyu kopyalayıp okuma paketini üretir ve dersi onunla başlatır."
+    "cok_basit": "Kısa yol: talimata satır ekle, konuyu yaz, gerisini sohbet yapar.",
+    "normal": "Önce proje talimatına kurulum satırları eklenir, sonra sohbete hangi konuda çalışılacağı yazılır. İstenirse ayar kodu da eklenir; sohbet gerisini kendisi hazırlar ve dersi başlatır."
    },
-   "kritik_neden": "Bu adımlar bozulursa yeni bir kullanıcı sohbeti nasıl başlatacağını bilemez.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -870,10 +855,9 @@
    "ozet": "760bda39cb90",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Her proje kendi özel ayar dosyasını tutar; kişiye ait her şey orada kalır.",
-    "normal": "Her projede yerel ayar dosyası bulunur, yoksa ilk sohbet onu şablondan oluşturur. Kişiye özel her şey yalnız bu dosyada kalır. Depodaki varsayılanı depoya dokunmadan ezer."
+    "cok_basit": "Kişisel tercihler her projede kendi ayar dosyasında kalır, depoya yazılmaz.",
+    "normal": "Her projede bir ayar dosyası bulunur ve kişiye özel her şey yalnız orada tutulur: kod, alan, ders listesi, takvim ve tercihler. Bu dosya depodaki varsayılanı depoya dokunmadan ezer."
    },
-   "kritik_neden": "Bu kural bozulursa kişiye özel bilgiler yanlış yere yazılabilir.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -888,13 +872,12 @@
   {
    "kimlik": "README.md::Klasörler",
    "tur": "alt",
-   "ozet": "6fc30f6ba9aa",
+   "ozet": "5fee2b9c5aff",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Depo, işe göre ayrılmış klasörlerden oluşur; her klasörün işi tabloda yazar.",
-    "normal": "Kurallar konuya göre klasörlere ayrılmıştır; her sohbet yalnız ilgili klasörleri okur. Herkesin ortak okuduğu temel kurallar bir klasörde, sohbetin rolüne göre seçilenler başka klasörlerde durur. Derse özel kurallar ayrı bir klasörde durur."
+    "cok_basit": "Depodaki ana klasörlerin hangi işi tuttuğunu gösteren bir tablo.",
+    "normal": "Her klasörün karşısında ne içerdiği yazılıdır: temel kurallar, roller, görevler, seçenekler, görsel şablonlar, dersler, alan katmanı ve araçlar gibi. Okuyan hangi işi nerede arayacağını bu tablodan bulur."
    },
-   "kritik_neden": "Klasör tablosu bozulursa okuyucu hangi işin nerede durduğunu yanlış öğrenir.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -912,10 +895,9 @@
    "ozet": "d91902a53e9a",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Kaynak yüklenen sohbet çeviri yapmaz; çeviri ayrı bir sohbete yaptırılır.",
-    "normal": "PDF ya da slayt yüklenen sohbet onu çevirmez ve anlatmaz; çeviri için ayrı bir sohbet istenir. Çeviri sohbeti yalnız metni yazar ve yeni bir anlatım sohbeti ister."
+    "cok_basit": "PDF yüklenen sohbet onu çevirmez; çeviri ayrı bir sohbete gider.",
+    "normal": "PDF ya da slayt yüklenen sohbet onu çevirmez ve anlatmaz. Çeviri sohbeti yalnız metni yazar ve yeni bir anlatım sohbeti ister. Anlatım sohbeti kaynağı, okuma aracıyla çevrilmiş metin üzerinden okur."
    },
-   "kritik_neden": "Bu kural bozulursa yüklenen kaynak hem çevrilmeye hem anlatılmaya kalkabilir.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
