@@ -495,57 +495,60 @@
   {
    "kimlik": "DEGISIKLIKLER.md",
    "tur": "dosya",
-   "ozet": "1d8cab332dd9",
+   "ozet": "f3fb5c0f9820",
    "iskelet": "98b8f60d112a",
    "baslik": "Değişiklik geçmişi",
    "ne": {
-    "cok_basit": "Bu dosya, depoda yapılan değişikliklerin kaydını tutar.",
-    "basit": "Bu dosya her değişikliği tek satırda kaydeder: ne zaman, hangi dosyada, ne değiştiği ve neden. En yeni kayıt en üsttedir.",
-    "normal": "Bu dosya, depodaki değişikliklerin kaydını tutar. Her satır tarihi, değişen dosyaları, ne değiştiğini ve nedenini söyler. Böylece bir kararın nereden geldiği sonradan bulunabilir.",
-    "gelismis": "Bu dosya bir kural değil, depodaki değişikliklerin kaydıdır; en yeni kayıt en üstte durur. Her satır tarihi, değişen dosyaları, ne değiştiğini ve nedenini tek satırda taşır. Büyük yapısal değişiklikler de aynı biçimde kaydedilir.",
-    "detayli": "Değişiklik geçmişi, bir kuralın neden bu hâle geldiğini ve hangi değişiklikle değiştiğini sonradan izlemeye yarar. Son kayıtlar mimari arayüz, sohbet akışı ve anlatım denetimi gibi değişiklikleri ayrı ayrı gösterir. Her değişiklik tek satırda, neden kısmıyla birlikte yazılır. Ders sözlüklerine eklenen terimler de burada izlenir."
+    "cok_basit": "Bu dosya, depoda yapılan her değişikliğin kısa bir kaydını tutar.",
+    "basit": "Bu dosya, depoda yapılan değişiklikleri tarih sırasına göre tek satırlık kayıtlarla tutar. En yeni kayıt en üstte durur.",
+    "normal": "Bu dosya, depodaki değişikliklerin kaydını tutar. Her satır tarihi, değişen dosyaları, ne değiştiğini ve nedenini söyler. En yeni kayıt her zaman en üstte durur, böylece güncel durum ilk satırda görünür.",
+    "gelismis": "Bu dosya bir kural değil, depodaki değişikliklerin kaydıdır. Her değişiklik tek satırda tarihi, değişen dosyaları, ne değiştiğini ve gerekçesini taşır. Büyük yapısal değişiklikler de aynı biçimde yazılır, bu yüzden kararların izi buradan sürülebilir.",
+    "detayli": "Dosyanın başında biçim anlatılır: her satır tarih, dosya, ne değiştiği ve neden sırasıyla yazılır. Kayıtlar en yeni en üstte durur ve mimari arayüz, sohbet akışı, anlatım denetimi, formül kuralları ile ders sözlüklerindeki değişiklikleri birlikte tutar. Her kaydın nedeni çoğu zaman bir kullanıcı isteğidir ve kayıt bu nedeni yanında taşır."
    },
    "mantik": {
-    "cok_basit": "Yapılan işlerin kaydı tutulursa bir şeyin neden böyle olduğu sonradan öğrenilir.",
-    "basit": "Değişikliğin nedeni unutulursa eski bir karar yeniden tartışılır. Bu dosya gerekçeyi tek satırda tutar.",
+    "cok_basit": "Değişiklik kaydı tutulursa bir şeyin neden böyle olduğu sonradan öğrenilir.",
+    "basit": "Değişikliğin nedeni unutulursa eski bir karar yeniden tartışılır. Bu dosya gerekçeyi tek satırda tutar, böylece aynı tartışma tekrarlanmaz.",
     "normal": "Değişikliğin gerekçesi çoğu zaman kodda görünmez. Bu dosya gerekçeyi tek satırda saklar, böylece sonradan bakan kişi ya da sohbet kararın nedenini görebilir.",
-    "gelismis": "Kayıtlar zamanla birikerek deponun neden bugünkü hâlini aldığını izlemeyi mümkün kılar. Yeni bir kişi eski kararları yeniden tartışmadan önce nedenlerine bakabilir. En yeni kayıt en üstte durduğu için güncel durum hep ilk görünür.",
+    "gelismis": "Kayıtlar zamanla birikerek deponun neden bugünkü hâlini aldığını izlemeyi mümkün kılar. Yeni biri eski kararları yeniden tartışmadan önce nedenlerine bakabilir. En yeni kayıt en üstte durduğu için güncel durum hep ilk görünür.",
     "detayli": "Değişiklik geçmişi, depoda neyin ne zaman ve neden değiştiğini tek bir yerde toplar. Bir kuralın nereden geldiğini bulmak için tüm depoyu yeniden taramak gerekmez. Son kayıtlar mimari arayüz, sohbet akışı ve anlatım denetimi gibi değişiklikleri ayrı ayrı izlenebilir kılar."
    },
    "nasil": {
-    "basit": "Her değişiklikten sonra kayda bir satır eklenir. Yeni satır en üste yazılır.",
-    "normal": "Her değişiklikten sonra kayda tek satır eklenir: tarih, değişen dosyalar, ne değiştiği ve neden. Yeni satır listenin en üstüne yazılır; böylece en yeni kayıt her zaman ilk görünür.",
-    "gelismis": "Her değişiklik, işin parçası olarak bu dosyaya bir satır olarak yazılır; satırın dosya kısmı değişen dosyaları, neden kısmı ise gerekçeyi taşır. Yeni satır her zaman en üste eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Bir değişiklik birden fazla dosyaya dokunduysa dosya kısmında hepsi sıralanır ve kayıt yine tek satır kalır.",
-    "detayli": "Her değişiklik bu dosyaya bir satır olarak işlenir ve bu, değişikliğin yapıldığı işin parçasıdır. Satır tarih, değişen dosyalar, ne değiştiği ve neden kısımlarından oluşur. Her kısım kısa ve tek satırda yazılır; neden kısmı değişikliğin gerekçesini söyler. Yeni satır her zaman en üste eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Büyük yapısal değişiklikler de aynı biçimde kaydedilir ve geri dönüp bakıldığında kararın izi buradan bulunur."
+    "basit": "Her değişiklikten sonra kayda bir satır eklenir ve yeni satır en üste yazılır.",
+    "normal": "Her değişiklikten sonra kayda tek satır eklenir: tarih, değişen dosyalar, ne değiştiği ve neden. Yeni satır listenin en üstüne yazılır, böylece en yeni kayıt her zaman ilk görünür.",
+    "gelismis": "Her kayıt tek satırdır ve sırası şöyle: tarih, dosya, ne değiştiği, neden. Dosya kısmında birden fazla dosya varsa hepsi yazılır ve kayıt yine tek satır kalır. Yeni satır listenin en üstüne eklenir, böylece okuyan en güncel durumu ilk satırdan görür. Büyük yapısal değişiklikler de aynı satır biçimiyle kaydedilir.",
+    "detayli": "Her değişiklik bu dosyaya bir satır olarak işlenir. Satır tarih, değişen dosyalar, ne değiştiği ve neden kısımlarından oluşur. Dosyalar virgülle ayrılarak yazılabilir; nedeni ise kullanıcının isteği ya da karar olarak gösterilir. Böylece bir kararın izi tek satırda, tarihiyle birlikte bulunur. Yeni kayıt her zaman en üste eklenir, böylece en güncel durum ilk satırda görünür. Biçim dosyanın üst kısmında yazılıdır. Büyük yapısal değişiklikler de aynı satır biçimiyle kaydedilir."
    },
    "detay": {
     "girdiler": [
-     "Yapılan değişikliğin tarihi, değişen dosyalar, ne değiştiği ve neden bilgisi."
+     "Her değişikliğin tarihi, değişen dosyalar, ne değiştiği ve neden bilgisi.",
+     "Kaydın yazılacağı dosyanın mevcut en üst satırı."
     ],
     "ciktilar": [
-     "Okuyana, bir kuralın neden ve ne zaman değiştiğini gösteren en yeni üstte sıralı kayıt listesi."
+     "Dosyanın en üstüne eklenen tek satırlık kayıt."
     ],
     "degismezler": [
-     "Her kayıt tek satırdır ve tarih, dosya, ne değiştiği ile neden sırasıyla yazılır."
+     "Her satırın tarih ile başlaması ve en yeni kaydın en üstte durması.",
+     "Her satırda tarih, dosya, ne değiştiği ve neden sırasının korunması."
     ],
     "kenar": [
-     "Aynı gün birden fazla değişiklik olursa her biri ayrı satır olarak en üste eklenir."
+     "Bir değişiklik birden fazla dosyaya dokunduğunda dosya kısmında hepsi sıralanır."
     ]
    },
    "sinir": {
     "sabit": [
-     "Satırdaki tarih, dosya, değişiklik ve neden sırası ile ayırıcı işaret, kaydı okuyan kişinin satırları tanıması için sabit kalmalıdır.",
-     "En yeni kaydın en üstte durması sıralamanın temelidir; bu sıra değişirse okuyan güncel durumu yanlış yerde arar."
+     "Satır biçimi, yani tarih, dosya, ne değiştiği ve neden sırası, geçmişi okuyan herkes için aynı kalmalıdır.",
+     "En yeni kaydın en üstte durması, okuyanın güncel durumu ilk satırda görmesi için sabit tutulmalıdır."
     ],
     "degisebilir": [
-     "Kayıtların uzunluğu ve ayrıntısı, her değişikliğin gerekçesine göre serbestçe ayarlanabilir.",
-     "Eski satırların metni kısaltılabilir, yeter ki kaydın tarihi ve dosyası yerinde kalsın."
+     "Eski kayıtların uzunluğu ve ayrıntısı serbesttir; yeni kayıtlar ihtiyaca göre daha kısa ya da uzun yazılabilir.",
+     "Dosyanın başındaki açıklama cümlesi serbestçe düzenlenebilir, yalnızca satır biçimi değişmemelidir."
     ]
    },
-   "kritik_neden": "Bu dosya başka bir parçaya dayanmadığı için bozulursa yalnız değişiklik geçmişi kaybolur, depo çalışmaya devam eder.",
+   "kritik_neden": "Bu dosya bozulursa kararların geçmişi kaybolur, ama hiçbir parça buna dayanmadığı için çalışma durmaz.",
    "terimler": [],
    "belirsiz": [
-    "Kayıtlarda anılan dosyaların içeriği okunmadı; kayıtların doğruluğu bu anlatımdan doğrulanamadı."
+    "Kayıtların hangi komutla yazıldığı dosyadan çıkmıyor.",
+    "Eski satırlardaki dosya adlarının hâlâ var olup olmadığını kontrol etmedim."
    ],
    "okunan": [
     "DEGISIKLIKLER.md"
@@ -553,18 +556,19 @@
    "yazan": {
     "model": "haiku",
     "ajan": "claude-code",
-    "tarih": "2026-11-14"
+    "tarih": "2026-11-15"
    }
   },
   {
    "kimlik": "DEGISIKLIKLER.md::Değişiklikler",
    "tur": "alt",
-   "ozet": "1d8cab332dd9",
+   "ozet": "f3fb5c0f9820",
    "iskelet": "e3b0c44298fc",
    "ne": {
-    "cok_basit": "Yapılan her değişikliğin kısa notu, en yenisi en üstte olacak şekilde durur.",
-    "normal": "Her satır bir değişikliği tarih, dosya, ne değiştiği ve neden ile birlikte anlatır. Yeni satır en üste eklenir; böylece geriye dönüp bakan kişi güncel durumu hemen görür. Kayıt, kuralın neden bu hâle geldiğini sonradan izlemeye yarar."
+    "cok_basit": "Bu başlık, dosyanın en üstünde değişiklik kaydı olduğunu belli eder.",
+    "normal": "Bu başlık, dosyanın değişiklik kaydı olduğunu söyler. Altındaki satırlar her değişikliğin tarihini, dosyasını, ne değiştiğini ve nedenini taşır."
    },
+   "kritik_neden": "Başlık silinse bile kayıtlar çalışır; yalnızca dosyanın amacı ilk bakışta belli olmaz.",
    "terimler": [],
    "belirsiz": [],
    "okunan": [
@@ -573,7 +577,7 @@
    "yazan": {
     "model": "haiku",
     "ajan": "claude-code",
-    "tarih": "2026-11-14"
+    "tarih": "2026-11-15"
    }
   },
   {
@@ -1289,62 +1293,69 @@
   {
    "kimlik": "mimari-ayar.json",
    "tur": "dosya",
-   "ozet": "b0b21208ea63",
+   "ozet": "775c7757b73b",
    "iskelet": "4f842aa3bd56",
    "baslik": "Harita ayar dosyası",
    "ne": {
-    "cok_basit": "Bu dosya, ders deposunun şekil ayarlarını tutar: neyin nasıl çizileceğini söyler.",
-    "basit": "Bu dosya, ders deposunun haritada nasıl görüneceğini belirleyen ayarları tutar. Hangi dosyaların onay istediğini de yazar.",
-    "normal": "Bu dosya, ders deposunun harita çizimine girdi olan ayarları tutar. Onay gerektiren dosyaları, yok sayılan kırık bağları ve değişince ilgili komutları tanımlar.",
-    "gelismis": "Dosyada ayar grupları vardır: onay dosyaları, yok sayılan bağlar, komutlar, denetimler, görünüm ve akışlar. Her akışın adımları ayrı ayrı sıralanır. Çizim aracı bu alanları sabit adlarla okur.",
-    "detayli": "Üst düzeyde ad ve açıklama durur. Bekçi listesi onay isteyen dosyaları sayar. Kırık bağ yok sayma listesi, eksik bağın sorun sayılmayacağı dosyaları belirtir. Komutlar her dosya desenine bir komut bağlar. Denetimler adı ve çalıştırılacak komutu olan kontrolleri tutar. Görünüm kuralı yüksekliği satır sayısına, rengi durum bilgisine göre belirler. Akışlar adım adım dosyaların sırasını gösterir."
+    "cok_basit": "Bu dosya, haritanın nasıl görüneceğini ve hangi dosyaların onay istediğini tutar.",
+    "basit": "Bu dosya, haritanın nasıl görüneceğini belirleyen ayarları tutar. Hangi dosyaların onay istediğini de yazar.",
+    "normal": "Bu dosya, ders deposunun harita çizimine girdi olan ayarlarını tutar. Onay gerektiren bekçi dosyalarını, yok sayılan kırık bağları ve dosya desenlerine bağlı komutları tanımlar. Yükseklik ve renk kuralları ile akışlar da burada durur.",
+    "gelismis": "Dosyada ayar grupları vardır: `bekci` listesi, `kirik_bag_yoksay`, `komutlar`, `denetimler`, `gorunum` ve `akislar`. Her akışın adımları ayrı ayrı sıralanır ve her grup kendi adıyla okunur. Çizim aracı bu alanları sabit adlarla okur, bu yüzden adlar aynı kalmalıdır.",
+    "detayli": "Üst düzeyde `ad` ve `aciklama` durur ve bu ayar, deponun görsel arayüzünü çizen aracın okuduğu kuralları tutar. `bekci` listesi değişiklik onayı gereken dosyaları işaretler; bu dosyanın kendisi de listededir. `kirik_bag_yoksay` listesi bağın eksik olduğu ama sorun sayılmayacak dosyaları tanımlar. Görünüm ayarı yükseklik, taban ve renk anahtarlarından oluşur ve kod anahtarı kod panelinin açık olduğunu gösterir."
    },
    "mantik": {
-    "cok_basit": "Harita çizilirken her şeyin nasıl görüneceğini tek yerden ayarlamak için var.",
-    "basit": "Çizim aracının her seferinde aynı kuralları bulması gerekir. Bu ayarlar tek dosyada tutulduğu için kurallar bir yerde değişir.",
+    "cok_basit": "Kuralları tek yerde tutmak, harita her çizildiğinde aynı ayarı bulsun diye var.",
+    "basit": "Çizim aracının her seferinde aynı kuralları bulması gerekir. Bu ayarlar tek dosyada durduğu için kurallar bir yerde değişir.",
     "normal": "Kuralları veri olarak tutmak, çizim aracını değiştirmeden ayarı güncellemeyi mümkün kılar. Onay listesi de burada durur, böylece kritik dosyaların değişikliği onaya bağlanır.",
     "gelismis": "Ayarın veri olarak ayrı tutulması, çizim aracını kurallara bağımlı kılmaz. Bekçi ve kırık bağ listeleri de burada olduğu için kurallar tek kaynakta toplanır. Akış ve denetim tanımları da aynı yerde durduğundan iki yerde çelişen bilgi oluşmaz.",
-    "detayli": "Bu biçim, değişiklik etkisini ölçmeyi kolaylaştırır: bekçi olarak işaretlenen ayarın değişmesi zaten onay gerektirir. Kırık bağ yok sayma listesi, bilinen eksikleri sorun listesinden çıkarır. Komutların desene bağlanması, her dosya grubunun kendi yolunu taşımasını sağlar. Akışlar, bir değişikliğin hangi aşamalara dokunduğunu görmeyi kolaylaştırır."
+    "detayli": "Ayarı tek veri dosyasında tutmak, çizim aracının her dosya için ayrı kural kodlamasını gereksiz kılar. Bekçi ve kırık bağ listeleri de burada olduğu için kritik dosyalar ile yok sayılan eksikler tek yerden izlenir. Akış ve denetim tanımları aynı dosyada bulunduğu için bir zincirin adımları ile kontrollerinin birbirine karışması önlenir."
    },
    "nasil": {
-    "basit": "Dosya, harita açıldığında okunur ve düğümlerin görünüşünü belirler. Bekçi dosyalarına değişiklik gelirse onay istenir.",
-    "normal": "Çizim aracı dosyayı okuyarak deponun haritasını kurar. Önce bekçi listesi işaretlenir, sonra kırık bağlar yok sayılır. Dosya desenlerine bağlı komutlar ve denetimler de burada tanımlıdır. Görünüm ayarı düğümlerin büyüklüğünü ve renklerini belirler, akışlar da seçildiğinde adımlarını gösterir.",
-    "gelismis": "Araç önce ad ve açıklamayı alır, sonra bekçi listesini okuyup onay gereken dosyaları işaretler. Kırık bağ yok sayma listesi, eksik kalan bağların uyarıya dönüşmeyeceği dosyaları belirler. Komutlar bölümünde her desen için bir komut tanımlıdır ve denetimler adı ile çalıştırılacak komutu eşleştirir. Görünüm ayarı düğümlerin yüksekliğini satır sayısına, rengini durum bilgisine bağlar. Akışlar ise adı ve adımları verilmiş zincirler tanımlar: sohbetin başlaması, anlatım denetimi ve yeniden üretim.",
-    "detayli": "Araç bu dosyayı okuyup ayarları kendi çizim kurallarına çevirir. Bekçi listesi değişiklik onayı gereken dosyaları işaretler. Bu dosyanın kendisi de bu listededir, yani bu ayarı değiştirmek de onay ister. Kırık bağ yok sayma listesi, bağın eksik olduğu ama sorun sayılmayacak dosyaları tanımlar. Komutlar bölümü desen ve komut çiftlerini tutar, her çift bir dosya grubuna bağlı bir komuttur. Denetimler bölümünde her kontrolün adı ve komut dizisi bulunur. Bu kontrol, anlatım kurallarının kendi kendini denetlemesi olarak tanımlanmıştır. Görünüm ayarı yükseklik, taban ve renk anahtarlarından oluşur: yükseklik satır sayısına, taban gelen bağlara, renk durum bilgisine göre belirlenir. Akışlar her biri bir ad, bir açıklama ve sıralı adımlardan oluşur. Adımlar dosyaları ya da belgeleri ve kısa notları verir."
+    "basit": "Harita açılınca bu dosya okunur ve kutuların boyu ile rengi buradan belirlenir. Onay istenen dosyalara değişiklik gelirse harita bunu işaretler.",
+    "normal": "Çizim aracı bu dosyayı okuyarak deponun haritasını kurar. Bekçi listesindeki dosyalar onay istenen dosya olarak işaretlenir, kırık bağ listesi de eksik bağın sorun sayılmadığı dosyaları belirler. Dosya desenlerine bağlı komutlar ve denetimler de burada tanımlıdır. Görünüm ayarı kutuların büyüklüğünü ve renklerini belirler, akışlar da adımlarını gösterir.",
+    "gelismis": "Üst düzeyde `ad` ve `aciklama` durur; açıklama bu ayarın görsel arayüzü çizen araç tarafından okunduğunu söyler. `bekci` listesi onay gereken dosyaları işaretler ve `kirik_bag_yoksay` listesi eksik bağların uyarıya dönüşmeyeceği dosyaları belirler. `komutlar` her dosya deseni için komut tanımlar ve `denetimler` adı ile çalıştırılacak komutu eşleştirir. `gorunum` düğümün yüksekliğini satır sayısına, rengini durum bilgisine bağlar. `akislar` adı ve adımları verilmiş zincirleri tutar.",
+    "detayli": "Araç bu dosyayı okuyup ayarları kendi çizim kurallarına çevirir. Bekçi listesi onay isteyen dosyaları işaretler, kırık bağ listesi ise eksik kalan bağların uyarıya dönmeyeceği dosyaları belirtir. Komutlar bölümü her dosya desenine komut bağlar. Denetimler bölümünde her kontrolün adı ve çalıştırılacak komut dizisi bulunur; bu kontrol anlatım kurallarının kendini denetlemesidir. Görünüm ayarı düğümün yüksekliğini satır sayısına, tabanını gelen bağlara, rengini durum bilgisine göre belirler. Akışlar adı, açıklaması ve sıralı adımlarıyla dosya zincirini anlatır; adımlar dosyaları ya da belgeleri ve kısa notları gösterir."
    },
    "detay": {
     "girdiler": [
-     "Deponun dosya adları ve bağlantıları, bu dosyadaki ayarlarla eşleştirilir.",
-     "Bekçi, kırık bağ, komut, denetim, görünüm ve akış ayarları okunur."
+     "Deponun adını ve ayarın açıklamasını taşıyan üst düzey alanlar.",
+     "Bekçi, kırık bağ, komut, denetim, görünüm ve akış ayar grupları."
     ],
     "ciktilar": [
-     "Haritada bekçi dosyaları onay işareti taşır ve kırık bağlar buna göre sorun sayılır ya da sayılmaz.",
-     "Düğümlerin yüksekliği ve rengi görünüm ayarına göre belirlenir."
+     "Çizim aracına verilen yükseklik, taban ve renk değerleri ile onay işaretleri.",
+     "Seçilen akışın adım sırası ve her adımın kısa notu."
     ],
     "degismezler": [
-     "Bekçi, kırık bağ, komut, denetim, görünüm ve akış anahtarlarının adları araç tarafından aranır.",
-     "Komut ve denetim alanlarının biçimi, aracın okuduğu şekilde kalmalıdır."
+     "Üst düzey anahtar adları, çizim aracının okuduğu sabit adlardır.",
+     "Listelerin düz liste biçiminde kalması gerekir."
     ],
     "kenar": [
-     "Bekçi listesi boş ya da hiç yoksa onay işareti çıkmaz.",
-     "Bekçi listesinde yer almayan bir dosyada onay istenmez."
+     "Bu ayar dosyası kendi bekçi listesinde yer aldığı için değişikliği özellikle izlenir."
     ]
    },
    "sinir": {
     "sabit": [
-     "Anahtar adları ve bunların yapısı, çizim aracının okuduğu biçimde kalmak zorundadır.",
-     "Akış adımlarının sırası, o akışın anlamını taşır ve değiştirilmemelidir.",
-     "Bekçi listesinde yer alan dosya adları, değişiklik onayının bağlandığı adlar olarak kalmalıdır."
+     "Üst düzey anahtar adları çizim aracının okuduğu sabit adlardır; bu adlar değişirse okuma bozulur.",
+     "Bekçi ve kırık bağ listeleri, dosya yollarını taşıyan düz listeler olarak kalmalıdır.",
+     "Komutlar bölümündeki her kayıt bir desen ve bir komut alanından oluşmalıdır.",
+     "Denetimlerdeki komut her zaman dizi biçiminde kalmalıdır.",
+     "Görünüm ayarındaki yükseklik, taban ve renk anahtarları çizim aracının bildiği adlar olarak kalmalıdır."
     ],
     "degisebilir": [
-     "Akışların açıklama cümleleri ve adımların notları serbestçe yeniden yazılabilir.",
-     "Ad ve açıklama alanlarının metni değiştirilebilir."
+     "Açıklama ve adım notlarının yazımı serbesttir; anlam bozulmadan cümleler yeniden kurulabilir.",
+     "Akışların ad ve açıklamaları ile adım notları, akış sayısı değişmeden düzenlenebilir.",
+     "Komutlar bölümüne yeni bir desen eklemek serbesttir; yeni desen kendi komutunu getirir."
     ]
    },
-   "kritik_neden": "Bu dosya bozulursa onay gerektiren dosyalar korunmaz ve harita yanlış ya da eksik çizilir.",
-   "terimler": [],
+   "kritik_neden": "Bu dosya bozulursa çizim aracı kuralları okuyamaz, harita yanlış görünür ve onay gereken dosyalar işaretlenmez.",
+   "terimler": [
+    "bekci",
+    "akis"
+   ],
    "belirsiz": [
-    "Komutların ne zaman ve kimin tarafından çalıştırıldığı bu dosyadan anlaşılmıyor."
+    "Görünüm alanındaki kod anahtarının gösterim biçimini bu dosyadan çıkaramadım.",
+    "Kırık bağ yok sayma listesindeki dosyaların neden eksik sayılmadığı burada yazılı değil; gerekçeyi çizim aracının kodunda göremedim.",
+    "Akış adımlarındaki dosyaların işlerini bilmiyorum; yalnız adları görüldü."
    ],
    "okunan": [
     "mimari-ayar.json"
@@ -1352,7 +1363,7 @@
    "yazan": {
     "model": "haiku",
     "ajan": "claude-code",
-    "tarih": "2026-11-14"
+    "tarih": "2026-11-15"
    }
   }
  ]

@@ -16,7 +16,7 @@
     { "ad": "Anlatım kuralları kendini dener", "komut": ["python3", "-X", "utf8", "araclar/anlatim_testi.py", "--kendini-dene"] }
   ],
 
-  "gorunum": { "yukseklik": "satir", "taban": "giren", "renk": "durum" },
+  "gorunum": { "yukseklik": "satir", "taban": "giren", "renk": "durum", "kod": true },
 
   "akislar": [
     {
