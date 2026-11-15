@@ -2,6 +2,7 @@
 
 En yeni en üstte. Biçim: `- tarih · dosya · ne değişti · neden`
 
+- 2026-11-15 · mimari-ayar.json, mimari/anlatim/ · Mimari görünümünde kod paneli açıldı (`gorunum.kod`): araç ve şablon dosyalarının kodu yalnız üretilen sayfaya gömülür, kartın yanında istenince açılır; ayar dosyasının anlatımı yenilendi · Depo sahibinin isteği: kodun kendisinin nasıl çalıştığı da haritada görülebilsin
 - 2026-11-14 · mimari/anlatim/ (yeni), README · Mimari görünümü için 307 sade anlatım kaydı (dosyalar, klasörler, bölümler, depo ve üç akış) ve README klasör tablosunda satırı; kayıtlar `volkan-merkez` içindeki `anlatim yaz` komutuyla yazıldı · Depo sahibinin kararı: her depo mimari görünümünde her ayrıntısıyla sade dille okunabilsin
 - 2026-11-14 · mimari-ayar.json (yeni), CLAUDE.md §2 · Görsel mimari arayüzü için ayar dosyası (onay isteyen dosyalar, denetim, üç akış) ve "her değişiklik mimari görünümüne uyar" kuralı · Depo sahibinin kararı: bütün depolarda her değişiklik arayüze uyumlu yapılır
 - 2026-11-03 · CLAUDE.md · Baştan yazıldı: sohbet için her seferki başlangıç sırası (BASLA §1–7'ye bağlı), depoyu geliştirenler için kurallar ve çalıştırılacak denetimler, gizlilik, "nereye bakmalı" tablosu; kural kopyalanmadı, yönlendirme yapıldı · kullanıcı isteği: her sohbete ne yapılacağını gösteren tek dosya.
