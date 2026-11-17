@@ -457,7 +457,7 @@
     },
     "web-chatgpt": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 120,
       "uc_saatlik": 8,
       "gunluk": 20,
@@ -475,7 +475,7 @@
     },
     "web-lechat": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 120,
       "uc_saatlik": 8,
       "gunluk": 20,
@@ -484,7 +484,7 @@
     },
     "web-qwen": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 120,
       "uc_saatlik": 8,
       "gunluk": 20,
@@ -493,7 +493,7 @@
     },
     "web-kimi": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 120,
       "uc_saatlik": 8,
       "gunluk": 20,
@@ -502,7 +502,7 @@
     },
     "web-zai": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 120,
       "uc_saatlik": 8,
       "gunluk": 20,
@@ -520,7 +520,7 @@
     },
     "web-perplexity": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 300,
       "gunluk": 2,
       "resmi": {

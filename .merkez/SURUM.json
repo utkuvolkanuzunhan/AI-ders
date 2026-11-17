@@ -1,8 +1,8 @@
 {
   "aciklama": "volkan-merkez dağıtımı. Dosyalar elle değiştirilmez; merkezde `python araclar/dagitim.py uygula` ile yenilenir.",
   "depo": "AI-ders",
-  "kaynak_commit": "c5a24a36300d84c95f757f1de4097fefaa9f7847",
-  "tarih": "2026-11-17T11:24:12+00:00",
+  "kaynak_commit": "e91bcd8a128df9ba7f440ba835819f8a304f068b",
+  "tarih": "2026-11-17T11:38:58+00:00",
   "dosyalar": {
     ".merkez/KURALLAR.md": {
       "sha": "f528fd90e52e247627f9fa6ee3b24de2a76f44c2513e14dc904a3a117e18b308",
@@ -35,9 +35,9 @@
       "kaynak_sha": "b3dfe136ea37aa30fc547b9d8a03177127b83fbb3085b274784ebed6756f5b7c"
     },
     ".merkez/harita.json": {
-      "sha": "9d8e7c576caac41150ac7f3aec94bc3a0d2658b1d5c752c18f47fb562b6d54f8",
+      "sha": "120b0338a89b6ecda00cc66c5c83c012de8aaa27ae48a161a0b54eefadc65639",
       "kaynak": "harita.json",
-      "kaynak_sha": "7a3caf53ab6ffb54f5f180373704b1d80898eb2eb46f0815a87d917e185ea5dc"
+      "kaynak_sha": "c7369fe28b77209cade96e134b71d722d8833bee8ce604b718a923db26c6add4"
     }
   }
 }
