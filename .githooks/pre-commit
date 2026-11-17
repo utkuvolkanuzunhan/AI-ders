@@ -1,0 +1,8 @@
+#!/bin/sh
+# volkan-merkez dağıtımı (araclar/dagitim.py). Gizli bölge, kişi verisi deseni ve Türkçe karakterli dosya adı denetimi.
+PY=
+for aday in python3 python; do
+  yol=$(command -v "$aday") && "$yol" -c "import sys" >/dev/null 2>&1 && { PY=$yol; break; }
+done
+[ -n "$PY" ] || { echo "pre-commit: python bulunamadı; denetim atlandı" >&2; exit 0; }
+exec "$PY" .merkez/araclar/gizli_bolge.py denetle

@@ -1,0 +1,8 @@
+#!/bin/sh
+# volkan-merkez dağıtımı (araclar/dagitim.py). Commit iletisi İstenen/Yapılan/Fark kuralı.
+PY=
+for aday in python3 python; do
+  yol=$(command -v "$aday") && "$yol" -c "import sys" >/dev/null 2>&1 && { PY=$yol; break; }
+done
+[ -n "$PY" ] || { echo "commit-msg: python bulunamadı; denetim atlandı" >&2; exit 0; }
+exec "$PY" .merkez/araclar/ileti.py denetle "$1"

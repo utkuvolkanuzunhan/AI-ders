@@ -1,0 +1,79 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/merkez_kanca.py kanca 2>/dev/null || python3 .merkez/araclar/merkez_kanca.py kanca)",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/kota.py ozet 2>/dev/null || python3 .merkez/araclar/kota.py ozet)",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/ileti.py basla 2>/dev/null || python3 .merkez/araclar/ileti.py basla)",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/kota.py ozet 2>/dev/null || python3 .merkez/araclar/kota.py ozet)",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|MultiEdit|NotebookEdit|NotebookRead|Grep|Glob|LS|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/gizli_bolge.py kanca 2>/dev/null || python3 .merkez/araclar/gizli_bolge.py kanca)",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/koruma.py kanca 2>/dev/null || python3 .merkez/araclar/koruma.py kanca)",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__t3-code__delegate_task|mcp__t3-code__t3_thread_launch|mcp__t3-code__create_threads|mcp__t3-code__t3_thread_configure|mcp__t3-code__schedule_task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/kota.py kanca 2>/dev/null || python3 .merkez/araclar/kota.py kanca)",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/ileti.py bitir 2>/dev/null || python3 .merkez/araclar/ileti.py bitir)",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

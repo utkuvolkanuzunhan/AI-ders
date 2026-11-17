@@ -1,0 +1,671 @@
+{
+  "merkez_kopyasi": true,
+  "aciklama": "volkan-merkez harita.json'ından üretildi (araclar/dagitim.py). Elle değiştirilmez.",
+  "surum": 2,
+  "eforlar": [
+    "dusuk",
+    "orta",
+    "yuksek",
+    "cok-yuksek",
+    "azami"
+  ],
+  "saglayicilar": {
+    "claude": {
+      "aciklama": "Anthropic",
+      "yalniz_kendi_ajani": true,
+      "istem_kurali": "Model ownership rule: never select a model of this family ({aile}) from your own model list; that would spend the wrong subscription. A model of this family may be started only through its own provider (the Claude provider), for example as a sub-agent opened through that provider.",
+      "efor_adlari": {
+        "dusuk": "low",
+        "orta": "medium",
+        "yuksek": "high",
+        "cok-yuksek": "xhigh",
+        "azami": "max"
+      }
+    },
+    "google": {
+      "aciklama": "Google AI Ultra (Antigravity, agy)",
+      "efor_adlari": {
+        "dusuk": "low",
+        "orta": "medium",
+        "yuksek": "high"
+      }
+    },
+    "perplexity": {
+      "aciklama": "Perplexity Sonar API",
+      "efor_adlari": {
+        "dusuk": "low",
+        "orta": "medium",
+        "yuksek": "high"
+      }
+    },
+    "yerel": {
+      "aciklama": "Dizüstündeki yerel model",
+      "efor_adlari": {}
+    }
+  },
+  "modeller": {
+    "fable": {
+      "saglayici": "claude",
+      "ad": "fable",
+      "api_adi": "claude-fable-5-2",
+      "gorunen": "Claude Fable 5.2",
+      "sinif": 4,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek",
+        "cok-yuksek",
+        "azami"
+      ],
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "code.claude.com/docs/en/cli-reference (--model takma adları)"
+      }
+    },
+    "opus": {
+      "saglayici": "claude",
+      "ad": "opus",
+      "api_adi": "claude-opus-5-5",
+      "gorunen": "Claude Opus 5.5",
+      "sinif": 3,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek",
+        "cok-yuksek",
+        "azami"
+      ],
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "code.claude.com/docs/en/cli-reference (--model takma adları)"
+      }
+    },
+    "sonnet": {
+      "saglayici": "claude",
+      "ad": "sonnet",
+      "api_adi": "claude-sonnet-5-5",
+      "gorunen": "Claude Sonnet 5.5",
+      "sinif": 2,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek",
+        "cok-yuksek",
+        "azami"
+      ],
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "code.claude.com/docs/en/cli-reference (--model takma adları)"
+      }
+    },
+    "haiku": {
+      "saglayici": "claude",
+      "ad": "haiku",
+      "api_adi": "claude-haiku-5-5",
+      "gorunen": "Claude Haiku 5.5",
+      "sinif": 1,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek",
+        "cok-yuksek",
+        "azami"
+      ],
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "code.claude.com/docs/en/cli-reference (--model takma adları)"
+      }
+    },
+    "carbon": {
+      "saglayici": "google",
+      "ad": "gemini-4-carbon",
+      "api_adi": null,
+      "gorunen": "Gemini 4 Carbon",
+      "sinif": 4,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek"
+      ],
+      "dogrulama": {
+        "durum": "dogrulanmadi",
+        "tarih": null,
+        "kaynak": "Plandaki ad. 'agy models' çıktısıyla değiştirilecek"
+      }
+    },
+    "argon": {
+      "saglayici": "google",
+      "ad": "gemini-4-argon",
+      "api_adi": null,
+      "gorunen": "Gemini 4 Argon",
+      "sinif": 3,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek"
+      ],
+      "dogrulama": {
+        "durum": "dogrulanmadi",
+        "tarih": null,
+        "kaynak": "Plandaki ad. 'agy models' çıktısıyla değiştirilecek"
+      }
+    },
+    "sonar": {
+      "saglayici": "perplexity",
+      "ad": "sonar",
+      "api_adi": "sonar",
+      "gorunen": "Perplexity Sonar",
+      "sinif": 1,
+      "eforlar": [],
+      "dogrulama": {
+        "durum": "ikincil",
+        "tarih": "2026-11-12",
+        "kaynak": "LiteLLM sağlayıcı belgesi. docs.perplexity.ai açılamadı"
+      }
+    },
+    "sonar-pro": {
+      "saglayici": "perplexity",
+      "ad": "sonar-pro",
+      "api_adi": "sonar-pro",
+      "gorunen": "Perplexity Sonar Pro",
+      "sinif": 2,
+      "eforlar": [],
+      "dogrulama": {
+        "durum": "ikincil",
+        "tarih": "2026-11-12",
+        "kaynak": "LiteLLM sağlayıcı belgesi. docs.perplexity.ai açılamadı"
+      }
+    },
+    "sonar-reasoning-pro": {
+      "saglayici": "perplexity",
+      "ad": "sonar-reasoning-pro",
+      "api_adi": "sonar-reasoning-pro",
+      "gorunen": "Perplexity Sonar Reasoning Pro",
+      "sinif": 3,
+      "eforlar": [],
+      "dogrulama": {
+        "durum": "ikincil",
+        "tarih": "2026-11-12",
+        "kaynak": "Perplexity API değişiklik günlüğü özeti"
+      }
+    },
+    "sonar-deep-research": {
+      "saglayici": "perplexity",
+      "ad": "sonar-deep-research",
+      "api_adi": "sonar-deep-research",
+      "gorunen": "Perplexity Sonar Deep Research",
+      "sinif": 4,
+      "eforlar": [
+        "dusuk",
+        "orta",
+        "yuksek"
+      ],
+      "dogrulama": {
+        "durum": "ikincil",
+        "tarih": "2026-11-12",
+        "kaynak": "Perplexity topluluk duyurusu (reasoning_effort)"
+      }
+    }
+  },
+  "ajanlar": {
+    "claude-code": {
+      "aciklama": "Claude Code",
+      "saglayici": "claude",
+      "kota_havuzu": "claude-abonelik",
+      "kipler": [
+        "uygulama",
+        "arastirma",
+        "metin",
+        "inceleme"
+      ],
+      "modeller": [
+        "fable",
+        "opus",
+        "sonnet",
+        "haiku"
+      ],
+      "varsayilan_model": "sonnet",
+      "bassiz": true,
+      "efor_bicimi": "bayrak",
+      "cagri": {
+        "bassiz": "claude -p --model {model} --effort {efor} --output-format json",
+        "etkilesimli": "claude --model {model} --effort {efor}"
+      },
+      "kip_bayraklari": {
+        "uygulama": "--disallowedTools WebSearch,WebFetch",
+        "arastirma": "--tools WebSearch,WebFetch",
+        "metin": "--tools \"\"",
+        "inceleme": "--tools Read,Grep,Glob"
+      },
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "code.claude.com/docs/en/cli-reference"
+      }
+    },
+    "antigravity": {
+      "aciklama": "Antigravity, T3 Code içinde",
+      "saglayici": "google",
+      "kota_havuzu": "google-ultra",
+      "kipler": [
+        "uygulama"
+      ],
+      "modeller": [
+        "carbon",
+        "argon"
+      ],
+      "varsayilan_model": "argon",
+      "bassiz": false,
+      "efor_bicimi": "arayuz",
+      "cagri": {
+        "bassiz": null,
+        "etkilesimli": "T3 Code'da Antigravity konusu aç: model {model}, efor {efor}"
+      },
+      "dogrulama": {
+        "durum": "dogrulanmadi",
+        "tarih": null,
+        "kaynak": "T3 Code'da Windows 10 üzerinde denenecek"
+      }
+    },
+    "agy": {
+      "aciklama": "Antigravity komut satırı aracı",
+      "saglayici": "google",
+      "kota_havuzu": "google-ultra",
+      "kipler": [
+        "arastirma",
+        "uygulama",
+        "metin"
+      ],
+      "modeller": [
+        "carbon",
+        "argon"
+      ],
+      "varsayilan_model": "argon",
+      "bassiz": true,
+      "efor_bicimi": "bayrak",
+      "cagri": {
+        "bassiz": "agy -p --model {model} --effort {efor}",
+        "etkilesimli": "agy --model {model} --effort {efor}"
+      },
+      "kip_bayraklari": {},
+      "kip_notu": "agy'de araçları kipe göre kapatan bayrak doğrulanmadı. O zamana kadar kip, çalışma klasörüyle zorlanır.",
+      "dogrulama": {
+        "durum": "ikincil",
+        "tarih": "2026-11-12",
+        "kaynak": "Topluluk kopya kâğıtları ve 1.1.5 sürüm notu. antigravity.google açılamadı"
+      }
+    },
+    "perplexity": {
+      "aciklama": "Perplexity Sonar API, düz betikten",
+      "saglayici": "perplexity",
+      "kota_havuzu": "perplexity-api",
+      "kipler": [
+        "arastirma"
+      ],
+      "modeller": [
+        "sonar",
+        "sonar-pro",
+        "sonar-reasoning-pro",
+        "sonar-deep-research"
+      ],
+      "varsayilan_model": "sonar-pro",
+      "bassiz": true,
+      "efor_bicimi": "istek-alani",
+      "cagri": {
+        "bassiz": "python araclar/arastir.py --ajan perplexity --model {model} --efor {efor}",
+        "etkilesimli": null
+      },
+      "dogrulama": {
+        "durum": "ikincil",
+        "tarih": "2026-11-12",
+        "kaynak": "İkincil kaynaklar. Anahtar ve bütçe kararı bekliyor"
+      }
+    },
+    "api": {
+      "aciklama": "Claude API, düz betikten",
+      "saglayici": "claude",
+      "kota_havuzu": "claude-api-kredisi",
+      "kipler": [
+        "metin"
+      ],
+      "modeller": [
+        "haiku"
+      ],
+      "varsayilan_model": "haiku",
+      "bassiz": true,
+      "efor_bicimi": "istek-alani",
+      "cagri": {
+        "bassiz": "python araclar/karar.py",
+        "etkilesimli": null
+      },
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "Claude API model tablosu (claude-haiku-5-5)"
+      }
+    },
+    "bulut-sohbet": {
+      "aciklama": "Bulut sohbetleri, proje talimatıyla",
+      "saglayici": "claude",
+      "kota_havuzu": "claude-abonelik",
+      "kipler": [
+        "uygulama",
+        "metin"
+      ],
+      "modeller": [
+        "fable",
+        "opus",
+        "sonnet",
+        "haiku"
+      ],
+      "varsayilan_model": "sonnet",
+      "bassiz": false,
+      "efor_bicimi": "arayuz",
+      "cagri": {
+        "bassiz": null,
+        "etkilesimli": "claude.ai'da ilgili projeyi aç: model {model}, efor {efor}"
+      },
+      "dogrulama": {
+        "durum": "belge",
+        "tarih": "2026-11-12",
+        "kaynak": "Elle kullanılır"
+      }
+    },
+    "yerel": {
+      "aciklama": "Dizüstündeki yerel model. Henüz kurulmadı",
+      "saglayici": "yerel",
+      "kota_havuzu": "yerel",
+      "kipler": [
+        "metin"
+      ],
+      "modeller": [],
+      "varsayilan_model": null,
+      "bassiz": false,
+      "efor_bicimi": "yok",
+      "cagri": {
+        "bassiz": null,
+        "etkilesimli": null
+      },
+      "dogrulama": {
+        "durum": "dogrulanmadi",
+        "tarih": null,
+        "kaynak": "Kurulmadı"
+      }
+    }
+  },
+  "gizlilik": {
+    "aciklama": "Basamak 1. Eşleşen iş hiçbir dış modele gitmez, 'yerel-bekliyor' durumuna alınır.",
+    "durum": "yerel-bekliyor",
+    "ajan": "yerel",
+    "anahtar_sozcukler": [
+      "kişi verisi",
+      "kişisel veri",
+      "tc kimlik",
+      "kimlik no",
+      "kimlik numarası",
+      "telefon numarası",
+      "ev adresi",
+      "sağlık kaydı",
+      "hasta kaydı",
+      "banka hesabı"
+    ],
+    "desenler": {
+      "TC kimlik numarası": "(?<!\\d)[1-9]\\d{10}(?!\\d)",
+      "e-posta adresi": "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
+      "telefon numarası": "(?<!\\d)(?:\\+90|0)?\\s?5\\d{2}\\s?\\d{3}\\s?\\d{2}\\s?\\d{2}(?!\\d)",
+      "IBAN": "TR\\d{2}(?:\\s?\\d{4}){5}\\s?\\d{2}",
+      "Anthropic anahtarı": "sk-ant-[A-Za-z0-9_-]{20,}",
+      "GitHub anahtarı": "gh[pousr]_[A-Za-z0-9]{36,}",
+      "Google anahtarı": "AIza[0-9A-Za-z_-]{35}",
+      "Perplexity anahtarı": "pplx-[A-Za-z0-9]{32,}",
+      "Telegram bot anahtarı": "(?<!\\d)\\d{8,10}:[A-Za-z0-9_-]{35}",
+      "özel anahtar": "-----BEGIN [A-Z ]*PRIVATE KEY-----"
+    },
+    "yasak_yollar": [
+      "kasa/60-Yasam/ozel/",
+      "kasa/80-Wiki/ozel/"
+    ],
+    "yasak_yollar_aciklama": "Hiçbir ajan okumaz ve yazmaz, hiçbir modele gitmez, commit'lenmez. Zorlayan: araclar/gizli_bolge.py (Claude kancası ve git pre-commit).",
+    "ucretsiz_yasak_yollar": [
+      "kasa/"
+    ],
+    "ucretsiz_yasak_yollar_aciklama": "Ücretsiz web planlarına ve ücretsiz API havuzuna gitmez (wiki ve yaşam bölümü dahil bütün kasa). Gönderen betik 'gizli_bolge.disari_cikabilir(..., \"ucretsiz\")' ile sorar."
+  },
+  "istek_sinirlari": {
+    "aciklama": "Hizmetlerin resmi istek sınırları (resmi) ve bizim tavanlarımız. Tavan resmi sınırın, kaydın türüne göre kota_kademeleri.istek_tavan_oranlari katını aşmaz: 'resmi-api' (ban riski olmayan resmi API) sınırın tamamına kadar, 'web' (web arayüzü otomasyonu, ban riski olan her şey) %80'e kadar; türü yazılmamış kayıt sıkı taraftadır (Volkan, 2026-11-17). araclar/kota.py denetle ölçer, test kırmızıya düşer.",
+    "jules": {
+      "tur": "resmi-api",
+      "gunluk_gorev": 300,
+      "resmi": {
+        "gunluk_gorev": 300
+      },
+      "kaynak": "Google AI Ultra: günde 300 Jules görevi, resmi API (araclar/jules.py, is/jules dalı)"
+    },
+    "gemini_web": {
+      "tur": "web",
+      "anlik_esik": 70,
+      "haftalik_esik": 60,
+      "resmi": {
+        "anlik_esik": 100,
+        "haftalik_esik": 100
+      },
+      "kaynak": "gemini.google.com/usage yüzdeleri (araclar/gemini_kuyruk.py, is/gemini-kuyruk dalı)"
+    },
+    "web-chatgpt": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-deepseek": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-lechat": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-qwen": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-kimi": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-zai": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-huggingchat": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Resmi sayı yayımlanmamış (araştırma 2026-11-17). Başlangıç tavanı Volkan'ın seçimi (2026-11-17 08:29 UTC): düşük başla, uyarıdan öğren. etkin, kesif doğrulanınca true olur."
+    },
+    "web-perplexity": {
+      "tur": "web",
+      "etkin": false,
+      "bekleme_sn": 300,
+      "gunluk": 2,
+      "resmi": {
+        "gunluk": 3
+      },
+      "kaynak": "Perplexity yardım merkezi: ücretsiz planda günde 3 Pro arama (araştırma 2026-11-17). Sınırı bilinen site: resmi sınırdan %80 ile başlanır (Volkan, 2026-11-17 08:29 UTC). Her istek Pro sayılır; Research kullanılmaz."
+    },
+    "ucretsiz_api": {
+      "aciklama": "Resmi ücretsiz API katmanları (yerel LiteLLM havuzu, is/havuz dalı). Yalnız izinli iş türlerinde ve gizlilik süzgecinden geçen metinde. Depoya kod yazmaz, karar vermez; kişi verisi, kasa notu ve gizli depo içeriği gitmez.",
+      "izinli_is_turleri": [
+        "Sınıflandırma, etiketleme, kısa özet",
+        "Uzun doküman, PDF, ekran görüntüsü okuma",
+        "İkinci görüş"
+      ],
+      "yalniz_acik_metin": [
+        "openrouter-free"
+      ],
+      "saglayicilar": {
+        "groq": {
+          "tur": "resmi-api",
+          "onek": "groq/",
+          "resmi": {
+            "rpm": 30,
+            "rpd": 1000,
+            "tpm": 8000
+          }
+        },
+        "openrouter-free": {
+          "tur": "resmi-api",
+          "onek": "openrouter/",
+          "resmi": {
+            "rpm": 20,
+            "rpd": 50
+          },
+          "ortak_gunluk": true
+        },
+        "cloudflare": {
+          "tur": "resmi-api",
+          "onek": "openai/@cf/",
+          "resmi": {},
+          "birim": "neuron",
+          "resmi_gunluk_neuron": 10000,
+          "not": "Sınır istek değil Neuron (günde 10.000). İstek tavanı Neuron'a çevrilemediği için kota.py denetle bunu ölçmez; havuz Neuron sayacı eklenince ölçülür"
+        },
+        "github-models": {
+          "tur": "resmi-api",
+          "onek": "github/",
+          "resmi": {}
+        },
+        "google-ai-studio": {
+          "tur": "resmi-api",
+          "onek": "gemini/",
+          "resmi": {}
+        },
+        "mistral": {
+          "tur": "resmi-api",
+          "onek": "mistral/",
+          "resmi": {}
+        }
+      }
+    }
+  },
+  "kota_kademeleri": {
+    "aciklama": "Süreli kota istisnaları (araclar/kota.py). Kayıtlar kasada 90-Sistem/Kota/istisna.json içinde durur, her kaydın bitişi vardır; süre bitince temel düzen kendiliğinden döner. oran = (kalan yüzde / 100) / (gün / dönem). Oran 1'in altındaysa eşiği (oran_alti) orandan büyük olan en sıkı kademe seçilir. sinif_tavani: modellerin 'sinif' alanı (1 en ucuz, 4 en güçlü). geri_cek: bu havuzun adayları rotada öteki havuzların adaylarından sonraya alınır. istek_tavan_oranlari: hizmet türüne göre resmi istek sınırının aşılmayacak oranı (resmi-api 1.0, web 0.8); istek_sinirlari.<hizmet>.resmi ve .tur ile yazılır, 'kota.py denetle' ölçer. Anlatım: mimari/is-tarifleri/kota.md.",
+    "istek_tavan_oranlari": {
+      "resmi-api": 1.0,
+      "web": 0.8
+    },
+    "varsayilan_donem_gun": 7,
+    "donem_gun": {
+      "claude-abonelik": 7,
+      "google-ultra": 7
+    },
+    "en_uzun_gun": 31,
+    "takma_adlar": {
+      "claude": [
+        "claude-abonelik"
+      ],
+      "gemini": [
+        "google-ultra"
+      ],
+      "google": [
+        "google-ultra"
+      ],
+      "agy": [
+        "google-ultra"
+      ],
+      "perplexity": [
+        "perplexity-api"
+      ],
+      "api": [
+        "claude-api-kredisi"
+      ]
+    },
+    "kademeler": [
+      {
+        "ad": "hafif",
+        "oran_alti": 1.0,
+        "sinif_tavani": 3,
+        "efor_tavani": "yuksek",
+        "geri_cek": false
+      },
+      {
+        "ad": "orta",
+        "oran_alti": 0.6,
+        "sinif_tavani": 2,
+        "efor_tavani": "orta",
+        "geri_cek": true
+      },
+      {
+        "ad": "siki",
+        "oran_alti": 0.3,
+        "sinif_tavani": 1,
+        "efor_tavani": "orta",
+        "geri_cek": true
+      }
+    ]
+  },
+  "depolar": {
+    "AI-ders": {
+      "github": "utkuvolkanuzunhan/AI-ders",
+      "dil": "tr",
+      "koruma": "yok",
+      "test_komutu": null,
+      "not": "Ders anlatım kuralları geçerli.",
+      "varsayilan_rota": [
+        {
+          "ajan": "bulut-sohbet",
+          "model": "sonnet",
+          "efor": "orta"
+        },
+        {
+          "ajan": "claude-code",
+          "model": "sonnet",
+          "efor": "orta"
+        }
+      ],
+      "bekci_dosyalari": [
+        ".merkez/",
+        ".claude/",
+        ".githooks/",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "GEMINI.md"
+      ]
+    }
+  }
+}

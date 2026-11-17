@@ -1,3 +1,5 @@
+@.merkez/KURALLAR.md
+
 # AI-ders deposu
 
 Bu bir kural deposudur, uygulama kodu yoktur. Bu dosya bir HARİTADIR: kuralı burada kopyalama, ilgili dosyaya bağlan.

@@ -1,0 +1,43 @@
+{
+  "aciklama": "volkan-merkez dağıtımı. Dosyalar elle değiştirilmez; merkezde `python araclar/dagitim.py uygula` ile yenilenir.",
+  "depo": "AI-ders",
+  "kaynak_commit": "c5a24a36300d84c95f757f1de4097fefaa9f7847",
+  "tarih": "2026-11-17T11:24:12+00:00",
+  "dosyalar": {
+    ".merkez/KURALLAR.md": {
+      "sha": "f528fd90e52e247627f9fa6ee3b24de2a76f44c2513e14dc904a3a117e18b308",
+      "kaynak": "sablonlar/merkez-kurallari.md",
+      "kaynak_sha": "f528fd90e52e247627f9fa6ee3b24de2a76f44c2513e14dc904a3a117e18b308"
+    },
+    ".merkez/araclar/gizli_bolge.py": {
+      "sha": "b8e484b90da58ada257ed2ed5238ce6a2686f5e130b50ea640281b291d24ed8c",
+      "kaynak": "araclar/gizli_bolge.py",
+      "kaynak_sha": "b8e484b90da58ada257ed2ed5238ce6a2686f5e130b50ea640281b291d24ed8c"
+    },
+    ".merkez/araclar/ileti.py": {
+      "sha": "460e7e01c8c014cbc46699b4641a60f6d11c022ff6b735131b9bbff646be314c",
+      "kaynak": "araclar/ileti.py",
+      "kaynak_sha": "460e7e01c8c014cbc46699b4641a60f6d11c022ff6b735131b9bbff646be314c"
+    },
+    ".merkez/araclar/koruma.py": {
+      "sha": "a2416d75bf3b014ef1d72ab8b2ae41787815e851b41292e50d5d970086ba49e0",
+      "kaynak": "araclar/koruma.py",
+      "kaynak_sha": "a2416d75bf3b014ef1d72ab8b2ae41787815e851b41292e50d5d970086ba49e0"
+    },
+    ".merkez/araclar/kota.py": {
+      "sha": "ca74aa380f381fc1c1df9113efbc6e3a954193afbdeb99e70875a5c3577ef85e",
+      "kaynak": "araclar/kota.py",
+      "kaynak_sha": "ca74aa380f381fc1c1df9113efbc6e3a954193afbdeb99e70875a5c3577ef85e"
+    },
+    ".merkez/araclar/merkez_kanca.py": {
+      "sha": "b3dfe136ea37aa30fc547b9d8a03177127b83fbb3085b274784ebed6756f5b7c",
+      "kaynak": "araclar/merkez_kanca.py",
+      "kaynak_sha": "b3dfe136ea37aa30fc547b9d8a03177127b83fbb3085b274784ebed6756f5b7c"
+    },
+    ".merkez/harita.json": {
+      "sha": "9d8e7c576caac41150ac7f3aec94bc3a0d2658b1d5c752c18f47fb562b6d54f8",
+      "kaynak": "harita.json",
+      "kaynak_sha": "7a3caf53ab6ffb54f5f180373704b1d80898eb2eb46f0815a87d917e185ea5dc"
+    }
+  }
+}
