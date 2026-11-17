@@ -1,8 +1,8 @@
 {
   "aciklama": "volkan-merkez dağıtımı. Dosyalar elle değiştirilmez; merkezde `python araclar/dagitim.py uygula` ile yenilenir.",
   "depo": "AI-ders",
-  "kaynak_commit": "032aba456c66d030258bc11b1671c74869feb9d4",
-  "tarih": "2026-11-17T12:59:26+00:00",
+  "kaynak_commit": "2b64518d4618bd62141d8e10d60c0150f604fe60",
+  "tarih": "2026-11-17T13:39:44+00:00",
   "dosyalar": {
     ".merkez/KURALLAR.md": {
       "sha": "6ca3a24244aa58157d885d3ff97c109197d2b9d921c454ebebd0ba73eb8fae8a",
@@ -10,9 +10,9 @@
       "kaynak_sha": "6ca3a24244aa58157d885d3ff97c109197d2b9d921c454ebebd0ba73eb8fae8a"
     },
     ".merkez/araclar/gizli_bolge.py": {
-      "sha": "b8e484b90da58ada257ed2ed5238ce6a2686f5e130b50ea640281b291d24ed8c",
+      "sha": "ef8a53444090f41fb67fb05df8915d738a99363548946632d484815c792f0d5d",
       "kaynak": "araclar/gizli_bolge.py",
-      "kaynak_sha": "b8e484b90da58ada257ed2ed5238ce6a2686f5e130b50ea640281b291d24ed8c"
+      "kaynak_sha": "ef8a53444090f41fb67fb05df8915d738a99363548946632d484815c792f0d5d"
     },
     ".merkez/araclar/ileti.py": {
       "sha": "460e7e01c8c014cbc46699b4641a60f6d11c022ff6b735131b9bbff646be314c",
@@ -35,14 +35,14 @@
       "kaynak_sha": "b3dfe136ea37aa30fc547b9d8a03177127b83fbb3085b274784ebed6756f5b7c"
     },
     ".merkez/araclar/zorla.py": {
-      "sha": "e092e3ef0d42b8a8bdc8b136fd91a54b46d11d7d695dcd9fbe2f7c9ee4b60fae",
+      "sha": "196836e5bc767676e592d19881e5983ff320d668824d3ace142b19d9bd4d9602",
       "kaynak": "araclar/zorla.py",
-      "kaynak_sha": "e092e3ef0d42b8a8bdc8b136fd91a54b46d11d7d695dcd9fbe2f7c9ee4b60fae"
+      "kaynak_sha": "196836e5bc767676e592d19881e5983ff320d668824d3ace142b19d9bd4d9602"
     },
     ".merkez/harita.json": {
-      "sha": "5f95242d127e90084c67209406f395a5ab476e3781a6d2fc6d2826e4f8460fca",
+      "sha": "b8aad3099a9cc6177835761a6b9db29f815d07c480f14b90a89d83c204d3eb6d",
       "kaynak": "harita.json",
-      "kaynak_sha": "fa26092c8eb3b97d4570cd08de09aa417c953efa0bfe23574b77cf91daac4a4c"
+      "kaynak_sha": "4d543bebf070a369a315211b62305cbca2cbeead3a517df298802e28f3f11a61"
     }
   }
 }

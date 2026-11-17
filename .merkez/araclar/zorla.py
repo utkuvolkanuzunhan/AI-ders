@@ -126,6 +126,38 @@ def _red(neden: str) -> dict:
                                    "permissionDecisionReason": neden}}
 
 
+def odeme_karari(arac, girdi: dict, harita: dict) -> dict | None:
+    """Ödeme, satın alma ya da abonelik adımı gibi görünen tarayıcı ve kabuk çağrısı Volkan'ın onayına gider (ask).
+
+    Volkan (2026-11-17 16:29 İstanbul): ödeme gibi çok önemli işleri bana bırak. Kalıplar harita.json onay_duzeni."""
+    duzen = harita.get("onay_duzeni") or {}
+    kaliplar = duzen.get("odeme_kaliplari") or []
+    araclar_ = duzen.get("odeme_araclari") or []
+    if not kaliplar or not isinstance(arac, str) or not any(re.search(k, arac) for k in araclar_):
+        return None
+    metin = json.dumps(girdi, ensure_ascii=False).casefold()
+    bulunan = next((k for k in kaliplar if re.search(k, metin)), None)
+    if not bulunan:
+        return None
+    return {"hookSpecificOutput": {"hookEventName": "PreToolUse", "permissionDecision": "ask",
+                                   "permissionDecisionReason": f"Ödeme ya da satın alma adımı gibi görünüyor ('{bulunan}'): "
+                                                               "para işleri Volkan'ındır, onayı olmadan sürdürme."}}
+
+
+def birlestirme_karari(girdi: dict, harita: dict) -> dict | None:
+    """PR birleştirme yalnız `otomatik_birlestirme.izinli` (özel) depolarda; açık depo ve onay isteyen depo reddedilir.
+
+    Volkan (2026-11-17 16:01 İstanbul): özel depolarda testler yeşilse PR'lar onu beklemeden birleştirilir."""
+    ayar_ = harita.get("otomatik_birlestirme") or {}
+    depo = str(girdi.get("repo") or "")
+    sahip = str(girdi.get("owner") or "")
+    izinli = {str(d).lower() for d in ayar_.get("izinli") or []}
+    if sahip.lower() == str(ayar_.get("sahip") or sahip).lower() and depo.lower() in izinli:
+        return None
+    return _red(f"Otomatik birleştirme yalnız özel ve izinli depolarda (harita.json otomatik_birlestirme.izinli): "
+                f"{sahip}/{depo} listede yok. Açık depoda ya da onay isteyen depoda (ör. volky-lab) PR'ı Volkan birleştirir.")
+
+
 # --- Karar ----------------------------------------------------------------------
 
 def karar(veri: dict, harita: dict, kok: Path, iz: dict) -> tuple[dict | None, dict]:
@@ -135,6 +167,13 @@ def karar(veri: dict, harita: dict, kok: Path, iz: dict) -> tuple[dict | None, d
     girdi = veri.get("tool_input") if isinstance(veri.get("tool_input"), dict) else {}
     iz = dict(iz)
     aranan = list(iz.get("aranan") or [])
+
+    if isinstance(arac, str) and arac.endswith(("merge_pull_request", "enable_pr_auto_merge")):
+        return birlestirme_karari(girdi, harita), iz
+
+    odeme = odeme_karari(arac, girdi, harita)
+    if odeme:
+        return odeme, iz
 
     if arac == "Bash":
         komut = str(girdi.get("command") or "")

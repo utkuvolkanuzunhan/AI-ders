@@ -422,6 +422,8 @@
       "GitHub anahtarı": "gh[pousr]_[A-Za-z0-9]{36,}",
       "Google anahtarı": "AIza[0-9A-Za-z_-]{35}",
       "Perplexity anahtarı": "pplx-[A-Za-z0-9]{32,}",
+      "Groq anahtarı": "gsk_[A-Za-z0-9]{40,}",
+      "OpenRouter anahtarı": "sk-or-v1-[A-Za-z0-9]{40,}",
       "Telegram bot anahtarı": "(?<!\\d)\\d{8,10}:[A-Za-z0-9_-]{35}",
       "özel anahtar": "-----BEGIN [A-Z ]*PRIVATE KEY-----"
     },
@@ -668,6 +670,58 @@
       "\\bkural",
       "\\byasak",
       "\\bzorunlu"
+    ]
+  },
+  "otomatik_birlestirme": {
+    "aciklama": "Volkan 2026-11-17 16:01 İstanbul: özel depolardaki PR'lar testler yeşilse onu beklemeden birleştirilir. Açık depolar ve onay isteyen depolar (volky-lab: Buse) dışarıda. Zorlayan: araclar/zorla.py kanca (merge_pull_request), koruyan test_zorla.Birlestirme. Yeşil: kontrol.py temiz ve seçilen ya da tam testlerde tabana göre yeni kırmızı yok.",
+    "sahip": "utkuvolkanuzunhan",
+    "izinli": [
+      "volkan-merkez",
+      "gelisim",
+      "Lab-volgraph",
+      "Dokanmazdasonkis",
+      "derscalisma",
+      "t3code-private",
+      "volkiapp",
+      "volkiapp_ideas",
+      "obsidian-kasa",
+      "Obsidian-kasam"
+    ],
+    "haric": {
+      "volky-lab": "Buse'nin onayı gerekir",
+      "AI-ders": "açık depo",
+      "project_v": "açık depo",
+      "ArchiveEGE": "açık depo",
+      "llm-council": "açık depo",
+      "-forkt3code": "açık depo"
+    }
+  },
+  "onay_duzeni": {
+    "aciklama": "Volkan 2026-11-17 16:29 İstanbul: ödeme gibi çok önemli işler ona kalır. Ödeme, satın alma ya da abonelik gibi görünen tarayıcı ve kabuk çağrısı onaya (ask) gider. Zorlayan: araclar/zorla.py, koruyan test_zorla.Odeme.",
+    "odeme_araclari": [
+      "^Bash$",
+      "^mcp__claude-in-chrome__",
+      "Browser__",
+      "^mcp__remote-devices__computer"
+    ],
+    "odeme_kaliplari": [
+      "checkout",
+      "ödeme yap",
+      "ödemeyi",
+      "satın al",
+      "satin al",
+      "purchase",
+      "\\bbilling\\b",
+      "kredi kart",
+      "card number",
+      "cardnumber",
+      "\\bcvc\\b",
+      "\\bcvv\\b",
+      "/upgrade",
+      "upgrade plan",
+      "abone ol",
+      "\\bsubscribe\\b",
+      "add payment"
     ]
   },
   "depolar": {

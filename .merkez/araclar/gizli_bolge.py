@@ -31,6 +31,7 @@ SINIFLAR = ("abonelik", "ucretsiz")
 # Yol taşıyan araç alanları (Read, Edit, Write, MultiEdit, NotebookEdit, NotebookRead, Grep, Glob, LS).
 YOL_ALANLARI = ("file_path", "notebook_path", "path", "pattern", "glob")
 WIKI_KOKU = "kasa/80-Wiki/"
+OBSIDIAN_KOKU = "kasa/.obsidian/"
 _ON_BILGI = re.compile(r"\A---\r?\n(.*?)\r?\n---", re.S)
 
 
@@ -183,6 +184,13 @@ def icerik_sorunlari(yol: str, metin: str, harita: dict) -> list[str]:
     return sorunlar
 
 
+def anahtar_sorunlari(yol: str, metin: str, harita: dict) -> list[str]:
+    """Kasanın her dosyasında yalnız anahtar desenleri (adında 'anahtar' geçen desenler) aranır."""
+    return [f"{yol}: anahtar deseni ({ad}). Anahtar yalnız ortam değişkeninde ya da Obsidian eklentisinin yerel ayarında durur"
+            for ad, desen in ((harita.get("gizlilik") or {}).get("desenler") or {}).items()
+            if "anahtar" in ad.lower() and re.search(desen, metin)]
+
+
 def denetle(kok: Path, harita: dict) -> list[str]:
     liste = bolgeler(harita)
     sorunlar = []
@@ -192,6 +200,13 @@ def denetle(kok: Path, harita: dict) -> list[str]:
             continue
         if durum == "A" and not PurePosixPath(yol).name.isascii():
             sorunlar.append(f"{yol}: dosya adında Türkçe ya da ASCII dışı karakter var (AGENTS.md bölüm 6)")
+        if yol.startswith(OBSIDIAN_KOKU) and (yol.startswith(OBSIDIAN_KOKU + "plugins/") or yol.endswith("/data.json")):
+            sorunlar.append(f"{yol}: Obsidian eklenti dosyası ve ayarı (API anahtarı taşır) commit'lenmez. "
+                            f"Çıkar: git rm --cached \"{yol}\"")
+            continue
+        if yol.startswith("kasa/") and not yol.startswith(WIKI_KOKU):
+            metin = _git(kok, "show", ":" + yol).decode("utf-8", errors="replace")
+            sorunlar += anahtar_sorunlari(yol, metin, harita)
         if yol.startswith(WIKI_KOKU) and yol.lower().endswith(".md"):
             metin = _git(kok, "show", ":" + yol).decode("utf-8", errors="replace")
             sorunlar += icerik_sorunlari(yol, metin, harita)
