@@ -1,13 +1,13 @@
 {
   "aciklama": "volkan-merkez dağıtımı. Dosyalar elle değiştirilmez; merkezde `python araclar/dagitim.py uygula` ile yenilenir.",
   "depo": "AI-ders",
-  "kaynak_commit": "e91bcd8a128df9ba7f440ba835819f8a304f068b",
-  "tarih": "2026-11-17T11:38:58+00:00",
+  "kaynak_commit": "032aba456c66d030258bc11b1671c74869feb9d4",
+  "tarih": "2026-11-17T12:59:26+00:00",
   "dosyalar": {
     ".merkez/KURALLAR.md": {
-      "sha": "f528fd90e52e247627f9fa6ee3b24de2a76f44c2513e14dc904a3a117e18b308",
+      "sha": "6ca3a24244aa58157d885d3ff97c109197d2b9d921c454ebebd0ba73eb8fae8a",
       "kaynak": "sablonlar/merkez-kurallari.md",
-      "kaynak_sha": "f528fd90e52e247627f9fa6ee3b24de2a76f44c2513e14dc904a3a117e18b308"
+      "kaynak_sha": "6ca3a24244aa58157d885d3ff97c109197d2b9d921c454ebebd0ba73eb8fae8a"
     },
     ".merkez/araclar/gizli_bolge.py": {
       "sha": "b8e484b90da58ada257ed2ed5238ce6a2686f5e130b50ea640281b291d24ed8c",
@@ -34,10 +34,15 @@
       "kaynak": "araclar/merkez_kanca.py",
       "kaynak_sha": "b3dfe136ea37aa30fc547b9d8a03177127b83fbb3085b274784ebed6756f5b7c"
     },
+    ".merkez/araclar/zorla.py": {
+      "sha": "e092e3ef0d42b8a8bdc8b136fd91a54b46d11d7d695dcd9fbe2f7c9ee4b60fae",
+      "kaynak": "araclar/zorla.py",
+      "kaynak_sha": "e092e3ef0d42b8a8bdc8b136fd91a54b46d11d7d695dcd9fbe2f7c9ee4b60fae"
+    },
     ".merkez/harita.json": {
-      "sha": "120b0338a89b6ecda00cc66c5c83c012de8aaa27ae48a161a0b54eefadc65639",
+      "sha": "5f95242d127e90084c67209406f395a5ab476e3781a6d2fc6d2826e4f8460fca",
       "kaynak": "harita.json",
-      "kaynak_sha": "c7369fe28b77209cade96e134b71d722d8833bee8ce604b718a923db26c6add4"
+      "kaynak_sha": "fa26092c8eb3b97d4570cd08de09aa417c953efa0bfe23574b77cf91daac4a4c"
     }
   }
 }

@@ -466,7 +466,7 @@
     },
     "web-deepseek": {
       "tur": "web",
-      "etkin": false,
+      "etkin": true,
       "bekleme_sn": 120,
       "uc_saatlik": 8,
       "gunluk": 20,
@@ -521,12 +521,11 @@
     "web-perplexity": {
       "tur": "web",
       "etkin": true,
-      "bekleme_sn": 300,
-      "gunluk": 2,
-      "resmi": {
-        "gunluk": 3
-      },
-      "kaynak": "Perplexity yardım merkezi: ücretsiz planda günde 3 Pro arama (araştırma 2026-11-17). Sınırı bilinen site: resmi sınırdan %80 ile başlanır (Volkan, 2026-11-17 08:29 UTC). Her istek Pro sayılır; Research kullanılmaz."
+      "bekleme_sn": 120,
+      "uc_saatlik": 8,
+      "gunluk": 20,
+      "resmi": {},
+      "kaynak": "Ücretsiz planda normal arama için yayımlanmış sınır yok (Volkan, 2026-11-17 11:52 UTC). Tavan bilinmeyen sınır varsayılanı: düşük başla, uyarıdan öğren. Pro arama (günde 3) ve Research kullanılmaz; araç arama kipini değiştirmez."
     },
     "ucretsiz_api": {
       "aciklama": "Resmi ücretsiz API katmanları (yerel LiteLLM havuzu, is/havuz dalı). Yalnız izinli iş türlerinde ve gizlilik süzgecinden geçen metinde. Depoya kod yazmaz, karar vermez; kişi verisi, kasa notu ve gizli depo içeriği gitmez.",
@@ -637,6 +636,38 @@
         "efor_tavani": "orta",
         "geri_cek": true
       }
+    ]
+  },
+  "zorlama": {
+    "aciklama": "araclar/zorla.py okur. Okuma bütçesi, paket zorlaması, karar öncesi okuma ve kural adayı uyarısı (Volkan 2026-11-17).",
+    "okuma_satir_tavani": 400,
+    "paket_zorunlu": true,
+    "baglam_uyari_token": 150000,
+    "baglam_dur_token": 200000,
+    "devir_desenleri": [
+      "devir",
+      "devam"
+    ],
+    "hassas_yollar": [
+      "harita.json",
+      "araclar/kota.py",
+      "araclar/rota.py",
+      "araclar/web_kuyruk.py",
+      "araclar/gemini_kuyruk.py",
+      "araclar/sahiplik.py",
+      ".claude/settings.json",
+      "mimari/kural-kaydi.json"
+    ],
+    "kural_kaliplari": [
+      "bundan sonra",
+      "bundan böyle",
+      "artık (hep|her)",
+      "her zaman",
+      "hiçbir zaman",
+      "\\basla\\b",
+      "\\bkural",
+      "\\byasak",
+      "\\bzorunlu"
     ]
   },
   "depolar": {

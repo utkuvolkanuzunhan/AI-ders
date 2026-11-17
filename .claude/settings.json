@@ -26,6 +26,11 @@
         "hooks": [
           {
             "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/zorla.py istem 2>/dev/null || python3 .merkez/araclar/zorla.py istem)",
+            "timeout": 5
+          },
+          {
+            "type": "command",
             "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/kota.py ozet 2>/dev/null || python3 .merkez/araclar/kota.py ozet)",
             "timeout": 5
           }
@@ -33,6 +38,16 @@
       }
     ],
     "PreToolUse": [
+      {
+        "matcher": "Read|Grep|Glob|Edit|Write|MultiEdit|NotebookEdit|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && (python .merkez/araclar/zorla.py kanca 2>/dev/null || python3 .merkez/araclar/zorla.py kanca)",
+            "timeout": 5
+          }
+        ]
+      },
       {
         "matcher": "Read|Edit|Write|MultiEdit|NotebookEdit|NotebookRead|Grep|Glob|LS|Bash",
         "hooks": [
